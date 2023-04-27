@@ -1,0 +1,14 @@
+.nav-link {cursor: pointer;}
+
+.offset {
+    padding-top: 145px; 
+    margin-top: -125px!important;
+}
+
+th {
+    white-space: nowrap;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}

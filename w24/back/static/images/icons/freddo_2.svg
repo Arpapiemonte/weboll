@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="svg"
+   viewBox="0 0 440 440"
+   version="1.1"
+   sodipodi:docname="freddo_2.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   width="448"
+   height="448"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview19"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="1.688"
+     inkscape:cx="249.70379"
+     inkscape:cy="250.29621"
+     inkscape:window-width="1846"
+     inkscape:window-height="1016"
+     inkscape:window-x="74"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g16"
+     width="448px" />
+  <defs
+     id="defs4">
+    <style
+       id="style2">
+      .cls-1, .cls-2, .cls-3, .cls-5 {
+        stroke: #fff;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-1 {
+        stroke-width: 16.35px;
+      }
+
+      .cls-2, .cls-5 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        stroke-width: 11.21px;
+      }
+
+      .cls-3 {
+        fill: none;
+        stroke-linecap: round;
+      }
+
+      .cls-3, .cls-5 {
+        stroke-width: 9.34px;
+      }
+
+      .cls-4 {
+        fill: #29abe2;
+        stroke: #29abe2;
+        stroke-width: 7.48px;
+      }
+
+      .cls-5 {
+        stroke-linejoin: round;
+      }
+    </style>
+  </defs>
+  <title
+     id="title6">freddo_2</title>
+  <g
+     id="g16">
+    <path
+       id="quadrato_nero"
+       class="cls-1"
+       d="m 73.66,13.4 h 300.68 a 62.25,62.25 0 0 1 62.26,62.26 v 300.68 a 62.25,62.25 0 0 1 -62.25,62.25 H 73.66 A 62.26,62.26 0 0 1 11.4,376.34 V 75.66 A 62.26,62.26 0 0 1 73.66,13.4 Z"
+       style="stroke-width:0;stroke-miterlimit:10;stroke-dasharray:none" />
+    <path
+       id="contorno_termometro"
+       class="cls-2"
+       d="m 161.45,274 0.21,-220.38 c 0,0 -2.31,-8.44 -10.23,-12.25 -8.77,-4.23 -23.25,-3.88 -23.25,-3.88 0,0 -13.2,0 -21.62,4.65 C 98.94,46.4 96,55.41 96,55.41 L 95.1,277 c -22.84,10.44 -38.1,37.21 -38.34,57.9 -0.33,32.89 26.32,68.5 73,69 46.68,0.5 72.75,-29.29 73.08,-62.18 C 203.06,321 184.08,284.92 161.45,274 Z" />
+    <line
+       id="tacca_up_termometro"
+       class="cls-3"
+       x1="160.92"
+       y1="102.18"
+       x2="193.63"
+       y2="102.18" />
+    <line
+       id="tacca_middle_termometro"
+       class="cls-3"
+       x1="160.92"
+       y1="158.25"
+       x2="193.63"
+       y2="158.25" />
+    <line
+       id="tacca_down_termometro"
+       class="cls-3"
+       x1="160.92"
+       y1="218.99001"
+       x2="193.63"
+       y2="218.99001" />
+    <path
+       id="termometro_azzurro"
+       class="cls-4"
+       d="m 145.5,289.08 -0.05,-29.74 c 0,0 3.08,-18.69 -1.19,-21.19 -4.74,-2.77 -13.84,-4.36 -13.84,-4.36 0,0 -11.51,1.26 -16.06,4.36 -4.12,2.8 -1.39,23.7 -1.39,23.7 l 0.3,27.7 c -12.35,6.9 -35.09,19.62 -35,44.86 0.07,39.89 28.61,52.54 53.83,52.8 25.22,0.26 46.68,-13.08 50.37,-48.13 2.75,-26.64 -24.75,-42.86 -36.97,-50 z" />
+    <polygon
+       id="freccia_bianca_up"
+       class="cls-5"
+       points="304.2,79.45 301.87,163.56 263.55,161.69 320.4,243.46 375.22,166.13 333.17,164.73 331.77,79.45 "
+       transform="translate(-26,-24)" />
+    <polygon
+       id="freccia_bianca_down"
+       class="cls-5"
+       points="367.75,261.68 365.41,346.25 327.1,344.85 383.95,426.62 438.77,349.29 396.72,347.42 395.31,261.68 "
+       transform="translate(-26,-24)" />
+  </g>
+  <metadata
+     id="metadata836">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>freddo_2</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>

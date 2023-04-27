@@ -1,0 +1,35 @@
+dn: cn=aliccoop,dc=ldap
+objectClass: inetOrgPerson
+givenName: Alice
+sn: Cooper
+cn: aliccoop
+initials: ac
+mail: alice.cooper@ldap.example.com
+userPassword: mypass
+
+dn: cn=billidol,dc=ldap
+objectClass: inetOrgPerson
+givenName: Billy
+sn: Idol
+cn: billidol
+initials: bi
+mail: billy.idol@ldap.example.com
+userPassword: mypass
+
+dn: cn=carlbrun,dc=ldap
+objectClass: inetOrgPerson
+givenName: Carla
+sn: Bruni
+cn: carlbrun
+initials: cb
+mail: carla.bruni@ldap.example.com
+userPassword: mypass
+
+dn: cn=auto,dc=ldap
+objectClass: inetOrgPerson
+givenName: Bollettino ozono automatico
+sn: Bollettino ozono automatico
+cn: Bollettino ozono automatico
+initials: Bollettino ozono automatico
+mail: auto@ldap.example.com
+userPassword: mypass

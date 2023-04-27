@@ -1,0 +1,3980 @@
+[
+    {
+        "id_allertamento": "Piem-A",
+        "id_time_layouts": 43,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-A",
+        "id_time_layouts": 44,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-A",
+        "id_time_layouts": 45,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-A",
+        "id_time_layouts": 46,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-A",
+        "id_time_layouts": 60,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-A",
+        "id_time_layouts": 61,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-A",
+        "id_time_layouts": 62,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-A",
+        "id_time_layouts": 63,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-A",
+        "id_time_layouts": 77,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-A",
+        "id_time_layouts": 78,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-A",
+        "id_time_layouts": 79,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-A",
+        "id_time_layouts": 80,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-A",
+        "id_time_layouts": 43,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-A",
+        "id_time_layouts": 44,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-A",
+        "id_time_layouts": 45,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-A",
+        "id_time_layouts": 46,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-A",
+        "id_time_layouts": 60,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-A",
+        "id_time_layouts": 61,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-A",
+        "id_time_layouts": 62,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-A",
+        "id_time_layouts": 63,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-A",
+        "id_time_layouts": 77,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-A",
+        "id_time_layouts": 78,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-A",
+        "id_time_layouts": 79,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-A",
+        "id_time_layouts": 80,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-B",
+        "id_time_layouts": 43,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-B",
+        "id_time_layouts": 44,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-B",
+        "id_time_layouts": 45,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-B",
+        "id_time_layouts": 46,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-B",
+        "id_time_layouts": 60,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-B",
+        "id_time_layouts": 61,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-B",
+        "id_time_layouts": 62,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-B",
+        "id_time_layouts": 63,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-B",
+        "id_time_layouts": 77,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-B",
+        "id_time_layouts": 78,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-B",
+        "id_time_layouts": 79,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-B",
+        "id_time_layouts": 80,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-B",
+        "id_time_layouts": 43,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-B",
+        "id_time_layouts": 44,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-B",
+        "id_time_layouts": 45,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-B",
+        "id_time_layouts": 46,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-B",
+        "id_time_layouts": 60,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-B",
+        "id_time_layouts": 61,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-B",
+        "id_time_layouts": 62,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-B",
+        "id_time_layouts": 63,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-B",
+        "id_time_layouts": 77,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-B",
+        "id_time_layouts": 78,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-B",
+        "id_time_layouts": 79,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-B",
+        "id_time_layouts": 80,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-C",
+        "id_time_layouts": 43,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-C",
+        "id_time_layouts": 44,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-C",
+        "id_time_layouts": 45,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-C",
+        "id_time_layouts": 46,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-C",
+        "id_time_layouts": 60,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-C",
+        "id_time_layouts": 61,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-C",
+        "id_time_layouts": 62,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-C",
+        "id_time_layouts": 63,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-C",
+        "id_time_layouts": 77,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-C",
+        "id_time_layouts": 78,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-C",
+        "id_time_layouts": 79,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-C",
+        "id_time_layouts": 80,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-C",
+        "id_time_layouts": 43,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-C",
+        "id_time_layouts": 44,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-C",
+        "id_time_layouts": 45,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-C",
+        "id_time_layouts": 46,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-C",
+        "id_time_layouts": 60,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-C",
+        "id_time_layouts": 61,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-C",
+        "id_time_layouts": 62,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-C",
+        "id_time_layouts": 63,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-C",
+        "id_time_layouts": 77,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-C",
+        "id_time_layouts": 78,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-C",
+        "id_time_layouts": 79,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-C",
+        "id_time_layouts": 80,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-D",
+        "id_time_layouts": 43,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-D",
+        "id_time_layouts": 44,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-D",
+        "id_time_layouts": 45,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-D",
+        "id_time_layouts": 46,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-D",
+        "id_time_layouts": 60,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-D",
+        "id_time_layouts": 61,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-D",
+        "id_time_layouts": 62,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-D",
+        "id_time_layouts": 63,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-D",
+        "id_time_layouts": 77,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-D",
+        "id_time_layouts": 78,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-D",
+        "id_time_layouts": 79,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-D",
+        "id_time_layouts": 80,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-D",
+        "id_time_layouts": 43,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-D",
+        "id_time_layouts": 44,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-D",
+        "id_time_layouts": 45,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-D",
+        "id_time_layouts": 46,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-D",
+        "id_time_layouts": 60,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-D",
+        "id_time_layouts": 61,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-D",
+        "id_time_layouts": 62,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-D",
+        "id_time_layouts": 63,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-D",
+        "id_time_layouts": 77,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-D",
+        "id_time_layouts": 78,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-D",
+        "id_time_layouts": 79,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-D",
+        "id_time_layouts": 80,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-E",
+        "id_time_layouts": 43,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-E",
+        "id_time_layouts": 44,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-E",
+        "id_time_layouts": 45,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-E",
+        "id_time_layouts": 46,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-E",
+        "id_time_layouts": 60,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-E",
+        "id_time_layouts": 61,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-E",
+        "id_time_layouts": 62,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-E",
+        "id_time_layouts": 63,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-E",
+        "id_time_layouts": 77,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-E",
+        "id_time_layouts": 78,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-E",
+        "id_time_layouts": 79,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-E",
+        "id_time_layouts": 80,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-E",
+        "id_time_layouts": 43,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-E",
+        "id_time_layouts": 44,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-E",
+        "id_time_layouts": 45,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-E",
+        "id_time_layouts": 46,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-E",
+        "id_time_layouts": 60,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-E",
+        "id_time_layouts": 61,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-E",
+        "id_time_layouts": 62,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-E",
+        "id_time_layouts": 63,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-E",
+        "id_time_layouts": 77,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-E",
+        "id_time_layouts": 78,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-E",
+        "id_time_layouts": 79,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-E",
+        "id_time_layouts": 80,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-F",
+        "id_time_layouts": 43,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-F",
+        "id_time_layouts": 44,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-F",
+        "id_time_layouts": 45,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-F",
+        "id_time_layouts": 46,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-F",
+        "id_time_layouts": 60,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-F",
+        "id_time_layouts": 61,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-F",
+        "id_time_layouts": 62,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-F",
+        "id_time_layouts": 63,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-F",
+        "id_time_layouts": 77,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-F",
+        "id_time_layouts": 78,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-F",
+        "id_time_layouts": 79,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-F",
+        "id_time_layouts": 80,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-F",
+        "id_time_layouts": 43,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-F",
+        "id_time_layouts": 44,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-F",
+        "id_time_layouts": 45,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-F",
+        "id_time_layouts": 46,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-F",
+        "id_time_layouts": 60,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-F",
+        "id_time_layouts": 61,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-F",
+        "id_time_layouts": 62,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-F",
+        "id_time_layouts": 63,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-F",
+        "id_time_layouts": 77,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-F",
+        "id_time_layouts": 78,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-F",
+        "id_time_layouts": 79,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-F",
+        "id_time_layouts": 80,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-G",
+        "id_time_layouts": 43,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-G",
+        "id_time_layouts": 44,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-G",
+        "id_time_layouts": 45,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-G",
+        "id_time_layouts": 46,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-G",
+        "id_time_layouts": 60,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-G",
+        "id_time_layouts": 61,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-G",
+        "id_time_layouts": 62,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-G",
+        "id_time_layouts": 63,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-G",
+        "id_time_layouts": 77,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-G",
+        "id_time_layouts": 78,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-G",
+        "id_time_layouts": 79,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-G",
+        "id_time_layouts": 80,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-G",
+        "id_time_layouts": 43,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-G",
+        "id_time_layouts": 44,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-G",
+        "id_time_layouts": 45,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-G",
+        "id_time_layouts": 46,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-G",
+        "id_time_layouts": 60,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-G",
+        "id_time_layouts": 61,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-G",
+        "id_time_layouts": 62,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-G",
+        "id_time_layouts": 63,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-G",
+        "id_time_layouts": 77,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-G",
+        "id_time_layouts": 78,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-G",
+        "id_time_layouts": 79,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-G",
+        "id_time_layouts": 80,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-H",
+        "id_time_layouts": 43,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-H",
+        "id_time_layouts": 44,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-H",
+        "id_time_layouts": 45,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-H",
+        "id_time_layouts": 46,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-H",
+        "id_time_layouts": 60,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-H",
+        "id_time_layouts": 61,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-H",
+        "id_time_layouts": 62,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-H",
+        "id_time_layouts": 63,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-H",
+        "id_time_layouts": 77,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-H",
+        "id_time_layouts": 78,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-H",
+        "id_time_layouts": 79,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-H",
+        "id_time_layouts": 80,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-H",
+        "id_time_layouts": 43,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-H",
+        "id_time_layouts": 44,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-H",
+        "id_time_layouts": 45,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-H",
+        "id_time_layouts": 46,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-H",
+        "id_time_layouts": 60,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-H",
+        "id_time_layouts": 61,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-H",
+        "id_time_layouts": 62,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-H",
+        "id_time_layouts": 63,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-H",
+        "id_time_layouts": 77,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-H",
+        "id_time_layouts": 78,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-H",
+        "id_time_layouts": 79,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-H",
+        "id_time_layouts": 80,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-I",
+        "id_time_layouts": 43,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-I",
+        "id_time_layouts": 44,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-I",
+        "id_time_layouts": 45,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-I",
+        "id_time_layouts": 46,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-I",
+        "id_time_layouts": 60,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-I",
+        "id_time_layouts": 61,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-I",
+        "id_time_layouts": 62,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-I",
+        "id_time_layouts": 63,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-I",
+        "id_time_layouts": 77,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-I",
+        "id_time_layouts": 78,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-I",
+        "id_time_layouts": 79,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-I",
+        "id_time_layouts": 80,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-I",
+        "id_time_layouts": 43,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-I",
+        "id_time_layouts": 44,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-I",
+        "id_time_layouts": 45,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-I",
+        "id_time_layouts": 46,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-I",
+        "id_time_layouts": 60,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-I",
+        "id_time_layouts": 61,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-I",
+        "id_time_layouts": 62,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-I",
+        "id_time_layouts": 63,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-I",
+        "id_time_layouts": 77,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-I",
+        "id_time_layouts": 78,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-I",
+        "id_time_layouts": 79,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-I",
+        "id_time_layouts": 80,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-L",
+        "id_time_layouts": 43,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-L",
+        "id_time_layouts": 44,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-L",
+        "id_time_layouts": 45,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-L",
+        "id_time_layouts": 46,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-L",
+        "id_time_layouts": 60,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-L",
+        "id_time_layouts": 61,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-L",
+        "id_time_layouts": 62,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-L",
+        "id_time_layouts": 63,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-L",
+        "id_time_layouts": 77,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-L",
+        "id_time_layouts": 78,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-L",
+        "id_time_layouts": 79,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-L",
+        "id_time_layouts": 80,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-L",
+        "id_time_layouts": 43,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-L",
+        "id_time_layouts": 44,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-L",
+        "id_time_layouts": 45,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-L",
+        "id_time_layouts": 46,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-L",
+        "id_time_layouts": 60,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-L",
+        "id_time_layouts": 61,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-L",
+        "id_time_layouts": 62,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-L",
+        "id_time_layouts": 63,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-L",
+        "id_time_layouts": 77,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-L",
+        "id_time_layouts": 78,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-L",
+        "id_time_layouts": 79,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-L",
+        "id_time_layouts": 80,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-M",
+        "id_time_layouts": 43,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-M",
+        "id_time_layouts": 44,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-M",
+        "id_time_layouts": 45,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-M",
+        "id_time_layouts": 46,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-M",
+        "id_time_layouts": 60,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-M",
+        "id_time_layouts": 61,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-M",
+        "id_time_layouts": 62,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-M",
+        "id_time_layouts": 63,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-M",
+        "id_time_layouts": 77,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-M",
+        "id_time_layouts": 78,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-M",
+        "id_time_layouts": 79,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-M",
+        "id_time_layouts": 80,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-M",
+        "id_time_layouts": 43,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-M",
+        "id_time_layouts": 44,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-M",
+        "id_time_layouts": 45,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-M",
+        "id_time_layouts": 46,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-M",
+        "id_time_layouts": 60,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-M",
+        "id_time_layouts": 61,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-M",
+        "id_time_layouts": 62,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-M",
+        "id_time_layouts": 63,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-M",
+        "id_time_layouts": 77,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-M",
+        "id_time_layouts": 78,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-M",
+        "id_time_layouts": 79,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-M",
+        "id_time_layouts": 80,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-T",
+        "id_time_layouts": 43,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-T",
+        "id_time_layouts": 44,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-T",
+        "id_time_layouts": 45,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-T",
+        "id_time_layouts": 46,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-T",
+        "id_time_layouts": 60,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-T",
+        "id_time_layouts": 61,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-T",
+        "id_time_layouts": 62,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-T",
+        "id_time_layouts": 63,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-T",
+        "id_time_layouts": 77,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-T",
+        "id_time_layouts": 78,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-T",
+        "id_time_layouts": 79,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-T",
+        "id_time_layouts": 80,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-T",
+        "id_time_layouts": 43,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-T",
+        "id_time_layouts": 44,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-T",
+        "id_time_layouts": 45,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-T",
+        "id_time_layouts": 46,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-T",
+        "id_time_layouts": 60,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-T",
+        "id_time_layouts": 61,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-T",
+        "id_time_layouts": 62,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-T",
+        "id_time_layouts": 63,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-T",
+        "id_time_layouts": 77,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-T",
+        "id_time_layouts": 78,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-T",
+        "id_time_layouts": 79,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-T",
+        "id_time_layouts": 80,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-V",
+        "id_time_layouts": 43,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-V",
+        "id_time_layouts": 44,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-V",
+        "id_time_layouts": 45,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-V",
+        "id_time_layouts": 46,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-V",
+        "id_time_layouts": 60,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-V",
+        "id_time_layouts": 61,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-V",
+        "id_time_layouts": 62,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-V",
+        "id_time_layouts": 63,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-V",
+        "id_time_layouts": 77,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-V",
+        "id_time_layouts": 78,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-V",
+        "id_time_layouts": 79,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-V",
+        "id_time_layouts": 80,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "900"
+    },
+    {
+        "id_allertamento": "Piem-V",
+        "id_time_layouts": 43,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-V",
+        "id_time_layouts": 44,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-V",
+        "id_time_layouts": 45,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-V",
+        "id_time_layouts": 46,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-V",
+        "id_time_layouts": 60,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-V",
+        "id_time_layouts": 61,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-V",
+        "id_time_layouts": 62,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-V",
+        "id_time_layouts": 63,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-V",
+        "id_time_layouts": 77,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-V",
+        "id_time_layouts": 78,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-V",
+        "id_time_layouts": 79,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-V",
+        "id_time_layouts": 80,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "125"
+    },
+    {
+        "id_allertamento": "Piem-A",
+        "id_time_layouts": 43,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-A",
+        "id_time_layouts": 44,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-A",
+        "id_time_layouts": 45,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-A",
+        "id_time_layouts": 46,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-A",
+        "id_time_layouts": 60,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-A",
+        "id_time_layouts": 61,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-A",
+        "id_time_layouts": 62,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-A",
+        "id_time_layouts": 63,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-A",
+        "id_time_layouts": 77,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-A",
+        "id_time_layouts": 78,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-A",
+        "id_time_layouts": 79,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-A",
+        "id_time_layouts": 80,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-A",
+        "id_time_layouts": 43,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-A",
+        "id_time_layouts": 44,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-A",
+        "id_time_layouts": 45,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-A",
+        "id_time_layouts": 46,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-A",
+        "id_time_layouts": 60,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-A",
+        "id_time_layouts": 61,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-A",
+        "id_time_layouts": 62,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-A",
+        "id_time_layouts": 63,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-A",
+        "id_time_layouts": 77,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-A",
+        "id_time_layouts": 78,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-A",
+        "id_time_layouts": 79,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-A",
+        "id_time_layouts": 80,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-B",
+        "id_time_layouts": 43,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-B",
+        "id_time_layouts": 44,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-B",
+        "id_time_layouts": 45,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-B",
+        "id_time_layouts": 46,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-B",
+        "id_time_layouts": 60,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-B",
+        "id_time_layouts": 61,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-B",
+        "id_time_layouts": 62,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-B",
+        "id_time_layouts": 63,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-B",
+        "id_time_layouts": 77,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-B",
+        "id_time_layouts": 78,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-B",
+        "id_time_layouts": 79,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-B",
+        "id_time_layouts": 80,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-B",
+        "id_time_layouts": 43,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-B",
+        "id_time_layouts": 44,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-B",
+        "id_time_layouts": 45,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-B",
+        "id_time_layouts": 46,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-B",
+        "id_time_layouts": 60,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-B",
+        "id_time_layouts": 61,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-B",
+        "id_time_layouts": 62,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-B",
+        "id_time_layouts": 63,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-B",
+        "id_time_layouts": 77,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-B",
+        "id_time_layouts": 78,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-B",
+        "id_time_layouts": 79,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-B",
+        "id_time_layouts": 80,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-C",
+        "id_time_layouts": 43,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-C",
+        "id_time_layouts": 44,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-C",
+        "id_time_layouts": 45,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-C",
+        "id_time_layouts": 46,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-C",
+        "id_time_layouts": 60,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-C",
+        "id_time_layouts": 61,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-C",
+        "id_time_layouts": 62,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-C",
+        "id_time_layouts": 63,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-C",
+        "id_time_layouts": 77,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-C",
+        "id_time_layouts": 78,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-C",
+        "id_time_layouts": 79,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-C",
+        "id_time_layouts": 80,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-C",
+        "id_time_layouts": 43,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-C",
+        "id_time_layouts": 44,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-C",
+        "id_time_layouts": 45,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-C",
+        "id_time_layouts": 46,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-C",
+        "id_time_layouts": 60,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-C",
+        "id_time_layouts": 61,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-C",
+        "id_time_layouts": 62,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-C",
+        "id_time_layouts": 63,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-C",
+        "id_time_layouts": 77,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-C",
+        "id_time_layouts": 78,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-C",
+        "id_time_layouts": 79,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-C",
+        "id_time_layouts": 80,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-D",
+        "id_time_layouts": 43,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-D",
+        "id_time_layouts": 44,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-D",
+        "id_time_layouts": 45,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-D",
+        "id_time_layouts": 46,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-D",
+        "id_time_layouts": 60,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-D",
+        "id_time_layouts": 61,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-D",
+        "id_time_layouts": 62,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-D",
+        "id_time_layouts": 63,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-D",
+        "id_time_layouts": 77,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-D",
+        "id_time_layouts": 78,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-D",
+        "id_time_layouts": 79,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-D",
+        "id_time_layouts": 80,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-D",
+        "id_time_layouts": 43,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-D",
+        "id_time_layouts": 44,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-D",
+        "id_time_layouts": 45,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-D",
+        "id_time_layouts": 46,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-D",
+        "id_time_layouts": 60,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-D",
+        "id_time_layouts": 61,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-D",
+        "id_time_layouts": 62,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-D",
+        "id_time_layouts": 63,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-D",
+        "id_time_layouts": 77,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-D",
+        "id_time_layouts": 78,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-D",
+        "id_time_layouts": 79,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-D",
+        "id_time_layouts": 80,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-E",
+        "id_time_layouts": 43,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-E",
+        "id_time_layouts": 44,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-E",
+        "id_time_layouts": 45,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-E",
+        "id_time_layouts": 46,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-E",
+        "id_time_layouts": 60,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-E",
+        "id_time_layouts": 61,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-E",
+        "id_time_layouts": 62,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-E",
+        "id_time_layouts": 63,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-E",
+        "id_time_layouts": 77,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-E",
+        "id_time_layouts": 78,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-E",
+        "id_time_layouts": 79,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-E",
+        "id_time_layouts": 80,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-E",
+        "id_time_layouts": 43,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-E",
+        "id_time_layouts": 44,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-E",
+        "id_time_layouts": 45,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-E",
+        "id_time_layouts": 46,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-E",
+        "id_time_layouts": 60,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-E",
+        "id_time_layouts": 61,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-E",
+        "id_time_layouts": 62,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-E",
+        "id_time_layouts": 63,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-E",
+        "id_time_layouts": 77,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-E",
+        "id_time_layouts": 78,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-E",
+        "id_time_layouts": 79,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-E",
+        "id_time_layouts": 80,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-F",
+        "id_time_layouts": 43,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-F",
+        "id_time_layouts": 44,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-F",
+        "id_time_layouts": 45,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-F",
+        "id_time_layouts": 46,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-F",
+        "id_time_layouts": 60,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-F",
+        "id_time_layouts": 61,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-F",
+        "id_time_layouts": 62,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-F",
+        "id_time_layouts": 63,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-F",
+        "id_time_layouts": 77,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-F",
+        "id_time_layouts": 78,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-F",
+        "id_time_layouts": 79,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-F",
+        "id_time_layouts": 80,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-F",
+        "id_time_layouts": 43,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-F",
+        "id_time_layouts": 44,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-F",
+        "id_time_layouts": 45,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-F",
+        "id_time_layouts": 46,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-F",
+        "id_time_layouts": 60,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-F",
+        "id_time_layouts": 61,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-F",
+        "id_time_layouts": 62,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-F",
+        "id_time_layouts": 63,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-F",
+        "id_time_layouts": 77,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-F",
+        "id_time_layouts": 78,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-F",
+        "id_time_layouts": 79,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-F",
+        "id_time_layouts": 80,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-G",
+        "id_time_layouts": 43,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-G",
+        "id_time_layouts": 44,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-G",
+        "id_time_layouts": 45,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-G",
+        "id_time_layouts": 46,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-G",
+        "id_time_layouts": 60,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-G",
+        "id_time_layouts": 61,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-G",
+        "id_time_layouts": 62,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-G",
+        "id_time_layouts": 63,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-G",
+        "id_time_layouts": 77,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-G",
+        "id_time_layouts": 78,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-G",
+        "id_time_layouts": 79,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-G",
+        "id_time_layouts": 80,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-G",
+        "id_time_layouts": 43,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-G",
+        "id_time_layouts": 44,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-G",
+        "id_time_layouts": 45,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-G",
+        "id_time_layouts": 46,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-G",
+        "id_time_layouts": 60,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-G",
+        "id_time_layouts": 61,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-G",
+        "id_time_layouts": 62,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-G",
+        "id_time_layouts": 63,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-G",
+        "id_time_layouts": 77,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-G",
+        "id_time_layouts": 78,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-G",
+        "id_time_layouts": 79,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-G",
+        "id_time_layouts": 80,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-H",
+        "id_time_layouts": 43,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-H",
+        "id_time_layouts": 44,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-H",
+        "id_time_layouts": 45,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-H",
+        "id_time_layouts": 46,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-H",
+        "id_time_layouts": 60,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-H",
+        "id_time_layouts": 61,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-H",
+        "id_time_layouts": 62,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-H",
+        "id_time_layouts": 63,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-H",
+        "id_time_layouts": 77,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-H",
+        "id_time_layouts": 78,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-H",
+        "id_time_layouts": 79,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-H",
+        "id_time_layouts": 80,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-H",
+        "id_time_layouts": 43,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-H",
+        "id_time_layouts": 44,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-H",
+        "id_time_layouts": 45,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-H",
+        "id_time_layouts": 46,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-H",
+        "id_time_layouts": 60,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-H",
+        "id_time_layouts": 61,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-H",
+        "id_time_layouts": 62,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-H",
+        "id_time_layouts": 63,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-H",
+        "id_time_layouts": 77,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-H",
+        "id_time_layouts": 78,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-H",
+        "id_time_layouts": 79,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-H",
+        "id_time_layouts": 80,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-I",
+        "id_time_layouts": 43,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-I",
+        "id_time_layouts": 44,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-I",
+        "id_time_layouts": 45,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-I",
+        "id_time_layouts": 46,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-I",
+        "id_time_layouts": 60,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-I",
+        "id_time_layouts": 61,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-I",
+        "id_time_layouts": 62,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-I",
+        "id_time_layouts": 63,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-I",
+        "id_time_layouts": 77,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-I",
+        "id_time_layouts": 78,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-I",
+        "id_time_layouts": 79,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-I",
+        "id_time_layouts": 80,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-I",
+        "id_time_layouts": 43,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-I",
+        "id_time_layouts": 44,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-I",
+        "id_time_layouts": 45,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-I",
+        "id_time_layouts": 46,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-I",
+        "id_time_layouts": 60,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-I",
+        "id_time_layouts": 61,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-I",
+        "id_time_layouts": 62,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-I",
+        "id_time_layouts": 63,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-I",
+        "id_time_layouts": 77,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-I",
+        "id_time_layouts": 78,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-I",
+        "id_time_layouts": 79,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-I",
+        "id_time_layouts": 80,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-L",
+        "id_time_layouts": 43,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-L",
+        "id_time_layouts": 44,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-L",
+        "id_time_layouts": 45,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-L",
+        "id_time_layouts": 46,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-L",
+        "id_time_layouts": 60,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-L",
+        "id_time_layouts": 61,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-L",
+        "id_time_layouts": 62,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-L",
+        "id_time_layouts": 63,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-L",
+        "id_time_layouts": 77,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-L",
+        "id_time_layouts": 78,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-L",
+        "id_time_layouts": 79,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-L",
+        "id_time_layouts": 80,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-L",
+        "id_time_layouts": 43,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-L",
+        "id_time_layouts": 44,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-L",
+        "id_time_layouts": 45,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-L",
+        "id_time_layouts": 46,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-L",
+        "id_time_layouts": 60,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-L",
+        "id_time_layouts": 61,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-L",
+        "id_time_layouts": 62,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-L",
+        "id_time_layouts": 63,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-L",
+        "id_time_layouts": 77,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-L",
+        "id_time_layouts": 78,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-L",
+        "id_time_layouts": 79,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-L",
+        "id_time_layouts": 80,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-M",
+        "id_time_layouts": 43,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-M",
+        "id_time_layouts": 44,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-M",
+        "id_time_layouts": 45,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-M",
+        "id_time_layouts": 46,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-M",
+        "id_time_layouts": 60,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-M",
+        "id_time_layouts": 61,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-M",
+        "id_time_layouts": 62,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-M",
+        "id_time_layouts": 63,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-M",
+        "id_time_layouts": 77,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-M",
+        "id_time_layouts": 78,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-M",
+        "id_time_layouts": 79,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-M",
+        "id_time_layouts": 80,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-M",
+        "id_time_layouts": 43,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-M",
+        "id_time_layouts": 44,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-M",
+        "id_time_layouts": 45,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-M",
+        "id_time_layouts": 46,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-M",
+        "id_time_layouts": 60,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-M",
+        "id_time_layouts": 61,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-M",
+        "id_time_layouts": 62,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-M",
+        "id_time_layouts": 63,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-M",
+        "id_time_layouts": 77,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-M",
+        "id_time_layouts": 78,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-M",
+        "id_time_layouts": 79,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-M",
+        "id_time_layouts": 80,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-T",
+        "id_time_layouts": 43,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-T",
+        "id_time_layouts": 44,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-T",
+        "id_time_layouts": 45,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-T",
+        "id_time_layouts": 46,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-T",
+        "id_time_layouts": 60,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-T",
+        "id_time_layouts": 61,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-T",
+        "id_time_layouts": 62,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-T",
+        "id_time_layouts": 63,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-T",
+        "id_time_layouts": 77,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-T",
+        "id_time_layouts": 78,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-T",
+        "id_time_layouts": 79,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-T",
+        "id_time_layouts": 80,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-T",
+        "id_time_layouts": 43,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-T",
+        "id_time_layouts": 44,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-T",
+        "id_time_layouts": 45,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-T",
+        "id_time_layouts": 46,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-T",
+        "id_time_layouts": 60,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-T",
+        "id_time_layouts": 61,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-T",
+        "id_time_layouts": 62,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-T",
+        "id_time_layouts": 63,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-T",
+        "id_time_layouts": 77,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-T",
+        "id_time_layouts": 78,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-T",
+        "id_time_layouts": 79,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-T",
+        "id_time_layouts": 80,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-V",
+        "id_time_layouts": 43,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-V",
+        "id_time_layouts": 44,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-V",
+        "id_time_layouts": 45,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-V",
+        "id_time_layouts": 46,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-V",
+        "id_time_layouts": 60,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-V",
+        "id_time_layouts": 61,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-V",
+        "id_time_layouts": 62,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-V",
+        "id_time_layouts": 63,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-V",
+        "id_time_layouts": 77,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-V",
+        "id_time_layouts": 78,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-V",
+        "id_time_layouts": 79,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-V",
+        "id_time_layouts": 80,
+        "id_parametro": "FRZLVL",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-V",
+        "id_time_layouts": 43,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-V",
+        "id_time_layouts": 44,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-V",
+        "id_time_layouts": 45,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-V",
+        "id_time_layouts": 46,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-V",
+        "id_time_layouts": 60,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-V",
+        "id_time_layouts": 61,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-V",
+        "id_time_layouts": 62,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-V",
+        "id_time_layouts": 63,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-V",
+        "id_time_layouts": 77,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-V",
+        "id_time_layouts": 78,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-V",
+        "id_time_layouts": 79,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-V",
+        "id_time_layouts": 80,
+        "id_parametro": "SNOW_LEV",
+        "id_aggregazione": "0"
+    },
+    {
+        "id_allertamento": "Piem-A",
+        "id_time_layouts": 48,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "126"
+    },
+    {
+        "id_allertamento": "Piem-B",
+        "id_time_layouts": 48,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "126"
+    },
+    {
+        "id_allertamento": "Piem-C",
+        "id_time_layouts": 48,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "126"
+    },
+    {
+        "id_allertamento": "Piem-D",
+        "id_time_layouts": 48,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "126"
+    },
+    {
+        "id_allertamento": "Piem-E",
+        "id_time_layouts": 48,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "126"
+    },
+    {
+        "id_allertamento": "Piem-F",
+        "id_time_layouts": 48,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "126"
+    },
+    {
+        "id_allertamento": "Piem-G",
+        "id_time_layouts": 48,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "126"
+    },
+    {
+        "id_allertamento": "Piem-H",
+        "id_time_layouts": 48,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "126"
+    },
+    {
+        "id_allertamento": "Piem-I",
+        "id_time_layouts": 48,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "126"
+    },
+    {
+        "id_allertamento": "Piem-L",
+        "id_time_layouts": 48,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "126"
+    },
+    {
+        "id_allertamento": "Piem-M",
+        "id_time_layouts": 48,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "126"
+    },
+    {
+        "id_allertamento": "Piem-V",
+        "id_time_layouts": 48,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "126"
+    },
+    {
+        "id_allertamento": "Piem-T",
+        "id_time_layouts": 48,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "126"
+    },
+    {
+        "id_allertamento": "Piem-A",
+        "id_time_layouts": 66,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "127"
+    },
+    {
+        "id_allertamento": "Piem-B",
+        "id_time_layouts": 66,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "127"
+    },
+    {
+        "id_allertamento": "Piem-C",
+        "id_time_layouts": 66,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "127"
+    },
+    {
+        "id_allertamento": "Piem-D",
+        "id_time_layouts": 66,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "127"
+    },
+    {
+        "id_allertamento": "Piem-E",
+        "id_time_layouts": 66,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "127"
+    },
+    {
+        "id_allertamento": "Piem-F",
+        "id_time_layouts": 66,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "127"
+    },
+    {
+        "id_allertamento": "Piem-G",
+        "id_time_layouts": 66,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "127"
+    },
+    {
+        "id_allertamento": "Piem-H",
+        "id_time_layouts": 66,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "127"
+    },
+    {
+        "id_allertamento": "Piem-I",
+        "id_time_layouts": 66,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "127"
+    },
+    {
+        "id_allertamento": "Piem-L",
+        "id_time_layouts": 66,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "127"
+    },
+    {
+        "id_allertamento": "Piem-M",
+        "id_time_layouts": 66,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "127"
+    },
+    {
+        "id_allertamento": "Piem-V",
+        "id_time_layouts": 66,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "127"
+    },
+    {
+        "id_allertamento": "Piem-T",
+        "id_time_layouts": 66,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "127"
+    },
+    {
+        "id_allertamento": "Piem-A",
+        "id_time_layouts": 66,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "126"
+    },
+    {
+        "id_allertamento": "Piem-B",
+        "id_time_layouts": 66,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "126"
+    },
+    {
+        "id_allertamento": "Piem-C",
+        "id_time_layouts": 66,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "126"
+    },
+    {
+        "id_allertamento": "Piem-D",
+        "id_time_layouts": 66,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "126"
+    },
+    {
+        "id_allertamento": "Piem-E",
+        "id_time_layouts": 66,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "126"
+    },
+    {
+        "id_allertamento": "Piem-F",
+        "id_time_layouts": 66,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "126"
+    },
+    {
+        "id_allertamento": "Piem-G",
+        "id_time_layouts": 66,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "126"
+    },
+    {
+        "id_allertamento": "Piem-H",
+        "id_time_layouts": 66,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "126"
+    },
+    {
+        "id_allertamento": "Piem-I",
+        "id_time_layouts": 66,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "126"
+    },
+    {
+        "id_allertamento": "Piem-L",
+        "id_time_layouts": 66,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "126"
+    },
+    {
+        "id_allertamento": "Piem-M",
+        "id_time_layouts": 66,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "126"
+    },
+    {
+        "id_allertamento": "Piem-V",
+        "id_time_layouts": 66,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "126"
+    },
+    {
+        "id_allertamento": "Piem-T",
+        "id_time_layouts": 66,
+        "id_parametro": "PLUV",
+        "id_aggregazione": "126"
+    }
+]

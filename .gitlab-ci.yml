@@ -1,0 +1,317 @@
+stages:
+  - prepare and lint
+  - build deps images
+  - build intermediate images
+  - build final images
+  - test
+  - tag
+  - deploy
+
+variables:
+  # bump this if you want to force rebuilding the deps images;
+  # they get rebuilt automatically when touching files under `compose/` or `requirements/`
+  # or `package.json` or `yarn.lock`
+  DEPS_STAMP: '20210119-0'
+
+.test-variables:
+  variables:
+    DJANGO_ALLOWED_HOSTS: '*'
+    DJANGO_SECRET_KEY: 'REPLACE_ME'
+    DJANGO_SITE_DOMAIN: hello.example.com
+    DJANGO_SITE_NAME: Hello Website
+    DJANGO_TIME_ZONE: Europe/Rome
+    CELERY_BROKER_URL: 'redis://redis:6379'
+
+prepare:
+  stage: prepare and lint
+  image:
+    name: alpine/git
+    entrypoint: [""]
+  variables:
+    # disable shallow cloning or `git rev-list --count` used below won't work
+    GIT_DEPTH: 0
+  script:
+    - GIT_VERSION=$(git log -n1 --pretty='%h')
+    - TAG=${GIT_VERSION}-${CI_PIPELINE_ID}
+    - DEPS_BACKEND_COMMIT_HASH=$(git rev-list -1 HEAD -- compose/backend requirements/)
+    - DEPS_BACKEND_COMMIT_COUNT=$(git rev-list --count "$DEPS_BACKEND_COMMIT_HASH")
+    - DEPS_FRONTEND_COMMIT_HASH=$(git rev-list -1 HEAD -- compose/frontend package.json yarn.lock)
+    - DEPS_FRONTEND_COMMIT_COUNT=$(git rev-list --count "$DEPS_FRONTEND_COMMIT_HASH")
+    # yields tags like `deps-20201129-0-89-56fcfcc403a7-main` which ensure that
+    # deps images are rebuilt when:
+    #
+    # 1. the DEPS_STAMP variable is bumped
+    # 2. a new commit touches files under `compose/` or `requirements/` or `package.json` or `yarn.lock`
+    #
+    # otherwise existing images are re-used on a per-branch basis, skipping the
+    # most time-consuming steps in the pipeline
+    - DEPS_BACKEND_TAG="deps-${DEPS_STAMP}-${DEPS_BACKEND_COMMIT_COUNT}-${DEPS_BACKEND_COMMIT_HASH}-${CI_COMMIT_REF_SLUG}"
+    - DEPS_FRONTEND_TAG="deps-${DEPS_STAMP}-${DEPS_FRONTEND_COMMIT_COUNT}-${DEPS_FRONTEND_COMMIT_HASH}-${CI_COMMIT_REF_SLUG}"
+    - echo "TAG=$TAG" | tee -a build-env.txt
+    - echo "DEPS_BACKEND_TAG=$DEPS_BACKEND_TAG" | tee -a build-env.txt
+    - echo "DEPS_FRONTEND_TAG=$DEPS_FRONTEND_TAG" | tee -a build-env.txt
+  artifacts:
+    reports:
+      dotenv: build-env.txt
+
+lint-python:
+  stage: prepare and lint
+  image: "$DOCKER_REGISTRY/images/lint_python:latest"
+  script:
+    - black . --check --diff
+    - flake8 --config=setup.cfg
+    - isort . --check-only --diff --profile black
+
+lint-javascript:
+  stage: prepare and lint
+  image: node:16
+  before_script:
+    - echo 'yarn-offline-mirror ".yarn-cache/"' >> .yarnrc
+    - echo 'yarn-offline-mirror-pruning true' >> .yarnrc
+    - yarnpkg
+  script:
+    - yarnpkg lint
+  cache:
+    key:
+      files:
+        - yarn.lock
+    paths:
+      - .yarn-cache/
+
+lint-dockerfile:
+  stage: prepare and lint
+  image: hadolint/hadolint:latest-debian
+  script:
+    - hadolint --ignore DL3008 --ignore DL3006 compose/backend/Dockerfile
+    - hadolint --ignore DL3008 --ignore DL3006 compose/frontend/Dockerfile
+    - hadolint --ignore DL3008 --ignore DL3006 compose/postgres/Dockerfile
+
+.build-docker-image:
+  image:
+    name: gcr.io/kaniko-project/executor:debug
+    entrypoint: [""]
+  variables:
+    CONTEXT: .
+    ARGS: ''
+  script:
+    - TAG="${JOB_TAG:-${TAG}}"
+    - mkdir -p /kaniko/.docker/
+    # makes use of Gitlab's Predefined environment variables, see:
+    # https://docs.gitlab.com/ee/ci/variables/predefined_variables.html
+    - echo "CI_REGISTRY = $CI_REGISTRY"
+    - echo "CI_REGISTRY_USER = $CI_REGISTRY_USER"
+    - echo "{\"auths\":{\"$CI_REGISTRY\":{\"username\":\"$CI_REGISTRY_USER\",\"password\":\"$CI_REGISTRY_PASSWORD\"}}}" > /kaniko/.docker/config.json
+    - mkdir /kaniko/tmp/
+    - echo "FROM $REPO:$TAG" > /kaniko/tmp/Dockerfile
+    - |
+      if /kaniko/executor --context=/kaniko/tmp --verbosity=panic --no-push
+      then
+        echo "⏩ Image $REPO:$TAG already exists, skip rebuilding it"
+        exit 0
+      else
+        echo "👷 Image $REPO:$TAG not found, build it"
+      fi
+    - echo "VITE_REPO_HOME=$VITE_REPO_HOME" > "$CONTEXT"/.env
+    - echo "VITE_BASE_DATA_URL=$VITE_BASE_DATA_URL" >> "$CONTEXT"/.env
+    - cat "$CONTEXT"/.env
+    - set -x;
+      /kaniko/executor
+        --build-arg https_proxy="$HTTPS_PROXY"
+        --build-arg http_proxy="$HTTP_PROXY"
+        --context "$CONTEXT"
+        --dockerfile "$DOCKERFILE"
+        --destination "$REPO:$TAG"
+        $ARGS
+        --skip-unused-stages;
+      set +x
+    - echo "✅ Pushed $REPO:$TAG"
+
+build-docker-image-deps-backend:
+  extends: .build-docker-image
+  stage: build deps images
+  variables:
+    DOCKERFILE: ./compose/backend/Dockerfile
+    REPO: $CI_REGISTRY_IMAGE/deps-backend
+    JOB_TAG: $DEPS_BACKEND_TAG
+    ARGS:
+      --target deps-backend-base
+
+build-docker-image-deps-frontend:
+  extends: .build-docker-image
+  stage: build deps images
+  variables:
+    DOCKERFILE: ./compose/frontend/Dockerfile
+    REPO: $CI_REGISTRY_IMAGE/deps-frontend
+    JOB_TAG: $DEPS_FRONTEND_TAG
+    ARGS:
+      --target deps-frontend-base
+
+build-docker-image-deps-test:
+  stage: build intermediate images
+  extends: .build-docker-image
+  variables:
+    DOCKERFILE: ./compose/backend/Dockerfile
+    REPO: $CI_REGISTRY_IMAGE/deps-test
+    JOB_TAG: $DEPS_BACKEND_TAG
+    ARGS:
+      --target deps-test
+      --build-arg TEST_BASE_IMAGE=$CI_REGISTRY_IMAGE/deps-backend:$DEPS_BACKEND_TAG
+
+build-docker-image-backend:
+  extends: .build-docker-image
+  stage: build final images
+  variables:
+    DOCKERFILE: ./compose/backend/Dockerfile
+    REPO: $CI_REGISTRY_IMAGE/backend
+    ARGS:
+      --target backend
+      --build-arg APP_BASE_IMAGE=$CI_REGISTRY_IMAGE/deps-backend:$DEPS_BACKEND_TAG
+
+build-docker-image-frontend:
+  extends: .build-docker-image
+  stage: build final images
+  variables:
+    DOCKERFILE: ./compose/frontend/Dockerfile
+    REPO: $CI_REGISTRY_IMAGE/frontend
+    ARGS:
+      --target frontend
+      --build-arg FRONTEND_BASE_IMAGE=$CI_REGISTRY_IMAGE/deps-frontend:$DEPS_FRONTEND_TAG
+
+build-docker-image-tester:
+  extends: .build-docker-image
+  stage: build final images
+  variables:
+    DOCKERFILE: ./compose/backend/Dockerfile
+    REPO: $CI_REGISTRY_IMAGE/tester
+    ARGS:
+      --target backend
+      --build-arg APP_BASE_IMAGE=$CI_REGISTRY_IMAGE/deps-test:$DEPS_BACKEND_TAG
+
+build-docker-image-postgres:
+  extends: .build-docker-image
+  stage: build final images
+  variables:
+    DOCKERFILE: ./compose/postgres/Dockerfile
+    REPO: $CI_REGISTRY_IMAGE/postgres
+
+.pytest:
+  stage: test
+  image: "$DOCKER_REGISTRY/images/docker_compose:latest"
+
+pytest-app-integration-test:
+  # exercise Docker Compose and test the production-aimed image against a real
+  # PostgreSQL database
+  extends:
+    - .pytest
+    - .test-variables
+  tags:
+    - docker
+  services:
+    - name: docker:dind
+      command:
+        [
+          "--insecure-registry=gitlab.ad.arpa.piemonte.it:5050",
+        ]
+  variables:
+    DOCKER_DRIVER: overlay2
+    DOCKER_HOST: tcp://docker:2376
+    TEST_SITE_URL: http://docker:8080/
+    NEEDLE_SAVE_BASELINE: ''
+    DATABASE_ENGINE: 'django.db.backends.postgresql'
+    DATABASE_HOST: 'docker'
+    DATABASE_NAME: 'sc05'
+    DATABASE_USER: 'weboll'
+    DATABASE_PASSWORD: 'weboll'
+    NO_PROXY: "$NO_PROXY"
+    no_proxy: "$NO_PROXY"
+    # Specify to Docker where to create the certificates
+    # see: https://docs.gitlab.com/ee/ci/docker/using_docker_build.html#docker
+    DOCKER_TLS_CERTDIR: "/certs"
+    DOCKER_TLS_VERIFY: 1
+    DOCKER_CERT_PATH: "$DOCKER_TLS_CERTDIR/client"
+  before_script:
+    - docker info
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" "$CI_REGISTRY"
+    - docker-compose -v
+    - docker-compose -f localtest.yml up -d
+  script:
+    - echo NEEDLE_SAVE_BASELINE=$NEEDLE_SAVE_BASELINE
+    - docker ps
+    - wait-for-it docker:5432 --timeout=0 --strict -- wait-for-it docker:636 --timeout=0 --strict -- wait-for-it docker:8080 --timeout=0 --strict -- wait-for-it docker:8000 --timeout=0 --strict -- wget --quiet http://docker:8080/api/static/images/logo_w05.svg
+    - docker-compose -f localtest.yml exec -T django pytest-3 tests/ -vvv
+    - docker ps
+    - if [ "$NEEDLE_SAVE_BASELINE" = 1 ]; then
+        echo "📷 Saved new visual regression baselines under 'screenshots/baseline/'";
+        strip-nondeterminism screenshots/baseline/*.png;
+      fi
+  artifacts:
+    when: always
+    paths:
+      - screenshots/
+
+mypy:
+  extends: .test-variables
+  stage: test
+  image: $CI_REGISTRY_IMAGE/deps-test:$DEPS_BACKEND_TAG
+  variables:
+    DATABASE_ENGINE: 'django.db.backends.sqlite3'
+    DATABASE_NAME: '/tmp/fake.db'
+    DATABASE_USER: 'weboll'
+    DATABASE_PASSWORD: 'weboll'
+
+    DATABASE_URL: sqlite:///tmp/fake.db
+  script:
+    - mypy --version
+    - mypy w05 --config=setup.cfg
+    - mypy w16 --config=setup.cfg
+    - mypy w22 --config=setup.cfg
+    - mypy w22verifica --config=setup.cfg
+    - mypy w23 --config=setup.cfg
+    - mypy w24 --config=setup.cfg
+    - mypy w29 --config=setup.cfg
+    - mypy w30 --config=setup.cfg
+    - mypy w32 --config=setup.cfg
+    - mypy website --config=setup.cfg
+
+
+vitest:
+  stage: test
+  image: $CI_REGISTRY_IMAGE/deps-frontend:$DEPS_FRONTEND_TAG
+  script:
+    - mv /app/node_modules .
+    - yarnpkg test --run
+
+tag-latest-docker-image:
+  stage: tag
+  image: "$DOCKER_REGISTRY/images/skopeo:latest"
+  variables:
+    AUTH: $CI_REGISTRY_USER:$CI_REGISTRY_PASSWORD
+    TAG_NEW: latest
+  script:
+    - |
+      for I in frontend backend tester
+      do
+        IMAGE="${CI_REGISTRY_IMAGE}/${I}"
+        echo Tagging "${IMAGE}:${TAG}"
+        skopeo copy --src-creds "$AUTH" --dest-creds "$AUTH" docker://"${IMAGE}:${TAG}" docker://"${IMAGE}:${TAG_NEW}"
+        echo 🏷️ Tagged "${IMAGE}:${TAG_NEW}"
+      done
+  rules:
+    - if: '$CI_MERGE_REQUEST_ID'
+      when: never
+    - if: '$CI_DEFAULT_BRANCH == $CI_COMMIT_BRANCH'
+      when: on_success
+    - when: never
+
+deploy-latest-docker-image:
+  stage: deploy
+  tags:
+    - shell
+  script:
+    - ssh -o StrictHostKeyChecking=no gitlab-runner@coyote.ad.arpa.piemonte.it sudo systemctl restart weboll.service
+  rules:
+    - if: '$CI_MERGE_REQUEST_ID'
+      when: never
+    - if: '$CI_DEFAULT_BRANCH == $CI_COMMIT_BRANCH'
+      when: on_success
+    - when: never

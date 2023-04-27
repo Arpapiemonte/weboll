@@ -1,0 +1,157 @@
+{% load date_extras_w23 %}
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <title>Bollettino allerta Regione Piemonte {{ allerta.numero_bollettino }} del {{ allerta.data_emissione  | my_date_dmY }}</title>
+    <style>
+      .area { stroke-width:2px; stroke:rgb(0,0,0);}
+      .bored-table {
+        border-collapse: collapse;
+        border: 1px solid;
+      }
+      .bored-table tr td {
+        border: 1px solid;
+        text-align: center;
+      }
+      .bored-table tr th {
+        border: 1px solid;
+        background-color: gray;
+        border-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <table style="width: 100%;">
+        <tr>
+          <td colspan="2">
+            <h1  style="float: left;">Livelli di ALLERTA previsti</h1>
+            <img style="float: right;" width="150" alt="logo_arpa" src="http://localhost:8000/static/images/logo_colori.svg">
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: center;">
+            <h2>MAPPE PIEMONTE:<br>livello di allerta</h2>
+          </td>
+          <td style="text-align: center;">
+            <h2>TABELLE<br>tipo di allerta prevista e livello</h2>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table>
+              <tr>
+                <td>
+                  Validità:
+                </td>
+                <td>
+                  dalle 12 alle 24<br>
+                  del {{ allerta.data_emissione  | my_date_dmY }}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Allerta emessa:
+                </td>
+                <td>
+                  {{ allerta.data_emissione | my_date_dmY }} ore 13:00
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2" style="text-align: center;">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 426.26 557.1" class="mt-5" width="200">
+                    {% include "piemonte_allerta.svg" with zone=allerta.zone  lam='lam_oggi' %}
+                  </svg>
+                </td>
+              </tr>
+            </table>
+          </td>
+          <td>
+            <table class="bored-table">
+              <tr>
+                <th width="5%"></th>
+                <th width="19%">IDROGEOLOGICO</th>
+                <th width="19%">IDROGEOLOGICO<br>PER TEMPORALI</th>
+                <th width="19%">IDRAULICO</th>
+                <th width="19%">NEVE</th>
+                <th width="19%">VALANGHE</th>
+              </tr>
+{% for k, v in allerta.zone.items %}
+              <tr>
+                <td style="background-color: lightgray">{{ k }}</td>
+                <td style="background-color: {{v.idrogeologico_oggi_colore}}">{{v.idrogeologico_oggi}}</td>
+                <td style="background-color: {{v.temporali_oggi_colore}}">{{v.temporali_oggi}}</td>
+                <td style="background-color: {{v.idraulico_oggi_colore}}">{{v.idraulico_oggi}}</td>
+                <td style="background-color: {{v.neve_oggi_colore}}">{{v.neve_oggi}}</td>
+                <td style="background-color: {{v.valanghe_oggi_colore}}">
+{% if v.valanghe_oggi != 'BIANCO' %}
+                  {{v.valanghe_oggi}}
+{% endif %}
+                </td>
+              </tr>
+{% endfor %}
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table>
+              <tr>
+                <td>
+                  Validità:
+                </td>
+                <td>
+                  dalle 00 alle 24<br>
+                  del {{ tomorrow  | my_date_dmY }}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Allerta emessa:
+                </td>
+                <td>
+                  {{ allerta.data_emissione | my_date_dmY }} ore 13:00
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2" style="text-align: center;">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 426.26 557.1" class="mt-5" width="200">
+                    {% include "piemonte_allerta.svg" with zone=allerta.zone  lam='lam_domani' %}
+                  </svg>
+                </td>
+              </tr>
+            </table>
+          </td>
+          <td>
+            <table class="bored-table">
+              <tr>
+                <th width="5%"></th>
+                <th width="19%">IDROGEOLOGICO</th>
+                <th width="19%">IDROGEOLOGICO<br>PER TEMPORALI</th>
+                <th width="19%">IDRAULICO</th>
+                <th width="19%">NEVE</th>
+                <th width="19%">VALANGHE</th>
+              </tr>
+{% for k, v in allerta.zone.items %}
+              <tr>
+                <td style="background-color: lightgray">{{ k }}</td>
+                <td style="background-color: {{v.idrogeologico_domani_colore}}">{{v.idrogeologico_domani}}</td>
+                <td style="background-color: {{v.temporali_domani_colore}}">{{v.temporali_domani}}</td>
+                <td style="background-color: {{v.idraulico_domani_colore}}">{{v.idraulico_domani}}</td>
+                <td style="background-color: {{v.neve_domani_colore}}">{{v.neve_domani}}</td>
+                <td style="background-color: {{v.valanghe_domani_colore}}">
+{% if v.valanghe_domani != 'BIANCO' %}
+                  {{v.valanghe_domani}}
+{% endif %}
+                </td>
+              </tr>
+{% endfor %}
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

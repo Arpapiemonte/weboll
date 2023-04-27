@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <title>
+      Previsione su Aree Allerta
+    </title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <h1>Previsione su Aree Allerta</h1>
+    <hr/>
+    <table>
+      <tr>
+        <td>Id</td>
+        <td>{{ psa.id_w30 }}</td>
+      </tr>
+      <tr>
+        <td>Seq</td>
+        <td>{{ psa.seq_num }}</td>
+      </tr>
+      <tr>
+        <td>Stato</td>
+        <td>{{ psa.status }}</td>
+      </tr>
+      <tr>
+        <td>Data emissione</td>
+        <td>{{ psa.data_emissione }}</td>
+      </tr>
+      <tr>
+        <td>Ultima modifica</td>
+        <td>{{ psa.last_update }}</td>
+      </tr>
+      <tr>
+        <td>Autore</td>
+        <td>{{ psa.username }}</td>
+      </tr>
+    </table>
+    <hr/>
+  </body>
+</html>

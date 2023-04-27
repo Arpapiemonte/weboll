@@ -1,0 +1,9 @@
+.*
+!.gitignore
+!.coveragerc
+!.env
+!.envs/.production
+!.pylintrc
+!.eslintrc.cjs
+node_modules/
+venv/

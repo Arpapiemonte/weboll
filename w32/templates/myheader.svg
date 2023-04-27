@@ -1,0 +1,190 @@
+{% load date_extras_w32 %}
+<g transform="translate(-3 -3)">
+<!--Header LimIni--><image
+       xlink:href="http://localhost:8000/static/images/logo_colori.svg"
+       y="10"
+       x="10"
+       id="image2452"
+       height="15"
+       width="32.478226"
+       inkscape:svg-dpi="96"
+       preserveAspectRatio="none" />
+    <path
+       d="M 200,15.000273 V 10.000001 H 47.574 c 0.966612,0 1.750131,0.783872 1.750131,1.749778 v 3.250494 z"
+       style="fill:#2f54ab;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       id="path566" />
+    <text
+       xml:space="preserve"
+       id="text2885"
+       style="font-style:normal;font-weight:normal;font-size:5.5833px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect2887);fill:#009857;fill-opacity:1;stroke:none;"
+       transform="translate(20.739051,-21.727113)"><tspan
+         x="27.662109"
+         y="46.381318"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Light'">{{ title }}</tspan></tspan></text>
+    <path
+       id="rect3070"
+       style="fill:#2e9d53;fill-opacity:1;fill-rule:evenodd;stroke-width:0.197396"
+       d="m 9.9999063,30.000236 v 4.999694 4.999696 H 10.438415 V 34.99993 H 36.298647 V 30.000236 H 10.438415 Z" />
+    <path
+       id="rect3070-8"
+       style="fill:#2e9d53;fill-opacity:1;fill-rule:evenodd;stroke-width:0.215124"
+       d="m 36.9,30.000236 v 4.999694 4.999696 h 0.520814 V 34.99993 H 68.134833 V 30.000236 H 37.420814 Z" />
+    <path
+       id="rect3070-2"
+       style="fill:#2e9d53;fill-opacity:1;fill-rule:evenodd;stroke-width:0.171138"
+       d="m 68.858,30 v 4.999694 4.999696 h 0.32961 V 34.999694 H 83.35422 V 30 H 69.18761 Z" />
+    <path
+       id="rect3070-2-3"
+       style="fill:#2e9d53;fill-opacity:1;fill-rule:evenodd;stroke-width:0.21083"
+       d="m 84,30.000236 v 4.999694 4.999696 h 0.50023 V 34.99993 H 116 V 30.000236 H 84.50023 Z" />
+    <path
+       id="rect3070-2-3-4"
+       style="fill:#2e9d53;fill-opacity:1;fill-rule:evenodd;stroke-width:0.230959"
+       d="m 116.606,30.000236 v 4.999694 4.999696 h 0.60035 V 34.99993 H 171.81 v -4.999694 h -54.60365 z" />
+    <path
+       id="rect3070-2-3-4-9"
+       style="fill:#2e9d53;fill-opacity:1;fill-rule:evenodd;stroke-width:0.21083"
+       d="m 172.5,30.000236 v 4.999694 4.999696 h 0.50023 V 34.99993 H 200 v -4.999694 h -26.99977 z" />
+    <text
+       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.82222px;font-family:'Titillium Web';-inkscape-font-specification:TitilliumWeb-Bold;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       id="text578"
+       x="23.179239"
+       y="33.396523"><tspan
+         id="tspan576"
+         style="text-align:center;text-anchor:middle;stroke-width:0.352778"
+         x="23.179239"
+         y="33.396523">BOLLETTINO N°</tspan></text>
+    <text
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.82222px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       id="text582"
+       x="23.295902"
+       y="38.397499"><tspan
+         id="tspan580"
+         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Light';text-align:center;text-anchor:middle;stroke-width:0.352778"
+         x="23.295902"
+         y="38.397499">{{seqNum}}</tspan></text>
+    <text
+       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.82222px;font-family:'Titillium Web';-inkscape-font-specification:TitilliumWeb-Bold;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       id="text590"
+       x="52.452103"
+       y="33.396523"><tspan
+         id="tspan588"
+         style="text-align:center;text-anchor:middle;stroke-width:0.352778"
+         x="52.452103"
+         y="33.396523">DATA EMISSIONE</tspan></text>
+    <text
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.82222px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       id="text594"
+       x="53.201458"
+       y="38.397499"><tspan
+         id="tspan592"
+         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Light';text-align:center;text-anchor:middle;stroke-width:0.352778"
+         x="52.71458"
+         y="38.397499">{{ startValidTime | my_date_dmY }} ore 13:00</tspan></text>
+    <text
+       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.82222px;font-family:'Titillium Web';-inkscape-font-specification:TitilliumWeb-Bold;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       id="text602"
+       x="76.3013"
+       y="33.396523"><tspan
+         id="tspan600"
+         style="text-align:center;text-anchor:middle;stroke-width:0.352778"
+         x="76.3013"
+         y="33.396523">VALIDITÀ</tspan></text>
+    <text
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.82222px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       id="text606"
+       x="76.122276"
+       y="38.397499"><tspan
+         id="tspan604"
+         style="text-align:center;text-anchor:middle;stroke-width:0.352778"
+         x="76.122276"
+         y="38.397499">{{ validity }} ore</tspan></text>
+    <text
+       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.82222px;font-family:'Titillium Web';-inkscape-font-specification:TitilliumWeb-Bold;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       id="text614"
+       x="100.03834"
+       y="33.396523"><tspan
+         id="tspan612"
+         style="text-align:center;text-anchor:middle;stroke-width:0.352778"
+         x="100.03834"
+         y="33.396523">AGGIORNAMENTO</tspan></text>
+    <text
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.82222px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       id="text618"
+       x="100.49946"
+       y="38.397499"><tspan
+         id="tspan616"
+         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Light';text-align:center;text-anchor:middle;stroke-width:0.352778"
+         x="100.49946"
+         y="38.397499"> {{ nextUpdate | my_date_dmY}}</tspan></text>
+    <text
+       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.82222px;font-family:'Titillium Web';-inkscape-font-specification:TitilliumWeb-Bold;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       id="text626"
+       x="144.15256"
+       y="33.396523"><tspan
+         id="tspan624"
+         style="text-align:center;text-anchor:middle;stroke-width:0.352778"
+         x="144.15256"
+         y="33.396523">SERVIZIO A CURA DI</tspan></text>
+    <text
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.82222px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       id="text630"
+       x="145.08353"
+       y="38.397499"><tspan
+         id="tspan628"
+         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Light';text-align:center;text-anchor:middle;stroke-width:0.352778"
+         x="144.58353"
+         y="38.397499">Dipartimento Rischi Naturali e Ambientali</tspan></text>
+    <text
+       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.82222px;font-family:'Titillium Web';-inkscape-font-specification:TitilliumWeb-Bold;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       id="text638"
+       x="186.2881"
+       y="33.396523"><tspan
+         id="tspan636"
+         style="text-align:center;text-anchor:middle;stroke-width:0.352778"
+         x="186.2881"
+         y="33.396523">AMBITO</tspan></text>
+    <text
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.82222px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       id="text642"
+       x="186.19496"
+       y="38.397499"><tspan
+         id="tspan640"
+         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Light';text-align:center;text-anchor:middle;stroke-width:0.352778"
+         x="186.19496"
+         y="38.397499">Regione Piemonte</tspan></text><!--Header LimFin-->
+    <rect
+       style="fill:#2e9d53;fill-opacity:1"
+       id="rect661"
+       width="0.28342581"
+       height="5.0715981"
+       x="69.071236"
+       y="34.927792" />
+    <rect
+       style="fill:#2e9d53;fill-opacity:1"
+       id="rect659"
+       width="0.12879157"
+       height="5.0095673"
+       x="10.374023"
+       y="34.990059" />
+    <path
+         id="path6844"
+         style="fill:#2e9d53;fill-opacity:1;stroke-width:1.00014"
+         d="m 1172.9922,-217.19336 a 116.22047,116.22047 0 0 0 -115.875,116.21875 116.22047,116.22047 0 0 0 116.2207,116.220704 116.22047,116.22047 0 0 0 116.2187,-116.220704 116.22047,116.22047 0 0 0 -116.2187,-116.21875 116.22047,116.22047 0 0 0 -0.3457,0 z m 7.9043,22.31445 a 94.488182,94.488182 0 0 1 7.1015,0.81836 152.4244,152.4244 0 0 1 14.0997,21.83399 142.51836,142.51836 0 0 1 -21.2012,2.6914 z m -15.1192,0.0469 v 25.26953 a 142.51836,142.51836 0 0 1 -21.1503,-2.76172 152.4244,152.4244 0 0 1 13.9648,-21.6289 94.488182,94.488182 0 0 1 7.1855,-0.87891 z m 47.8809,8.56836 a 94.488182,94.488182 0 0 1 12.332,6.93359 142.51836,142.51836 0 0 1 -7.1523,2.60742 169.36044,169.36044 0 0 0 -5.1797,-9.54101 z m -80.8711,0.39258 a 169.36044,169.36044 0 0 0 -4.8769,9.00195 142.51836,142.51836 0 0 1 -6.6582,-2.43945 94.488182,94.488182 0 0 1 11.5351,-6.5625 z m 107.0879,17.8164 a 94.488182,94.488182 0 0 1 27.9238,59.52149 h -31.1465 a 169.36044,169.36044 0 0 0 -11.3593,-53.66016 158.35372,158.35372 0 0 0 14.582,-5.86133 z m -132.502,0.0273 a 158.35372,158.35372 0 0 0 14.0684,5.67578 169.36044,169.36044 0 0 0 -11.4199,53.81836 h -30.543 a 94.488182,94.488182 0 0 1 27.8945,-59.49414 z m 30.4122,10.4082 a 158.35372,158.35372 0 0 0 27.9921,3.91211 v 45.17383 h -38.7988 a 152.4244,152.4244 0 0 1 10.8067,-49.08594 z m 71.1484,0.10937 a 152.4244,152.4244 0 0 1 10.7598,48.97657 h -38.7969 v -45.15039 a 158.35372,158.35372 0 0 0 28.0371,-3.82618 z m -129.5039,64.095708 h 30.5742 a 169.36044,169.36044 0 0 0 11.166,53.548828 158.35372,158.35372 0 0 0 -14.5429,5.80664 94.488182,94.488182 0 0 1 -27.1973,-59.355468 z m 47.5273,0 h 38.8203 v 45.125 a 158.35372,158.35372 0 0 0 -28.2402,3.773437 152.4244,152.4244 0 0 1 -10.5801,-48.898437 z m 53.9395,0 h 38.8203 a 152.4244,152.4244 0 0 1 -10.7148,49.234374 158.35372,158.35372 0 0 0 -28.1055,-4.033203 z m 55.7734,0 h 31.1758 a 94.488182,94.488182 0 0 1 -27.8906,60.046874 158.35372,158.35372 0 0 0 -14.6387,-6.013671 169.36044,169.36044 0 0 0 11.3535,-54.033203 z m -70.8926,60.976562 v 25.9257812 a 94.488182,94.488182 0 0 1 -7.0332,-0.8535156 152.4244,152.4244 0 0 1 -14.4257,-22.4101566 142.51836,142.51836 0 0 1 21.4589,-2.662109 z m 15.1192,0.08398 a 142.51836,142.51836 0 0 1 21.3027,2.875 152.4244,152.4244 0 0 1 -14.3535,22.2187504 94.488182,94.488182 0 0 1 -6.9492,0.796875 z m -53.3223,7.035157 a 169.36044,169.36044 0 0 0 5.3496,9.912109 94.488182,94.488182 0 0 1 -12.623,-7.271484 142.51836,142.51836 0 0 1 7.2734,-2.640625 z m 91.2969,0.458984 a 142.51836,142.51836 0 0 1 7.291,2.730469 94.488182,94.488182 0 0 1 -12.6406,7.113281 169.36044,169.36044 0 0 0 5.3496,-9.84375 z"
+         transform="scale(0.26458333)" />
+    <path
+         id="path6844"
+         style="fill:#2e9d53;fill-opacity:1;stroke-width:1.00014"
+         d="m 1172.9922,-217.19336 a 116.22047,116.22047 0 0 0 -115.875,116.21875 116.22047,116.22047 0 0 0 116.2207,116.220704 116.22047,116.22047 0 0 0 116.2187,-116.220704 116.22047,116.22047 0 0 0 -116.2187,-116.21875 116.22047,116.22047 0 0 0 -0.3457,0 z m 7.9043,22.31445 a 94.488182,94.488182 0 0 1 7.1015,0.81836 152.4244,152.4244 0 0 1 14.0997,21.83399 142.51836,142.51836 0 0 1 -21.2012,2.6914 z m -15.1192,0.0469 v 25.26953 a 142.51836,142.51836 0 0 1 -21.1503,-2.76172 152.4244,152.4244 0 0 1 13.9648,-21.6289 94.488182,94.488182 0 0 1 7.1855,-0.87891 z m 47.8809,8.56836 a 94.488182,94.488182 0 0 1 12.332,6.93359 142.51836,142.51836 0 0 1 -7.1523,2.60742 169.36044,169.36044 0 0 0 -5.1797,-9.54101 z m -80.8711,0.39258 a 169.36044,169.36044 0 0 0 -4.8769,9.00195 142.51836,142.51836 0 0 1 -6.6582,-2.43945 94.488182,94.488182 0 0 1 11.5351,-6.5625 z m 107.0879,17.8164 a 94.488182,94.488182 0 0 1 27.9238,59.52149 h -31.1465 a 169.36044,169.36044 0 0 0 -11.3593,-53.66016 158.35372,158.35372 0 0 0 14.582,-5.86133 z m -132.502,0.0273 a 158.35372,158.35372 0 0 0 14.0684,5.67578 169.36044,169.36044 0 0 0 -11.4199,53.81836 h -30.543 a 94.488182,94.488182 0 0 1 27.8945,-59.49414 z m 30.4122,10.4082 a 158.35372,158.35372 0 0 0 27.9921,3.91211 v 45.17383 h -38.7988 a 152.4244,152.4244 0 0 1 10.8067,-49.08594 z m 71.1484,0.10937 a 152.4244,152.4244 0 0 1 10.7598,48.97657 h -38.7969 v -45.15039 a 158.35372,158.35372 0 0 0 28.0371,-3.82618 z m -129.5039,64.095708 h 30.5742 a 169.36044,169.36044 0 0 0 11.166,53.548828 158.35372,158.35372 0 0 0 -14.5429,5.80664 94.488182,94.488182 0 0 1 -27.1973,-59.355468 z m 47.5273,0 h 38.8203 v 45.125 a 158.35372,158.35372 0 0 0 -28.2402,3.773437 152.4244,152.4244 0 0 1 -10.5801,-48.898437 z m 53.9395,0 h 38.8203 a 152.4244,152.4244 0 0 1 -10.7148,49.234374 158.35372,158.35372 0 0 0 -28.1055,-4.033203 z m 55.7734,0 h 31.1758 a 94.488182,94.488182 0 0 1 -27.8906,60.046874 158.35372,158.35372 0 0 0 -14.6387,-6.013671 169.36044,169.36044 0 0 0 11.3535,-54.033203 z m -70.8926,60.976562 v 25.9257812 a 94.488182,94.488182 0 0 1 -7.0332,-0.8535156 152.4244,152.4244 0 0 1 -14.4257,-22.4101566 142.51836,142.51836 0 0 1 21.4589,-2.662109 z m 15.1192,0.08398 a 142.51836,142.51836 0 0 1 21.3027,2.875 152.4244,152.4244 0 0 1 -14.3535,22.2187504 94.488182,94.488182 0 0 1 -6.9492,0.796875 z m -53.3223,7.035157 a 169.36044,169.36044 0 0 0 5.3496,9.912109 94.488182,94.488182 0 0 1 -12.623,-7.271484 142.51836,142.51836 0 0 1 7.2734,-2.640625 z m 91.2969,0.458984 a 142.51836,142.51836 0 0 1 7.291,2.730469 94.488182,94.488182 0 0 1 -12.6406,7.113281 169.36044,169.36044 0 0 0 5.3496,-9.84375 z"
+         transform="scale(0.26458333)" />
+    
+{% if username == "auto" %}
+<text
+    style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.82222px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778">
+    <tspan
+        x="12"
+        y="44">Emissione effettuata con sistemi automatici
+    </tspan>
+</text>
+{% endif %}
+</g>

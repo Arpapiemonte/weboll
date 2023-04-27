@@ -1,0 +1,104 @@
+{% load date_extras %}{% load date_extras_w05 %}<?xml version="1.0"?>
+<ARPA>
+  <meteo>
+    <descrizione>{{ meteo.situation}}</descrizione>
+    <bollettino/>
+    <im_meteosat ore="12"/>
+    <previsione>
+      {%for semigiorno in meteo.semigiorni %}<giorno data="{{ semigiorno.COP_TOT.67.start_valid_time | my_date_dmY }}" periodo="{{semigiorno.ampm}}">
+        <desc_prev>
+          <nuvolosita>{{semigiorno.COP_TOT.67.text_value}}</nuvolosita>
+          <precipitazione>{{semigiorno.PLUV.67.text_value}}</precipitazione>
+          <temperatura/>
+          <zero_termico>{{semigiorno.FRZLVL.67.text_value}}</zero_termico>
+          <venti>{{semigiorno.VELV.67.text_value}}</venti>
+        </desc_prev>
+        <provincia cod_prov="TO">
+          <cod_tempo_pr>{{semigiorno.SKY_CONDIT.59.numeric_value | codifica_per_regione}}</cod_tempo_pr>
+          <temperatura_pr>
+            <minima unita="C" tendenza="{{semigiorno.MINIME.TERMA.59.id_trend | tendenza}}">{{semigiorno.MINIME.TERMA.59.numeric_value | floatformat}}</minima>
+            <massima unita="C" tendenza="{{semigiorno.MASSIME.TERMA.59.id_trend | tendenza}}">{{semigiorno.MASSIME.TERMA.59.numeric_value | floatformat}}</massima>
+          </temperatura_pr>
+          <cod_precipitazione/>
+        </provincia>
+        <provincia cod_prov="AT">
+          <cod_tempo_pr>{{semigiorno.SKY_CONDIT.11.numeric_value | codifica_per_regione}}</cod_tempo_pr>
+          <temperatura_pr>
+            <minima unita="C" tendenza="{{semigiorno.MINIME.TERMA.11.id_trend | tendenza}}">{{semigiorno.MINIME.TERMA.11.numeric_value | floatformat}}</minima>
+            <massima unita="C" tendenza="{{semigiorno.MASSIME.TERMA.11.id_trend | tendenza}}">{{semigiorno.MASSIME.TERMA.11.numeric_value | floatformat}}</massima>
+          </temperatura_pr>
+          <cod_precipitazione/>
+        </provincia>
+        <provincia cod_prov="AL">
+          <cod_tempo_pr>{{semigiorno.SKY_CONDIT.9.numeric_value | codifica_per_regione}}</cod_tempo_pr>
+          <temperatura_pr>
+            <minima unita="C" tendenza="{{semigiorno.MINIME.TERMA.9.id_trend | tendenza}}">{{semigiorno.MINIME.TERMA.9.numeric_value | floatformat}}</minima>
+            <massima unita="C" tendenza="{{semigiorno.MASSIME.TERMA.9.id_trend | tendenza}}">{{semigiorno.MASSIME.TERMA.9.numeric_value | floatformat}}</massima>
+          </temperatura_pr>
+          <cod_precipitazione/>
+        </provincia>
+        <provincia cod_prov="BI">
+          <cod_tempo_pr>{{semigiorno.SKY_CONDIT.1.numeric_value | codifica_per_regione}}</cod_tempo_pr>
+          <temperatura_pr>
+            <minima unita="C" tendenza="{{semigiorno.MINIME.TERMA.1.id_trend | tendenza}}">{{semigiorno.MINIME.TERMA.1.numeric_value | floatformat}}</minima>
+            <massima unita="C" tendenza="{{semigiorno.MASSIME.TERMA.1.id_trend | tendenza}}">{{semigiorno.MASSIME.TERMA.1.numeric_value | floatformat}}</massima>
+          </temperatura_pr>
+          <cod_precipitazione/>
+        </provincia>
+        <provincia cod_prov="CN">
+          <cod_tempo_pr>{{semigiorno.SKY_CONDIT.28.numeric_value | codifica_per_regione}}</cod_tempo_pr>
+          <temperatura_pr>
+            <minima unita="C" tendenza="{{semigiorno.MINIME.TERMA.28.id_trend | tendenza}}">{{semigiorno.MINIME.TERMA.28.numeric_value | floatformat}}</minima>
+            <massima unita="C" tendenza="{{semigiorno.MASSIME.TERMA.28.id_trend | tendenza}}">{{semigiorno.MASSIME.TERMA.28.numeric_value | floatformat}}</massima>
+          </temperatura_pr>
+          <cod_precipitazione/>
+        </provincia>
+        <provincia cod_prov="NO">
+          <cod_tempo_pr>{{semigiorno.SKY_CONDIT.33.numeric_value | codifica_per_regione}}</cod_tempo_pr>
+          <temperatura_pr>
+            <minima unita="C" tendenza="{{semigiorno.MINIME.TERMA.33.id_trend | tendenza}}">{{semigiorno.MINIME.TERMA.33.numeric_value | floatformat}}</minima>
+            <massima unita="C" tendenza="{{semigiorno.MASSIME.TERMA.33.id_trend | tendenza}}">{{semigiorno.MASSIME.TERMA.33.numeric_value | floatformat}}</massima>
+          </temperatura_pr>
+          <cod_precipitazione/>
+        </provincia>
+        <provincia cod_prov="VB">
+          <cod_tempo_pr>{{semigiorno.SKY_CONDIT.63.numeric_value | codifica_per_regione}}</cod_tempo_pr>
+          <temperatura_pr>
+            <minima unita="C" tendenza="{{semigiorno.MINIME.TERMA.63.id_trend | tendenza}}">{{semigiorno.MINIME.TERMA.63.numeric_value | floatformat}}</minima>
+            <massima unita="C" tendenza="{{semigiorno.MASSIME.TERMA.63.id_trend | tendenza}}">{{semigiorno.MASSIME.TERMA.63.numeric_value | floatformat}}</massima>
+          </temperatura_pr>
+          <cod_precipitazione/>
+        </provincia>
+        <provincia cod_prov="VC">
+          <cod_tempo_pr>{{semigiorno.SKY_CONDIT.64.numeric_value | codifica_per_regione}}</cod_tempo_pr>
+          <temperatura_pr>
+            <minima unita="C" tendenza="{{semigiorno.MINIME.TERMA.64.id_trend | tendenza}}">{{semigiorno.MINIME.TERMA.64.numeric_value | floatformat}}</minima>
+            <massima unita="C" tendenza="{{semigiorno.MASSIME.TERMA.64.id_trend | tendenza}}">{{semigiorno.MASSIME.TERMA.64.numeric_value | floatformat}}</massima>
+          </temperatura_pr>
+          <cod_precipitazione/>
+        </provincia>
+        <zona cod_zona="1">
+          <cod_tempo_zona>{{semigiorno.SKY_CONDIT.89.numeric_value | codifica_per_regione}}</cod_tempo_zona>
+        </zona>
+        <zona cod_zona="2">
+          <cod_tempo_zona>{{semigiorno.SKY_CONDIT.88.numeric_value | codifica_per_regione}}</cod_tempo_zona>
+        </zona>
+        <zona cod_zona="3">
+          <cod_tempo_zona>{{semigiorno.SKY_CONDIT.87.numeric_value | codifica_per_regione}}</cod_tempo_zona>
+        </zona>
+        <zona cod_zona="4">
+          <cod_tempo_zona>{{semigiorno.SKY_CONDIT.90.numeric_value | codifica_per_regione}}</cod_tempo_zona>
+        </zona>
+        <zona cod_zona="5">
+          <cod_tempo_zona>{{semigiorno.SKY_CONDIT.91.numeric_value | codifica_per_regione}}</cod_tempo_zona>
+        </zona>
+        <zona cod_zona="6">
+          <cod_tempo_zona>{{semigiorno.SKY_CONDIT.93.numeric_value | codifica_per_regione}}</cod_tempo_zona>
+        </zona>
+        <zona cod_zona="7">
+          <cod_tempo_zona>{{semigiorno.SKY_CONDIT.92.numeric_value | codifica_per_regione}}</cod_tempo_zona>
+        </zona>
+      </giorno>{%endfor%}
+    </previsione>
+  </meteo>
+</ARPA>

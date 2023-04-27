@@ -1,0 +1,106 @@
+{% load date_extras_w24 %}
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Bollettino vigilanza Regione Piemonte {{ numero_bollettino }} del {{ data_emissione }}</title>
+    <style>
+      .vig_0 {fill: #ffffff;}
+      .vig_1 {fill: #99FEFE;}
+      .vig_2 {fill: #66B4FF;}
+      .vig_3 {fill: #0656AD;}
+      .vig_4 {fill: #043063;}
+
+      .cls-1{fill:#ffffff}
+
+      .cls-11,.cls-9{fill:#55caff}
+      .cls-10,.cls-11,.cls-9{stroke:#0083ca;stroke-linecap:round}
+      .cls-10,.cls-11,.cls-20,.cls-9{stroke-linejoin:round}
+      .cls-10,.cls-21{fill:none}
+      .cls-10,.cls-11{stroke-width:1.5px}
+      .cls-12,.cls-20{stroke:#000;stroke-width:2px}
+      .cls-12{stroke-linecap:square;stroke-linejoin:bevel}
+      .cls-13,.cls-14,.cls-15,.cls-17,.cls-18,.cls-19{isolation:isolate}
+      .cls-13,.cls-15,.cls-16,.cls-17,.cls-18,.cls-19{font-size:14px;font-family:Arial-BoldMT,Arial;font-weight:700}
+      .cls-15{letter-spacing:-.02em}
+      .cls-17{letter-spacing:-.11em}
+      .cls-18{letter-spacing:-.04em}
+      .cls-19{letter-spacing:-.04em}
+      rect { stroke-width:1; stroke:rgb(0,0,0); }
+    </style>
+  </head>
+  <body>
+    <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 770 1100" width="980" height="1400" xml:space="preserve" id="svg2" version="1.1">
+      <g transform="matrix(1.3333333,0,0,-1.3333333,0,1122.6667)" id="g10">
+        <g id="logo_arpa" transform="matrix(75.83,0,0,35,480,783)">
+          <image xlink:href="http://localhost:8000/static/images/logo_colori.svg" transform="matrix(1,0,0,-1,0,1)" preserveAspectRatio="none" style="image-rendering:optimizeSpeed" height="1" width="1"/>
+        </g>
+        <g id="titolo">
+          <text id="text18" style="font-variant:normal;font-weight:normal;font-size:25px;font-family:Verdana;-inkscape-font-specification:Verdana-Bold;writing-mode:lr-tb;fill:#0a0a0a;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(1,0,0,-1,33,776.43)">
+            <tspan id="tspan16" y="0" x="0">VIGILANZA METEOROLOGICA</tspan>
+          </text>
+        </g>
+        <g id="validita1">
+          <text id="text19" style="font-variant:normal;font-weight:normal;font-size:10px;font-family:Verdana;-inkscape-font-specification:Verdana-Bold;writing-mode:lr-tb;fill:#0a0a0a;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(1,0,0,-1,33,740.43)">
+            <tspan id="tspan19" y="0" x="0">Validità:</tspan>
+          </text>
+        </g>
+        <g id="validita10">
+          <text id="text19" style="font-variant:normal;font-weight:normal;font-size:10px;font-family:Verdana;-inkscape-font-specification:Verdana-Bold;writing-mode:lr-tb;fill:#0a0a0a;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(1,0,0,-1,100,740.43)">
+            <tspan id="tspan19" y="0" x="0">dalle ore 12 del {{ dates.0 | my_date_dmY}}</tspan>
+          </text>
+        </g>
+        
+        <g id="validita2">
+          <text id="text20" style="font-variant:normal;font-weight:normal;font-size:10px;font-family:Verdana;-inkscape-font-specification:Verdana-Bold;writing-mode:lr-tb;fill:#0a0a0a;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(1,0,0,-1,100,725.43)">
+            <tspan id="tspan20" y="0" x="0">alle ore 24 del {{ dates.2 | my_date_dmY}}</tspan>
+          </text>
+        </g>
+        
+        <g id="emessa">
+          <text id="text19" style="font-variant:normal;font-weight:normal;font-size:10px;font-family:Verdana;-inkscape-font-specification:Verdana-Bold;writing-mode:lr-tb;fill:#0a0a0a;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(1,0,0,-1,33,700.43)">
+            <tspan id="tspan19" y="0" x="0">Emessa il:</tspan>
+          </text>
+        </g>
+        <g id="emessa2">
+          <text id="text19" style="font-variant:normal;font-weight:normal;font-size:10px;font-family:Verdana;-inkscape-font-specification:Verdana-Bold;writing-mode:lr-tb;fill:#0a0a0a;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(1,0,0,-1,100,700.43)">
+            <tspan id="tspan19" y="0" x="0">{{ dates.0 | my_date_dmY}}</tspan>
+          </text>
+        </g>
+
+        <g id="uno">
+          <g id="piemonte_uno" transform="matrix(0.32,0,0,-0.32,20,680)">
+            {% include "piemonte.svg" with tl=vigilanza.48 qn=quote_neve.48 textpx=textpx.48 imgpx=imgpx.48 %}
+          </g>
+          <text transform="matrix(1,0,0,-1,33,648.02)" style="font-variant:normal;font-weight:bold;font-size:10px;font-family:Verdana;-inkscape-font-specification:Verdana-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text314">
+            <tspan x="0" y="0" id="tspan312">{{ dates.0 | my_date_dmY}}</tspan>
+          </text>
+          <text transform="matrix(1,0,0,-1,33,634.95)" style="font-variant:normal;font-weight:bold;font-size:10px;font-family:Verdana;-inkscape-font-specification:Verdana-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text306">
+            <tspan x="0" y="0" id="tspan304">pomeriggio / sera</tspan>
+          </text>
+        </g>
+        <g id="due">
+          <g id="piemonte_due" transform="matrix(0.32,0,0,-0.32,320,680)">
+            {% include "piemonte.svg" with tl=vigilanza.66 qn=quote_neve.66 textpx=textpx.66 imgpx=imgpx.66 %}
+          </g>
+          <text transform="matrix(1,0,0,-1,332.71,648.02)" style="font-variant:normal;font-weight:bold;font-size:10px;font-family:Verdana;-inkscape-font-specification:Verdana-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text322">
+            <tspan x="0" y="0" id="tspan320">{{ dates.1 | my_date_dmY}}</tspan>
+          </text>
+        </g>
+        <g id="tre">
+          <g id="piemonte_tre" transform="matrix(0.32,0,0,-0.32,30,390)">
+            {% include "piemonte.svg" with tl=vigilanza.83 qn=quote_neve.83 textpx=textpx.83 imgpx=imgpx.83 %}
+          </g>
+          <text transform="matrix(1,0,0,-1,42.71,333.02)" style="font-variant:normal;font-weight:bold;font-size:10px;font-family:Verdana;-inkscape-font-specification:Verdana-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text330">
+            <tspan x="0" y="0" id="tspan328">{{ dates.2 | my_date_dmY}}</tspan>
+          </text>
+        </g>
+        <g id="legenda">
+          <g id="tabella_legenda" transform="matrix(260,0,0,283.64,308,50.36)">
+            <image width="1" height="1" style="image-rendering:optimizeSpeed" preserveAspectRatio="none" transform="matrix(1,0,0,-1,0,1)" xlink:href="http://localhost:8000/static/images/legenda.png" id="image336"/>
+          </g>
+        </g>
+      </g>
+    </svg>
+  </body>
+</html>

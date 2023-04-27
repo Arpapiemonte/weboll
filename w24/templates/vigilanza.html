@@ -1,0 +1,215 @@
+{% load date_extras_w24 %}
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Bollettino vigilanza Regione Piemonte {{ numero_bollettino }} del {{ data_emissione }}</title>
+    <style>
+      .vig_0 {fill: #ffffff;}
+      .vig_1 {fill: #99FEFE;}
+      .vig_2 {fill: #66B4FF;}
+      .vig_3 {fill: #0656AD;}
+      .vig_4 {fill: #043063;}
+
+      .cls-1{fill:#ffffff}
+
+      .cls-11,.cls-9{fill:#55caff}
+      .cls-10,.cls-11,.cls-9{stroke:#0083ca;stroke-linecap:round}
+      .cls-10,.cls-11,.cls-20,.cls-9{stroke-linejoin:round}
+      .cls-10,.cls-21{fill:none}
+      .cls-10,.cls-11{stroke-width:1.5px}
+      .cls-12,.cls-20{stroke:#000;stroke-width:2px}
+      .cls-12{stroke-linecap:square;stroke-linejoin:bevel}
+      .cls-13,.cls-14,.cls-15,.cls-17,.cls-18,.cls-19{isolation:isolate}
+      .cls-13,.cls-15,.cls-16,.cls-17,.cls-18,.cls-19{font-size:14px;font-family:Arial-BoldMT,Arial;font-weight:700}
+      .cls-15{letter-spacing:-.02em}
+      .cls-17{letter-spacing:-.11em}
+      .cls-18{letter-spacing:-.04em}
+      .cls-19{letter-spacing:-.04em}
+      rect { stroke-width:1; stroke:rgb(0,0,0); }
+    </style>
+  </head>
+  <body>
+    <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 770 1100" width="980" height="1400" xml:space="preserve" id="svg2" version="1.1">
+      <g transform="matrix(1.3333333,0,0,-1.3333333,0,1122.6667)" id="g10">
+        <g id="logo_arpa" transform="matrix(75.83,0,0,35,24,783)">
+          <image xlink:href="http://localhost:8000/static/images/logo_colori.svg" transform="matrix(1,0,0,-1,0,1)" preserveAspectRatio="none" style="image-rendering:optimizeSpeed" height="1" width="1"/>
+        </g>
+        <g id="titolo">
+          <text id="text18" style="font-variant:normal;font-weight:bold;font-size:14px;font-family:Verdana;-inkscape-font-specification:Verdana-Bold;writing-mode:lr-tb;fill:#329a65;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(1,0,0,-1,191.54,776.43)">
+            <tspan id="tspan16" y="0" x="0">VIGILANZA METEOROLOGICA</tspan>
+          </text>
+        </g>
+        <g id="header_bollettino" transform="matrix(350,0,0,20.97,130,796.03)">
+          <image xlink:href="http://localhost:8000/static/images/bollettino.png" transform="matrix(1,0,0,-1,0,1)" preserveAspectRatio="none" style="image-rendering:optimizeSpeed" height="1" width="1"/>
+        </g>
+        <g id="numero">
+          <path id="path36" style="fill:#c1c1c1;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m 20,767 h 85 V 752 H 20 Z"/><text id="text40" style="font-variant:normal;font-weight:normal;font-size:8px;font-family:Verdana;-inkscape-font-specification:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(1,0,0,-1,32.49,756.32)">
+            <tspan id="tspan38" y="0" x="0">BOLLETTINO N°</tspan>
+          </text>
+          <text id="text56" style="font-variant:normal;font-weight:normal;font-size:8px;font-family:Verdana;-inkscape-font-specification:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(1,0,0,-1,45.44,739.82)">
+            <tspan id="tspan54" y="0" x="0">{{ vigilanza.numero_bollettino }}</tspan>
+          </text>
+          <path id="path44" style="fill:none;stroke:#979797;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 19.5,767 h 86"/>
+          <path id="path46" style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 20,767.5 v -16"/>
+          <path id="path48" style="fill:none;stroke:#979797;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 19.5,752 h 86"/>
+          <path id="path50" style="fill:none;stroke:#979797;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 105,767.5 v -16"/>
+          <path id="path60" style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="M 20,753 V 733"/>
+        </g>
+        <g id="emissione">
+          <path id="path64" style="fill:#c1c1c1;fill-opacity:1;fill-rule:nonzero;stroke:none" d="M 110,767 H 213 V 752 H 110 Z"/><text id="text68" style="font-variant:normal;font-weight:normal;font-size:8px;font-family:Verdana;-inkscape-font-specification:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(1,0,0,-1,125.7,756.32)">
+            <tspan id="tspan66" y="0" x="0">DATA EMISSIONE</tspan>
+          </text>
+          <text id="text84" style="font-variant:normal;font-weight:normal;font-size:8px;font-family:Verdana;-inkscape-font-specification:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(1,0,0,-1,125,739.82)">
+            <tspan id="tspan82" y="0" x="0">{{ vigilanza.data_emissione | my_date_dmY }} ore 13:00</tspan>
+          </text>
+          <path id="path72" style="fill:none;stroke:#979797;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 109.5,767 h 104"/>
+          <path id="path74" style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 110,767.5 v -16"/>
+          <path id="path76" style="fill:none;stroke:#979797;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 109.5,752 h 104"/>
+          <path id="path78" style="fill:none;stroke:#979797;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 213,767.5 v -16"/>
+          <path id="path88" style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="M 110,753 V 733"/>
+        </g>
+        <g id="validit&#xE0;">
+          <path id="path92" style="fill:#c1c1c1;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m 220,767 h 50 v -15 h -50 z"/><text id="text96" style="font-variant:normal;font-weight:normal;font-size:8px;font-family:Verdana;-inkscape-font-specification:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(1,0,0,-1,224.6,756.32)">
+            <tspan id="tspan94" y="0" x="0">VALIDITÀ</tspan>
+          </text>
+          <text id="text112" style="font-variant:normal;font-weight:normal;font-size:8px;font-family:Verdana;-inkscape-font-specification:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(1,0,0,-1,235,739.82)">
+            <tspan id="tspan110" y="0" x="0">60 ore</tspan>
+          </text>
+          <path id="path100" style="fill:none;stroke:#979797;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 219.5,767 h 51"/>
+          <path id="path102" style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 220,767.5 v -16"/>
+          <path id="path104" style="fill:none;stroke:#979797;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 219.5,752 h 51"/>
+          <path id="path106" style="fill:none;stroke:#979797;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 270,767.5 v -16"/>
+          <path id="path116" style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="M 220,753 V 733"/>
+        </g>
+        <g id="aggiornamento">
+          <path id="path120" style="fill:#c1c1c1;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m 275,767 h 90 v -15 h -90 z"/><text id="text124" style="font-variant:normal;font-weight:normal;font-size:8px;font-family:Verdana;-inkscape-font-specification:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(1,0,0,-1,283.24,756.32)">
+            <tspan id="tspan122" y="0" x="0">AGGIORNAMENTO</tspan>
+          </text>
+          <text id="text140" style="font-variant:normal;font-weight:normal;font-size:8px;font-family:Verdana;-inkscape-font-specification:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(1,0,0,-1,285,739.82)">
+            <tspan id="tspan138" y="0" x="0">{{ vigilanza.next_blt_time | my_date_dmY }} ore 13:00</tspan>
+          </text>
+          <path id="path128" style="fill:none;stroke:#979797;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 274.5,767 h 91"/>
+          <path id="path130" style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 275,767.5 v -16"/>
+          <path id="path132" style="fill:none;stroke:#979797;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 274.5,752 h 91"/>
+          <path id="path134" style="fill:none;stroke:#979797;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 365,767.5 v -16"/>
+          <path id="path144" style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="M 275,753 V 733"/>
+        </g>
+        <g id="servizio">
+          <path id="path148" style="fill:#c1c1c1;fill-opacity:1;fill-rule:nonzero;stroke:none" d="M 370,767 H 490 V 752 H 370 Z"/><text id="text152" style="font-variant:normal;font-weight:normal;font-size:8px;font-family:Verdana;-inkscape-font-specification:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(1,0,0,-1,387.05,756.32)">
+            <tspan id="tspan150" y="0" x="0">SERVIZIO A CURA DI</tspan>
+          </text>
+          <text id="text168" style="font-variant:normal;font-weight:normal;font-size:8px;font-family:Verdana;-inkscape-font-specification:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(1,0,0,-1,382.08,744.68)">
+            <tspan id="tspan166" y="0" x="0">ARPA - Rischi Naturali e</tspan>
+          </text>
+          <text id="text172" style="font-variant:normal;font-weight:normal;font-size:8px;font-family:Verdana;-inkscape-font-specification:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(1,0,0,-1,408.72,734.96)">
+            <tspan id="tspan170" y="0" x="0">Ambientali</tspan>
+          </text>
+          <path id="path156" style="fill:none;stroke:#979797;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 369.5,767 h 121"/>
+          <path id="path158" style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 370,767.5 v -16"/>
+          <path id="path160" style="fill:none;stroke:#979797;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 369.5,752 h 121"/>
+          <path id="path162" style="fill:none;stroke:#979797;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 490,767.5 v -16"/>
+          <path id="path176" style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="M 370,753 V 733"/>
+        </g>
+        <g id="ambito">
+          <path id="path180" style="fill:#c1c1c1;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m 495,767 h 80 v -15 h -80 z"/><text id="text184" style="font-variant:normal;font-weight:normal;font-size:8px;font-family:Verdana;-inkscape-font-specification:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(1,0,0,-1,518.87,756.32)">
+            <tspan id="tspan182" y="0" x="0">AMBITO</tspan>
+          </text>
+          <text id="text200" style="font-variant:normal;font-weight:normal;font-size:8px;font-family:Verdana;-inkscape-font-specification:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(1,0,0,-1,510,739.82)">
+            <tspan id="tspan198" y="0" x="-10">Regione Piemonte</tspan>
+          </text>
+          <path id="path188" style="fill:none;stroke:#979797;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 494.5,767 h 81"/>
+          <path id="path190" style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 495,767.5 v -16"/>
+          <path id="path192" style="fill:none;stroke:#979797;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 494.5,752 h 81"/>
+          <path id="path194" style="fill:none;stroke:#979797;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 575,767.5 v -16"/>
+          <path id="path204" style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="M 495,753 V 733"/>
+        </g>
+        <g id="logo_regione_piemonte_settore_protezione_civile">
+          <image xlink:href="http://localhost:8000/static/images/rpspc.png" preserveAspectRatio="none" style="image-rendering:optimizeSpeed" height="1" width="1"  transform="matrix(24,0,0,-24,518,818)"/>
+          <text id="text214" style="font-variant:normal;font-weight:normal;font-size:8px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(1,0,0,-1,497,785)">
+            <tspan id="tspan212" y="0" x="0">Regione Piemonte</tspan>
+          </text>
+          <text id="text218" style="font-variant:normal;font-weight:normal;font-size:8px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(1,0,0,-1,485,775)">
+            <tspan id="tspan216" y="0" x="0">Settore protezione civile</tspan>
+          </text>
+        </g>
+        <g id="sintesi">
+          <path d="M 20,733 H 573 V 718 H 20 Z" style="fill:#c1c1c1;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path244"/>
+          <text transform="matrix(1,0,0,-1,22.808,722.32)" style="font-variant:normal;font-weight:normal;font-size:8px;font-family:Verdana;-inkscape-font-specification:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text248">
+            <tspan x="0">SINTESI METEOROLOGICA</tspan>
+          </text>
+          <path d="m 19.5,733 h 554" style="fill:none;stroke:#979797;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" id="path252"/>
+          <path d="m 20,733.5 v -16" style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" id="path254"/>
+          <path d="m 19.5,718 h 554" style="fill:none;stroke:#979797;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" id="path256"/>
+          <path d="m 573,733.5 v -16" style="fill:none;stroke:#979797;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" id="path258"/>
+          <foreignObject transform="matrix(1,0,0,-1,20,713)" width="550" height="25">
+            <div xmlns="http://www.w3.org/1999/xhtml" style="text-align: justifyfont-style:normal;font-variant:normal; font-weight:360; font-stretch:normal; font-size:8px; font-family:'ArialMT'; text-align:justify; text-anchor:start; line-height: 8px; color: #231f20;">
+              {{ vigilanza.sintesi_meteo }}
+            </div>
+          </foreignObject>
+        </g>
+
+        <g id="previsioni">
+          <path d="M 20,683 H 573 V 668 H 20 Z" style="fill:#c1c1c1;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path262"/>
+          <text transform="matrix(1,0,0,-1,22.808,672.32)" style="font-variant:normal;font-weight:normal;font-size:8px;font-family:Verdana;-inkscape-font-specification:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text266">
+            <tspan x="0" y="0" id="tspan264">PREVISIONI</tspan>
+          </text>
+          <path d="m 19.5,683 h 554" style="fill:none;stroke:#979797;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" id="path270"/>
+          <path d="m 20,683.5 v -16" style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" id="path272"/>
+          <path d="m 19.5,668 h 554" style="fill:none;stroke:#979797;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" id="path274"/>
+          <path d="m 573,683.5 v -16" style="fill:none;stroke:#979797;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" id="path276"/>
+        </g>
+
+        <g id="uno">
+          <g id="piemonte_uno" transform="matrix(0.32,0,0,-0.32,20,680)">
+            {% include "piemonte.svg" with tl=vigilanza.48 qn=quote_neve.48 textpx=textpx.48 imgpx=imgpx.48 %}
+          </g>
+          <text transform="matrix(1,0,0,-1,33,648.02)" style="font-variant:normal;font-weight:bold;font-size:10px;font-family:Verdana;-inkscape-font-specification:Verdana-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text314">
+            <tspan x="0" y="0" id="tspan312">{{ dates.0 | my_date_dmY}}</tspan>
+          </text>
+          <text transform="matrix(1,0,0,-1,33,634.95)" style="font-variant:normal;font-weight:bold;font-size:10px;font-family:Verdana;-inkscape-font-specification:Verdana-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text306">
+            <tspan x="0" y="0" id="tspan304">pomeriggio / sera</tspan>
+          </text>
+        </g>
+        <g id="due">
+          <g id="piemonte_due" transform="matrix(0.32,0,0,-0.32,320,680)">
+            {% include "piemonte.svg" with tl=vigilanza.66 qn=quote_neve.66 textpx=textpx.66 imgpx=imgpx.66 %}
+          </g>
+          <text transform="matrix(1,0,0,-1,332.71,648.02)" style="font-variant:normal;font-weight:bold;font-size:10px;font-family:Verdana;-inkscape-font-specification:Verdana-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text322">
+            <tspan x="0" y="0" id="tspan320">{{ dates.1 | my_date_dmY}}</tspan>
+          </text>
+        </g>
+        <g id="tre">
+          <g id="piemonte_tre" transform="matrix(0.32,0,0,-0.32,30,390)">
+            {% include "piemonte.svg" with tl=vigilanza.83 qn=quote_neve.83 textpx=textpx.83 imgpx=imgpx.83 %}
+          </g>
+          <text transform="matrix(1,0,0,-1,42.71,333.02)" style="font-variant:normal;font-weight:bold;font-size:10px;font-family:Verdana;-inkscape-font-specification:Verdana-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text330">
+            <tspan x="0" y="0" id="tspan328">{{ dates.2 | my_date_dmY}}</tspan>
+          </text>
+        </g>
+        <g id="legenda">
+          <g id="tabella_legenda" transform="matrix(260,0,0,283.64,308,50.36)">
+            <image width="1" height="1" style="image-rendering:optimizeSpeed" preserveAspectRatio="none" transform="matrix(1,0,0,-1,0,1)" xlink:href="http://localhost:8000/static/images/legenda.png" id="image336"/>
+          </g>
+        </g>
+        <g id="avvertenza">
+          <text transform="matrix(1,0,0,-1,20,45.05)" style="font-variant:normal;font-weight:normal;font-size:8px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text362">
+            <tspan x="0" y="0" id="tspan360">Per una corretta interpretazione e per approfondimenti consultare la guida al bollettino di vigilanza</tspan>
+          </text>
+        </g>
+        <g id="Diffusione">
+          <path id="path7076" style="fill:#c0c0c0;fill-opacity:1;fill-rule:nonzero;stroke:none" d="M 18,33 H 445 V 22 H 18 Z"/>
+          <text id="text7080" style="font-variant:normal;font-weight:normal;font-size:8px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(1,0,0,-1,20,25.4)">
+            <tspan id="tspan7078" y="0" x="0">Diffusione: http://www.ruparpiemonte.it/meteo/ - http://intranet.ruparpiemonte.it/meteo/ con password</tspan>
+          </text>
+        </g>
+        <g id="g7084">
+          <path id="path7086" style="fill:#8080ff;fill-opacity:1;fill-rule:nonzero;stroke:none" d="M 445,33 H 569 V 22 H 445 Z"/>
+          <text id="text7090" style="font-variant:normal;font-weight:bold;font-size:8px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(1,0,0,-1,465.66,25.38)">
+            <tspan id="tspan7088" y="0" x="0">www.arpa.piemonte.it</tspan>
+          </text>
+        </g>
+      </g>
+    </svg>
+  </body>
+</html>

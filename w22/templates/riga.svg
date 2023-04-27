@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg3810"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   sodipodi:docname="riga.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview3812"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="1.0633188"
+     inkscape:cx="303.76591"
+     inkscape:cy="185.73922"
+     inkscape:window-width="1846"
+     inkscape:window-height="1016"
+     inkscape:window-x="74"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs3807" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g_corsoacqua"
+       class="{{cella_non_dinamica}}"
+       transform="matrix(0.35277777,0,0,-0.35277777,-0.12916652,92.145823)">
+      <path
+         id="path948"
+         d="M 20,226 H 80 V 209 H 20 Z" />
+      <text
+         id="text952"
+         style="text-align:center;text-anchor:middle;font-variant:normal;font-weight:bold;font-size:6px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         transform="matrix(1,0,0,-1,48.66,215.27)"><tspan
+           id="tspan950">{{corso_acqua}}</tspan></text>
+    </g>
+    <g
+       id="g954"
+       transform="matrix(0.35277777,0,0,-0.35277777,-0.12916652,92.145823)">
+      <path
+         id="path956"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 19.5,226 h 61" />
+      <path
+         id="path958"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 20,226.5 v -18" />
+      <path
+         id="path960"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 19.5,209 h 61" />
+      <path
+         id="path962"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 80,226.5 v -18" />
+    </g>
+    <g
+       id="g_stazione"
+       class="{{cella_non_dinamica}}"
+       transform="matrix(0.35277777,0,0,-0.35277777,-0.12916652,92.145823)">
+      <path
+         id="path1078"
+         d="m 80,226 h 64 V 209 H 80 Z" />
+      <text
+         id="text1082"
+         style="text-align:center;text-anchor:middle;font-variant:normal;font-weight:bold;font-size:6px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         transform="matrix(1,0,0,-1,110.33,215.27)"><tspan
+           id="tspan1080"
+          >{{stazione}}</tspan></text>
+    </g>
+    <g
+       id="g1084"
+       transform="matrix(0.35277777,0,0,-0.35277777,-0.02916652,92.125674)">
+      <path
+         id="path1086"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 79.5,226 h 65" />
+      <path
+         id="path1088"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 80,226.5 v -18" />
+      <path
+         id="path1090"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 79.5,209 h 65" />
+      <path
+         id="path1092"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 144,226.5 v -18" />
+    </g>
+    <g
+       id="g1542"
+       class="{{cella_non_dinamica}}"
+       transform="matrix(0.35277777,0,0,-0.35277777,-0.12916652,92.145823)">
+      <path
+         id="path1544"
+         d="m 144,226 h 39 v -17 h -39 z" />
+      <text
+         id="text1548"
+         style="text-align:center;text-anchor:middle;font-variant:normal;font-weight:bold;font-size:6px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         transform="matrix(1,0,0,-1,163.49,215.27)"><tspan
+           id="tspan1546">{{data_massimo_storico}}</tspan></text>
+    </g>
+    <g
+       id="g_datamaxst"
+       transform="matrix(0.35277777,0,0,-0.35277777,-0.12916652,92.145823)">
+      <path
+         id="path1552"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 143.5,226 h 40" />
+      <path
+         id="path1554"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 144,226.5 v -18" />
+      <path
+         id="path1556"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 143.5,209 h 40" />
+      <path
+         id="path1558"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 183,226.5 v -18" />
+    </g>
+    <g
+       id="g_valorest"
+       class="{{cella_non_dinamica}}"
+       transform="matrix(0.35277777,0,0,-0.35277777,-0.12916652,92.145823)">
+      <path
+         id="path1978"
+         d="m 183,226 h 30 v -17 h -30 z" />
+      <text
+         id="text1982"
+         style="text-align:center;text-anchor:middle;font-variant:normal;font-weight:bold;font-size:6px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         transform="matrix(1,0,0,-1,198.16,215.27)"><tspan
+           id="tspan1980">{{valore_massimo_storico}}</tspan></text>
+    </g>
+    <g
+       id="g1984"
+       transform="matrix(0.35277777,0,0,-0.35277777,-0.12916652,92.145823)">
+      <path
+         id="path1986"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 182.5,226 h 31" />
+      <path
+         id="path1988"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 183,226.5 v -18" />
+      <path
+         id="path1990"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 182.5,209 h 31" />
+      <path
+         id="path1992"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 213,226.5 v -18" />
+    </g>
+    <g
+       id="g_livello1"
+       class="{{cella_non_dinamica}}"
+       transform="matrix(0.35277777,0,0,-0.35277777,-0.12916652,92.145823)">
+      <path
+         id="path2332"
+         d="m 213,226 h 24 v -17 h -24 z" />
+      <text
+         id="text2336"
+         style="text-align:center;text-anchor:middle;font-variant:normal;font-weight:bold;font-size:6px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         transform="matrix(1,0,0,-1,226.83,215.27)"><tspan
+           id="tspan2334">{{codice1}}</tspan></text>
+    </g>
+    <g
+       id="g2338"
+       transform="matrix(0.35277777,0,0,-0.35277777,-0.12916652,92.145823)">
+      <path
+         id="path2340"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 212.5,226 h 25" />
+      <path
+         id="path2342"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 213,226.5 v -18" />
+      <path
+         id="path2344"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 212.5,209 h 25" />
+      <path
+         id="path2346"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 237,226.5 v -18" />
+    </g>
+    <g
+       id="g_livello2"
+       class="{{cella_non_dinamica}}"
+       transform="matrix(0.35277777,0,0,-0.35277777,-0.12916652,92.145823)">
+      <path
+         id="path2766"
+         d="m 237,226 h 24 v -17 h -24 z" />
+      <text
+         id="text2770"
+         style="text-align:center;text-anchor:middle;font-variant:normal;font-weight:bold;font-size:6px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         transform="matrix(1,0,0,-1,248.33,215.27)"><tspan
+           id="tspan2768">{{codice2}}</tspan></text>
+    </g>
+    <g
+       id="g2772"
+       transform="matrix(0.35277777,0,0,-0.35277777,-0.12916652,92.145823)">
+      <path
+         id="path2774"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 236.5,226 h 25" />
+      <path
+         id="path2776"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 237,226.5 v -18" />
+      <path
+         id="path2778"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 236.5,209 h 25" />
+      <path
+         id="path2780"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 261,226.5 v -18" />
+    </g>
+    <g
+       id="g_livello3"
+       class="{{cella_non_dinamica}}"
+       transform="matrix(0.35277777,0,0,-0.35277777,-0.12916652,92.145823)">
+      <path
+         id="path3200"
+         d="m 261,226 h 24 v -17 h -24 z" />
+      <text
+         id="text3204"
+         style="text-align:center;text-anchor:middle;font-variant:normal;font-weight:bold;font-size:6px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         transform="matrix(1,0,0,-1,272.33,215.27)"><tspan
+           id="tspan3202">{{codice3}}</tspan></text>
+    </g>
+    <g
+       id="g3206"
+       transform="matrix(0.35277777,0,0,-0.35277777,-0.12916652,92.145823)">
+      <path
+         id="path3208"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 260.5,226 h 25" />
+      <path
+         id="path3210"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 261,226.5 v -18" />
+      <path
+         id="path3212"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 260.5,209 h 25" />
+      <path
+         id="path3214"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 285,226.5 v -18" />
+    </g>
+    <g
+       id="g_tendenza"
+       class="{{cella_non_dinamica}}"
+       transform="matrix(0.35277777,0,0,-0.35277777,-0.12916652,92.145823)">
+      <path
+         id="path3906"
+         d="m 525,226 h 50 v -17 h -50 z" />
+      <text
+         id="text3910"
+         style="text-align:center;text-anchor:middle;font-variant:normal;font-weight:bold;font-size:6px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         transform="matrix(1,0,0,-1,550.16,215.27)"><tspan
+           id="tspan3908">{{tend48h}}</tspan></text>
+    </g>
+    <g
+       id="g3912"
+       transform="matrix(0.35277777,0,0,-0.35277777,-0.12916652,92.145823)">
+      <path
+         id="path3914"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 524.5,226 h 51" />
+      <path
+         id="path3916"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 525,226.5 v -18" />
+      <path
+         id="path3918"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 524.5,209 h 51" />
+      <path
+         id="path3920"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 575,226.5 v -18" />
+    </g>
+    <g
+       id="g_criticita36h"
+       class="piene{{cella_prev_crit36h}}"
+       transform="matrix(0.35277777,0,0,-0.35277777,-0.12916652,92.145823)">
+      <path
+         id="path4382"
+         d="m 482,226 h 43 v -17 h -43 z" />
+      <text
+         id="text4386"
+         style="font-variant:normal;font-weight:bold;font-size:6px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         transform="matrix(1,0,0,-1,501.33,215.27)"><tspan
+           id="tspan4384">{{cella_prev_crit36h}}</tspan></text>
+    </g>
+    <g
+       id="g4388"
+       transform="matrix(0.35277777,0,0,-0.35277777,-0.12916652,92.145823)">
+      <path
+         id="path4390"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 481.5,226 h 44" />
+      <path
+         id="path4392"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 482,226.5 v -18" />
+      <path
+         id="path4394"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 481.5,209 h 44" />
+      <path
+         id="path4396"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 525,226.5 v -18" />
+    </g>
+    <g
+       id="g_criticita24h"
+       class="piene{{cella_prev_crit24h}}"
+       transform="matrix(0.35277777,0,0,-0.35277777,-0.12916652,92.145823)">
+      <path
+         id="path4868"
+         d="m 444,226 h 38 v -17 h -38 z" />
+      <text
+         id="text4872"
+         style="font-variant:normal;font-weight:bold;font-size:6px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         transform="matrix(1,0,0,-1,460.83,215.27)"><tspan
+           id="tspan4870">{{cella_prev_crit24h}}</tspan></text>
+    </g>
+    <g
+       id="g4874"
+       transform="matrix(0.35277777,0,0,-0.35277777,-0.12916652,92.145823)">
+      <path
+         id="path4876"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 443.5,226 h 39" />
+      <path
+         id="path4878"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 444,226.5 v -18" />
+      <path
+         id="path4880"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 443.5,209 h 39" />
+      <path
+         id="path4882"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 482,226.5 v -18" />
+    </g>
+    <g
+       id="g_portata"
+       class="{{cella_non_dinamica}}"
+       transform="matrix(0.35277777,0,0,-0.35277777,-0.12916652,92.145823)">
+      <path
+         id="path5312"
+         d="m 335,226 h 33 v -17 h -33 z" />
+      <text
+         id="text5316"
+         style="text-align:center;text-anchor:middle;font-variant:normal;font-weight:bold;font-size:6px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         transform="matrix(1,0,0,-1,349.66,215.27)"><tspan
+           id="tspan5314">{{portata_attesa}}</tspan></text>
+    </g>
+    <g
+       id="g5318"
+       transform="matrix(0.35277777,0,0,-0.35277777,-0.12916652,92.145823)">
+      <path
+         id="path5320"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 334.5,226 h 34" />
+      <path
+         id="path5322"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 335,226.5 v -18" />
+      <path
+         id="path5324"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 334.5,209 h 34" />
+      <path
+         id="path5326"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 368,226.5 v -18" />
+    </g>
+    <g
+       id="g_tendenza6h"
+       class="{{cella_non_dinamica}}"
+       transform="matrix(0.35277777,0,0,-0.35277777,-0.12916652,92.145823)">
+      <path
+         id="path5746"
+         d="m 285,226 h 50 v -17 h -50 z" />
+      <text
+         id="text5750"
+         style="text-align:center;text-anchor:middle;font-variant:normal;font-weight:bold;font-size:6px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         transform="matrix(1,0,0,-1,310.16,215.27)"><tspan
+           id="tspan5748">{{tendenza6hprecedenti}}</tspan></text>
+    </g>
+    <g
+       id="g5752"
+       transform="matrix(0.35277777,0,0,-0.35277777,-0.12916652,92.145823)">
+      <path
+         id="path5754"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 284.5,226 h 51" />
+      <path
+         id="path5756"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 285,226.5 v -18" />
+      <path
+         id="path5758"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 284.5,209 h 51" />
+      <path
+         id="path5760"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 335,226.5 v -18" />
+    </g>
+    <g
+       id="g_criticita"
+       class="piene{{cella_criticita_attesa}}"
+       transform="matrix(0.35277777,0,0,-0.35277777,-0.12916652,92.145823)">
+      <path
+         id="path6222"
+         d="m 368,226 h 33 v -17 h -33 z" />
+      <text
+         id="text6226"
+         style="font-variant:normal;font-weight:bold;font-size:6px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         transform="matrix(1,0,0,-1,382.33,215.27)"><tspan
+           id="tspan6224">{{cella_criticita_attesa}}</tspan></text>
+    </g>
+    <g
+       id="g6228"
+       transform="matrix(0.35277777,0,0,-0.35277777,-0.12916652,92.145823)">
+      <path
+         id="path6230"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 367.5,226 h 34" />
+      <path
+         id="path6232"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 368,226.5 v -18" />
+      <path
+         id="path6234"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 367.5,209 h 34" />
+      <path
+         id="path6236"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 401,226.5 v -18" />
+    </g>
+    <g
+       id="g_criticita12h"
+       class="piene{{cella_prev_crit12h}}"
+       transform="matrix(0.35277777,0,0,-0.35277777,-0.12916652,92.145823)">
+      <path
+         id="path6708"
+         d="m 401,226 h 43 v -17 h -43 z" />
+      <text
+         id="text6712"
+         style="font-variant:normal;font-weight:bold;font-size:6px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         transform="matrix(1,0,0,-1,420.33,215.27)"><tspan
+           id="tspan6710">{{cella_prev_crit12h}}</tspan></text>
+    </g>
+    <g
+       id="g6714"
+       transform="matrix(0.35277777,0,0,-0.35277777,-0.12916652,92.145823)">
+      <path
+         id="path6716"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 400.5,226 h 44" />
+      <path
+         id="path6718"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 401,226.5 v -18" />
+      <path
+         id="path6720"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 400.5,209 h 44" />
+      <path
+         id="path6722"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         d="m 444,226.5 v -18" />
+    </g>
+  </g>
+</svg>

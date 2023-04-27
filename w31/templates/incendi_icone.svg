@@ -1,0 +1,28 @@
+{% if precipitazione_classe == 1 %}
+<img src="http://localhost:8000/static/images/icons/diffuse-deboli.svg"
+ height="6" width="6"/>
+{% endif %}
+{% if precipitazione_classe == 2 %}
+<img src="http://localhost:8000/static/images/icons/diffuse-moderate.svg" 
+height="6" width="6"/>
+{% endif %}
+{% if umidità_classe == 0 %}
+<img src="http://localhost:8000/static/images/icons/RH-bassa.svg"
+ height="5">
+{% endif %}
+{% if umidità_classe == 1 %}
+<img src="http://localhost:8000/static/images/icons/RH-media.svg"
+ height="5">
+{% endif %}
+{% if umidità_classe == 2 %}
+<img src="http://localhost:8000/static/images/icons/RH-alta.svg"
+ height="5"/>
+{% endif %}
+{% if vento_classe == 1 %}
+<img src="http://localhost:8000/static/images/icons/vento_moderato.svg"
+ height="6" width="6"/>
+{% endif %}
+{% if vento_classe == 2 %}
+<img src="http://localhost:8000/static/images/icons/vento_forte.svg"
+ height="5"/>
+{% endif %}

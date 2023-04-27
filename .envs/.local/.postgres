@@ -1,0 +1,5 @@
+POSTGRES_DB=core
+POSTGRES_USER=weboll
+POSTGRES_PASSWORD=weboll
+DATA_LOCATION=file:///docker-entrypoint-initdb.d
+

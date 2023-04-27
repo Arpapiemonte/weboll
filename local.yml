@@ -1,0 +1,125 @@
+---
+
+version: '3.7'
+
+services:
+  django: &django
+    build:
+      context: .
+      dockerfile: ./compose/backend/Dockerfile
+      cache_from:
+        - ${DOCKER_REGISTRY}/weboll/tester:latest
+      args:
+        LDAP_CA: $LDAP_CA
+        LOCAL_CA: $LOCAL_CA
+    image: weboll_local_django
+    container_name: weboll_local_django
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./.envs/.local/.django
+      - ./.env
+    init: true
+    command: /app/compose/backend/start
+    depends_on:
+      - postgres
+    volumes:
+      - .:/app
+  postgres:
+    build:
+      context: .
+      dockerfile: ./compose/postgres/Dockerfile
+    image: weboll_local_postgres
+    container_name: weboll_local_postgres
+    restart: unless-stopped
+    env_file:
+      - ./.envs/.local/.postgres
+      - ./.env
+    volumes:
+      - ./sql:/docker-entrypoint-initdb.d
+    ports:
+      - "5433:5432"
+  frontend:
+    build:
+      context: .
+      dockerfile: ./compose/frontend/Dockerfile
+      target: frontend-builder
+    image: weboll_local_frontend
+    container_name: weboll_local_frontend
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    depends_on:
+      - django
+    command: yarn dev --port 80 --host 0
+    env_file:
+      - ./.env
+    volumes:
+      - ./public:/app/public
+      - ./src:/app/src
+      - ./w05:/app/w05
+      - ./w16:/app/w16
+      - ./w23:/app/w23
+      - ./w24:/app/w24
+      - ./w29:/app/w29
+      - ./w22:/app/w22
+      - ./w30:/app/w30
+      - ./w32:/app/w32
+      - ./w22verifica:/app/w22verifica
+      - ./w31:/app/w31
+      - ./tests:/app/tests
+  ldap:
+    image: osixia/openldap:1.5.0
+    container_name: weboll_local_ldap
+    hostname: ldap
+    restart: unless-stopped
+    command: [--copy-service, --loglevel, debug]
+    ports:
+      - "636:636"
+    env_file:
+      - ./.envs/.local/.ldap
+    volumes:
+      - ./compose/ldap/users.ldif:/container/service/slapd/assets/config/bootstrap/ldif/custom/users.ldif
+      - ./compose/ldap/certs:/container/service/slapd/assets/certs
+      - ./compose/ldap/certs/ca.crt:/usr/local/share/ca-certificates/ca.crt
+  redis:
+    image: redis:6.0
+    container_name: weboll_local_redis
+  celeryworker:
+    <<: *django
+    image: weboll_backend
+    container_name: weboll_local_celeryworker
+    depends_on:
+      - redis
+      - postgres
+    ports: []
+    command: /app/compose/backend/celery/worker/start
+    volumes:
+      - ./output:/output
+  celerybeat:
+    <<: *django
+    image: weboll_backend
+    container_name: weboll_local_celerybeat
+    depends_on:
+      - redis
+      - postgres
+    ports: []
+    command: /app/compose/backend/celery/beat/start
+  flower:
+    <<: *django
+    image: weboll_backend
+    container_name: weboll_local_flower
+    ports:
+      - "5555:5555"
+    command: /app/compose/backend/celery/flower/start
+  adminer:
+    image: adminer
+    container_name: weboll_local_adminer
+    restart: always
+    ports:
+      - 8090:8080
+    links:
+      - postgres
+    depends_on:
+      - postgres

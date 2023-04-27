@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="svg"
+   viewBox="0 0 440 440"
+   version="1.1"
+   sodipodi:docname="neve_2.svg"
+   width="448"
+   height="448"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview31"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     width="448px"
+     inkscape:zoom="1.688"
+     inkscape:cx="249.70379"
+     inkscape:cy="250.29621"
+     inkscape:window-width="1846"
+     inkscape:window-height="1016"
+     inkscape:window-x="74"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg" />
+  <defs
+     id="defs4">
+    <style
+       id="style2">
+      .cls-1 {
+        fill: #fff;
+        stroke: #000;
+        stroke-width: 16.35px;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2, .cls-3, .cls-4, .cls-5 {
+        fill: none;
+        stroke-linecap: round;
+      }
+
+      .cls-2, .cls-3 {
+        stroke: #2e3192;
+      }
+
+      .cls-2 {
+        stroke-width: 17.38px;
+      }
+
+      .cls-3 {
+        stroke-width: 18.69px;
+      }
+
+      .cls-4, .cls-5 {
+        stroke: #005cbc;
+      }
+
+      .cls-4 {
+        stroke-width: 13.69px;
+      }
+
+      .cls-5 {
+        stroke-width: 14.02px;
+      }
+    </style>
+  </defs>
+  <title
+     id="title6">neve_2</title>
+  <g
+     id="neve_2"
+     transform="translate(-26,-24)">
+    <path
+       id="rettangolo_bianco"
+       class="cls-1"
+       d="m 99.66,37.4 h 300.68 a 62.25,62.25 0 0 1 62.26,62.26 v 300.68 a 62.25,62.25 0 0 1 -62.25,62.25 H 99.66 A 62.26,62.26 0 0 1 37.4,400.34 V 99.66 A 62.25,62.25 0 0 1 99.66,37.4 Z" />
+    <g
+       id="fiocco_gran">
+      <line
+         id="fiocco_gran9"
+         class="cls-2"
+         x1="244.03999"
+         y1="252.61"
+         x2="337.07999"
+         y2="413.54001" />
+      <line
+         id="fiocco_gran8"
+         class="cls-2"
+         x1="337.07999"
+         y1="252.61"
+         x2="244.03999"
+         y2="413.54001" />
+      <line
+         id="fiocco_gran7"
+         class="cls-3"
+         x1="196.27"
+         y1="336.44"
+         x2="378.48999"
+         y2="336.44" />
+      <polyline
+         id="fiocco_gran6"
+         class="cls-2"
+         points="312.56 251.92 318.09 285.44 350.28 268.69" />
+      <polyline
+         id="fiocco_gran5"
+         class="cls-2"
+         points="271.7 255.74 263.02 285.44 232.73 281.53" />
+      <polyline
+         id="fiocco_gran4"
+         class="cls-2"
+         points="213.86 312.96 228.33 333.07 213.86 360.98" />
+      <polyline
+         id="fiocco_gran3"
+         class="cls-2"
+         points="232.73 388.39 263.28 380.26 275.47 402.76" />
+      <polyline
+         id="fiocco_gran2"
+         class="cls-2"
+         points="310.05 409.58 319.28 382.75 350.28 388.39" />
+      <polyline
+         id="fiocco_gran1"
+         class="cls-2"
+         points="373.54 312.96 350.28 333.91 373.54 356.7" />
+    </g>
+    <g
+       id="fiocco_picc">
+      <line
+         id="fiocco_picc9"
+         class="cls-4"
+         x1="159.13"
+         y1="89.370003"
+         x2="232.39999"
+         y2="216.11" />
+      <line
+         id="fiocco_picc8"
+         class="cls-4"
+         x1="232.39999"
+         y1="89.370003"
+         x2="159.13"
+         y2="216.11" />
+      <line
+         id="fiocco_picc7"
+         class="cls-5"
+         x1="121.51"
+         y1="156.55"
+         x2="266.35001"
+         y2="156.55" />
+      <polyline
+         id="fiocco_picc6"
+         class="cls-4"
+         points="213.09 88.83 217.45 115.23 242.8 102.03" />
+      <polyline
+         id="fiocco_picc5"
+         class="cls-4"
+         points="180.92 91.84 174.08 115.23 150.22 112.15" />
+      <polyline
+         id="fiocco_picc4"
+         class="cls-4"
+         points="135.37 136.9 146.76 152.74 135.37 174.72" />
+      <polyline
+         id="fiocco_picc3"
+         class="cls-4"
+         points="150.22 196.31 174.28 189.9 183.88 207.62" />
+      <polyline
+         id="fiocco_picc2"
+         class="cls-4"
+         points="211.11 212.99 218.38 191.87 242.8 196.31" />
+      <polyline
+         id="fiocco_picc1"
+         class="cls-4"
+         points="261.11 136.9 242.8 153.4 261.11 171.35" />
+    </g>
+  </g>
+  <metadata
+     id="metadata848">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>neve_2</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>

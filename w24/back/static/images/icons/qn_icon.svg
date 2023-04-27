@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Livello_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 60 60" style="enable-background:new 0 0 60 60;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#0071BC;}
+	.st1{font-family:'Arial-BoldMT';}
+	.st2{font-size:30.5793px;}
+	.st3{fill:none;stroke:#0071BC;stroke-width:5.33;stroke-linecap:round;stroke-miterlimit:10;}
+	.st4{fill:none;stroke:#0071BC;stroke-width:5.08;stroke-linecap:round;stroke-miterlimit:10;}
+</style>
+<g id="quota_neve">
+	<text transform="matrix(1.24 0 0 1 2.001 54.4883)" class="st0 st1 st2">QN</text>
+	<g id="mezzo_fiocco">
+		<path id="mezzo_fiocco7" class="st3" d="M17.6,6.6l12.5,20.8"/>
+		<path id="mezzo_fiocco6" class="st3" d="M42.7,6.8L29.9,27.4"/>
+		<line id="mezzo_fiocco5" class="st4" x1="4.7" y1="28.2" x2="53.8" y2="28.5"/>
+		<polyline id="mezzo_fiocco4" class="st3" points="36.1,6.6 37.5,15.1 46.3,10.9 		"/>
+		<polyline id="mezzo_fiocco3" class="st3" points="25.1,7.5 22.7,15 14.5,14 		"/>
+		<line id="mezzo_fiocco2" class="st3" x1="9.4" y1="22" x2="13.2" y2="27.1"/>
+		<line id="mezzo_fiocco1" class="st3" x1="52.4" y1="22.3" x2="46.1" y2="27.6"/>
+	</g>
+</g>
+</svg>

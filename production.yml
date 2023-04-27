@@ -1,0 +1,54 @@
+---
+
+version: '3.7'
+
+services:
+  django: &django
+    image: ${DOCKER_REGISTRY}/weboll/backend:${TAG:-latest}
+    container_name: weboll_production_django
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./.envs/.production/.django
+      - ./.env
+    init: true
+    command: /app/compose/backend/start
+  frontend:
+    image: ${DOCKER_REGISTRY}/weboll/frontend:${TAG:-latest}
+    container_name: weboll_production_frontend
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    depends_on:
+      - django
+    volumes:
+      - ./compose/frontend/conf.d:/etc/nginx/conf.d
+  redis:
+    image: redis:6.0
+    container_name: weboll_production_redis
+  celeryworker:
+    <<: *django
+    image: ${DOCKER_REGISTRY}/weboll/backend:${TAG:-latest}
+    container_name: celeryworker
+    depends_on:
+      - redis
+    ports: []
+    command: /app/compose/backend/celery/worker/start
+    volumes:
+      - ./output:/output
+  celerybeat:
+    <<: *django
+    image: ${DOCKER_REGISTRY}/weboll/backend:${TAG:-latest}
+    container_name: weboll_production_celerybeat
+    depends_on:
+      - redis
+    ports: []
+    command: /app/compose/backend/celery/beat/start
+  flower:
+    <<: *django
+    image: ${DOCKER_REGISTRY}/weboll/backend:${TAG:-latest}
+    container_name: weboll_production_flower
+    ports:
+      - "5555:5555"
+    command: /app/compose/backend/celery/flower/start

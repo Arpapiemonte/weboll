@@ -1,0 +1,41 @@
+version: '3.7'
+
+services:
+  tester:
+    build:
+      context: .
+      dockerfile: ./compose/backend/Dockerfile
+    image: weboll_tester
+    container_name: tester
+    depends_on:
+      - django
+      - frontend
+    volumes:
+      - .:/app
+    environment:
+      DJANGO_SECRET_KEY: 'REPLACE_ME'
+      DJANGO_ALLOWED_HOSTS: '*'
+      DJANGO_DEBUG: 'True'
+      DJANGO_COMPRESS_OFFLINE: 'True'
+      DJANGO_SITE_DOMAIN: hello.example.com
+      DJANGO_SITE_NAME: Hello Website
+      DJANGO_TIME_ZONE: Europe/Rome
+      DATABASE_ENGINE: 'django.db.backends.postgresql'
+      DATABASE_HOST: 'postgres'
+      DATABASE_NAME: 'core'
+      DATABASE_USER: 'weboll'
+      DATABASE_PASSWORD: 'weboll'
+      TEST_SITE: frontend:80
+      TEST_SITE_URL: http://frontend:80/
+      NEEDLE_SAVE_BASELINE: ${NEEDLE_SAVE_BASELINE:-0}
+      CELERY_BROKER_URL: 'redis://redis:6379'
+      CELERY_FLOWER_USER: 'fkdFOaHnHdPBuunlggcTZmrkePnGbXDN'
+      CELERY_FLOWER_PASSWORD: 'KYfpK2XBJsUa3YmzbGw9dBVFDQ1kECAXAcZmaH6K2SpMxjywjGZF6HVRkubY1mkw'
+    command: sh -c '
+      echo NEEDLE_SAVE_BASELINE=$$NEEDLE_SAVE_BASELINE;
+      wait-for-it "$$TEST_SITE" --timeout=10 --strict -- pytest-3 tests/ &&
+      if [ "$$NEEDLE_SAVE_BASELINE" = 1 ]; then
+        echo "📷 Saved new visual regressions baselines in 'screenshots/baseline/'";
+        strip-nondeterminism screenshots/baseline/*.png;
+      fi
+      '

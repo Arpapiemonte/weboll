@@ -1,0 +1,51 @@
+<svg id="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        stroke: #000;
+        stroke-width: 5.01px;
+      }
+
+      .cls-1, .cls-3, .cls-4 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2 {
+        font-size: 35.75px;
+        fill: #0071bc;
+        font-family: Arial-BoldMT, Arial;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+      }
+
+      .cls-3, .cls-4 {
+        fill: none;
+        stroke: #0071bc;
+        stroke-linecap: round;
+      }
+
+      .cls-3 {
+        stroke-width: 5.33px;
+      }
+
+      .cls-4 {
+        stroke-width: 5.08px;
+      }
+    </style>
+  </defs>
+  <title>quota_neve</title>
+  <g id="quota_neve">
+    <path id="rettangolo_bianco" class="cls-1" d="M462.6,264.21c0,12.1-7.58,21.77-17.13,21.77H54.53C45,286,37.4,276.31,37.4,264.21V230.73c0-12.1,7.58-20.62,17.13-20.62H445.47c9.54,0,17.13,8.52,17.13,20.62Z"/>
+    <text class="cls-2" transform="translate(51.64 276.44) scale(1.24 1)">QN</text>
+    <g id="mezzo_fiocco">
+      <path id="mezzo_fiocco7" class="cls-3" d="M69.91,220.5l14.61,24.29"/>
+      <path id="mezzo_fiocco6" class="cls-3" d="M99.25,220.69l-15,24.09"/>
+      <line id="mezzo_fiocco5" class="cls-4" x1="54.81" y1="245.74" x2="112.22" y2="246.11"/>
+      <polyline id="mezzo_fiocco4" class="cls-3" points="91.52 220.44 93.19 230.45 103.38 225.51"/>
+      <polyline id="mezzo_fiocco3" class="cls-3" points="78.63 221.49 75.83 230.33 66.28 229.1"/>
+      <line id="mezzo_fiocco2" class="cls-3" x1="60.27" y1="238.44" x2="64.78" y2="244.47"/>
+      <line id="mezzo_fiocco1" class="cls-3" x1="110.62" y1="238.77" x2="103.24" y2="244.97"/>
+    </g>
+  </g>
+</svg>

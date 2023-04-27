@@ -1,0 +1,101 @@
+{
+    "0": {
+        "livello_criticita_oss": "np",
+        "probabilita_criticita_oss": "nessuna",
+        "livello_criticita_prev_oggi": "np",
+        "probabilita_criticita_prev_oggi": "nessuna",
+        "livello_criticita_prev_domani": "np",
+        "probabilita_criticita_prev_domani": "nessuna",
+        "id_w29_zone": 1
+    },
+    "1": {
+        "livello_criticita_oss": "np",
+        "probabilita_criticita_oss": "nessuna",
+        "livello_criticita_prev_oggi": "np",
+        "probabilita_criticita_prev_oggi": "nessuna",
+        "livello_criticita_prev_domani": "np",
+        "probabilita_criticita_prev_domani": "nessuna",
+        "id_w29_zone": 2
+    },
+    "2": {
+        "livello_criticita_oss": "np",
+        "probabilita_criticita_oss": "nessuna",
+        "livello_criticita_prev_oggi": "np",
+        "probabilita_criticita_prev_oggi": "nessuna",
+        "livello_criticita_prev_domani": "np",
+        "probabilita_criticita_prev_domani": "nessuna",
+        "id_w29_zone": 3
+    },
+    "3": {
+        "livello_criticita_oss": "np",
+        "probabilita_criticita_oss": "nessuna",
+        "livello_criticita_prev_oggi": "np",
+        "probabilita_criticita_prev_oggi": "nessuna",
+        "livello_criticita_prev_domani": "np",
+        "probabilita_criticita_prev_domani": "nessuna",
+        "id_w29_zone": 4
+    },
+    "4": {
+        "livello_criticita_oss": "np",
+        "probabilita_criticita_oss": "nessuna",
+        "livello_criticita_prev_oggi": "np",
+        "probabilita_criticita_prev_oggi": "nessuna",
+        "livello_criticita_prev_domani": "np",
+        "probabilita_criticita_prev_domani": "nessuna",
+        "id_w29_zone": 5
+    },
+    "5": {
+        "livello_criticita_oss": "np",
+        "probabilita_criticita_oss": "nessuna",
+        "livello_criticita_prev_oggi": "np",
+        "probabilita_criticita_prev_oggi": "nessuna",
+        "livello_criticita_prev_domani": "np",
+        "probabilita_criticita_prev_domani": "nessuna",
+        "id_w29_zone": 6
+    },
+    "6": {
+        "livello_criticita_oss": "np",
+        "probabilita_criticita_oss": "nessuna",
+        "livello_criticita_prev_oggi": "np",
+        "probabilita_criticita_prev_oggi": "nessuna",
+        "livello_criticita_prev_domani": "np",
+        "probabilita_criticita_prev_domani": "nessuna",
+        "id_w29_zone": 7
+    },
+    "7": {
+        "livello_criticita_oss": "np",
+        "probabilita_criticita_oss": "nessuna",
+        "livello_criticita_prev_oggi": "np",
+        "probabilita_criticita_prev_oggi": "nessuna",
+        "livello_criticita_prev_domani": "np",
+        "probabilita_criticita_prev_domani": "nessuna",
+        "id_w29_zone": 8
+    },
+    "8": {
+        "livello_criticita_oss": "np",
+        "probabilita_criticita_oss": "nessuna",
+        "livello_criticita_prev_oggi": "np",
+        "probabilita_criticita_prev_oggi": "nessuna",
+        "livello_criticita_prev_domani": "np",
+        "probabilita_criticita_prev_domani": "nessuna",
+        "id_w29_zone": 9
+    },
+    "9": {
+        "livello_criticita_oss": "np",
+        "probabilita_criticita_oss": "nessuna",
+        "livello_criticita_prev_oggi": "np",
+        "probabilita_criticita_prev_oggi": "nessuna",
+        "livello_criticita_prev_domani": "np",
+        "probabilita_criticita_prev_domani": "nessuna",
+        "id_w29_zone": 10
+    },
+    "10": {
+        "livello_criticita_oss": "np",
+        "probabilita_criticita_oss": "nessuna",
+        "livello_criticita_prev_oggi": "np",
+        "probabilita_criticita_prev_oggi": "nessuna",
+        "livello_criticita_prev_domani": "np",
+        "probabilita_criticita_prev_domani": "nessuna",
+        "id_w29_zone": 11
+     }
+}

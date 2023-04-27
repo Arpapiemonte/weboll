@@ -1,0 +1,312 @@
+[
+  {
+    "id": "001018-800",
+    "desc_stazione": "Baldissero T.so-Acea",
+    "x": 191.4704,
+    "y": 318.0596,
+    "mx8": 46,
+    "mxd": 51,
+    "color": "lime",
+    "date": "2023-02-22"
+  },
+  {
+    "id": "001028-801",
+    "desc_stazione": "Borgaro T.so-Caduti",
+    "x": 170.0833,
+    "y": 298.9782,
+    "mx8": 12,
+    "mxd": 20,
+    "color": "lime",
+    "date": "2023-02-22"
+  },
+  {
+    "id": "001073-800",
+    "desc_stazione": "Ceresole Reale-Diga",
+    "x": 105.141,
+    "y": 234.9355,
+    "mx8": 52,
+    "mxd": 59,
+    "color": "lime",
+    "date": "2023-02-22"
+  },
+  {
+    "id": "001078-802",
+    "desc_stazione": "Chieri-Bersezio",
+    "x": 198.4209,
+    "y": 334.0186,
+    "mx8": 16,
+    "mxd": 28,
+    "color": "lime",
+    "date": "2023-02-22"
+  },
+  {
+    "id": "001099-800",
+    "desc_stazione": "Druento-La Mandria",
+    "x": 154.4467,
+    "y": 293.8937,
+    "mx8": 14,
+    "mxd": 23,
+    "color": "lime",
+    "date": "2023-02-22"
+  },
+  {
+    "id": "001125-802",
+    "desc_stazione": "Ivrea-Liberazone",
+    "x": 206.3711,
+    "y": 231.9729,
+    "mx8": 12,
+    "mxd": 14,
+    "color": "lime",
+    "date": "2023-02-22"
+  },
+  {
+    "id": "001130-800",
+    "desc_stazione": "Leini-Grande Torino",
+    "x": 178.7653,
+    "y": 294.1746,
+    "mx8": 8,
+    "mxd": 17,
+    "color": "lime",
+    "date": "2023-02-22"
+  },
+  {
+    "id": "001171-801",
+    "desc_stazione": "Orbassano-Gozzano",
+    "x": 152.061,
+    "y": 332.3312,
+    "mx8": 21,
+    "mxd": 33,
+    "color": "lime",
+    "date": "2023-02-22"
+  },
+  {
+    "id": "001270-801",
+    "desc_stazione": "Susa-Repubblica",
+    "x": 72.304,
+    "y": 300.518,
+    "mx8": 12,
+    "mxd": 19,
+    "color": "lime",
+    "date": "2023-02-22"
+  },
+  {
+    "id": "001272-806",
+    "desc_stazione": "Torino-Lingotto",
+    "x": 168.1474,
+    "y": 328.4932,
+    "mx8": 16,
+    "mxd": 26,
+    "color": "lime",
+    "date": "2023-02-22"
+  },
+  {
+    "id": "001272-822",
+    "desc_stazione": "Torino-Rubino",
+    "x": 164.4881,
+    "y": 324.5732,
+    "mx8": 12,
+    "mxd": 24,
+    "color": "lime",
+    "date": "2023-02-22"
+  },
+  {
+    "id": "001309-801",
+    "desc_stazione": "Vinovo-Volontari",
+    "x": 165.7883,
+    "y": 345.2292,
+    "mx8": 14,
+    "mxd": 28,
+    "color": "lime",
+    "date": "2023-02-22"
+  },
+  {
+    "id": "002012-802",
+    "desc_stazione": "Biella-Sturzo",
+    "x": 235.1687,
+    "y": 207.8275,
+    "mx8": 21,
+    "mxd": 29,
+    "color": "lime",
+    "date": "2023-02-22"
+  },
+  {
+    "id": "002016-800",
+    "desc_stazione": "Borgosesia-Tonella",
+    "x": 271.7202,
+    "y": 173.0455,
+    "mx8": 20,
+    "mxd": 30,
+    "color": "lime",
+    "date": "2023-02-22"
+  },
+  {
+    "id": "002046-800",
+    "desc_stazione": "Cossato-Pace",
+    "x": 256.1265,
+    "y": 205.7137,
+    "mx8": 13,
+    "mxd": 18,
+    "color": "lime",
+    "date": "2023-02-22"
+  },
+  {
+    "id": "002149-801",
+    "desc_stazione": "Trivero-Ronco",
+    "x": 251.9194,
+    "y": 183.9998,
+    "mx8": -99,
+    "mxd": -99,
+    "color": "white",
+    "date": "2023-02-22"
+  },
+  {
+    "id": "002158-803",
+    "desc_stazione": "Vercelli-Coni",
+    "x": 289.9612,
+    "y": 263.003,
+    "mx8": 14,
+    "mxd": 22,
+    "color": "lime",
+    "date": "2023-02-22"
+  },
+  {
+    "id": "003010-800",
+    "desc_stazione": "Baceno-Alpe Devero",
+    "x": 268.6047,
+    "y": 35.9616,
+    "mx8": 52,
+    "mxd": 48,
+    "color": "lime",
+    "date": "2023-02-22"
+  },
+  {
+    "id": "003043-800",
+    "desc_stazione": "Castelletto Ticino-Fontane",
+    "x": 322.4425,
+    "y": 173.3182,
+    "mx8": 24,
+    "mxd": 35,
+    "color": "lime",
+    "date": "2023-02-22"
+  },
+  {
+    "id": "003061-801",
+    "desc_stazione": "Domodossola-Curotti",
+    "x": 273.9219,
+    "y": 78.6533,
+    "mx8": 19,
+    "mxd": 34,
+    "color": "lime",
+    "date": "2023-02-22"
+  },
+  {
+    "id": "003106-805",
+    "desc_stazione": "Novara-ARPA",
+    "x": 325.0265,
+    "y": 235.7064,
+    "mx8": 12,
+    "mxd": 20,
+    "color": "lime",
+    "date": "2023-02-22"
+  },
+  {
+    "id": "003118-800",
+    "desc_stazione": "Pieve Vergonte-Industria",
+    "x": 270.0296,
+    "y": 105.0171,
+    "mx8": 27,
+    "mxd": 37,
+    "color": "lime",
+    "date": "2023-02-22"
+  },
+  {
+    "id": "003156-801",
+    "desc_stazione": "Verbania-Gabardi",
+    "x": 316.8494,
+    "y": 123.8997,
+    "mx8": 25,
+    "mxd": 35,
+    "color": "lime",
+    "date": "2023-02-22"
+  },
+  {
+    "id": "004003-800",
+    "desc_stazione": "Alba-Tanaro",
+    "x": 229.1177,
+    "y": 402.541,
+    "mx8": 15,
+    "mxd": 23,
+    "color": "lime",
+    "date": "2023-02-22"
+  },
+  {
+    "id": "004078-800",
+    "desc_stazione": "Cuneo-Alpini",
+    "x": 147.672,
+    "y": 474.6637,
+    "mx8": 38,
+    "mxd": 45,
+    "color": "lime",
+    "date": "2023-02-22"
+  },
+  {
+    "id": "004180-800",
+    "desc_stazione": "Revello-Staffarda",
+    "x": 130.9172,
+    "y": 397.3478,
+    "mx8": 24,
+    "mxd": 38,
+    "color": "lime",
+    "date": "2023-02-22"
+  },
+  {
+    "id": "004201-800",
+    "desc_stazione": "Saliceto-Moizo",
+    "x": 250.5477,
+    "y": 469.167,
+    "mx8": 40,
+    "mxd": 43,
+    "color": "lime",
+    "date": "2023-02-22"
+  },
+  {
+    "id": "005005-801",
+    "desc_stazione": "Asti-Acquisto",
+    "x": 257.4982,
+    "y": 356.1056,
+    "mx8": 5,
+    "mxd": 6,
+    "color": "lime",
+    "date": "2023-02-22"
+  },
+  {
+    "id": "005120-800",
+    "desc_stazione": "Vinchio-San Michele",
+    "x": 274.2244,
+    "y": 379.2444,
+    "mx8": 10,
+    "mxd": -99,
+    "color": "white",
+    "date": "2023-02-22"
+  },
+  {
+    "id": "006003-805",
+    "desc_stazione": "Alessandria-Volta",
+    "x": 324.9222,
+    "y": 354.0041,
+    "mx8": 7,
+    "mxd": 14,
+    "color": "lime",
+    "date": "2023-02-22"
+  },
+  {
+    "id": "006066-800",
+    "desc_stazione": "Dernice-Costa",
+    "x": 394.1984,
+    "y": 389.8891,
+    "mx8": 53,
+    "mxd": 56,
+    "color": "lime",
+    "date": "2023-02-22"
+  }
+]

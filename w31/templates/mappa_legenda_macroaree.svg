@@ -1,0 +1,163 @@
+{% load date_extras_w31 %}
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 352.39999 461.39999"
+   version="1.1"
+   id="svg34"
+   width="35"
+   height="46"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs38">
+    <rect
+       x="39.584543"
+       y="110.76895"
+       width="264.41786"
+       height="388.31498"
+       id="rect117147" />
+    <rect
+       x="203.05084"
+       y="314.40121"
+       width="54.643536"
+       height="29.843843"
+       id="rect92896" />
+    <rect
+       x="293.08099"
+       y="339.61533"
+       width="127.86437"
+       height="45.427479"
+       id="rect85582" />
+    <rect
+       x="204.55634"
+       y="300.25137"
+       width="68.160009"
+       height="23.212639"
+       id="rect77054" />
+    <rect
+       x="347"
+       y="426"
+       width="64.391861"
+       height="47.418427"
+       id="rect67168" />
+    <rect
+       x="323.40448"
+       y="261.41302"
+       width="113.93378"
+       height="47.492435"
+       id="rect58103" />
+    <rect
+       x="214.54814"
+       y="209.53506"
+       width="178.59924"
+       height="97.215974"
+       id="rect56097" />
+    <rect
+       x="314.80508"
+       y="226.48976"
+       width="102.83265"
+       height="62.394169"
+       id="rect43450" />
+    <rect
+       x="235.20467"
+       y="255.06302"
+       width="151.31593"
+       height="65.758224"
+       id="rect40868" />
+    <rect
+       x="287.84924"
+       y="162.42096"
+       width="165.92834"
+       height="133.23798"
+       id="rect36438" />
+    <rect
+       x="328.19983"
+       y="229.22287"
+       width="48.040771"
+       height="25.258109"
+       id="rect14694" />
+    <rect
+       x="214.54814"
+       y="209.53506"
+       width="167.65788"
+       height="79.742119"
+       id="rect56097-4" />
+  </defs>
+  <!-- svg generated using QGIS www.qgis.org -->
+  <g
+     id="aree_bollettino"
+     transform="translate(-309.8,-174.8)">
+    <g
+       stroke="#232323"
+       fill="#729b6f"
+       stroke-linejoin="round"
+       stroke-width="0.4"
+       id="g28">
+      <g
+         class="Nord">
+        <path
+           class="livello_{{ tabella_incendi | get_item:'Nord' | get_element:i }}"
+           d="m 571,424 v -1 h -1 -1 -1 v 1 h -1 v -1 h -1 v -1 h -1 v -1 h 1 v -1 h -1 v 1 -1 -1 -1 h -1 v 1 -1 1 h -1 v -1 h -1 v -1 1 -1 h -1 -1 v 1 h -1 v -1 1 h -1 -1 v 1 h -1 v -1 h -1 v 1 -1 h -1 v 1 -1 h -1 -1 1 v -1 h -1 v 1 -1 h -1 v 1 h -1 -1 -1 -1 -1 v 1 1 h -1 v 1 h -1 v 1 1 h -1 v 1 h -1 -1 v -1 h -1 v -1 h -1 -1 v 1 -1 1 h -1 v -1 h -1 -1 -1 v -1 h -1 v 1 h -1 -1 v 1 h -1 v 1 h -1 -1 l -1,1 h -1 v -1 -1 h -1 v -1 h -1 -1 v 1 1 h -1 v 1 h -1 -1 v -1 h 1 v -1 h -1 v 1 h -1 -1 v -1 1 h -1 l -1,-1 h 1 -1 v -1 h -1 -1 -1 1 v -1 h -1 -1 -1 -1 v -1 h -1 -1 v 1 h -1 v -1 h -1 l -1,1 h -1 v -1 1 -1 h -1 v -1 h 1 -1 v -1 -1 -1 h -1 v 1 1 -1 h -1 v -1 h -1 -1 v -1 h -1 v -1 h -1 v -1 h -1 v -1 -1 -1 1 h -1 v -1 -1 -1 -1 -1 h -1 1 v -1 h 1 v -1 -1 -1 -1 -1 -1 -1 -1 -1 h -1 v -1 h -1 -1 v 1 h -1 v 1 h -1 -1 v -1 h 1 v -1 -1 -1 l 1,-1 h 1 -1 v -1 -1 h -1 1 v -1 h 1 v 1 h 1 v -1 h 1 1 v 1 h 1 1 v 1 h 1 v 1 h 1 v 1 -1 -1 -1 -1 -1 h 1 v -1 -1 h -1 v -1 h -1 v -1 -1 h -1 1 v -1 -1 -1 -1 -1 h 1 v 1 l 1,-1 v -1 -1 -1 h -1 1 -1 1 v -1 -1 h 1 1 v -1 h -1 1 l -1,-1 h 1 -1 v -1 h -1 -1 v -1 h 1 -1 v -1 h -1 -1 v -1 h -1 -1 v -1 h -1 v -1 h -1 -1 v -1 -1 h -1 v -1 h -1 v -1 h -1 v -1 h -1 v -1 h -1 v -1 h -1 v -1 -1 -1 h -1 -1 v -1 h -1 -1 -1 v -1 -1 h 1 v -1 -1 h 1 v -1 -1 h 1 v -1 h -1 v -1 -1 -1 h -1 v -1 h 1 v -1 h 1 -1 v -1 -1 -1 -1 -1 h 1 v -1 h 1 v -1 -1 h 1 1 v -1 h 1 v 1 -1 h 1 v -1 h -1 v -1 h -1 v -1 -1 h -1 v -1 h 1 l -1,-1 h -1 v -1 -1 h -1 v -1 -1 h 1 v -1 -1 h 1 l 1,-1 v -1 h 1 v -1 -1 h 1 v -1 h -1 v -1 l -1,-1 h 1 v -1 h -1 -1 v -1 h -1 -1 v -1 h -1 v -1 h -1 v -1 l -1,-1 1,-1 h -1 v -1 h -1 v -1 l -1,-1 v -1 -1 -1 -1 -1 -1 -1 h 1 1 v -1 h -1 v -1 h -1 v -1 -1 h 1 v -1 h 1 v -1 -1 -1 h -1 v -1 -1 -1 -1 -1 h -1 v -1 -1 h 1 v -1 h -1 v -1 -1 h 1 1 v -1 -1 -1 h -1 v -1 -1 -1 h 1 v -1 h 1 -1 v -1 h 1 v -1 -1 h -1 v -1 h 1 1 l 1,-1 v -1 h 1 v -1 -1 h 1 1 1 1 1 1 1 1 1 1 1 1 v -1 l 1,-1 v -1 h 1 1 v -1 h -1 1 v -1 -1 -1 l 1,-1 h 1 v -1 1 -1 h 1 -1 v -1 -1 -1 h -1 v -1 -1 -1 l 1,-1 v -1 -1 -1 h 1 v -1 h 1 1 1 1 v -1 h 1 1 1 1 v -1 h 1 1 v -1 -1 h 1 -1 1 v -1 -1 h 1 1 v -1 h 1 v 1 -1 h 1 v -1 h 1 v -1 -1 h -1 v -1 -1 h 1 v -1 -1 h 1 v -1 h 1 -1 v -1 l -1,-1 v -1 -1 -1 h -1 v -1 h -1 v -1 -2 h -1 -1 v -1 -1 h -1 l -1,-1 v -1 h -1 v -1 h -1 -1 v -1 h -1 v -1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 1 v -1 -1 h 1 v -1 h 1 v -1 h 1 1 1 v 1 h 1 1 1 v -1 1 -1 1 h 1 v -1 h 1 v -1 h 1 v 1 -1 l 2,-1 v -1 -1 h 1 v -1 h 1 -1 v -1 h 1 v -1 h 1 v -1 h 1 v 1 -1 1 -1 1 -1 h 1 v -1 h 1 1 -1 1 v -1 -1 -1 h 1 v -1 1 -1 1 h 1 1 v -1 h 1 v -1 h 1 1 v -1 h 1 v -1 -1 -1 -1 h -1 v -1 1 h -1 v -1 h -1 -1 v -1 h 1 v -1 h 1 v -1 -1 h 1 1 1 1 v -1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 l 1,-1 h 1 1 1 1 v -1 1 h 1 v -1 h 1 1 v -1 h 1 1 1 1 v 1 1 h 1 v 1 h 1 -1 1 -1 1 v 1 1 h -1 v 1 1 1 1 h 1 v 1 1 1 1 h 1 -1 v 1 h -1 v 1 h 1 v 1 1 1 1 1 1 h -1 v 1 h 1 v 1 1 h -1 1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 1 h -1 v 1 1 h -1 v 1 1 1 h 1 v 1 h 1 v 1 h 1 v 1 1 1 h -1 v 1 1 h 1 v 1 h 1 1 v 1 1 1 h 1 1 1 1 v 1 h 1 1 v 1 h 1 v -1 1 h 1 1 v 1 1 1 1 h 1 v 1 h 1 v 1 h 1 -1 1 v 1 h 1 v 1 h 1 v 1 1 1 h 1 1 v 1 h 1 1 v 1 h -1 1 -1 v 1 1 h 1 v 1 h 1 v 1 1 1 h 1 1 1 1 v -1 h 1 v 1 h 1 v 1 1 h 1 1 1 v 1 h 1 v 1 h 1 2 l 1,1 h -1 v 1 1 1 1 l 1,1 v 1 1 1 1 1 h 1 v 1 1 h 1 v 1 1 l -1,1 v 1 h -1 v 1 h -1 v 1 h -1 l -2,2 -1,1 -3,4 -5,5 -2,1 -1,1 -1,1 v 1 l -1,1 -1,1 v 1 h -1 v 2 1 h 1 v 1 1 h 1 v 1 1 1 h 1 v 1 1 1 l 1,1 v 1 l -1,1 v 1 1 l -1,1 h -1 v 1 h -1 -1 v 1 l -1,1 v 1 1 1 1 1 h 1 v 1 h 1 v 1 l 1,1 v 1 h 1 v 1 1 h 1 v 1 1 h 1 v 1 h 1 1 1 l 1,1 h 1 v -1 h 1 v 1 h 1 v 1 1 1 1 1 h -1 v 1 1 h -1 v 1 h 1 v 1 h 1 1 1 1 v -1 h 1 v 1 1 h -1 v 1 h -1 l 1,1 v 1 h 1 v 1 l 1,1 v 1 1 h -1 -1 v -1 -1 h -1 -1 v 1 1 h 1 v 1 l -1,1 h 1 1 1 v 1 h 1 v 1 h 1 l -1,1 1,1 v -1 l 1,1 v 1 1 1 h -1 v 1 1 1 h 1 v 1 1 1 1 l 1,1 v 1 1 h 1 v 1 h -1 v 1 1 h 1 v 1 1 h 1 -1 1 v 1 h 1 v 1 h 1 1 1 1 v 1 l 1,1 1,1 v -1 h 1 v 1 h 1 v 1 1 1 h -1 v 1 h 1 v 1 h 1 v 1 h 1 v 1 1 h 1 -1 v 1 h 1 1 v 1 1 1 l 1,1 v 1 h 1 v 1 1 h 1 -1 v 1 h 1 -1 -1 v 1 l -1,-1 -1,1 h -1 v 1 h 1 -1 l -1,1 h -1 -1 v -1 h -1 -1 v -1 h -1 v 1 1 h -1 -1 v 1 -1 h -1 -1 v 1 l -1,-1 h -1 v 1 h 1 v 1 h 1 v 1 h 1 v 1 1 l 1,-1 h 1 1 -1 v 1 h 1 v 1 h -1 v 1 h -1 -1 v 1 1 h -1 v -1 h -1 v 1 1 h -1 1 -1 v 1 h 1 -1 v 1 1 h -1 1 v 1 h -1 v 1 h -1 v -1 1 1 h -1 -1 -1 -1 -1 v 1 -1 h -1 v -1 -1 -1 -1 h -1 v -1 h 1 -1 v -1 h -1 v -1 h -1 v -1 h -1 v -1 -1 -1 1 -1 h -1 v -1 h -1 v 1 -1 h -1 v 1 -1 1 h -1 -1 1 v 1 h -1 v -1 1 -1 h -1 -1 v 1 h -1 v -1 1 -1 h -1 -1 l -1,-2 v 1 1 h -1 v 1 h -1 -1 v 1 1 h 1 v 1 1 1 1 -1 h -1 v 1 h -1 v 1 h -1 v -1 1 h -1 v 1 1 h -1 v 1 l 1,1 h 1 v -1 1 h 1 -1 v 1 1 1 h 1 v -1 h 1 1 v 1 1 h -1 l 1,1 v 1 h 1 v 1 h -1 v 1 -1 h -1 -1 v 1 h 1 l 1,1 h 1 1 1 v 1 h -1 -1 v -1 h -1 -1 v 1 h 1 1 v 1 h -1 -1 l -1,1 v 1 h 1 v 1 h 1 v 1 h 1 v 1 h 1 -1 v 1 h -1 -1 -1 l 1,1 h 1 1 1 v -1 -1 h 1 1 1 1 v 1 h -1 -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 1 1"
+           id="path2" />
+      </g>
+      <g
+         class="SudEst">
+        <path
+           class="livello_{{ tabella_incendi | get_item:'SudEst' | get_element:i }}"
+           d="m 617,526 v 1 1 h 1 v 1 h 1 1 v 1 1 h 1 -1 v 1 -1 1 1 1 h 1 -1 v 1 1 h 1 v 1 1 1 h 1 v 1 1 h -1 v 1 h -1 -1 -1 v 1 h -1 v -1 h -1 v -1 h -1 v -1 h -1 v 1 h -1 v 1 -1 h -1 -1 -1 -1 v 1 1 1 1 1 h -1 -1 -1 v 1 h -1 v 1 1 1 1 1 l 1,1 h -1 -1 v 1 -1 1 h -1 1 v 1 h -1 -1 -1 v -1 -1 h 1 v -1 -1 h -1 v -1 -1 -1 -1 h -1 v 1 h -1 v -1 -1 h 1 -1 v -1 -1 -1 h -1 -1 v -1 -1 -1 h -1 v -1 h -1 v -1 l -1,-1 h -1 -1 v 1 h -1 v -1 h -1 v 1 h -1 -1 v -1 h -1 v 1 h -1 v -1 h -1 -1 v 1 l -1,-1 h -1 -1 v -1 1 1 h -1 -1 v 1 h 1 v -1 1 1 -1 h -1 l -1,1 h 1 v 1 h -1 v 1 1 h 1 v 1 h 1 v 1 h -1 v 1 -1 h -1 v 1 h -1 v 1 l -1,-1 v 1 h 1 v 1 h -1 -1 -1 v 1 1 h 1 v 1 h -1 1 -1 v 1 -1 h -1 v 1 h -1 -1 v -1 h -1 v -1 h -1 -1 v 1 h -1 -1 -1 -1 -1 -1 -1 v -1 -1 h -1 v -1 1 h -1 v 1 h -1 v 1 1 h -1 v 1 h -1 v -1 h -1 -1 v -1 h -1 v -1 h -1 v 1 h -1 v 1 h -1 v 1 h 1 -1 v 1 h 1 -1 v 1 h -1 v 1 h 1 v 1 h -1 -1 -1 v 1 h -1 v 1 h -1 -1 v -1 -1 h -1 1 v -1 l -1,-1 h -1 -1 -1 -1 v -1 -1 h -1 v -1 h -1 -1 -1 l -1,-1 h -1 l -1,-1 v -1 h -1 v -1 -1 h -1 v -1 -1 -1 h -1 v -1 h -1 v -1 h 1 -1 v -1 h -1 1 v -1 h 1 v -1 -1 -1 -1 h -1 v -1 h -1 v -1 h 1 v -1 h -1 -1 v -1 -1 -1 h -1 -1 -1 -1 1 v -1 -1 h -1 v -1 h 1 v -1 h 1 v -1 -1 h 1 v -1 h 1 v -1 h 1 v -1 l -1,-1 v -1 h 1 l -1,-1 h 1 1 v -1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 v -1 -1 h 1 l -1,-1 v 1 -1 l -1,-1 v -1 -1 h -1 v 1 h -1 -1 l -1,1 v -1 l -1,-1 v 1 h -1 v -1 -1 h -1 v -1 -1 -1 h -1 -1 -1 v 1 1 h -1 v 1 1 h -1 v -1 1 h -1 v 1 h 1 -1 1 v 1 h -1 v -1 1 1 h -1 -1 v -1 -1 h -1 v -1 -1 h -1 1 v -1 -1 h -1 -1 v -1 h -1 v 1 -1 h -1 -1 v -1 h -1 v -1 h 1 v -1 -1 h 1 1 1 v -1 -1 h 1 1 v -1 h -1 v -1 -1 -1 -1 -1 h -1 -1 -1 v 1 -1 h -1 v -1 l -1,-1 v 1 h -1 v 1 h -1 v 1 h -1 -1 -1 v -1 1 -1 l -1,1 v 1 h -1 v 1 -1 h -1 v -1 l -1,-1 v -1 h -1 l -1,1 h -1 v -1 h -1 -1 v -1 -1 l -1,1 v -1 -1 -1 h -1 v -1 -1 -1 1 h -1 v -1 l -1,-1 v 1 h -1 v 1 h -1 -1 v -1 h -1 v -1 h -1 v -1 -1 -1 h -1 v -1 -1 h -1 -1 v 1 h -1 v -1 h -1 v -1 -1 h 1 1 1 1 v 1 -1 h 1 v -1 -1 -1 h -1 v -1 h -1 -1 -1 -1 v -1 -1 -1 l -1,-1 h 1 1 v -1 h 1 v -1 -1 -1 -1 -1 l 1,-1 h 1 v -1 h 1 l 1,-1 v -1 -1 -1 h 1 -1 v -1 h -1 -1 v -1 -1 h 1 -1 v -1 h 1 v -1 h 1 1 1 v -1 h 1 v -1 h 1 v -1 -1 h -1 v -1 h -1 v -1 h -1 v 1 h 1 -1 v 1 1 h -1 v -1 -1 h -1 v -1 h -1 v -1 h -1 v 1 -1 h -1 -1 v -1 -1 h 1 l -1,-1 v -1 h 1 l -1,-1 v -1 h 1 -1 1 v -1 1 -1 h 1 v 1 1 h 1 v 1 1 h 1 v -1 h 1 1 v -1 h 1 -1 v -1 h 1 -1 v -1 -1 h -1 v -1 h 1 v -1 h 1 1 v -1 h 1 1 1 v -1 h 1 1 v -1 h -1 1 1 1 1 v 1 h 1 1 v -1 -1 h 1 v 1 h 1 1 v 1 1 1 1 h 1 v 1 h 1 v 1 h 1 1 1 -1 1 v -1 -1 h 1 v -1 -1 h 1 v -1 h -1 1 v -1 h 1 v 1 h 1 1 1 1 v -1 -1 -1 h 1 v -1 -1 -1 -1 h 1 v -1 h 1 v -1 1 h 1 1 v -1 h 1 v 1 h -1 v 1 h 1 1 v -1 h 1 v -1 -1 h 1 1 v 1 h 1 v 1 1 h 1 l 1,-1 h 1 1 v -1 h 1 v -1 h 1 1 v -1 h 1 v 1 h 1 1 1 v 1 h 1 v -1 1 -1 h 1 1 v 1 h 1 v 1 h 1 1 v -1 h 1 v -1 -1 h 1 v -1 h 1 v -1 -1 h 1 1 1 1 1 v -1 h 1 v 1 -1 h 1 v 1 h -1 1 1 v 1 -1 h 1 v 1 -1 h 1 v 1 h 1 v -1 h 1 1 v -1 1 h 1 v -1 h 1 1 v 1 -1 1 h 1 v 1 h 1 v -1 1 -1 h 1 v 1 1 1 -1 h 1 v 1 h -1 v 1 h 1 v 1 h 1 v 1 h 1 v -1 h 1 1 1 v 1 h 1 1 v 1 h -1 v 1 h 1 l 1,1 h 1 1 v 1 h 1 v 1 1 1 h 1 l 1,1 h 1 v 1 1 1 1 1 h 1 v 1 h 1 v 1 h -1 1 v 1 h 1 v 1 h 1 v 1 h 1 l -1,1 v 1 h -1 1 v 1 h 1 -1 l 1,1 v 1 h -1 v 1 1 h -1 1 v 1 h 1 1 v 1 1 h -1 1 v 1 h 1 l 1,-1 h -1 v -1 h 1 1 1 v 1 h 1 v 1 -1 h 1 1 -1 v -1 -1 h 1 v -1 h 1 v 1 1 h 1 v 1 h 1 1 1 1 v 1 1 1 -1 h 1 v 1 h -1 1 v -1 h 1 v 1 h 1 v -1 h 1 v -1 h -1 1 v -1 h 1 v 1 h 1 1 v -1 -1 h -1 v -1 h 1 1 v 1 h 1 v -1 h -1 -1 l 1,-1 v 1 -1 1 h 1 1 v -1 h -1 v -1 h 1 v 1 h 1 v -1 h 1 v 1 -1 -1 h 1 1 v 1 -1 h 1 v 1 h 1 v -1 h 1 v -1 -1 h 1 1 v 1 h -1 v 1 h 1 1 v 1 1 h 1 v 1 1 1 1 1 1 h -1 1 v 1 1 h 1 v 1 1 h 1 1 v 1 -1 1 h 1 1 v -1 1 h 1 v -1 h 1 1 v 1 1 h 1 v 1 h 1 v 1 1 1 1 h -1 v 1 1 h 1 v 1 h 1 v 1 h 1 v 1 h -1 1 v 1 h 1 v 1 1 1 h 1 l 1,1 h 1 v 1 h 1 v 1 h 1 v 1 h 1 v -1 h 1 1 v 1 1 1 h 1 v 1 h 1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 1 h 1 v 1 h 1 v 1 h 1 v 1 1 1 h 1 1 1 1 v 1 h 1 v 1 h 1 v -1 h 1 v 1 h 1 1 v -1 h 1 v 1 -1 h 1 v -1 h 1 v 1 h -1 v 1 h 1 l 1,1 1,1 v 1 1 1 h -1 v 1 1 h 1 1 l -1,1 h 1 l 1,1 h 1 v 1 h 1 1 v 1 1 1 1 1 h -1 v 1 1 1 1 l 1,1 h -1 v 1 1 1 h -1 v 1 1 h 1 v 1 1 1 1 1 h -1 v 1 1 1 1 h 1 v 1 h -1 1 v 1 1 1 1 1 1 h -1 -1 -1 v 1 h -1 -1 v 1 h -1 v 1 h -1 v 1 h -1 -1 -1 v -1 h -1 v -1 h -1 -1 v -1 h -1 v -1 -1 -1 -1 -1 h -1 -1 v -1 h -1 v -1 h -1 1 -1 -1 v 1 h -1 v -1 1 h -1 v 1 h -1 v -1 -1 -1 -1 h -1 v -1 h -1 v -1 h 1 -1 v -1 h -1 v -1 -1 h -1 v -1 h -1 -1 -1 v 1 h -1 v -1 1 l -1,-1 h -1 v 1 -1 h -1 v -1 -1 h -1 -1 -1 -1 -1 l -1,1 h 1 v 1 h -1 v 1 h -1 v 1 1 h -1 v 1 h -1 v 1 h -1 -1"
+           id="path5" />
+        <path
+           d="m 608,452 v 1 h -1 1 v -1"
+           id="path7" />
+        <path
+           d="m 593,453 v 1 -1 -1 1"
+           id="path9" />
+      </g>
+      <g
+         class="Cuneo SO">
+        <path
+           class="livello_{{ tabella_incendi | get_item:'Cuneo SO' | get_element:i }}"
+           d="m 350,584 h -1 v -1 h -1 v -1 h -1 v -1 l -1,-1 v -1 -1 l -1,-1 h -1 v -1 l -1,1 v -1 h -1 -1 v -1 h 1 v -1 h 1 v -1 -1 -1 -1 -1 -1 -1 -1 -1 h -1 v -1 h 1 1 v 1 -1 h 1 1 v -1 l 1,1 h 1 v -1 h 1 v -1 l 1,1 v -1 h -1 v -1 h -1 v -1 h -1 -1 v -1 h -1 v -1 -1 -1 -1 h -1 -1 -1 v -1 h -1 v -1 -1 -1 h -1 -1 v -1 -1 -1 h -1 v -1 -1 -1 -1 -1 h -1 v -1 h 1 1 1 v -1 h 1 v -1 -1 h 1 1 1 1 v -1 h 1 v -1 -1 h 1 1 v -1 h 1 v -1 -1 -1 -1 -1 h 1 -1 l 1,-1 h 1 v -1 -1 -1 h 1 1 v 1 l 1,-1 v -1 h -1 v -1 l -1,-1 v -1 -1 l -1,-1 v -1 h 1 v -1 h 1 v -1 -1 -1 h 1 1 v -1 h 1 v -1 h 1 1 1 v 1 -1 h 1 1 1 1 1 v 1 h 1 v 1 h 1 1 1 l 1,1 v -1 -1 -1 -1 h -1 v -1 -1 -1 -1 h 1 1 1 l 1,-1 h 1 1 1 v -1 h 1 v -1 -1 h 1 1 1 v -1 -1 h 1 v -1 l 1,-1 h 1 1 1 1 1 1 l 1,-1 h 1 1 v -1 h 1 1 1 1 1 v -1 h 1 1 v -1 h 1 v 1 h 1 v -1 h 1 v 1 h 1 1 1 1 v -1 1 h 1 v -1 h 1 v 1 l 1,1 v 1 1 1 h -1 v 1 h 1 1 1 v -1 h 1 1 v -1 h 1 1 l 1,1 v -1 h 1 1 v -1 1 h 1 1 1 v -1 -1 -1 l 1,1 h 1 1 v -1 1 h 1 -1 -1 -1 v 1 1 h 1 v 1 -1 h 1 v 1 h 1 v 1 h 1 v -1 h -1 1 1 v -1 h 1 v 1 -1 h 1 -1 1 v -1 h 1 v 1 -1 -1 1 h 1 v -1 -1 h 1 v -1 l 1,1 h 1 -1 v -1 h 1 v -1 -1 h 1 v 1 -1 h 1 1 1 v -1 h 1 v -1 h -1 v -1 h 1 v -1 h 1 v 1 1 -1 h 1 v 1 h 1 1 v -1 -1 -1 h -1 1 -1 v -1 h 1 -1 v -1 h 1 v -1 1 h 1 v -1 1 h 1 v 1 h 1 v -1 h -1 v -1 h 1 v -1 -1 1 1 1 h 1 v -1 h 1 v 1 l 1,1 v -1 h -1 1 l -1,-1 h 1 1 v 1 l 1,1 h -1 v 1 h 1 -1 v 1 h 1 v 1 -1 h 1 l 1,1 h 1 l 1,1 1,-1 h 1 1 v -1 1 h 1 1 v 1 -1 h 1 1 1 1 v 1 l 1,-1 v 1 -1 1 h 1 -1 v 1 h -1 1 v 1 1 1 h -1 v 1 1 h 1 v 1 h -1 1 -1 v 1 1 h -1 v 1 h -1 v 1 h -1 v 1 1 1 h 1 l 1,1 h 1 v 1 h 1 1 v 1 h -1 v 1 -1 1 1 1 1 1 h -1 1 v 1 h 1 v 1 l 2,1 v -1 h 1 1 1 1 1 1 v 1 h 1 1 1 1 1 v 1 h 1 1 v 1 l 1,1 h 1 v -1 h -1 1 v -1 -1 l 1,1 v 1 h -1 1 v 1 1 h 1 v 1 1 l -1,1 h 1 v 1 1 h -1 v 1 1 h 1 1 v 1 h 1 v 1 1 h -1 v 1 h -1 l -1,1 h -1 v 1 1 1 h 1 v 1 1 h 1 v 1 h -1 v 1 1 h 1 v 1 l -1,1 h -1 1 -1 v 1 h 1 v 1 h 1 v 1 1 1 h -1 v 1 h -1 v 1 h -1 v 1 1 1 h 1 v 1 1 1 l 1,1 h -1 v 1 h -1 v 1 h -1 v -1 1 h -1 -1 -1 v 1 h -1 -1 -1 v 1 -1 h -1 v 1 h -1 v 1 h -1 -1 l -1,1 v 1 h -1 v 1 l -1,-1 h -1 v 1 h -1 v 1 1 h -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 -1 h -1 v -1 h -1 v -1 h -1 1 -1 v -1 h -1 v 1 h -1 v 1 h -1 v 1 -1 1 h -1 v 1 h -1 1 v 1 h -1 v 1 1 1 h -1 v 1 -1 1 1 h -1 v 1 1 l -1,1 v 1 l -1,1 v 1 l -1,-1 v -1 -1 h -1 l -1,-1 -1,-1 v -1 -1 h -1 -1 v -1 h -1 -1 v 1 1 1 -1 1 h -1 -1 -1 -1 -1 -1 -1 v 1 h -1 -1 -1 v 1 h -1 v 1 l -1,1 -1,1 -1,1 -1,1 h -2 -1 v 1 h -1 v 1 h -1 v 1 l -1,1 v -1 1 -1 1 l -1,-1 v 1 -1 1 -1 1 -1 1 h -1 v -1 h -1 -1 -1 -1 -1 v 1 1 h -1 v 1 h -1 v -1 h -1 v 1 1 h -1 v 1 h -1 v 1 h -1 l -1,-1 h -1 -1 -1 -1 -1 -1 -1 v 1 1 h -1 v 1 h -1 v 1 -1 h -1 -1 -1 -1 v 1 h -1 -1 -1 v 1 h -1 -1 v 1 1 1 1 l -1,1 v 1 1 1 h -1 v 1 h -1 v 1 h -1 -1 -1 -1 l -1,-1 v -1 l -1,1 h -1 v 1 h -1 l -1,-1 -1,-1 v -1 h -1 -1 v -1 h -1 -1 -1 v -1 -1 h -1 l -1,-1 h -1 v 1 h -1 1 -1 -1 -1 -1 v 1 h -1 -1 l -1,-1 v -1 h -1 v -1 h -1 v -1 -1 h -1 v -1 -1 -1 -1 -1 -1 l -1,-1 h -1 v -1 l -1,1 -1,-1 v -1 l -1,-1 v -1 h -1 l 1,-1 -1,-1 v -1"
+           id="path12" />
+        <path
+           d="m 423,500 v -1 -1 1 h 1 v 1 h -1"
+           id="path14" />
+      </g>
+      <g
+         class="Torino Ovest">
+        <path
+           class="livello_{{ tabella_incendi | get_item:'Torino Ovest' | get_element:i }}"
+           d="m 391,416 h 1 l 1,1 h 1 l 1,-1 h 1 v 1 l 1,-1 h 1 v 1 h 1 v 1 h 1 v 1 l 1,-1 h 1 1 1 1 l 1,1 h 1 1 1 v 1 h 1 1 1 1 1 v 1 h 1 v 1 h 1 v 1 1 1 l 1,1 v 1 h 1 v 1 h 1 l 1,1 1,1 h 1 v 1 1 h 1 1 v -1 h 1 1 v -1 h 1 1 v 1 h 1 v 1 h 1 1 1 v 1 h 1 v 1 1 h 1 v 1 h 1 v 1 -1 h 1 v 1 1 -1 h 1 v 1 h -1 v 1 1 1 1 h 1 v 1 1 h 1 -1 1 v 1 1 l 1,1 v 1 h 1 1 v 1 h 1 v 1 h 1 v -1 1 l -1,1 v 1 -1 h -1 v 1 h 1 v 1 h 1 1 1 v 1 h 1 v -1 h 1 v 1 h 1 1 v -1 1 h 1 l 1,1 h -1 v 1 1 1 1 h -1 v 1 1 h -1 1 v 1 h 1 v -1 1 h 1 v -1 1 -1 h 1 v -1 h 1 1 v -1 1 1 h 1 v 1 l 1,1 v 1 h -1 v 1 h -1 -1 v 1 h 1 1 v 1 h -1 v 1 h 1 1 -1 v 1 h 1 1 v -1 h 1 v -1 h 1 v 1 h 1 v -1 -1 h -1 v 1 l -1,-1 v -1 h 1 v -1 h -1 v -1 l 1,-1 v -1 h 1 v -1 -1 -1 -1 -1 h 1 v -1 h 1 v 1 h 1 v 1 -1 h 1 v 1 h 1 v 1 -1 -1 -1 -1 -1 h 1 1 -1 1 v -1 -1 h 1 v -1 h 1 1 v -1 h 1 -1 l 1,-1 v -1 h 1 1 v 1 -1 h 1 v -1 h -1 v -1 h 1 -1 1 v -1 h 1 v 1 h 1 v 1 h 1 1 1 v 1 h 1 v 1 h 1 v 1 -1 h 1 v 1 -1 -1 h -1 v -1 l 1,-1 v -1 h 1 1 1 v 1 h 1 v 1 h 1 v 1 1 h 1 v -1 -1 h 1 -1 v -1 h 1 v 1 h 1 v 1 h 1 v 1 1 h -1 v 1 h -1 v 1 h -1 -1 -1 v 1 h -1 v 1 h 1 -1 v 1 1 h 1 1 v 1 h 1 -1 v 1 1 1 l -1,1 h -1 v 1 h -1 v 1 h -1 v 1 1 1 1 1 h -1 v 1 h -1 -1 1 v 1 1 1 1 h 1 1 1 1 v 1 h 1 v 1 1 1 h -1 v 1 -1 h -1 -1 -1 -1 v 1 1 h 1 v 1 -1 1 h 1 v -1 h 1 1 v 1 1 h 1 v 1 1 1 h 1 v 1 h 1 v 1 1 h -1 1 -1 v 1 h -1 v 1 h -1 -1 v 1 h -1 v 1 h -1 -1 v -1 h -1 v -1 -1 h -1 v 1 h -1 v 1 1 h -1 v -1 -1 h -1 -1 v -1 h -1 v -1 h -1 -1 v -1 h -1 v -1 h -1 v -1 1 1 1 h -1 -1 v -1 h -1 v 1 h -1 -1 v 1 h 1 -1 v 1 l -1,1 v 1 1 h -1 v -1 1 h -1 -1 -1 -1 v 1 -1 h -1 v 1 -1 h -1 -1 v -1 1 h -1 -1 l -1,1 h -1 v -1 h -1 v -1 h -1 -1 v 1 -1 h -1 v -1 h 1 -1 v -1 h 1 v -1 h -1 v -1 h -1 v -1 1 h -1 1 v 1 h -1 v -1 h -1 v 1 h -1 v -1 -1 -1 1 1 h -1 v 1 h 1 v 1 h -1 v -1 h -1 v -1 1 h -1 v -1 1 h -1 1 l -1,1 h 1 -1 v 1 h 1 -1 1 v 1 1 1 h -1 -1 v -1 h -1 v 1 -1 -1 h -1 v 1 h -1 v 1 h 1 v 1 h -1 v 1 h -1 -1 -1 v 1 -1 h -1 v 1 1 h -1 v 1 h 1 -1 l -1,-1 v 1 h -1 v 1 1 h -1 v -1 1 1 l -1,-1 v 1 h -1 -1 v 1 h -1 -1 v 1 -1 h -1 v -1 h -1 v 1 -1 h -1 v -1 -1 h 1 1 1 -1 v -1 1 h -1 -1 l -1,-1 v 1 1 1 h -1 -1 -1 v -1 1 h -1 -1 v 1 l -1,-1 h -1 -1 v 1 h -1 -1 v 1 h -1 -1 -1 v -1 h 1 v -1 -1 -1 l -1,-1 v -1 h -1 l -1,1 v -1 1 h -1 -1 -1 -1 v -1 h -1 v 1 h -1 -1 -1 v 1 h -1 -1 -1 -1 v 1 h -1 v -1 1 h -1 -1 -1 l -1,1 h -1 -1 -1 -1 -1 -1 -1 v 1 1 h -1 v 1 1 h -1 v 1 h -1 v -1 h -1 v 1 1 h -1 v 1 h -1 v 1 l -1,-1 v 1 h -1 -1 -1 v 1 -1 h -1 -1 -1 v 1 -1 h -1 -1 -1 v -1 -1 h -1 v -1 -1 h -1 v -1 h 1 -1 v -1 -1 -1 -1 -1 -1 l -1,-1 v -1 h -1 l -1,-1 v -1 h 1 v -1 -1 h 1 v -1 h 1 v -1 -1 -1 h -1 -1 v -1 -1 -1 h -1 l 1,-1 h -1 v 1 l -1,-1 h -1 -1 -1 l -1,-1 -1,-1 h -1 l -1,-1 h -1 v -1 1 h -1 v 1 1 h -1 v 1 h -1 -1 v -1 h -1 -1 -1 -1 -1 v -1 h -1 v -1 h -1 -1 -1 v -1 h -1 v -1 h -1 -1 v -1 h -1 v -1 l -1,-1 v -1 h -1 -1 v -1 h -1 v -1 -1 h -1 -1 -1 -1 v -1 -1 h 1 v -1 h -1 v -1 h 1 v -1 h 1 v -1 h -1 v -1 1 h -1 v -1 h 1 v -1 h 1 l 1,-3 v -2 l -2,-1 v -2 h -1 l -1,-1 1,-1 1,-1 v -1 l -1,-1 -1,-1 h -1 -1 l -1,-1 h -1 -1 -1 -1 -1 -1 v -1 -1 h -1 v -1 h 1 v -1 -1 h -1 v -1 -1 -1 -1 -1 h -1 -1 v -1 -1 -1 h -1 l -1,-1 v -1 -1 -1 h 1 v -1 h 1 1 v -1 h 1 1 v -1 h 1 v -1 l 1,-1 v -1 h 1 1 1 l 1,-1 1,1 1,1 h 1 1 1 v -1 l 1,-1 1,-1 1,-1 h 1 1 v 1 h 1 1 v 1 h 1 1 l 1,1 h 1 l 2,2 h 1 v 1 h 1 1 1 v -1 h 1 2 v -1 h 1 l -1,-1 v -1 l -1,-1 v -1 h 1 v -1 h 1 1 1 1 l 1,-1 h 1 1 1 -1 v -1 h 1 v -1 1 h 1 v -1 -1 h -1 1 v -1 h 1 1 v -1 h -1 v -1 -1 h 1 1 1 1 v -1 h 1 v -1 h 1 v 1 h 1 1 v -1 1 h 1 v -1 h 1 v -1 h 1 1 v 1 h 1 v 1 h 1 v 1 1 h 1 l 1,1 h 1 1 v 1 h 1 v 1 h 1 1 1 v 1 h 1 1 1 v -1 h 1 1 1 1 1 1 v -1 h 1 v 1 h 1 1 v -1 h 1"
+           id="path17" />
+        <path
+           d="m 424,500 v -1 h -1 v -1 1 1 h 1"
+           id="path19" />
+      </g>
+      <g
+         id="Cuneo SE">
+        <path
+           class="livello_{{ tabella_incendi | get_item:'Cuneo SE' | get_element:i }}"
+           d="m 451,575 h 1 v -1 -1 -1 h 1 v -1 h -1 1 v -1 h 1 v -1 1 -1 h 1 v -1 h 1 v -1 h 1 v 1 h 1 -1 1 v 1 h 1 l 1,1 v 1 -1 h 1 v 1 -1 -1 h 1 v -1 h 1 1 -1 v -1 h 1 v -1 -1 h 1 v -1 h 1 1 1 v -1 h 1 v -1 h 1 1 v -1 h 1 v -1 h 1 1 1 1 1 v -1 h 1 1 v -1 1 h 1 v -1 l 1,-1 h 1 v -1 h -1 v -1 -1 -1 h -1 v -1 -1 -1 h 1 v -1 h 1 v -1 h 1 v -1 -1 -1 h -1 v -1 h -1 v -1 h 1 -1 1 1 v -1 -1 h -1 v -1 -1 h 1 v -1 h -1 v -1 -1 h -1 v -1 -1 -1 h 1 1 v -1 h 1 v -1 h 1 v -1 -1 h -1 v -1 h -1 -1 v -1 l 1,-1 h -1 1 v -1 -1 h -1 1 v -1 -1 -1 1 -1 h -1 v -1 -1 h -1 v 1 h -1 -1 v -1 h -1 v -1 h -1 v -1 h -1 -1 -1 -1 -1 v -1 h -1 -1 -1 -1 -1 -1 v 1 l -1,-1 h -1 v -1 l -1,-1 h -1 1 -1 1 v -1 -1 -1 -1 -1 h 1 v -1 h -1 -1 v -1 h -1 l -1,-1 h -1 -1 v -1 h 1 v -1 -1 h 1 v -1 h 1 v -1 h 1 v -1 -1 h 1 -1 1 v -1 h -1 v -1 -1 h 1 v -1 -1 -1 h -1 l 1,-1 h 1 -1 v -1 1 -1 h -1 v 1 -1 1 -1 1 -1 h 1 v -1 1 h 1 v -1 -1 l 1,-1 v -1 h 1 v -1 h 1 v -1 h 1 v 1 h 1 1 v -1 -1 -1 1 -1 1 h 1 v 1 h 1 v 1 h 1 l 1,1 v -1 1 h 1 v 1 h 1 v -1 h 1 v 1 1 1 -1 h 1 v -1 h 1 v -1 h 1 v 1 1 h 1 v 1 h 1 1 v -1 h 1 v -1 h 1 1 v -1 h 1 v -1 h 1 v -1 h 1 1 v -1 h 1 v -1 1 h 1 v 1 h 1 v -1 1 1 1 h 1 v 1 1 1 h 1 v -1 1 1 h 1 1 -1 1 v 1 h 1 v -1 h 1 1 v 1 h 1 v 1 1 h 1 v 1 -1 h 1 v -1 -1 h 1 v 1 -1 1 -1 1 h 1 1 1 v -1 h 1 v -1 h 1 v -1 h 1 v 1 1 h 1 -1 v 1 h 1 v -1 h 1 1 1 v 1 1 1 1 h -1 1 v 1 1 h 1 -1 -1 v 1 1 h -1 -1 -1 v 1 h 1 -1 v 1 h -1 v 1 h 1 v 1 h 1 l 1,1 v -1 h 1 v 1 h 1 1 v 1 1 h -1 1 v 1 1 h 1 v 1 1 h 1 1 v -1 -1 1 h 1 v -1 h -1 v -1 -1 h 1 v 1 h 1 v -1 -1 h 1 v -1 -1 h 1 1 1 v 1 h 1 -1 v 1 1 h 1 v 1 1 h 1 v -1 h 1 v 1 h 1 1 1 v -1 h 1 v 1 1 l 1,1 v 1 -1 l 1,1 h -1 v 1 1 h -1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 h -1 -1 v 1 h 1 -1 v 1 h 1 -1 v 1 h 1 v 1 h -1 v 1 h -1 v 1 h -1 v 1 1 h -1 v 1 h -1 v 1 h 1 v 1 1 h 1 1 1 v 1 1 1 h 1 1 -1 v 1 1 1 h 1 1 v 1 1 1 h -1 v 1 1 1 -1 1 h 1 -1 v 1 h 1 v 1 l 1,1 v 1 1 1 h -1 l -1,1 h -1 -1 v 1 1 1 h -1 v 1 1 h 1 v 1 1 h -1 -1 v 1 h -1 v -1 l -1,1 v 1 1 l 1,1 1,1 v 1 h -1 1 v 1 h 1 v 1 1 1 h 1 v 1 h -1 v 1 h -1 v 1 1 1 h -1 -1 v 1 h -1 v 1 -1 h -1 -1 v 1 h -1 v 1 h -1 -1 v 1 -1 l -1,1 h 1 v 1 h -1 v 1 h -1 v 1 h 1 v 1 1 h 1 l -1,1 v 1 l -1,1 v 1 1 h -1 v -1 h -1 1 -1 -1 v 1 1 l -1,1 v 1 1 h -1 v 1 1 -1 h -1 -1 l -1,-1 h -1 v -1 1 h -1 1 -1 v 1 h -1 v 1 h 1 v 1 h -1 v 1 h 1 1 1 v 1 1 h 1 v 1 1 h -1 v 1 h -1 v 1 h -1 v 1 h -1 1 v 1 h 1 v 1 h 1 v 1 h -1 v 1 h -1 v 1 1 1 1 h 1 v 1 h 1 1 v 1 h 1 v 1 h -1 v 1 1 h 1 v 1 1 h -1 v 1 h -1 v 1 1 h -1 v 1 1 h -1 v 1 h -1 -1 -1 -1 v -1 h -1 v -1 h -1 l -1,-1 h -1 v 1 h -1 -1 v 1 h -1 v 1 h -1 v 1 h -1 1 v 1 h 1 v 1 h 1 1 v 1 h 1 -1 v 1 1 -1 h 1 v 1 h 1 -1 v 1 h -1 v 1 -1 h -1 v -1 h -1 -1 -1 v -1 h -1 v 1 h -1 v 1 h -1 -1 v 1 h -1 -1 v -1 -1 h -1 -1 -1 -1 v 1 h -1 -1 -1 v -1 -1 h -1 -1 v -1 h -1 -1 -1 -1 -1 v -1 h -1 v 1 -1 1 -1 h -1 -1 v -1 h -1 -1 v -1 h -1 -1 v -1 h -1 -1 -1 -1 v 1 h -1 v 1 h -1 -1 l -1,1 v 1 1 1 h -1 v 1 h 1 v 1 1 h 1 v 1 1 h 1 1 1 v -1 h 1 v 1 h -1 l -1,1 h -1 v 1 h -1 v 1 1 h -1 -1 -1 1 v -1 -1 -1 -1 -1 h -1 v -1 h -1 v -1 h -1 v -1 -1 h -1 v -1 h -1 v -1 h -1 v -1 -1 h -1 v -1 h 1 v -1 h 1 v -1 -1 h -1 v -1 -1 h 1 v -1 -1 h 1 v -1 h -1 l -1,-1 h -1 1 v 1 h -1 -1 v -1 1 h -1 v -1 h -1 -1 v 1 h -1 v 1 1 1 1 h -1 v 1 h -1 -1 -1 v -1 h -1 -1 -1 -1 -1 v -1 1 1 h -1 -1 -1 -1 -1 v 1 1 h -1 -1 v -1 h -1 v -1 1 h -1 -1 v 1 h -1 l -1,1 v -1 1 h -1 -1 l -1,1 -1,-1 h -1 -1 -1 v 1 l -1,1 v 1 -1 h -1 -1 l -1,-1 -1,-1 v 1 h -1 l -2,1 h -1 -1 v -1 -1 h -1 v -1 -1 -1 h -1 -1 -1 -1 l -1,-1 v 1 h -1 -1 -1 l -1,1 v -1 h -1 v -1 h -1 -1 v -1 h -1 v -1 h -1 v -2 -1 h -1 -1 v 1 h -1 -1 v -1 h -1 l -1,-1 v -1 -1 1 h -1 v -1 -1 l -1,-1 h 1 1 v -1 h 1 v -1 h 1 v -1 -1 -1 l 1,-1 v -1 -1 -1 -1 h 1 1 v -1 h 1 1 1 v -1 h 1 1 1 1 v 1 -1 h 1 v -1 h 1 v -1 -1 h 1 1 1 1 1 1 1 l 1,1 h 1 v -1 h 1 v -1 h 1 v -1 -1 h 1 v 1 h 1 v -1 h 1 v -1 -1 h 1 1 1 1 1 v 1 h 1 v -1 1 -1 1 -1 l 1,1 v -1 1 l 1,-1 v -1 h 1 v -1 h 1 v -1 h 1 1 1 1 v -1 h 1 v -1 h 1 v -1 -1 h 1 v -1 h 1 v -1 h 1 1 1 v -1 h 1 1 1 1 2 1 v -1 1 -1 -1 -1 h 1 1 v 1 h 1 1 v 1 1 l 1,1 v 1 h 2 v 2 h 1 v 1 -1 l 1,-1 v -1 h 1 v -1 -1 l 1,-1 v -1 -1"
+           id="path22" />
+      </g>
+      <g
+         class="Torino Nord">
+        <path
+           class="livello_{{ tabella_incendi | get_item:'Torino Nord' | get_element:i }}"
+           d="m 387,376 v -1 h -1 -1 -1 v -1 h -1 v -1 -1 h -1 -1 -1 v -1 h -1 -1 v -1 h -1 1 v -1 h -1 v -1 -1 h -1 v -1 -1 h -1 1 v -1 h 1 v -1 h 1 v -1 -1 -1 -1 h 1 v -1 -1 -1 -1 h 1 1 v -1 1 1 h 1 v 1 h -1 v 1 h 1 v 1 h -1 v 1 1 l 1,1 v -1 h 1 -1 1 v -1 h 1 1 v 1 h 1 1 1 1 v 1 h 1 v 1 h 1 1 v 1 l 1,-1 h 1 v -1 h -1 1 v -1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 v -1 -1 h 1 1 1 l 1,-1 h 1 1 1 1 1 v -1 h 1 1 1 1 v -1 1 h 1 l 1,1 h 1 v -1 h 1 v -1 h 1 v -1 h 1 1 1 v -1 -1 -1 1 h 1 v -1 h 1 1 v -1 h 1 v -1 h 1 v -1 -1 h 1 v -1 h 1 1 v -1 h 1 l 1,-1 h 1 v 1 h 1 1 l 1,1 h 1 1 v -1 h 1 v -1 h 1 1 v -1 h 1 1 v 1 h 1 v 1 h 1 1 v 1 h 1 v 1 h 1 v 1 1 h 1 v -1 h 1 1 v -1 h 1 v 1 h 1 l 1,1 h 1 v 1 h 1 v 1 h 1 1 v -1 h 1 v -1 1 h 1 1 1 1 l 1,1 h 1 1 v -1 h 1 v -1 h 1 1 v -1 h 1 1 v -1 h 1 v -1 h 1 v -1 h 1 v -1 1 -1 h 1 1 v -1 h 1 1 v -1 1 h 1 1 v -1 h 1 1 v 1 h 1 v -1 h 1 1 v 1 h 1 v 1 h 1 l -1,1 v 1 h 1 v 1 1 1 h 1 v 1 h -1 v 1 1 h -1 v 1 1 h -1 v 1 1 h 1 1 1 v 1 h 1 1 v 1 1 1 h 1 v 1 h 1 v 1 h 1 v 1 h 1 v 1 h 1 v 1 h 1 v 1 1 h 1 1 -1 1 v 1 h 1 v 1 h 1 1 v 1 h 1 1 v 1 h 1 -1 1 v 1 h 1 v 1 h 1 -1 v 1 h 1 v 1 h -1 -1 v 1 1 h -1 1 v 1 1 1 1 h -1 v -1 h -1 v 1 1 1 1 1 1 1 h 1 v 1 h 1 v 1 h -1 1 v 1 h -1 v 1 1 1 1 1 -1 h -1 v -1 1 -1 h -1 v -1 h -1 -1 v -1 h -1 -1 v 1 h -1 v -1 h -1 v 1 h -1 1 v 1 1 l -1,1 v 1 1 1 h -1 v 1 h 1 v -1 h 1 1 v -1 h 1 1 v 1 h 1 v 1 1 1 1 1 1 1 1 1 h -1 v 1 h -1 1 v 1 1 2 1 l 1,-1 v 1 1 1 h 1 v 1 h 1 v 1 h 1 v 1 h 1 1 v 1 h 1 v 1 -1 -1 h 1 v 1 1 1 h 1 -1 v 1 h 1 v 1 h 1 1 v -1 h 1 v 1 h 1 v -1 h 1 1 v 1 h 1 1 1 1 v 1 h -1 1 1 1 v 1 h 1 -1 l 1,1 v 1 h -1 v 1 1 1 1 h -1 v 1 1 1 h -1 -1 -1 l -1,-1 h -1 v 1 h -1 1 v 1 h -1 v 1 1 h -1 v 1 1 h -1 1 -1 -1 -1 v -1 h -1 v -1 h -1 v -1 -1 -1 -1 h -1 -1 v -1 h -1 v 1 1 h -1 -1 v -1 h -1 -1 -1 -1 1 v 1 h -1 -1 v 1 h -1 -1 -1 v 1 h -1 -1 v 1 h -1 v 1 l 1,1 v 1 h 1 -1 v 1 h 1 -1 v 1 h -1 -1 v 1 1 l -1,-1 v -1 -1 h -1 v -1 -1 1 -1 h -1 v 1 -1 1 h -1 1 -1 v 1 l 1,1 h -1 v 1 h 1 v 1 h -1 v 1 1 1 l -1,1 1,1 v 1 1 -1 h -1 v 1 -1 h -1 v -1 h -1 v -1 h -1 -1 -1 v -1 h -1 v -1 h -1 v 1 h -1 1 -1 v 1 h 1 v 1 h -1 v 1 -1 h -1 -1 v 1 l -1,1 h 1 -1 v 1 h -1 l -1,1 h -1 v 1 1 h -1 1 -1 -1 v 1 1 1 1 1 -1 h -1 v -1 h -1 v 1 -1 h -1 v -1 h -1 v 1 h -1 v 1 1 1 1 1 h -1 v 1 l -1,1 v 1 h 1 v 1 h -1 v 1 l 1,1 v -1 h 1 v 1 1 h -1 v -1 h -1 v 1 h -1 v 1 h -1 -1 v -1 h 1 -1 -1 v -1 h 1 v -1 h -1 -1 v -1 h 1 1 v -1 h 1 v -1 -1 h -1 v -1 h -1 v -1 -1 1 h -1 -1 v 1 h -1 v 1 -1 1 h -1 v -1 1 h -1 v -1 h -1 1 v -1 -1 h 1 v -1 -1 -1 -1 h 1 l -1,-1 h -1 v -1 1 h -1 -1 v -1 h -1 v 1 h -1 v -1 h -1 -1 -1 v -1 h -1 v -1 h 1 l 1,-1 v -1 1 h -1 v -1 h -1 v -1 h -1 -1 v -1 -1 h -1 v -1 -1 h -1 v -1 -1 -1 h -1 v -1 -1 -1 h 1 v -1 h -1 v 1 -1 -1 h -1 v 1 -1 h -1 v -1 h -1 v -1 -1 h -1 v -1 h -1 -1 -1 v -1 h -1 v -1 h -1 -1 v 1 h -1 -1 v 1 h -1 -1 v -1 -1 h -1 -1 v -1 -1 h -1 -1 v -1 h -1 v -1 l -1,-1 v -1 -1 -1 h -1 v -1 h -1 v -1 h -1 -1 -1 -1 -1 v -1 h -1 -1 -1 l -1,-1 h -1 -1 -1 -1 l -1,1 v -1 h -1 v -1 h -1 v -1 h -1 l -1,1 v -1 h -1 l -1,1 h -1 -1 v -1 h -1 -1 v 1 h -1 v -1 1 h -1 v -1 h -1 v 1 h -1 -1 -1 -1 -1 -1 v 1 h -1 -1 -1 v -1 h -1 -1 -1 v -1 h -1 v -1 h -1 -1 l -1,-1 h -1 v -1 l 2,-1 v -1 -1 h 1 l 1,-1 h 1 v -1 h 1 v -1 -1 h 1 v 1 h 1 v -1 h 1 v -1 h 1 v -1 h -1 v -1 -1 -1 h 1 v -1 -1 h -1 v -1 h -1 v -1 -1 -1 h -1 v -1 -1 l -1,-1 h 1 v -1 h -1 v -1 h 1 l 1,1 h 1 v -1 h 1 v -1 l -1,-1 h 1 v -1 -1 h 1 1 l 1,-1 h 1 l -1,-1 v -1 -1 h 1 v -1 -1 h 1 1 v -1 -1 -1 h 1 v -1"
+           id="path25" />
+      </g>
+    </g>
+  </g>
+  <!-- QGIS extent for clipping, eg in Inkscape
+  <g
+     id="qgisviewbox"
+     stroke="#ff000"
+     stroke-width="1"
+     fill="none"
+     transform="translate(-309.8,-174.8)">
+    <path
+       d="M 0,785 H 1046 V 0 H 0 v 785"
+       id="path31" />
+  </g> -->
+</svg>

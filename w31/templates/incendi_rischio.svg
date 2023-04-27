@@ -1,0 +1,15 @@
+{% if livello == 1 %}
+Molto basso
+{% endif %}
+{% if livello == 2 %}
+Basso
+{% endif %}
+{% if livello == 3 %}
+Medio
+{% endif %}
+{% if livello == 4 %}
+Elevato
+{% endif %}
+{% if livello == 5 %}
+Molto elevato
+{% endif %}

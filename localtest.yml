@@ -1,0 +1,76 @@
+---
+
+version: '3.7'
+
+services:
+  django: &django
+    image: ${DOCKER_REGISTRY}/weboll/tester:${TAG:-latest}
+    container_name: django
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./.envs/.local/.django
+    init: true
+    command: /app/compose/backend/start
+    depends_on:
+      - postgres
+    environment:
+      TEST_SITE_URL: http://frontend:80/
+    volumes:
+      - .:/app
+  postgres:
+    image: ${DOCKER_REGISTRY}/weboll/postgres:${TAG:-latest}
+    container_name: postgres
+    restart: unless-stopped
+    env_file:
+      - ./.envs/.local/.postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./sql:/docker-entrypoint-initdb.d
+  frontend:
+    image: ${DOCKER_REGISTRY}/weboll/frontend:${TAG:-latest}
+    container_name: frontend
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    depends_on:
+      - django
+    volumes:
+      - ./compose/frontend/conf.d:/etc/nginx/conf.d
+  ldap:
+    image: osixia/openldap:1.5.0
+    container_name: ldap
+    hostname: ldap
+    restart: unless-stopped
+    command: [--copy-service, --loglevel, debug]
+    ports:
+      - "636:636"
+    env_file:
+      - ./.envs/.local/.ldap
+    volumes:
+      - ./compose/ldap/users.ldif:/container/service/slapd/assets/config/bootstrap/ldif/custom/users.ldif
+      - ./compose/ldap/certs:/container/service/slapd/assets/certs
+      - ./compose/ldap/certs/ca.crt:/usr/local/share/ca-certificates/ca.crt
+  redis:
+    image: redis:6.0
+    container_name: redis
+  celeryworker:
+    <<: *django
+    container_name: celeryworker
+    depends_on:
+      - redis
+      - postgres
+    ports: []
+    command: /app/compose/backend/celery/worker/start
+    volumes:
+      - ./output:/output
+  celerybeat:
+    <<: *django
+    container_name: celerybeat
+    depends_on:
+      - redis
+      - postgres
+    ports: []
+    command: /app/compose/backend/celery/beat/start

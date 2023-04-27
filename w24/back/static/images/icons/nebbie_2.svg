@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="svg"
+   viewBox="0 0 440 440"
+   version="1.1"
+   sodipodi:docname="nebbie_2.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   width="448"
+   height="448"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview14"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="1.688"
+     inkscape:cx="249.70379"
+     inkscape:cy="234.89336"
+     inkscape:window-width="1846"
+     inkscape:window-height="1016"
+     inkscape:window-x="74"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="nebbie_2"
+     width="448px" />
+  <defs
+     id="defs4">
+    <style
+       id="style2">
+      .cls-1, .cls-2 {
+        stroke: #fff;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-1 {
+        stroke-width: 16.35px;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke-linecap: round;
+        stroke-width: 37.38px;
+      }
+    </style>
+  </defs>
+  <title
+     id="title6">nebbie_2</title>
+  <g
+     id="nebbie_2">
+    <path
+       id="quadrato_nero"
+       class="cls-1"
+       d="m 435.01198,374.90631 a 62.26,62.26 0 0 1 -62.25,62.26 H 72.061979 a 62.26,62.26 0 0 1 -62.2500004,-62.26 V 74.226311 a 62.26,62.26 0 0 1 62.2500004,-62.26 H 372.76198 a 62.26,62.26 0 0 1 62.25,62.26 z"
+       style="stroke-width:0;stroke-miterlimit:10;stroke-dasharray:none" />
+    <line
+       id="linea_down"
+       class="cls-2"
+       x1="65.631981"
+       y1="320.35632"
+       x2="383.612"
+       y2="320.35632" />
+    <line
+       id="linea_middle"
+       class="cls-2"
+       x1="61.211983"
+       y1="222.22632"
+       x2="383.612"
+       y2="222.22632" />
+    <line
+       id="linea_up"
+       class="cls-2"
+       x1="61.211983"
+       y1="128.77632"
+       x2="383.612"
+       y2="128.77632" />
+  </g>
+  <metadata
+     id="metadata831">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>nebbie_2</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>

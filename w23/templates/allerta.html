@@ -1,0 +1,767 @@
+{% load date_extras_w23 %}
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Bollettino allerta Regione Piemonte {{ allerta.numero_bollettino }} del {{ allerta.data_emissione  | my_date_dmY }}</title>
+    <style>
+      .area { stroke-width:2px; stroke:rgb(0,0,0);}
+      .none {fill: white;}
+      .pre_all {fill: #dddddd;}
+      .all_0 {fill: #6EBB00;}
+      .all_1 {fill: #FFFF00;}
+      .all_2 {fill: #FFA500;}
+      .all_3 {fill: #FF0000;}
+      .all_4 {fill: #ffffff;}
+
+      .cls-1{fill:#ffffff}
+
+      .cls-11,.cls-9{fill:#55caff}
+      .cls-10,.cls-11,.cls-9{stroke:#0083ca;stroke-linecap:round}
+      .cls-10,.cls-11,.cls-20,.cls-9{stroke-linejoin:round}
+      .cls-10,.cls-21{fill:none}
+      .cls-10,.cls-11{stroke-width:1.5px}
+      .cls-12,.cls-20{stroke:#000;stroke-width:2px}
+      .cls-12{stroke-linecap:square;stroke-linejoin:bevel}
+      .cls-13,.cls-14,.cls-15,.cls-17,.cls-18,.cls-19{isolation:isolate}
+      .cls-13,.cls-15,.cls-16,.cls-17,.cls-18,.cls-19{font-size:14px;font-family:Arial-BoldMT,Arial;font-weight:700}
+      .cls-15{letter-spacing:-.02em}
+      .cls-17{letter-spacing:-.11em}
+      .cls-18{letter-spacing:-.04em}
+      .cls-19{letter-spacing:-.04em}
+      rect { stroke-width:1; stroke:rgb(0,0,0); }
+
+      .pippo {
+        fill:none;
+        stroke:#000000;
+        stroke-width:1;
+        stroke-linecap:butt;
+        stroke-linejoin:miter;
+        stroke-miterlimit:10;
+        stroke-dasharray:none;
+        stroke-opacity:1
+      }
+
+    </style>
+  </head>
+  <body>
+    <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 770 1100" width="980" height="1400" xml:space="preserve" id="svg2" version="1.1">
+      <g transform="matrix(1.3333333,0,0,-1.3333333,0,1122.6667)" id="g10">
+        <g id="logo_arpa" transform="matrix(75.83,0,0,35,24,783)">
+          <image xlink:href="http://localhost:8000/static/images/logo_colori.svg" transform="matrix(1,0,0,-1,0,1)" preserveAspectRatio="none" style="image-rendering:optimizeSpeed" height="1" width="1"/>
+        </g>
+        <g id="titolo">
+          <text id="text18" style="font-variant:normal;font-weight:bold;font-size:14px;font-family:Verdana;writing-mode:lr-tb;fill:#329a65;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(1,0,0,-1,191.54,776.43)">
+            <tspan id="tspan16" y="0" x="0">ALLERTA REGIONE PIEMONTE</tspan>
+          </text>
+        </g>
+        <g id="header_bollettino" transform="matrix(350,0,0,20.97,130,796.03)">
+          <image xlink:href="http://localhost:8000/static/images/bollettino.png" transform="matrix(1,0,0,-1,0,1)" preserveAspectRatio="none" style="image-rendering:optimizeSpeed" height="1" width="1"/>
+        </g>
+        <g id="numero">
+          <path id="path36" style="fill:#c1c1c1;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m 20,767 h 85 V 752 H 20 Z"/>
+          <text id="text40" style="font-variant:normal;font-weight:normal;font-size:8px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(1,0,0,-1,32.49,756.32)">
+            <tspan id="tspan38" y="0" x="0">BOLLETTINO N°</tspan>
+          </text>
+          <text id="text56" style="font-variant:normal;font-weight:normal;font-size:8px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(1,0,0,-1,45.44,739.82)">
+            <tspan id="tspan54" y="0" x="0">{{ allerta.numero_bollettino }}</tspan>
+          </text>
+          <path id="path44" style="fill:none;stroke:#979797;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 19.5,767 h 86"/>
+          <path id="path46" style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 20,767.5 v -16"/>
+          <path id="path48" style="fill:none;stroke:#979797;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 19.5,752 h 86"/>
+          <path id="path50" style="fill:none;stroke:#979797;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 105,767.5 v -16"/>
+          <path id="path60" style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="M 20,753 V 733"/>
+        </g>
+        <g id="emissione">
+          <path id="path64" style="fill:#c1c1c1;fill-opacity:1;fill-rule:nonzero;stroke:none" d="M 110,767 H 213 V 752 H 110 Z"/>
+          <text id="text68" style="font-variant:normal;font-weight:normal;font-size:8px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(1,0,0,-1,125.7,756.32)">
+            <tspan id="tspan66" y="0" x="0">DATA EMISSIONE</tspan>
+          </text>
+          <text id="text84" style="font-variant:normal;font-weight:normal;font-size:8px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(1,0,0,-1,125,739.82)">
+            <tspan id="tspan82" y="0" x="0">{{ allerta.data_emissione | my_date_dmY }} ore 13:00</tspan>
+          </text>
+          <path id="path72" style="fill:none;stroke:#979797;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 109.5,767 h 104"/>
+          <path id="path74" style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 110,767.5 v -16"/>
+          <path id="path76" style="fill:none;stroke:#979797;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 109.5,752 h 104"/>
+          <path id="path78" style="fill:none;stroke:#979797;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 213,767.5 v -16"/>
+          <path id="path88" style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="M 110,753 V 733"/>
+        </g>
+        <g id="validit&#xE0;">
+          <path id="path92" style="fill:#c1c1c1;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m 220,767 h 50 v -15 h -50 z"/>
+          <text id="text96" style="font-variant:normal;font-weight:normal;font-size:8px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(1,0,0,-1,224.6,756.32)">
+            <tspan id="tspan94" y="0" x="0">VALIDITÀ</tspan>
+          </text>
+          <text id="text112" style="font-variant:normal;font-weight:normal;font-size:8px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(1,0,0,-1,235,739.82)">
+            <tspan id="tspan110" y="0" x="0">36 ore</tspan>
+          </text>
+          <path id="path100" style="fill:none;stroke:#979797;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 219.5,767 h 51"/>
+          <path id="path102" style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 220,767.5 v -16"/>
+          <path id="path104" style="fill:none;stroke:#979797;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 219.5,752 h 51"/>
+          <path id="path106" style="fill:none;stroke:#979797;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 270,767.5 v -16"/>
+          <path id="path116" style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="M 220,753 V 733"/>
+        </g>
+        <g id="aggiornamento">
+          <path id="path120" style="fill:#c1c1c1;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m 275,767 h 90 v -15 h -90 z"/>
+          <text id="text124" style="font-variant:normal;font-weight:normal;font-size:8px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(1,0,0,-1,283.24,756.32)">
+            <tspan id="tspan122" y="0" x="0">AGGIORNAMENTO</tspan>
+          </text>
+          <text id="text140" style="font-variant:normal;font-weight:normal;font-size:8px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(1,0,0,-1,285,739.82)">
+            <tspan id="tspan138" y="0" x="0">{{ tomorrow | my_date_dmY }} ore 13:00</tspan>
+          </text>
+          <path id="path128" style="fill:none;stroke:#979797;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 274.5,767 h 91"/>
+          <path id="path130" style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 275,767.5 v -16"/>
+          <path id="path132" style="fill:none;stroke:#979797;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 274.5,752 h 91"/>
+          <path id="path134" style="fill:none;stroke:#979797;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 365,767.5 v -16"/>
+          <path id="path144" style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="M 275,753 V 733"/>
+        </g>
+        <g id="servizio">
+          <path
+            id="servizio_box_grigia"
+            style="fill:#c1c1c1;fill-opacity:1;fill-rule:nonzero;stroke:none"
+            d="M 370,767 H 470 V 752 H 370 Z"
+          />
+          <text
+            id="text152"
+            style="font-variant:normal;font-weight:normal;font-size:8px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+            transform="matrix(1,0,0,-1,382,756.32)"
+          >
+            <tspan id="tspan150" y="0" x="0">SERVIZIO A CURA DI</tspan>
+          </text>
+          <text
+            id="text168"
+            style="font-variant:normal;font-weight:normal;font-size:8px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+            transform="matrix(1,0,0,-1,380,739.82)"
+          >
+            <tspan id="tspan166" y="0" x="0">ARPA Centro funzionale</tspan>
+          </text>
+          <path
+            id="servizio_bordo_alto"
+            style="fill:none;stroke:#979797;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+            d="m 369.5,767 h 101"
+          />
+          <path
+            id="servizio_bordo_alto_sx"
+            style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+            d="m 370,767.5 v -16"
+          />
+          <path
+            id="servizio_bordo_basso"
+            style="fill:none;stroke:#979797;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+            d="m 369.5,752 h 101"
+          />
+          <path
+            id="servizio_bordo_dx"
+            style="fill:none;stroke:#979797;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+            d="m 470,767.5 v -16"
+          />
+          <path
+            id="servizio_bordo_basso_sx"
+            style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+            d="M 370,753 V 733"
+          />
+        </g>
+        <g id="ambito">
+          <path
+            id="ambito_box_grigia"
+            style="fill:#c1c1c1;fill-opacity:1;fill-rule:nonzero;stroke:none"
+            d="m 475,767 h 100 v -15 h -100 z"
+          />
+          <text
+            id="text184"
+            style="font-variant:normal;font-weight:normal;font-size:8px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+            transform="matrix(1,0,0,-1,478,756.32)"
+          >
+            <tspan id="tspan182" y="0" x="0">AMBITO TERRITORIALE</tspan>
+          </text>
+          <text
+            id="text200"
+            style="font-variant:normal;font-weight:normal;font-size:8px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+            transform="matrix(1,0,0,-1,495,739.82)"
+          >
+            <tspan id="tspan198" y="0" x="-2">Regione Piemonte</tspan>
+          </text>
+          <path
+            id="ambito_bordo_alto" style="fill:none;stroke:#979797;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+            d="m 474.5,767 h 101"
+          />
+          <path
+            id="ambito_bordo_alto_sx" style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+            d="m 475,767.5 v -16"
+          />
+          <path
+            id="ambito_bordo_basso" style="fill:none;stroke:#979797;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+            d="m 474.5,752 h 101"
+          />
+          <path
+            id="ambito_bordo_dx" style="fill:none;stroke:#979797;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+            d="m 575,767.5 v -16"
+          />
+          <path
+            id="ambito_bordo_basso_sx" style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+            d="M 475,753 V 733"
+          />
+        </g>
+        <g id="logo_regione_piemonte_settore_protezione_civile">
+          <image xlink:href="http://localhost:8000/static/images/rpspc.png" preserveAspectRatio="none" style="image-rendering:optimizeSpeed" height="1" width="1"  transform="matrix(24,0,0,-24,518,818)"/>
+          <text id="text214" style="font-variant:normal;font-weight:normal;font-size:8px;font-family:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(1,0,0,-1,497,785)">
+            <tspan id="tspan212" y="0" x="0">Regione Piemonte</tspan>
+          </text>
+          <text id="text218" style="font-variant:normal;font-weight:normal;font-size:8px;font-family:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(1,0,0,-1,485,775)">
+            <tspan id="tspan216" y="0" x="0">Settore protezione civile</tspan>
+          </text>
+        </g>
+
+        <g id="thead">
+          <g id="zda">
+            <g id="g592" transform="rotate(90,21,628)">
+              <text transform="matrix(1,0,0,-1,39.2,615.61)" style="font-variant:normal;font-weight:bold;font-size:6px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text596">
+                <tspan x="0" y="0" id="tspan594">ZONE DI ALLERTA</tspan>
+              </text>
+            </g>
+            <path d="m 20.5,725 h 21" class="pippo" id="path600" />
+            <path d="m 21,725.5 v -98" class="pippo" id="path602" />
+            <path d="m 20.5,628 h 21" class="pippo" id="path604" />
+            <path d="m 41,725.5 v -98" class="pippo" id="path606" />
+          </g>
+
+          <g id="lam">
+            <text transform="matrix(1,0,0,-1,51.24,681.41)" style="font-variant:normal;font-weight:bold;font-size:6px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text3022">
+              <tspan x="0" y="0" id="tspan3020">LIVELLO</tspan>
+            </text>
+            <text transform="matrix(1,0,0,-1,50.58,674.11)" style="font-variant:normal;font-weight:bold;font-size:6px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text3026">
+              <tspan x="0" y="0" id="tspan3024">ALLERTA</tspan>
+            </text>
+            <text transform="matrix(1,0,0,-1,49.04,666.82)" style="font-variant:normal;font-weight:bold;font-size:6px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text3030">
+              <tspan x="0" y="0" id="tspan3028">MASSIMO</tspan>
+            </text>
+            <path d="m 40.5,725 h 50" class="pippo" id="path3034" />
+            <path d="m 41,725.5 v -98" class="pippo" id="path3036" />
+            <path d="m 40.5,628 h 50" class="pippo" id="path3038" />
+            <path d="m 90,725.5 v -98" class="pippo" id="path3040" />
+          </g>
+
+          <g id="lda">
+            <text transform="matrix(1,0,0,-1,157.33,715.22)" style="font-variant:normal;font-weight:bold;font-size:7px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text824">
+              <tspan x="0" y="0" id="tspan822">LIVELLI DI ALLERTA</tspan>
+            </text>
+            <path d="m 89.5,725 h 216" class="pippo" id="path828" />
+            <path d="m 90,725.5 v -15" class="pippo" id="path830" />
+            <path d="m 89.5,711 h 216" class="pippo" id="path832" />
+            <path d="m 305,725.5 v -15" class="pippo" id="path834" />
+          </g>
+
+          <g id="oggi">
+            <text transform="matrix(1,0,0,-1,131.51,701.22)" style="font-variant:normal;font-weight:bold;font-size:7px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text3006">
+              <tspan x="0" y="0" id="tspan3004">oggi</tspan>
+            </text>
+            <path d="m 89.5,711 h 101" class="pippo" id="path3010" />
+            <path d="m 90,711.5 v -15" class="pippo" id="path3012" />
+            <path d="m 89.5,697 h 101" class="pippo" id="path3014" />
+            <path d="m 190,711.5 v -15" class="pippo" id="path3016" />
+          </g>
+
+          <g id="oggi_rischi">
+            <g id="g836" transform="rotate(90,90,628)">
+              <text transform="matrix(1,0,0,-1,95.2,615.61)" style="font-variant:normal;font-weight:bold;font-size:6px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text840">
+                <tspan x="0" y="0" id="tspan838">IDROGEOLOGICO</tspan>
+              </text>
+            </g>
+            <path d="m 89.5,697 h 21" class="pippo" id="path844" />
+            <path d="m 90,697.5 v -70" class="pippo" id="path846" />
+            <path d="m 89.5,628 h 21" class="pippo" id="path848" />
+            <path d="m 110,697.5 v -70" class="pippo" id="path850" />
+
+            <g id="g852" transform="rotate(90,110,628)">
+              <text transform="matrix(1,0,0,-1,115.2,619.26)" style="font-variant:normal;font-weight:bold;font-size:6px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text856">
+                <tspan x="0" y="0" id="tspan854">IDROGEOLOGICO</tspan>
+              </text>
+              <text transform="matrix(1,0,0,-1,116.99,611.97)" style="font-variant:normal;font-weight:bold;font-size:6px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text860">
+                <tspan x="0" y="0" id="tspan858">PER TEMPORALI</tspan>
+              </text>
+            </g>
+            <path d="m 109.5,697 h 21" class="pippo" id="path864" />
+            <path d="m 110,697.5 v -70" class="pippo" id="path866" />
+            <path d="m 109.5,628 h 21" class="pippo" id="path868" />
+            <path d="m 130,697.5 v -70" class="pippo" id="path870" />
+
+            <g id="g888" transform="rotate(90,130,628)">
+              <text transform="matrix(1,0,0,-1,145,615.61)" style="font-variant:normal;font-weight:bold;font-size:6px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text892">
+                <tspan x="0" y="0" id="tspan890">IDRAULICO</tspan>
+              </text>
+            </g>
+            <path d="m 129.5,697 h 21" class="pippo" id="path896" />
+            <path d="m 130,697.5 v -70" class="pippo" id="path898" />
+            <path d="m 129.5,628 h 21" class="pippo" id="path900" />
+            <path d="m 150,697.5 v -70" class="pippo" id="path902" />
+
+            <g id="g872" transform="rotate(90,150,628)">
+              <text transform="matrix(1,0,0,-1,175.57,615.61)" style="font-variant:normal;font-weight:bold;font-size:6px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text876">
+                <tspan x="0" y="0" id="tspan874">NEVE</tspan>
+              </text>
+            </g>
+            <path d="m 149.5,697 h 21" class="pippo" id="path880" />
+            <path d="m 150,697.5 v -70" class="pippo" id="path882" />
+            <path d="m 149.5,628 h 21" class="pippo" id="path884" />
+            <path d="m 170,697.5 v -70" class="pippo" id="path886" />
+
+            <g id="g904" transform="rotate(90,170,628)">
+              <text transform="matrix(1,0,0,-1,186.11,615.61)" style="font-variant:normal;font-weight:bold;font-size:6px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text908">
+                <tspan x="0" y="0" id="tspan906">VALANGHE</tspan>
+              </text>
+            </g>
+            <path d="m 169.5,697 h 21" class="pippo" id="path912" />
+            <path d="m 170,697.5 v -70" class="pippo" id="path914" />
+            <path d="m 169.5,628 h 21" class="pippo" id="path916" />
+            <path d="m 190,697.5 v -70" class="pippo" id="path918" />
+          </g>
+
+          <g id="domani">
+            <text transform="matrix(1,0,0,-1,240.43,701.22)" style="font-variant:normal;font-weight:bold;font-size:7px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text808">
+              <tspan x="0" y="0" id="tspan806">domani</tspan>
+            </text>
+            <path d="m 204.5,711 h 101" class="pippo" id="path812" />
+            <path d="m 205,711.5 v -15" class="pippo" id="path814" />
+            <path d="m 204.5,697 h 101" class="pippo" id="path816" />
+            <path d="m 305,711.5 v -15" class="pippo" id="path818" />
+          </g>
+
+          <g id="domani_rischi">
+            <g id="g920" transform="rotate(90,205,628)">
+              <text transform="matrix(1,0,0,-1,210.2,615.61)" style="font-variant:normal;font-weight:bold;font-size:6px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text924">
+                <tspan x="0" y="0" id="tspan922">IDROGEOLOGICO</tspan>
+              </text>
+            </g>
+            <path d="m 204.5,697 h 21" class="pippo" id="path928" />
+            <path d="m 205,697.5 v -70" class="pippo" id="path930" />
+            <path d="m 204.5,628 h 21" class="pippo" id="path932" />
+            <path d="m 225,697.5 v -70" class="pippo" id="path934" />
+
+            <g id="g968" transform="rotate(90,225,628)">
+              <text transform="matrix(1,0,0,-1,230.2,619.26)" style="font-variant:normal;font-weight:bold;font-size:6px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text972">
+                <tspan x="0" y="0" id="tspan970">IDROGEOLOGICO</tspan>
+              </text>
+              <text transform="matrix(1,0,0,-1,231.99,611.97)" style="font-variant:normal;font-weight:bold;font-size:6px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text976">
+                <tspan x="0" y="0" id="tspan974">PER TEMPORALI</tspan>
+              </text>
+            </g>
+            <path d="m 224.5,697 h 21" class="pippo" id="path980" />
+            <path d="m 225,697.5 v -70" class="pippo" id="path982" />
+            <path d="m 224.5,628 h 21" class="pippo" id="path984" />
+            <path d="m 245,697.5 v -70" class="pippo" id="path986" />
+
+            <g id="g988" transform="rotate(90,245,628)">
+              <text transform="matrix(1,0,0,-1,260,615.61)" style="font-variant:normal;font-weight:bold;font-size:6px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text992">
+                <tspan x="0" y="0" id="tspan990">IDRAULICO</tspan>
+              </text>
+            </g>
+            <path d="m 244.5,697 h 21" class="pippo" id="path996" />
+            <path d="m 245,697.5 v -70" class="pippo" id="path998" />
+            <path d="m 244.5,628 h 21" class="pippo" id="path1000" />
+            <path d="m 265,697.5 v -70" class="pippo" id="path1002" />
+
+            <g id="g952" transform="rotate(90,265,628)">
+              <text transform="matrix(1,0,0,-1,290.58,615.61)" style="font-variant:normal;font-weight:bold;font-size:6px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text956">
+                <tspan x="0" y="0" id="tspan954">NEVE</tspan>
+              </text>
+            </g>
+            <path d="m 264.5,697 h 21" class="pippo" id="path960" />
+            <path d="m 265,697.5 v -70" class="pippo" id="path962" />
+            <path d="m 264.5,628 h 21" class="pippo" id="path964" />
+            <path d="m 285,697.5 v -70" class="pippo" id="path966" />
+
+            <g id="g936" transform="rotate(90,285,628)">
+              <text transform="matrix(1,0,0,-1,301.11,615.61)" style="font-variant:normal;font-weight:bold;font-size:6px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text940">
+                <tspan x="0" y="0" id="tspan938">VALANGHE</tspan>
+              </text>
+            </g>
+            <path d="m 284.5,697 h 21" class="pippo" id="path944" />
+            <path d="m 285,697.5 v -70" class="pippo" id="path946" />
+            <path d="m 284.5,628 h 21" class="pippo" id="path948" />
+            <path d="m 305,697.5 v -70" class="pippo" id="path950" />
+          </g>
+
+          <g id="sdsa">
+            <text transform="matrix(1,0,0,-1,346.15,672.52)" style="font-variant:normal;font-weight:bold;font-size:10px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text612">
+              <tspan x="0" y="0" id="tspan610">
+                SINTESI dello SCENARIO ATTESO
+              </tspan>
+            </text>
+            <path d="m 304.5,725 h 271" class="pippo" id="path616" />
+            <path d="m 305,725.5 v -98" class="pippo" id="path618" />
+            <path d="m 304.5,628 h 271" class="pippo" id="path620" />
+            <path d="m 575,725.5 v -98" class="pippo" id="path622" />
+          </g>
+        </g>
+
+{% for k, v in allerta.zone.items %}
+
+        <g id="riga_{{k}}" transform="translate(0,{{ v.id_w23_zone.offset }})">
+
+          <g id="cell_zona_{{k}}">
+            <text alignment-baseline="middle" text-anchor="middle" transform="matrix(1,0,0,-1,25.54,603.14)" style="font-variant:normal;font-weight:normal;font-size:16px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text236">
+              <tspan x="5" y="0" id="tspan234">{{ k }}</tspan>
+            </text>
+            <path d="m 20.5,628 h 21" class="pippo" id="path240" />
+            <path d="m 21,628.5 v -38" class="pippo" id="path242" />
+            <path d="m 20.5,591 h 21" class="pippo" id="path244" />
+            <path d="m 41,628.5 v -38" class="pippo" id="path246" />
+          </g>
+
+          <g id="cell_lam_{{k}}">
+            <path d="M 41,628 H 90 V 591 H 41 Z" style="fill:{{v.lam.colore_html}};fill-opacity:1;fill-rule:nonzero;stroke:none" id="path2806" />
+            <text alignment-baseline="middle" text-anchor="middle" transform="matrix(1,0,0,-1,55.17,607.29)" style="font-variant:normal;font-weight:normal;font-size:6px;font-family:Helvetica;writing-mode:lr-tb;fill:{% if v.lam.sort_index == 5 %}#ffffff{% else %}#000000{% endif %};fill-opacity:1;fill-rule:nonzero;stroke:none" id="text2810">
+              <tspan x="10" y="0" id="tspan2808">{{v.lam.id_w23_pericolo}}</tspan>
+            </text>
+            <path d="m 40.5,628 h 50" class="pippo" id="path2814" />
+            <path d="m 41,628.5 v -38" class="pippo" id="path2816" />
+            <path d="m 40.5,591 h 50" class="pippo" id="path2818" />
+            <path d="m 90,628.5 v -38" class="pippo" id="path2820" />
+          </g>
+
+          <g id="cell_idrogeologico_oggi_{{k}}">
+            <g id="g624" transform="rotate(90,90,591)">
+              <path d="m 90,591 h 37 V 571 H 90 Z" style="fill:{{v.idrogeologico_oggi_colore}};fill-opacity:1;fill-rule:nonzero;stroke:none" id="path626" />
+              <text alignment-baseline="middle" text-anchor="middle" transform="matrix(1,0,0,-1,99.97,579.01)" style="font-variant:normal;font-weight:normal;font-size:5px;font-family:Verdana;writing-mode:lr-tb;fill:{% if v.idrogeologico_oggi == 'ROSSO' %}#ffffff{% else %}#000000{% endif %};fill-opacity:1;fill-rule:nonzero;stroke:none" id="text630">
+                <tspan x="8" y="0" id="tspan628">{{v.idrogeologico_oggi}}</tspan>
+              </text>
+            </g>
+            <path d="m 89.5,628 h 21" class="pippo" id="path634" />
+            <path d="m 90,628.5 v -38" class="pippo" id="path636" />
+            <path d="m 89.5,591 h 21" class="pippo" id="path638" />
+            <path d="m 110,628.5 v -38" class="pippo" id="path640" />
+          </g>
+
+          <g id="cell_temporali_oggi_{{k}}">
+            <g id="g642" transform="rotate(90,110,591)">
+              <path d="m 110,591 h 37 v -20 h -37 z" style="fill:{{v.temporali_oggi_colore}};fill-opacity:1;fill-rule:nonzero;stroke:none" id="path644" />
+              <text alignment-baseline="middle" text-anchor="middle" transform="matrix(1,0,0,-1,119.97,579.01)" style="font-variant:normal;font-weight:normal;font-size:5px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text648">
+                <tspan x="8" y="0" id="tspan646">{{v.temporali_oggi}}</tspan>
+              </text>
+            </g>
+            <path d="m 109.5,628 h 21" class="pippo" id="path652" />
+            <path d="m 110,628.5 v -38" class="pippo" id="path654" />
+            <path d="m 109.5,591 h 21" class="pippo" id="path656" />
+            <path d="m 130,628.5 v -38" class="pippo" id="path658" />
+          </g>
+
+          <g id="cell_idraulico_oggi_{{k}}">
+            <g id="g660" transform="rotate(90,130,591)">
+              <path d="m 130,591 h 37 v -20 h -37 z" style="fill:{{v.idraulico_oggi_colore}};fill-opacity:1;fill-rule:nonzero;stroke:none" id="path662" />
+              <text alignment-baseline="middle" text-anchor="middle" transform="matrix(1,0,0,-1,139.97,579.01)" style="font-variant:normal;font-weight:normal;font-size:5px;font-family:Verdana;writing-mode:lr-tb;fill:{% if v.idraulico_oggi == 'ROSSO' %}#ffffff{% else %}#000000{% endif %};fill-opacity:1;fill-rule:nonzero;stroke:none" id="text666">
+                <tspan x="8" y="0" id="tspan664">{{v.idraulico_oggi}}</tspan>
+              </text>
+            </g>
+            <path d="m 129.5,628 h 21" class="pippo" id="path670" />
+            <path d="m 130,628.5 v -38" class="pippo" id="path672" />
+            <path d="m 129.5,591 h 21" class="pippo" id="path674" />
+            <path d="m 150,628.5 v -38" class="pippo" id="path676" />
+          </g>
+
+          <g id="cell_neve_oggi_{{k}}">
+            <g id="g678" transform="rotate(90,150,591)">
+              <path d="m 150,591 h 37 v -20 h -37 z" style="fill:{{v.neve_oggi_colore}};fill-opacity:1;fill-rule:nonzero;stroke:none" id="path680" />
+              <text alignment-baseline="middle" text-anchor="middle" transform="matrix(1,0,0,-1,159.97,579.01)" style="font-variant:normal;font-weight:normal;font-size:5px;font-family:Verdana;writing-mode:lr-tb;fill:{% if v.neve_oggi == 'ROSSO' %}#ffffff{% else %}#000000{% endif %};fill-opacity:1;fill-rule:nonzero;stroke:none" id="text684">
+                <tspan x="8" y="0" id="tspan682">{{v.neve_oggi}}</tspan>
+              </text>
+            </g>
+            <path d="m 149.5,628 h 21" class="pippo" id="path688" />
+            <path d="m 150,628.5 v -38" class="pippo" id="path690" />
+            <path d="m 149.5,591 h 21" class="pippo" id="path692" />
+            <path d="m 170,628.5 v -38" class="pippo" id="path694" />
+          </g>
+
+          <g id="cell_valanghe_oggi_{{k}}">
+            <g id="g696" transform="rotate(90,170,591)">
+              <path d="m 170,591 h 37 v -20 h -37 z" style="fill:{{v.valanghe_oggi_colore}};fill-opacity:1;fill-rule:nonzero;stroke:bacl" id="path698" />
+              <text alignment-baseline="middle" text-anchor="middle" transform="matrix(1,0,0,-1,178.45,579.01)" style="font-variant:normal;font-weight:normal;font-size:5px;font-family:Verdana;writing-mode:lr-tb;fill:{% if v.valanghe_oggi == 'ROSSO' or v.valanghe_oggi == 'BIANCO' %}#ffffff{% else %}#000000{% endif %};fill-opacity:1;fill-rule:nonzero;stroke:none" id="text702">
+                <tspan x="9.5" y="0" id="tspan700">{{v.valanghe_oggi}}</tspan>
+              </text>
+            </g>
+            <path d="m 169.5,628 h 21" class="pippo" id="path706" />
+            <path d="m 170,628.5 v -38" class="pippo" id="path708" />
+            <path d="m 169.5,591 h 21" class="pippo" id="path710" />
+            <path d="m 190,628.5 v -38" class="pippo" id="path712" />
+          </g>
+
+          <g id="cell_idrogeologico_domani_{{k}}">
+            <g id="g750" transform="rotate(90,205,591)">
+              <path d="m 205,591 h 37 v -20 h -37 z" style="fill:{{v.idrogeologico_domani_colore}};fill-opacity:1;fill-rule:nonzero;stroke:none" id="path752" />
+              <text alignment-baseline="middle" text-anchor="middle" transform="matrix(1,0,0,-1,214.97,579.01)" style="font-variant:normal;font-weight:normal;font-size:5px;font-family:Verdana;writing-mode:lr-tb;fill:{% if v.idrogeologico_domani == 'ROSSO' %}#ffffff{% else %}#000000{% endif %};fill-opacity:1;fill-rule:nonzero;stroke:none" id="text756">
+                <tspan x="8" y="0" id="tspan754">{{v.idrogeologico_domani}}</tspan>
+              </text>
+            </g>
+            <path d="m 204.5,628 h 21" class="pippo" id="path760" />
+            <path d="m 205,628.5 v -38" class="pippo" id="path762" />
+            <path d="m 204.5,591 h 21" class="pippo" id="path764" />
+            <path d="m 225,628.5 v -38" class="pippo" id="path766" />
+          </g>
+
+          <g id="cell_temporali_domani_{{k}}">
+            <g id="g786" transform="rotate(90,225,591)">
+              <path d="m 225,591 h 37 v -20 h -37 z" style="fill:{{v.temporali_domani_colore}};fill-opacity:1;fill-rule:nonzero;stroke:none" id="path788" />
+              <text alignment-baseline="middle" text-anchor="middle" transform="matrix(1,0,0,-1,234.97,579.01)" style="font-variant:normal;font-weight:normal;font-size:5px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text792">
+                <tspan x="8" y="0" id="tspan790">{{v.temporali_domani}}</tspan>
+              </text>
+            </g>
+            <path d="m 224.5,628 h 21" class="pippo" id="path796" />
+            <path d="m 225,628.5 v -38" class="pippo" id="path798" />
+            <path d="m 224.5,591 h 21" class="pippo" id="path800" />
+            <path d="m 245,628.5 v -38" class="pippo" id="path802" />
+          </g>
+
+          <g id="cell_idraulico_domani_{{k}}">
+            <g id="g768" transform="rotate(90,245,591)">
+              <path d="m 245,591 h 37 v -20 h -37 z" style="fill:{{v.idraulico_domani_colore}};fill-opacity:1;fill-rule:nonzero;stroke:none" id="path770" />
+              <text alignment-baseline="middle" text-anchor="middle" transform="matrix(1,0,0,-1,254.97,579.01)" style="font-variant:normal;font-weight:normal;font-size:5px;font-family:Verdana;writing-mode:lr-tb;fill:{% if v.idraulico_domani == 'ROSSO' %}#ffffff{% else %}#000000{% endif %};fill-opacity:1;fill-rule:nonzero;stroke:none" id="text774">
+                <tspan x="8" y="0" id="tspan772">{{v.idraulico_domani}}</tspan>
+              </text>
+            </g>
+            <path d="m 244.5,628 h 21" class="pippo" id="path778" />
+            <path d="m 245,628.5 v -38" class="pippo" id="path780" />
+            <path d="m 244.5,591 h 21" class="pippo" id="path782" />
+            <path d="m 265,628.5 v -38" class="pippo" id="path784" />
+          </g>
+
+          <g id="cell_neve_domani_{{k}}">
+            <g id="g714" transform="rotate(90,265,591)">
+              <path d="m 265,591 h 37 v -20 h -37 z" style="fill:{{v.neve_domani_colore}};fill-opacity:1;fill-rule:nonzero;stroke:none" id="path716" />
+              <text alignment-baseline="middle" text-anchor="middle" transform="matrix(1,0,0,-1,274.97,579.01)" style="font-variant:normal;font-weight:normal;font-size:5px;font-family:Verdana;writing-mode:lr-tb;fill:{% if v.neve_domani == 'ROSSO' %}#ffffff{% else %}#000000{% endif %};fill-opacity:1;fill-rule:nonzero;stroke:none" id="text720">
+                <tspan x="8" y="0" id="tspan718">{{v.neve_domani}}</tspan>
+              </text>
+            </g>
+            <path d="m 264.5,628 h 21" class="pippo" id="path724" />
+            <path d="m 265,628.5 v -38" class="pippo" id="path726" />
+            <path d="m 264.5,591 h 21" class="pippo" id="path728" />
+            <path d="m 285,628.5 v -38" class="pippo" id="path730" />
+          </g>
+
+          <g id="cell_valanghe_domani_{{k}}">
+            <g id="g732" transform="rotate(90,285,591)">
+              <path d="m 285,591 h 37 v -20 h -37 z" style="fill:{{v.valanghe_domani_colore}};fill-opacity:1;fill-rule:nonzero;stroke:none" id="path734" />
+              <text alignment-baseline="middle" text-anchor="middle" transform="matrix(1,0,0,-1,293.45,579.01)" style="font-variant:normal;font-weight:normal;font-size:5px;font-family:Verdana;writing-mode:lr-tb;fill:{% if v.valanghe_domani == 'ROSSO' or v.valanghe_domani == 'BIANCO' %}#ffffff{% else %}#000000{% endif %};fill-opacity:1;fill-rule:nonzero;stroke:none" id="text738">
+                <tspan x="9.5" y="0" id="tspan736">{{v.valanghe_domani}}</tspan>
+              </text>
+            </g>
+            <path d="m 284.5,628 h 21" class="pippo" id="path742" />
+            <path d="m 285,628.5 v -38" class="pippo" id="path744" />
+            <path d="m 284.5,591 h 21" class="pippo" id="path746" />
+            <path d="m 305,628.5 v -38" class="pippo" id="path748" />
+          </g>
+
+          <g id="cell_sdsa_{{k}}">
+            <foreignObject transform="matrix(1,0,0,-1,310,625.72)" width="265" height="35" >
+              <div xmlns="http://www.w3.org/1999/xhtml"
+              style="text-align: justifyfont-style:normal;
+              font-variant:normal;
+              font-weight:normal;
+              font-stretch:normal;
+              font-size:7px;
+              font-family:Verdana;
+              text-align:start;
+              text-anchor:start;
+              line-height: 8px;
+              color: #231f20;
+              fill:#000000;
+              fill-opacity:1;
+              fill-rule:nonzero;
+              stroke:none">
+                {{v.scenario_atteso}}
+              </div>
+            </foreignObject>
+            <path d="m 304.5,628 h 271" class="pippo" id="path256" />
+            <path d="m 305,628.5 v -38" class="pippo" id="path258" />
+            <path d="m 304.5,591 h 271" class="pippo" id="path260" />
+            <path d="m 575,628.5 v -38" class="pippo" id="path262" />
+          </g>
+
+        </g>
+
+{% endfor %}
+
+        <g id="textbox">
+          <path d="m 19.5,189 h 555" class="pippo" id="path224" />
+          <path d="m 20,189.5 v -39" class="pippo" id="path226" />
+          <path d="m 19.5,151 h 555" class="pippo" id="path228" />
+          <path d="m 574,189.5 v -39" class="pippo" id="path230" />
+          <foreignObject x="0" y="0" width="547" transform="matrix(1,0,0,-1,23,186.5)"  height="40">
+            <div xmlns="http://www.w3.org/1999/xhtml" style="text-align: justify;font-variant:normal;font-weight:normal;font-size:7px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" >
+              {{ allerta.situazione_meteo }}
+            </div>
+          </foreignObject>
+        </g>
+
+        <g id="legenda">
+          <g id="quadro">
+            <text transform="matrix(1,0,0,-1,21,139.96)" style="font-variant:normal;font-weight:bold;font-size:7px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text3348">
+              <tspan x="0" y="0" id="tspan3346">QUADRO DI SINTESI</tspan>
+            </text>
+            <text transform="matrix(1,0,0,-1,34,119.96)" style="font-variant:normal;font-weight:bold;font-size:7px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text3356">
+              <tspan x="0" y="0" id="tspan3354">Livelli di allerta</tspan>
+            </text>
+            <text transform="matrix(1,0,0,-1,34,111.46)" style="font-variant:normal;font-weight:bold;font-size:7px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text3360">
+              <tspan x="0" y="0" id="tspan3358">massimi nel</tspan>
+            </text>
+            <text transform="matrix(1,0,0,-1,34,102.95)" style="font-variant:normal;font-weight:bold;font-size:7px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text3364">
+              <tspan x="0" y="0" id="tspan3362">periodo di</tspan>
+            </text>
+            <text transform="matrix(1,0,0,-1,34,94.44)" style="font-variant:normal;font-weight:bold;font-size:7px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text3368">
+              <tspan x="0" y="0" id="tspan3366">validità del</tspan>
+            </text>
+            <text transform="matrix(1,0,0,-1,34,85.93)" style="font-variant:normal;font-weight:bold;font-size:7px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text3372">
+              <tspan x="0" y="0" id="tspan3370">bollettino</tspan>
+            </text>
+            <g id="g584" transform="matrix(0.1,0,0,-0.1,130,150)">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 426.26 557.1" class="mt-5" data-v-3074bd5c="">
+                {% include "piemonte_allerta.svg" with zone=allerta.zone lam='lam' %}
+              </svg>
+            </g>
+          </g>
+          <g id="livello">
+            <text transform="matrix(1,0,0,-1,232,142.96)" style="font-variant:normal;font-weight:bold;font-size:7px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text3212">
+              <tspan x="0" y="0" id="tspan3210">LIVELLO DI ALLERTA</tspan>
+            </text>
+
+            <path d="m 230,140 h 48 v -18 h -48 z" style="fill:#6ebb00;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path3218" />
+            <text transform="matrix(1,0,0,-1,241.94,128.42)" style="font-variant:normal;font-weight:normal;font-size:7px;font-family:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text3222">
+              <tspan x="0" y="0" id="tspan3220">VERDE</tspan>
+            </text>
+
+            <path d="m 229.5,140 h 49" class="pippo" id="path3226" />
+            <path d="m 230,140.5 v -19" class="pippo" id="path3228" />
+            <path d="m 229.5,122 h 49" class="pippo" id="path3230" />
+            <path d="m 278,140.5 v -19" class="pippo" id="path3232" />
+
+            <path d="m 230,122 h 48 v -18 h -48 z" style="fill:#ffff00;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path3236" />
+            <text transform="matrix(1,0,0,-1,241.35,110.42)" style="font-variant:normal;font-weight:normal;font-size:7px;font-family:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text3240">
+              <tspan x="0" y="0" id="tspan3238">GIALLO</tspan>
+            </text>
+
+            <path d="m 229.5,122 h 49" class="pippo" id="path3244" />
+            <path d="m 230,122.5 v -19" class="pippo" id="path3246" />
+            <path d="m 229.5,104 h 49" class="pippo" id="path3248" />
+            <path d="m 278,122.5 v -19" class="pippo" id="path3250" />
+
+            <path d="m 230,104 h 48 V 86 h -48 z" style="fill:#ffa500;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path3254" />
+            <text transform="matrix(1,0,0,-1,233.19,92.42)" style="font-variant:normal;font-weight:normal;font-size:7px;font-family:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text3258">
+              <tspan x="0" y="0" id="tspan3256">ARANCIONE</tspan>
+            </text>
+
+            <path d="m 229.5,104 h 49" class="pippo" id="path3262" />
+            <path d="m 230,104.5 v -19" class="pippo" id="path3264" />
+            <path d="m 229.5,86 h 49" class="pippo" id="path3266" />
+            <path d="m 278,104.5 v -19" class="pippo" id="path3268" />
+
+            <path d="m 230,86 h 48 V 68 h -48 z" style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path3272" />
+            <text transform="matrix(1,0,0,-1,241.36,74.42)" style="font-variant:normal;font-weight:normal;font-size:7px;font-family:Helvetica;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text3276">
+              <tspan x="0" y="0" id="tspan3274">ROSSO</tspan>
+            </text>
+
+            <path d="m 229.5,86 h 49" class="pippo" id="path3378" />
+            <path d="m 230,86.5 v -19" class="pippo" id="path3380" />
+            <path d="m 229.5,68 h 49" class="pippo" id="path3382" />
+            <path d="m 278,86.5 v -19" class="pippo" id="path3384" />
+
+            <text transform="matrix(1,0,0,-1,283,131.47)" style="font-variant:normal;font-weight:normal;font-size:7px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text3292">
+              <tspan x="0" y="0" id="tspan3290">Assenza di fenomeni</tspan>
+            </text>
+            <text transform="matrix(1,0,0,-1,283,122.96)" style="font-variant:normal;font-weight:normal;font-size:7px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text3296">
+              <tspan x="0" y="0" id="tspan3294">significativi prevedibili</tspan>
+            </text>
+
+            <text transform="matrix(1,0,0,-1,283,110.22)" style="font-variant:normal;font-weight:normal;font-size:7px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text3304">
+              <tspan x="0" y="0" id="tspan3302">Fenomeni localizzati</tspan>
+            </text>
+
+            <text transform="matrix(1,0,0,-1,283,92.22)" style="font-variant:normal;font-weight:normal;font-size:7px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text3312">
+              <tspan x="0" y="0" id="tspan3310">Fenomeni diffusi</tspan>
+            </text>
+
+
+            <text transform="matrix(1,0,0,-1,283,78.47)" style="font-variant:normal;font-weight:normal;font-size:7px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text3320">
+              <tspan x="0" y="0" id="tspan3318">Numerosi e/o estesi</tspan>
+            </text>
+            <text transform="matrix(1,0,0,-1,283,69.96)" style="font-variant:normal;font-weight:normal;font-size:7px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text3324">
+              <tspan x="0" y="0" id="tspan3322">fenomeni</tspan>
+            </text>
+
+            <text transform="matrix(1,0,0,-1,229,60.96)" style="font-variant:normal;font-weight:normal;font-size:7px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text3332">
+              <tspan x="0" y="0" id="tspan3330">
+                L'allerta per valanghe è valutata solo sulle
+              </tspan>
+            </text>
+            <text transform="matrix(1,0,0,-1,229,52.46)" style="font-variant:normal;font-weight:normal;font-size:7px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text3336">
+              <tspan x="0" y="0" id="tspan3334">
+                aree montane e nel periodo di emissione
+              </tspan>
+            </text>
+            <text transform="matrix(1,0,0,-1,229,43.95)" style="font-variant:normal;font-weight:normal;font-size:7px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text3340">
+              <tspan x="0" y="0" id="tspan3338">
+                del bollettino del Pericolo valanghe
+              </tspan>
+            </text>
+          </g>
+          <g id="zone">
+            <text transform="matrix(1,0,0,-1,395,143.96)" style="font-variant:normal;font-weight:bold;font-size:7px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text3204">
+              <tspan x="0" y="0" id="tspan3202">ZONE DI ALLERTA</tspan>
+            </text>
+
+            <text transform="matrix(1,0,0,-1,379,131.96)" style="font-variant:normal;font-weight:normal;font-size:7px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text3156">
+              <tspan x="0" y="0" id="tspan3154">A Toce (NO-VB)</tspan>
+            </text>
+            <text transform="matrix(1,0,0,-1,379,123.46)" style="font-variant:normal;font-weight:normal;font-size:7px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text3160">
+              <tspan x="0" y="0" id="tspan3158">B Val Sesia, Cervo e Chiusella (BI-TO-VC)</tspan>
+            </text>
+            <text transform="matrix(1,0,0,-1,379,114.95)" style="font-variant:normal;font-weight:normal;font-size:7px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text3164">
+              <tspan x="0" y="0" id="tspan3162">C Valli Orco, Lanzo, bassa val Susa e Sangone (TO)</tspan>
+            </text>
+            <text transform="matrix(1,0,0,-1,379,106.44)" style="font-variant:normal;font-weight:normal;font-size:7px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text3168">
+              <tspan x="0" y="0" id="tspan3166">D Alta val Susa, Chisone, Pellice e Po (CN-TO)</tspan>
+            </text>
+            <text transform="matrix(1,0,0,-1,379,97.93)" style="font-variant:normal;font-weight:normal;font-size:7px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text3172">
+              <tspan x="0" y="0" id="tspan3170">E Valli Varaita, Maira e Stura (CN)</tspan>
+            </text>
+            <text transform="matrix(1,0,0,-1,379,89.43)" style="font-variant:normal;font-weight:normal;font-size:7px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text3176">
+              <tspan x="0" y="0" id="tspan3174">F Valle Tanaro (CN)</tspan>
+            </text>
+            <text transform="matrix(1,0,0,-1,379,80.92)" style="font-variant:normal;font-weight:normal;font-size:7px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text3180">
+              <tspan x="0" y="0" id="tspan3178">G Belbo e Bormida (AL-AT-CN)</tspan>
+            </text>
+            <text transform="matrix(1,0,0,-1,379,72.41)" style="font-variant:normal;font-weight:normal;font-size:7px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text3184">
+              <tspan x="0" y="0" id="tspan3182">H Scrivia (AL)</tspan>
+            </text>
+            <text transform="matrix(1,0,0,-1,379,63.9)" style="font-variant:normal;font-weight:normal;font-size:7px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text3188">
+              <tspan x="0" y="0" id="tspan3186">I Pianura Settentrionale (AL-AT-BI-NO-TO-VC)</tspan>
+            </text>
+            <text transform="matrix(1,0,0,-1,379,55.4)" style="font-variant:normal;font-weight:normal;font-size:7px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text3192">
+              <tspan x="0" y="0" id="tspan3190">L Pianura Torinese e Colline (AL-AT-CN-TO)</tspan>
+            </text>
+            <text transform="matrix(1,0,0,-1,379,46.89)" style="font-variant:normal;font-weight:normal;font-size:7px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text3196">
+              <tspan x="0" y="0" id="tspan3194">M Pianura Cuneese (CN-TO)</tspan>
+            </text>
+          </g>
+        </g>
+
+        <g id="footer">
+          <text transform="matrix(1,0,0,-1,27,34.96)" style="font-variant:normal;font-weight:normal;font-size:7px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text3410">
+            <tspan x="0" y="0" id="tspan3408">
+              Per una corretta interpretazione ed approfondimenti consultare sempre il disciplinare
+            </tspan>
+          </text>
+          <path d="M 27,31 H 443 V 20 H 27 Z" style="fill:#c0c0c0;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path3388" />
+          <text transform="matrix(1,0,0,-1,27,24.35)" style="font-variant:normal;font-weight:normal;font-size:7px;font-family:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text3392">
+            <tspan x="0" y="0" id="tspan3390">
+              Diffusione: http://www.ruparpiemonte.it/meteo/ - http://intranet.ruparpiemonte.it/meteo/ con password di accesso
+            </tspan>
+          </text>
+          <path d="M 440,31 H 564 V 20 H 440 Z" style="fill:#8080ff;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path3398" />
+          <text transform="matrix(1,0,0,-1,451.5,22.96)" style="font-variant:normal;font-weight:bold;font-size:8px;font-family:Verdana;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none" id="text3402">
+            <tspan x="0" y="0" id="tspan3400">
+              www.arpa.piemonte.it
+            </tspan>
+          </text>
+        </g>
+
+      </g>
+    </svg>
+  </body>
+</html>

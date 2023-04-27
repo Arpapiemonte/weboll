@@ -1,0 +1,5 @@
+{% for i, l in livelli.items %}
+    {% if livello == l.id_w31_livelli %}
+    style="background-color: {{l.colore}}"
+    {% endif %}
+{% endfor %}

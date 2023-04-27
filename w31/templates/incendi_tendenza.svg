@@ -1,0 +1,7 @@
+{% if trend > 0 %}
+<strong>&#8599;</strong>
+{% elif trend < 0 %}
+<strong>&#8600;</strong>
+{% else %}
+<strong>&#8646;</strong>
+{% endif %}

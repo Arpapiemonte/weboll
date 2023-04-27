@@ -1,0 +1,17 @@
+<g
+  transform="translate({{ x }}, {{ y }})">
+{% if id_trend == 2 %}
+  <path
+      style="fill:{{ colore }};fill-opacity:1;stroke-width:0.157492"
+      d="m 0,0 v 0.88621 h -0.42788 l 0.6758,0.95049 0.65858,-0.95049 h -0.42788 v -0.88621 z" />
+{% elif id_trend == 0 %}
+  <path
+      style="fill:{{ colore }};fill-opacity:1;stroke-width:0.157492"
+      d="m 0,0 -0.95049,0.6758 0.95049,0.65858 v -0.42788 h 0.72779 v 0.42788 l 0.95049,-0.65858 -0.95049,-0.6758 v 0.42788 h -0.72779 z" />
+{% else %}
+  <path
+      style="fill:{{ colore }};fill-opacity:1;stroke-width:0.157492"
+      d="m 0,1.7 v -0.88621 h -0.42788 l 0.6758,-0.95049 0.65858,0.95049 h -0.42788 v 0.88621 z"
+      id="path716" />
+{% endif %}
+</g>

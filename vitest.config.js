@@ -1,0 +1,23 @@
+// Copyright (C) 2020-2023 simevo s.r.l. for ARPA Piemonte - Dipartimento Naturali e Ambientali
+// This file is part of weboll (the bulletin back-office for ARPA Piemonte).
+// weboll is licensed under the AGPL-3.0-or-later License.
+// License text available at https://www.gnu.org/licenses/agpl.txt
+
+import { defineConfig } from 'vite'
+import Vue from '@vitejs/plugin-vue'
+
+const path = require("path")
+
+export default defineConfig({
+  plugins: [
+    Vue(),
+  ],
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    alias: {
+      "@/bulletins": path.resolve(__dirname, "./public/bulletins.js"),
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
+})

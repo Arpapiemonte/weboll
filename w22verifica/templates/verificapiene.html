@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <title>
+      Bollettino Verifica Piene
+    </title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <h1>Bollettino Verifica Piene</h1>
+    <hr/>
+    <table>
+      <tr>
+        <td>Id</td>
+        <td>{{ verificapiene.id_w22verifica }}</td>
+      </tr>
+      <tr>
+        <td>Num</td>
+        <td>{{ verificapiene.id_w22 }}</td>
+      </tr>
+      <tr>
+        <td>Stato</td>
+        <td>{{ verificapiene.status }}</td>
+      </tr>
+      <tr>
+        <td>Data emissione</td>
+        <td>{{ verificapiene.data_emissione }}</td>
+      </tr>
+      <tr>
+        <td>Ultima modifica</td>
+        <td>{{ verificapiene.last_update }}</td>
+      </tr>
+      <tr>
+        <td>Autore</td>
+        <td>{{ verificapiene.username }}</td>
+      </tr>
+    </table>
+    <hr/>
+  </body>
+</html>

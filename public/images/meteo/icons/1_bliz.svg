@@ -1,0 +1,106 @@
+<svg id="tormenta_neve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="750" height="600" viewBox="0 0 750 600">
+ <defs>
+    <style>
+      .cls-1 {
+        fill: url(#Sfumatura_senza_nome_7);
+      }
+
+      .cls-2 {
+        fill: #95a2b2;
+      }
+
+      .cls-3 {
+        fill: url(#Sfumatura_senza_nome_11);
+      }
+
+      .cls-4, .cls-5, .cls-6 {
+        fill: none;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-4 {
+        stroke: #3e5d72;
+        stroke-width: 13px;
+      }
+
+      .cls-5, .cls-6 {
+        stroke: #97a3b3;
+      }
+
+      .cls-5 {
+        stroke-width: 12px;
+      }
+
+      .cls-6 {
+        stroke-width: 8px;
+      }
+    </style>
+    <linearGradient id="Sfumatura_senza_nome_7" data-name="Sfumatura senza nome 7" x1="294.25" y1="115.28" x2="511.27" y2="332.3" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#657b88"/>
+      <stop offset="0.28" stop-color="#687e8b"/>
+      <stop offset="0.51" stop-color="#738793"/>
+      <stop offset="0.73" stop-color="#8496a0"/>
+      <stop offset="0.94" stop-color="#9dacb3"/>
+      <stop offset="1" stop-color="#a6b4ba"/>
+    </linearGradient>
+    <linearGradient id="Sfumatura_senza_nome_11" data-name="Sfumatura senza nome 11" x1="329.59" y1="45.84" x2="493.18" y2="209.43" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#657b88"/>
+      <stop offset="0.31" stop-color="#687e8a"/>
+      <stop offset="0.58" stop-color="#738792"/>
+      <stop offset="0.82" stop-color="#84969f"/>
+      <stop offset="1" stop-color="#96a5ac"/>
+    </linearGradient>
+  </defs>
+  <title>1_tormenta_neve</title>
+  <g id="ricciolo-tormenta-neve">
+    <path id="ricciolo-down" class="cls-1" d="M557,261.67c-21.31,27.45-60.67,56.28-122,55.63-91-1-135-65.61-136.5-114.5C296.33,129.33,337,86.67,392,85c31.63-1,44.92,10.55,55,14.5,1.17,0,4.33.67,4.87-2.08C438.81,79.94,417.64,71,392,71c-73.38,0-127.75,57.37-127.75,130.75S320.49,348.6,421,345.55c67.46-2,134-37.55,148-83.88C568.44,258.75,558,259.31,557,261.67Z" transform="translate(-123.36 -32.5)"/>
+    <path id="ricciolo-middle" class="cls-2" d="M546.67,82.67c-1-1-1.28,2.68-1,3.46-1.12,1.21,16.34,13,15.71,67.88-.8,69.67-53,132.33-126.67,132.67-64.7.29-104.61-39-106.42-84.6-3.25-81.74,38.3-99.61,74.5-99.68,28.58-.06,39.67,7.87,50.25,16.24,4.22,2.64,11,.13,9.75-1.87-17-16.11-36.13-27.7-60-27.7-54.31,0-98.08,43-95.25,110,2.5,59.21,54.51,110.37,130.25,109C518,306.67,575,250.67,575,177.67,575,115.67,558,90,546.67,82.67Z" transform="translate(-123.36 -32.5)"/>
+    <path id="riccolo-up" class="cls-3" d="M391,32.5c-64.07,0-104.7,51.66-117,87-2,7.33-3,9,6,5,19-39,67.6-61,111-61,45.69,0,93,32.5,92.5,88-.36,40.09-33.23,71.9-68.83,81.5-6.29,1.5-.59,5.8,5.91,5,64.42-4.64,93.92-34.31,93.92-99.85C514.5,66.75,459.54,32.5,391,32.5Z" transform="translate(-123.36 -32.5)"/>
+  </g>
+  <g id="fiocco_scuro">
+    <polyline id="steli_ore11_SC" class="cls-4" points="299.42 363.32 332.3 359.21 337.39 331.6"/>
+    <polyline id="steli_ore9_SC" class="cls-4" points="290.13 378.99 311.16 396.9 308.97 423.45"/>
+    <polyline id="steli_ore7_SC" class="cls-4" points="317.29 437.33 341.79 432.35 358.77 451.98"/>
+    <polyline id="steli_ore5_SC" class="cls-4" points="412.21 418.29 385.1 421.31 382.21 445.21"/>
+    <polyline id="steli_ore3_SC" class="cls-4" points="410.48 356.74 400.05 380.68 417.75 398.15"/>
+    <polyline id="steli_ore1_SC" class="cls-4" points="355.37 331.09 371.95 348.06 398.87 338.59"/>
+    <line id="braccio_ore11_SC" class="cls-4" x1="341.65" y1="370.47" x2="309.35" y2="332.39"/>
+    <line id="braccio_ore9_SC" class="cls-4" x1="333.48" y1="392.91" x2="283" y2="401.94"/>
+    <line id="braccio_ore7_SC" class="cls-4" x1="348.83" y1="411.2" x2="331.87" y2="462.17"/>
+    <line id="braccio_ore5_SC" class="cls-4" x1="372.34" y1="407.05" x2="405.9" y2="444.55"/>
+    <line id="braccio_ore3_SC" class="cls-4" x1="380.51" y1="384.62" x2="427.64" y2="375.12"/>
+    <line id="braccio_ore1_SC" class="cls-4" x1="365.16" y1="366.32" x2="382.26" y2="320.35"/>
+    <polygon id="esagono_SC" class="cls-4" points="371.03 402.17 350.76 405.74 337.53 389.97 344.57 370.63 364.84 367.05 378.07 382.82 371.03 402.17"/>
+  </g>
+  <g id="fiocco_chiaro-gr">
+    <polyline id="steli_ore11_CH-gr" class="cls-5" points="42.57 132.6 66.27 149.1 85.65 134.17"/>
+    <polyline id="steli_ore9_CH-gr" class="cls-5" points="27.41 137.34 30.61 161.21 13.72 177.14"/>
+    <polyline id="steli_ore7_CH-gr" class="cls-5" points="11.03 190.99 29.8 202.03 29.38 224.64"/>
+    <polyline id="steli_ore5_CH-gr" class="cls-5" points="83.64 233.94 64.31 220.11 48.51 233.92"/>
+    <polyline id="steli_ore3_CH-gr" class="cls-5" points="118.38 193.04 97.67 202.49 98.96 224.12"/>
+    <polyline id="steli_ore1_CH-gr" class="cls-5" points="97.6 144.32 98.47 164.97 121.43 174.51"/>
+    <line id="braccio_ore11_CH-gr" class="cls-5" x1="65.76" y1="161.84" x2="67.02" y2="118.34"/>
+    <line id="braccio_ore9_CH-gr" class="cls-5" x1="47.4" y1="171.62" x2="9.42" y2="148.07"/>
+    <line id="braccio_ore7_CH-gr" class="cls-5" x1="46.69" y1="192.42" x2="6" y2="215.57"/>
+    <line id="braccio_ore5_CH-gr" class="cls-5" x1="64.34" y1="203.43" x2="64.25" y2="247.28"/>
+    <line id="braccio_ore3_CH-gr" class="cls-5" x1="82.71" y1="193.65" x2="118.79" y2="214.96"/>
+    <line id="braccio_ore1_CH-gr" class="cls-5" x1="83.42" y1="172.85" x2="121.29" y2="153.02"/>
+    <polygon id="esagono_CH-gr" class="cls-5" points="66.34 199.5 51.12 190 51.73 172.08 67.56 163.64 82.79 173.14 82.17 191.07 66.34 199.5"/>
+  </g>
+  <g id="fiocco_chiaro-pic">
+    <polyline id="steli_ore11_CH-pic" class="cls-6" points="280.74 104.11 295.97 114.83 308.52 105.26"/>
+    <polyline id="steli_ore9_CH-pic" class="cls-6" points="270.95 107.12 272.94 122.52 262 132.74"/>
+    <polyline id="steli_ore7_CH-pic" class="cls-6" points="260.21 141.66 272.29 148.84 271.94 163.43"/>
+    <polyline id="steli_ore5_CH-pic" class="cls-6" points="306.91 169.6 294.48 160.62 284.25 169.47"/>
+    <polyline id="steli_ore3_CH-pic" class="cls-6" points="329.44 143.33 316.06 149.36 316.82 163.31"/>
+    <polyline id="steli_ore1_CH-pic" class="cls-6" points="316.2 111.84 316.69 125.17 331.47 131.4"/>
+    <line id="braccio_ore11_CH-pic" class="cls-6" x1="295.61" y1="123.04" x2="296.56" y2="94.99"/>
+    <line id="braccio_ore9_CH-pic" class="cls-6" x1="283.73" y1="129.29" x2="259.32" y2="113.98"/>
+    <line id="braccio_ore7_CH-pic" class="cls-6" x1="283.21" y1="142.7" x2="256.9" y2="157.5"/>
+    <line id="braccio_ore5_CH-pic" class="cls-6" x1="294.56" y1="149.86" x2="294.36" y2="178.14"/>
+    <line id="braccio_ore3_CH-pic" class="cls-6" x1="306.44" y1="143.61" x2="329.64" y2="157.47"/>
+    <line id="braccio_ore1_CH-pic" class="cls-6" x1="306.96" y1="130.2" x2="331.45" y2="117.53"/>
+    <polygon id="esagono_CH-pic" class="cls-6" points="295.86 147.33 286.07 141.16 286.53 129.6 296.77 124.21 306.55 130.38 306.1 141.94 295.86 147.33"/>
+  </g>
+</svg>

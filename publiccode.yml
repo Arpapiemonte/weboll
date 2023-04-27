@@ -1,0 +1,178 @@
+---
+
+publiccodeYmlVersion: "0.2"
+name: Weboll
+url: "https://github.com/Arpapiemonte/weboll.git"
+softwareVersion: "1.2.0"
+releaseDate: "2023-04-27"
+platforms:
+  - web
+
+categories:
+  - collaboration
+  - content-management
+  - data-collection
+  - data-visualization
+
+developmentStatus: stable
+
+softwareType: "standalone/web"
+
+description:
+  en:
+    genericName: Bulletin back-office
+    shortDescription: >
+          Webapp for collaboratively creating and managing forecast bulletins
+
+    longDescription: >
+          Weboll is the back-office for producing the forecast bulletins
+          included in the operational and institutional activities of the
+          Environmental and Natural Hazards Department of Arpa Piemonte.
+
+          It supports the following bulletins: Weather forecasts, Ozone, Alert,
+          Vigilance, Slops, Floods, Forecast on Alert Zones, Flood check, Fires.
+
+          It is a dockerized three-tier web application with:
+          - PostegreSQL relational database
+          - Django / Django REST framework backend
+          - Responsive and reactive frontend based on Vue.js and bootstrap.
+
+    features:
+      - Login with username/password or LDAP server integration
+      - Bulletin list by month and year
+      - Creation of a new bulletin for the current day with first guess
+      - Collaborative editing of draft bulletins
+      - Bulletin send
+      - Management of asynchronous forwarding via filesystem, scp or sftp
+      - Bulletin export in PDF/PNG/XML/JSON format
+      - Automated bulletins
+
+    screenshots:
+      - doc/homepage.png
+      - doc/meteo_list.png
+      - doc/meteo_detail.png
+      - doc/ozono_list.png
+      - doc/ozono_detail.png
+      - doc/PSA_list.png
+      - doc/PSA_model.png
+      - doc/Piene_list.png
+      - doc/Piene_detail.png
+      - doc/slops_list.png
+      - doc/slops_detail.png
+      - doc/verificapiene_detail.png
+      - doc/allerta_list.png
+      - doc/allerta_detail.png
+      - doc/incendi_list.png
+      - doc/incendi_detail_microaree.png
+      - doc/vigilanza_list.png
+      - doc/vigilanza_detail.png
+      - doc/log_admin.png
+      - doc/destinazioni_admin.png
+      - doc/flower.png
+      - doc/user_admin.png
+
+  it:
+    genericName: Back-office bollettini
+    shortDescription: >
+          Web app for creare e gestire bollettini previsionali
+
+    longDescription: >
+          Weboll è il back-office per la produzione dei bollettini previsionali
+          ricompresi nelle attività operative istituzionali del Dipartimento
+          Rischi Ambientali e Naturali di Arpa Piemonte.
+
+          Suporta i seguenti bollettini: Previsioni Meteo, Ozono, Allerta,
+          Vigilanza, Slops, Piene, Previsione su Aree Allerta, Piene, Verifica
+          Piene e Incendi.
+
+          Si tratta di un'applicazione web a tre livelli, dockerizzata, con:
+          - database relazionale PostegreSQL
+          - backend con framework Django / Django REST
+          - Frontend reattivo e reattivo basato su Vue.js e bootstrap.
+
+    features:
+      - Login con username/password oppure integrazione con server LDAP
+      - Elenco dei bollettini filtrabile per mese e anno
+      - Creazione di un nuovo bollettino del giorno corrente con first guess
+      - Modifica collaborativa dei bollettini in bozza
+      - Invio del bollettino
+      - Gestione degli inoltri asincroni via filesystem, scp o sftp
+      - Export di un bollettino in formato PDF/PNG/XML/JSON
+      - Bollettini automatici
+
+    screenshots:
+      - doc/homepage.png
+      - doc/meteo_list.png
+      - doc/meteo_detail.png
+      - doc/ozono_list.png
+      - doc/ozono_detail.png
+      - doc/PSA_list.png
+      - doc/PSA_model.png
+      - doc/Piene_list.png
+      - doc/Piene_detail.png
+      - doc/slops_list.png
+      - doc/slops_detail.png
+      - doc/verificapiene_detail.png
+      - doc/allerta_list.png
+      - doc/allerta_detail.png
+      - doc/incendi_list.png
+      - doc/incendi_detail_microaree.png
+      - doc/vigilanza_list.png
+      - doc/vigilanza_detail.png
+      - doc/log_admin.png
+      - doc/destinazioni_admin.png
+      - doc/flower.png
+      - doc/user_admin.png
+it:
+  countryExtensionVersion: '0.2'
+    riuso:
+      codiceIPA: arlpa_to
+  conforme:
+    gdpr: false
+    lineeGuidaDesign: true
+    misureMinimeSicurezza: false
+    modelloInteroperabilita: false
+  countryExtensionVersion: '0.2'
+  piattaforme:
+    anpr: false
+    cie: false
+    pagopa: false
+    spid: false
+
+legal:
+  license: AGPL-3.0-or-later
+  mainCopyrightOwner: ARPA Piemonte - Dipartimento Rischi Ambientali e Naturali
+  repoOwner: Arpa Piemonte
+
+maintenance:
+  type: "contract"
+
+  contractors:
+    - name: "simevo s.r.l."
+      email: "info@simevo.com"
+      website: "https://simevo.com"
+      until: "2023-06-30"
+
+  contacts:
+    - name: Francesco Palamara
+      email: urp@arpa.piemonte.it
+      affiliation: Arpa Piemonte
+
+localisation:
+  localisationReady: false
+  availableLanguages:
+    - it
+
+logo: weboll.png
+
+dependsOn:
+  open:
+    - name: Django
+    - name: Bootstrap
+    - name: Vue js
+
+intendedAudience:
+  scope:
+    - environment
+  countries:
+    - it

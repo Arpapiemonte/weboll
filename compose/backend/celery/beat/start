@@ -1,0 +1,8 @@
+#!/bin/bash
+
+set -o errexit
+set -o nounset
+
+python3 manage.py shell -c $'from django_celery_beat.models import PeriodicTask, PeriodicTasks\nPeriodicTask.objects.all().update(last_run_at=None)\nfor task in PeriodicTask.objects.all():\n    PeriodicTasks.changed(task)'
+rm -f './celerybeat.pid'
+celery -A config.celery_app beat -l INFO

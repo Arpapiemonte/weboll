@@ -1,0 +1,111 @@
+{% load date_extras %}
+
+    <path
+       d="M 9.9998387,249.28441 H 199.99995 v -0.30022 H 9.9998387 Z"
+       style="fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778" />
+    <text
+       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.99861px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       x="57.266289"
+       y="236.72974"><tspan
+          style="stroke-width:0.352778"
+         x="57.266289"
+         y="236.72974" /></text>
+    <text
+       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.58611px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       x="10.000085"
+       y="247.8391"><tspan
+          style="stroke-width:0.352778"
+         x="10.000085"
+         y="247.8391">Tendenza per {{ meteo.100.COP_TOT.0.start_valid_time | my_date }}</tspan></text>
+    <text
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:4.58611px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       x="167.19363"
+       y="254.4826"><tspan
+         x="167.19363"
+          style="stroke-width:0.352778"
+         y="254.4826" /></text>
+    <text
+       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.58611px;font-family:'Titillium Web';text-align:end;writing-mode:lr-tb;text-anchor:end;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       x="199.81004"
+       y="248.13261"><tspan
+         x="199.81004"
+         y="248.13261"
+          style="text-align:end;text-anchor:end;stroke-width:0.352778"><tspan
+   style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:4.23333px;font-family:'Titillium Web'">Attendibilità:</tspan> {{ meteo.100.WFR.0.text_value }}%</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;white-space:pre;fill:#000000;fill-opacity:1;stroke:none;"><tspan
+         style="visibility:hidden"
+         x="15.017578"
+         y="288.40671"><tspan>x</tspan></tspan></text>
+    <g
+       transform="matrix(0.35277777,0,0,-0.35277777,-4.9393005e-7,297.00008)">
+      <g
+         clip-path="url(#clipPath874)" />
+    </g>
+    <g
+       transform="matrix(0.35277777,0,0,-0.35277777,-4.9393005e-7,297.00008)">
+      <g
+         clip-path="url(#clipPath952)" />
+    </g>
+
+    <g>
+      <g
+         transform="translate(-26.458334,-4.2333332)">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:2.73908px;line-height:1.25;font-family:'Titillium Web';text-align:center;white-space:pre;fill:#000000;fill-opacity:1;stroke:none;"
+         transform="matrix(0.85381242,0,0,0.85381242,172.82825,63.95047)"><tspan
+           x="49.156392"
+           y="227.57588">°C Min Max</tspan></text>
+
+      {% include "meteo_arrows.svg" with id_trend=meteo.102.TERMA.67.id_trend x='220.70813' y='259.53632' colore="blue" %}
+      {% include "meteo_arrows.svg" with id_trend=meteo.101.TERMA.67.id_trend x='224.76059' y='259.53632' colore="red" %}
+
+        <g
+           transform="matrix(0.02042396,0,0,-0.11750881,214.85894,335.56967)">
+          <g
+             clip-path="url(#clipPath852-4-8-4-1-6)">
+            <path
+               d="M 28.347,623.452 H 566.93 v -0.851 H 28.347 Z"
+               style="fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+          </g>
+        </g>
+      </g>
+
+      <g
+         transform="matrix(0.46440013,0,0,0.4456296,172.61215,221.88662)">
+        <path
+           style="fill:#8B4513;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 36.032466,88.42155 h 5.167048 v -3.524543 l -0.787032,1.745162 -0.61594,-0.88969 -0.821253,1.745162 -0.889691,-0.752816 -0.787035,1.163441 -0.58172,-0.58172 z" />
+        <text
+           style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.65285px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#808080;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.628232"
+           x="38.30154"
+           y="86.158752"><tspan
+                  style="text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0.628232"
+             x="38.30154"
+             y="86.158752">0°</tspan></text>
+      </g>
+    </g>
+
+      <text
+         style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.46944px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#110f0d;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.301204"
+         x="196.437"
+         y="260.95291"><tspan
+              style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:'Titillium Web';text-align:center;text-anchor:middle;stroke-width:0.301204"
+           x="196.437"
+           y="260.95291">{{ meteo.100.FRZLVL.0.numeric_value | floatformat }}m</tspan></text>
+
+
+    
+    <foreignObject x="10" y="252.875" width="175.180" height="24">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="text-align: justify" class="situation secondary">
+        <b>Nuvolosità:</b> {{meteo.100.COP_TOT.0.text_value}}<br/>
+        <b>Precipitazioni:</b> {{meteo.100.PLUV.0.text_value}}<br/>
+        <b>Zero termico:</b> {{meteo.100.FRZLVL.0.text_value}}<br/>
+        <b>Venti:</b> {{meteo.100.VELV.0.text_value}}<br/>
+        {% if meteo.100.WFOP.0.text_value != "nulla da segnalare." %}
+          <b>Altri fenomeni:</b> {{meteo.100.WFOP.0.text_value}}<br/>
+        {% endif %}
+      </div>
+    </foreignObject>

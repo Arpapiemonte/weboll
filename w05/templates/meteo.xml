@@ -1,0 +1,309 @@
+{% load date_extras_w05 %}<?xml version="1.0"?>
+<weatherData>
+  <credits>
+    <source>"ARPA Piemonte"</source>
+    <link text="ARPA Piemonte" url="https://www.arpa.piemonte.it"/>
+  </credits>
+  <metadata>
+    <link>https://www.arpa.piemonte.it/export/meteoxml/metadata/metadata_meteo.xml</link>
+  </metadata>
+  <sender>centro.funzionale@arpa.piemonte.it</sender>
+  <sent>{{meteo.last_update | iso_date}}</sent>
+  <identifier>{{meteo.seq_num}}/{{meteo.start_valid_time | year}}</identifier>
+  <updated>{{meteo.start_valid_time | iso_date}}</updated>
+  <nextUpdate>{{meteo.next_blt_time | iso_date}}</nextUpdate>
+  <language>it_IT</language>
+  <synoptic>
+    <text>{{meteo.situation}}</text>
+  </synoptic>
+  {%for semigiorno in meteo.semigiorni%}
+  <forecast>
+    <forecastDate>
+      <initDate>{{semigiorno.SKY_CONDIT.11.start_valid_time | iso_date}}</initDate>
+      <endDate>{{semigiorno.SKY_CONDIT.11.end_valid_time | iso_date}}</endDate>
+    </forecastDate>
+    <reliability>{{semigiorno.WFR.67.text_value}}%</reliability>
+    <areas>
+      <region>
+        <regionName>Piemonte</regionName>
+        <skyCondition>
+          <text>{{semigiorno.COP_TOT.67.text_value}}</text>
+        </skyCondition>
+        <Precipitation>
+          <text>{{semigiorno.PLUV.67.text_value}}</text>
+        </Precipitation>
+        <freezingLevel>
+          <text>{{semigiorno.FRZLVL.67.text_value}}</text>
+          <value>{{semigiorno.FRZLVL.67.numeric_value | floatformat}}</value>
+          <unit>m</unit>
+        </freezingLevel>
+        <wind>
+          <text>{{semigiorno.VELV.67.text_value}}</text>
+        </wind>
+        <remarks>
+          <text>{{semigiorno.WFOP.67.text_value}}</text>
+        </remarks>
+        <minimumTemperature>
+          <value>{{semigiorno.MINIME.TERMA_700.67.numeric_value | floatformat}}</value>
+          <unit>Celsius</unit>
+          <level>700m</level>
+        </minimumTemperature>
+        <minimumTemperature>
+          <value>{{semigiorno.MINIME.TERMA_1500.67.numeric_value | floatformat}}</value>
+          <unit>Celsius</unit>
+          <level>1500m</level>
+        </minimumTemperature>
+        <minimumTemperature>
+          <value>{{semigiorno.MINIME.TERMA_2000.67.numeric_value | floatformat}}</value>
+          <unit>Celsius</unit>
+          <level>2000m</level>
+        </minimumTemperature>
+        <minimumTrend>
+          <value>{{semigiorno.MINIME.TERMA.67.id_trend | trend}}</value>
+          <unit>Celsius</unit>
+          <level>0m</level>
+        </minimumTrend>
+        <maximumTemperature>
+          <value>{{semigiorno.MASSIME.TERMA_700.67.numeric_value | floatformat}}</value>
+          <unit>Celsius</unit>
+          <level>700m</level>
+        </maximumTemperature>
+        <maximumTemperature>
+          <value>{{semigiorno.MASSIME.TERMA_1500.67.numeric_value | floatformat}}</value>
+          <unit>Celsius</unit>
+          <level>1500m</level>
+        </maximumTemperature>
+        <maximumTemperature>
+          <value>{{semigiorno.MASSIME.TERMA_2000.67.numeric_value | floatformat}}</value>
+          <unit>Celsius</unit>
+          <level>2000m</level>
+        </maximumTemperature>
+        <maximumTrend>
+          <value>{{semigiorno.MASSIME.TERMA.67.id_trend | trend}}</value>
+          <unit>Celsius</unit>
+          <level>0m</level>
+        </maximumTrend>
+      </region>
+      <sectors>
+        <sector>
+          <sectorId>ALPI COZIE</sectorId>
+          <sectorName>Alpi Cozie</sectorName>
+          <skyCondition>
+            <code>{{semigiorno.SKY_CONDIT.87.numeric_value | floatformat}}</code>
+            <value>{{semigiorno.SKY_CONDIT.87.description_ita}}</value>
+            <icon>https://www.arpa.piemonte.it/export/meteoxml/img/{{semigiorno.SKY_CONDIT.87.icon}}.png</icon>
+          </skyCondition>
+        </sector>
+        <sector>
+          <sectorId>ALPI GRAIE</sectorId>
+          <sectorName>Alpi Graie</sectorName>
+          <skyCondition>
+            <code>{{semigiorno.SKY_CONDIT.88.numeric_value | floatformat}}</code>
+            <value>{{semigiorno.SKY_CONDIT.88.description_ita}}</value>
+            <icon>https://www.arpa.piemonte.it/export/meteoxml/img/{{semigiorno.SKY_CONDIT.88.icon}}.png</icon>
+          </skyCondition>
+        </sector>
+        <sector>
+          <sectorId>ALPI LEPONTINE</sectorId>
+          <sectorName>Alpi Lepontine</sectorName>
+          <skyCondition>
+            <code>{{semigiorno.SKY_CONDIT.89.numeric_value | floatformat}}</code>
+            <value>{{semigiorno.SKY_CONDIT.89.description_ita}}</value>
+            <icon>https://www.arpa.piemonte.it/export/meteoxml/img/{{semigiorno.SKY_CONDIT.89.icon}}.png</icon>
+          </skyCondition>
+        </sector>
+        <sector>
+          <sectorId>APPENNINO</sectorId>
+          <sectorName>Appennino</sectorName>
+          <skyCondition>
+            <code>{{semigiorno.SKY_CONDIT.91.numeric_value | floatformat}}</code>
+            <value>{{semigiorno.SKY_CONDIT.91.description_ita}}</value>
+            <icon>https://www.arpa.piemonte.it/export/meteoxml/img/{{semigiorno.SKY_CONDIT.91.icon}}.png</icon>
+          </skyCondition>
+        </sector>
+        <sector>
+          <sectorId>MARITTIME</sectorId>
+          <sectorName>Marittime</sectorName>
+          <skyCondition>
+            <code>{{semigiorno.SKY_CONDIT.90.numeric_value | floatformat}}</code>
+            <value>{{semigiorno.SKY_CONDIT.90.description_ita}}</value>
+            <icon>https://www.arpa.piemonte.it/export/meteoxml/img/{{semigiorno.SKY_CONDIT.90.icon}}.png</icon>
+          </skyCondition>
+        </sector>
+        <sector>
+          <sectorId>PIANURE OCCIDENTALI</sectorId>
+          <sectorName>Pianure Occidentali</sectorName>
+          <skyCondition>
+            <code>{{semigiorno.SKY_CONDIT.92.numeric_value | floatformat}}</code>
+            <value>{{semigiorno.SKY_CONDIT.92.description_ita}}</value>
+            <icon>https://www.arpa.piemonte.it/export/meteoxml/img/{{semigiorno.SKY_CONDIT.92.icon}}.png</icon>
+          </skyCondition>
+        </sector>
+        <sector>
+          <sectorId>PIANURE ORIENTALI</sectorId>
+          <sectorName>Pianure Orientali</sectorName>
+          <skyCondition>
+            <code>{{semigiorno.SKY_CONDIT.93.numeric_value | floatformat}}</code>
+            <value>{{semigiorno.SKY_CONDIT.93.description_ita}}</value>
+            <icon>https://www.arpa.piemonte.it/export/meteoxml/img/{{semigiorno.SKY_CONDIT.93.icon}}.png</icon>
+          </skyCondition>
+        </sector>
+      </sectors>
+      <districts>
+        <district>
+          <districtId>AL</districtId>
+          <districtName>Alessandria</districtName>
+          <skyCondition>
+            <code>{{semigiorno.SKY_CONDIT.9.numeric_value | floatformat}}</code>
+            <value>{{semigiorno.SKY_CONDIT.9.description_ita}}</value>
+            <icon>https://www.arpa.piemonte.it/export/meteoxml/img/{{semigiorno.SKY_CONDIT.9.icon}}.png</icon>
+          </skyCondition>
+          <minimumTemperature>
+            <value>{{semigiorno.MINIME.TERMA.9.numeric_value | floatformat}}</value>
+            <unit>Celsius</unit>
+            <level>0m</level>
+          </minimumTemperature>
+          <maximumTemperature>
+            <value>{{semigiorno.MASSIME.TERMA.9.numeric_value | floatformat}}</value>
+            <unit>Celsius</unit>
+            <level>0m</level>
+          </maximumTemperature>
+        </district>
+        <district>
+          <districtId>AT</districtId>
+          <districtName>Asti</districtName>
+          <skyCondition>
+            <code>{{semigiorno.SKY_CONDIT.11.numeric_value | floatformat}}</code>
+            <value>{{semigiorno.SKY_CONDIT.11.description_ita}}</value>
+            <icon>https://www.arpa.piemonte.it/export/meteoxml/img/{{semigiorno.SKY_CONDIT.11.icon}}.png</icon>
+          </skyCondition>
+          <minimumTemperature>
+            <value>{{semigiorno.MINIME.TERMA.11.numeric_value | floatformat}}</value>
+            <unit>Celsius</unit>
+            <level>0m</level>
+          </minimumTemperature>
+          <maximumTemperature>
+            <value>{{semigiorno.MASSIME.TERMA.11.numeric_value | floatformat}}</value>
+            <unit>Celsius</unit>
+            <level>0m</level>
+          </maximumTemperature>
+        </district>
+        <district>
+          <districtId>BI</districtId>
+          <districtName>Biella</districtName>
+          <skyCondition>
+            <code>{{semigiorno.SKY_CONDIT.1.numeric_value | floatformat}}</code>
+            <value>{{semigiorno.SKY_CONDIT.1.description_ita}}</value>
+            <icon>https://www.arpa.piemonte.it/export/meteoxml/img/{{semigiorno.SKY_CONDIT.1.icon}}.png</icon>
+          </skyCondition>
+          <minimumTemperature>
+            <value>{{semigiorno.MINIME.TERMA.1.numeric_value | floatformat}}</value>
+            <unit>Celsius</unit>
+            <level>0m</level>
+          </minimumTemperature>
+          <maximumTemperature>
+            <value>{{semigiorno.MASSIME.TERMA.1.numeric_value | floatformat}}</value>
+            <unit>Celsius</unit>
+            <level>0m</level>
+          </maximumTemperature>
+        </district>
+        <district>
+          <districtId>CN</districtId>
+          <districtName>Cuneo</districtName>
+          <skyCondition>
+            <code>{{semigiorno.SKY_CONDIT.28.numeric_value | floatformat}}</code>
+            <value>{{semigiorno.SKY_CONDIT.28.description_ita}}</value>
+            <icon>https://www.arpa.piemonte.it/export/meteoxml/img/{{semigiorno.SKY_CONDIT.28.icon}}.png</icon>
+          </skyCondition>
+          <minimumTemperature>
+            <value>{{semigiorno.MINIME.TERMA.33.numeric_value | floatformat}}</value>
+            <unit>Celsius</unit>
+            <level>0m</level>
+          </minimumTemperature>
+          <maximumTemperature>
+            <value>{{semigiorno.MASSIME.TERMA.33.numeric_value | floatformat}}</value>
+            <unit>Celsius</unit>
+            <level>0m</level>
+          </maximumTemperature>
+        </district>
+        <district>
+          <districtId>NO</districtId>
+          <districtName>Novara</districtName>
+          <skyCondition>
+            <code>{{semigiorno.SKY_CONDIT.33.numeric_value | floatformat}}</code>
+            <value>{{semigiorno.SKY_CONDIT.33.description_ita}}</value>
+            <icon>https://www.arpa.piemonte.it/export/meteoxml/img/{{semigiorno.SKY_CONDIT.33.icon}}.png</icon>
+          </skyCondition>
+          <minimumTemperature>
+            <value>{{semigiorno.MINIME.TERMA.33.numeric_value | floatformat}}</value>
+            <unit>Celsius</unit>
+            <level>0m</level>
+          </minimumTemperature>
+          <maximumTemperature>
+            <value>{{semigiorno.MASSIME.TERMA.33.numeric_value | floatformat}}</value>
+            <unit>Celsius</unit>
+            <level>0m</level>
+          </maximumTemperature>
+        </district>
+        <district>
+          <districtId>TO</districtId>
+          <districtName>Torino</districtName>
+          <skyCondition>
+            <code>{{semigiorno.SKY_CONDIT.59.numeric_value | floatformat}}</code>
+            <value>{{semigiorno.SKY_CONDIT.59.description_ita}}</value>
+            <icon>https://www.arpa.piemonte.it/export/meteoxml/img/{{semigiorno.SKY_CONDIT.59.icon}}.png</icon>
+          </skyCondition>
+          <minimumTemperature>
+            <value>{{semigiorno.MINIME.TERMA.59.numeric_value | floatformat}}</value>
+            <unit>Celsius</unit>
+            <level>0m</level>
+          </minimumTemperature>
+          <maximumTemperature>
+            <value>{{semigiorno.MASSIME.TERMA.59.numeric_value | floatformat}}</value>
+            <unit>Celsius</unit>
+            <level>0m</level>
+          </maximumTemperature>
+        </district>
+        <district>
+          <districtId>VB</districtId>
+          <districtName>Verbania</districtName>
+          <skyCondition>
+            <code>{{semigiorno.SKY_CONDIT.63.numeric_value | floatformat}}</code>
+            <value>{{semigiorno.SKY_CONDIT.63.description_ita}}</value>
+            <icon>https://www.arpa.piemonte.it/export/meteoxml/img/{{semigiorno.SKY_CONDIT.63.icon}}.png</icon>
+          </skyCondition>
+          <minimumTemperature>
+            <value>{{semigiorno.MINIME.TERMA.63.numeric_value | floatformat}}</value>
+            <unit>Celsius</unit>
+            <level>0m</level>
+          </minimumTemperature>
+          <maximumTemperature>
+            <value>{{semigiorno.MASSIME.TERMA.63.numeric_value | floatformat}}</value>
+            <unit>Celsius</unit>
+            <level>0m</level>
+          </maximumTemperature>
+        </district>
+        <district>
+          <districtId>VC</districtId>
+          <districtName>Vercelli</districtName>
+          <skyCondition>
+            <code>{{semigiorno.SKY_CONDIT.64.numeric_value | floatformat}}</code>
+            <value>{{semigiorno.SKY_CONDIT.64.description_ita}}</value>
+            <icon>https://www.arpa.piemonte.it/export/meteoxml/img/{{semigiorno.SKY_CONDIT.64.icon}}.png</icon>
+          </skyCondition>
+          <minimumTemperature>
+            <value>{{semigiorno.MINIME.TERMA.64.numeric_value | floatformat}}</value>
+            <unit>Celsius</unit>
+            <level>0m</level>
+          </minimumTemperature>
+          <maximumTemperature>
+            <value>{{semigiorno.MASSIME.TERMA.64.numeric_value | floatformat}}</value>
+            <unit>Celsius</unit>
+            <level>0m</level>
+          </maximumTemperature>
+        </district>
+      </districts>
+    </areas>
+  </forecast>
+{%endfor%}
+</weatherData>

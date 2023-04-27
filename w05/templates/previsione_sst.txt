@@ -1,0 +1,27 @@
+{% load date_extras %}SITUAZIONE ED EVOLUZIONE 
+{{meteo.situation | safe}}
+
+PREVISIONE PER IL {{meteo.48.COP_TOT.67.start_valid_time | my_date_dmY}} POMERIGGIO  
+NUVOLOSITA': {{meteo.48.COP_TOT.67.text_value | safe}}
+PRECIPITAZIONI: {{meteo.48.PLUV.67.text_value | safe}}
+ZERO TERMICO: {{meteo.48.FRZLVL.67.text_value | safe}}
+VENTI: {{meteo.48.VELV.67.text_value | safe}}
+ 
+PREVISIONE PER IL {{meteo.66.COP_TOT.67.start_valid_time | my_date_dmY}}
+NUVOLOSITA': {{meteo.66.COP_TOT.67.text_value | safe}}
+PRECIPITAZIONI: {{meteo.66.PLUV.67.text_value | safe}}
+ZERO TERMICO: {{meteo.66.FRZLVL.67.text_value | safe}}
+VENTI: {{meteo.66.VELV.67.text_value | safe}}
+ 
+PREVISIONE PER IL {{meteo.83.COP_TOT.67.start_valid_time | my_date_dmY}}
+NUVOLOSITA': {{meteo.83.COP_TOT.67.text_value | safe}}
+PRECIPITAZIONI: {{meteo.83.PLUV.67.text_value | safe}}
+ZERO TERMICO: {{meteo.83.FRZLVL.67.text_value | safe}}
+VENTI: {{meteo.83.VELV.67.text_value | safe}}
+ 
+PREVISIONE PER IL {{meteo.100.COP_TOT.67.start_valid_time | my_date_dmY}}
+NUVOLOSITA': {{meteo.100.COP_TOT.67.text_value | safe}}
+PRECIPITAZIONI: {{meteo.100.PLUV.67.text_value | safe}}
+ZERO TERMICO: {{meteo.100.FRZLVL.67.text_value | safe}} 
+VENTI: {{meteo.100.VELV.67.text_value | safe}}
+ 

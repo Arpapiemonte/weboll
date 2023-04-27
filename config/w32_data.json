@@ -1,0 +1,38 @@
+{
+    "0": {
+        "livello_criticita_oss": "np",
+        "livello_criticita_prev_oggi": "np",
+        "livello_criticita_prev_domani": "np",
+        "id_w32_zone": 1
+    },
+    "1": {
+        "livello_criticita_oss": "np",
+        "livello_criticita_prev_oggi": "np",
+        "livello_criticita_prev_domani": "np",
+        "id_w32_zone": 2
+    },
+    "2": {
+        "livello_criticita_oss": "np",
+        "livello_criticita_prev_oggi": "np",
+        "livello_criticita_prev_domani": "np",
+        "id_w32_zone": 3
+    },
+    "3": {
+        "livello_criticita_oss": "np",
+        "livello_criticita_prev_oggi": "np",
+        "livello_criticita_prev_domani": "np",
+        "id_w32_zone": 4
+    },
+    "4": {
+        "livello_criticita_oss": "np",
+        "livello_criticita_prev_oggi": "np",
+        "livello_criticita_prev_domani": "np",
+        "id_w32_zone": 5
+    },
+    "5": {
+        "livello_criticita_oss": "np",
+        "livello_criticita_prev_oggi": "np",
+        "livello_criticita_prev_domani": "np",
+        "id_w32_zone": 6
+    }
+}
