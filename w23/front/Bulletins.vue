@@ -14,6 +14,7 @@
     <template #th1="slotProps">
       <th
         scope="col"
+        class="cursor-pointer align-middle"
         role="button"
         width="100px"
         @click="slotProps.sort('numero_bollettino')"
@@ -22,6 +23,7 @@
       </th>
       <th
         scope="col"
+        class="cursor-pointer align-middle"
         role="button"
         width="300px"
         @click="slotProps.sort('data_emissione')"
@@ -38,6 +40,7 @@
     <template #th2="slotProps">
       <th
         scope="col"
+        class="cursor-pointer align-middle"
         role="button"
         width="300px"
         @click="slotProps.sort('last_update_annotazione')"

@@ -92,7 +92,7 @@ class W23View(viewsets.ModelViewSet):
                 .order_by("-last_update")[0]
                 .numero_bollettino
             )
-            last_seq_num_year = last_seq_num.split("/")[1]
+            last_seq_num_year = int(last_seq_num.split("/")[1])
             last_seq_num = last_seq_num.split("/")[0]
             print(last_seq_num)
             new_seq_int = int(last_seq_num) + 1
@@ -604,6 +604,32 @@ class AllertaPngView(DetailView):
 
     def get(self, request, *args, **kwargs):
         r = requests.get("http://django:8000/w23/rupar_pdf/%d" % kwargs["pk"])
+
+        with tempfile.NamedTemporaryFile(suffix=".pdf") as f:
+            f.write(r.content)
+            f.flush()
+            png_name = "%s.png" % f.name
+            command = "convert -verbose -density 145 -crop 1191x1685+3x5 %s %s" % (
+                f.name,
+                png_name,
+            )
+            retcode = call(command, shell=True)
+            if retcode != 0:
+                error = "imagemagick convert failed with code: %d" % retcode
+                raise Exception(error)
+            with open(png_name, mode="rb") as png_file:
+                png_content = png_file.read()
+            os.remove(png_name)
+            return HttpResponse(
+                content=memoryview(png_content), content_type="image/png"
+            )
+
+
+class AllertaPngOrigView(DetailView):
+    http_method_names = ["get"]
+
+    def get(self, request, *args, **kwargs):
+        r = requests.get("http://django:8000/w23/pdf/%d" % kwargs["pk"])
 
         with tempfile.NamedTemporaryFile(suffix=".pdf") as f:
             f.write(r.content)

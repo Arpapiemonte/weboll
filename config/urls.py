@@ -35,6 +35,7 @@ urlpatterns: URLList = [
     path("w16/", include("w16.back.urls")),
     path("w23/", include("w23.back.urls")),
     path("w24/", include("w24.back.urls")),
+    path("w26/", include("w26.back.urls")),
     path("w29/", include("w29.back.urls")),
     path("w22/", include("w22.back.urls")),
     path("w30/", include("w30.back.urls")),

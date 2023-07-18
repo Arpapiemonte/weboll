@@ -52,8 +52,8 @@ export interface Props {
     snapshots: any[]
   },
   id: string,
-  valueKey: string,
-  idKey: string,
+  valueKey?: string,
+  idKey?: string,
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -84,7 +84,7 @@ const { errorMessage, meta, validate } = useField(String(props.id), validateFiel
 
 function validateField() {
   let value = props.data[props.valueKey]
-  console.log(`validateField(props.data[${props.valueKey}]) = ${value}`)
+  // console.log(`validateField(props.data[${props.valueKey}]) = ${value}`)
   if (value && value.trim()) {
     return true
   } else {

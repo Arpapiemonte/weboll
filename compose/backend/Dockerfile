@@ -1,7 +1,7 @@
 ARG TEST_BASE_IMAGE=deps-backend-base
 ARG APP_BASE_IMAGE=deps-test
 
-FROM debian:bullseye-slim AS deps-backend-base
+FROM debian:bookworm-slim AS deps-backend-base
 
 ENV TITILLIUM /tmp/titillium
 ARG LDAP_CA=./compose/ldap/certs/ca.crt
@@ -32,7 +32,6 @@ RUN apt-get update \
     python3-requests \
     python3-slugify \
     python3-tz \
-    python3-werkzeug \
     python3-wheel \
     python3-whitenoise \
     python3-yaml \
@@ -57,7 +56,7 @@ RUN apt-get update \
 
 # Requirements are installed here to ensure they will be cached.
 COPY ./requirements /requirements
-RUN pip3 install --no-cache-dir -r /requirements/app.txt
+RUN pip3 install --break-system-packages --no-cache-dir -r /requirements/app.txt
 
 COPY ./compose/backend/ldap.conf /etc/ldap/ldap.conf
 
@@ -70,9 +69,9 @@ RUN apt-get update \
     flake8 \
     gettext \
     git \
+    imagemagick \
     isort \
     mypy \
-    perceptualdiff \
     postgresql-client \
     pre-commit \
     python3-coverage \
@@ -86,7 +85,9 @@ RUN apt-get update \
     strip-nondeterminism \
   && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
   && rm -rf /var/lib/apt/lists/* \
-  && pip3 install --no-cache-dir -r /requirements/test.txt
+  && pip3 install  --break-system-packages --no-cache-dir -r /requirements/test.txt
+
+RUN sed -i '/policy domain="coder" rights="none" pattern="PDF"/d' /etc/ImageMagick-6/policy.xml
 
 FROM ${APP_BASE_IMAGE} AS backend
 

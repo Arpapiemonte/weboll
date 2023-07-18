@@ -29,6 +29,12 @@ window.bulletins_list = [
     readyForProduction: true
   },
   {
+    bollettino: 'bollettino_bis',
+    id: 'w26',
+    name: 'BIS',
+    readyForProduction: true
+  },
+  {
     bollettino: 'bollettino_SLOPS',
     id: 'w29',
     name: 'SLOPS',

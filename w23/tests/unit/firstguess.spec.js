@@ -14,6 +14,9 @@ let BulletinFirstGuess = {
   rischio_valanghe: Bulletin.methods.rischio_temporali,
   arrayMin: Bulletin.methods.arrayMin,
   arrayMax: Bulletin.methods.arrayMax,
+  vigilanza:{
+    sintesi_meteo: "sintesi_meteo"
+  },
   pericolo_da_indice: {
     1: {id_w23_pericolo: "BIANCO"},
     2: {id_w23_pericolo: "VERDE"},
@@ -30,6 +33,27 @@ let BulletinFirstGuess = {
         }
       },
     ]
+  },
+  piogge_massime:{
+    125: {
+      45: { "Piem-A": 0 },
+      46: { "Piem-A": 0 },
+      60: { "Piem-A": 0 },
+      61: { "Piem-A": 0 },
+      62: { "Piem-A": 0 },
+      63: { "Piem-A": 0 },
+      77: { "Piem-A": 0 },
+      78: { "Piem-A": 0 },
+      79: { "Piem-A": 0 },
+      80: { "Piem-A": 0 },
+    },
+    126: {
+      48: { "Piem-A": 0 },
+      66: { "Piem-A": 0 },
+    },
+    127: {
+      66: { "Piem-A": 0 },
+    },
   },
   piogge_medie: {
     900: {
@@ -87,7 +111,8 @@ let BulletinFirstGuess = {
       {"value_key":campo,"new_value": pericolo.id_w23_pericolo},
     ]
   },
-  saveW23() { } // dummy
+  saveW23() { }, // dummy
+  saveField() { } // dummy
 }
 
 describe('firstguess', () => {

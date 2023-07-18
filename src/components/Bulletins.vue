@@ -50,6 +50,26 @@
                   type="text"
                   @change="createVerifica(num_bollettino)"
                 >
+                <!--<legend>
+                  <span v-if="!w26 && state.username">
+                    <font size="2">
+                      Inserire validità
+                    </font>
+                  </span>
+                </legend>
+                 <input
+                  v-if="!w26 && state.username"
+                  id="validita"
+                  v-model="validita"
+                  :readonly="readonly"
+                  class="form-control"
+                  name="validita"
+                  type="text"
+                  @change="createW26(validita)"
+                > -->
+                <slot
+                  name="openW26modal"
+                />
                 <!--<Datepicker
                   v-if="!verifica && state.username"
                   v-model="data_oggi"
@@ -144,7 +164,7 @@
                 <th
                   scope="col"
                   style="width:100px;"
-                  class="cursor-pointer"
+                  class="cursor-pointer align-middle"
                   @click="sort(primaryKeyName)"
                 >
                   Id {{ currentSort === primaryKeyName ? currentSortDir === 'asc' ? '▲' : '▼' : ' ' }}
@@ -158,7 +178,7 @@
                 <th
                   scope="col"
                   style="width:300px;"
-                  class="cursor-pointer"
+                  class="cursor-pointer align-middle"
                   @click="sort('last_update')"
                 >
                   Data ultima modifica {{ currentSort === 'last_update' ? currentSortDir === 'asc' ? '▲' : '▼' : ' ' }}
@@ -172,21 +192,33 @@
                 <th
                   scope="col"
                   style="width:150px;"
-                  class="cursor-pointer"
+                  class="cursor-pointer align-middle"
                   @click="sort('username')"
                 >
                   Autore {{ currentSort === 'username' ? currentSortDir === 'asc' ? '▲' : '▼' : ' ' }}
                 </th>
-                <th scope="col">
+                <th 
+                  scope="col"
+                  class="cursor-pointer align-middle"
+                >
                   Stato
                 </th>
-                <th scope="col">
-                  Visualizza
+                <th 
+                  scope="col"
+                  class="cursor-pointer align-middle"
+                >
+                  Visualizza<br>Modifica
                 </th>
-                <th scope="col">
+                <th 
+                  scope="col"
+                  class="cursor-pointer align-middle"
+                >
                   PDF
                 </th>
-                <th scope="col">
+                <th 
+                  scope="col"
+                  class="cursor-pointer align-middle"
+                >
                   Elimina
                 </th>
               </tr>
@@ -323,6 +355,7 @@
 </template>
 
 <script>
+import 'vue-toast-notification/dist/theme-default.css'
 import api from '@/api'
 import store from '../store'
 import ColMenu from '@/components/ColMenu.vue'
@@ -382,8 +415,11 @@ export default {
       deleting_primary_key: 0,
       oggi_presente: true,
       verifica: true,
+      w26: true,
+      updatew26fetch: 0,
       year_list: [],
       num_bollettino: "num_yyyy",
+      validita: "yyyy-mm-dd",
       //data_oggi: "2022-02-10",
       filter: {
         year: (new Date()).getFullYear(),
@@ -437,6 +473,7 @@ export default {
       this.current_page = page
       this.oggi_presente = true
       this.verifica = true
+      this.w26 = true
       api.fetchBulletinsFilter(this.endpoint, {
         page: page,
         year: this.filter.year,
@@ -483,6 +520,8 @@ export default {
           this.oggi_presente = false
         }else if(this.endpoint === 'w22verifica/bulletins'){
           this.verifica = false
+        }else if(this.endpoint === 'w26/bulletins'){
+          this.w26 = false
         }
         else{
           this.oggi_presente = data.results.some(bulletin => bulletin[this.dateField].substring(0, 10) == today)

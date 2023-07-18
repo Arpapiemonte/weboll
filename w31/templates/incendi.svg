@@ -152,6 +152,7 @@
    {% endfor %}
 
   </style>
+  {{incendi}}
   <defs>
     <rect
        x="52.412698"
@@ -795,7 +796,7 @@
     </rdf:RDF>
   </metadata>
   <g><!--Header 1 Iniz-->
-  {% include "header.svg" with title='Bollettino incendi boschivi' seqNum=incendi.seq_num startValidTime=incendi.start_valid_time nextUpdate=incendi.next_blt_time validity=incendi.validity logo='incendi_logo' username=incendi.username%}
+  {% include "header.svg" with title='Bollettino incendi boschivi' seqNum=incendi.seq_num startValidTime=incendi.start_valid_time nextUpdate=incendi.next_blt_time validity=incendi.validity logo='incendi_logo' username=incendi.username %}
   <!--Header 1 Fini-->
       <text
        style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
@@ -851,11 +852,55 @@
       <path d="M 10,50.793881 H 200.00011 V 50.493668 H 10 Z" style="fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778" id="path644"></path>
    </g>
 
-   <foreignObject transform="translate(10 183)" width="200" height="35" >
+   <foreignObject transform="translate(10 183)" width="200" height="23" >
       <div xmlns="http://www.w3.org/1999/xhtml" class="text-field">
          {{ incendi.annotazione }}
       </div>
    </foreignObject>
+
+   <g transform="translate(0 163)">
+      <text
+       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       x="10.000085"
+       y="49.348007"><tspan
+          style="font-size:4.23333px;stroke-width:0.352778"
+         x="10.000085"
+         y="49.348007">Tendenza livelli di pericolo:</tspan></text>
+   </g>
+   <g transform="translate(50 163)">
+      <text
+       style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       x="10.000085"
+       y="49.348007"><tspan
+          style="font-size:4.23333px;stroke-width:0.352778"
+         x="10.000085"
+         y="49.348007">Il</tspan> 
+         <tspan
+          style="font-variant:normal;font-weight:bold;font-size:4.23333px;stroke-width:0.352778"
+         x="13.000085"
+         y="49.348007">colore della casella</tspan>
+         <tspan
+          style="font-variant:normal;font-weight:normal;font-size:4.23333px;stroke-width:0.352778"
+         x="48.000085"
+         y="49.348007"> indica il pericolo del 4° giorno</tspan></text>
+   </g>
+   <g transform="translate(50 168)">
+      <text
+       style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       x="10.000085"
+       y="49.348007"><tspan
+          style="font-size:4.23333px;stroke-width:0.352778"
+         x="10.000085"
+         y="49.348007">La</tspan>
+         <tspan
+          style="font-variant:normal;font-weight:bold;font-size:4.23333px;stroke-width:0.352778"
+         x="15.000085"
+         y="49.348007"> freccia</tspan> 
+         <tspan
+          style="font-size:4.23333px;stroke-width:0.352778"
+         x="28.000085"
+         y="49.348007">indica l'andamento del livello in media per i 4 giorni successivi</tspan></text>
+   </g>
 
    <g transform="translate(0 176)">
       <text
@@ -864,12 +909,12 @@
        y="49.348007"><tspan
           style="font-size:4.23333px;stroke-width:0.352778"
          x="10.000085"
-         y="49.348007">Legenda</tspan></text>
+         y="49.348007">Legenda livelli di pericolo</tspan></text>
       <path d="M 10,50.793881 H 200.00011 V 50.493668 H 10 Z" style="fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778" id="path644"></path>
    </g>
 
   <g transform="translate(0 297)"><!--Header 2 Iniz-->
-  {% include "header.svg" with title='Bollettino incendi boschivi' seqNum=incendi.seq_num startValidTime=incendi.start_valid_time nextUpdate=incendi.next_blt_time validity=incendi.validity logo='incendi_logo' username=incendi.username%}
+  {% include "header.svg" with title='Bollettino incendi boschivi' seqNum=incendi.seq_num startValidTime=incendi.start_valid_time nextUpdate=incendi.next_blt_time validity=incendi.validity logo='incendi_logo' username=incendi.username %}
   <!--Header 2 Fini-->
       <text
        style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
@@ -936,14 +981,241 @@
             <td class="dark">{% include "incendi_icone.svg" with precipitazione_classe=l.31 %}</td>
          </tr>
          <tr class="riga 2">
-            <td class="light">Vento</td>
+         <td class="light">Vento</td>
+         <!-- zona 1 -->
+         {% if i == 'Nord'  %}
+            {% if incendi.w31datamacroareelivelli_set.0.wind == 'N'  %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.2 %}</td>
+            {% else %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
+            {% endif %}
+            {% if incendi.w31datamacroareelivelli_set.6.wind == 'N'  %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.7 %}</td>
+            {% else %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
+            {% endif %}
+            {% if incendi.w31datamacroareelivelli_set.12.wind == 'N'  %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.12 %}</td>
+            {% else %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
+            {% endif %}
+            {% if incendi.w31datamacroareelivelli_set.18.wind == 'N'  %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.17 %}</td>
+            {% else %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
+            {% endif %}
+            {% if incendi.w31datamacroareelivelli_set.24.wind == 'N'  %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.22 %}</td>
+            {% else %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
+            {% endif %}
+            {% if incendi.w31datamacroareelivelli_set.30.wind == 'N'  %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.27 %}</td>
+            {% else %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
+            {% endif %}
+            {% if incendi.w31datamacroareelivelli_set.36.wind == 'N'  %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.32 %}</td>
+            {% else %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
+            {% endif %} 
+         {% endif %}
+         <!--Fine zona 1 -->
+         <!-- zona 2 -->
+         {% if i == 'Torino Nord'  %}
+            {% if incendi.w31datamacroareelivelli_set.1.wind == 'N'  %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=l.2 %}</td>
+            {% else %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
+            {% endif %}
+            {% if incendi.w31datamacroareelivelli_set.7.wind == 'N'  %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=l.7 %}</td>
+            {% else %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
+            {% endif %}
+            {% if incendi.w31datamacroareelivelli_set.13.wind == 'N'  %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=l.12 %}</td>
+            {% else %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
+            {% endif %}
+            {% if incendi.w31datamacroareelivelli_set.19.wind == 'N'  %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=l.17 %}</td>
+            {% else %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
+            {% endif %}
+            {% if incendi.w31datamacroareelivelli_set.25.wind == 'N'  %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=l.22 %}</td>
+            {% else %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
+            {% endif %}
+            {% if incendi.w31datamacroareelivelli_set.31.wind == 'N'  %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=l.27 %}</td>
+            {% else %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
+            {% endif %}
+            {% if incendi.w31datamacroareelivelli_set.37.wind == 'N'  %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=l.32 %}</td>
+            {% else %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
+            {% endif %} 
+         {% endif %}
+         <!--Fine zona 2 -->
+         <!-- zona 3 -->
+         {% if i == 'Torino Ovest'  %}
+            {% if incendi.w31datamacroareelivelli_set.2.wind == 'N'  %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=l.2 %}</td>
+            {% else %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
+            {% endif %}
+            {% if incendi.w31datamacroareelivelli_set.8.wind == 'N'  %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=l.7 %}</td>
+            {% else %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
+            {% endif %}
+            {% if incendi.w31datamacroareelivelli_set.14.wind == 'N'  %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=l.12 %}</td>
+            {% else %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
+            {% endif %}
+            {% if incendi.w31datamacroareelivelli_set.20.wind == 'N'  %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=l.17 %}</td>
+            {% else %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
+            {% endif %}
+            {% if incendi.w31datamacroareelivelli_set.26.wind == 'N'  %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=l.22 %}</td>
+            {% else %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
+            {% endif %}
+            {% if incendi.w31datamacroareelivelli_set.32.wind == 'N'  %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=l.27 %}</td>
+            {% else %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
+            {% endif %}
+            {% if incendi.w31datamacroareelivelli_set.38.wind == 'N'  %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=l.32 %}</td>
+            {% else %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
+            {% endif %} 
+         {% endif %}
+         <!--Fine zona 3 -->
+         <!-- zona 4 -->
+         {% if i == 'Cuneo SO'  %}
+            {% if incendi.w31datamacroareelivelli_set.3.wind == 'N'  %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=l.2 %}</td>
+            {% else %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
+            {% endif %}
+            {% if incendi.w31datamacroareelivelli_set.9.wind == 'N'  %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=l.7 %}</td>
+            {% else %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
+            {% endif %}
+            {% if incendi.w31datamacroareelivelli_set.15.wind == 'N'  %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=l.12 %}</td>
+            {% else %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
+            {% endif %}
+            {% if incendi.w31datamacroareelivelli_set.21.wind == 'N'  %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=l.17 %}</td>
+            {% else %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
+            {% endif %}
+            {% if incendi.w31datamacroareelivelli_set.27.wind == 'N'  %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=l.22 %}</td>
+            {% else %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
+            {% endif %}
+            {% if incendi.w31datamacroareelivelli_set.33.wind == 'N'  %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=l.27 %}</td>
+            {% else %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
+            {% endif %}
+            {% if incendi.w31datamacroareelivelli_set.39.wind == 'N'  %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=l.32 %}</td>
+            {% else %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
+            {% endif %} 
+         {% endif %}
+         <!--Fine zona 4 -->
+         <!-- zona 5 -->
+         {% if i == 'Cuneo SE'  %}
+            {% if incendi.w31datamacroareelivelli_set.3.wind == 'N'  %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=l.2 %}</td>
+            {% else %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
+            {% endif %}
+            {% if incendi.w31datamacroareelivelli_set.10.wind == 'N'  %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=l.7 %}</td>
+            {% else %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
+            {% endif %}
+            {% if incendi.w31datamacroareelivelli_set.16.wind == 'N'  %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=l.12 %}</td>
+            {% else %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
+            {% endif %}
+            {% if incendi.w31datamacroareelivelli_set.22.wind == 'N'  %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=l.17 %}</td>
+            {% else %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
+            {% endif %}
+            {% if incendi.w31datamacroareelivelli_set.28.wind == 'N'  %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=l.22 %}</td>
+            {% else %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
+            {% endif %}
+            {% if incendi.w31datamacroareelivelli_set.34.wind == 'N'  %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=l.27 %}</td>
+            {% else %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
+            {% endif %}
+            {% if incendi.w31datamacroareelivelli_set.40.wind == 'N'  %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=l.32 %}</td>
+            {% else %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
+            {% endif %} 
+         {% endif %}
+         <!--Fine zona 5 -->
+         <!-- zona 6 -->
+         {% if i == 'SudEst'  %}
+            {% if incendi.w31datamacroareelivelli_set.4.wind == 'N'  %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=l.2 %}</td>
+            {% else %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
+            {% endif %}
+            {% if incendi.w31datamacroareelivelli_set.11.wind == 'N'  %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=l.7 %}</td>
+            {% else %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
+            {% endif %}
+            {% if incendi.w31datamacroareelivelli_set.17.wind == 'N'  %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=l.12 %}</td>
+            {% else %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
+            {% endif %}
+            {% if incendi.w31datamacroareelivelli_set.23.wind == 'N'  %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=l.17 %}</td>
+            {% else %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
+            {% endif %}
+            {% if incendi.w31datamacroareelivelli_set.29.wind == 'N'  %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=l.22 %}</td>
+            {% else %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
+            {% endif %}
+            {% if incendi.w31datamacroareelivelli_set.35.wind == 'N'  %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=l.27 %}</td>
+            {% else %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
+            {% endif %}
+            {% if incendi.w31datamacroareelivelli_set.41.wind == 'N'  %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=l.32 %}</td>
+            {% else %}
+            <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
+            {% endif %} 
+         {% endif %}
+         <!--Fine zona 6 -->
          </tr>
          <tr class="riga 3">
             <td class="dark">Umidità relativa</td> 
@@ -974,7 +1246,7 @@
   </foreignObject>
 
     <g transform="translate(0 594)"><!--Header 3 Iniz-->
-  {% include "header.svg" with title='Bollettino incendi boschivi' seqNum=incendi.seq_num startValidTime=incendi.start_valid_time nextUpdate=incendi.next_blt_time validity=incendi.validity logo='incendi_logo' username=incendi.username%}
+  {% include "header.svg" with title='Bollettino incendi boschivi' seqNum=incendi.seq_num startValidTime=incendi.start_valid_time nextUpdate=incendi.next_blt_time validity=incendi.validity logo='incendi_logo' username=incendi.username %}
   <!--Header 3 Fini-->
       <text
        style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
@@ -982,7 +1254,7 @@
        y="49.348007"><tspan
           style="font-size:4.23333px;stroke-width:0.352778"
          x="10.000085"
-         y="49.348007">Legenda</tspan></text>
+         y="49.348007">Legenda parametri meteorologici</tspan></text>
       <path d="M 10,50.793881 H 200.00011 V 50.493668 H 10 Z" style="fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778" id="path644"></path>
   </g>
 
@@ -991,11 +1263,11 @@
       <table class="table table-legenda-b">
         <tbody>
             <tr>
-               <th rowspan="2">Precipitazione</th>
+               <th rowspan="2" class="dark">Precipitazione</th>
                <td>{% include "incendi_icone.svg" with precipitazione_classe=1 %}</td>
                <td>diffuse (> 50%area) <strong>deboli</strong></td>
-               <td >(2-5) mm </td>
-               <td rowspan="10"><img src="http://localhost:8000/static/images/mappa_legenda_macroaree.svg" height="50" width="40" preserveAspectRatio="none" style="image-rendering:optimizeSpeed"></td>
+               <td >2-5 mm </td>
+               <td rowspan="101"><img src="http://localhost:8000/static/images/mappa_legenda_macroaree.svg" height="70" width="55" preserveAspectRatio="none" style="image-rendering:optimizeSpeed"></td>
             </tr>
             <tr>
                <td>{% include "incendi_icone.svg" with precipitazione_classe=2 %}</td>
@@ -1003,10 +1275,10 @@
                <td > > 5 mm </td>
             </tr>
             <tr>
-               <th rowspan="2" class="light">Vento</th>
+               <th rowspan="3" class="light">Vento</th>
                <td>{% include "incendi_icone.svg" with vento_classe=1 %}</td>
                <td>vento <strong>moderato</strong></td>
-               <td > (5-10) m/s </td>
+               <td > 5-10 m/s </td>
             </tr>
             <tr>
                <td>{% include "incendi_icone.svg" with vento_classe=2 %}</td>
@@ -1014,7 +1286,12 @@
                <td > > 10 m/s </td>
             </tr>
             <tr>
-               <th rowspan="3">Umidità relativa</th>
+               <td>{% include "incendi_icone.svg" with vento_classe=3 %}</td>
+               <td>vento di <strong>foehn</strong></td>
+               <td > > 10 m/s </td>
+            </tr>
+            <tr>
+               <th rowspan="3" class="dark">Umidità relativa</th>
                <td>{% include "incendi_icone.svg" with umidità_classe=0 %}</td>
                <td>bassa</td>
                <td>0 - 40%</td>
@@ -1030,7 +1307,7 @@
                <td>70 - 100%</td>
             </tr>
             <tr>
-               <th rowspan="3">Temperatura</th>
+               <th rowspan="3" class="light">Temperatura</th>
                <td class="arrow">{% include "incendi_tendenza.svg" with trend=0 %}</td>
                <td>stazionaria</td>
                <td rowspan="3">rispetto al giorno precedente</td>
@@ -1048,7 +1325,7 @@
     </div>
   </foreignObject>
 
-   <g transform="translate(0 690)">
+   <g transform="translate(0 700)">
    <text
       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
       x="10.000085"
@@ -1059,7 +1336,7 @@
    <path d="M 10,50.793881 H 200.00011 V 50.493668 H 10 Z" style="fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778" id="path644"></path>
    </g>
 
-   <foreignObject x="10" y="742" width="190" height="155">
+   <foreignObject x="10" y="752" width="190" height="155">
     <div xmlns="http://www.w3.org/1999/xhtml">
       <table class="table-province">
         <tbody>

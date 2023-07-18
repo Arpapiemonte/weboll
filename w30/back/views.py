@@ -150,6 +150,7 @@ class W30View(viewsets.ModelViewSet):
                     .latest("seq_num")
                     .seq_num
                 )
+                last_seq_num = last_seq_num if last_seq_num is not None else 0
                 new_seq = last_seq_num + 1
         else:
             print("primo bollettino")
@@ -255,18 +256,18 @@ class W30View(viewsets.ModelViewSet):
 
         aggregazione = models.Aggregazione.objects.all()
         aggregazione_dict = {}
-        for m in aggregazione:
-            aggregazione_dict[str(m.id_aggregazione)] = m
+        for mm in aggregazione:
+            aggregazione_dict[str(mm.id_aggregazione)] = mm
 
         time_layouts = models.TimeLayouts.objects.all()
         time_layouts_dict = {}
-        for m in time_layouts:
-            time_layouts_dict[m.id_time_layouts] = m
+        for mmm in time_layouts:
+            time_layouts_dict[mmm.id_time_layouts] = mmm
 
         parametro = models.Parametro.objects.all().select_related("id_unita_misura")
         parametro_dict = {}
-        for m in parametro:
-            parametro_dict[m.id_parametro] = m
+        for mmmm in parametro:
+            parametro_dict[mmmm.id_parametro] = mmmm
 
         with open("config/w30_data.json") as json_file:
             w30_data_config = json.load(json_file)
@@ -359,18 +360,18 @@ class W30View(viewsets.ModelViewSet):
 
         aggregazione = models.Aggregazione.objects.all()
         aggregazione_dict = {}
-        for m in aggregazione:
-            aggregazione_dict[str(m.id_aggregazione)] = m
+        for mm in aggregazione:
+            aggregazione_dict[str(mm.id_aggregazione)] = mm
 
         time_layouts = models.TimeLayouts.objects.all()
         time_layouts_dict = {}
-        for m in time_layouts:
-            time_layouts_dict[m.id_time_layouts] = m
+        for mmm in time_layouts:
+            time_layouts_dict[mmm.id_time_layouts] = mmm
 
         parametro = models.Parametro.objects.all().select_related("id_unita_misura")
         parametro_dict = {}
-        for m in parametro:
-            parametro_dict[m.id_parametro] = m
+        for mmmm in parametro:
+            parametro_dict[mmmm.id_parametro] = mmmm
 
         today = datetime.datetime.today()
         data_emissione = today.replace(hour=12, minute=0, second=0, microsecond=0)

@@ -581,7 +581,10 @@ export default {
     },
     saveW31Data(area, value) {
       const payload = { }
-      const campo = 'id_w31_livelli' 
+      let campo = 'id_w31_livelli' 
+      if (value === 'N' || value === 'S') {
+        campo = 'wind'
+      }
       payload[campo] = value
       this.fetchPatch(area.id_w31_data_macroaree_livelli, 'data', payload).then((response) => {
         if (!response.ok) {

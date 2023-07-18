@@ -1529,10 +1529,20 @@ export default {
         }
         return response.json()
       }).then(data => {
-        this.classes = data.reduce((accumulator, currentValue) => {
+        let classes = data.reduce((accumulator, currentValue) => {
           accumulator[currentValue.id_parametro][currentValue.id_classes] = currentValue;
           return accumulator
         }, {COP_TOT: {}, FRZLVL: {}, PLUV: {}, SNOW_LEV: {}, TERMA: {}, VELV: {}})
+        Object.keys(classes).forEach(id_parametro => {
+          let cl = classes[id_parametro]
+          Object.keys(cl).forEach(index => {
+            // get class descriptor array
+            let classes_value = cl[index].classes_value
+            // move last element of the array to the beginning
+            classes_value.unshift(classes_value.pop())
+          })
+        })
+        this.classes = classes
         this.countdown++
       }).catch(error => {
         this.$toast.open(

@@ -245,8 +245,8 @@ class W32View(viewsets.ModelViewSet):
 
         zone = models.W32Zone.objects.all()
         zone_dict = {}
-        for v in zone:
-            zone_dict[str(v.id_w32_zone)] = v
+        for z in zone:
+            zone_dict[str(z.id_w32_zone)] = z
         # carico la configurazione json per sapere quanti record ci devono essere su w32_data
         with open("config/w32_data.json") as json_file:
             w32_data_config = json.load(json_file)

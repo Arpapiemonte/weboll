@@ -82,7 +82,7 @@ class W30CurrentDataViewSerializer(serializers.ModelSerializer):
         )
         delta = obj.start - midnight
         start_day_offset = math.floor(delta.total_seconds() / 86400)
-        minutes = round((obj.end - obj.start).total_seconds() / 60)  # type: ignore
+        minutes = round((obj.end - obj.start).total_seconds() / 60)
         start_time = obj.start.astimezone(current_tz).time()
         if start_day_offset in tls_lookup:
             lu = tls_lookup[start_day_offset][minutes]

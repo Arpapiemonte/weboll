@@ -29,6 +29,7 @@
           <th
             v-if="scenario"
             scope="col"
+            class="col-7"
           >
             Scenario atteso
           </th>
@@ -82,6 +83,8 @@
               </datalist>
               <input
                 v-model="area.scenario_atteso"
+                onfocus="this.value.trim()!=''?this.setAttribute('placeholder',this.value):'';this.value='';"
+                size="55"
                 list="scenari"
                 @change="$emit('saveData', area.scenario_atteso, area.id_w23_zone.id_w23_zone, 'scenario_atteso')"
               >

@@ -1,0 +1,834 @@
+{% load date_extras_w26 %}
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   viewBox="0 0 210 297"
+   version="1.1">
+  <style>
+
+   .table-bis {
+      width: 100%;
+      height: 100%;
+      table-layout: fixed;
+      font-size: 25px;
+      font-family:'Titillium Web';
+      text-align:center;
+      text-anchor:start;
+      line-height: 20px;
+      border-spacing: 0px;
+      border:1px solid black;
+   }
+   .halfpix {
+      -ms-transform-origin: 0 0;
+      -webkit-transform-origin: 0 0;
+      transform-origin: 0 0;
+      -ms-transform:scale(0.5);
+      -webkit-transform:scale(0.5);
+      transform:scale(0.5);
+      width:1830px;
+      height:2000px;
+    }
+   .b-left {
+      border-left: 1px solid #000;
+   }
+   .b-bottom {
+      border-bottom: 1px solid #000;
+   }
+   .b-right {
+      border-right: 1px solid #000;
+   }
+   .table-note {
+      width: 100%;
+      font-style:normal;
+      font-variant:normal;
+      font-weight:300;
+      font-stretch:normal;
+      font-size:3px;
+      font-family:'Titillium Web';
+      text-anchor:start;
+      line-height: 2.25px;
+      border-spacing: 0px;
+   }
+
+   .table-bis th:first-child {
+      width: 400px;
+   }
+   .table-bis tr {
+      height: 30px;
+   }
+   .thcorsoacqua {
+      width: 350px;
+   }
+   .table-bis tr:nth-child(even) {
+      background-color: #d3d2d2;
+   }
+   .table-bis td {
+      width: 30px;
+      padding: .5;
+   }
+  </style>
+  <defs>
+    <rect
+       x="52.412698"
+       y="225.74758"
+       width="8.1465433"
+       height="5.1038582" />
+    <rect
+       x="17.569051"
+       y="220.44742"
+       width="23.359967"
+       height="14.526366" />
+    <rect
+       x="15.017121"
+       y="267.4618"
+       width="13.446704"
+       height="11.581832" />
+    <rect
+       x="55.357232"
+       y="134.66334"
+       width="120.33327"
+       height="23.359967" />
+    <rect
+       x="49.325893"
+       y="86.961893"
+       width="104.9924"
+       height="45.648263" />
+    <rect
+       x="49.325893"
+       y="56.260236"
+       width="136.02552"
+       height="30.067822" />
+    <rect
+       x="27.662396"
+       y="37.01683"
+       width="102.49787"
+       height="12.828937" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse" >
+      <path
+         d="M 0,841.89 H 595.28 V 0 H 0 Z" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse" >
+      <path
+         d="M 0,841.89 H 595.28 V 0 H 0 Z" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse" >
+      <path
+         d="m 28.769,312.55 h 99.663 V 442.943 H 28.769 Z" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse" >
+      <path
+         d="m 111.454,416.2 h 20.175 v 20.175 h -20.175 z" />
+    </clipPath>
+    <mask
+       maskUnits="userSpaceOnUse"
+       x="0"
+       y="0"
+       width="1"
+       height="1">
+      <image
+         width="1"
+         height="1"
+         style="image-rendering:optimizeSpeed"
+         preserveAspectRatio="none"
+         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAAAAAA7VNdtAAAAAXNCSVQI5gpbmQAAAeBJREFUSIndld1xgzAQhDeeFKAS1EGUCqxUEEqgA5MOcAUeV4A7IB1gV4A6gA4gFVweJIGEToMfM9kZD+i4T1r9nYE/qpe4qaUERmPWiNQS3wYZiXoiq6Hyoca2VYboaVWzCWkW6SjUBQCapTkJhtAUSwKSiKjR5UREFYO0NrPSzTJM6RxqIuoYxCb24VvtJxEhh8WXfdzdD1ACs4vLqO8Fccv4s35SuAM4acgWwLo1r/4lXREJc9cQztE1HeWNQfA1+8Z5TBFu3WE+XOa5XoOvXGbAvBefAua6jKHMHoL5dovMFmY1xqpaD8MEADjtGgtO/QwAorzuIeMYtwsB7Bjb6oQQeSTf5ySiVISkSm/vCRGSJozbgChY5Ah/cOcFad3JKLYnZPCXUYe3H0BpLzXQE1EdIrXbMl8CiqAvDQCKtoiYKFQXdjUArnZECIqQmFTUUx28RMywEP1S61zxUChtNdkW2PIooQzM49tH5GCf5t328nHHnvxikBtN5xIb72tbD7NIRYPbteFJRBFRLwC4KT+B9OSYzVblkYtbZ+EPRBZRnYhn3MiUiBDRW/+BmdRWjLTOf8vk8YgtPw2zRjnET6DlzLAIs5p5xF7kji3iGR0A4JL5W8+r2PfDTP9f6BeoxrmeC0yzrAAAAABJRU5ErkJggg=="/>
+    </mask>
+    <clipPath
+       clipPathUnits="userSpaceOnUse" >
+      <path
+         d="m 30.63,421.852 h 13.757 v 8.822 H 30.63 Z" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse" >
+      <path
+         d="m 54.002,419.385 h 11.949 v 13.756 H 54.002 Z" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse" >
+      <path
+         d="m 85.776,375.383 h 29.804 v 23.844 H 85.776 Z" />
+    </clipPath>
+    <mask
+       maskUnits="userSpaceOnUse"
+       x="0"
+       y="0"
+       width="1"
+       height="1">
+      <image
+         width="1"
+         height="1"
+         style="image-rendering:optimizeSpeed"
+         preserveAspectRatio="none"
+         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAAA8CAAAAAALAhhPAAAAAXNCSVQI5gpbmQAAAXVJREFUWIXt1t1tgzAUBeDbqAO4G2QEb1CPwAiMkBHYIOoEHiEjOJ0ANjAbwAanD5BEYGMfN/SpOS+RkPPpXox/RF555e/ytn6gtFZj143P07XDlLZ+UtItHvHmqaKwTCNHtRM15VL/gtJRCoArL67dstCWYvEO58p2KwtAXSKZS4qC07Sk0hIAeLI0lezvFktZ+apozHAUNQNkWYDPWywFZGbzIPx0i8lZBQskM/QgPW9l8i79SFfWTT9GK+n7a2yEpd+9EhFzGz5YE1qbG9c6dr3aLmFHZ44ajqKH5SMffgQ2+t81pQMKGEKsISxrXUABPmzz2LhkTRFlzjk585Gk6q7KTgOb7t4ZnqrSVEmjavtl3cNtuunT7p4TZznGGrgZYCjgJHIgG83mc0dLRe6YYUBZ4wdTV09ZHdXjlbJ6yvqirG9qFLW9EeewiHB3F0Nay7t6NDVLZS9oQ8VTIqKt35LaZl6LxLf68GLrd+yKanrlf+UH33mljzWoi10AAAAASUVORK5CYII="/>
+    </mask>
+    <clipPath
+       clipPathUnits="userSpaceOnUse" >
+      <path
+         d="m 77.522,412.983 h 29.805 v 23.844 H 77.522 Z" />
+    </clipPath>
+    <mask
+       maskUnits="userSpaceOnUse"
+       x="0"
+       y="0"
+       width="1"
+       height="1">
+      <image
+         width="1"
+         height="1"
+         style="image-rendering:optimizeSpeed"
+         preserveAspectRatio="none"
+         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAAA8CAAAAAALAhhPAAAAAXNCSVQI5gpbmQAAAphJREFUWIXt1l1IU2EcBvBnx1Mz2paRrvzIwhB0BFkaVEJERnQRTCjqJujrJqJuiqIbIyhoEFHtorqom7KgsigxutiFF0LpaGQfWmyVsVLMVdNtpnO2p4sWbXr2buec3QQ+N+ds73t+//95eQ/nADPJbawNJgDA3K0W3dYVngIAXGaTbus+Q4sBrB7inQwzpfRDdZUAYJwP81nAeLQICwAANTXq+6l2v9wNoMRNRmphD5N9AHDQ+0K9taSXkXPAKh/Ju6VtJIdkWC5E+Vm9hWby1z1pU4BkbCBGMris3EXSqcE6HCXZ8yzOv4k97SZJuwbL1k+lREzpLpCV/qxfFHzvR6+3RGnwYQQorzZ53zAr61oVO93dnphidWN9ZW3dGjTvUx6emv0kybcTivc46idJNgp2ZkrOKyrJOWnIkoLZlYG6qrg2yil7LZLirkKli6b71qKqwslox3JBpdANs61C/ub7PihsaMWRjoxrxbFXAZJk1zFBxaVnvmSWkvPpQDpqs1udRJIOZarxq3qKPK1EbQlqoTi6bTpV6dFEkV3z5kyhpEsaKTLWuacgxVqp7Q4TeZKyORx6KPJd8T9qXZ8+izfzE9L6Rx90UoxsBwAYmjRtrNTEWwBAckzqp8gAAOl4LiRyBEDtSG6sQUjyTv2fQgBADyTLrpxQmLgFqaY487xs8rgVkjU3lP9EBNJkLiS67T5AzvaVmZT4eMrLMf7zx23nMAA5pN5qvz4r6Vde2O1PnFrDajdSbG+aGlK4VW1bIVfaoY3jKvu6mL5MnlMd9XGhoOfSdjXU6AbhApS0RLOm+hvEiwnDoe5QdtIDm4j5c5B2rC0rMMWFBcPDPW3PhTMSx9n5ckWx8HkyDPijY8JqM5nJ/5LfyU/SPAdzm0MAAAAASUVORK5CYII="/>
+    </mask>
+    <clipPath
+       clipPathUnits="userSpaceOnUse" >
+      <path
+         d="m 50.926,381.802 h 29.805 v 23.844 H 50.926 Z" />
+    </clipPath>
+    <mask
+       maskUnits="userSpaceOnUse"
+       x="0"
+       y="0"
+       width="1"
+       height="1">
+      <image
+         width="1"
+         height="1"
+         style="image-rendering:optimizeSpeed"
+         preserveAspectRatio="none"
+         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAAA8CAAAAAALAhhPAAAAAXNCSVQI5gpbmQAAAphJREFUWIXt1l1IU2EcBvBnx1Mz2paRrvzIwhB0BFkaVEJERnQRTCjqJujrJqJuiqIbIyhoEFHtorqom7KgsigxutiFF0LpaGQfWmyVsVLMVdNtpnO2p4sWbXr2buec3QQ+N+ds73t+//95eQ/nADPJbawNJgDA3K0W3dYVngIAXGaTbus+Q4sBrB7inQwzpfRDdZUAYJwP81nAeLQICwAANTXq+6l2v9wNoMRNRmphD5N9AHDQ+0K9taSXkXPAKh/Ju6VtJIdkWC5E+Vm9hWby1z1pU4BkbCBGMris3EXSqcE6HCXZ8yzOv4k97SZJuwbL1k+lREzpLpCV/qxfFHzvR6+3RGnwYQQorzZ53zAr61oVO93dnphidWN9ZW3dGjTvUx6emv0kybcTivc46idJNgp2ZkrOKyrJOWnIkoLZlYG6qrg2yil7LZLirkKli6b71qKqwslox3JBpdANs61C/ub7PihsaMWRjoxrxbFXAZJk1zFBxaVnvmSWkvPpQDpqs1udRJIOZarxq3qKPK1EbQlqoTi6bTpV6dFEkV3z5kyhpEsaKTLWuacgxVqp7Q4TeZKyORx6KPJd8T9qXZ8+izfzE9L6Rx90UoxsBwAYmjRtrNTEWwBAckzqp8gAAOl4LiRyBEDtSG6sQUjyTv2fQgBADyTLrpxQmLgFqaY487xs8rgVkjU3lP9EBNJkLiS67T5AzvaVmZT4eMrLMf7zx23nMAA5pN5qvz4r6Vde2O1PnFrDajdSbG+aGlK4VW1bIVfaoY3jKvu6mL5MnlMd9XGhoOfSdjXU6AbhApS0RLOm+hvEiwnDoe5QdtIDm4j5c5B2rC0rMMWFBcPDPW3PhTMSx9n5ckWx8HkyDPijY8JqM5nJ/5LfyU/SPAdzm0MAAAAASUVORK5CYII="/>
+    </mask>
+    <clipPath
+       clipPathUnits="userSpaceOnUse" >
+      <path
+         d="m 28,353.372 h 29.805 v 23.845 H 28 Z" />
+    </clipPath>
+    <mask
+       maskUnits="userSpaceOnUse"
+       x="0"
+       y="0"
+       width="1"
+       height="1">
+      <image
+         width="1"
+         height="1"
+         style="image-rendering:optimizeSpeed"
+         preserveAspectRatio="none"
+         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAAA8CAAAAAALAhhPAAAAAXNCSVQI5gpbmQAAAphJREFUWIXt1l1IU2EcBvBnx1Mz2paRrvzIwhB0BFkaVEJERnQRTCjqJujrJqJuiqIbIyhoEFHtorqom7KgsigxutiFF0LpaGQfWmyVsVLMVdNtpnO2p4sWbXr2buec3QQ+N+ds73t+//95eQ/nADPJbawNJgDA3K0W3dYVngIAXGaTbus+Q4sBrB7inQwzpfRDdZUAYJwP81nAeLQICwAANTXq+6l2v9wNoMRNRmphD5N9AHDQ+0K9taSXkXPAKh/Ju6VtJIdkWC5E+Vm9hWby1z1pU4BkbCBGMris3EXSqcE6HCXZ8yzOv4k97SZJuwbL1k+lREzpLpCV/qxfFHzvR6+3RGnwYQQorzZ53zAr61oVO93dnphidWN9ZW3dGjTvUx6emv0kybcTivc46idJNgp2ZkrOKyrJOWnIkoLZlYG6qrg2yil7LZLirkKli6b71qKqwslox3JBpdANs61C/ub7PihsaMWRjoxrxbFXAZJk1zFBxaVnvmSWkvPpQDpqs1udRJIOZarxq3qKPK1EbQlqoTi6bTpV6dFEkV3z5kyhpEsaKTLWuacgxVqp7Q4TeZKyORx6KPJd8T9qXZ8+izfzE9L6Rx90UoxsBwAYmjRtrNTEWwBAckzqp8gAAOl4LiRyBEDtSG6sQUjyTv2fQgBADyTLrpxQmLgFqaY487xs8rgVkjU3lP9EBNJkLiS67T5AzvaVmZT4eMrLMf7zx23nMAA5pN5qvz4r6Vde2O1PnFrDajdSbG+aGlK4VW1bIVfaoY3jKvu6mL5MnlMd9XGhoOfSdjXU6AbhApS0RLOm+hvEiwnDoe5QdtIDm4j5c5B2rC0rMMWFBcPDPW3PhTMSx9n5ckWx8HkyDPijY8JqM5nJ/5LfyU/SPAdzm0MAAAAASUVORK5CYII="/>
+    </mask>
+    <clipPath
+       clipPathUnits="userSpaceOnUse" >
+      <path
+         d="m 61.932,347.87 h 29.805 v 23.844 H 61.932 Z" />
+    </clipPath>
+    <mask
+       maskUnits="userSpaceOnUse"
+       x="0"
+       y="0"
+       width="1"
+       height="1">
+      <image
+         width="1"
+         height="1"
+         style="image-rendering:optimizeSpeed"
+         preserveAspectRatio="none"
+         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAAA8CAAAAAALAhhPAAAAAXNCSVQI5gpbmQAAAphJREFUWIXt1l1IU2EcBvBnx1Mz2paRrvzIwhB0BFkaVEJERnQRTCjqJujrJqJuiqIbIyhoEFHtorqom7KgsigxutiFF0LpaGQfWmyVsVLMVdNtpnO2p4sWbXr2buec3QQ+N+ds73t+//95eQ/nADPJbawNJgDA3K0W3dYVngIAXGaTbus+Q4sBrB7inQwzpfRDdZUAYJwP81nAeLQICwAANTXq+6l2v9wNoMRNRmphD5N9AHDQ+0K9taSXkXPAKh/Ju6VtJIdkWC5E+Vm9hWby1z1pU4BkbCBGMris3EXSqcE6HCXZ8yzOv4k97SZJuwbL1k+lREzpLpCV/qxfFHzvR6+3RGnwYQQorzZ53zAr61oVO93dnphidWN9ZW3dGjTvUx6emv0kybcTivc46idJNgp2ZkrOKyrJOWnIkoLZlYG6qrg2yil7LZLirkKli6b71qKqwslox3JBpdANs61C/ub7PihsaMWRjoxrxbFXAZJk1zFBxaVnvmSWkvPpQDpqs1udRJIOZarxq3qKPK1EbQlqoTi6bTpV6dFEkV3z5kyhpEsaKTLWuacgxVqp7Q4TeZKyORx6KPJd8T9qXZ8+izfzE9L6Rx90UoxsBwAYmjRtrNTEWwBAckzqp8gAAOl4LiRyBEDtSG6sQUjyTv2fQgBADyTLrpxQmLgFqaY487xs8rgVkjU3lP9EBNJkLiS67T5AzvaVmZT4eMrLMf7zx23nMAA5pN5qvz4r6Vde2O1PnFrDajdSbG+aGlK4VW1bIVfaoY3jKvu6mL5MnlMd9XGhoOfSdjXU6AbhApS0RLOm+hvEiwnDoe5QdtIDm4j5c5B2rC0rMMWFBcPDPW3PhTMSx9n5ckWx8HkyDPijY8JqM5nJ/5LfyU/SPAdzm0MAAAAASUVORK5CYII="/>
+    </mask>
+    <clipPath
+       clipPathUnits="userSpaceOnUse" >
+      <path
+         d="m 99.532,335.031 h 29.805 v 23.844 H 99.532 Z" />
+    </clipPath>
+    <mask
+       maskUnits="userSpaceOnUse"
+       x="0"
+       y="0"
+       width="1"
+       height="1">
+      <image
+         width="1"
+         height="1"
+         style="image-rendering:optimizeSpeed"
+         preserveAspectRatio="none"
+         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAAA8CAAAAAALAhhPAAAAAXNCSVQI5gpbmQAAAXVJREFUWIXt1t1tgzAUBeDbqAO4G2QEb1CPwAiMkBHYIOoEHiEjOJ0ANjAbwAanD5BEYGMfN/SpOS+RkPPpXox/RF555e/ytn6gtFZj143P07XDlLZ+UtItHvHmqaKwTCNHtRM15VL/gtJRCoArL67dstCWYvEO58p2KwtAXSKZS4qC07Sk0hIAeLI0lezvFktZ+apozHAUNQNkWYDPWywFZGbzIPx0i8lZBQskM/QgPW9l8i79SFfWTT9GK+n7a2yEpd+9EhFzGz5YE1qbG9c6dr3aLmFHZ44ajqKH5SMffgQ2+t81pQMKGEKsISxrXUABPmzz2LhkTRFlzjk585Gk6q7KTgOb7t4ZnqrSVEmjavtl3cNtuunT7p4TZznGGrgZYCjgJHIgG83mc0dLRe6YYUBZ4wdTV09ZHdXjlbJ6yvqirG9qFLW9EeewiHB3F0Nay7t6NDVLZS9oQ8VTIqKt35LaZl6LxLf68GLrd+yKanrlf+UH33mljzWoi10AAAAASUVORK5CYII="/>
+    </mask>
+    <clipPath
+       clipPathUnits="userSpaceOnUse" >
+      <path
+         d="M 39.922,317.606 H 69.726 V 341.45 H 39.922 Z" />
+    </clipPath>
+    <mask
+       maskUnits="userSpaceOnUse"
+       x="0"
+       y="0"
+       width="1"
+       height="1">
+      <image
+         width="1"
+         height="1"
+         style="image-rendering:optimizeSpeed"
+         preserveAspectRatio="none"
+         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAAA8CAAAAAALAhhPAAAAAXNCSVQI5gpbmQAAAphJREFUWIXt1l1IU2EcBvBnx1Mz2paRrvzIwhB0BFkaVEJERnQRTCjqJujrJqJuiqIbIyhoEFHtorqom7KgsigxutiFF0LpaGQfWmyVsVLMVdNtpnO2p4sWbXr2buec3QQ+N+ds73t+//95eQ/nADPJbawNJgDA3K0W3dYVngIAXGaTbus+Q4sBrB7inQwzpfRDdZUAYJwP81nAeLQICwAANTXq+6l2v9wNoMRNRmphD5N9AHDQ+0K9taSXkXPAKh/Ju6VtJIdkWC5E+Vm9hWby1z1pU4BkbCBGMris3EXSqcE6HCXZ8yzOv4k97SZJuwbL1k+lREzpLpCV/qxfFHzvR6+3RGnwYQQorzZ53zAr61oVO93dnphidWN9ZW3dGjTvUx6emv0kybcTivc46idJNgp2ZkrOKyrJOWnIkoLZlYG6qrg2yil7LZLirkKli6b71qKqwslox3JBpdANs61C/ub7PihsaMWRjoxrxbFXAZJk1zFBxaVnvmSWkvPpQDpqs1udRJIOZarxq3qKPK1EbQlqoTi6bTpV6dFEkV3z5kyhpEsaKTLWuacgxVqp7Q4TeZKyORx6KPJd8T9qXZ8+izfzE9L6Rx90UoxsBwAYmjRtrNTEWwBAckzqp8gAAOl4LiRyBEDtSG6sQUjyTv2fQgBADyTLrpxQmLgFqaY487xs8rgVkjU3lP9EBNJkLiS67T5AzvaVmZT4eMrLMf7zx23nMAA5pN5qvz4r6Vde2O1PnFrDajdSbG+aGlK4VW1bIVfaoY3jKvu6mL5MnlMd9XGhoOfSdjXU6AbhApS0RLOm+hvEiwnDoe5QdtIDm4j5c5B2rC0rMMWFBcPDPW3PhTMSx9n5ckWx8HkyDPijY8JqM5nJ/5LfyU/SPAdzm0MAAAAASUVORK5CYII="/>
+    </mask>
+    <rect
+       x="52.412697"
+       y="225.74757"
+       width="8.1465435"
+       height="5.103858" />
+    <rect
+       x="52.412697"
+       y="225.74757"
+       width="8.1465435"
+       height="5.103858" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse" >
+      <path
+         d="M 0,841.89 H 595.28 V 0 H 0 Z" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse" >
+      <path
+         d="M 0,841.89 H 595.28 V 0 H 0 Z" />
+    </clipPath>
+    <rect
+       x="52.412697"
+       y="225.74757"
+       width="8.1465435"
+       height="5.103858" />
+    <rect
+       x="52.412697"
+       y="225.74757"
+       width="8.1465435"
+       height="5.103858" />
+    <rect
+       x="52.412697"
+       y="225.74757"
+       width="8.1465435"
+       height="5.103858" />
+    <rect
+       x="52.412697"
+       y="225.74757"
+       width="8.1465435"
+       height="5.103858" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse" >
+      <path
+         d="m 111.454,585.324 h 20.175 V 605.5 h -20.175 z" />
+    </clipPath>
+    <mask
+       maskUnits="userSpaceOnUse"
+       x="0"
+       y="0"
+       width="1"
+       height="1">
+      <image
+         width="1"
+         height="1"
+         style="image-rendering:optimizeSpeed"
+         preserveAspectRatio="none"
+         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAAAAAA7VNdtAAAAAXNCSVQI5gpbmQAAAeBJREFUSIndld1xgzAQhDeeFKAS1EGUCqxUEEqgA5MOcAUeV4A7IB1gV4A6gA4gFVweJIGEToMfM9kZD+i4T1r9nYE/qpe4qaUERmPWiNQS3wYZiXoiq6Hyoca2VYboaVWzCWkW6SjUBQCapTkJhtAUSwKSiKjR5UREFYO0NrPSzTJM6RxqIuoYxCb24VvtJxEhh8WXfdzdD1ACs4vLqO8Fccv4s35SuAM4acgWwLo1r/4lXREJc9cQztE1HeWNQfA1+8Z5TBFu3WE+XOa5XoOvXGbAvBefAua6jKHMHoL5dovMFmY1xqpaD8MEADjtGgtO/QwAorzuIeMYtwsB7Bjb6oQQeSTf5ySiVISkSm/vCRGSJozbgChY5Ah/cOcFad3JKLYnZPCXUYe3H0BpLzXQE1EdIrXbMl8CiqAvDQCKtoiYKFQXdjUArnZECIqQmFTUUx28RMywEP1S61zxUChtNdkW2PIooQzM49tH5GCf5t328nHHnvxikBtN5xIb72tbD7NIRYPbteFJRBFRLwC4KT+B9OSYzVblkYtbZ+EPRBZRnYhn3MiUiBDRW/+BmdRWjLTOf8vk8YgtPw2zRjnET6DlzLAIs5p5xF7kji3iGR0A4JL5W8+r2PfDTP9f6BeoxrmeC0yzrAAAAABJRU5ErkJggg=="/>
+    </mask>
+    <clipPath
+       clipPathUnits="userSpaceOnUse" >
+      <path
+         d="M 0,841.89 H 595.28 V 0 H 0 Z" />
+    </clipPath>
+    <rect
+       x="49.325893"
+       y="86.961891"
+       width="123.67411"
+       height="46.361008" />
+    <rect
+       x="49.325893"
+       y="86.961891"
+       width="123.67411"
+       height="46.361008" />
+    <rect
+       x="52.412697"
+       y="225.74757"
+       width="8.1465435"
+       height="5.103858" />
+    <rect
+       x="52.412697"
+       y="225.74757"
+       width="8.1465435"
+       height="5.103858" />
+    <rect
+       x="52.412697"
+       y="225.74757"
+       width="8.1465435"
+       height="5.103858" />
+    <rect
+       x="52.412697"
+       y="225.74757"
+       width="8.1465435"
+       height="5.103858" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse" >
+      <path
+         d="m 111.454,585.324 h 20.175 V 605.5 h -20.175 z" />
+    </clipPath>
+    <mask
+       maskUnits="userSpaceOnUse"
+       x="0"
+       y="0"
+       width="1"
+       height="1">
+      <image
+         width="1"
+         height="1"
+         style="image-rendering:optimizeSpeed"
+         preserveAspectRatio="none"
+         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAAAAAA7VNdtAAAAAXNCSVQI5gpbmQAAAeBJREFUSIndld1xgzAQhDeeFKAS1EGUCqxUEEqgA5MOcAUeV4A7IB1gV4A6gA4gFVweJIGEToMfM9kZD+i4T1r9nYE/qpe4qaUERmPWiNQS3wYZiXoiq6Hyoca2VYboaVWzCWkW6SjUBQCapTkJhtAUSwKSiKjR5UREFYO0NrPSzTJM6RxqIuoYxCb24VvtJxEhh8WXfdzdD1ACs4vLqO8Fccv4s35SuAM4acgWwLo1r/4lXREJc9cQztE1HeWNQfA1+8Z5TBFu3WE+XOa5XoOvXGbAvBefAua6jKHMHoL5dovMFmY1xqpaD8MEADjtGgtO/QwAorzuIeMYtwsB7Bjb6oQQeSTf5ySiVISkSm/vCRGSJozbgChY5Ah/cOcFad3JKLYnZPCXUYe3H0BpLzXQE1EdIrXbMl8CiqAvDQCKtoiYKFQXdjUArnZECIqQmFTUUx28RMywEP1S61zxUChtNdkW2PIooQzM49tH5GCf5t328nHHnvxikBtN5xIb72tbD7NIRYPbteFJRBFRLwC4KT+B9OSYzVblkYtbZ+EPRBZRnYhn3MiUiBDRW/+BmdRWjLTOf8vk8YgtPw2zRjnET6DlzLAIs5p5xF7kji3iGR0A4JL5W8+r2PfDTP9f6BeoxrmeC0yzrAAAAABJRU5ErkJggg=="/>
+    </mask>
+    <clipPath
+       clipPathUnits="userSpaceOnUse" >
+      <path
+         d="M 0,841.89 H 595.28 V 0 H 0 Z" />
+    </clipPath>
+    <rect
+       x="49.325893"
+       y="86.961891"
+       width="123.67411"
+       height="46.361008" />
+    <rect
+       x="49.325893"
+       y="86.961891"
+       width="123.67411"
+       height="46.361008" />
+    <rect
+       x="52.412697"
+       y="225.74757"
+       width="8.1465435"
+       height="5.103858" />
+    <rect
+       x="52.412697"
+       y="225.74757"
+       width="8.1465435"
+       height="5.103858" />
+    <rect
+       x="52.412697"
+       y="225.74757"
+       width="8.1465435"
+       height="5.103858" />
+    <rect
+       x="52.412697"
+       y="225.74757"
+       width="8.1465435"
+       height="5.103858" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse" >
+      <path
+         d="m 111.454,585.324 h 20.175 V 605.5 h -20.175 z" />
+    </clipPath>
+    <mask
+       maskUnits="userSpaceOnUse"
+       x="0"
+       y="0"
+       width="1"
+       height="1">
+      <image
+         width="1"
+         height="1"
+         style="image-rendering:optimizeSpeed"
+         preserveAspectRatio="none"
+         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAAAAAA7VNdtAAAAAXNCSVQI5gpbmQAAAeBJREFUSIndld1xgzAQhDeeFKAS1EGUCqxUEEqgA5MOcAUeV4A7IB1gV4A6gA4gFVweJIGEToMfM9kZD+i4T1r9nYE/qpe4qaUERmPWiNQS3wYZiXoiq6Hyoca2VYboaVWzCWkW6SjUBQCapTkJhtAUSwKSiKjR5UREFYO0NrPSzTJM6RxqIuoYxCb24VvtJxEhh8WXfdzdD1ACs4vLqO8Fccv4s35SuAM4acgWwLo1r/4lXREJc9cQztE1HeWNQfA1+8Z5TBFu3WE+XOa5XoOvXGbAvBefAua6jKHMHoL5dovMFmY1xqpaD8MEADjtGgtO/QwAorzuIeMYtwsB7Bjb6oQQeSTf5ySiVISkSm/vCRGSJozbgChY5Ah/cOcFad3JKLYnZPCXUYe3H0BpLzXQE1EdIrXbMl8CiqAvDQCKtoiYKFQXdjUArnZECIqQmFTUUx28RMywEP1S61zxUChtNdkW2PIooQzM49tH5GCf5t328nHHnvxikBtN5xIb72tbD7NIRYPbteFJRBFRLwC4KT+B9OSYzVblkYtbZ+EPRBZRnYhn3MiUiBDRW/+BmdRWjLTOf8vk8YgtPw2zRjnET6DlzLAIs5p5xF7kji3iGR0A4JL5W8+r2PfDTP9f6BeoxrmeC0yzrAAAAABJRU5ErkJggg=="/>
+    </mask>
+    <clipPath
+       clipPathUnits="userSpaceOnUse" >
+      <path
+         d="M 0,841.89 H 595.28 V 0 H 0 Z" />
+    </clipPath>
+    <rect
+       x="49.325893"
+       y="86.961891"
+       width="123.67411"
+       height="46.361008" />
+    <rect
+       x="49.325893"
+       y="86.961891"
+       width="123.67411"
+       height="46.361008" />
+    <rect
+       x="52.412697"
+       y="225.74757"
+       width="8.1465435"
+       height="5.103858" />
+    <rect
+       x="52.412697"
+       y="225.74757"
+       width="8.1465435"
+       height="5.103858" />
+    <rect
+       x="52.412697"
+       y="225.74757"
+       width="8.1465435"
+       height="5.103858" />
+    <rect
+       x="52.412697"
+       y="225.74757"
+       width="8.1465435"
+       height="5.103858" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse" >
+      <path
+         d="m 111.454,585.324 h 20.175 V 605.5 h -20.175 z" />
+    </clipPath>
+    <mask
+       maskUnits="userSpaceOnUse"
+       x="0"
+       y="0"
+       width="1"
+       height="1">
+      <image
+         width="1"
+         height="1"
+         style="image-rendering:optimizeSpeed"
+         preserveAspectRatio="none"
+         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAAAAAA7VNdtAAAAAXNCSVQI5gpbmQAAAeBJREFUSIndld1xgzAQhDeeFKAS1EGUCqxUEEqgA5MOcAUeV4A7IB1gV4A6gA4gFVweJIGEToMfM9kZD+i4T1r9nYE/qpe4qaUERmPWiNQS3wYZiXoiq6Hyoca2VYboaVWzCWkW6SjUBQCapTkJhtAUSwKSiKjR5UREFYO0NrPSzTJM6RxqIuoYxCb24VvtJxEhh8WXfdzdD1ACs4vLqO8Fccv4s35SuAM4acgWwLo1r/4lXREJc9cQztE1HeWNQfA1+8Z5TBFu3WE+XOa5XoOvXGbAvBefAua6jKHMHoL5dovMFmY1xqpaD8MEADjtGgtO/QwAorzuIeMYtwsB7Bjb6oQQeSTf5ySiVISkSm/vCRGSJozbgChY5Ah/cOcFad3JKLYnZPCXUYe3H0BpLzXQE1EdIrXbMl8CiqAvDQCKtoiYKFQXdjUArnZECIqQmFTUUx28RMywEP1S61zxUChtNdkW2PIooQzM49tH5GCf5t328nHHnvxikBtN5xIb72tbD7NIRYPbteFJRBFRLwC4KT+B9OSYzVblkYtbZ+EPRBZRnYhn3MiUiBDRW/+BmdRWjLTOf8vk8YgtPw2zRjnET6DlzLAIs5p5xF7kji3iGR0A4JL5W8+r2PfDTP9f6BeoxrmeC0yzrAAAAABJRU5ErkJggg=="/>
+    </mask>
+    <rect
+       x="52.412697"
+       y="225.74757"
+       width="8.1465435"
+       height="5.103858" />
+    <rect
+       x="52.412697"
+       y="225.74757"
+       width="8.1465435"
+       height="5.103858" />
+    <rect
+       x="52.412697"
+       y="225.74757"
+       width="8.1465435"
+       height="5.103858" />
+    <rect
+       x="52.412697"
+       y="225.74757"
+       width="8.1465435"
+       height="5.103858" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse" >
+      <path
+         d="m 111.454,585.324 h 20.175 V 605.5 h -20.175 z" />
+    </clipPath>
+    <mask
+       maskUnits="userSpaceOnUse"
+       x="0"
+       y="0"
+       width="1"
+       height="1">
+      <image
+         width="1"
+         height="1"
+         style="image-rendering:optimizeSpeed"
+         preserveAspectRatio="none"
+         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAAAAAA7VNdtAAAAAXNCSVQI5gpbmQAAAeBJREFUSIndld1xgzAQhDeeFKAS1EGUCqxUEEqgA5MOcAUeV4A7IB1gV4A6gA4gFVweJIGEToMfM9kZD+i4T1r9nYE/qpe4qaUERmPWiNQS3wYZiXoiq6Hyoca2VYboaVWzCWkW6SjUBQCapTkJhtAUSwKSiKjR5UREFYO0NrPSzTJM6RxqIuoYxCb24VvtJxEhh8WXfdzdD1ACs4vLqO8Fccv4s35SuAM4acgWwLo1r/4lXREJc9cQztE1HeWNQfA1+8Z5TBFu3WE+XOa5XoOvXGbAvBefAua6jKHMHoL5dovMFmY1xqpaD8MEADjtGgtO/QwAorzuIeMYtwsB7Bjb6oQQeSTf5ySiVISkSm/vCRGSJozbgChY5Ah/cOcFad3JKLYnZPCXUYe3H0BpLzXQE1EdIrXbMl8CiqAvDQCKtoiYKFQXdjUArnZECIqQmFTUUx28RMywEP1S61zxUChtNdkW2PIooQzM49tH5GCf5t328nHHnvxikBtN5xIb72tbD7NIRYPbteFJRBFRLwC4KT+B9OSYzVblkYtbZ+EPRBZRnYhn3MiUiBDRW/+BmdRWjLTOf8vk8YgtPw2zRjnET6DlzLAIs5p5xF7kji3iGR0A4JL5W8+r2PfDTP9f6BeoxrmeC0yzrAAAAABJRU5ErkJggg=="/>
+    </mask>
+    <clipPath
+       clipPathUnits="userSpaceOnUse" >
+      <path
+         d="M 0,841.89 H 595.28 V 0 H 0 Z" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse" >
+      <path
+         d="M 0,841.89 H 595.28 V 0 H 0 Z" />
+    </clipPath>
+    <rect
+       x="52.412697"
+       y="225.74757"
+       width="8.1465435"
+       height="5.103858" />
+    <rect
+       x="52.412697"
+       y="225.74757"
+       width="8.1465435"
+       height="5.103858" />
+    <rect
+       x="52.412697"
+       y="225.74757"
+       width="8.1465435"
+       height="5.103858" />
+    <rect
+       x="52.412697"
+       y="225.74757"
+       width="8.1465435"
+       height="5.103858" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse" >
+      <path
+         d="M 0,841.89 H 595.28 V 0 H 0 Z" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse" >
+      <path
+         d="M 0,841.89 H 595.28 V 0 H 0 Z" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse" >
+      <path
+         d="M 0,841.89 H 595.28 V 0 H 0 Z" />
+    </clipPath>
+    <rect
+       x="49.325893"
+       y="86.961891"
+       width="104.9924"
+       height="45.648262" />
+    <rect
+       x="49.325893"
+       y="86.961891"
+       width="104.9924"
+       height="45.648262" />
+    <rect
+       x="52.412697"
+       y="225.74757"
+       width="8.1465435"
+       height="5.103858" />
+    <rect
+       x="52.412697"
+       y="225.74757"
+       width="8.1465435"
+       height="5.103858" />
+    <rect
+       x="52.412697"
+       y="225.74757"
+       width="8.1465435"
+       height="5.103858" />
+    <rect
+       x="52.412697"
+       y="225.74757"
+       width="8.1465435"
+       height="5.103858" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse" >
+      <path
+         d="M 0,841.89 H 595.28 V 0 H 0 Z" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse" >
+      <path
+         d="M 0,841.89 H 595.28 V 0 H 0 Z" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse" >
+      <path
+         d="M 0,841.89 H 595.28 V 0 H 0 Z" />
+    </clipPath>
+    <rect
+       x="49.325893"
+       y="86.961891"
+       width="104.9924"
+       height="45.648262" />
+    <rect
+       x="49.325893"
+       y="86.961891"
+       width="104.9924"
+       height="45.648262" />
+    <rect
+       x="52.412697"
+       y="225.74757"
+       width="8.1465435"
+       height="5.103858" />
+    <rect
+       x="52.412697"
+       y="225.74757"
+       width="8.1465435"
+       height="5.103858" />
+    <rect
+       x="52.412697"
+       y="225.74757"
+       width="8.1465435"
+       height="5.103858" />
+    <rect
+       x="52.412697"
+       y="225.74757"
+       width="8.1465435"
+       height="5.103858" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse" >
+      <path
+         d="M 0,841.89 H 595.28 V 0 H 0 Z" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse" >
+      <path
+         d="M 0,841.89 H 595.28 V 0 H 0 Z" />
+    </clipPath>
+    <rect
+       x="52.412697"
+       y="225.74757"
+       width="8.1465435"
+       height="5.103858" />
+    <rect
+       x="52.412697"
+       y="225.74757"
+       width="8.1465435"
+       height="5.103858" />
+    <rect
+       x="52.412697"
+       y="225.74757"
+       width="8.1465435"
+       height="5.103858" />
+    <rect
+       x="52.412697"
+       y="225.74757"
+       width="8.1465435"
+       height="5.103858" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse" >
+      <path
+         d="M 0,841.89 H 595.28 V 0 H 0 Z" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse" >
+      <path
+         d="M 0,841.89 H 595.28 V 0 H 0 Z" />
+    </clipPath>
+    <rect
+       x="49.325893"
+       y="86.961891"
+       width="189.47866"
+       height="19.689707" />
+    <rect
+       x="49.325893"
+       y="86.961891"
+       width="104.9924"
+       height="45.648262" />
+  </defs>
+  <metadata>
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g><!--Header -->
+  {% include "bisheader.svg" with title='Bollettino Idrologico di Sintesi' seqNum=w26.id_w26 startValidTime=w26.data_emissione nextUpdate=w26.last_update logo='regione-piemonte' username=w26.username%}
+  <!-- Header -->
+   <path d="M 10,42.993881 H 200.00011 V 42.593668 H 10 Z" style="fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778" id="path644"></path>
+  </g>
+   <foreignObject x="50" y="220" width="190" height="400">
+         <div class="halfpix">
+               <table class="table-bis">
+         <thead>
+            
+            </thead>
+            <tbody>
+            <tr>
+               <th rowspan="2" class="b-bottom">STAZIONE</th>
+               <th rowspan="2" class="b-left b-bottom thcorsoacqua ">CORSO D'ACQUA</th>
+               <th colspan="3" class="b-left b-bottom">LIVELLI GIORNALIERI [m]</th>
+               <th colspan="3" class="b-left b-bottom b-right">PORTATE GIORNALIERE [mc/s]</th>
+               <th rowspan="2" class="b-bottom">NOTE</th>
+            </tr>
+            <tr>
+               <th class="b-left b-bottom">Min</th>
+               <th class="b-bottom">Max</th>
+               <th class="b-bottom">Med</th>
+               <th class="b-left b-bottom">Min</th>
+               <th class="b-bottom">Max</th>
+               <th class="b-bottom b-right">Med</th>
+            </tr>
+
+            {% for value in w26.w26data_set %}
+            <tr>
+               <th>{{value.id_w26_zone.localita}}</th>
+               <td class="b-left">{{value.id_w26_zone.corsoacqua}}</td>
+               <td class="b-left">{{value.hmin | check_value}}</td>
+               <td >{{value.hmax | check_value}}</td>
+               <td >{{value.hmed | check_value}}</td>
+               <td class="b-left">{{value.qmin | check_value}}</td>
+               <td>{{value.qmax | check_value}}</td>
+               <td class="b-right">{{value.qmed | check_value}}</td>
+               <td>{{value.idnota}}</td>
+            </tr>
+            {% endfor %}            
+         </tbody>
+         </table>
+         </div>
+      </foreignObject>
+      <g>
+         <text
+         style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+         x="10.000085"
+         y="256.348007"><tspan
+            style="font-size:4.23333px;stroke-width:0.352778"
+            x="10.000085"
+            y="256.348007">NOTE</tspan></text>
+         <path d="M 10,257.793881 H 200.00011 V 257.493668 H 10 Z" style="fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778" id="path644"></path>
+      </g>
+      <g transform="scale(0.9)">
+         <foreignObject x="10" y="287" width="190" height="100">
+            <table class="table-note">
+               <tbody>
+               <tr>
+                  <td>N.D. valore non disponibile</td>
+                  <td>(9) Scala non applicabile per modifiche alla morfologia della sezione</td>
+               </tr>
+               <tr>
+                  <td>(1) Valori non disponibili in banca dati</td>
+                  <td>(10) Situazione idraulica alterata per apertura paratoia in sponda destra</td>
+               </tr>
+               <tr>
+                  <td>(2) Verifica valori in corso</td>
+                  <td>(11) Scala di deflusso in fase di ricalibrazione</td>
+               </tr>
+               <tr>
+                  <td>(3) Sensore in anomalia </td>
+                  <td>(12) Situazione idraulica alterata da derivazioni a monte sezione</td>
+               </tr>
+               <tr>
+                  <td>(4) Scala di deflusso non applicabile in regime di piena</td>
+                  <td>(13) Dato stimato sulla base di misure e/o osservazioni dirette</td>
+               </tr>
+               <tr>
+                  <td>(5) Scala non applicabile in regime di magra</td>
+                  <td>(14) Sezione con portata quasi nulla</td>
+               </tr>
+               <tr>
+                  <td>(6) Sensore in secca</td>
+                  <td>(15) Dati relativi al secondo sensore idrometrico</td>
+               </tr>
+               <tr>
+                  <td>(7) Presenza di detriti/ghiaia nell'area di misura del sensore</td>
+                  <td>(16) Valore non significativo per effetto delle regolazioni artificiali</td>
+               </tr>
+               <tr>
+                  <td>(8) Lavori in alveo</td>
+                  <td>(17) Dato valutato in base a calcoli teorici</td>
+               </tr>
+               </tbody>
+            </table>
+         </foreignObject>
+      </g>
+      <text
+       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.175px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#2e9d53;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       x="199.82204"
+       y="295.32199"><tspan
+          style="text-align:end;text-anchor:end;stroke-width:0.352778"
+         x="199.82204"
+         y="295.32199">www.arpa.piemonte.it</tspan></text>
+      <g>
+         <text
+         style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.3px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#0c1530;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+         x="10.000085"
+         y="295.000007"><tspan
+            style="font-size:2.3px;stroke-width:0.352778"
+            x="10.000085"
+            y="295.000007">Diffusione: http://www.arpa.piemonte.it/rischinaturali/tematismi/acqua/risorsa-idrica/H-Q-giornaliere.html</tspan></text>
+         <path d="M 10,292.793881 H 200.00011 V 296.493668 H 10 Z" style="fill:#2f55ac;fill-opacity:0.3;fill-rule:nonzero;stroke:none;stroke-width:0.352778" id="path644"></path>
+      </g>
+
+</svg>

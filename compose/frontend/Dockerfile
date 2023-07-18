@@ -1,6 +1,6 @@
 ARG FRONTEND_BASE_IMAGE=deps-frontend-base
 
-FROM node:16 AS deps-frontend-base
+FROM node:18 AS deps-frontend-base
 # Requirements are installed here to ensure they will be cached.
 WORKDIR /app
 COPY ./package.json ./yarn.lock ./
@@ -16,6 +16,7 @@ COPY w05 ./w05
 COPY w16 ./w16
 COPY w23 ./w23
 COPY w24 ./w24
+COPY w26 ./w26
 COPY w29 ./w29
 COPY w22 ./w22
 COPY w30 ./w30

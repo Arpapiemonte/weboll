@@ -7,6 +7,7 @@
 import datetime
 import os
 import tempfile
+from decimal import Decimal
 from subprocess import call
 
 import requests
@@ -124,7 +125,7 @@ class W24View(viewsets.ModelViewSet):
                 .order_by("-last_update")[0]
                 .numero_bollettino
             )
-            last_seq_num_year = last_seq_num.split("/")[1]
+            last_seq_num_year = int(last_seq_num.split("/")[1])
             last_seq_num = last_seq_num.split("/")[0]
             print(last_seq_num)
             new_seq = str(int(last_seq_num) + 1)
@@ -154,13 +155,13 @@ class W24View(viewsets.ModelViewSet):
 
         areeAllertamento = models.AreeAllertamento.objects.all()
         areeAllertamento_dict = {}
-        for m in areeAllertamento:
-            areeAllertamento_dict[str(m.id_allertamento)] = m
+        for mm in areeAllertamento:
+            areeAllertamento_dict[str(mm.id_allertamento)] = mm
 
         time_layouts = models.TimeLayouts.objects.all()
         time_layouts_dict = {}
-        for m in time_layouts:
-            time_layouts_dict[m.id_time_layouts] = m
+        for mmm in time_layouts:
+            time_layouts_dict[mmm.id_time_layouts] = mmm
 
         Aree = [
             "Piem-A",
@@ -240,7 +241,10 @@ class W24View(viewsets.ModelViewSet):
                         for pluv in pluvs_125.filter(id_time_layouts=tl6h).filter(
                             id_allertamento=area
                         ):
-                            if pluv.numeric_value > max6h:
+                            if (
+                                pluv.numeric_value is not None
+                                and pluv.numeric_value > max6h
+                            ):
                                 max6h = pluv.numeric_value
 
                     new_data = models.W24Data(
@@ -281,13 +285,16 @@ class W24View(viewsets.ModelViewSet):
                         .filter(data_riferimento=tl_to_date_dict[tl24h])
                         .get()
                     )
-
+                    if storm.valore_originale is None:
+                        valore_originale = Decimal(0)
+                    else:
+                        valore_originale = storm.valore_originale
                     new_data = models.W24Data(
                         id_w24=new,
                         id_allertamento=areeAllertamento_dict[area],
                         id_time_layouts=time_layouts_dict[int(tl24h)],
                         id_parametro=parametro_dict["RISK_STORM"],
-                        numeric_value=storm.valore_originale,
+                        numeric_value=valore_originale,
                     )
                     new_data.save()
         else:
@@ -335,6 +342,10 @@ class W24View(viewsets.ModelViewSet):
             )
 
             for pluv in pluvs_901:
+                if pluv.numeric_value is None:
+                    pluv_numeric_value = Decimal(0)
+                else:
+                    pluv_numeric_value = Decimal(pluv.numeric_value)
                 new_data = models.W24Data(
                     id_w24=new,
                     id_allertamento=areeAllertamento_dict[
@@ -344,7 +355,7 @@ class W24View(viewsets.ModelViewSet):
                         pluv.id_time_layouts.id_time_layouts
                     ],
                     id_parametro=parametro_dict["PLUV"],
-                    numeric_value=pluv.numeric_value,
+                    numeric_value=pluv_numeric_value,
                 )
                 new_data.save()
 
@@ -364,15 +375,15 @@ class W24View(viewsets.ModelViewSet):
                 soglia42 = areasoglie.filter(classe_intensita="4").get().soglia2
 
                 valore_classe = 0
-                if pluv.numeric_value >= soglia01 and pluv.numeric_value <= soglia02:
+                if pluv_numeric_value >= soglia01 and pluv_numeric_value <= soglia02:
                     valore_classe = 0
-                if pluv.numeric_value >= soglia11 and pluv.numeric_value <= soglia12:
+                if pluv_numeric_value >= soglia11 and pluv_numeric_value <= soglia12:
                     valore_classe = 1
-                if pluv.numeric_value >= soglia21 and pluv.numeric_value <= soglia22:
+                if pluv_numeric_value >= soglia21 and pluv_numeric_value <= soglia22:
                     valore_classe = 2
-                if pluv.numeric_value >= soglia31 and pluv.numeric_value <= soglia32:
+                if pluv_numeric_value >= soglia31 and pluv_numeric_value <= soglia32:
                     valore_classe = 3
-                if pluv.numeric_value >= soglia41 and pluv.numeric_value <= soglia42:
+                if pluv_numeric_value >= soglia41 and pluv_numeric_value <= soglia42:
                     valore_classe = 4
 
                 new_data = models.W24Data(
@@ -389,6 +400,10 @@ class W24View(viewsets.ModelViewSet):
                 new_data.save()
 
             for pluv in pluvs_902:
+                if pluv.numeric_value is None:
+                    pluv_numeric_value = Decimal(0)
+                else:
+                    pluv_numeric_value = Decimal(pluv.numeric_value)
                 new_data = models.W24Data(
                     id_w24=new,
                     id_allertamento=areeAllertamento_dict[
@@ -398,7 +413,7 @@ class W24View(viewsets.ModelViewSet):
                         pluv.id_time_layouts.id_time_layouts
                     ],
                     id_parametro=parametro_dict["PLUV"],
-                    numeric_value=pluv.numeric_value,
+                    numeric_value=pluv_numeric_value,
                 )
                 new_data.save()
 
@@ -418,15 +433,15 @@ class W24View(viewsets.ModelViewSet):
                 soglia42 = areasoglie.filter(classe_intensita="4").get().soglia2
 
                 valore_classe = 0
-                if pluv.numeric_value >= soglia01 and pluv.numeric_value <= soglia02:
+                if pluv_numeric_value >= soglia01 and pluv_numeric_value <= soglia02:
                     valore_classe = 0
-                if pluv.numeric_value >= soglia11 and pluv.numeric_value <= soglia12:
+                if pluv_numeric_value >= soglia11 and pluv_numeric_value <= soglia12:
                     valore_classe = 1
-                if pluv.numeric_value >= soglia21 and pluv.numeric_value <= soglia22:
+                if pluv_numeric_value >= soglia21 and pluv_numeric_value <= soglia22:
                     valore_classe = 2
-                if pluv.numeric_value >= soglia31 and pluv.numeric_value <= soglia32:
+                if pluv_numeric_value >= soglia31 and pluv_numeric_value <= soglia32:
                     valore_classe = 3
-                if pluv.numeric_value >= soglia41 and pluv.numeric_value <= soglia42:
+                if pluv_numeric_value >= soglia41 and pluv_numeric_value <= soglia42:
                     valore_classe = 4
 
                 new_data = models.W24Data(
@@ -496,6 +511,10 @@ class W24View(viewsets.ModelViewSet):
                 for anomalia_c in forecast_zone_ANOM_T_C.filter(
                     data_riferimento=data_riferimento
                 ):
+                    if anomalia_c.valore_originale is None:
+                        valore_originale = Decimal(0)
+                    else:
+                        valore_originale = Decimal(anomalia_c.valore_originale)
                     new_data = models.W24Data(
                         id_w24=new,
                         id_allertamento=anomalia_c.id_allertamento,
@@ -503,7 +522,7 @@ class W24View(viewsets.ModelViewSet):
                             date_to_tl_dict[data_riferimento]
                         ],
                         id_parametro=anomalia_c.id_parametro,
-                        numeric_value=anomalia_c.valore_originale,
+                        numeric_value=valore_originale,
                     )
                     new_data.save()
 
@@ -642,6 +661,10 @@ class W24View(viewsets.ModelViewSet):
                 for wind in forecast_zone_VIG_IN_WI.filter(
                     data_riferimento=data_riferimento
                 ):
+                    if wind.valore_originale is None:
+                        valore_originale = Decimal(0)
+                    else:
+                        valore_originale = Decimal(wind.valore_originale)
                     new_data = models.W24Data(
                         id_w24=new,
                         id_allertamento=wind.id_allertamento,
@@ -649,7 +672,7 @@ class W24View(viewsets.ModelViewSet):
                             date_to_tl_dict[data_riferimento]
                         ],
                         id_parametro=parametro_dict["VELV"],
-                        numeric_value=wind.valore_originale,
+                        numeric_value=valore_originale,
                     )
                     new_data.save()
 
@@ -663,20 +686,11 @@ class W24View(viewsets.ModelViewSet):
                     soglia21 = sogliearea.filter(classe_intensita="2").get().soglia1
                     soglia22 = sogliearea.filter(classe_intensita="2").get().soglia2
 
-                    if (
-                        wind.valore_originale >= soglia01
-                        and wind.valore_originale <= soglia11
-                    ):
+                    if valore_originale >= soglia01 and valore_originale <= soglia11:
                         valore_classe = 0
-                    if (
-                        wind.valore_originale >= soglia11
-                        and wind.valore_originale <= soglia12
-                    ):
+                    if valore_originale >= soglia11 and valore_originale <= soglia12:
                         valore_classe = 1
-                    if (
-                        wind.valore_originale >= soglia21
-                        and wind.valore_originale <= soglia22
-                    ):
+                    if valore_originale >= soglia21 and valore_originale <= soglia22:
                         valore_classe = 2
 
                     new_data = models.W24Data(
@@ -693,12 +707,12 @@ class W24View(viewsets.ModelViewSet):
             winds = ["VELV", "RISK_WIND"]
             for area in Aree:
                 for tl24h in pioggia_tl:
-                    for wind in winds:
+                    for wind1 in winds:
                         new_data = models.W24Data(
                             id_w24=new,
                             id_allertamento=areeAllertamento_dict[area],
                             id_time_layouts=time_layouts_dict[int(tl24h)],
-                            id_parametro=parametro_dict[wind],
+                            id_parametro=parametro_dict[wind1],
                             numeric_value=0,
                         )
                         new_data.save()
@@ -743,11 +757,15 @@ class W24View(viewsets.ModelViewSet):
                         pluv.id_time_layouts.id_time_layouts
                     ],
                     id_parametro=parametro_dict[pluv.id_parametro.id_parametro],
-                    numeric_value=pluv.numeric_value,
+                    numeric_value=pluv_numeric_value,
                 )
                 new_data.save()
 
             for pluv in pluvs_125:
+                if pluv.numeric_value is None:
+                    pluv_numeric_value = Decimal(0)
+                else:
+                    pluv_numeric_value = Decimal(pluv.numeric_value)
                 new_data = models.W24Data(
                     id_w24=new,
                     id_allertamento=areeAllertamento_dict[
@@ -757,7 +775,7 @@ class W24View(viewsets.ModelViewSet):
                         pluv.id_time_layouts.id_time_layouts
                     ],
                     id_parametro=parametro_dict["PLUV1"],
-                    numeric_value=pluv.numeric_value,
+                    numeric_value=pluv_numeric_value,
                 )
                 new_data.save()
 
@@ -776,6 +794,10 @@ class W24View(viewsets.ModelViewSet):
             snow_meters = [400, 700, 1000, 2000]
 
             for snow_level in snow_levels:
+                if snow_level.numeric_value is None:
+                    snow_level_numeric_value = Decimal(0)
+                else:
+                    snow_level_numeric_value = Decimal(snow_level.numeric_value)
                 new_data = models.W24Data(
                     id_w24=new,
                     id_allertamento=areeAllertamento_dict[
@@ -785,7 +807,7 @@ class W24View(viewsets.ModelViewSet):
                         snow_level.id_time_layouts.id_time_layouts
                     ],
                     id_parametro=parametro_dict[snow_level.id_parametro.id_parametro],
-                    numeric_value=snow_level.numeric_value,
+                    numeric_value=snow_level_numeric_value,
                 )
                 new_data.save()
 
@@ -858,24 +880,32 @@ class W24View(viewsets.ModelViewSet):
                             .filter(id_time_layouts=tl6h)
                             .get()
                         )
+                        if pluv.numeric_value is None:
+                            pluv_numeric_value = Decimal(0)
+                        else:
+                            pluv_numeric_value = Decimal(pluv.numeric_value)
 
                         snow_level = (
                             snow_levels.filter(id_allertamento=area)
                             .filter(id_time_layouts=tl6h)
                             .get()
                         )
+                        if snow_level.numeric_value is None:
+                            snow_level_numeric_value = Decimal(0)
+                        else:
+                            snow_level_numeric_value = Decimal(snow_level.numeric_value)
 
-                        if snow_level.numeric_value < 400:
-                            summedie[tl24h]["400"] += pluv.numeric_value
+                        if snow_level_numeric_value < 400:
+                            summedie[tl24h]["400"] += pluv_numeric_value
 
-                        if snow_level.numeric_value < 700:
-                            summedie[tl24h]["700"] += pluv.numeric_value
+                        if snow_level_numeric_value < 700:
+                            summedie[tl24h]["700"] += pluv_numeric_value
 
-                        if snow_level.numeric_value < 1000:
-                            summedie[tl24h]["1000"] += pluv.numeric_value
+                        if snow_level_numeric_value < 1000:
+                            summedie[tl24h]["1000"] += pluv_numeric_value
 
-                        if snow_level.numeric_value < 2000:
-                            summedie[tl24h]["2000"] += pluv.numeric_value
+                        if snow_level_numeric_value < 2000:
+                            summedie[tl24h]["2000"] += pluv_numeric_value
 
                     for mt in snow_meters:
                         if zone_has_snow["SNOW_" + str(mt)][
@@ -956,7 +986,7 @@ class W24View(viewsets.ModelViewSet):
 
         for area in Aree:
             for tlday in classes_tl:
-                max = 0  # type: ignore
+                value_max = Decimal(0.0)
 
                 value400 = (
                     snow_400.filter(id_allertamento=area)
@@ -985,8 +1015,8 @@ class W24View(viewsets.ModelViewSet):
 
                 v = [value400, value700, value1000, value2000]
                 for value in v:
-                    if max < value:
-                        max = value
+                    if value_max < value:
+                        value_max = value
 
                 aggregazione = 0
                 if tlday == "48":
@@ -1010,13 +1040,13 @@ class W24View(viewsets.ModelViewSet):
                 soglia32 = areasoglie.filter(classe_intensita="3").get().soglia2
 
                 valore_classe = 0
-                if max >= soglia01 and max <= soglia02:
+                if value_max >= soglia01 and value_max <= soglia02:
                     valore_classe = 0
-                if max >= soglia11 and max <= soglia12:
+                if value_max >= soglia11 and value_max <= soglia12:
                     valore_classe = 1
-                if max >= soglia21 and max <= soglia22:
+                if value_max >= soglia21 and value_max <= soglia22:
                     valore_classe = 2
-                if max >= soglia31 and max <= soglia32:
+                if value_max >= soglia31 and value_max <= soglia32:
                     valore_classe = 3
 
                 new_data = models.W24Data(
@@ -1164,18 +1194,18 @@ class W24View(viewsets.ModelViewSet):
 
         aggregazione = models.Aggregazione.objects.all()
         aggregazione_dict = {}
-        for m in aggregazione:
-            aggregazione_dict[str(m.id_aggregazione)] = m
+        for mm in aggregazione:
+            aggregazione_dict[str(mm.id_aggregazione)] = mm
 
         time_layouts = models.TimeLayouts.objects.all()
         time_layouts_dict = {}
-        for m in time_layouts:
-            time_layouts_dict[m.id_time_layouts] = m
+        for mmm in time_layouts:
+            time_layouts_dict[mmm.id_time_layouts] = mmm
 
         parametro = models.Parametro.objects.all().select_related("id_unita_misura")
         parametro_dict = {}
-        for m in parametro:
-            parametro_dict[m.id_parametro] = m
+        for mmmm in parametro:
+            parametro_dict[mmmm.id_parametro] = mmmm
 
         start = today.replace(hour=12, minute=0, second=0, microsecond=0)
         vig_time_layouts = [48, 66, 83]
@@ -1298,21 +1328,6 @@ class ForecastZoneView(viewsets.ModelViewSet):
     serializer_class = ForecastZoneSerializer
     filterset_class = MyFilter
     permission_classes = [ReadOnly]
-
-
-def add_icons(sky_condition):
-    queryset = models.SkyCondition.objects.all()
-    mapping = {}
-    for sc in queryset:
-        mapping[sc.id_sky_condition] = {
-            "description_ita": sc.description_ita,
-            "icon": sc.sky_condition,
-        }
-    for sc in sky_condition:
-        nv = int(float(sc["numeric_value"]))
-        sc1 = mapping[nv]
-        sc["description_ita"] = sc1["description_ita"]
-        sc["icon"] = sc1["icon"]
 
 
 class W24SoglieView(viewsets.ModelViewSet):

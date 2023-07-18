@@ -58,8 +58,6 @@ if "DATABASE_HOST" in env:
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#root-urlconf
 ROOT_URLCONF = "config.urls"
-# https://docs.djangoproject.com/en/dev/ref/settings/#wsgi-application
-WSGI_APPLICATION = "config.wsgi.application"
 
 # APPS
 # ------------------------------------------------------------------------------
@@ -90,6 +88,7 @@ LOCAL_APPS = [
     "w16.back.apps.ApiConfig",
     "w23.back.apps.ApiConfig",
     "w24.back.apps.ApiConfig",
+    "w26.back.apps.ApiConfig",
     "w29.back.apps.ApiConfig",
     "w22.back.apps.ApiConfig",
     "w30.back.apps.ApiConfig",
@@ -266,6 +265,7 @@ TEMPLATES = [
             str(ROOT_DIR / "w29" / "templates"),
             str(ROOT_DIR / "w22" / "templates"),
             str(ROOT_DIR / "w24" / "templates"),
+            str(ROOT_DIR / "w26" / "templates"),
             str(ROOT_DIR / "w30" / "templates"),
             str(ROOT_DIR / "w22verifica" / "templates"),
             str(ROOT_DIR / "w31" / "templates"),

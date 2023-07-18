@@ -17,6 +17,9 @@
         <th scope="col">
           Livello
         </th>
+        <th scope="col">
+          Foehn
+        </th>
       </tr>
     </thead>
     <tbody>
@@ -51,6 +54,23 @@
             </option>
           </select>
         </td>
+        <td>
+          <select
+            class="form-select"
+            aria-label="Default select example"
+            :disabled="readonly"
+            :value="area.wind"
+            @change="setValue(area, $event.target.value)"
+          >
+            <option
+              v-for="livello in vento"
+              :key="livello.wind"
+              :value="livello.wind"
+            >
+              {{ livello.wind }}
+            </option>
+          </select>
+        </td>
       </tr>
     </tbody>
   </table>
@@ -67,6 +87,10 @@ export default {
     livelli: {
       type: Array,
       default: () => []
+    },
+    vento: {
+      type: Array,
+      default: () => [{"wind":"N"},{"wind":"S"}]
     },
     readonly: {
       type: Boolean,
@@ -85,7 +109,8 @@ export default {
   },
   methods: {
     setValue(area, value) {
-      // console.log(`setValue(${area}, ${value})`)
+      console.log(`setValue(${area}, ${value})`)
+      console.log(area)
       this.$emit('saveW31Data', area, value)
     },
   }

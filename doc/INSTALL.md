@@ -44,7 +44,7 @@ The docker set-up is preferred.
 
 macOS 10.13 (High Sierra): install Docker Desktop for Mac from https://docker.com (make sure Docker Desktop is running !)
 
-Debian 11 (bullseye):
+Debian 12 (bookworm):
 
 ```sh
 sudo apt install docker.io docker-compose
@@ -60,11 +60,11 @@ Windows: install Docker Desktop for Windows (with Linux containers) from: https:
 Pull the dependencies from https://hub.docker.com/ with these commands:
 
 ```sh
-docker.exe pull debian:bullseye-slim
-docker.exe pull postgres:12
-docker.exe pull osixia/openldap:1.5.0
-docker.exe pull node:16
-docker.exe pull nginx
+docker pull debian:bookworm-slim
+docker pull postgres:13.8
+docker pull osixia/openldap:1.5.0
+docker pull node:18
+docker pull nginx
 ```
 
 This should be repeated from time to time to refresh the images.
@@ -175,7 +175,7 @@ While the services are up you can enter the containers and perform different use
 
 ### Back-end
 
-You can install the back-end without docker if your workstation is running the same base operating system that is used for the `deps-base` image: Debian 11 (bullseye). Running on other O.S. may cause the version of some dependencies to differ and therefore cause unexpected problems.
+You can install the back-end without docker if your workstation is running the same base operating system that is used for the `deps-base` image: Debian 12 (bookworm). Running on other O.S. may cause the version of some dependencies to differ and therefore cause unexpected problems.
 
 Install postgresql, Python 3.9 and the dependencies required with:
 ```
@@ -193,7 +193,6 @@ sudo apt install postgresql python3-venv \
     python3-redis \
     python3-slugify \
     python3-tz \
-    python3-werkzeug \
     python3-wheel \
     python3-whitenoise \
     python3-yaml \
@@ -227,7 +226,7 @@ cp .env.example .env
 
 ### Front-end
 
-Install the front-end prerequisites on Debian 11 (bullseye):
+Install the front-end prerequisites on Debian 12 (bookworm):
 
     sudo apt install yarnpkg
 

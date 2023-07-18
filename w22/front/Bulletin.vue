@@ -915,6 +915,46 @@ export default {
     getDateFormatted(rawString, time = true) {
       return api.getDateFormatted(rawString, time)
     },
+    classe_criticita(codice_str){
+      var codice_num = -1
+      switch (codice_str){
+        case "A":
+          codice_num = 0
+          break;
+        case "O":
+          codice_num = 1
+          break;
+        case "M":
+          codice_num = 2
+          break;
+        case "E":
+          codice_num = 3
+          break;
+        default: 
+            console.log('classe_criticita classe non trovata ' + codice_str);
+      }
+      return codice_num
+    },
+    classe_criticita_reverse(codice_num){
+      var codice_str = "X"
+      switch (codice_num){
+        case 0:
+        codice_str = "A"
+          break;
+        case 1:
+        codice_str = "O"
+          break;
+        case 2:
+        codice_str = "M"
+          break;
+        case 3:
+        codice_str = "E"
+          break;
+        default: 
+            console.log('classe_criticita_reverse classe non trovata ' + codice_num);
+      }
+      return codice_str
+    },
     // Metodo generico per salvare i dati delle select di criticita e tendenza
     saveW22DataSelect(newValue,id_w22_data, id_w22_zone, campo) {
       let myW22zone = this.piene.w22data_set.find(w22data => {
@@ -923,7 +963,14 @@ export default {
       myW22zone[campo] = newValue
       const payload = { }
       payload[campo] = newValue
-
+      // confronta se il valore è maggiore di massimo_previsione aggiorna anche massimo_previsione
+      let max = -1
+      if (this.classe_criticita(myW22zone.criticita_attesa) > max) max = this.classe_criticita(myW22zone.criticita_attesa)
+      if (this.classe_criticita(myW22zone.prev_crit12h) > max) max = this.classe_criticita(myW22zone.prev_crit12h)
+      if (this.classe_criticita(myW22zone.prev_crit24h) > max) max = this.classe_criticita(myW22zone.prev_crit24h)
+      if (this.classe_criticita(myW22zone.prev_crit36h) > max) max = this.classe_criticita(myW22zone.prev_crit36h)
+      if (this.classe_criticita(newValue) > max) max = this.classe_criticita(newValue)
+      payload['massimo_previsione'] = this.classe_criticita_reverse(max)
       this.fetchPatch(myW22zone.id_w22_data, 'data', payload).then((response) => {
         if (!response.ok) {
           this.$toast.open(

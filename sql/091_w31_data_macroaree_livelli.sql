@@ -146,7 +146,8 @@ ALTER TABLE ONLY public.w31_data_macroaree_livelli
 ALTER TABLE ONLY public.w31_data_macroaree_livelli
     ADD CONSTRAINT w31_data_macroaree_livelli_id_w31_7f4d3f93_fk_w31_id_w31 FOREIGN KEY (id_w31) REFERENCES public.w31(id_w31) DEFERRABLE INITIALLY DEFERRED;
 
-
+ALTER TABLE public.w31_data_macroaree_livelli ADD wind character(1);
+ALTER TABLE public.w31_data_macroaree_livelli ALTER column wind set default 'N';
 --
 -- PostgreSQL database dump complete
 --

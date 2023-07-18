@@ -45,24 +45,24 @@ the webapp will then be live at: http://localhost:8080.
 
 Other tools, libraries and components we depend upon:
 
-| Name                          | Our version     | First release | End-of-life       | reference                                                                          |
-|-------------------------------|-----------------|---------------|-------------------|------------------------------------------------------------------------------------|
-| python                        | 3.9 (debian 11) | 2020-10-05    | 2025-10           | https://devguide.python.org/#status-of-python-branches                             |
-| django                        | 4.0.7 (pip)     | 2022-08-03    | 2023-04           | https://www.djangoproject.com/download/#supported-versions                         |
-| djangorestframework           | 3.13.1 (pip)    | 2021-12-15    | ?                 | https://www.django-rest-framework.org/community/release-notes/#deprecation-policy  |
-| djangorestframework_simplejwt | 5.2.0 (pip)     | 2022-05-24    | ?                 | https://github.com/jazzband/djangorestframework-simplejwt/blob/master/CHANGELOG.md |
-| drf-spectacular               | 0.25.1          | 2022-12-16    | =                 | https://github.com/tfranzel/drf-spectacular                                        |
-| postgresql                    | 13.8 (docker)   | 2022-08-11    | current: 14       | https://www.postgresql.org/support/versioning/                                     |
-| node                          | 16 (docker)     | 2021-04-20    | 2024-04-30        | https://nodejs.org/en/about/releases/                                              |
-| babel                         | 7.18.13         | 2022-08-22    | ?                 | https://babeljs.io/docs/en/roadmap#docsNav                                         |
-| bootstrap                     | 5.2.0           | 2022-07-19    | TBD               | https://github.com/twbs/release                                                    |
-| eslint                        | 0.16.16         | 2023-01-08    | ?                 | https://esbuild.github.io/                                                         |
-| typescript                    | 4.7.4           | 2022-06-17    | current: 4.9.4    | https://devblogs.microsoft.com/typescript/announcing-typescript-4-7/               |
-| vee-validate                  | 4.6.6           | 2022-08-16    | ?                 | https://vee-validate.logaretm.com/v4/                                              |
-| vite                          | 4.0.4           | 2023-01-03    | ?                 | https://github.com/vitejs/vite                                                     |
-| vitest                        | 0.27.0          | 2023-01-09    | ?                 | https://github.com/vitest-dev/vitest                                               |
-| vue.js                        | 3.2.37          | 2022-06-06    | ?                 | https://github.com/vuejs/vue/projects/6                                            |
-| vue-router                    | 4.0.14          | 2022-03-10    | ?                 | https://router.vuejs.org                                                           |
+| Name                          | Our version      | First release | End-of-life       | reference                                                                          |
+|-------------------------------|------------------|---------------|-------------------|------------------------------------------------------------------------------------|
+| python                        | 3.11 (debian 12) | 2022-10-24    | 2027-10           | https://devguide.python.org/versions/#supported-versions                           |
+| django                        | 4.1.9 (pip)      | 2023-04-05    | 2024-12           | https://www.djangoproject.com/download/#supported-versions                         |
+| djangorestframework           | 3.14.0 (pip)     | 2022-11-08    | ?                 | https://www.django-rest-framework.org/community/release-notes/#deprecation-policy  |
+| djangorestframework_simplejwt | 5.2.2 (pip)      | 2022-10-20    | ?                 | https://github.com/jazzband/djangorestframework-simplejwt/blob/master/CHANGELOG.md |
+| drf-spectacular               | 0.26.2           | 2023-04-15    | ?                 | https://github.com/tfranzel/drf-spectacular                                        |
+| postgresql                    | 13.8 (docker)    | 2022-08-11    | current: 15       | https://www.postgresql.org/support/versioning/                                     |
+| node                          | 18 (docker)      | 2022-04-19    | 2025-04-30        | https://github.com/nodejs/release#release-schedule                                 |
+| babel                         | 7.18.13          | 2022-08-22    | ?                 | https://babeljs.io/docs/en/roadmap#docsNav                                         |
+| bootstrap                     | 5.3.0            | 2023-05-23    | TBD               | https://github.com/twbs/release                                                    |
+| eslint                        | 0.16.16          | 2023-01-08    | ?                 | https://esbuild.github.io/                                                         |
+| typescript                    | 4.7.4            | 2022-06-17    | current: 4.9.4    | https://devblogs.microsoft.com/typescript/announcing-typescript-4-7/               |
+| vee-validate                  | 4.8.4            | 2023-03-24    | ?                 | https://vee-validate.logaretm.com/v4/                                              |
+| vite                          | 4.0.4            | 2023-01-03    | ?                 | https://github.com/vitejs/vite                                                     |
+| vitest                        | 0.27.0           | 2023-01-09    | ?                 | https://github.com/vitest-dev/vitest                                               |
+| vue.js                        | 3.2.37           | 2022-06-06    | ?                 | https://github.com/vuejs/vue/projects/6                                            |
+| vue-router                    | 4.0.14           | 2022-03-10    | ?                 | https://router.vuejs.org                                                           |
 
 ## Project structure
 

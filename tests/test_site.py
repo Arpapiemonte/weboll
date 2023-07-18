@@ -60,7 +60,7 @@ SITE_URL = os.environ.get("TEST_SITE_URL")
     SITE_URL is None, reason="requires a running instance [$TEST_SITE_URL]"
 )
 class SiteTest(NeedleTestCase):
-    engine_class = "needle.engines.perceptualdiff_engine.Engine"
+    engine_class = "needle.engines.imagemagick_engine.Engine"
     viewport_height = 2048
 
     @classmethod

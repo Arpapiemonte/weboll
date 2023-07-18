@@ -44,10 +44,10 @@ def first_guess(username, start, draft=0):
     start = datetime.datetime.combine(
         start, datetime.datetime.min.time()
     )  # porto start alle 00:00
-    emissione = start.replace(hour=11, minute=00, second=0, microsecond=0)
+    emissione = start.replace(hour=12, minute=00, second=0, microsecond=0)
     next_blt_time = emissione + datetime.timedelta(days=1)
 
-    agl = models.W31AreeGiorniLivelli.objects.all()
+    agls = models.W31AreeGiorniLivelli.objects.all()
 
     parametro_terma = models.Parametro.objects.get(id_parametro="TERMA")
     parametro_igro = models.Parametro.objects.get(id_parametro="IGRO")
@@ -59,11 +59,9 @@ def first_guess(username, start, draft=0):
     parametro_isi = models.Parametro.objects.get(id_parametro="ISI_INDEX")
     parametro_bui = models.Parametro.objects.get(id_parametro="BUI_INDEX")
     parametro_fwi = models.Parametro.objects.get(id_parametro="FWI_INDEX")
-    ffmc, dmc, dc = (
-        None,
-        None,
-        None,
-    )  # avoiding flake8 error "F821 undefined name 'ffmc'" and so on
+    ffmc = ffmc0 = 85.0  # Valore harcodato del giorno prima
+    dmc = dmc0 = 6.0  # Valore harcodato del giorno prima
+    dc = dc0 = 15.0  # Valore harcodato del giorno prima
 
     # today è l'oggi vero
     today = datetime.datetime.today()
@@ -91,9 +89,6 @@ def first_guess(username, start, draft=0):
         .order_by("-last_update")
     )
     if len(olds) == 0:
-        ffmc0 = 85.0  # Valore harcodato del giorno prima
-        dmc0 = 6.0  # Valore harcodato del giorno prima
-        dc0 = 15.0  # Valore harcodato del giorno prima
         microaree = models.W31Microaree.objects.all()
         for microarea in microaree:
             yesterday_fwi[microarea.id_w31_microaree] = {
@@ -110,18 +105,19 @@ def first_guess(username, start, draft=0):
             print("new(): cambio dell'anno imposto il sequenziale a 1")
             new_seq = 1
         else:
-            new_seq = old.seq_num + 1
+            old_seq_num = old.seq_num if old.seq_num is not None else 0
+            new_seq = old_seq_num + 1
         old_data = models.W31DataMicroareeLivelli.objects.filter(
             id_w31=old.id_w31
         )  # 47 records
-        for data in old_data:
+        for od in old_data:
             old_parameters = models.W31DataMicroareeParametri.objects.filter(
-                id_w31_data_microaree_livelli=data.id_w31_data_microaree_livelli
+                id_w31_data_microaree_livelli=od.id_w31_data_microaree_livelli
             )  # 10 records
             ffmc = old_parameters.get(id_parametro=parametro_ffmc).numeric_value
             dmc = old_parameters.get(id_parametro=parametro_dmc).numeric_value
             dc = old_parameters.get(id_parametro=parametro_dc).numeric_value
-            yesterday_fwi[data.id_w31_microaree.id_w31_microaree] = {
+            yesterday_fwi[od.id_w31_microaree.id_w31_microaree] = {
                 "ffmc": ffmc,
                 "dmc": dmc,
                 "dc": dc,
@@ -173,20 +169,20 @@ def first_guess(username, start, draft=0):
         )  # giorno dell'anno + il day_offset (se bisestile si riusa il 365 giorno, hanno stesse soglie)
 
         # prendo la microarea del mio record
-        ma = record.id_w31_microaree
+        mi = record.id_w31_microaree
         # filtro la tabella AreeGiorniLivelli per i due parametri che ho per ridurla
-        agl_filtrata = agl.filter(
-            id_w31_giorni=giorno, id_w31_microaree=ma.id_w31_microaree
+        agls_filtrati = agls.filter(
+            id_w31_giorni=giorno, id_w31_microaree=mi.id_w31_microaree
         ).order_by("soglia_superiore")
 
         # ciclo queryset per confronto soglie e fwi
         livello = None
-        for i in agl_filtrata:
-            soglia_superiore = i.soglia_superiore
+        for agl in agls_filtrati:
+            soglia_superiore = agl.soglia_superiore
             if (
                 fwi <= soglia_superiore
             ):  # se fwi è più piccolo della soglia, essendo ordinate ho il livello e posso uscire dal loop
-                livello = i.id_w31_livelli
+                livello = agl.id_w31_livelli
                 break
             else:
                 pass
@@ -202,7 +198,7 @@ def first_guess(username, start, draft=0):
         # inserisco valori nella tabella data_microaree_livelli
         new_data_microaree_livelli = models.W31DataMicroareeLivelli(
             id_w31=new_w31,
-            id_w31_microaree=ma,
+            id_w31_microaree=mi,
             id_w31_livelli=livello,
             id_time_layouts=tl_instance,
         )
@@ -297,12 +293,11 @@ def first_guess(username, start, draft=0):
     dml = models.W31DataMicroareeLivelli.objects.all()
 
     # prendere solo colonna id_time_layouts da rolling
-    tl = rolling.order_by("id_time_layouts").distinct("id_time_layouts")
+    tls = rolling.order_by("id_time_layouts").distinct("id_time_layouts")
 
-    for record in Ma:
-
+    for ma in Ma:
         aree_giuste = mMa.filter(
-            id_w31_macroaree=record.id_w31_macroaree
+            id_w31_macroaree=ma.id_w31_macroaree
         )  # (è un QuerySet) prendere l'elenco delle microaree contenute nelle macroaree corrente
 
         aree_aggiustate = [
@@ -315,9 +310,8 @@ def first_guess(username, start, draft=0):
                 x.ettari_forestali
             )  # lista py dei valori degli ettari delle micro per una macro
 
-        for i in tl:
-
-            corrected_id_time_layout = i.id_time_layouts + 17 * days_offset
+        for tl in tls:
+            corrected_id_time_layout = tl.id_time_layouts + 17 * days_offset
 
             temp = dml.filter(
                 id_time_layouts_id=corrected_id_time_layout,
@@ -333,7 +327,7 @@ def first_guess(username, start, draft=0):
             # fare la somma tra i prodotti di ciascun numero per il corrispondente peso,
             # poi dividere per la somma dei pesi
 
-            somma_prodotti = 0
+            somma_prodotti = 0.0
             for q in range(len(lista_ettari_forestali)):
                 somma_prodotti = (
                     somma_prodotti + lvl[q].id_w31_livelli * lista_ettari_forestali[q]
@@ -352,9 +346,10 @@ def first_guess(username, start, draft=0):
 
             new_data_macroaree_livelli = models.W31DataMacroareeLivelli(
                 id_w31=new_w31,
-                id_w31_macroaree=record,  # record è già l'id della macroarea
+                id_w31_macroaree=ma,  # ma è già l'id della macroarea
                 id_w31_livelli=livello,
                 id_time_layouts=tl_instance,
+                wind="N",
             )
             new_data_macroaree_livelli.save()
 
@@ -447,7 +442,8 @@ class W31View(viewsets.ModelViewSet):
         old.status = "2"
         old_id_w31 = old.id_w31
         old.save()
-        new_seq = int(old.seq_num) + 1
+        old_seq_num = old.seq_num if old.seq_num is not None else 0
+        new_seq = old_seq_num + 1
         # anno = int(old.seq_num)
         new = old
         new.pk = None  # resetta la chiave primaria rendendolo un nuovo record
@@ -459,36 +455,36 @@ class W31View(viewsets.ModelViewSet):
         new.save()
         # Dati MicroAree
         old_dataMiL = models.W31DataMicroareeLivelli.objects.filter(id_w31=old_id_w31)
-        for data in old_dataMiL:
-            data_id_w31_data_microaree_livelli = data.id_w31_data_microaree_livelli
-            new_data = data
-            new_data.pk = None  # resetta la chiave primaria rendendolo un nuovo record
-            new_data.id_w31 = new
-            new_data.save()
+        for odmil in old_dataMiL:
+            data_id_w31_data_microaree_livelli = odmil.id_w31_data_microaree_livelli
+            ndmil = odmil
+            ndmil.pk = None  # resetta la chiave primaria rendendolo un nuovo record
+            ndmil.id_w31 = new
+            ndmil.save()
             old_dataMiP = models.W31DataMicroareeParametri.objects.filter(
                 id_w31_data_microaree_livelli=data_id_w31_data_microaree_livelli
             )
-            for data1 in old_dataMiP:
-                new_data1 = data1
-                new_data1.pk = None
-                new_data1.id_w31_data_microaree_livelli = new_data
-                new_data1.save()
+            for odmip in old_dataMiP:
+                ndmip = odmip
+                ndmip.pk = None
+                ndmip.id_w31_data_microaree_livelli = ndmil
+                ndmip.save()
         # Dati MacroAree
         old_dataMaL = models.W31DataMacroareeLivelli.objects.filter(id_w31=old_id_w31)
-        for data in old_dataMaL:
-            data_id_w31_data_macroaree_livelli = data.id_w31_data_macroaree_livelli
-            new_data = data
-            new_data.pk = None  # resetta la chiave primaria rendendolo un nuovo record
-            new_data.id_w31 = new
-            new_data.save()
+        for odmal in old_dataMaL:
+            data_id_w31_data_macroaree_livelli = odmal.id_w31_data_macroaree_livelli
+            ndmal = odmal
+            ndmal.pk = None  # resetta la chiave primaria rendendolo un nuovo record
+            ndmal.id_w31 = new
+            ndmal.save()
             old_dataMaP = models.W31DataMacroareeParametri.objects.filter(
                 id_w31_data_macroaree_livelli=data_id_w31_data_macroaree_livelli
             )
-            for data1 in old_dataMaP:
-                new_data1 = data1
-                new_data1.pk = None
-                new_data1.id_w31_data_macroaree_livelli = new_data
-                new_data1.save()
+            for odmap in old_dataMaP:
+                ndmap = odmap
+                ndmap.pk = None
+                ndmap.id_w31_data_macroaree_livelli = ndmal
+                ndmap.save()
         return Response({"id_w31": new.id_w31})
 
     @action(detail=True, permission_classes=[permissions.IsAuthenticated])
@@ -589,8 +585,7 @@ class IncendiSVGView(TemplateView):
     http_method_names = ["get"]
 
     def get_context_data(self, **kwargs):
-        queryset = models.W31.objects
-        w31 = get_object_or_404(queryset, pk=kwargs["pk"])
+        w31 = get_object_or_404(models.W31.objects, pk=kwargs["pk"])
         serializer = W31SerializerFull(w31)
         incendi = serializer.data
 
@@ -599,14 +594,14 @@ class IncendiSVGView(TemplateView):
 
         inputs = {}
 
-        queryset = models.W31MacroareeInput.objects.filter(
+        mais = models.W31MacroareeInput.objects.filter(
             data__range=(start, end)
         ).order_by("id_w31_macroaree__ordine_bollettino", "data")
-        for i in queryset:
-            serializer = W31MacroareeInputSerializer(i)
-            inputs[i] = serializer.data
+        for mai in mais:
+            serializer = W31MacroareeInputSerializer(mai)
+            inputs[mai] = serializer.data
 
-        tabella_inputs = {}
+        tabella_inputs = {}  # type: ignore
 
         for i in inputs:
             key = i.id_w31_macroaree.nome
@@ -617,17 +612,16 @@ class IncendiSVGView(TemplateView):
             tabella_inputs[key].append(i.ws)
             tabella_inputs[key].append(i.rh)
             tabella_inputs[key].append(i.deltat)
-
         convert_to_datetime(incendi, "next_blt_time")
         convert_to_datetime(incendi, "start_valid_time")
 
-        tabella_incendi = {}
+        tabella_incendi = {}  # type: ignore
 
-        for i in incendi["w31datamacroareelivelli_set"]:
-            key = i["id_w31_macroaree"]["nome"]
+        for dmal in incendi["w31datamacroareelivelli_set"]:
+            key = dmal["id_w31_macroaree"]["nome"]
             if key not in tabella_incendi:
                 tabella_incendi[key] = []
-            tabella_incendi[key].append(i["id_w31_livelli"])
+            tabella_incendi[key].append(dmal["id_w31_livelli"])
 
         # sort tabella by ordine_bollettino
         ordine_bollettino = models.W31Macroaree.objects.values_list(
@@ -656,9 +650,9 @@ class IncendiSVGView(TemplateView):
         # prendo colori livelli dal db
         livelli = {}
         queryset = models.W31Livelli.objects.all()
-        for i in queryset:
-            serializer = W31LivelliSerializer(i)
-            livelli[i] = serializer.data
+        for liv in queryset:
+            serializer = W31LivelliSerializer(liv)
+            livelli[liv] = serializer.data
 
         context = {
             "inputs": inputs,

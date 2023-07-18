@@ -2487,7 +2487,7 @@
              y="171.40656">3</tspan></text>
       </g>
       <!--Header2-->
-      {% include "header.svg" with title='Bollettino Ozono' seqNum=ozono.seq_num startValidTime=ozono.start_valid_time nextUpdate=ozono.next_blt_time validity=ozono.validity logo=ozono.logo%}
+      {% include "header.svg" with title='Bollettino Ozono' seqNum=ozono.seq_num startValidTime=ozono.start_valid_time nextUpdate=ozono.next_blt_time validity=ozono.validity logo=ozono.logo %}
       <text
        style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.175px;font-family:'Titillium Web';-inkscape-font-specification:TitilliumWeb-Bold;writing-mode:lr-tb;fill:#2e9d53;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text708"

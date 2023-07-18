@@ -378,7 +378,7 @@
             :readonly="readonly"
             :data-emissione="previsione.Bollettino.data_emissione"
             @setmeasure-freeze-snow="setmeasureFreezeSnow"
-            @copy-scadenza-f-s="copyScadenzaFreezeSnow"
+            @copy-scadenza-freeze-snow="copyScadenzaFreezeSnow"
             @change-model="changeModel"
             @toggle-view="toggleView"
           />
@@ -487,7 +487,10 @@ export default {
     modelToCopy: {
       handler () {
         if(this.modelToCopy !== "Copia Valori Modello:"){
-          this.copyModel(this.modelToCopy)
+          if (confirm('Copia valori modello sovrascriverà i valori già inseriti.Vuoi continuare?')) {
+              this.copyModel(this.modelToCopy)
+              
+          }
           this.modelToCopy = "Copia Valori Modello:"
         }
       }

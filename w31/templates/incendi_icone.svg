@@ -26,3 +26,7 @@ height="6" width="6"/>
 <img src="http://localhost:8000/static/images/icons/vento_forte.svg"
  height="5"/>
 {% endif %}
+{% if vento_classe == 3 %}
+<img src="http://localhost:8000/static/images/icons/vento_fhoen.svg"
+ height="8"/>
+{% endif %}

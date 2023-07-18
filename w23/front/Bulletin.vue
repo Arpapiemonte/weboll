@@ -69,6 +69,32 @@
         </button>
         <a
           class="btn btn-outline-primary"
+          :href="'/api/w23/png/' + allerta.id_w23"
+          target="_blank"
+          role="button"
+        >
+          <img
+            src="~bootstrap-icons/icons/file-earmark-image.svg"
+            alt="PDF icon"
+            width="18"
+            height="18"
+          > PNG
+        </a>
+        <a
+          class="btn btn-outline-primary"
+          :href="'/api/w23/rupar_png/' + allerta.id_w23"
+          target="_blank"
+          role="button"
+        >
+          <img
+            src="~bootstrap-icons/icons/file-earmark-image.svg"
+            alt="PDF icon"
+            width="18"
+            height="18"
+          > RUPAR
+        </a>
+        <a
+          class="btn btn-outline-primary"
           :href="'/api/w23/pdf/' + allerta.id_w23"
           target="_blank"
           role="button"
@@ -341,7 +367,7 @@
               aria-controls="pills-frase_risknat"
               aria-selected="false"
             >
-              Frase Risknat
+              Frase sito Arpa
             </button>
           </li>
           <li
@@ -445,7 +471,7 @@
             aria-labelledby="pills-bollettino_emesso-tab"
           >
             <div class="row">
-              <div class="col-xl-8 col-md-12 mb-3">
+              <div class="col-xl-10 col-md-12 mb-3">
                 <nav
                   class="navbar justify-content-center sticky-top bg-light border-bottom"
                   style="top: 88px;"
@@ -524,7 +550,7 @@
                   />
                 </div> <!-- row -->
               </div>  <!--col-->
-              <div class="col-xl-4 col-md-12 mb-3">
+              <div class="col-xl-2 col-md-12 mb-3">
                 <div
                   class="sticky-top pt-5"
                   style="z-index: 0;"
@@ -591,7 +617,7 @@
             aria-labelledby="pills-frase_risknat-tab"
           >
             <div class="col-md-12 mb-3">
-              <h3>Frase risknat</h3>
+              <h3>Frase sito Arpa</h3>
               <textarea
                 id="frase_risknat"
                 v-model="allerta.fraserisknat"
@@ -820,6 +846,9 @@ export default {
         {id:3011, role:1},
         {id:3012, role:1}
       ],
+      125: [{id:45, role:0}, {id:46, role:0}, {id:60, role:0}, {id:61, role:0}, {id:62, role:0}, {id:63, role:0}, {id:77, role:1}, {id:78, role:1}, {id:79, role:1}, {id:80, role:1}],
+      126: [{id:48, role:0}, {id:66, role:0}],
+      127: [{id:66, role:0}],
     }
     return {
       // reactive properties
@@ -1073,38 +1102,71 @@ export default {
     },
     fill_piogge_massime() {
       let piogge_massime = {125: {}, 126: {}, 127: {}}
-      if (this.availability.psa) {
-        let id_parametro = this.rearrange(this.psa.w30data_set, "id_parametro")
-        let pluv = this.rearrange(id_parametro["PLUV"], "id_time_layouts");
-        let time_layouts = {
-          125: [45, 46, 60, 61, 62, 63, 77, 78, 79, 80],
-          126: [48, 66],
-          127: [66]
-        };
-        Object.keys(piogge_massime).forEach(id_aggregazione => {
-          // console.log('========== id_aggregazione =', id_aggregazione)
-          time_layouts[id_aggregazione].forEach(id_time_layouts => {
-            // console.log(`looking at id_time_layouts = ${id_time_layouts}`)
-            if (id_time_layouts in pluv) {
-              // console.log(`PLUV[${id_time_layouts}] = ${JSON.stringify(pluv[id_time_layouts])}`)
-              let value_data = this.rearrange(pluv[id_time_layouts], "id_aggregazione")
-              // console.log(`value_data = ${JSON.stringify(value_data)}`)
-              if (id_aggregazione in value_data) {
-                let aaa = this.rearrange(value_data[id_aggregazione], "id_allertamento")
-                // console.log(`aaa = ${JSON.stringify(aaa)}`)
-                let bbb = Object.entries(aaa).map(item => [item[0], item[1][0].numeric_value])
-                // console.log(`bbb = ${JSON.stringify(bbb)}`)
-                piogge_massime[id_aggregazione][id_time_layouts] = Object.fromEntries(bbb)
-              } else {
-                // console.log(`${id_aggregazione} not found in PLUV[${id_time_layouts}]`)
-                piogge_massime[id_aggregazione][id_time_layouts] = {}
-              }
-            } else {
-              // console.log(`${id_time_layouts} not found in PLUV`)
-              piogge_massime[id_aggregazione][id_time_layouts] = {}
-            }
-          })
+      let time_layouts = Object.fromEntries(Object.keys(this.tls).map(tl => [tl, this.tls[tl].map(tl => tl.id)]))
+      Object.keys(piogge_massime).forEach(id_aggregazione => {
+        time_layouts[id_aggregazione].forEach(id_time_layouts => {
+          piogge_massime[id_aggregazione][id_time_layouts] = {}
         })
+      })
+      if (Object.keys(this.tls).length > 0) {
+        if ((this.allerta.status !== '0' && this.allerta.status !== status_first_time) || this.allerta.data_emissione !== this.today) {
+          // cerca le piogge massime sul w23_data
+          // console.log("fill_piogge_massime: ((this.allerta.status !== '0' && this.allerta.status !== status_first_time) || this.allerta.data_emissione !== this.today)")
+          this.allerta.w23data_set.forEach(zona => {
+            const area = zona.id_w23_zone.nome_zona
+
+            piogge_massime[125][45][area] = zona.pluvmax6h18g0
+            piogge_massime[125][46][area] = zona.pluvmax6h00g1
+            piogge_massime[125][60][area] = zona.pluvmax6h06g1
+            piogge_massime[125][61][area] = zona.pluvmax6h12g1
+            piogge_massime[125][62][area] = zona.pluvmax6h18g1
+            piogge_massime[125][63][area] = zona.pluvmax6h00g2
+            piogge_massime[125][77][area] = zona.pluvmax6h06g2
+            piogge_massime[125][78][area] = zona.pluvmax6h12g2
+            piogge_massime[125][79][area] = zona.pluvmax6h18g2
+            piogge_massime[125][80][area] = zona.pluvmax6h00g3
+
+            piogge_massime[126][48][area] = zona.pluvmax12hd0
+            piogge_massime[126][66][area] = zona.pluvmax12hd1
+
+            piogge_massime[127][66][area] = zona.pluvmax24hd1
+          })
+        }else{
+          if (this.pluv) {
+            // console.log("fill_piogge_massime: this.pluv ok")
+            let id_parametro = this.rearrange(this.psa.w30data_set, "id_parametro")
+            let pluv = this.rearrange(id_parametro["PLUV"], "id_time_layouts");
+            let time_layouts = {
+              125: [45, 46, 60, 61, 62, 63, 77, 78, 79, 80],
+              126: [48, 66],
+              127: [66]
+            };
+            Object.keys(piogge_massime).forEach(id_aggregazione => {
+              // console.log('========== id_aggregazione =', id_aggregazione)
+              time_layouts[id_aggregazione].forEach(id_time_layouts => {
+                // console.log(`looking at id_time_layouts = ${id_time_layouts}`)
+                if (id_time_layouts in pluv) {
+                  // console.log(`PLUV[${id_time_layouts}] = ${JSON.stringify(pluv[id_time_layouts])}`)
+                  let value_data = this.rearrange(pluv[id_time_layouts], "id_aggregazione")
+                  // console.log(`value_data = ${JSON.stringify(value_data)}`)
+                  if (id_aggregazione in value_data) {
+                    let aaa = this.rearrange(value_data[id_aggregazione], "id_allertamento")
+                    // console.log(`aaa = ${JSON.stringify(aaa)}`)
+                    let bbb = Object.entries(aaa).map(item => [item[0], item[1][0].numeric_value])
+                    // console.log(`bbb = ${JSON.stringify(bbb)}`)
+                    piogge_massime[id_aggregazione][id_time_layouts] = Object.fromEntries(bbb)
+                  } else {
+                    // console.log(`${id_aggregazione} not found in PLUV[${id_time_layouts}]`)
+                    piogge_massime[id_aggregazione][id_time_layouts] = {}
+                  }
+                } else {
+                  // console.log(`${id_time_layouts} not found in PLUV`)
+                  piogge_massime[id_aggregazione][id_time_layouts] = {}
+                }
+              })
+            })
+          }
+        }
       }
       this.piogge_massime = piogge_massime
     },
@@ -1362,8 +1424,13 @@ export default {
         }
       } else {
         if ((action === 'send') && 
-          (!this.availability.risk_val_oggi || !this.availability.risk_val_domani || !this.availability.vigilanza) && 
-          !confirm("Vuoi davvero finalizzare? Mancano valanghe o vigilanza"))
+          (!this.availability.vigilanza) && 
+          !confirm("Vuoi davvero finalizzare? Manca vigilanza"))  
+        {
+          return
+        }else if((action === 'send') && 
+          (!this.availability.risk_val_oggi || !this.availability.risk_val_domani) && 
+          !confirm("Vuoi davvero finalizzare? Mancano le valanghe"))
         {
           return
         }
@@ -1511,6 +1578,7 @@ export default {
         stack.push({"id_key":"id_w23_data","id":zona.id_w23_data,"value_key":"pluvmed48h00g2_oss","new_value": this.availability.psa?this.piogge_medie[903][3008][area].toFixed(1): "ND"})
         stack.push({"id_key":"id_w23_data","id":zona.id_w23_data,"value_key":"pluvmed48h06g2_oss","new_value": this.availability.psa?this.piogge_medie[903][3009][area].toFixed(1): "ND"})
 
+        // piogge medie
         stack.push({"id_key":"id_w23_data","id":zona.id_w23_data,"value_key":"pluvmed6h18g0","new_value": this.availability.psa?this.piogge_medie[900][45][area].toFixed(1): "ND"})
         stack.push({"id_key":"id_w23_data","id":zona.id_w23_data,"value_key":"pluvmed6h00g1","new_value": this.availability.psa?this.piogge_medie[900][46][area].toFixed(1): "ND"})
         stack.push({"id_key":"id_w23_data","id":zona.id_w23_data,"value_key":"pluvmed6h06g1","new_value": this.availability.psa?this.piogge_medie[900][60][area].toFixed(1): "ND"})
@@ -1543,6 +1611,23 @@ export default {
         stack.push({"id_key":"id_w23_data","id":zona.id_w23_data,"value_key":"pluvmed48h12g2","new_value": this.availability.psa?this.piogge_medie[903][3010][area].toFixed(1): "ND"})
         stack.push({"id_key":"id_w23_data","id":zona.id_w23_data,"value_key":"pluvmed48h18g2","new_value": this.availability.psa?this.piogge_medie[903][3011][area].toFixed(1): "ND"})
         stack.push({"id_key":"id_w23_data","id":zona.id_w23_data,"value_key":"pluvmed48h00g3","new_value": this.availability.psa?this.piogge_medie[903][3012][area].toFixed(1): "ND"})
+
+        // piogge massime
+        stack.push({"id_key":"id_w23_data","id":zona.id_w23_data,"value_key":"pluvmax6h18g0","new_value": this.availability.psa?this.piogge_massime[125][45][area].toFixed(1): "ND"})
+        stack.push({"id_key":"id_w23_data","id":zona.id_w23_data,"value_key":"pluvmax6h00g1","new_value": this.availability.psa?this.piogge_massime[125][46][area].toFixed(1): "ND"})
+        stack.push({"id_key":"id_w23_data","id":zona.id_w23_data,"value_key":"pluvmax6h06g1","new_value": this.availability.psa?this.piogge_massime[125][60][area].toFixed(1): "ND"})
+        stack.push({"id_key":"id_w23_data","id":zona.id_w23_data,"value_key":"pluvmax6h12g1","new_value": this.availability.psa?this.piogge_massime[125][61][area].toFixed(1): "ND"})
+        stack.push({"id_key":"id_w23_data","id":zona.id_w23_data,"value_key":"pluvmax6h18g1","new_value": this.availability.psa?this.piogge_massime[125][62][area].toFixed(1): "ND"})
+        stack.push({"id_key":"id_w23_data","id":zona.id_w23_data,"value_key":"pluvmax6h00g2","new_value": this.availability.psa?this.piogge_massime[125][63][area].toFixed(1): "ND"})
+        stack.push({"id_key":"id_w23_data","id":zona.id_w23_data,"value_key":"pluvmax6h06g2","new_value": this.availability.psa?this.piogge_massime[125][77][area].toFixed(1): "ND"})
+        stack.push({"id_key":"id_w23_data","id":zona.id_w23_data,"value_key":"pluvmax6h12g2","new_value": this.availability.psa?this.piogge_massime[125][78][area].toFixed(1): "ND"})
+        stack.push({"id_key":"id_w23_data","id":zona.id_w23_data,"value_key":"pluvmax6h18g2","new_value": this.availability.psa?this.piogge_massime[125][79][area].toFixed(1): "ND"})
+        stack.push({"id_key":"id_w23_data","id":zona.id_w23_data,"value_key":"pluvmax6h00g3","new_value": this.availability.psa?this.piogge_massime[125][80][area].toFixed(1): "ND"})
+        
+        stack.push({"id_key":"id_w23_data","id":zona.id_w23_data,"value_key":"pluvmax12hd0","new_value": this.availability.psa?this.piogge_massime[126][48][area].toFixed(1): "ND"})
+        stack.push({"id_key":"id_w23_data","id":zona.id_w23_data,"value_key":"pluvmax12hd1","new_value": this.availability.psa?this.piogge_massime[126][66][area].toFixed(1): "ND"})
+        
+        stack.push({"id_key":"id_w23_data","id":zona.id_w23_data,"value_key":"pluvmax24hd1","new_value": this.availability.psa?this.piogge_massime[127][66][area].toFixed(1): "ND"})
 
         // neve
         zona.neve400_oggi = this.rischio_neve('SNOW_400', 48, area)
@@ -1675,6 +1760,11 @@ export default {
           stack = stack.concat(this.setFirstGuess(zona, 'valanghe_domani', valanghe_domani, copy_over))
         }
       })
+
+      if (this.availability.vigilanza){
+        this.allerta.fraserisknat = this.vigilanza.sintesi_meteo
+        this.saveField('fraserisknat')
+      }
 
       const payloadusername = {"id_key":"id_w23","id":this.allerta.id_w23,"value_key":"username","new_value": store.state.username}
       stack.push(payloadusername)
@@ -1917,8 +2007,8 @@ export default {
       }
       this.fill_neve()
       this.fill_risk_storm()
-      this.fill_piogge_massime()
       this.fill_pluv()
+      this.fill_piogge_massime()
       this.fill_piogge_medie()
       this.fill_colore_risk_storm_oggi()
       this.fill_colore_risk_storm_domani()

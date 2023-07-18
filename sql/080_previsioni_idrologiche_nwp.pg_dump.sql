@@ -58,6 +58,7 @@ MC	modello Mike Customized 2016	2016-05-10 09:35:32.113487
 MK	modello Mike Customized 2020	2020-09-29 12:00:04.139144
 MY	modello Mike Hydro magre 2020	2020-10-23 09:29:48.639596
 MH	modello Mike Hydro magre 2016	2020-10-23 09:30:07.231674
+MX	modello Mike Customized 2023	2023-03-09 12:16:43.989496
 \.
 
 

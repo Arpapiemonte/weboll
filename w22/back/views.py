@@ -65,8 +65,8 @@ class W22View(viewsets.ModelViewSet):
     pagination_class = StandardResultsSetPagination
 
     def list(self, request, *args, **kwargs):
-        month = self.request.query_params.get("month", "all")
-        year = self.request.query_params.get("year", "all")
+        month = request.query_params.get("month", "all")
+        year = request.query_params.get("year", "all")
         if month != "all":
             queryset = (
                 self.get_queryset()
@@ -238,10 +238,14 @@ class W22View(viewsets.ModelViewSet):
             secondi = datetime.datetime.strptime(
                 str(nwp.dataora), "%Y-%m-%d %H:%M:%S"
             ).strftime("%s")
+            if nwp.id_parametro is not None:
+                idp = nwp.id_parametro[0:4]
+            else:
+                idp = "XXXX"
             nwps_dict[
                 str(nwp.codice)
                 + "#"
-                + str(nwp.id_parametro[0:4])
+                + idp
                 + "#"
                 + str(nwp.dataora)
                 + "#"
@@ -301,13 +305,15 @@ class W22View(viewsets.ModelViewSet):
                 str(w22_data_config[w]["id_w22_zone"])
             ].id_parametro
             codice = codice_istat_comune + progr_punto_com
-
+            if id_parametro is not None:
+                idp = id_parametro[0:4]
+            else:
+                idp = "XXXX"
             # inizio ricerca massimi in 12 24 e 36 da modello
             dati_staz = dict(
                 filter(
                     lambda val: (
-                        val[0].split("#")[0] == codice
-                        and val[0].split("#")[1] == id_parametro[0:4]
+                        val[0].split("#")[0] == codice and val[0].split("#")[1] == idp
                     ),
                     nwps_dict.items(),
                 )
@@ -343,15 +349,17 @@ class W22View(viewsets.ModelViewSet):
             # ricerco il valore e la data nei massimi storici
             dati_staz = dict(
                 filter(
-                    lambda val: (
+                    lambda val: (  # type: ignore
                         val[0].split("#")[0] == codice_istat_comune
                         and val[0].split("#")[1] == progr_punto_com
-                        and val[0].split("#")[2] == id_parametro[0:4]
+                        and val[0].split("#")[2] == idp
                     ),
                     mstis_dict.items(),
                 )
             )
             # fine ricerco il valore e la data nei massimi storici
+            massimo_valore = "n.d."
+            massimo_data = None
             if len(dati_staz) > 0:
                 # ordinamento dei dati in base alla data
                 dati_staz_sorted = sorted(
@@ -360,18 +368,15 @@ class W22View(viewsets.ModelViewSet):
                     reverse=True,
                 )
                 # asseganzione dei valori
-                massimo_valore = dati_staz_sorted[0][1]
+                massimo_valore = str(dati_staz_sorted[0][1])
                 massimo_data = dati_staz_sorted[0][0].split("#")[3]
-            else:
-                massimo_valore = "n.d."
-                massimo_data = None
             # ricerca delle tre soglie idrometriche
             dati_staz = dict(
                 filter(
                     lambda val: (  # type: ignore
                         val[0].split("#")[0] == codice_istat_comune
                         and val[0].split("#")[1] == progr_punto_com
-                        and val[0].split("#")[2] == id_parametro[0:4]
+                        and val[0].split("#")[2] == idp
                     ),
                     sogls_dict.items(),
                 )
@@ -379,17 +384,26 @@ class W22View(viewsets.ModelViewSet):
             # fine ricerco delle tre soglie idrometriche
             if len(dati_staz) > 0:
                 # asseganzione dei valori
-                liv_1 = float(list(dati_staz)[0].split("#")[3])
-                liv_2 = float(list(dati_staz)[0].split("#")[4])
-                liv_3 = float(list(dati_staz)[0].split("#")[5])
+                if list(dati_staz)[0].split("#")[3] == "None":
+                    liv_1 = "n.d."
+                else:
+                    liv_1 = float(list(dati_staz)[0].split("#")[3])  # type: ignore
+                if list(dati_staz)[0].split("#")[4] == "None":
+                    liv_2 = "n.d."
+                else:
+                    liv_2 = float(list(dati_staz)[0].split("#")[4])  # type: ignore
+                if list(dati_staz)[0].split("#")[5] == "None":
+                    liv_3 = "n.d."
+                else:
+                    liv_3 = float(list(dati_staz)[0].split("#")[5])  # type: ignore
             else:
-                liv_1 = "n.d."  # type: ignore
-                liv_2 = "n.d."  # type: ignore
-                liv_3 = "n.d."  # type: ignore
+                liv_1 = "n.d."
+                liv_2 = "n.d."
+                liv_3 = "n.d."
             # ricerco i valori di portata attuale e di 6 ore prima in meteorealtime
             dati_staz = dict(
                 filter(
-                    lambda val: (
+                    lambda val: (  # type: ignore
                         val[0].split("#")[0] == codice_istat_comune
                         and val[0].split("#")[1] == progr_punto_com
                         and val[0].split("#")[2] == id_parametro
@@ -398,6 +412,8 @@ class W22View(viewsets.ModelViewSet):
                 )
             )
             # fine ricerco i valori di portata attuale e di 6 ore prima in meteorealtime
+            portata = "n.d."
+            portata_6 = "n.d."
             if len(dati_staz) > 0:
                 # ordinamento dei dati in base a data e ora
                 dati_staz_sorted = sorted(
@@ -406,13 +422,10 @@ class W22View(viewsets.ModelViewSet):
                     reverse=True,
                 )
                 # assegnazione dei valori alle variabili
-                portata = dati_staz_sorted[0][1]
-                portata_6 = dati_staz_sorted[6][1]
-            else:
-                portata = None
-                portata_6 = None
+                portata = str(dati_staz_sorted[0][1])
+                portata_6 = str(dati_staz_sorted[6][1])
             # formattazione dati
-            if portata is None or portata_6 is None:
+            if portata == "None" or portata_6 == "None":
                 portata = "n.d."
                 portata_6 = "n.d."
                 tendenza6hprecedenti = "stazionario"
@@ -422,12 +435,20 @@ class W22View(viewsets.ModelViewSet):
                 or zone_dict[str(w22_data_config[w]["id_w22_zone"])].id_parametro
                 == "PORT_FIU"
             ):
-                if portata != 0 and portata_6 != 0:
+                portata_float = 0.0
+                if portata != "n.d.":
+                    portata_float = float(portata)
+                portata_6_float = 0.0
+                if portata_6 != "n.d.":
+                    portata_6_float = float(portata_6)
+                if portata_float > 0 and portata_6_float > 0:
                     obs = (float(portata) - float(portata_6)) / float(portata_6)
                 else:
                     obs = 0
-                portata = round(portata)
-                portata_6 = round(portata_6)
+                if portata_float > 0:
+                    portata = str(round(float(portata)))
+                if portata_6_float > 0:
+                    portata_6 = str(round(float(portata_6)))
                 if obs < -0.1:
                     tendenza6hprecedenti = "diminuzione"
                 elif obs >= -0.1 and obs <= 0.1:
@@ -435,22 +456,29 @@ class W22View(viewsets.ModelViewSet):
                 elif obs >= 0.1:
                     tendenza6hprecedenti = "crescita"
             else:
-                if portata != 0 and portata_6 != 0:
+                portata_float = 0.0
+                if portata != "n.d.":
+                    portata_float = float(portata)
+                portata_6_float = 0.0
+                if portata_6 != "n.d.":
+                    portata_6_float = float(portata_6)
+                if portata_float > 0 and portata_6_float > 0:
                     obs = (float(portata) - float(portata_6)) / float(portata_6)
                 else:
                     obs = 0
-                portata = round(portata, 2)
-                portata_6 = round(portata_6, 2)
+                if portata_float > 0:
+                    portata = str(round(float(portata), 2))
+                if portata_6_float > 0:
+                    portata_6 = str(round(float(portata_6), 2))
                 if obs < -0.1:
                     tendenza6hprecedenti = "diminuzione"
                 elif obs >= -0.1 and obs <= 0.1:
                     tendenza6hprecedenti = "stazionario"
                 elif obs >= 0.1:
                     tendenza6hprecedenti = "crescita"
-            if liv_1 == "n.d." or liv_2 == "n.d." or liv_3 == "n.d.":
-                liv_1 = "n.d."  # type: ignore
-                liv_2 = "n.d."  # type: ignore
-                liv_3 = "n.d."  # type: ignore
+
+            if liv_1 == "n.d.":
+                liv_1 = "n.d."
             elif (
                 zone_dict[str(w22_data_config[w]["id_w22_zone"])].id_parametro
                 == "PORTATA"
@@ -458,37 +486,86 @@ class W22View(viewsets.ModelViewSet):
                 == "PORT_FIU"
             ):
                 liv_1 = round(liv_1)  # type: ignore
+                if massimo_valore == "n.d.":
+                    massimo_valore = "n.d."
+                else:
+                    massimo_valore = str(round(float(massimo_valore)))
+            else:
+                liv_1 = round(liv_1, 2)  # type: ignore
+                massimo_valore = str(round(float(massimo_valore), 2))
+            if massimo_data is None:
+                massimo_data = "n.d."
+            # else:
+            #     massimo_data = datetime.datetime.strptime(
+            #         massimo_data, "%Y-%m-%d"
+            #     ).strftime("%d/%m/%Y")
+
+            if liv_2 == "n.d.":
+                liv_2 = "n.d."
+            elif (
+                zone_dict[str(w22_data_config[w]["id_w22_zone"])].id_parametro
+                == "PORTATA"
+                or zone_dict[str(w22_data_config[w]["id_w22_zone"])].id_parametro
+                == "PORT_FIU"
+            ):
                 liv_2 = round(liv_2)  # type: ignore
+                if massimo_valore == "n.d.":
+                    massimo_valore = "n.d."
+                else:
+                    massimo_valore = str(round(float(massimo_valore)))
+            else:
+                liv_2 = round(liv_2, 2)  # type: ignore
+                massimo_valore = str(round(float(massimo_valore), 2))
+            if massimo_data is None:
+                massimo_data = "n.d."
+            # else:
+            #     massimo_data = datetime.datetime.strptime(
+            #         massimo_data, "%Y-%m-%d"
+            #     ).strftime("%d/%m/%Y")
+
+            if liv_3 == "n.d.":
+                liv_3 = "n.d."
+            elif (
+                zone_dict[str(w22_data_config[w]["id_w22_zone"])].id_parametro
+                == "PORTATA"
+                or zone_dict[str(w22_data_config[w]["id_w22_zone"])].id_parametro
+                == "PORT_FIU"
+            ):
                 liv_3 = round(liv_3)  # type: ignore
                 if massimo_valore == "n.d.":
                     massimo_valore = "n.d."
                 else:
-                    massimo_valore = round(massimo_valore)
+                    massimo_valore = str(round(float(massimo_valore)))
             else:
-                liv_1 = round(liv_1, 2)  # type: ignore
-                liv_2 = round(liv_2, 2)  # type: ignore
                 liv_3 = round(liv_3, 2)  # type: ignore
-                massimo_valore = round(massimo_valore, 2)
+                massimo_valore = str(round(float(massimo_valore), 2))
             if massimo_data is None:
                 massimo_data = "n.d."
-            else:
+            # else:
+            #     massimo_data = datetime.datetime.strptime(
+            #         massimo_data, "%Y-%m-%d"
+            #     ).strftime("%d/%m/%Y")
 
-                massimo_data = datetime.datetime.strptime(
-                    massimo_data, "%Y-%m-%d"
-                ).strftime("%d/%m/%Y")
             # Creazione criticità attesa
+            max_critita_attesa = 0
             if portata == "n.d.":
                 criticita_att = "A"
+                max_critita_attesa = 0
             elif liv_1 == "n.d." or liv_2 == "n.d." or liv_3 == "n.d.":
                 criticita_att = "A"
+                max_critita_attesa = 0
             elif float(portata) >= float(liv_3):  # type: ignore
                 criticita_att = "E"
+                max_critita_attesa = 3
             elif float(portata) >= float(liv_1) and float(portata) < float(liv_2):  # type: ignore
                 criticita_att = "O"
+                max_critita_attesa = 1
             elif float(portata) >= float(liv_2) and float(portata) < float(liv_3):  # type: ignore
                 criticita_att = "M"
+                max_critita_attesa = 2
             else:
                 criticita_att = "A"
+                max_critita_attesa = 0
             # fine creazione criticità attesa
             maxvalore12 = float(maxvalore12)
             maxvalore24 = float(maxvalore24)
@@ -499,47 +576,86 @@ class W22View(viewsets.ModelViewSet):
                 maxvalore24 = maxvalore24 - float(190.0)
                 maxvalore36 = maxvalore36 - float(190.0)
             # Creazione criticità 12 h
+            max_critita_12h = 0
             if maxvalore12 == float(0):
                 prev_crit12h = "A"
+                max_critita_12h = 0
             elif liv_1 == "n.d." or liv_2 == "n.d." or liv_3 == "n.d.":
                 prev_crit12h = "A"
+                max_critita_12h = 0
             elif maxvalore12 >= float(liv_3):  # type: ignore
                 prev_crit12h = "E"
+                max_critita_12h = 3
             elif maxvalore12 >= float(liv_1) and maxvalore12 < float(liv_2):  # type: ignore
                 prev_crit12h = "O"
+                max_critita_12h = 1
             elif maxvalore12 >= float(liv_2) and maxvalore12 < float(liv_3):  # type: ignore
                 prev_crit12h = "M"
+                max_critita_12h = 2
             else:
                 prev_crit12h = "A"
+                max_critita_12h = 0
             # fine creazione criticità 12 h
             # Creazione criticità 24 h
+            max_critita_24h = 0
             if maxvalore24 == 0:
                 prev_crit24h = "A"
+                max_critita_24h = 0
             elif liv_1 == "n.d." or liv_2 == "n.d." or liv_3 == "n.d.":
                 prev_crit24h = "A"
+                max_critita_24h = 0
             elif maxvalore24 >= float(liv_3):  # type: ignore
                 prev_crit24h = "E"
+                max_critita_24h = 3
             elif maxvalore24 >= float(liv_1) and maxvalore24 < float(liv_2):  # type: ignore
                 prev_crit24h = "O"
+                max_critita_24h = 1
             elif maxvalore24 >= float(liv_2) and maxvalore24 < float(liv_3):  # type: ignore
                 prev_crit24h = "M"
+                max_critita_24h = 2
             else:
                 prev_crit24h = "A"
+                max_critita_24h = 0
             # fine creazione criticità 24 h
             # Creazione criticità 36 h
+            max_critita_36h = 0
             if maxvalore36 == 0:
                 prev_crit36h = "A"
+                max_critita_36h = 0
             elif liv_1 == "n.d." or liv_2 == "n.d." or liv_3 == "n.d.":
                 prev_crit36h = "A"
+                max_critita_36h = 0
             elif maxvalore36 >= float(liv_3):  # type: ignore
                 prev_crit36h = "E"
+                max_critita_36h = 3
             elif maxvalore36 >= float(liv_1) and maxvalore36 < float(liv_2):  # type: ignore
                 prev_crit36h = "O"
+                max_critita_36h = 1
             elif maxvalore36 >= float(liv_2) and maxvalore36 < float(liv_3):  # type: ignore
                 prev_crit36h = "M"
+                max_critita_36h = 2
             else:
                 prev_crit36h = "A"
+                max_critita_36h = 0
             # fine creazione criticità 36 h
+            massimo_previsione_num = 0
+            if max_critita_attesa > massimo_previsione_num:
+                massimo_previsione_num = max_critita_attesa
+            if max_critita_12h > massimo_previsione_num:
+                massimo_previsione_num = max_critita_12h
+            if max_critita_24h > massimo_previsione_num:
+                massimo_previsione_num = max_critita_24h
+            if max_critita_36h > massimo_previsione_num:
+                massimo_previsione_num = max_critita_36h
+            massimo_previsione = "X"
+            if massimo_previsione_num == 0:
+                massimo_previsione = "A"
+            if massimo_previsione_num == 1:
+                massimo_previsione = "O"
+            if massimo_previsione_num == 2:
+                massimo_previsione = "M"
+            if massimo_previsione_num == 3:
+                massimo_previsione = "E"
             w22_data_new_dict[w22_data_config[w]["id_w22_zone"]] = models.W22Data(
                 id_w22=new,
                 id_w22_zone=zone_dict[str(w22_data_config[w]["id_w22_zone"])],
@@ -553,7 +669,7 @@ class W22View(viewsets.ModelViewSet):
                 prev_crit24h=prev_crit24h,
                 prev_crit36h=prev_crit36h,
                 tend48h=w22_data_config[w]["tend48h"],
-                massimo_previsione=w22_data_config[w]["massimo_previsione"],
+                massimo_previsione=massimo_previsione,
                 data_massimo_storico=massimo_data,
                 valore_massimo_storico=massimo_valore,
             )
@@ -585,10 +701,10 @@ class W22View(viewsets.ModelViewSet):
     def bulk_update(self, request):
         inizio = datetime.datetime.now()
         print("========== POST /w22/bulletins/bulk_update/")
-        print("========== user = ", self.request.user)
-        print("========== request data = ", self.request.data)
+        print("========== user = ", request.user)
+        print("========== request data = ", request.data)
         updated = 0
-        snapshots = self.request.data
+        snapshots = request.data
         id_w22 = snapshots["id_w22"]
         last_update = datetime.datetime.now()
         snapshots["last_update"] = last_update

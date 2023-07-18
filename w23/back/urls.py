@@ -43,4 +43,9 @@ urlpatterns = [
         views.AllertaPngView.as_view(template_name="allerta_rupar.html"),
         name="allerta-rupar-png",
     ),
+    path(
+        "png/<int:pk>",
+        views.AllertaPngOrigView.as_view(template_name="allerta_rupar.html"),
+        name="allerta-png",
+    ),
 ]

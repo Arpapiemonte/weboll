@@ -146,6 +146,7 @@ class W31DataMacroareeLivelli(models.Model):
     id_time_layouts = models.ForeignKey(
         TimeLayouts, models.DO_NOTHING, db_column="id_time_layouts"
     )
+    wind = models.CharField(max_length=1, null=False)
 
     class Meta:
         managed = False

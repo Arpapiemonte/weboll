@@ -33,7 +33,7 @@ describe('login', () => {
     beforeEach(to, undefined, next)
   })
   it('navigates logged-in users to About page', async () => {
-    api.login.mockResolvedValue({access: 'xxx'})
+    api.login = vi.fn().mockResolvedValue({access: 'xxx'})
     await store.login('user', 'pass')
     const next = to => { expect(to).toBeUndefined()}
     const to = {path: '/about'}

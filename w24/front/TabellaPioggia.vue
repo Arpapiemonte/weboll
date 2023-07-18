@@ -33,7 +33,7 @@
         <th
           v-if="!(timelayout === 48 && tipoanomaliat === 'F')"
           scope="col"
-          :colspan="'TERMA' in data && data.TERMA[0].id_time_layouts === 48 ? 1 : 4"
+          :colspan="'TERMA' in data && !(data.TERMA[0].id_time_layouts === 48 && tipoanomaliat === 'F') ? 4 : 1"
           class="text-center"
         >
           Anomalia termica
@@ -82,7 +82,7 @@
         <th scope="col">
           Intensità
         </th>
-        <template v-if="'TERMA' in data && data.TERMA[0].id_time_layouts !== 48">
+        <template v-if="'TERMA' in data && !(data.TERMA[0].id_time_layouts === 48 && tipoanomaliat === 'F')">
           <th scope="col">
             T
           </th>

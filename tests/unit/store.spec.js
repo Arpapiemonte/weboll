@@ -10,7 +10,7 @@ describe('store', () => {
     expect(store.state.access).toBeNull()
   })
   it('saves data on login', async () => {
-    api.login.mockResolvedValue({access: 'xxx'})
+    api.login = vi.fn().mockResolvedValue({access: 'xxx'})
     await store.login('user', 'pass')
     expect(store.state.access).toBe('xxx')
     expect(store.state.username).toBe('user')

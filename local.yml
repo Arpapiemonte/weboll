@@ -62,6 +62,7 @@ services:
       - ./w16:/app/w16
       - ./w23:/app/w23
       - ./w24:/app/w24
+      - ./w26:/app/w26
       - ./w29:/app/w29
       - ./w22:/app/w22
       - ./w30:/app/w30
