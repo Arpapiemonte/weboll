@@ -46,15 +46,35 @@
             <li
               v-for="bulletin in bulletins_list"
               :key="bulletin.id"
-              class="nav-item"
+              class="nav-item dropdown"
             >
-              <router-link
-                v-if="appmode === 'development' ? true : bulletin.readyForProduction"
-                :to="'/' + bulletin.id"
-                class="nav-link"
+              <a
+                :id="`navbarDropdownMenuLink_${bulletin.id}`"  
+                class="nav-link dropdown-toggle" 
+                href="#" 
+                role="button" 
+                data-bs-toggle="dropdown" 
+                aria-expanded="false"
               >
                 {{ bulletin.name }}
-              </router-link>
+              </a>
+              <ul 
+                class="dropdown-menu" 
+                :aria-labelledby="`navbarDropdownMenuLink_${bulletin.id}`"
+              >
+                <li
+                  v-for="bulletin_link in bulletin.my_list"
+                  :key="bulletin_link.id"
+                >
+                  <router-link
+                    v-if="appmode === 'development' ? true : bulletin_link.readyForProduction"
+                    :to="'/' + bulletin_link.id"
+                    class="dropdown-item"
+                  >
+                    {{ bulletin_link.name }}
+                  </router-link>
+                </li>
+              </ul>
             </li>
           </ul>
           <ul class="d-flex navbar-nav">
@@ -119,13 +139,37 @@ const appmode = computed(() => {
   return import.meta.env.MODE
 })
 
-const bulletins_list = window.bulletins_list
+const bulletins_list = computed(() => {
+  let arr = []
+  for (const [key, value] of Object.entries(window.bulletins_list)) {
+    var filteredData = arr.filter(d => d.name === value.menu);
+    if (filteredData.length == 0)
+      arr.push({
+        id: value.menu.trim(),
+        name: `${value.menu}`, 
+        my_list: [{
+          name: `${value.name}`,
+          id: `${value.id}`,
+          readyForProduction: value.readyForProduction
+        }],
+      })
+    else{
+      filteredData[0].my_list.push({ 
+        name: value.name,
+        id: value.id,
+        readyForProduction: value.readyForProduction
+      })
+    }
+  }
+  return arr
+})
 
 onMounted(() => store.load())
 
 function logout() {
   store.logout()
 }
+
 </script>
 
 <style lang="scss">

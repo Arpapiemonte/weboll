@@ -9,6 +9,7 @@ type Bulletin =  {
   id: string,
   name: string,
   readyForProduction: boolean,
+  menu: string,
 }
 
 declare global {

@@ -59,16 +59,23 @@ services:
       - ./public:/app/public
       - ./src:/app/src
       - ./w05:/app/w05
+      - ./w06:/app/w06
+      - ./w07:/app/w07
+      - ./w12:/app/w12
       - ./w16:/app/w16
+      - ./w17:/app/w17
       - ./w23:/app/w23
       - ./w24:/app/w24
       - ./w26:/app/w26
+      - ./w28:/app/w28
       - ./w29:/app/w29
       - ./w22:/app/w22
       - ./w30:/app/w30
       - ./w32:/app/w32
       - ./w22verifica:/app/w22verifica
+      - ./w17verifica:/app/w17verifica
       - ./w31:/app/w31
+      - ./w33:/app/w33
       - ./tests:/app/tests
   ldap:
     image: osixia/openldap:1.5.0

@@ -190,14 +190,14 @@ class W32View(viewsets.ModelViewSet):
         else:
             url += "/defense_qpe.conf"
         print("url......", url)
-        # url = "http://perseo.ad.arpa.piemonte.it/defense_qpe.conf"
+        # url = "http://intranet/defense_qpe.conf"
         urlmbacini = os.getenv("BASE_DATA_URL_FULL", "http://frontend:80")
         if urlmbacini == "http://frontend:80":
             urlmbacini += "/defense/defense_qpe_macrobacini.conf"
         else:
             urlmbacini += "/defense_qpe_macrobacini.conf"
         print("urlmbacini......", urlmbacini)
-        # urlmbacini = "http://perseo.ad.arpa.piemonte.it/defense_qpe_macrobacini.conf"
+        # urlmbacini = "http://intranet/defense_qpe_macrobacini.conf"
         # controllo che il file ci sia
         try:
             with closing(requests.get(url, stream=True)) as r:

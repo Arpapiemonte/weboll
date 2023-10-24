@@ -1,4 +1,4 @@
-{% load date_extras %}
+{% load date_extras_w26 %}
 <g>
 <!--Header LimIni--><image
        xlink:href="http://localhost:8000/static/images/logo_colori.svg"
@@ -62,7 +62,7 @@
          id="tspan580"
          style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Light';text-align:center;text-anchor:middle;stroke-width:0.352778"
          x="23.295902"
-         y="38.397499">{{seqNum}}/{{ startValidTime | year }}</tspan></text>
+         y="38.397499">{{seqNum}}</tspan></text>
     <text
        style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.82222px;font-family:'Titillium Web';-inkscape-font-specification:TitilliumWeb-Bold;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text590"
@@ -80,7 +80,7 @@
          id="tspan592"
          style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Light';text-align:center;text-anchor:middle;stroke-width:0.352778"
          x="50.71458"
-         y="38.397499">{{ startValidTime | my_date_dmY}}</tspan></text>
+         y="38.397499">{{ startValidTime | my_date_dmY }}</tspan></text>
     <text
        style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.82222px;font-family:'Titillium Web';-inkscape-font-specification:TitilliumWeb-Bold;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text602"
@@ -98,7 +98,7 @@
          id="tspan604"
          style="text-align:center;text-anchor:middle;stroke-width:0.352778"
          x="74.122276"
-         y="38.397499">{{ nextUpdate | my_date_dmY}}</tspan></text>
+         y="38.397499">{{ nextUpdate | my_date_dmY }}</tspan></text>
     <text
        style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.82222px;font-family:'Titillium Web';-inkscape-font-specification:TitilliumWeb-Bold;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text614"

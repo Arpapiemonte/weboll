@@ -1,0 +1,44 @@
+{
+    "0": {
+            "coerenza_mattino_nubi": 0,
+            "coerenza_mattino_pioggia": 0,
+            "coerenza_pomeriggio_nubi": 2,
+            "coerenza_pomeriggio_pioggia": 2,
+            "forecast_id": 12,
+            "id_w17_verifica_data":0,
+            "punteggio_nubi": 0,
+            "punteggio_pioggia": 0,
+            "punteggio_relativo": 0,
+            "punteggio_temperatura": 0,
+            "punteggio_vento": 0,
+            "punteggio_zero_quota_neve": 0
+    },
+    "1": {
+            "coerenza_mattino_nubi": 2,
+            "coerenza_mattino_pioggia": 2,
+            "coerenza_pomeriggio_nubi": 2,
+            "coerenza_pomeriggio_pioggia": 2,
+            "forecast_id": 24,
+            "id_w17_verifica_data":1,
+            "punteggio_nubi": 0,
+            "punteggio_pioggia": 0,
+            "punteggio_relativo": 0,
+            "punteggio_temperatura": 0,
+            "punteggio_vento": 0,
+            "punteggio_zero_quota_neve": 0
+    },
+    "2": {
+            "coerenza_mattino_nubi": 2,
+            "coerenza_mattino_pioggia": 2,
+            "coerenza_pomeriggio_nubi": 2,
+            "coerenza_pomeriggio_pioggia": 2,
+            "forecast_id": 48,
+            "id_w17_verifica_data":2,
+            "punteggio_nubi": 0,
+            "punteggio_pioggia": 0,
+            "punteggio_relativo": 0,
+            "punteggio_temperatura": 0,
+            "punteggio_vento": 0,
+            "punteggio_zero_quota_neve": 0
+    }  
+}

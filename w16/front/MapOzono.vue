@@ -107,7 +107,8 @@
 </template>
 
 <script>
-import { Popover, Tooltip } from 'bootstrap'
+import Popover from 'bootstrap/js/dist/popover'
+import Tooltip from 'bootstrap/js/dist/tooltip'
 
 export default {
   name: 'MapOzono',

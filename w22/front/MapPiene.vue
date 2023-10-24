@@ -57,7 +57,8 @@
 </template>
 
 <script>
-import { Popover, Tooltip } from 'bootstrap'
+import Popover from 'bootstrap/js/dist/popover'
+import Tooltip from 'bootstrap/js/dist/tooltip'
 // preso della stessa cartella
 import MapBase from './MapBase.vue'
 

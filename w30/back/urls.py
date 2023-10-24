@@ -33,4 +33,9 @@ urlpatterns = [
         ),
         name="psa-txt",
     ),
+    path(
+        "html/<int:pk>",
+        views.HtmlView.as_view(content_type="text/html"),
+        name="psa-html",
+    ),
 ]

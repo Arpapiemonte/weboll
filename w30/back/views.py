@@ -16,7 +16,6 @@ import requests
 from django.contrib.auth.models import User
 from django.db.transaction import atomic
 from django.shortcuts import get_object_or_404
-from django.views.generic import DetailView
 from django.views.generic.base import TemplateView
 from rest_framework import permissions, viewsets
 from rest_framework.decorators import action
@@ -730,7 +729,7 @@ class W30DataView(viewsets.ModelViewSet):
         )
 
 
-class HtmlView(DetailView):
+class HtmlView(TemplateView):
     template_name = "psa.html"
     http_method_names = ["get"]
     raise_exception = True
@@ -774,6 +773,7 @@ class PreviNAView(TemplateView):
         serializer = W30SerializerFull(w30)
         psa = serializer.data
         psa_rearranged = {}  # type: ignore
+        psa["w30data_set"].sort(key=lambda x: x["id_allertamento"])
         for data in psa["w30data_set"]:
             if data["id_allertamento"] not in psa_rearranged:
                 psa_rearranged[data["id_allertamento"]] = {}

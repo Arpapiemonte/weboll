@@ -42,7 +42,6 @@ def test_fwi():
             wind = wind * 3.6  # from m/s to km/h
 
             if first_day == area:
-
                 fwisystem = FWIClass(temp, rhum, wind, prcp)
 
                 ffmc_calc = fwisystem.FFMCcalc(ffmc0)

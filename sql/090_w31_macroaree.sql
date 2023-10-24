@@ -39,10 +39,10 @@ ALTER TABLE public.w31_macroaree OWNER TO weboll;
 
 COPY public.w31_macroaree (id_w31_macroaree, nome, ordine_bollettino) FROM stdin;
 1	Cuneo SO	4
-2	Nord	1
+2	Piemonte Nord	1
 3	Torino Nord	2
 4	Torino Ovest	3
-5	SudEst	6
+5	Piemonte Sud-Est	6
 6	Cuneo SE	5
 \.
 

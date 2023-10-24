@@ -1,0 +1,320 @@
+{
+    "skycond_to_coptot":    {
+        "1": {
+            "sky_condition_desc": "Tormenta di neve",
+            "cop_tot": 8
+        },
+        "2": {
+            "sky_condition_desc": "Molto nuvoloso",
+            "cop_tot": 7
+        },
+        "3": {
+            "sky_condition_desc": "Cielo sereno",
+            "cop_tot": 0
+        },
+        "4": {
+            "sky_condition_desc": "Nebbia",
+            "cop_tot": 3
+        },
+        "5": {
+            "sky_condition_desc": "Foschia",
+            "cop_tot": 3
+        },
+        "6": {
+            "sky_condition_desc": "Pioggia forte",
+            "cop_tot": 8
+        },
+        "7": {
+            "sky_condition_desc": "Nevicata forte",
+            "cop_tot": 8
+        },
+        "8": {
+            "sky_condition_desc": "Pioggia debole",
+            "cop_tot": 8
+        },
+        "9": {
+            "sky_condition_desc": "Nevicata debole",
+            "cop_tot": 8
+        },
+        "11": {
+            "sky_condition_desc": "Nuvolo",
+            "cop_tot": 5
+        },
+        "12": {
+            "sky_condition_desc": "Non disponibile",
+            "cop_tot": null
+        },
+        "16": {
+            "sky_condition_desc": "Parzialmente nuvoloso",
+            "cop_tot": 3
+        },
+        "17": {
+            "sky_condition_desc": "Pioggia moderata",
+            "cop_tot": 8
+        },
+        "18": {
+            "sky_condition_desc": "Pioggia e neve",
+            "cop_tot": 8
+        },
+        "20": {
+            "sky_condition_desc": "Rovesci",
+            "cop_tot": 5
+        },
+        "21": {
+            "sky_condition_desc": "Nevicata moderata",
+            "cop_tot": 8
+        },
+        "22": {
+            "sky_condition_desc": "Soleggiato",
+            "cop_tot": 1
+        },
+        "23": {
+            "sky_condition_desc": "Temporali",
+            "cop_tot": 8
+        },
+        "24": {
+            "sky_condition_desc": "Instabile",
+            "cop_tot": 6
+        },
+        "25": {
+            "sky_condition_desc": "Pioggia molto forte",
+            "cop_tot": 8
+        },
+        "26": {
+            "sky_condition_desc": "Nevicata molto forte",
+            "cop_tot": 8
+        },
+        "27": {
+            "sky_condition_desc": "Pioggia molto debole",
+            "cop_tot": 8
+        },
+        "28": {
+            "sky_condition_desc": "Nevicata molto debole",
+            "cop_tot": 8
+        },
+        "29": {
+            "sky_condition_desc": "Ventoso",
+            "cop_tot": 1
+        },
+        "30": {
+            "sky_condition_desc": "Vento e pioggia",
+            "cop_tot": 8
+        },
+        "31": {
+            "sky_condition_desc": "Vento e neve",
+            "cop_tot": 8
+        }
+    },
+    "skycond_to_pluv_A26": {
+        "1": {
+            "sky_condition_desc": "Tormenta di neve",
+            "precipitation_class": 3
+        },
+        "2": {
+            "sky_condition_desc": "Molto nuvoloso",
+            "precipitation_class": 0
+        },
+        "3": {
+            "sky_condition_desc": "Cielo sereno",
+            "precipitation_class": 0
+        },
+        "4": {
+            "sky_condition_desc": "Nebbia",
+            "precipitation_class": 0
+        },
+        "5": {
+            "sky_condition_desc": "Foschia",
+            "precipitation_class": 0
+        },
+        "6": {
+            "sky_condition_desc": "Pioggia forte",
+            "precipitation_class": 4
+        },
+        "7": {
+            "sky_condition_desc": "Nevicata forte",
+            "precipitation_class": 4
+        },
+        "8": {
+            "sky_condition_desc": "Pioggia debole",
+            "precipitation_class": 2
+        },
+        "9": {
+            "sky_condition_desc": "Nevicata debole",
+            "precipitation_class": 2
+        },
+        "11": {
+            "sky_condition_desc": "Nuvoloso",
+            "precipitation_class": 0
+        },
+        "12": {
+            "sky_condition_desc": "Non disponibile",
+            "precipitation_class": 0
+        },
+        "16": {
+            "sky_condition_desc": "Parzialmente nuvoloso",
+            "precipitation_class": 0
+        },
+        "17": {
+            "sky_condition_desc": "Pioggia moderata",
+            "precipitation_class": 3
+        },
+        "18": {
+            "sky_condition_desc": "Pioggia e neve",
+            "precipitation_class": 2
+        },
+        "20": {
+            "sky_condition_desc": "Rovesci",
+            "precipitation_class": 2
+        },
+        "21": {
+            "sky_condition_desc": "Nevicata moderata",
+            "precipitation_class": 3
+        },
+        "22": {
+            "sky_condition_desc": "Soleggiato",
+            "precipitation_class": 0
+        },
+        "23": {
+            "sky_condition_desc": "Temporali",
+            "precipitation_class": 3
+        },
+        "24": {
+            "sky_condition_desc": "Instabile",
+            "precipitation_class": 2
+        },
+        "25": {
+            "sky_condition_desc": "Pioggia molto forte",
+            "precipitation_class": 5
+        },
+        "26": {
+            "sky_condition_desc": "Nevicata molto forte",
+            "precipitation_class": 5
+        },
+        "27": {
+            "sky_condition_desc": "Pioggia molto debole",
+            "precipitation_class": 1
+        },
+        "28": {
+            "sky_condition_desc": "Nevicata molto debole",
+            "precipitation_class": 1
+        },
+        "29": {
+            "sky_condition_desc": "Ventoso",
+            "precipitation_class": 0
+        },
+        "30": {
+            "sky_condition_desc": "Vento e pioggia",
+            "precipitation_class": 2
+        },
+        "31": {
+            "sky_condition_desc": "Vento e neve",
+            "precipitation_class": 2
+        }
+    },
+    "skycond_to_pluv": {
+        "1": {
+            "sky_condition_desc": "Tormenta di neve",
+            "precipitation_class": 2
+        },
+        "2": {
+            "sky_condition_desc": "Molto nuvoloso",
+            "precipitation_class": 0
+        },
+        "3": {
+            "sky_condition_desc": "Cielo sereno",
+            "precipitation_class": 0
+        },
+        "4": {
+            "sky_condition_desc": "Nebbia",
+            "precipitation_class": 0
+        },
+        "5": {
+            "sky_condition_desc": "Foschia",
+            "precipitation_class": 0
+        },
+        "6": {
+            "sky_condition_desc": "Pioggia forte",
+            "precipitation_class": 3
+        },
+        "7": {
+            "sky_condition_desc": "Nevicata forte",
+            "precipitation_class": 3
+        },
+        "8": {
+            "sky_condition_desc": "Pioggia debole",
+            "precipitation_class": 1
+        },
+        "9": {
+            "sky_condition_desc": "Nevicata debole",
+            "precipitation_class": 1
+        },
+        "11": {
+            "sky_condition_desc": "Nuvoloso",
+            "precipitation_class": 0
+        },
+        "12": {
+            "sky_condition_desc": "Non disponibile",
+            "precipitation_class": 0
+        },
+        "16": {
+            "sky_condition_desc": "Parzialmente nuvoloso",
+            "precipitation_class": 0
+        },
+        "17": {
+            "sky_condition_desc": "Pioggia moderata",
+            "precipitation_class": 2
+        },
+        "18": {
+            "sky_condition_desc": "Pioggia e neve",
+            "precipitation_class": 1
+        },
+        "20": {
+            "sky_condition_desc": "Rovesci",
+            "precipitation_class": 1
+        },
+        "21": {
+            "sky_condition_desc": "Nevicata moderata",
+            "precipitation_class": 2
+        },
+        "22": {
+            "sky_condition_desc": "Soleggiato",
+            "precipitation_class": 0
+        },
+        "23": {
+            "sky_condition_desc": "Temporali",
+            "precipitation_class": 2
+        },
+        "24": {
+            "sky_condition_desc": "Instabile",
+            "precipitation_class": 1
+        },
+        "25": {
+            "sky_condition_desc": "Pioggia molto forte",
+            "precipitation_class": 4
+        },
+        "26": {
+            "sky_condition_desc": "Nevicata molto forte",
+            "precipitation_class": 4
+        },
+        "27": {
+            "sky_condition_desc": "Pioggia molto debole",
+            "precipitation_class": 0
+        },
+        "28": {
+            "sky_condition_desc": "Nevicata molto debole",
+            "precipitation_class": 0
+        },
+        "29": {
+            "sky_condition_desc": "Ventoso",
+            "precipitation_class": 0
+        },
+        "30": {
+            "sky_condition_desc": "Vento e pioggia",
+            "precipitation_class": 1
+        },
+        "31": {
+            "sky_condition_desc": "Vento e neve",
+            "precipitation_class": 1
+        }
+    }
+}

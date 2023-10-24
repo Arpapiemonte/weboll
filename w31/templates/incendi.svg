@@ -983,38 +983,38 @@
          <tr class="riga 2">
          <td class="light">Vento</td>
          <!-- zona 1 -->
-         {% if i == 'Nord'  %}
-            {% if incendi.w31datamacroareelivelli_set.0.wind == 'N'  %}
+         {% if i == 'Piemonte Nord'  %}
+            {% if tabella_vento.2.49 == 'N'  %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.2 %}</td>
             {% else %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
             {% endif %}
-            {% if incendi.w31datamacroareelivelli_set.6.wind == 'N'  %}
+            {% if tabella_vento.2.66 == 'N'  %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.7 %}</td>
             {% else %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
             {% endif %}
-            {% if incendi.w31datamacroareelivelli_set.12.wind == 'N'  %}
+            {% if tabella_vento.2.83 == 'N'  %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.12 %}</td>
             {% else %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
             {% endif %}
-            {% if incendi.w31datamacroareelivelli_set.18.wind == 'N'  %}
+            {% if tabella_vento.2.100 == 'N'  %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.17 %}</td>
             {% else %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
             {% endif %}
-            {% if incendi.w31datamacroareelivelli_set.24.wind == 'N'  %}
+            {% if tabella_vento.2.117 == 'N'  %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.22 %}</td>
             {% else %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
             {% endif %}
-            {% if incendi.w31datamacroareelivelli_set.30.wind == 'N'  %}
+            {% if tabella_vento.2.134 == 'N'  %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.27 %}</td>
             {% else %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
             {% endif %}
-            {% if incendi.w31datamacroareelivelli_set.36.wind == 'N'  %}
+            {% if tabella_vento.2.151 == 'N'  %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.32 %}</td>
             {% else %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
@@ -1023,37 +1023,37 @@
          <!--Fine zona 1 -->
          <!-- zona 2 -->
          {% if i == 'Torino Nord'  %}
-            {% if incendi.w31datamacroareelivelli_set.1.wind == 'N'  %}
+            {% if tabella_vento.3.49 == 'N'  %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.2 %}</td>
             {% else %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
             {% endif %}
-            {% if incendi.w31datamacroareelivelli_set.7.wind == 'N'  %}
+            {% if tabella_vento.3.66 == 'N'  %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.7 %}</td>
             {% else %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
             {% endif %}
-            {% if incendi.w31datamacroareelivelli_set.13.wind == 'N'  %}
+            {% if tabella_vento.3.83 == 'N'  %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.12 %}</td>
             {% else %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
             {% endif %}
-            {% if incendi.w31datamacroareelivelli_set.19.wind == 'N'  %}
+            {% if tabella_vento.3.100 == 'N'  %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.17 %}</td>
             {% else %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
             {% endif %}
-            {% if incendi.w31datamacroareelivelli_set.25.wind == 'N'  %}
+            {% if tabella_vento.3.117 == 'N'  %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.22 %}</td>
             {% else %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
             {% endif %}
-            {% if incendi.w31datamacroareelivelli_set.31.wind == 'N'  %}
+            {% if tabella_vento.3.134 == 'N'  %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.27 %}</td>
             {% else %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
             {% endif %}
-            {% if incendi.w31datamacroareelivelli_set.37.wind == 'N'  %}
+            {% if tabella_vento.3.151 == 'N'  %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.32 %}</td>
             {% else %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
@@ -1062,37 +1062,37 @@
          <!--Fine zona 2 -->
          <!-- zona 3 -->
          {% if i == 'Torino Ovest'  %}
-            {% if incendi.w31datamacroareelivelli_set.2.wind == 'N'  %}
+            {% if tabella_vento.4.49 == 'N'  %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.2 %}</td>
             {% else %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
             {% endif %}
-            {% if incendi.w31datamacroareelivelli_set.8.wind == 'N'  %}
+            {% if tabella_vento.4.66 == 'N'  %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.7 %}</td>
             {% else %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
             {% endif %}
-            {% if incendi.w31datamacroareelivelli_set.14.wind == 'N'  %}
+            {% if tabella_vento.4.83 == 'N'  %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.12 %}</td>
             {% else %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
             {% endif %}
-            {% if incendi.w31datamacroareelivelli_set.20.wind == 'N'  %}
+            {% if tabella_vento.4.100 == 'N'  %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.17 %}</td>
             {% else %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
             {% endif %}
-            {% if incendi.w31datamacroareelivelli_set.26.wind == 'N'  %}
+            {% if tabella_vento.4.117 == 'N'  %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.22 %}</td>
             {% else %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
             {% endif %}
-            {% if incendi.w31datamacroareelivelli_set.32.wind == 'N'  %}
+            {% if tabella_vento.4.134 == 'N'  %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.27 %}</td>
             {% else %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
             {% endif %}
-            {% if incendi.w31datamacroareelivelli_set.38.wind == 'N'  %}
+            {% if tabella_vento.4.151 == 'N'  %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.32 %}</td>
             {% else %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
@@ -1101,37 +1101,37 @@
          <!--Fine zona 3 -->
          <!-- zona 4 -->
          {% if i == 'Cuneo SO'  %}
-            {% if incendi.w31datamacroareelivelli_set.3.wind == 'N'  %}
+            {% if tabella_vento.1.49 == 'N'  %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.2 %}</td>
             {% else %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
             {% endif %}
-            {% if incendi.w31datamacroareelivelli_set.9.wind == 'N'  %}
+            {% if tabella_vento.1.66 == 'N'  %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.7 %}</td>
             {% else %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
             {% endif %}
-            {% if incendi.w31datamacroareelivelli_set.15.wind == 'N'  %}
+            {% if tabella_vento.1.83 == 'N'  %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.12 %}</td>
             {% else %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
             {% endif %}
-            {% if incendi.w31datamacroareelivelli_set.21.wind == 'N'  %}
+            {% if tabella_vento.1.100 == 'N'  %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.17 %}</td>
             {% else %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
             {% endif %}
-            {% if incendi.w31datamacroareelivelli_set.27.wind == 'N'  %}
+            {% if tabella_vento.1.117 == 'N'  %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.22 %}</td>
             {% else %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
             {% endif %}
-            {% if incendi.w31datamacroareelivelli_set.33.wind == 'N'  %}
+            {% if tabella_vento.1.134 == 'N'  %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.27 %}</td>
             {% else %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
             {% endif %}
-            {% if incendi.w31datamacroareelivelli_set.39.wind == 'N'  %}
+            {% if tabella_vento.1.151 == 'N'  %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.32 %}</td>
             {% else %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
@@ -1140,37 +1140,37 @@
          <!--Fine zona 4 -->
          <!-- zona 5 -->
          {% if i == 'Cuneo SE'  %}
-            {% if incendi.w31datamacroareelivelli_set.3.wind == 'N'  %}
+            {% if tabella_vento.6.49 == 'N'  %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.2 %}</td>
             {% else %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
             {% endif %}
-            {% if incendi.w31datamacroareelivelli_set.10.wind == 'N'  %}
+            {% if tabella_vento.6.66 == 'N'  %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.7 %}</td>
             {% else %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
             {% endif %}
-            {% if incendi.w31datamacroareelivelli_set.16.wind == 'N'  %}
+            {% if tabella_vento.6.83 == 'N'  %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.12 %}</td>
             {% else %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
             {% endif %}
-            {% if incendi.w31datamacroareelivelli_set.22.wind == 'N'  %}
+            {% if tabella_vento.6.100 == 'N'  %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.17 %}</td>
             {% else %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
             {% endif %}
-            {% if incendi.w31datamacroareelivelli_set.28.wind == 'N'  %}
+            {% if tabella_vento.6.117 == 'N'  %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.22 %}</td>
             {% else %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
             {% endif %}
-            {% if incendi.w31datamacroareelivelli_set.34.wind == 'N'  %}
+            {% if tabella_vento.6.134 == 'N'  %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.27 %}</td>
             {% else %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
             {% endif %}
-            {% if incendi.w31datamacroareelivelli_set.40.wind == 'N'  %}
+            {% if tabella_vento.6.151 == 'N'  %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.32 %}</td>
             {% else %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
@@ -1178,38 +1178,38 @@
          {% endif %}
          <!--Fine zona 5 -->
          <!-- zona 6 -->
-         {% if i == 'SudEst'  %}
-            {% if incendi.w31datamacroareelivelli_set.4.wind == 'N'  %}
+         {% if i == 'Piemonte Sud-Est'  %}
+            {% if tabella_vento.5.49 == 'N'  %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.2 %}</td>
             {% else %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
             {% endif %}
-            {% if incendi.w31datamacroareelivelli_set.11.wind == 'N'  %}
+            {% if tabella_vento.5.66 == 'N'  %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.7 %}</td>
             {% else %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
             {% endif %}
-            {% if incendi.w31datamacroareelivelli_set.17.wind == 'N'  %}
+            {% if tabella_vento.5.83 == 'N'  %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.12 %}</td>
             {% else %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
             {% endif %}
-            {% if incendi.w31datamacroareelivelli_set.23.wind == 'N'  %}
+            {% if tabella_vento.5.100 == 'N'  %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.17 %}</td>
             {% else %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
             {% endif %}
-            {% if incendi.w31datamacroareelivelli_set.29.wind == 'N'  %}
+            {% if tabella_vento.5.117 == 'N'  %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.22 %}</td>
             {% else %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
             {% endif %}
-            {% if incendi.w31datamacroareelivelli_set.35.wind == 'N'  %}
+            {% if tabella_vento.5.134 == 'N'  %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.27 %}</td>
             {% else %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
             {% endif %}
-            {% if incendi.w31datamacroareelivelli_set.41.wind == 'N'  %}
+            {% if tabella_vento.5.151 == 'N'  %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.32 %}</td>
             {% else %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
@@ -1369,7 +1369,6 @@
       </table>
     </div>
   </foreignObject>
-
 
 <!-- inizio logo pagina 1 -->
   <g>

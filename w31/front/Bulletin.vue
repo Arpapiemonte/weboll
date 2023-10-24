@@ -286,7 +286,7 @@
 </template>
 
 <script>
-import { Modal } from 'bootstrap'
+import Modal from 'bootstrap/js/dist/modal'
 import api from '@/api'
 import store from '@/store'
 import TabellaIncendiMicro from './TabellaIncendiMicro.vue'

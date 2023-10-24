@@ -8,66 +8,126 @@ window.bulletins_list = [
     bollettino: 'bollettino_meteo',
     id: 'w05',
     name: 'Meteo',
-    readyForProduction: true
+    readyForProduction: true,
+    menu: 'Meteo',
   },
   {
     bollettino: 'bollettino_ozono',
     id: 'w16',
     name: 'Ozono',
     readyForProduction: true,
+    menu: 'Aria',
+  },
+  {
+    bollettino: 'bollettino_analisi',
+    id: 'w17',
+    name: 'Analisi',
+    readyForProduction: true,
+    menu: 'Meteo',
   },
   {
     bollettino: 'bollettino_allerta',
     id: 'w23',
     name: 'Allerta',
-    readyForProduction: true
+    readyForProduction: true,
+    menu: 'Allerta',
   },
   {
     bollettino: 'bollettino_vigilanza',
     id: 'w24',
     name: 'Vigilanza',
-    readyForProduction: true
+    readyForProduction: true,
+    menu: 'Meteo',
   },
   {
     bollettino: 'bollettino_bis',
     id: 'w26',
     name: 'BIS',
-    readyForProduction: true
+    readyForProduction: true,
+    menu: 'Idro',
   },
   {
     bollettino: 'bollettino_SLOPS',
     id: 'w29',
     name: 'SLOPS',
-    readyForProduction: true
+    readyForProduction: true,
+    menu: 'Idro',
   },
   {
     bollettino: 'bollettino_piene',
     id: 'w22',
     name: 'Piene',
-    readyForProduction: true
+    readyForProduction: true,
+    menu: 'Idro',
   },
   {
     bollettino: 'Previsione_quantitativa_aree_allerta',
     id: 'w30',
     name: 'PSA',
-    readyForProduction: true
+    readyForProduction: true,
+    menu: 'Meteo',
   },
   {
     bollettino: 'bollettino_piene_verifica',
     id: 'w22verifica',
-    name: 'PieneVerifica',
-    readyForProduction: true
+    name: 'Piene Verifica',
+    readyForProduction: true,
+    menu: 'Idro',
+  },
+  {
+    bollettino: 'bollettino_verifica_meteo',
+    id: 'w17verifica',
+    name: 'Meteo Verifica',
+    readyForProduction: true,
+    menu: 'Meteo',
   },
   {
     bollettino: 'bollettino_incendi',
     id: 'w31',
     name: 'Incendi',
-    readyForProduction: true
+    readyForProduction: true,
+    menu: 'Incendi',
   },
   {
     bollettino: 'bollettino_DEFENSE',
     id: 'w32',
     name: 'DEFENSE',
-    readyForProduction: true
+    readyForProduction: true,
+    menu: 'Idro',
+  },
+  {
+    bollettino: 'metaprodotto_autostrade',
+    id: 'w33',
+    name: 'Metaprodotto Autostrade',
+    readyForProduction: true,
+    menu: 'Autostrade',
+  },
+  {
+    bollettino: 'A7-A26',
+    id: 'w12',
+    name: 'A7-A26',
+    readyForProduction: true,
+    menu: 'Autostrade',
+  },
+  {
+    bollettino: 'A4-A21',
+    id: 'w07',
+    name: 'A4-A21',
+    readyForProduction: true,
+    menu: 'Autostrade',
+  },
+  {
+    bollettino: 'A33',
+    id: 'w28',
+    name: 'A33',
+    readyForProduction: true,
+    menu: 'Autostrade',
+  },
+  {
+    bollettino: 'A6',
+    id: 'w06',
+    name: 'A6',
+    readyForProduction: true,
+    menu: 'Autostrade',
   },
 ]

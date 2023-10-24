@@ -1,0 +1,133 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+    <table class="table-autostrada">
+        <thead>
+        <tr>
+            <th class="dark" colspan="10" >{{ title }}</th>
+        </tr>
+        <tr>
+            <th class="light" colspan="2" rowspan="2">Parametro</th>
+            <th class="light b-left" colspan="2">{{ days.0 }}</th>
+            <th class="light b-left" colspan="4">{{ days.1 }}</th>
+            <th class="light b-left" colspan="2">{{ days.2 }}</th>
+        </tr>
+        <tr>
+            <th class="dark orari b-left">12:00 - 17:59<br></th>
+            <th class="dark orari">18:00 - 23:59</th>
+            <th class="dark orari b-left">00:00 - 05:59</th>
+            <th class="dark orari">06:00 - 11:59</th>
+            <th class="dark orari">12:00 - 17:59</th>
+            <th class="dark orari">18:00 - 23:59</th>
+            <th class="dark orari b-left">00:00 - 11:59</th>
+            <th class="dark orari">12:00 - 23.59</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th class="light" colspan="2" rowspan="2">Tempo Prevalente</th>
+            <td class="light b-left">
+                <img src="http://localhost:8000/static/images/icons/{{data.45.sky_condition}}.svg"
+                height="12" width="12"/>
+            </td>
+            <td class="light"><img src="http://localhost:8000/static/images/icons/{{data.46.sky_condition}}.svg"
+                height="12" width="12"/>
+            </td>
+            <td class="light b-left"><img src="http://localhost:8000/static/images/icons/{{data.60.sky_condition}}.svg"
+                height="12" width="12"/>
+            </td>
+            <td class="light"><img src="http://localhost:8000/static/images/icons/{{data.61.sky_condition}}.svg"
+                height="12" width="12"/>
+            </td>
+            <td class="light"><img src="http://localhost:8000/static/images/icons/{{data.62.sky_condition}}.svg"
+                height="12" width="12"/>
+            </td>
+            <td class="light"><img src="http://localhost:8000/static/images/icons/{{data.63.sky_condition}}.svg"
+                height="12" width="12"/>
+            </td>
+            <td class="light b-left"><img src="http://localhost:8000/static/images/icons/{{data.81.sky_condition}}.svg"
+                height="12" width="12"/>
+            </td>
+            <td class="light"><img src="http://localhost:8000/static/images/icons/{{data.82.sky_condition}}.svg"
+                height="12" width="12"/>
+            </td>
+        </tr>
+        <tr>
+            <td class="light b-left">{{ data.45.sky_desc }}</td>
+            <td class="light">{{ data.46.sky_desc }}</td>
+            <td class="light b-left">{{ data.60.sky_desc }}</td>
+            <td class="light">{{ data.61.sky_desc }}</td>
+            <td class="light">{{ data.62.sky_desc }}</td>
+            <td class="light">{{ data.63.sky_desc }}</td>
+            <td class="light b-left">{{ data.81.sky_desc }}</td>
+            <td class="light">{{ data.82.sky_desc }}</td>
+        </tr>
+        <tr>
+            <th class="dark" colspan="2">Precipitazione</td>
+            <td class="dark b-left">{{ data.45.precipitation_class }}</th>
+            <td class="dark">{{ data.46.precipitation_class }}</td>
+            <td class="dark b-left">{{ data.60.precipitation_class }}</td>
+            <td class="dark">{{ data.61.precipitation_class }}</td>
+            <td class="dark">{{ data.62.precipitation_class }}</td>
+            <td class="dark">{{ data.63.precipitation_class }}</td>
+            <td class="dark b-left">{{ data.81.precipitation_class }}</td>
+            <td class="dark">{{ data.82.precipitation_class }}</td>
+        </tr>
+        <tr>
+            <th class="light" colspan="2">Neve (cm)</th>
+            <td class="light b-left">{{ data.45.cumulated_snow }}</td>
+            <td class="light">{{ data.46.cumulated_snow }}</td>
+            <td class="light b-left">{{ data.60.cumulated_snow }}</td>
+            <td class="light">{{ data.61.cumulated_snow }}</td>
+            <td class="light">{{ data.62.cumulated_snow }}</td>
+            <td class="light">{{ data.63.cumulated_snow }}</td>
+            <td class="light b-left">{{ data.81.cumulated_snow }}</td>
+            <td class="light">{{ data.82.cumulated_snow }}</td>
+        </tr>
+        <tr>
+            <th class="dark" colspan="2">Zero termico (m)</th>
+            <td class="dark b-left">{{ data.45.freezing_level }}</td>
+            <td class="dark">{{ data.46.freezing_level }}</td>
+            <td class="dark b-left">{{ data.60.freezing_level }}</td>
+            <td class="dark">{{ data.61.freezing_level }}</td>
+            <td class="dark">{{ data.62.freezing_level }}</td>
+            <td class="dark">{{ data.63.freezing_level }}</td>
+            <td class="dark b-left">{{ data.81.freezing_level }}</td>
+            <td class="dark">{{ data.82.freezing_level }}</td>
+        </tr>
+        <tr>
+            <th class="light" colspan="2">Quota neve (m)</th>
+            <td class="light b-left">{{ data.45.snow_level }}</td>
+            <td class="light">{{ data.46.snow_level }}</td>
+            <td class="light b-left">{{ data.60.snow_level }}</td>
+            <td class="light">{{ data.61.snow_level }}</td>
+            <td class="light">{{ data.62.snow_level }}</td>
+            <td class="light">{{ data.63.snow_level }}</td>
+            <td class="light b-left">{{ data.81.snow_level }}</td>
+            <td class="light">{{ data.82.snow_level }}</td>
+        </tr>
+        <tr>
+            <th class="dark" colspan="2">Temperatura aria sottozero</th>
+            <td class="dark b-left">{{ data.45.temperature_below_zero }}</td>
+            <td class="dark">{{ data.46.temperature_below_zero }}</td>
+            <td class="dark b-left">{{ data.60.temperature_below_zero }}</td>
+            <td class="dark">{{ data.61.temperature_below_zero }}</td>
+            <td class="dark">{{ data.62.temperature_below_zero }}</td>
+            <td class="dark">{{ data.63.temperature_below_zero }}</td>
+            <td class="dark b-left">{{ data.81.temperature_below_zero }}</td>
+            <td class="dark">{{ data.82.temperature_below_zero }}</td>
+        </tr>
+        <tr>
+            <th class="light" colspan="2">Rischio pioggia ghiacciata</th>
+            <td class="light b-left">{{ data.45.risk_freezing_rain }}</td>
+            <td class="light">{{ data.46.risk_freezing_rain }}</td>
+            <td class="light b-left">{{ data.60.risk_freezing_rain }}</td>
+            <td class="light">{{ data.61.risk_freezing_rain }}</td>
+            <td class="light">{{ data.62.risk_freezing_rain }}</td>
+            <td class="light">{{ data.63.risk_freezing_rain }}</td>
+            <td class="light b-left">{{ data.81.risk_freezing_rain }}</td>
+            <td class="light">{{ data.82.risk_freezing_rain }}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+   
+

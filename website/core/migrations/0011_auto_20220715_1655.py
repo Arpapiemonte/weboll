@@ -10,10 +10,20 @@ def populate_bulletins(apps, schema_editor):
     BulletinsModel.objects.get_or_create(prodotto="allerta", tabella="w23")
     BulletinsModel.objects.get_or_create(prodotto="incendi", tabella="w31")
     BulletinsModel.objects.get_or_create(prodotto="defense", tabella="w32")
+    BulletinsModel.objects.get_or_create(prodotto="analisi", tabella="w17")
+    BulletinsModel.objects.get_or_create(prodotto="bis", tabella="w26")
+    BulletinsModel.objects.get_or_create(
+        prodotto="autostrade_metaprodotto", tabella="w33"
+    )
+    BulletinsModel.objects.get_or_create(prodotto="a7_a26", tabella="w12")
+    BulletinsModel.objects.get_or_create(prodotto="a4_a21", tabella="w07")
+    BulletinsModel.objects.get_or_create(prodotto="a6", tabella="w06")
+    BulletinsModel.objects.get_or_create(
+        prodotto="verificameteo", tabella="w17verifica"
+    )
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("core", "0010_alter_bulletins_tabella"),
     ]

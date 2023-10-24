@@ -25,7 +25,6 @@ def update_site_backward(apps, schema_editor):
 
 
 class Migration(migrations.Migration):
-
     dependencies = [("sites", "__first__")]
 
     operations = [migrations.RunPython(update_site_forward, update_site_backward)]

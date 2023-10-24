@@ -293,7 +293,6 @@ class W22View(viewsets.ModelViewSet):
         # fine lettura tabella SoglieIdrometriche e inserimento in memoria
 
         for w in w22_data_config:
-
             # variabili di ricerca
             codice_istat_comune = zone_dict[
                 str(w22_data_config[w]["id_w22_zone"])
@@ -364,7 +363,7 @@ class W22View(viewsets.ModelViewSet):
                 # ordinamento dei dati in base alla data
                 dati_staz_sorted = sorted(
                     dati_staz.items(),
-                    key=lambda v: int(v[0].split("#")[4]),
+                    key=lambda v: float(v[1]),
                     reverse=True,
                 )
                 # asseganzione dei valori

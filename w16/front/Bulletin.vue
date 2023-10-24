@@ -327,7 +327,7 @@
 </template>
 
 <script>
-import { Modal } from 'bootstrap'
+import Modal from 'bootstrap/js/dist/modal'
 // @ is an alias to /src
 import MapOzono from './MapOzono.vue'
 import AreaOzono from './AreaOzono.vue'

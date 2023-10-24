@@ -119,6 +119,34 @@ class ClassesValue(models.Model):
         db_table = "classes_value"
 
 
+class Comune(models.Model):
+    codice_istat_comune = models.CharField(primary_key=True, max_length=6)
+    denominazione = models.CharField(max_length=40)
+    codice_istat_81 = models.CharField(max_length=5, blank=True, null=True)
+    codice_istat_92 = models.CharField(max_length=6)
+    cap = models.IntegerField(blank=True, null=True)
+    codice_istat_prov = models.ForeignKey(
+        "Provincia",
+        models.DO_NOTHING,
+        db_column="codice_istat_prov",
+        blank=True,
+        null=True,
+    )
+    latitudine_n = models.DecimalField(
+        max_digits=10, decimal_places=8, blank=True, null=True
+    )
+    longitudine_e = models.DecimalField(
+        max_digits=10, decimal_places=8, blank=True, null=True
+    )
+    codice_meteo_it = models.IntegerField(blank=True, null=True)
+    quota_comune = models.IntegerField(blank=True, null=True)
+    data_agg = models.DateField()
+
+    class Meta:
+        managed = False
+        db_table = "comune"
+
+
 class ForecastModels(models.Model):
     fore_name = models.CharField(primary_key=True, max_length=9)
     fore_type = models.CharField(max_length=5)
@@ -226,6 +254,25 @@ class Products(models.Model):
         db_table = "products"
 
 
+class Provincia(models.Model):
+    codice_istat_prov = models.CharField(primary_key=True, max_length=3)
+    sigla_auto = models.CharField(max_length=2)
+    denominazione = models.CharField(max_length=40)
+    codice_istat_1981 = models.CharField(max_length=2, blank=True, null=True)
+    codice_istat_reg = models.ForeignKey(
+        "Regione",
+        models.DO_NOTHING,
+        db_column="codice_istat_reg",
+        blank=True,
+        null=True,
+    )
+    data_agg = models.DateTimeField()
+
+    class Meta:
+        managed = False
+        db_table = "provincia"
+
+
 class QaMisure(models.Model):
     id_qa_misure = models.AutoField(primary_key=True)
     id_venue = models.IntegerField()
@@ -251,6 +298,17 @@ class QaMisure(models.Model):
     class Meta:
         managed = False
         db_table = "qa_misure"
+
+
+class Regione(models.Model):
+    codice_istat_reg = models.CharField(primary_key=True, max_length=1)
+    denominazione = models.CharField(max_length=40)
+    superficie = models.IntegerField(blank=True, null=True)
+    data_agg = models.DateTimeField()
+
+    class Meta:
+        managed = False
+        db_table = "regione"
 
 
 class RelWeatherProdParameter(models.Model):
@@ -383,6 +441,47 @@ class StazioneMeteo(models.Model):
     class Meta:
         managed = False
         db_table = "stazione_meteo"
+        unique_together = (("codice_istat_comune", "progr_punto_com"),)
+
+
+class StazioneMisura(models.Model):
+    codice_istat_comune = models.OneToOneField(
+        Comune, models.DO_NOTHING, db_column="codice_istat_comune", primary_key=True
+    )
+    progr_punto_com = models.IntegerField()
+    codice_stazione = models.CharField(max_length=6, blank=True, null=True)
+    nazione = models.CharField(max_length=30, blank=True, null=True)
+    indirizzo_localita = models.CharField(max_length=80, blank=True, null=True)
+    denominazione = models.CharField(unique=True, max_length=80)
+    latitudine_n = models.DecimalField(
+        max_digits=10, decimal_places=8, blank=True, null=True
+    )
+    longitudine_e = models.DecimalField(
+        max_digits=10, decimal_places=8, blank=True, null=True
+    )
+    latitudine_mm = models.DecimalField(
+        max_digits=8, decimal_places=2, blank=True, null=True
+    )
+    longitudine_mm = models.DecimalField(
+        max_digits=8, decimal_places=2, blank=True, null=True
+    )
+    utm_x = models.IntegerField(blank=True, null=True)
+    utm_y = models.IntegerField(blank=True, null=True)
+    quota_stazione = models.DecimalField(
+        max_digits=6, decimal_places=2, blank=True, null=True
+    )
+    quota_sito = models.DecimalField(
+        max_digits=6, decimal_places=2, blank=True, null=True
+    )
+    cod_staz_meteo = models.CharField(unique=True, max_length=5, blank=True, null=True)
+    proprietario = models.CharField(max_length=100, blank=True, null=True)
+    idtab_allertamento_2 = models.CharField(max_length=6, blank=True, null=True)
+    data_agg = models.DateTimeField()
+    autore_agg = models.CharField(max_length=30)
+
+    class Meta:
+        managed = False
+        db_table = "stazione_misura"
         unique_together = (("codice_istat_comune", "progr_punto_com"),)
 
 

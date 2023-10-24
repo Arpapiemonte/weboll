@@ -715,7 +715,7 @@
     </rdf:RDF>
   </metadata>
   <g><!--Header -->
-  {% include "bisheader.svg" with title='Bollettino Idrologico di Sintesi' seqNum=w26.id_w26 startValidTime=w26.data_emissione nextUpdate=w26.last_update logo='regione-piemonte' username=w26.username%}
+  {% include "bisheader.svg" with title='Bollettino Idrologico di Sintesi' seqNum=w26.numero_bollettino startValidTime=w26.data_emissione nextUpdate=w26.data_validita logo='regione-piemonte' username=w26.username%}
   <!-- Header -->
    <path d="M 10,42.993881 H 200.00011 V 42.593668 H 10 Z" style="fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778" id="path644"></path>
   </g>
@@ -726,9 +726,9 @@
             
             </thead>
             <tbody>
-            <tr>
-               <th rowspan="2" class="b-bottom">STAZIONE</th>
-               <th rowspan="2" class="b-left b-bottom thcorsoacqua ">CORSO D'ACQUA</th>
+            <tr>               
+               <th rowspan="2" class="b-bottom ">CORSO D'ACQUA</th>
+               <th rowspan="2" class="b-left b-bottom thcorsoacqua">STAZIONE</th>
                <th colspan="3" class="b-left b-bottom">LIVELLI GIORNALIERI [m]</th>
                <th colspan="3" class="b-left b-bottom b-right">PORTATE GIORNALIERE [mc/s]</th>
                <th rowspan="2" class="b-bottom">NOTE</th>
@@ -744,15 +744,15 @@
 
             {% for value in w26.w26data_set %}
             <tr>
-               <th>{{value.id_w26_zone.localita}}</th>
-               <td class="b-left">{{value.id_w26_zone.corsoacqua}}</td>
+               <td>{{value.id_w26_zone.corsoacqua}}</td>
+               <td class="b-left">{{value.id_w26_zone.localita}}</td>
                <td class="b-left">{{value.hmin | check_value}}</td>
                <td >{{value.hmax | check_value}}</td>
                <td >{{value.hmed | check_value}}</td>
                <td class="b-left">{{value.qmin | check_value}}</td>
                <td>{{value.qmax | check_value}}</td>
-               <td class="b-right">{{value.qmed | check_value}}</td>
-               <td>{{value.idnota}}</td>
+               <td>{{value.qmed | check_value}}</td>
+               <td class="b-left">{{value.idnota}}</td>
             </tr>
             {% endfor %}            
          </tbody>
@@ -779,7 +779,7 @@
                </tr>
                <tr>
                   <td>(1) Valori non disponibili in banca dati</td>
-                  <td>(10) Situazione idraulica alterata per apertura paratoia in sponda destra</td>
+                  <td>(10) Situazione idraulica alterata per la presenza di opere di regolazione in alveo</td>
                </tr>
                <tr>
                   <td>(2) Verifica valori in corso</td>
@@ -803,7 +803,7 @@
                </tr>
                <tr>
                   <td>(7) Presenza di detriti/ghiaia nell'area di misura del sensore</td>
-                  <td>(16) Valore non significativo per effetto delle regolazioni artificiali</td>
+                  <td>(16) Valore non significativo per effetto delle regolazioni artificiali a monte</td>
                </tr>
                <tr>
                   <td>(8) Lavori in alveo</td>

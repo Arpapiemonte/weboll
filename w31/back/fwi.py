@@ -36,14 +36,14 @@ class FWIClass:
             mo = 250.0
 
         ed = (
-            0.942 * (self.h ** 0.679)
+            0.942 * (self.h**0.679)
             + (11.0 * math.exp((self.h - 100.0) / 10.0))
             + 0.18 * (21.1 - self.t) * (1.0 - 1.0 / math.exp(0.1150 * self.h))
         )  # eq 4 CAPIRE DOVE VIENE CALCOLATO QUESTA RIGA
 
         if mo < ed:
             ew = (
-                0.618 * (self.h ** 0.753)
+                0.618 * (self.h**0.753)
                 + (10.0 * math.exp((self.h - 100.0) / 10.0))
                 + 0.18 * (21.1 - self.t) * (1.0 - 1.0 / math.exp(0.115 * self.h))
             )  # eq 5
@@ -54,7 +54,7 @@ class FWIClass:
                     1.0 - ((100.0 - self.h) / 100.0) ** 8
                 )  # eq 7a
                 kw = kl * (0.581 * math.exp(0.0365 * self.t))  # eq 7b
-                m = ew - (ew - mo) / 10.0 ** kw  # eq 9
+                m = ew - (ew - mo) / 10.0**kw  # eq 9
             elif mo > ew:
                 m = mo
         elif mo == ed:
@@ -66,7 +66,7 @@ class FWIClass:
                 1.0 - (self.h / 100.0) ** 8
             )  # eq 6a
             kw = kl * (0.581 * math.exp(0.0365 * self.t))  # eq. 6b
-            m = ed + (mo - ed) / 10.0 ** kw  # eq 8
+            m = ed + (mo - ed) / 10.0**kw  # eq 8
         ffmc = (59.5 * (250.0 - m)) / (147.2 + m)  # eq 10
         if ffmc > 101.0:
             ffmc = 101.0
@@ -126,7 +126,7 @@ class FWIClass:
     def ISIcalc(self, ffmc):
         mo = 147.2 * (101.0 - ffmc) / (59.5 + ffmc)  # eq 1
         ff = (
-            19.115 * math.exp(mo * -0.1386) * (1.0 + (mo ** 5.31) / 49300000.0)
+            19.115 * math.exp(mo * -0.1386) * (1.0 + (mo**5.31) / 49300000.0)
         )  # eq 25
         isi = ff * math.exp(0.05039 * self.w)  # eq 26
         return isi
@@ -144,7 +144,7 @@ class FWIClass:
 
     def FWIcalc(self, isi, bui):
         if bui <= 80.0:
-            bb = 0.1 * isi * (0.626 * bui ** 0.809 + 2.0)  # eq 28a
+            bb = 0.1 * isi * (0.626 * bui**0.809 + 2.0)  # eq 28a
         else:
             bb = (
                 0.1 * isi * (1000.0 / (25.0 + 108.64 / math.exp(0.023 * bui)))

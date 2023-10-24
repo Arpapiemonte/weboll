@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <title>
+      Metaprodotto autostrade
+    </title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <h1>Metaprodotto autostrade</h1>
+    <hr/>
+    <table>
+      <tr>
+        <td>Id</td>
+        <td>{{ mpa.id_w30 }}</td>
+      </tr>
+      <tr>
+        <td>Seq</td>
+        <td>{{ mpa.seq_num }}</td>
+      </tr>
+      <tr>
+        <td>Stato</td>
+        <td>{{ mpa.status }}</td>
+      </tr>
+      <tr>
+        <td>Data emissione</td>
+        <td>{{ mpa.data_emissione }}</td>
+      </tr>
+      <tr>
+        <td>Ultima modifica</td>
+        <td>{{ mpa.last_update }}</td>
+      </tr>
+      <tr>
+        <td>Autore</td>
+        <td>{{ mpa.username }}</td>
+      </tr>
+    </table>
+    <hr/>
+    <code>
+      [{{ mpa }}]
+    </code>
+  </body>
+</html>

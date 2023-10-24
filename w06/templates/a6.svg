@@ -1,0 +1,70 @@
+{% load date_extras_w06 %}
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 210 450" version="1.1">
+   <style>
+      .table-autostrada {
+         width: 100%;
+         table-layout: fixed;
+         font-style: normal;
+         font-variant: normal;
+         font-weight: 300;
+         font-stretch: normal;
+         font-size: 2.82222px;
+         font-family: 'Titillium Web';
+         text-align: center;
+         text-anchor: start;
+         line-height: 3px;
+         border-spacing: 0px;
+      }
+
+      .b-left {
+         border: 1px solid #ccc; border-width: 0 0 0 1px;
+      }
+
+
+      .light {
+         background-color: #eeeeee!important;
+      }
+      .dark {
+         background-color: #dddddd!important;
+      }
+
+      .orari{
+         white-space: nowrap;
+      }
+
+   </style>
+   <metadata>
+      <rdf:RDF>
+         <cc:Work rdf:about="">
+            <dc:format>image/svg+xml</dc:format>
+            <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+            <dc:title></dc:title>
+         </cc:Work>
+      </rdf:RDF>
+   </metadata>
+   <g>
+      <!--Header -->
+      {% include "headerw06.svg" with validity=w06.validity title=title seqNum=w06.id_w06 startValidTime=w06.start_valid_time nextUpdate=w06.next_blt_time logo='logo_w06_header' username=w06.username %}
+      <!-- Header -->
+   </g>
+   <foreignObject x="10" y="45" width="190" height="155">
+      {% include "tableautostradaw06.html" with data=w06.w06data_set.94 days=days title=venues.94 %}
+   </foreignObject>
+   <foreignObject x="10" y="125" width="190" height="155">
+      {% include "tableautostradaw06.html" with data=w06.w06data_set.95 days=days title=venues.95 %}
+   </foreignObject>
+   <foreignObject x="10" y="210" width="190" height="155">
+      {% include "tableautostradaw06.html" with data=w06.w06data_set.96 days=days title=venues.96 %}
+   </foreignObject>
+   <g transform="translate(0 300)">
+      <!--Header -->
+      {% include "headerw06.svg" with validity=w06.validity title=title seqNum=w06.id_w06 startValidTime=w06.start_valid_time nextUpdate=w06.next_blt_time logo='logo_w06_header' username=w06.username %}
+      <!-- Header -->
+   </g>
+   <foreignObject x="10" y="345" width="190" height="155">
+      {% include "tableautostradaw06.html" with data=w06.w06data_set.97 days=days title=venues.97 %}
+   </foreignObject>
+</svg>

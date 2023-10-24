@@ -5,7 +5,6 @@ import django_cryptography.fields
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("core", "0005_auto_20210720_1416"),
     ]

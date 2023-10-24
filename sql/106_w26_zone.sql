@@ -61,7 +61,7 @@ COPY public.w26_zone (id_w26_zone, codice, localita, corsoacqua, numero) FROM st
 19	018107700	Palestro	Sesia	190
 20	003096900	Candoglia	Toce	200
 21	003100900	Momo	Agogna	210
-22	004034900	Busca	Maira	220
+22	004082700	Dronero	Maira	220
 23	004179700	Racconigi	Maira	230
 24	004197900	Rossana	Varaita	240
 25	004171700	Polonghera	Varaita	250

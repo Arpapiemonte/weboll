@@ -52,7 +52,8 @@ RUN apt-get update \
   && sed -i -e 's/# it_IT.UTF-8 UTF-8/it_IT.UTF-8 UTF-8/' /etc/locale.gen \
   && dpkg-reconfigure --frontend=noninteractive locales \
   && chmod 644 /usr/local/share/ca-certificates/ca1.crt \
-  && chmod 644 /usr/local/share/ca-certificates/ca2.crt
+  && chmod 644 /usr/local/share/ca-certificates/ca2.crt \
+  && apt-get -y remove fonts-dejavu-core
 
 # Requirements are installed here to ensure they will be cached.
 COPY ./requirements /requirements
@@ -87,6 +88,7 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/* \
   && pip3 install  --break-system-packages --no-cache-dir -r /requirements/test.txt
 
+# This package change allerta and vigilanza header
 RUN sed -i '/policy domain="coder" rights="none" pattern="PDF"/d' /etc/ImageMagick-6/policy.xml
 
 FROM ${APP_BASE_IMAGE} AS backend

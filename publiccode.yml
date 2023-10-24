@@ -4,8 +4,8 @@ publiccodeYmlVersion: "0.2"
 
 name: Weboll
 url: "https://github.com/Arpapiemonte/weboll.git"
-softwareVersion: "v1.3.0+fa5d2d81"
-releaseDate: "2023-07-17"
+softwareVersion: "v1.4.0+f15999c7"
+releaseDate: "2023-10-18"
 platforms:
   - web
 

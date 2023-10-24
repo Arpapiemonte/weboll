@@ -18,7 +18,6 @@ from config import version
 
 class VersionView(View):
     def get(self, request: HttpRequest) -> HttpResponse:
-
         response = JsonResponse(
             {
                 "stamp": datetime.datetime.utcnow().isoformat(),

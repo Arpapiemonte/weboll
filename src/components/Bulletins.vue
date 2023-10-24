@@ -199,25 +199,25 @@
                 </th>
                 <th 
                   scope="col"
-                  class="cursor-pointer align-middle"
+                  class="align-middle"
                 >
                   Stato
                 </th>
                 <th 
                   scope="col"
-                  class="cursor-pointer align-middle"
+                  class="align-middle"
                 >
                   Visualizza<br>Modifica
                 </th>
                 <th 
                   scope="col"
-                  class="cursor-pointer align-middle"
+                  class="align-middle"
                 >
                   PDF
                 </th>
                 <th 
                   scope="col"
-                  class="cursor-pointer align-middle"
+                  class="align-middle"
                 >
                   Elimina
                 </th>
@@ -246,6 +246,7 @@
                 <td>
                   <span v-if="bulletin.status === '1'">Inviato</span>
                   <span v-else-if="bulletin.status === '0'">Bozza</span>
+                  <span v-else-if="bulletin.status === 'X'">Bozza</span>
                   <span v-else>Riaperto</span>
                 </td>
                 <td>
@@ -285,7 +286,9 @@
                 </td>
                 <td>
                   <button
-                    :disabled="bulletin.status !== '0' || !username"
+                    :disabled="(bulletin.status !== '0' || !username) && 
+                      !(bulletin['id_w17verifica'] !== undefined && 
+                        getDateFormatted(bulletin.data_emissione, false) === getDateFormatted(new Date(), false))"
                     type="button"
                     class="btn btn-outline-danger btn-sm"
                     @click="remove(bulletin[primaryKeyName])"
@@ -345,7 +348,7 @@
               </ul>
             </div>
             <span style="font-size: small;">
-              Il sistema di gestione qualità è certificato ISO 9001:2015 da IMQ
+              Azienda Certificata UNI EN ISO 9001:2015 certificato GCERTI ITALY n° GITI-820-QC
             </span>
           </div>
         </div>
@@ -627,7 +630,7 @@ export default {
           }
         )
       })
-    },
+    },    
     create() {
       this.creating = true
       this.fetchBulletinNew().then(async response => {
@@ -643,17 +646,28 @@ export default {
           var tmp = await response.json()
           this.$router.push({ path: `/${this.detailPage}/${tmp[this.primaryKeyName]}`})
         } else {
-          this.$toast.open(
-            {
-              message: `Errore ${response.status} nella creazione del bollettino`,
-              type: 'error',
-              position: 'top-left'
+          if (response.status === 555) {
+            tmp = await response.json()
+            this.$toast.open(
+              {
+                message: `Errore ${tmp.error} nella creazione del bollettino`,
+                type: 'error',
+                position: 'top-left'
+              }
+            )
+          }else{
+            this.$toast.open(
+              {
+                message: `Errore ${response.status} nella creazione del bollettino`,
+                type: 'error',
+                position: 'top-left'
+              }
+            )
+            this.creating = false
+            if (response.status === 401 || response.status === 403) {
+              this.$refs.login.show()
+              return null
             }
-          )
-          this.creating = false
-          if (response.status === 401 || response.status === 403) {
-            this.$refs.login.show()
-            return null
           }
         }
       }).catch((error) => {
@@ -673,8 +687,8 @@ export default {
       }
       this.currentSort = s;
     },
-    getDateFormatted(rawString) {
-      return api.getDateFormatted(rawString)
+    getDateFormatted(rawString, time = true) {
+      return api.getDateFormatted(rawString, time)
     }
   }
 }

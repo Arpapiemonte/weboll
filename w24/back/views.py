@@ -1452,7 +1452,6 @@ class VigilanzaHTMLView(TemplateView):
 
                 for classe in classes:
                     if not (tlday == "48" and classe == "RISK_TCOLD"):
-
                         if (
                             int(
                                 float(

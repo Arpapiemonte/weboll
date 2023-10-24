@@ -32,16 +32,23 @@ urlpatterns: URLList = [
     path(settings.ADMIN_URL, include("massadmin.urls")),
     path("", include("website.common.urls")),
     path("w05/", include("w05.back.urls")),
+    path("w06/", include("w06.back.urls")),
+    path("w07/", include("w07.back.urls")),
+    path("w12/", include("w12.back.urls")),
     path("w16/", include("w16.back.urls")),
+    path("w17/", include("w17.back.urls")),
     path("w23/", include("w23.back.urls")),
     path("w24/", include("w24.back.urls")),
     path("w26/", include("w26.back.urls")),
+    path("w28/", include("w28.back.urls")),
     path("w29/", include("w29.back.urls")),
     path("w22/", include("w22.back.urls")),
     path("w30/", include("w30.back.urls")),
     path("w22verifica/", include("w22verifica.back.urls")),
+    path("w17verifica/", include("w17verifica.back.urls")),
     path("w31/", include("w31.back.urls")),
     path("w32/", include("w32.back.urls")),
+    path("w33/", include("w33.back.urls")),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

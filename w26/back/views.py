@@ -196,7 +196,7 @@ class W26View(viewsets.ModelViewSet):
         numero_bollettino = int(old_w26.numero_bollettino.split("/")[0])
         numero_bollettino = numero_bollettino + 1
         # gestione anno nuovo
-        if old_w26.data_emissione.year < today.year:
+        if old_w26.data_validita.year < today.year:
             print("new(): cambio dell'anno imposto il sequenziale a 1")
             numero_bollettino = 1
 
@@ -349,6 +349,9 @@ class W26SVGView(TemplateView):
         w26 = get_object_or_404(queryset, pk=kwargs["pk"])
         serializer = W26SerializerFull(w26)
         w26_json = serializer.data
+        w26_json["w26data_set"] = list(
+            filter(lambda x: x["id_w26_zone"] is not None, w26_json["w26data_set"])
+        )
         w26_json["data_emissione"] = w26.data_emissione
         w26_json["last_update"] = w26.last_update
         w26_json["w26data_set"].sort(key=lambda x: x["id_w26_zone"]["numero"])

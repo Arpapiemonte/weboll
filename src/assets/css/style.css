@@ -12,3 +12,7 @@ th {
 .cursor-pointer {
     cursor: pointer;
 }
+
+.sticky-top {
+    z-index: 100;
+}

@@ -71,7 +71,6 @@ ALTER TABLE ONLY public.w31_data_macroaree_livelli ALTER COLUMN id_w31_data_macr
 COPY public.w31_data_macroaree_livelli (id_w31_data_macroaree_livelli, id_time_layouts, id_w31, id_w31_livelli, id_w31_macroaree) FROM stdin;
 \.
 
-
 --
 -- Name: w31_data_macroaree_livelli_id_w31_data_macroaree_livelli_seq; Type: SEQUENCE SET; Schema: public; Owner: weboll
 --

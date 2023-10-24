@@ -71,7 +71,7 @@
 </template>
 
 <script>
-import { Modal } from 'bootstrap'
+import Modal from 'bootstrap/js/dist/modal'
 
 import 'vue-toast-notification/dist/theme-default.css'
 import api from '@/api'

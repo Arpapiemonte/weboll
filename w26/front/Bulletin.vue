@@ -378,7 +378,7 @@
 </script>
 
 <script setup lang="ts">
-import { Modal } from 'bootstrap'
+import Modal from 'bootstrap/js/dist/modal'
 import { Ref, ref, onMounted, computed } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { useToast } from 'vue-toast-notification'
@@ -462,6 +462,9 @@ async function fetchData () {
     return response.json()
   }).then(data => {
     bis.value = data
+    // remove from w26_data record with id_w26_zone == null
+    bis.value.w26data_set =  bis.value.w26data_set.filter(function(key) { return key.id_w26_zone !== null  })
+    
     bis.value.w26data_set.sort((a, b) => a.id_w26_zone.numero - b.id_w26_zone.numero)
     readonly.value = (bis.value.status === '1' || bis.value.status === '2' || !state.value.username)
 

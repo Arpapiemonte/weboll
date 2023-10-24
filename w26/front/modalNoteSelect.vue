@@ -112,7 +112,7 @@ let note = ref([
         checked: false,
     },
     {
-        nota: "Situazione idraulica alterata per apertura paratoia in sponda destra",
+        nota: "Situazione idraulica alterata per la presenza di opere di regolazione in alveo",
         id: "(10)",
         checked: false,
     },
@@ -142,7 +142,7 @@ let note = ref([
         checked: false,
     },
     {
-        nota: "Valore non significativo per effetto delle regolazioni artificiali",
+        nota: "Valore non significativo per effetto delle regolazioni artificiali a monte",
         id: "(16)",
         checked: false,
     },

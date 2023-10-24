@@ -16,7 +16,6 @@ def populate_bulletins(apps, schema_editor):
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("core", "0007_auto_20210814_0737"),
     ]

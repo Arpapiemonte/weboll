@@ -1,3 +1,4 @@
+import datetime
 import locale
 from datetime import timedelta
 
@@ -36,7 +37,20 @@ def my_date_JtD_ita(value):
 
 @register.filter
 def my_date_dmY(value):
-    return value.strftime("%d/%m/%Y").title().lower()
+    print("-------my_date_dmY--------", value)
+    if type(value) == str:
+        if value != "n.d.":
+            return (
+                (datetime.datetime.strptime(value, "%Y-%m-%d"))
+                .strftime("%d/%m/%Y")
+                .title()
+                .lower()
+            )
+        else:
+            return value
+    else:
+        return value.strftime("%d/%m/%Y").title().lower()
+    # return value.strftime("%d/%m/%Y").title().lower()
 
 
 @register.filter

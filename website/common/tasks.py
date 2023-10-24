@@ -15,6 +15,7 @@ import requests
 from django.db import connection
 
 from config import celery_app
+from w26.back.models import W26
 from website.core.models import Bulletins, Destinazioni
 
 log = logging.getLogger(__name__)
@@ -22,20 +23,26 @@ log = logging.getLogger(__name__)
 
 def send_with_celery(prodotto, id):
     """Send prodotto bulletin to all configured destinations"""
+    my_date = datetime.datetime.today()
+    if prodotto == "bis":
+        w26 = W26.objects.get(pk=id)
+        if w26 is not None:
+            my_date = datetime.datetime.combine(
+                w26.data_validita, datetime.datetime.min.time()
+            )
     to_send = 0
     for d in Destinazioni.objects.filter(prodotto=prodotto).filter(enabled=True):
         url = "http://django:8000" + d.endpoint.replace("{{id}}", str(id))
-        today = datetime.datetime.today()
         destinazione = (
             d.destinazione.replace("{{id}}", str(id))
-            .replace("{{year}}", str(today.year))
-            .replace("{{month}}", str(today.month).zfill(2))
-            .replace("{{day}}", str(today.day).zfill(2))
+            .replace("{{year}}", str(my_date.year))
+            .replace("{{month}}", str(my_date.month).zfill(2))
+            .replace("{{day}}", str(my_date.day).zfill(2))
             .replace(
                 "{{time}}",
-                str(today.hour).zfill(2)
-                + str(today.minute).zfill(2)
-                + str(today.second).zfill(2),
+                str(my_date.hour).zfill(2)
+                + str(my_date.minute).zfill(2)
+                + str(my_date.second).zfill(2),
             )
         )
         if destinazione[0] == "/":

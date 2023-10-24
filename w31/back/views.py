@@ -108,20 +108,39 @@ def first_guess(username, start, draft=0):
             old_seq_num = old.seq_num if old.seq_num is not None else 0
             new_seq = old_seq_num + 1
         old_data = models.W31DataMicroareeLivelli.objects.filter(
-            id_w31=old.id_w31
+            id_w31=old.id_w31, id_time_layouts=49
         )  # 47 records
         for od in old_data:
             old_parameters = models.W31DataMicroareeParametri.objects.filter(
                 id_w31_data_microaree_livelli=od.id_w31_data_microaree_livelli
             )  # 10 records
             ffmc = old_parameters.get(id_parametro=parametro_ffmc).numeric_value
+            print(
+                od.id_w31_microaree,
+                od.id_time_layouts,
+                " old_parameters.get(id_parametro=parametro_ffmc).numeric_value",
+                old_parameters.get(id_parametro=parametro_ffmc).numeric_value,
+            )
             dmc = old_parameters.get(id_parametro=parametro_dmc).numeric_value
+            print(
+                od.id_w31_microaree,
+                od.id_time_layouts,
+                " old_parameters.get(id_parametro=parametro_dmc).numeric_value",
+                old_parameters.get(id_parametro=parametro_dmc).numeric_value,
+            )
             dc = old_parameters.get(id_parametro=parametro_dc).numeric_value
+            print(
+                od.id_w31_microaree,
+                od.id_time_layouts,
+                " old_parameters.get(id_parametro=parametro_dc).numeric_value",
+                old_parameters.get(id_parametro=parametro_dc).numeric_value,
+            )
             yesterday_fwi[od.id_w31_microaree.id_w31_microaree] = {
                 "ffmc": ffmc,
                 "dmc": dmc,
                 "dc": dc,
             }
+
     # creazione nuovo bollettino
     new_w31 = models.W31(
         start_valid_time=emissione,
@@ -139,23 +158,48 @@ def first_guess(username, start, draft=0):
     new_w31.save()
 
     for record in rolling:
-
         corrected_id_time_layout = record.id_time_layouts + 17 * days_offset
 
         if corrected_id_time_layout == 49:  # timelayout che indicata la giornata oggi
-
             ffmc0 = yesterday_fwi[record.id_w31_microaree.id_w31_microaree]["ffmc"]
+            print(
+                'timelayout 49 yesterday_fwi[record.id_w31_microaree.id_w31_microaree]["ffmc"]',
+                yesterday_fwi[record.id_w31_microaree.id_w31_microaree]["ffmc"],
+            )
             dmc0 = yesterday_fwi[record.id_w31_microaree.id_w31_microaree]["dmc"]
+            print(
+                'timelayout 49 yesterday_fwi[record.id_w31_microaree.id_w31_microaree]["dmc"]',
+                yesterday_fwi[record.id_w31_microaree.id_w31_microaree]["dmc"],
+            )
             dc0 = yesterday_fwi[record.id_w31_microaree.id_w31_microaree]["dc"]
+            print(
+                'timelayout 49 yesterday_fwi[record.id_w31_microaree.id_w31_microaree]["dc"]',
+                yesterday_fwi[record.id_w31_microaree.id_w31_microaree]["dc"],
+            )
             mth = start.month
 
         else:  # per gli altri timelayouts ovvero i giorni futuri delle previsioni
-
             # uso i dati del giorno prima per calcolare le variabili intermedie
             ffmc0 = ffmc  # Valore del giorno prima
             dmc0 = dmc  # Valore del giorno prima
             dc0 = dc  # Valore del giorno prima
 
+        print(
+            record.id_w31_microaree,
+            record.id_time_layouts,
+            record.temp,
+            record.umid,
+            record.velv,
+            record.prec,
+            "mth",
+            mth,
+            "ffmc0",
+            ffmc0,
+            "dmc0",
+            dmc0,
+            "dc0",
+            dc0,
+        )
         fwisystem = FWIClass(record.temp, record.umid, record.velv, record.prec)
         ffmc = fwisystem.FFMCcalc(ffmc0)
         dmc = fwisystem.DMCcalc(dmc0, mth)
@@ -589,6 +633,15 @@ class IncendiSVGView(TemplateView):
         serializer = W31SerializerFull(w31)
         incendi = serializer.data
 
+        tabella_vento = {}  # type: ignore
+
+        for i in incendi["w31datamacroareelivelli_set"]:
+            tabella_vento[i["id_w31_macroaree"]["id_w31_macroaree"]] = {}
+        for i in incendi["w31datamacroareelivelli_set"]:
+            tabella_vento[i["id_w31_macroaree"]["id_w31_macroaree"]][
+                i["id_time_layouts"]
+            ] = i["wind"]
+
         start = w31.start_valid_time.date()
         end = start + datetime.timedelta(days=6)
 
@@ -661,6 +714,7 @@ class IncendiSVGView(TemplateView):
             "tabella_incendi": tabella_incendi,
             "dates": [today, tomorrow, tdat, day4, day5, day6, day7],
             "livelli": livelli,
+            "tabella_vento": tabella_vento,
         }
         return context
 

@@ -160,6 +160,9 @@ COPY public.venue (id_venue, description, altitude, last_update, username) FROM 
 109	Alpi Pennine Sud	2000.00	2011-06-14 10:15:04	weboll
 119	Collina Torinese e Astigiano	700.00	2011-06-14 10:15:15	weboll
 116	Alpi Liguri	1500.00	2011-06-14 10:15:12	weboll
+187	A33 Tratta1 Cuneo-Carru	\N	2016-12-07 10:02:24.0	weboll
+188	A33 Tratta2 Marene-Cherasco	\N	2016-12-07 10:02:47.0	weboll
+189	A33 Tratta3 Alba-Asti	\N	2016-12-07 10:03:44.0	weboll
 \.
 
 
@@ -181,3 +184,27 @@ ALTER TABLE public.venue OWNER TO weboll;
 -- PostgreSQL database dump complete
 --
 
+INSERT INTO public.venue
+(id_venue, description, altitude, last_update, username)
+VALUES(171, 'Provincia di Alessandria', NULL, '2013-07-12 14:20:00.000', 'weboll');
+INSERT INTO public.venue
+(id_venue, description, altitude, last_update, username)
+VALUES(172, 'Provincia di Asti', NULL, '2013-07-12 14:20:00.000', 'weboll');
+INSERT INTO public.venue
+(id_venue, description, altitude, last_update, username)
+VALUES(173, 'Provincia di Biella', NULL, '2013-07-12 14:20:00.000', 'weboll');
+INSERT INTO public.venue
+(id_venue, description, altitude, last_update, username)
+VALUES(174, 'Provincia di Cuneo', NULL, '2013-07-12 14:20:00.000', 'weboll');
+INSERT INTO public.venue
+(id_venue, description, altitude, last_update, username)
+VALUES(175, 'Provincia di Novara', NULL, '2013-07-12 14:20:00.000', 'weboll');
+INSERT INTO public.venue
+(id_venue, description, altitude, last_update, username)
+VALUES(176, 'Provincia di Torino', NULL, '2013-07-12 14:20:00.000', 'weboll');
+INSERT INTO public.venue
+(id_venue, description, altitude, last_update, username)
+VALUES(177, 'Provincia di Verbania', NULL, '2013-07-12 14:20:00.000', 'weboll');
+INSERT INTO public.venue
+(id_venue, description, altitude, last_update, username)
+VALUES(178, 'Provincia di Vercelli', NULL, '2013-07-12 14:20:00.000', 'weboll');

@@ -5,7 +5,6 @@ import django_cryptography.fields
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("core", "0006_destinazioni"),
     ]

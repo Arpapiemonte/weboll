@@ -7,7 +7,7 @@
     <div class="col-md-8 offset-md-2">
       <h1>ARPA Piemonte - weboll - bulletin back-office</h1>
       <h2>Bollettini disponibili:</h2>
-      <div class="row row-cols-2 mt-5">
+      <div class="row row-cols-1 row-cols-sm-2 mt-5">
         <div
           v-for="bulletin in filtered_bulletins_list"
           :key="bulletin.id"
@@ -30,7 +30,7 @@
                 :alt="`Logo ${bulletin.name}`"
               >
               <div class="ms-3 h5">
-                Bollettini {{ bulletin.name }}
+                {{ bulletin.name }}
               </div>
             </div>
           </router-link>

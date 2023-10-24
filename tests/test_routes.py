@@ -15,19 +15,16 @@ def test_timesensitive(freeze):
 
 
 class TestBullettinsEndpoints:
-
     endpoint = "/w05/bulletins/"
     endpoint_new = "/w05/bulletins/new/"
 
     def test_list(self, api_client):
-
         response = api_client().get(self.endpoint)
 
         assert response.status_code == 200
         assert len(json.loads(response.content)) == 4
 
     def test_full_new_bulletin_authorized(self, api_client, freeze):
-
         c = api_client()
 
         # numero bolletino esistenti
@@ -65,7 +62,6 @@ class TestBullettinsEndpoints:
         assert W05.objects.all().count() == tot
 
     def test_new_bulletin_unauthorized(self, api_client):
-
         c = api_client()
 
         response = c.get(self.endpoint_new)
@@ -73,7 +69,6 @@ class TestBullettinsEndpoints:
         assert response.status_code == 403
 
     def test_delete_new_bulletin_unauthorized(self, api_client, freeze):
-
         c = api_client()
 
         # login
@@ -109,7 +104,6 @@ class TestBullettinsEndpoints:
         assert response.status_code == 204
 
     def test_delete_sent_bulletin_unauthorized(self, api_client):
-
         c = api_client()
 
         # estrazione del più recente bolletino inviato (status=1)
