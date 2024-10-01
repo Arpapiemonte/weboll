@@ -3,5 +3,6 @@
 set -o errexit
 set -o nounset
 
+/etc/init.d/postfix start &
 
 celery -A config.celery_app worker -l INFO

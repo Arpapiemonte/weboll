@@ -1,4 +1,4 @@
-// Copyright (C) 2020-2023 simevo s.r.l. for ARPA Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
@@ -18,19 +18,22 @@
           Quota:
           <Level
             :readonly="readonly"
-            :data="data[1]"
+            :style="validity_check(orderedData[1],orderedData[0]) ? 'border: #FFBF00; border:5px solid #FFBF00;' : ''"
+            :data="orderedData[1]"
             :history="history"
             :step="100"
             :nullable="true"
+            :validity="validity"
             @set-level="setLevel"
           />
         </p>
         <ClassSelect
           :readonly="readonly"
-          :data="classes[0]"
-          :classes-value="classDescription[classes[0].id_classes].classes_value"
+          :data="orderedClasses[1]"
+          :classes-value="classDescription[orderedClasses[1].id_classes].classes_value"
           :history="history"
           :required="false"
+          :validity="validity"
           @set-class="setClass"
         />
       </div>
@@ -40,19 +43,21 @@
           Quota:
           <Level
             :readonly="readonly"
-            :data="data[0]"
+            :data="orderedData[0]"
             :history="history"
             :step="100"
             :nullable="true"
+            :validity="validity"
             @set-level="setLevel"
           />
         </p>
         <ClassSelect
           :readonly="readonly"
-          :data="classes[1]"
-          :classes-value="classDescription[classes[1].id_classes].classes_value"
+          :data="orderedClasses[0]"
+          :classes-value="classDescription[orderedClasses[0].id_classes].classes_value"
           :history="history"
           :required="false"
+          :validity="validity"
           @set-class="setClass"
         />
       </div>
@@ -90,16 +95,44 @@ export default {
     history: {
       type: Object,
       default: () => { return { cursor: -1, snapshots: [] } }
-    }
+    },
+    validity: {
+      type: Object,
+      default: () => { return {} }
+    },
   },
   emits: ['setClass', 'setLevel'],
+  computed: {
+    orderedData(){
+      // 0 => 909 => Massima
+      // 1 => 910 => Minima
+      const massima = this.data.find((element) => element.id_aggregazione == 909);
+      const minima = this.data.find((element) => element.id_aggregazione == 910);
+      return [massima,minima]
+    },
+    orderedClasses(){
+      // 0 => 909 => Massima
+      // 1 => 910 => Minima
+      const massima = this.classes.find((element) => element.id_aggregazione == 909);
+      const minima = this.classes.find((element) => element.id_aggregazione == 910);
+      return [massima,minima]
+    }
+  },
   methods: {
     setClass(id_w05_classes, old_value, new_value) {
       this.$emit('setClass', id_w05_classes, old_value, new_value)
     },
     setLevel(id_w05_data, old_value, new_value, value_key) {
       this.$emit('setLevel', id_w05_data, old_value, new_value, value_key)
+    },
+    validity_check(min, max){
+      //se min > max colora di arancione verifica che quota neve min non sia maggiore di quota neve max
+      if(parseInt(min['numeric_value'])>parseInt(max['numeric_value']))  {
+        return true
+      } else {
+        return false
+      }
     }
-  }
+  },
 }
 </script>

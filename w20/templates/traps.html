@@ -1,0 +1,346 @@
+{% load date_extras_w20 %}
+<!DOCTYPE html>
+<html lang="it">
+	<head>
+		<meta charset="utf-8">
+		<title>Bollettino Traps Regione Piemonte {{ numero_bollettino }} del {{ data_emissione }}</title>
+		<style>
+			franeA {fill: #A6A6A6;}
+			franeB {fill: #9999FF;}
+			franeE {fill: #9900FF;}
+			.franeA {fill: #A6A6A6;}
+			.franeB {fill: #9999FF;}
+			.franeE {fill: #9900FF;}
+			g.franeA path {fill: #A6A6A6;}
+			g.franeB path {fill: #9999FF;}
+			g.franeE path {fill: #9900FF;}
+		</style>
+	</head>
+	<body>
+		<svg version="1.1" id="bollettino" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+			viewBox="0 0 595 842" style="enable-background:new 0 0 595 842;" xml:space="preserve">
+			<g transform="scale(2.90)">
+			{% include "trapsheader.svg" with validity='-' title='Probabilita di attivazione di scivolamenti traslativi/rotazionali' seqNum=traps.numero_bollettino startValidTime=traps.data_emissione logo='regione-piemonte' username=traps.username%}
+			</g>
+			<g>
+				<!--Titoli riquadri-->
+				<text transform="matrix(1 0 0 1 388 148.3198)" style="font-family:'ArialMT'; font-size:7.5;">Scenario di attivazione</text>
+				<text transform="matrix(1 0 0 1 46 337.3198)" style="font-family:'ArialMT'; font-size:7.5;">Mappa di precipitazione cumulata nei 60 giorni antecedenti</text>
+				<text transform="matrix(1 0 0 1 322.2402 337.3198)" style="font-family:'ArialMT'; font-size:7.5;">Mappa della distribuzione attuale del manto nevoso al suolo</text>
+				<text transform="matrix(1 0 0 1 25.4902 148.8198)" style="font-family:'ArialMT'; font-size:7.5;">Probabilità di attivazione di scivolamenti traslativi o rotazionali a scala comunale</text>
+
+				<!-- Rettangoli riquadri (non modificabili)-->
+				<rect x="23" y="135.582" style="fill:none;stroke:#000000;stroke-miterlimit:10;" width="274" height="20"/>
+				<rect x="23" y="155.782" style="fill:none;stroke:#000000;stroke-miterlimit:10;" width="274" height="168"/>
+				
+				<rect x="23" y="324.291" style="fill:none;stroke:#000000;stroke-miterlimit:10;" width="274" height="20"/>
+				<rect x="23" y="344.491" style="fill:none;stroke:#000000;stroke-miterlimit:10;" width="274" height="168"/>
+				
+				<rect x="296.75" y="135.582" style="fill:none;stroke:#000000;stroke-miterlimit:10;" width="270.5" height="20"/>
+				<rect x="296.988" y="156.02" style="fill:none;stroke:#000000;stroke-miterlimit:10;" width="270" height="168"/>
+				
+				<rect x="296.375" y="324.291" style="fill:none;stroke:#000000;stroke-miterlimit:10;" width="270.5" height="20"/>
+				<rect x="296.375" y="344.491" style="fill:none;stroke:#000000;stroke-miterlimit:10;" width="270.5" height="168"/>
+			</g>
+			<g transform="scale(0.62) translate(469 221)">
+				<rect x="61.167" y="132" style="fill:none;" width="268.167" height="75.667"/>
+				<text transform="matrix(1 0 0 1 61.1667 139.1597)">
+					<tspan x="3" y="6" style="font-family:'ArialMT'; font-size:10;">Probabilit&#xE0; di attivazione bassa - possibili movimenti registrati dalla rete di</tspan>
+					<tspan x="3" y="18" style="font-family:'ArialMT'; font-size:10;">monitoraggio (ove presente) senza espressioni morfologiche superficiali; allo</tspan>
+					<tspan x="3" y="30" style="font-family:'ArialMT'; font-size:10;">stadio incipiente (comparsa di evidenze morfologiche superficiali: attivazione</tspan>
+					<tspan x="3" y="42" style="font-family:'ArialMT'; font-size:10;">rigonfiamenti, avvallamenti, trincee fratture sui versanti); peggioramento di stadi</tspan>
+					<tspan x="3" y="54" style="font-family:'ArialMT'; font-size:10;">incipienti pregressi.</tspan>
+				</text>
+				<rect x="61.167" y="220.333" style="fill:none;" width="268.167" height="70.333"/>
+				<text transform="matrix(1 0 0 1 61.1667 227.4925)">
+					<tspan x="3" y="12" style="font-family:'ArialMT'; font-size:10;">Probabilit&#xE0; di attivazione elevata - possibili attivazioni parossistiche con</tspan>
+					<tspan x="3" y="24" style="font-family:'ArialMT'; font-size:10;">scivolamento di porzioni di versante; attivazioni allo stadio incipiente (comparsa di</tspan>
+					<tspan x="3" y="36" style="font-family:'ArialMT'; font-size:10;">evidenze morfologiche superficiali: rigonfiamenti, avvallamenti, trincee e fratture</tspan>
+					<tspan x="3" y="48" style="font-family:'ArialMT'; font-size:10;">sui versanti); peggioramento di stadi incipienti pregressi.</tspan>
+				</text>
+				<text transform="matrix(1 0 0 1 63.3335 84.0002)" style="font-family:'ArialMT'; font-size:10;">Probabilit&#xE0; di attivazione assente.</text>
+				<polyline style="fill-rule:evenodd;clip-rule:evenodd;fill:#A6A6A6;stroke:#000000;stroke-miterlimit:10;" points="10.292,30.511 
+					10.292,120.525 56.048,120.525 56.048,30.511 10.292,30.511 "/>
+				<!--<rect x="10.292" y="8" style="fill:none;stroke:#000000;stroke-miterlimit:10;" width="326.667" height="22.5"/>-->
+				<polyline style="fill-rule:evenodd;clip-rule:evenodd;fill:#9999FF;stroke:#000000;stroke-miterlimit:10;" points="10.292,119.775 
+					10.292,209.789 56.048,209.789 56.048,119.775 10.292,119.775 "/>
+				<polyline style="fill-rule:evenodd;clip-rule:evenodd;fill:#9900FF;stroke:#000000;stroke-miterlimit:10;" points="10.292,210.039 
+					10.292,300.052 56.048,300.052 56.048,210.039 10.292,210.039 "/>
+				<!--<text transform="matrix(1 0 0 1 132.0002 23.0002)" style="font-family:'ArialMT'; font-size:10;">Stato di Attivit&#xE0;</text>-->
+				<rect x="56" y="31" style="fill:none;stroke:#000000;stroke-miterlimit:10;" width="389" height="89"/>
+				<rect x="56" y="120" style="fill:none;stroke:#000000;stroke-miterlimit:10;" width="389" height="90"/>
+				<rect x="56" y="210" style="fill:none;stroke:#000000;stroke-miterlimit:10;" width="389" height="92"/>
+				<text transform="matrix(1 0 0 1 27.3335 82.0002)" style="font-family:'ArialMT'; font-size:14;">A</text>
+				<text transform="matrix(1 0 0 1 27.3335 171.0002)" style="font-family:'ArialMT'; font-size:14;">B</text>
+				<text transform="matrix(1 0 0 1 27.3335 261.0002)" style="font-family:'ArialMT'; font-size:14;">E</text>
+			</g>
+			<g transform="translate(20 30) scale(0.50)">{{ traps.w20data_set.0.comune }}
+				<!--Scenario ATTUALE-->
+				{% include "traps.svg" with color_0=traps.w20data_set.0.prob_innesco color_1=traps.w20data_set.1.prob_innesco color_2=traps.w20data_set.2.prob_innesco color_3=traps.w20data_set.3.prob_innesco color_4=traps.w20data_set.4.prob_innesco color_5=traps.w20data_set.5.prob_innesco color_6=traps.w20data_set.6.prob_innesco color_7=traps.w20data_set.7.prob_innesco color_8=traps.w20data_set.8.prob_innesco color_9=traps.w20data_set.9.prob_innesco color_10=traps.w20data_set.10.prob_innesco color_11=traps.w20data_set.11.prob_innesco color_12=traps.w20data_set.12.prob_innesco color_13=traps.w20data_set.13.prob_innesco color_14=traps.w20data_set.14.prob_innesco color_15=traps.w20data_set.15.prob_innesco color_16=traps.w20data_set.16.prob_innesco color_17=traps.w20data_set.17.prob_innesco color_18=traps.w20data_set.18.prob_innesco color_19=traps.w20data_set.19.prob_innesco	color_20=traps.w20data_set.20.prob_innesco color_21=traps.w20data_set.21.prob_innesco color_22=traps.w20data_set.22.prob_innesco color_23=traps.w20data_set.23.prob_innesco color_24=traps.w20data_set.24.prob_innesco color_25=traps.w20data_set.25.prob_innesco color_26=traps.w20data_set.26.prob_innesco color_27=traps.w20data_set.27.prob_innesco color_28=traps.w20data_set.28.prob_innesco color_29=traps.w20data_set.29.prob_innesco color_30=traps.w20data_set.30.prob_innesco color_31=traps.w20data_set.31.prob_innesco color_32=traps.w20data_set.32.prob_innesco color_33=traps.w20data_set.33.prob_innesco color_34=traps.w20data_set.34.prob_innesco color_35=traps.w20data_set.35.prob_innesco color_36=traps.w20data_set.36.prob_innesco color_37=traps.w20data_set.37.prob_innesco color_38=traps.w20data_set.38.prob_innesco color_39=traps.w20data_set.39.prob_innesco color_40=traps.w20data_set.40.prob_innesco color_41=traps.w20data_set.41.prob_innesco color_42=traps.w20data_set.42.prob_innesco color_43=traps.w20data_set.43.prob_innesco color_44=traps.w20data_set.44.prob_innesco color_45=traps.w20data_set.45.prob_innesco color_46=traps.w20data_set.46.prob_innesco color_47=traps.w20data_set.47.prob_innesco color_48=traps.w20data_set.48.prob_innesco color_49=traps.w20data_set.49.prob_innesco color_50=traps.w20data_set.50.prob_innesco color_51=traps.w20data_set.51.prob_innesco color_52=traps.w20data_set.52.prob_innesco color_53=traps.w20data_set.53.prob_innesco color_54=traps.w20data_set.54.prob_innesco color_55=traps.w20data_set.55.prob_innesco color_56=traps.w20data_set.56.prob_innesco color_57=traps.w20data_set.57.prob_innesco color_58=traps.w20data_set.58.prob_innesco color_59=traps.w20data_set.59.prob_innesco color_60=traps.w20data_set.60.prob_innesco color_61=traps.w20data_set.61.prob_innesco color_62=traps.w20data_set.62.prob_innesco color_63=traps.w20data_set.63.prob_innesco color_64=traps.w20data_set.64.prob_innesco color_65=traps.w20data_set.65.prob_innesco color_66=traps.w20data_set.66.prob_innesco color_67=traps.w20data_set.67.prob_innesco color_68=traps.w20data_set.68.prob_innesco color_69=traps.w20data_set.69.prob_innesco color_70=traps.w20data_set.70.prob_innesco color_71=traps.w20data_set.71.prob_innesco color_72=traps.w20data_set.72.prob_innesco color_73=traps.w20data_set.73.prob_innesco color_74=traps.w20data_set.74.prob_innesco color_75=traps.w20data_set.75.prob_innesco color_76=traps.w20data_set.76.prob_innesco color_77=traps.w20data_set.77.prob_innesco color_78=traps.w20data_set.78.prob_innesco color_79=traps.w20data_set.79.prob_innesco color_80=traps.w20data_set.80.prob_innesco color_81=traps.w20data_set.81.prob_innesco color_82=traps.w20data_set.82.prob_innesco color_83=traps.w20data_set.83.prob_innesco color_84=traps.w20data_set.84.prob_innesco color_85=traps.w20data_set.85.prob_innesco color_86=traps.w20data_set.86.prob_innesco color_87=traps.w20data_set.87.prob_innesco color_88=traps.w20data_set.88.prob_innesco color_89=traps.w20data_set.89.prob_innesco color_90=traps.w20data_set.90.prob_innesco color_91=traps.w20data_set.91.prob_innesco color_92=traps.w20data_set.92.prob_innesco color_93=traps.w20data_set.93.prob_innesco color_94=traps.w20data_set.94.prob_innesco color_95=traps.w20data_set.95.prob_innesco color_96=traps.w20data_set.96.prob_innesco color_97=traps.w20data_set.97.prob_innesco color_98=traps.w20data_set.98.prob_innesco color_99=traps.w20data_set.99.prob_innesco color_100=traps.w20data_set.100.prob_innesco color_101=traps.w20data_set.101.prob_innesco color_102=traps.w20data_set.102.prob_innesco color_103=traps.w20data_set.103.prob_innesco color_104=traps.w20data_set.104.prob_innesco color_105=traps.w20data_set.105.prob_innesco color_106=traps.w20data_set.106.prob_innesco color_107=traps.w20data_set.107.prob_innesco color_108=traps.w20data_set.108.prob_innesco color_109=traps.w20data_set.109.prob_innesco color_110=traps.w20data_set.110.prob_innesco color_111=traps.w20data_set.111.prob_innesco color_112=traps.w20data_set.112.prob_innesco color_113=traps.w20data_set.113.prob_innesco color_114=traps.w20data_set.114.prob_innesco color_115=traps.w20data_set.115.prob_innesco color_116=traps.w20data_set.116.prob_innesco color_117=traps.w20data_set.117.prob_innesco color_118=traps.w20data_set.118.prob_innesco color_119=traps.w20data_set.119.prob_innesco color_120=traps.w20data_set.120.prob_innesco color_121=traps.w20data_set.121.prob_innesco color_122=traps.w20data_set.122.prob_innesco color_123=traps.w20data_set.123.prob_innesco color_124=traps.w20data_set.124.prob_innesco color_125=traps.w20data_set.125.prob_innesco color_126=traps.w20data_set.126.prob_innesco color_127=traps.w20data_set.127.prob_innesco color_128=traps.w20data_set.128.prob_innesco color_129=traps.w20data_set.129.prob_innesco color_130=traps.w20data_set.130.prob_innesco color_131=traps.w20data_set.131.prob_innesco color_132=traps.w20data_set.132.prob_innesco color_133=traps.w20data_set.133.prob_innesco color_134=traps.w20data_set.134.prob_innesco color_135=traps.w20data_set.135.prob_innesco color_136=traps.w20data_set.136.prob_innesco color_137=traps.w20data_set.137.prob_innesco color_138=traps.w20data_set.138.prob_innesco color_139=traps.w20data_set.139.prob_innesco color_140=traps.w20data_set.140.prob_innesco color_141=traps.w20data_set.141.prob_innesco color_142=traps.w20data_set.142.prob_innesco color_143=traps.w20data_set.143.prob_innesco color_144=traps.w20data_set.144.prob_innesco color_145=traps.w20data_set.145.prob_innesco color_146=traps.w20data_set.146.prob_innesco color_147=traps.w20data_set.147.prob_innesco color_148=traps.w20data_set.148.prob_innesco color_149=traps.w20data_set.149.prob_innesco color_150=traps.w20data_set.150.prob_innesco color_151=traps.w20data_set.151.prob_innesco color_152=traps.w20data_set.152.prob_innesco color_153=traps.w20data_set.153.prob_innesco color_154=traps.w20data_set.154.prob_innesco color_155=traps.w20data_set.155.prob_innesco color_156=traps.w20data_set.156.prob_innesco color_157=traps.w20data_set.157.prob_innesco color_158=traps.w20data_set.158.prob_innesco color_159=traps.w20data_set.159.prob_innesco color_160=traps.w20data_set.160.prob_innesco color_161=traps.w20data_set.161.prob_innesco color_162=traps.w20data_set.162.prob_innesco color_163=traps.w20data_set.163.prob_innesco color_164=traps.w20data_set.164.prob_innesco color_165=traps.w20data_set.165.prob_innesco color_166=traps.w20data_set.166.prob_innesco color_167=traps.w20data_set.167.prob_innesco color_168=traps.w20data_set.168.prob_innesco color_169=traps.w20data_set.169.prob_innesco color_170=traps.w20data_set.170.prob_innesco color_171=traps.w20data_set.171.prob_innesco color_172=traps.w20data_set.172.prob_innesco %}
+			</g>
+			<foreignObject x="360" y="350" width="170" height="248" >
+				<div xmlns="http://www.w3.org/1999/xhtml" class="testi">
+					<img src="data:image/png;base64,{{ neve_equivalente }}" style="width: 160px; height: 160px;">
+				</div>
+			</foreignObject>
+			<foreignObject x="80" y="350" width="170" height="248" >
+				<div xmlns="http://www.w3.org/1999/xhtml" class="testi">
+					<img src="data:image/png;base64,{{ pioggia_infiltrata }}" style="width: 160px; height: 160px;">
+				</div>
+			</foreignObject>
+			<g transform="translate(16 550) scale(0.665)">
+				<g>
+					<text transform="matrix(1 0 0 1 126.845 18.7071)" style="font-family:'ArialMT'; font-size:13;">I fenomeni</text>
+					<text transform="matrix(1 0 0 1 377.1209 19.3967)" style="font-family:'ArialMT'; font-size:13;">Area indagata</text>
+					<text transform="matrix(1 0 0 1 613.6725 19.4657)" style="font-family:'ArialMT'; font-size:13;">Frequenza di emissione</text>
+					<text transform="matrix(1 0 0 1 612.2243 100.9484)" style="font-family:'ArialMT'; font-size:13;">Il modello di simulazione</text>
+					<text transform="matrix(1 0 0 1 353.5002 165.845)" style="font-family:'ArialMT'; font-size:13;">Frane per scivolamento</text>
+					<text transform="matrix(1 0 0 1 335.4312 194.0174)" style="font-family:'ArialMT'; font-size:15;">A</text>
+					<text transform="matrix(1 0 0 1 335.0519 262.0864)" style="font-family:'ArialMT'; font-size:15;">B</text>
+					<text transform="matrix(1 0 0 1 321.7415 52.7071)" style="font-family:'ArialMT'; font-size:13;">Langhe (F,G)</text>
+					<text transform="matrix(1 0 0 1 321.3967 92.6726)">
+						<tspan x="0" y="0" style="font-family:'ArialMT'; font-size:13;">Colline</tspan>
+						<tspan x="0" y="15.6" style="font-family:'ArialMT'; font-size:13;">alessandrine (G)</tspan>
+					</text>
+					<rect x="16.098" y="30.655" style="fill:none;" width="280.701" height="273.08"/>
+					<text transform="matrix(1 0 0 1 13.0975 39.2472)">
+						<tspan x="0" y="0" style="font-family:'ArialMT'; font-size:12;">Gli scivolamenti traslativi (A) sono frane di dimensioni</tspan>
+						<tspan x="0" y="14.4" style="font-family:'ArialMT'; font-size:12;">ragguardevoli che coinvolgono porzioni anche</tspan>
+						<tspan x="0" y="28.8" style="font-family:'ArialMT'; font-size:12;">abbondanti di substrato roccioso. Si osservano</tspan>
+						<tspan x="0" y="43.2" style="font-family:'ArialMT'; font-size:12;">notevoli profondit&#xE0; dei piani di scivolamento (fino a</tspan>
+						<tspan x="0" y="57.6" style="font-family:'ArialMT'; font-size:12;">15-20 m) con segni di movimento registrati dagli</tspan>
+						<tspan x="0" y="72" style="font-family:'ArialMT'; font-size:12;">inclinometri anche a profondit&#xE0; ben maggiori (fino a</tspan>
+						<tspan x="0" y="86.4" style="font-family:'ArialMT'; font-size:12;">40 m). Il movimento dei blocchi di substrato avviene</tspan>
+						<tspan x="0" y="100.8" style="font-family:'ArialMT'; font-size:12;">lungo una o pi&#xF9; discontinuit&#xE0; planari e sub-parallele,</tspan>
+						<tspan x="0" y="115.2" style="font-family:'ArialMT'; font-size:12;">o coincidenti, alle superfici di stratificazione. Tali frane</tspan>
+						<tspan x="0" y="129.6" style="font-family:'ArialMT'; font-size:12;">hanno quale elemento caratterizzante la ripetitivit&#xE0;</tspan>
+						<tspan x="0" y="144" style="font-family:'ArialMT'; font-size:12;">dei fenomeni ed interessano i versanti con</tspan>
+						<tspan x="0" y="158.4" style="font-family:'ArialMT'; font-size:12;">esposizione prevalente verso nordovest (versanti </tspan>
+						<tspan x="0" y="172.8" style="font-family:'ArialMT'; font-size:12;">lunghi). </tspan>
+						<tspan x="0" y="187.2" style="font-family:'ArialMT'; font-size:12;">Gli scivolamenti rotazionali di grandi dimensioni (B)</tspan>
+						<tspan x="0" y="201.6" style="font-family:'ArialMT'; font-size:12;">sono frane che si sviluppano generalmente al piede</tspan>
+						<tspan x="0" y="216" style="font-family:'ArialMT'; font-size:12;">di frane pi&#xF9; antiche, in corrispondenza delle</tspan>
+						<tspan x="0" y="230.4" style="font-family:'ArialMT'; font-size:12;">coperture pi&#xF9; potenti o sull&#x2019;orlo dei terrazzi con ampie</tspan>
+						<tspan x="0" y="244.8" style="font-family:'ArialMT'; font-size:12;">scarpate, e sono caratterizzati da profondit&#xE0; medie</tspan>
+						<tspan x="0" y="259.2" style="font-family:'ArialMT'; font-size:12;">della superficie di scivolamento superiori a 2 m.</tspan>
+					</text>
+					<rect x="547.684" y="111.414" style="fill:none;" width="272.425" height="188.943"/>
+					<text transform="matrix(1 0 0 1 545.6837 120.0054)">
+						<tspan x="0" y="0" style="font-family:'ArialMT'; font-size:12;">Il modello di simulazione TRAPS (Translational /</tspan>
+						<tspan x="0" y="14.4" style="font-family:'ArialMT'; font-size:12;">Rotational slides Activation Prediction System), con</tspan>
+						<tspan x="0" y="28.8" style="font-family:'ArialMT'; font-size:12;">cui si effettuano le valutazioni, si basa sulla</tspan>
+						<tspan x="0" y="43.2" style="font-family:'ArialMT'; font-size:12;">relazione tra attivazioni storiche e piogge critiche ad</tspan>
+						<tspan x="0" y="57.6" style="font-family:'ArialMT'; font-size:12;">esse associate. Su tali relazioni sono state definite</tspan>
+						<tspan x="0" y="72" style="font-family:'ArialMT'; font-size:12;">le soglie di innesco, variabili in funzione del mese in</tspan>
+						<tspan x="0" y="86.4" style="font-family:'ArialMT'; font-size:12;">esame, considerando la somma tra l&#x2019;apporto</tspan>
+						<tspan x="0" y="100.8" style="font-family:'ArialMT'; font-size:12;">pluviometrico dell&#x2019;evento scatenante l&#x2019;innesco e le</tspan>
+						<tspan x="0" y="115.2" style="font-family:'ArialMT'; font-size:12;">precipitazioni dei 60 giorni antecedenti. Per la</tspan>
+						<tspan x="0" y="129.6" style="font-family:'ArialMT'; font-size:12;">valutazione dello stato di attivit&#xE0; il modello di</tspan>
+						<tspan x="0" y="144" style="font-family:'ArialMT'; font-size:12;">simulazione considera l&#x2019;acqua effettivamente</tspan>
+						<tspan x="0" y="158.4" style="font-family:'ArialMT'; font-size:12;">infiltrata nel suolo tenendo anche conto della</tspan>
+						<tspan x="0" y="172.8" style="font-family:'ArialMT'; font-size:12;">dinamica di accumulo e fusione del manto nevoso.</tspan>
+					</text>
+				</g>
+				<foreignObject x="430" y="30" width="110" height="130" >
+				<div xmlns="http://www.w3.org/1999/xhtml" class="testi">
+				  <img src="http://frontend:80/images/traps1.png" style="width: 100px; height: 120px;">
+				</div>
+				</foreignObject>
+				<foreignObject x="380" y="240" width="135" height="69" >
+					<div xmlns="http://www.w3.org/1999/xhtml" class="testi">
+					  <img src="http://frontend:80/images/traps2.png" style="width: 130px; height: 60px;">
+					</div>
+				</foreignObject>-
+				<foreignObject x="380" y="185" width="135" height="70" >
+					<div xmlns="http://www.w3.org/1999/xhtml" class="testi">
+						<img src="http://frontend:80/images/traps3.png" style="width: 140px; height: 60px;">
+					</div>
+				</foreignObject>
+				<!--<image style="overflow:visible;" width="1694" height="789" xlink:href="E76FCC2A.png"  transform="matrix(0.0969 0 0 0.087 363.548 176.0815)">
+				</image>
+				<image style="overflow:visible;" width="1214" height="702" xlink:href="E76FCC2E.png"  transform="matrix(0.1156 0 0 0.1012 362.64 228.559)">
+				</image>
+				<image style="overflow:visible;" width="241" height="303" xlink:href="E76FCC29.png"  transform="matrix(0.4948 0 0 0.4162 416.9534 27.1845)">
+				</image>-->
+				<g>
+					<rect x="544.891" y="28.586" style="fill:none;" width="278.632" height="70.322"/>
+					<text transform="matrix(1 0 0 1 544.8904 37.1778)">
+						<tspan x="0" y="0" style="font-family:'ArialMT'; font-size:12;">Il bollettino viene emesso nel periodo che va da </tspan>
+						<tspan x="0" y="12" style="font-family:'ArialMT'; font-size:12;">novembre a maggio. Di norma la frequenza di </tspan>
+						<tspan x="0" y="24" style="font-family:'ArialMT'; font-size:12;">emissione mensile; nei casi di elevata variabilit&#xE0;</tspan>
+						<tspan x="0" y="36" style="font-family:'ArialMT'; font-size:12;">dello scenario di attivazione dei fenomeni</tspan>
+						<tspan x="0" y="48" style="font-family:'ArialMT'; font-size:12;">l&#x2019;aggiornamento &#xE8; settimanale.</tspan>
+					</text>
+					<rect x="9.982" y="5.552" style="fill:none;stroke:#000000;stroke-miterlimit:10;" width="295.259" height="19.621"/>
+					<rect x="9.982" y="25.552" style="fill:none;stroke:#000000;stroke-miterlimit:10;" width="295.259" height="278.931"/>
+					<rect x="304.982" y="5.552" style="fill:none;stroke:#000000;stroke-miterlimit:10;" width="234.57" height="19.621"/>
+					<rect x="539.982" y="5.552" style="fill:none;stroke:#000000;stroke-miterlimit:10;" width="289.397" height="19.621"/>
+					<rect x="539.982" y="25.552" style="fill:none;stroke:#000000;stroke-miterlimit:10;" width="289.397" height="63.069"/>
+					<rect x="539.982" y="88.552" style="fill:none;stroke:#000000;stroke-miterlimit:10;" width="289.397" height="19.621"/>
+					<rect x="539.982" y="107.552" style="fill:none;stroke:#000000;stroke-miterlimit:10;" width="289.397" height="197.621"/>
+					<rect x="304.982" y="152.552" style="fill:none;stroke:#000000;stroke-miterlimit:10;" width="234.052" height="19.621"/>
+					<rect x="304.982" y="172.552" style="fill:none;stroke:#000000;stroke-miterlimit:10;" width="234.052" height="132.069"/>
+				</g>
+			</g>
+			<g>
+				<!--footer-->
+				<rect x="435" y="805" style="fill:#8080FF;" width="138" height="11"/>
+				<text transform="matrix(1 0 0 1 462.6602 812.6201)" style="fill:#FFFFFF; font-family:'Arial-BoldMT'; font-size:8;">www.arpa.piemonte.it</text>
+				<rect x="19" y="805" style="fill:#C0C0C0;" width="416" height="11"/>
+				<text transform="matrix(1 0 0 1 19 812.5996)" style="font-family:'ArialMT'; font-size:8;">per informazioni scrivi a servizio.idrologico@arpa.piemonte.it</text>
+
+			</g>
+		</svg>
+		<svg version="1.1" id="bollettino" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 595 842" style="enable-background:new 0 0 595 842;" xml:space="preserve">
+
+			<g transform="scale(2.90)">
+				{% include "trapsheader.svg" with validity='-' title='Probabilita di attivazione di scivolamenti traslativi/rotazionali' seqNum=traps.numero_bollettino startValidTime=traps.data_emissione logo='regione-piemonte' username=traps.username%}
+			</g>
+			<text transform="matrix(1 0 0 1 24.9902 130)" style="font-family:'ArialMT'; font-size:7;">Prov.</text>
+			<rect x="20" y="113.582" style="stroke-width: 0.3;fill:none;stroke:#000000;stroke-miterlimit:10;" width="32" height="24"/>
+			<text transform="matrix(1 0 0 1 66.9902 130)" style="font-family:'ArialMT'; font-size:7;">Comune</text>
+			<rect x="52" y="113.582" style="stroke-width: 0.3;fill:none;stroke:#000000;stroke-miterlimit:10;" width="70" height="24"/>	
+			<rect x="122" y="113.582" style="stroke-width: 0.3;fill:none;stroke:#000000;stroke-miterlimit:10;" width="25" height="24"/>
+			<text transform="matrix(1 0 0 1 127.9902 125)" style="font-family:'ArialMT'; font-size:7;">I.F.</text>
+			<text transform="matrix(1 0 0 1 127.9902 131)" style="font-family:'ArialMT'; font-size:7;">(%)</text>
+			<rect x="147" y="113.582" style="stroke-width: 0.3;fill:none;stroke:#000000;stroke-miterlimit:10;" width="40" height="24"/>
+			<text transform="matrix(1 0 0 1 151.9902 125)" style="font-family:'ArialMT'; font-size:7;">Probabilità</text>
+			<text transform="matrix(1 0 0 1 151.9902 131)" style="font-family:'ArialMT'; font-size:7;">attivazione</text>
+
+			<text transform="matrix(1 0 0 1 204.9902 130)" style="font-family:'ArialMT'; font-size:7;">Prov.</text>
+			<rect x="200" y="113.582" style="stroke-width: 0.3;fill:none;stroke:#000000;stroke-miterlimit:10;" width="32" height="24"/>
+			<text transform="matrix(1 0 0 1 246.9902 130)" style="font-family:'ArialMT'; font-size:7;">Comune</text>
+			<rect x="232" y="113.582" style="stroke-width: 0.3;fill:none;stroke:#000000;stroke-miterlimit:10;" width="70" height="24"/>	
+			<rect x="302" y="113.582" style="stroke-width: 0.3;fill:none;stroke:#000000;stroke-miterlimit:10;" width="25" height="24"/>
+			<text transform="matrix(1 0 0 1 307.9902 125)" style="font-family:'ArialMT'; font-size:7;">I.F.</text>
+			<text transform="matrix(1 0 0 1 307.9902 131)" style="font-family:'ArialMT'; font-size:7;">(%)</text>
+			<rect x="327" y="113.582" style="stroke-width: 0.3;fill:none;stroke:#000000;stroke-miterlimit:10;" width="40" height="24"/>
+			<text transform="matrix(1 0 0 1 330.9902 125)" style="font-family:'ArialMT'; font-size:7;">Probabilità</text>
+			<text transform="matrix(1 0 0 1 330.9902 131)" style="font-family:'ArialMT'; font-size:7;">attivazione</text>
+			
+			<text transform="matrix(1 0 0 1 384.9902 130)" style="font-family:'ArialMT'; font-size:7;">Prov.</text>
+			<rect x="380" y="113.582" style="stroke-width: 0.3;fill:none;stroke:#000000;stroke-miterlimit:10;" width="32" height="24"/>
+			<text transform="matrix(1 0 0 1 426.9902 130)" style="font-family:'ArialMT'; font-size:7;">Comune</text>
+			<rect x="412" y="113.582" style="stroke-width: 0.3;fill:none;stroke:#000000;stroke-miterlimit:10;" width="70" height="24"/>	
+			<rect x="482" y="113.582" style="stroke-width: 0.3;fill:none;stroke:#000000;stroke-miterlimit:10;" width="25" height="24"/>
+			<text transform="matrix(1 0 0 1 487.9902 125)" style="font-family:'ArialMT'; font-size:7;">I.F.</text>
+			<text transform="matrix(1 0 0 1 487.9902 131)" style="font-family:'ArialMT'; font-size:7;">(%)</text>
+			<rect x="507" y="113.582" style="stroke-width: 0.3;fill:none;stroke:#000000;stroke-miterlimit:10;" width="40" height="24"/>
+			<text transform="matrix(1 0 0 1 510.9902 125)" style="font-family:'ArialMT'; font-size:7;">Probabilità</text>
+			<text transform="matrix(1 0 0 1 510.9902 131)" style="font-family:'ArialMT'; font-size:7;">attivazione</text>
+			
+
+		var i = 0;
+		{% for key in traps.w20data_set %}
+		{% if forloop.counter < 67 %}
+		<g transform="translate(10 {{ forloop.counter|mul }})">
+			<!--provincia-->
+			<text transform="matrix(1 0 0 1 23.9902 103)" style="font-family:'ArialMT'; font-size:7;">{{ key.provincia }}</text>
+			<rect x="10" y="95.582" style="stroke-width: 0.3;fill:none;stroke:#000000;stroke-miterlimit:10;" width="32" height="10"/>
+			<!--comune-->
+			<text transform="matrix(1 0 0 1 46.9902 103)" style="font-family:'ArialMT'; font-size:6;">{{ key.comune }}</text>
+			<rect x="42" y="95.582" style="stroke-width: 0.3;fill:none;stroke:#000000;stroke-miterlimit:10;" width="70" height="10"/>
+			
+			<!--if_perc-->
+			<rect x="112" y="95.582" style="stroke-width: 0.3;fill:none;stroke:#000000;stroke-miterlimit:10;" width="25" height="10"/>			
+			<text transform="matrix(1 0 0 1 114.9902 103)" style="font-family:'ArialMT'; font-size:7;">{{ key.if_perc }}</text>
+			<!--prob_innesco-->
+			
+			<g class="frane{{key.prob_innesco}}" >
+			<rect x="137" y="95.582" style="stroke-width: 0.3;stroke:#000000;stroke-miterlimit:10;" width="40" height="10"/>
+			</g>
+			<text transform="matrix(1 0 0 1 155.9902 103)" style="font-family:'ArialMT'; font-size:7;">{{ key.prob_innesco }}</text>			
+		</g>
+		{% elif forloop.counter > 66 and forloop.counter < 133 %}
+		<g transform="translate(190 {{ forloop.counter|add:'-66'|mul }} )">
+			<!--provincia-->
+			<text transform="matrix(1 0 0 1 23.9902 103)" style="font-family:'ArialMT'; font-size:7;">{{ key.provincia }}</text>
+			<rect x="10" y="95.582" style="stroke-width: 0.3;fill:none;stroke:#000000;stroke-miterlimit:10;" width="32" height="10"/>
+			<!--comune-->
+			<text transform="matrix(1 0 0 1 46.9902 103)" style="font-family:'ArialMT'; font-size:6;">{{ key.comune}}</text>
+			<rect x="42" y="95.582" style="stroke-width: 0.3;fill:none;stroke:#000000;stroke-miterlimit:10;" width="70" height="10"/>
+			<!--attuale-->
+			<rect x="112" y="95.582" style="stroke-width: 0.3;fill:none;stroke:#000000;stroke-miterlimit:10;" width="25" height="10"/>
+			<text transform="matrix(1 0 0 1 114.9902 103)" style="font-family:'ArialMT'; font-size:7;">{{ key.if_perc }}</text>
+			
+			<!--oggi-->
+			<g class="frane{{key.prob_innesco}}" >
+				<rect x="137" y="95.582" style="stroke-width: 0.3;stroke:#000000;stroke-miterlimit:10;" width="40" height="10"/>
+			</g>
+			<text transform="matrix(1 0 0 1 155.9902 103)" style="font-family:'ArialMT'; font-size:7;">{{ key.prob_innesco }}</text>
+		</g>
+		{% else %}
+		<g transform="translate(370 {{ forloop.counter|add:'-132'|mul }} )">
+			<!--provincia-->
+			<text transform="matrix(1 0 0 1 23.9902 103)" style="font-family:'ArialMT'; font-size:7;">{{ key.provincia }}</text>
+			<rect x="10" y="95.582" style="stroke-width: 0.3;fill:none;stroke:#000000;stroke-miterlimit:10;" width="32" height="10"/>
+			<!--comune-->
+			<text transform="matrix(1 0 0 1 46.9902 103)" style="font-family:'ArialMT'; font-size:6;">{{ key.comune}}</text>
+			<rect x="42" y="95.582" style="stroke-width: 0.3;fill:none;stroke:#000000;stroke-miterlimit:10;" width="70" height="10"/>
+			<!--attuale-->
+			<rect x="112" y="95.582" style="stroke-width: 0.3;fill:none;stroke:#000000;stroke-miterlimit:10;" width="25" height="10"/>
+			<text transform="matrix(1 0 0 1 114.9902 103)" style="font-family:'ArialMT'; font-size:7;">{{ key.if_perc }}</text>
+			
+			<!--oggi-->
+			<g class="frane{{key.prob_innesco}}" >
+				<rect x="137" y="95.582" style="stroke-width: 0.3;stroke:#000000;stroke-miterlimit:10;" width="40" height="10"/>
+			</g>
+			<text transform="matrix(1 0 0 1 155.9902 103)" style="font-family:'ArialMT'; font-size:7;">{{ key.prob_innesco }}</text>
+		</g>
+		{% endif %}
+		{% endfor %}
+		
+		<g transform="scale(0.76) translate(490 747)">
+			<polyline style="fill-rule:evenodd;clip-rule:evenodd;fill:#A6A6A6;stroke:#000000;stroke-miterlimit:10;" points="10.292,32.511 
+				10.292,122.525 45.548,122.525 45.548,32.511 10.292,32.511 "/>
+			<rect x="10.292" y="10" style="fill:none;stroke:#000000;stroke-miterlimit:10;" width="216.708" height="22.5"/>
+			<polyline style="fill-rule:evenodd;clip-rule:evenodd;fill:#9999FF;stroke:#000000;stroke-miterlimit:10;" points="10.292,121.775 
+				10.292,211.789 45.548,211.789 45.548,121.775 10.292,121.775 "/>
+			<polyline style="fill-rule:evenodd;clip-rule:evenodd;fill:#9900FF;stroke:#000000;stroke-miterlimit:10;" points="10.292,212.039 
+				10.292,302.052 45.548,302.052 45.548,212.039 10.292,212.039 "/>
+			<rect x="45.5" y="32.5" style="fill:none;stroke:#000000;stroke-miterlimit:10;" width="181.459" height="89.5"/>
+			<rect x="45.5" y="122" style="fill:none;stroke:#000000;stroke-miterlimit:10;" width="181.459" height="90"/>
+			<rect x="45.5" y="212" style="fill:none;stroke:#000000;stroke-miterlimit:10;" width="181.459" height="90"/>
+			<g>
+				<text transform="matrix(1 0 0 1 30 -10)" style="font-family:'ArialMT'; font-size:9;">I.F. = indice di franosità (% di territorio </text>
+				<text transform="matrix(1 0 0 1 30 3)" style="font-family:'ArialMT'; font-size:9;">comunale interessato dagli scivolamenti)</text>
+				
+				<rect x="51.167" y="128" style="fill:none;" width="169.667" height="80.667"/>
+				<text transform="matrix(1 0 0 1 51.1667 133.9429)">
+					<tspan x="0" y="0" style="font-family:'ArialMT'; font-size:8.3;">Probabilit&#xE0; di attivazione bassa - possibili </tspan>
+					<tspan x="0" y="9.92" style="font-family:'ArialMT'; font-size:8.3;"> movimenti registrati dalla rete di monitoraggio</tspan>
+					<tspan x="0" y="19.92" style="font-family:'ArialMT'; font-size:8.3;">(ove presente) senza espressioni </tspan>
+					<tspan x="0" y="29.88" style="font-family:'ArialMT'; font-size:8.3;">morfologiche superficiali; attivazione allo</tspan>
+					<tspan x="0" y="39.84" style="font-family:'ArialMT'; font-size:8.3;">stadio incipiente (comparsa di evidenze </tspan>
+					<tspan x="0" y="49.8" style="font-family:'ArialMT'; font-size:8.3;">morfologiche superficiali: rigonfiamenti,</tspan>
+					<tspan x="0" y="59.76" style="font-family:'ArialMT'; font-size:8.3;">avvallamenti, trinceee fratture sui versanti)</tspan>
+					<tspan x="0" y="69.72" style="font-family:'ArialMT'; font-size:8.3;">peggioramento di stadi incipienti pregressi.</tspan>
+				</text>
+				<rect x="51.167" y="221.833" style="fill:none;" width="168.667" height="70.333"/>
+				<text transform="matrix(1 0 0 1 51.1667 227.7757)">
+					<tspan x="0" y="0" style="font-family:'ArialMT'; font-size:8.3;">Probabilit&#xE0; di attivazione elevata - possibili </tspan>
+					<tspan x="0" y="9.96" style="font-family:'ArialMT'; font-size:8.3;">attivazioni parossistiche con scivolamento di</tspan>
+					<tspan x="0" y="19.92" style="font-family:'ArialMT'; font-size:8.3;">porzioni di versante; attivazioni allo stadio</tspan>
+					<tspan x="0" y="29.88" style="font-family:'ArialMT'; font-size:8.3;">incipiente (comparsa di evidenze</tspan>
+					<tspan x="0" y="39.84" style="font-family:'ArialMT'; font-size:8.3;">morfologiche superficiali: rigonfiamenti,</tspan>
+					<tspan x="0" y="49.8" style="font-family:'ArialMT'; font-size:8.3;">avvallamenti, trincee e fratture sui versanti);</tspan>
+					<tspan x="0" y="59.76" style="font-family:'ArialMT'; font-size:8.3;">peggioramento di stadi incipienti pregressi.</tspan>
+				</text>
+				<text transform="matrix(1 0 0 1 50.3335 81.5002)" style="font-family:'ArialMT'; font-size:8.3;">Probabilit&#xE0; di attivazione assente.</text>
+				<text transform="matrix(1 0 0 1 60.5002 24.5002)" style="font-family:'ArialMT'; font-size:9;">Scenario di attivazione</text>
+				<text transform="matrix(1 0 0 1 23.3335 83.5002)" style="font-family:'ArialMT'; font-size:14;">A</text>
+				<text transform="matrix(1 0 0 1 23.3335 172.5002)" style="font-family:'ArialMT'; font-size:14;">B</text>
+				<text transform="matrix(1 0 0 1 23.3335 262.5002)" style="font-family:'ArialMT'; font-size:14;">E</text>
+			</g>
+		</g>
+
+		<!--footer-->
+		<rect x="435" y="805" style="fill:#8080FF;" width="138" height="11"/>
+		<text transform="matrix(1 0 0 1 462.6602 812.6201)" style="fill:#FFFFFF; font-family:'Arial-BoldMT'; font-size:8;">www.arpa.piemonte.it</text>
+		<rect x="19" y="805" style="fill:#C0C0C0;" width="416" height="11"/>
+		<text transform="matrix(1 0 0 1 19 812.5996)" style="font-family:'ArialMT'; font-size:8;">per informazioni scrivi a servizio.idrologico@arpa.piemonte.it</text>
+
+		</svg>
+    </body>
+</html>

@@ -1,4 +1,4 @@
-// Copyright (C) 2020-2023 simevo s.r.l. for ARPA Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
@@ -17,6 +17,7 @@
           :readonly="readonly"
           :data="freezingLevelGiornata"
           :history="history"
+          :validity="validity"
           @set-level="setLevel"
         />
       </div>
@@ -34,6 +35,7 @@
             :data="freezingLevelMattino"
             :history="history"
             :step="100"
+            :validity="validity_frzlvl"
             @set-level="setLevel"
           />
         </p>
@@ -42,6 +44,7 @@
           :data="classes0012"
           :classes-value="classDescription[classes0012.id_classes].classes_value"
           :history="history"
+          :validity="validity"
           @set-class="setClass"
         />
       </div>
@@ -54,6 +57,7 @@
             :data="freezingLevelPomeriggio"
             :history="history"
             :step="100"
+            :validity="validity_frzlvl"
             @set-level="setLevel"
           />
         </p>
@@ -62,6 +66,7 @@
           :data="classes1224"
           :classes-value="classDescription[classes1224.id_classes].classes_value"
           :history="history"
+          :validity="validity"
           @set-class="setClass"
         />
       </div>
@@ -77,6 +82,7 @@
             :data="freezingLevelGiornata"
             :history="history"
             :step="100"
+            :validity="validity_frzlvl"
             @set-level="setLevel"
           />
           <ClassSelect
@@ -84,6 +90,7 @@
             :data="classes0024"
             :classes-value="classDescription[classes0024.id_classes].classes_value"
             :history="history"
+            :validity="validity"
             @set-class="setClass"
           />
         </p>
@@ -156,7 +163,15 @@ export default {
     history: {
       type: Object,
       default: () => { return { cursor: -1, snapshots: [] } }
-    }
+    },
+    validity: {
+      type: Object,
+      default: () => { return {} }
+    },
+    validity_frzlvl: {
+      type: Object,
+      default: () => { return {} }
+    },
   },
   emits: ['setClass', 'setLevel'],
   methods: {

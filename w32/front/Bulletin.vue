@@ -1,4 +1,4 @@
-// Copyright (C) 2020-2023 simevo s.r.l. for ARPA Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
@@ -32,7 +32,7 @@
           :disabled="sending"
           type="button"
           class="btn btn-outline-success"
-          @click="execute('send', false, 'Bollettino inviato')"
+          @click="execute_timeout('send', false, 'Bollettino inviato')"
         >
           <span v-if="sending">
             <span
@@ -49,6 +49,29 @@
               width="18"
               height="18"
             > Invia
+          </span>
+        </button>
+        <button
+          v-if="defense.status === '1' && state.username && defense.data_emissione.substring(0, 10) === today"
+          type="button"
+          class="btn btn-outline-warning"
+          @click="execute('reopen', true, 'Bollettino riaperto')"
+        >
+          <span v-if="reopening">
+            <span
+              class="spinner-border spinner-border-sm"
+              role="status"
+              aria-hidden="true"
+            />
+            Sto riaprendo il bollettino ...
+          </span>
+          <span v-else>
+            <img
+              src="~bootstrap-icons/icons/unlock-fill.svg"
+              alt="unlock icon"
+              width="18"
+              height="18"
+            > Riapri
           </span>
         </button>
         <button
@@ -69,12 +92,6 @@
 
     <div class="row mb-3">
       <h1>Bollettino Defense {{ defense.numero_bollettino }}</h1>
-      <div
-        v-if="meta && !meta.valid"
-        class="alert alert-danger"
-      >
-        Ci sono dei campi incompleti
-      </div>
     </div>
     <div class="row">
       <div class="col-md-2 mb-3">
@@ -311,7 +328,7 @@
                       Aree di <br>allertamento<br> Regionale
                     </th>
                     <th scope="col">
-                      Scenario Attuale
+                      Scenario ultime 24 ore
                     </th>
                     <th scope="col">
                       Scenario oggi
@@ -396,7 +413,7 @@
                       Macrobacino
                     </th>
                     <th scope="col">
-                      Scenario Attuale
+                      Scenario ultime 24 ore
                     </th>
                     <th scope="col">
                       Scenario oggi
@@ -479,7 +496,7 @@
                     SCENARIO PEGGIORE
                   </div>
                   <div class="col-sm">
-                    SCENARIO ATTUALE
+                    SCENARIO ULTIME 24 ORE
                   </div>
                   <div class="col-sm">
                     SCENARIO OGGI
@@ -547,7 +564,7 @@
               <div>
                 <div class="row">
                   <div class="col-sm">
-                    SCENARIO ATTUALE
+                    SCENARIO ULTIME 24 ORE
                   </div>
                   <div class="col-sm">
                     SCENARIO OGGI
@@ -618,6 +635,12 @@ export default {
     MapDefense,
     MapDefenseMacrobacini,
   },
+  props: {
+    id: {
+      type: String,
+      default: () => ''
+    },
+  },
   data () {
     // non reactive properties
     return {
@@ -628,10 +651,17 @@ export default {
       defensedata: {},
       state: store.state,
       readonly: true,
-      sending: false
+      sending: false,
+      saving: false,
+      reopening: false
     }
   },
   computed: {
+    today() {
+      // returns today in 2021-04-22 format
+      let d = new Date()
+      return d.toISOString().substring(0, 10)
+    },
     livello_criticita_oss(){
       let vd = { }
       if (this.defense.w32data_set !== undefined) {
@@ -826,7 +856,7 @@ export default {
       return colore
     },
     async fetchData () {
-      this.defense_id = this.$route.params.id
+      this.defense_id = this.id
       this.pericolo  = await this.fetchPericolo()
       this.pericolombacini  = await this.fetchPericolombacini()
       // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
@@ -843,7 +873,7 @@ export default {
         return response.json()
       }).then(data => {
         this.defense = data
-        this.readonly = (this.defense.status === '1' || !this.state.username)
+        this.readonly = (this.defense.status === '1'  || this.defense.status === '2' || !this.state.username)
       }).catch(error => {
         this.$toast.open(
           {
@@ -921,6 +951,7 @@ export default {
       return api.getDateFormatted(rawString, time)
     },
     saveW32(newValue, id_w32, campo) {
+      this.saving = true
       //data_validata
       if (campo==="data_validita") {
         let month = String(newValue.getMonth() + 1);
@@ -995,6 +1026,7 @@ export default {
               position: 'top-left'
             }
           )
+          this.saving = false
         }
         return response.json()
       }).then(data => {
@@ -1007,6 +1039,7 @@ export default {
         )
         this.defense.last_update = data.last_update
         this.defense.username = store.state.username
+        this.saving = false
       }).catch((error) => {
         this.$toast.open(
           {
@@ -1015,6 +1048,7 @@ export default {
             position: 'top-left'
           }
         )
+        this.saving = false
       })
     },
     saveW32DataPericolo(newValue, id_w32_zone, campo) {
@@ -1117,6 +1151,20 @@ export default {
       )
       return response
     },
+    execute_timeout(action, reroute, message){
+      // console.log("inizio execute_timeout")
+      if (this.saving){
+        console.log("saving è true faccio partire timeout")
+        setTimeout(() => {
+          console.log("aspetto 1 secondo finchè non finisce il salvataggio in corso")
+          this.execute_timeout(action, reroute, message)
+        }, 1000);
+      }else{
+        console.log("saving è false lancio execute")
+        this.execute(action, reroute, message)
+      }
+      // console.log("fine execute_timeout")
+    },
     execute(action, reroute, message) {
       this[action + 'ing'] = true
       this.fetchDefenseAction(action).then(response => {
@@ -1141,7 +1189,8 @@ export default {
           }
         )
         if (reroute) {
-          this.$router.push({ path: `/w32/${data.id_w32}`})
+          //this.$router.push({ path: `/w32/${data.id_w32}`})
+          this.$router.push({ path: `/w32/`})
         } else {
           this.fetchData()
         }

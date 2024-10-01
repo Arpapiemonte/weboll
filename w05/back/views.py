@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2020-2023 simevo s.r.l. for ARPA Piemonte - Dipartimento Naturali e Ambientali
+# Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
 # This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 # weboll is licensed under the AGPL-3.0-or-later License.
 # License text available at https://www.gnu.org/licenses/agpl.txt
@@ -21,6 +21,7 @@ from django.views.generic import DetailView
 from django.views.generic.base import TemplateView
 from rest_framework import permissions, viewsets
 from rest_framework.decorators import action
+from rest_framework.generics import RetrieveAPIView
 from rest_framework.renderers import JSONRenderer
 from rest_framework.response import Response
 from rest_framework_xml.renderers import XMLRenderer
@@ -1292,6 +1293,20 @@ class W05View(viewsets.ModelViewSet):
 
     @action(detail=True, permission_classes=[permissions.IsAuthenticated])
     @atomic
+    def send_auto(self, request, pk):
+        w05 = models.W05.objects.get(pk=pk)
+        print(
+            "send_auto del bollettino ",
+            w05.id_w05,
+            "del",
+            w05.start_valid_time,
+            "iniziato",
+        )
+        send_with_celery("meteo", w05.id_w05, True)
+        return Response({"id_w05": w05.id_w05})
+
+    @action(detail=True, permission_classes=[permissions.IsAuthenticated])
+    @atomic
     def resend(self, request, pk):
         send_with_celery("meteo", pk)
         print(
@@ -1474,6 +1489,7 @@ class W05DataView(viewsets.ModelViewSet):
 
 
 def rearrange(time_layout, key):
+    # print(meteo[50]["TERMA"][67]) dopo il rearranged ordina per id_venue
     terma_rearranged = {}
     for terma in time_layout[key]:
         terma_rearranged[terma["id_venue"]] = terma
@@ -1777,3 +1793,280 @@ class MeteoWebarpaView(TemplateView):
 
 class MeteoWebarpaOldView(MeteoWebarpaView):
     template_name = "webarpa_old.xml"
+
+
+def faiKml(kwargs):
+    queryset = models.W05.objects
+    w05 = get_object_or_404(queryset, pk=kwargs["pk"])
+    serializer = W05SerializerFull(w05)
+    meteo = serializer.data
+    convert_to_datetime(meteo, "last_update")
+    convert_to_datetime(meteo, "start_valid_time")
+    convert_to_datetime(meteo, "next_blt_time")
+    for data in meteo["w05data_set"]:
+        convert_to_datetime(data, "start_valid_time")
+        convert_to_datetime(data, "end_valid_time")
+        if data["id_time_layouts"] not in meteo:
+            meteo[data["id_time_layouts"]] = {}
+        if data["id_parametro"] in meteo[data["id_time_layouts"]]:
+            meteo[data["id_time_layouts"]][data["id_parametro"]].append(data)
+        else:
+            meteo[data["id_time_layouts"]][data["id_parametro"]] = [data]
+    for id_time_layout in [48, 66, 83, 100]:
+        rearrange(meteo[id_time_layout], "COP_TOT")
+        rearrange(meteo[id_time_layout], "PLUV")
+        rearrange(meteo[id_time_layout], "FRZLVL")
+        rearrange(meteo[id_time_layout], "VELV")
+        rearrange(meteo[id_time_layout], "WFR")
+        rearrange(meteo[id_time_layout], "WFOP")
+    for id_time_layout in [48, 64, 65, 81, 82, 98, 99]:
+        add_icons(meteo[id_time_layout]["SKY_CONDIT"])
+        rearrange(meteo[id_time_layout], "SKY_CONDIT")
+    for id_time_layout in [50, 51, 67, 68, 84, 85, 101, 102]:
+        rearrange(meteo[id_time_layout], "TERMA")
+        rearrange(meteo[id_time_layout], "TERMA_700")
+        rearrange(meteo[id_time_layout], "TERMA_1500")
+        rearrange(meteo[id_time_layout], "TERMA_2000")
+    meteo["semigiorni"] = [
+        copy.deepcopy(meteo[48]),
+        copy.deepcopy(meteo[66]),
+        copy.deepcopy(meteo[66]),
+        copy.deepcopy(meteo[83]),
+        copy.deepcopy(meteo[83]),
+        copy.deepcopy(meteo[100]),
+        copy.deepcopy(meteo[100]),
+    ]
+    return meteo
+
+
+class Kml0View(TemplateView):
+    template_name = "meteo.kml"
+    http_method_names = ["get"]
+
+    def get_context_data(self, **kwargs):
+        today = datetime.datetime.today()
+        mat_pom = today.strftime("%d-%m-%Y") + " Pomeriggio"
+        meteo = faiKml(kwargs)
+
+        if datetime.datetime.strptime(
+            str(meteo["start_valid_time"]), "%Y-%m-%d %H:%M:%S"
+        ).strftime("%Y-%m-%d") == today.strftime("%Y-%m-%d"):
+            # pomeriggio di Oggi
+            meteo["semigiorni"][0]["SKY_CONDIT"] = meteo[48]["SKY_CONDIT"]
+            mat_pom = (
+                datetime.datetime.strptime(
+                    str(meteo["start_valid_time"]), "%Y-%m-%d %H:%M:%S"
+                )
+            ).strftime("%Y-%m-%d") + " pomeriggio"
+        else:
+            # mattino di domani
+            meteo["semigiorni"][0]["SKY_CONDIT"] = meteo[64]["SKY_CONDIT"]
+            mat_pom = (
+                datetime.datetime.strptime(
+                    str(meteo["start_valid_time"]), "%Y-%m-%d %H:%M:%S"
+                )
+                + datetime.timedelta(days=1)
+            ).strftime("%Y-%m-%d") + " Mattino"
+
+        context = {"meteo": meteo, "mat_pom": mat_pom}
+        return context
+
+
+class Kml1View(TemplateView):
+    template_name = "meteo.kml"
+    http_method_names = ["get"]
+
+    def get_context_data(self, **kwargs):
+        today = datetime.datetime.today()
+        mat_pom = today.strftime("%d-%m-%Y") + " Pomeriggio"
+        meteo = faiKml(kwargs)
+
+        if datetime.datetime.strptime(
+            str(meteo["start_valid_time"]), "%Y-%m-%d %H:%M:%S"
+        ).strftime("%Y-%m-%d") == today.strftime("%Y-%m-%d"):
+            # mattino di domani
+            meteo["semigiorni"][0]["SKY_CONDIT"] = meteo[64]["SKY_CONDIT"]
+            mat_pom = (
+                datetime.datetime.strptime(
+                    str(meteo["start_valid_time"]), "%Y-%m-%d %H:%M:%S"
+                )
+                + datetime.timedelta(days=1)
+            ).strftime("%Y-%m-%d") + " Mattino"
+        else:
+            # Pomeriggio di domani
+            meteo["semigiorni"][0]["SKY_CONDIT"] = meteo[65]["SKY_CONDIT"]
+            mat_pom = (
+                datetime.datetime.strptime(
+                    str(meteo["start_valid_time"]), "%Y-%m-%d %H:%M:%S"
+                )
+                + datetime.timedelta(days=1)
+            ).strftime("%Y-%m-%d") + " Pomeriggio"
+
+        context = {"meteo": meteo, "mat_pom": mat_pom}
+        return context
+
+
+class Kml2View(TemplateView):
+    template_name = "meteo.kml"
+    http_method_names = ["get"]
+
+    def get_context_data(self, **kwargs):
+        today = datetime.datetime.today()
+        mat_pom = today.strftime("%d-%m-%Y") + " Pomeriggio"
+        meteo = faiKml(kwargs)
+
+        if datetime.datetime.strptime(
+            str(meteo["start_valid_time"]), "%Y-%m-%d %H:%M:%S"
+        ).strftime("%Y-%m-%d") == today.strftime("%Y-%m-%d"):
+            # pomeriggio di domani
+            meteo["semigiorni"][0]["SKY_CONDIT"] = meteo[65]["SKY_CONDIT"]
+            mat_pom = (
+                datetime.datetime.strptime(
+                    str(meteo["start_valid_time"]), "%Y-%m-%d %H:%M:%S"
+                )
+                + datetime.timedelta(days=1)
+            ).strftime("%Y-%m-%d") + " Pomeriggio"
+        else:
+            # mattina di dopo-domani
+            meteo["semigiorni"][0]["SKY_CONDIT"] = meteo[81]["SKY_CONDIT"]
+            mat_pom = (
+                datetime.datetime.strptime(
+                    str(meteo["start_valid_time"]), "%Y-%m-%d %H:%M:%S"
+                )
+                + datetime.timedelta(days=2)
+            ).strftime("%Y-%m-%d") + " Mattino"
+
+        context = {"meteo": meteo, "mat_pom": mat_pom}
+        return context
+
+
+class Kml3View(TemplateView):
+    template_name = "meteo.kml"
+    http_method_names = ["get"]
+
+    def get_context_data(self, **kwargs):
+        today = datetime.datetime.today()
+        mat_pom = today.strftime("%d-%m-%Y") + " Pomeriggio"
+        meteo = faiKml(kwargs)
+
+        if datetime.datetime.strptime(
+            str(meteo["start_valid_time"]), "%Y-%m-%d %H:%M:%S"
+        ).strftime("%Y-%m-%d") == today.strftime("%Y-%m-%d"):
+            # mattina di dopo-domani
+            meteo["semigiorni"][0]["SKY_CONDIT"] = meteo[81]["SKY_CONDIT"]
+            mat_pom = (
+                datetime.datetime.strptime(
+                    str(meteo["start_valid_time"]), "%Y-%m-%d %H:%M:%S"
+                )
+                + datetime.timedelta(days=2)
+            ).strftime("%Y-%m-%d") + " Mattino"
+        else:
+            # pomeriggio di dopo-domani
+            meteo["semigiorni"][0]["SKY_CONDIT"] = meteo[82]["SKY_CONDIT"]
+            mat_pom = (
+                datetime.datetime.strptime(
+                    str(meteo["start_valid_time"]), "%Y-%m-%d %H:%M:%S"
+                )
+                + datetime.timedelta(days=2)
+            ).strftime("%Y-%m-%d") + " Pomeriggio"
+
+        context = {"meteo": meteo, "mat_pom": mat_pom}
+        return context
+
+
+class Kml4View(TemplateView):
+    template_name = "meteo.kml"
+    http_method_names = ["get"]
+
+    def get_context_data(self, **kwargs):
+        today = datetime.datetime.today()
+        mat_pom = today.strftime("%d-%m-%Y") + " Pomeriggio"
+        meteo = faiKml(kwargs)
+
+        if datetime.datetime.strptime(
+            str(meteo["start_valid_time"]), "%Y-%m-%d %H:%M:%S"
+        ).strftime("%Y-%m-%d") == today.strftime("%Y-%m-%d"):
+            # pomeriggio di dopo-domani
+            meteo["semigiorni"][0]["SKY_CONDIT"] = meteo[82]["SKY_CONDIT"]
+            mat_pom = (
+                datetime.datetime.strptime(
+                    str(meteo["start_valid_time"]), "%Y-%m-%d %H:%M:%S"
+                )
+                + datetime.timedelta(days=2)
+            ).strftime("%Y-%m-%d") + " Pomeriggio"
+        else:
+            # mattina di dopo-dopo-domani
+            meteo["semigiorni"][0]["SKY_CONDIT"] = meteo[98]["SKY_CONDIT"]
+            mat_pom = (
+                datetime.datetime.strptime(
+                    str(meteo["start_valid_time"]), "%Y-%m-%d %H:%M:%S"
+                )
+                + datetime.timedelta(days=3)
+            ).strftime("%Y-%m-%d") + " Mattino"
+
+        context = {"meteo": meteo, "mat_pom": mat_pom}
+        return context
+
+
+class Kml5View(TemplateView):
+    template_name = "meteo.kml"
+    http_method_names = ["get"]
+
+    def get_context_data(self, **kwargs):
+        today = datetime.datetime.today()
+        mat_pom = today.strftime("%d-%m-%Y") + " Pomeriggio"
+        meteo = faiKml(kwargs)
+
+        if datetime.datetime.strptime(
+            str(meteo["start_valid_time"]), "%Y-%m-%d %H:%M:%S"
+        ).strftime("%Y-%m-%d") == today.strftime("%Y-%m-%d"):
+            # mattina di dopo-dopo-domani
+            meteo["semigiorni"][0]["SKY_CONDIT"] = meteo[98]["SKY_CONDIT"]
+            mat_pom = (
+                datetime.datetime.strptime(
+                    str(meteo["start_valid_time"]), "%Y-%m-%d %H:%M:%S"
+                )
+                + datetime.timedelta(days=3)
+            ).strftime("%Y-%m-%d") + " Mattino"
+        else:
+            # pomeriggio di dopo-dopo-domani
+            meteo["semigiorni"][0]["SKY_CONDIT"] = meteo[99]["SKY_CONDIT"]
+            mat_pom = (
+                datetime.datetime.strptime(
+                    str(meteo["start_valid_time"]), "%Y-%m-%d %H:%M:%S"
+                )
+                + datetime.timedelta(days=3)
+            ).strftime("%Y-%m-%d") + " Pomeriggio"
+
+        context = {"meteo": meteo, "mat_pom": mat_pom}
+        return context
+
+
+class W05CurrentView(RetrieveAPIView):
+    """
+    API endpoint that allows W05 bulletin Data to be viewed or edited
+    """
+
+    queryset = models.W05.objects.order_by("-last_update")
+    serializer_class = W05SerializerFull
+    lookup_field = "start_valid_time__date"
+    lookup_url_kwarg = "emissione"
+
+    def get_object(self):
+        count = (
+            models.W05.objects.filter(start_valid_time__date=self.kwargs["emissione"])
+            .order_by("-last_update")
+            .count()
+        )
+        print(count)
+        if count >= 0 and count < 2:
+            queryset = self.filter_queryset(self.get_queryset())
+            obj = get_object_or_404(
+                queryset, start_valid_time__date=self.kwargs["emissione"]
+            )
+        else:
+            obj = models.W05.objects.filter(
+                start_valid_time__date=self.kwargs["emissione"]
+            ).order_by("-last_update")[0]
+        self.check_object_permissions(self.request, obj)
+        return obj

@@ -1,4 +1,4 @@
-// Copyright (C) 2020-2023 simevo s.r.l. for ARPA Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
@@ -12,6 +12,57 @@
         class="col-md-9 ms-sm-auto col-lg-10 pt-3 px-4"
       >
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+          <div
+            v-if="name === 'Aggiornamento Allerta' && !errore555"
+            class="alert alert-danger"
+          >
+            <h3>PROBLEMA NELLE SORGENTI </h3>
+            <h3>json:</h3>
+            <h4>
+              <a
+                :href="pericolo_piemonte"
+                target="_blank"
+              >ultime24 ore</a> - <a
+                :href="web_pericolo"
+                target="_blank"
+              >ultime 3 ore</a>
+            </h4>
+            <h3>immagini: </h3>
+            <h4>
+              <a
+                :href="stato_piemonte_24h"
+                target="_blank"
+              >ultime 24 ore</a> - <a
+                :href="stato_piemonte_03h"
+                target="_blank"
+              >ultime 3 ore</a>
+            </h4>
+          </div>
+          <div
+            v-if="name === 'Aggiornamento Allerta' && errore555"
+            class="alert alert-success"
+          >
+            <h3>json: </h3>
+            <h4>
+              <a
+                :href="pericolo_piemonte"
+                target="_blank"
+              >ultime24 ore</a> - <a
+                :href="web_pericolo"
+                target="_blank"
+              >ultime 3 ore</a>
+            </h4>
+            <h3>immagini: </h3>
+            <h4>
+              <a
+                :href="stato_piemonte_24h"
+                target="_blank"
+              >ultime 24 ore</a> - <a
+                :href="stato_piemonte_03h"
+                target="_blank"
+              >ultime 3 ore</a>
+            </h4>
+          </div>
           <h2>Bollettini {{ name }}</h2>
           <div class="btn-toolbar mb-2 mb-md-0">
             <div class="input-group mb-3">
@@ -209,7 +260,22 @@
                 >
                   Visualizza<br>Modifica
                 </th>
-                <th 
+                <th
+                  v-if="name=='Caldo'" 
+                  scope="col"
+                  class="align-middle"
+                >
+                  PDF <br>Regione
+                </th>
+                <th
+                  v-if="name=='Caldo'" 
+                  scope="col"
+                  class="align-middle"
+                >
+                  PDF <br>Torino
+                </th>
+                <th
+                  v-else 
                   scope="col"
                   class="align-middle"
                 >
@@ -269,7 +335,37 @@
                     </button>
                   </router-link>
                 </td>
-                <td>
+                <td v-if="name=='Caldo'">
+                  <a
+                    class="btn btn-outline-primary btn-sm"
+                    :href="`/api/w36/pdf_regione/${bulletin[primaryKeyName]}`"
+                    target="_blank"
+                    role="button"
+                  >
+                    <img
+                      src="~bootstrap-icons/icons/file-earmark-pdf-fill.svg"
+                      alt="PDF icon"
+                      width="18"
+                      height="18"
+                    >
+                  </a>
+                </td>
+                <td v-if="name=='Caldo'">
+                  <a
+                    class="btn btn-outline-primary btn-sm"
+                    :href="`/api/w36/pdf_torino/${bulletin[primaryKeyName]}`"
+                    target="_blank"
+                    role="button"
+                  >
+                    <img
+                      src="~bootstrap-icons/icons/file-earmark-pdf-fill.svg"
+                      alt="PDF icon"
+                      width="18"
+                      height="18"
+                    >
+                  </a>
+                </td>
+                <td v-else>
                   <a
                     class="btn btn-outline-primary btn-sm"
                     :href="`/api/${pdfEndpoint}/${bulletin[primaryKeyName]}`"
@@ -363,6 +459,7 @@ import api from '@/api'
 import store from '../store'
 import ColMenu from '@/components/ColMenu.vue'
 import LoginModal from '@/components/LoginModal.vue'
+import { readonly } from 'vue'
 
 export default {
   name: 'GeneralBulletins',
@@ -371,6 +468,10 @@ export default {
     LoginModal,
   },
   props: {
+    idField: {
+      type: String,
+      default: "numero_bollettino"
+    },
     // name of the primary key
     primaryKeyName: {
       type: String,
@@ -423,6 +524,7 @@ export default {
       year_list: [],
       num_bollettino: "num_yyyy",
       validita: "yyyy-mm-dd",
+      errore555: true,
       //data_oggi: "2022-02-10",
       filter: {
         year: (new Date()).getFullYear(),
@@ -431,6 +533,26 @@ export default {
     }
   },
   computed: {
+    base_data_url () {
+      return import.meta.env.VITE_BASE_DATA_URL || ""
+    },
+    pericolo_piemonte(){
+      return this.base_data_url + "/sc05_intranet/public/cf/pericolo/pericolo_piemonte.json"
+    },
+    web_pericolo(){
+      return this.base_data_url + "/sc05_intranet/public/cf/pericolo/web_pericolo.json"
+    },
+    stato_piemonte_24h(){
+      return this.base_data_url + "/sc05_intranet/public/cf/pericolo/stato_piemonte_24h.png"
+    },
+    stato_piemonte_03h(){
+      return this.base_data_url + "/sc05_intranet/public/cf/pericolo/stato_piemonte_03h.png"
+    },
+    readonly () {
+      let result = true
+      if (store.state.username) result = false
+      return result
+    },
     pages () {
       return [...Array(this.total_pages).keys()]
     },
@@ -519,7 +641,7 @@ export default {
         return response.json()
       }).then(data => {
         //lista dei bollettino che si possono fare più volte al giorno (w29,w22,w32)
-        if (this.endpoint === 'w29/bulletins' || this.endpoint === 'w32/bulletins' || this.endpoint === 'w22/bulletins'){
+        if (this.endpoint === 'w29/bulletins' || this.endpoint === 'w32/bulletins' || this.endpoint === 'w22/bulletins'|| this.endpoint === 'w37/bulletins'){
           this.oggi_presente = false
         }else if(this.endpoint === 'w22verifica/bulletins'){
           this.verifica = false
@@ -647,6 +769,7 @@ export default {
           this.$router.push({ path: `/${this.detailPage}/${tmp[this.primaryKeyName]}`})
         } else {
           if (response.status === 555) {
+            this.errore555 = false
             tmp = await response.json()
             this.$toast.open(
               {
@@ -656,6 +779,7 @@ export default {
               }
             )
           }else{
+            this.errore555 = false
             this.$toast.open(
               {
                 message: `Errore ${response.status} nella creazione del bollettino`,

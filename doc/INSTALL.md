@@ -63,7 +63,7 @@ Pull the dependencies from https://hub.docker.com/ with these commands:
 docker pull debian:bookworm-slim
 docker pull postgres:13.8
 docker pull osixia/openldap:1.5.0
-docker pull node:18
+docker pull node:22
 docker pull nginx
 ```
 
@@ -146,16 +146,16 @@ While the services are up you can enter the containers and perform different use
 - Run the Python tests (make sure to populate the test database `test_core` using `cat sql/* | docker-compose  -f local.yml  exec -T postgres psql -U weboll test_core` !):
 
     ```sh
-    docker-compose exec django pytest-3
+    docker-compose exec django pytest
     ```
 
   to run only a specific test with maximum verbosity:
     
     ```
-    docker-compose exec django pytest-3 -vvv tests/test_routes.py::TestBullettinsEndpoints::test_full_new_bulletin_authorized
+    docker-compose exec django pytest -vvv tests/test_routes.py::TestBullettinsEndpoints::test_full_new_bulletin_authorized
     ```
     
-**NOTE**: during tests, any output sent to stdout and stderr is captured by [pytest](https://pytest.org/en/6.2.x/capture.html); start pytest-3 with `-s` option to disable all capturing if you seed to see some `print()` outputs.
+**NOTE**: during tests, any output sent to stdout and stderr is captured by [pytest](https://pytest.org/en/6.2.x/capture.html); start pytest with `-s` option to disable all capturing if you seed to see some `print()` outputs.
 
 - Run the Python tests, check your test coverage, and generate an HTML coverage report:
 
@@ -196,6 +196,7 @@ sudo apt install postgresql python3-venv \
     python3-wheel \
     python3-whitenoise \
     python3-yaml \
+    python3-matplotlib \
     wait-for-it \
     curl
 ```
@@ -235,7 +236,7 @@ or on macOS:
     brew update
     brew install yarn
 
-**NOTE**: due to the [`server.proxy` setting in `vite.config.js`](https://vitejs.dev/config/server-options.html#server-proxy) the front-end will try to proxy the API from http://django:8000; if you run the `yarnpkg dev` command locally either tweak that to http://localhost:8000 in `vite.config.js` or make sure `127.0.0.1       localhost ... django` is present in `/etc/hosts`.
+**NOTE**: due to the [`server.proxy` setting in `vite.config.ts`](https://vitejs.dev/config/server-options.html#server-proxy) the front-end will try to proxy the API from http://django:8000; if you run the `yarnpkg dev` command locally either tweak that to http://localhost:8000 in `vite.config.ts` or make sure `127.0.0.1       localhost ... django` is present in `/etc/hosts`.
 
 ## Mixed set-up
 

@@ -1,465 +1,487 @@
-// Copyright (C) 2020-2023 simevo s.r.l. for ARPA Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
 <template>
-  <VeeForm
-    v-slot="{ meta }"
-  >
-    <div class="container-fluid">
+  <div class="container-fluid">
+    <div
+      class="row justify-content-end sticky-top py-1"
+      style="background-color: #f8f9fa;"
+    >
+      <!-- https://getbootstrap.com/docs/5.1/components/button-group/ -->
       <div
-        class="row justify-content-end sticky-top py-1"
-        style="background-color: #f8f9fa;"
+        class="btn-group w-auto"
+        role="group"
+        aria-label="Basic outlined example"
       >
-        <!-- https://getbootstrap.com/docs/5.1/components/button-group/ -->
-        <div
-          class="btn-group w-auto"
-          role="group"
-          aria-label="Basic outlined example"
+        <a
+          class="btn btn-outline-primary"
+          :href="'/api/w29/pdf/' + slops.id_w29"
+          target="_blank"
+          role="button"
         >
-          <a
-            class="btn btn-outline-primary"
-            :href="'/api/w29/pdf/' + slops.id_w29"
-            target="_blank"
-            role="button"
-          >
+          <img
+            src="~bootstrap-icons/icons/file-earmark-pdf-fill.svg"
+            alt="PDF icon"
+            width="18"
+            height="18"
+          > PDF
+        </a>
+        <button
+          v-if="slops.status === '0' && state.username"
+          :disabled="sending || !validity.all"
+          type="button"
+          class="btn btn-outline-success"
+          @click="execute_timeout('send', false, 'Bollettino inviato')"
+        >
+          <span v-if="sending">
+            <span
+              class="spinner-border spinner-border-sm"
+              role="status"
+              aria-hidden="true"
+            />
+            Sto inviando il bollettino ...
+          </span>
+          <span v-else>
             <img
-              src="~bootstrap-icons/icons/file-earmark-pdf-fill.svg"
-              alt="PDF icon"
-              width="18"
-              height="18"
-            > PDF
-          </a>
-          <button
-            v-if="slops.status === '0' && state.username"
-            :disabled="sending || (meta && !meta.valid)"
-            type="button"
-            class="btn btn-outline-success"
-            @click="execute('send', false, 'Bollettino inviato')"
-          >
-            <span v-if="sending">
-              <span
-                class="spinner-border spinner-border-sm"
-                role="status"
-                aria-hidden="true"
-              />
-              Sto inviando il bollettino ...
-            </span>
-            <span v-else>
-              <img
-                src="~bootstrap-icons/icons/send-fill.svg"
-                alt="unlock icon"
-                width="18"
-                height="18"
-              > Invia
-            </span>
-          </button>
-          <button
-            v-if="slops.status === '0' && state.username"
-            type="button"
-            class="btn btn-outline-danger"
-            @click="remove()"
-          >
-            <img
-              src="~bootstrap-icons/icons/trash-fill.svg"
+              src="~bootstrap-icons/icons/send-fill.svg"
               alt="unlock icon"
               width="18"
               height="18"
-            > Elimina
-          </button>
-        </div>
-      </div>
-
-      <div class="row mb-3">
-        <h1>Bollettino Slops {{ slops.numero_bollettino }}</h1>
-        <div
-          v-if="meta && !meta.valid"
-          class="alert alert-danger"
+            > Invia
+          </span>
+        </button>
+        <button
+          v-if="slops.status === '1' && state.username && slops.data_emissione.substring(0, 10) === today"
+          type="button"
+          class="btn btn-outline-warning"
+          @click="execute('reopen', true, 'Bollettino riaperto')"
         >
-          Ci sono dei campi incompleti
-        </div>
+          <span v-if="reopening">
+            <span
+              class="spinner-border spinner-border-sm"
+              role="status"
+              aria-hidden="true"
+            />
+            Sto riaprendo il bollettino ...
+          </span>
+          <span v-else>
+            <img
+              src="~bootstrap-icons/icons/unlock-fill.svg"
+              alt="unlock icon"
+              width="18"
+              height="18"
+            > Riapri
+          </span>
+        </button>
+        <button
+          v-if="slops.status === '0' && state.username"
+          type="button"
+          class="btn btn-outline-danger"
+          @click="remove()"
+        >
+          <img
+            src="~bootstrap-icons/icons/trash-fill.svg"
+            alt="unlock icon"
+            width="18"
+            height="18"
+          > Elimina
+        </button>
       </div>
-      <div class="row">
-        <div class="col-md-2 mb-3">
-          <label for="status">Stato
-            <span v-if="slops.status == 1">
-              <input
-                id="stato"
-                disabled
-                class="form-control"
-                name="stato"
-                type="text"
-                value="Inviato"
-              >
-            </span>
-            <span v-else>
-              <input
-                id="stato"
-                disabled
-                class="form-control"
-                name="stato"
-                type="text"
-                value="Bozza"
-              >
-            </span>
-          </label>
-        </div>
-        <div class="col-md-2 mb-3">
-          <label for="data_emissione">Data emissione
-            <input
-              id="data_emissione"
-              disabled
-              class="form-control"
-              name="data_emissione"
-              type="text"
-              :value="getDateFormatted(slops.data_emissione, false)"
-            >
-          </label>
-        </div>
-        <div class="col-md-2 mb-3">
-          <label for="data_validita">Data aggiornamento
-            <Datepicker
-              v-model="slops.data_validita"
-              :disabled="readonly"
-              :style="readonly ? '--dp-disabled-color: #e9ecef' : '--dp-background-color: white'"
-              format="dd/MM/yyyy"
-              auto-apply
-              @update:model-value="saveW29(slops.data_validita, slops.id_w29, 'data_validita')"
-            />
-          </label>
-        </div>
-        <div class="col-md-2 mb-3">
-          <label for="data_simulazione">data previsione
-            <Datepicker
-              v-model="slops.data_simulazione"
-              :disabled="readonly"
-              :style="readonly ? '--dp-disabled-color: #e9ecef' : '--dp-background-color: white'"
-              format="dd/MM/yyyy"
-              auto-apply
-              @update:model-value="saveW29(slops.data_simulazione, slops.id_w29, 'data_simulazione')"
-            />
-          </label>
-        </div>
-        <div class="col-md-2 mb-3">
-          <label for="ora_simulazione">ora previsione
-            <input
-              id="ora_simulazione"
-              :readonly="readonly"
-              class="form-control"
-              name="ora_simulazione"
-              type="text"
-              :value="slops.ora_simulazione"
-              @change="saveW29($event.target.value, slops.id_w29, 'ora_simulazione')"
-            >
-          </label>
-        </div>
-        <div class="col-md-2 mb-3">
-          <label for="data_osservazione">data osservazione
-            <Datepicker
-              v-model="slops.data_osservazione"
-              :disabled="readonly"
-              :style="readonly ? '--dp-disabled-color: #e9ecef' : '--dp-background-color: white'"
-              format="dd/MM/yyyy"
-              auto-apply
-              @update:model-value="saveW29(slops.data_osservazione, slops.id_w29, 'data_osservazione')"
-            />
-          </label>
-        </div>
-        <div class="col-md-2 mb-3">
-          <label for="ora_osservazione">ora osservazione
-            <input
-              id="ora_osservazione"
-              :readonly="readonly"
-              class="form-control"
-              name="ora_osservazione"
-              type="text"
-              :value="slops.ora_osservazione"
-              @change="saveW29($event.target.value, slops.id_w29, 'ora_osservazione')"
-            >
-          </label>
-        </div>
-        <div class="col-md-2 mb-3">
-          <label for="last_update">Ultima modifica
-            <input
-              id="last_update"
-              disabled
-              class="form-control"
-              name="last_update"
-              type="text"
-              :value="getDateFormatted(slops.last_update)"
-            >
-          </label>
-        </div>
-        <div class="col-md-2 mb-3">
-          <label for="username">Autore
-            <input
-              id="username"
-              disabled
-              class="form-control"
-              name="username"
-              type="text"
-              :value="slops.username"
-            >
-          </label>
-        </div>
-      </div>
-      <div class="row mt-3">
-        <div class="col-xl-12 col-md-12 mb-3">
-          <ul
-            id="pills-tab"
-            class="nav nav-pills mb-3"
-            role="tablist"
-          >
-            <li
-              class="nav-item"
-              role="presentation"
-            >
-              <button
-                id="pills-bollettino_emesso-tab"
-                class="nav-link active"
-                data-bs-toggle="pill"
-                data-bs-target="#pills-bollettino_emesso"
-                type="button"
-                role="tab"
-                aria-controls="pills-bollettino_emesso"
-                aria-selected="true"
-              >
-                Bollettino emesso
-              </button>
-            </li>
-            <li
-              class="nav-item"
-              role="presentation"
-            >
-              <button
-                id="pills-mappe-tab"
-                class="nav-link"
-                data-bs-toggle="pill"
-                data-bs-target="#pills-mappe"
-                type="button"
-                role="tab"
-                aria-controls="pills-mappe"
-                aria-selected="false"
-              >
-                Mappe
-              </button>
-            </li>
-            <li
-              class="nav-item"
-              role="presentation"
-            >
-              <button
-                id="pills-annotazione-tab"
-                class="nav-link"
-                data-bs-toggle="pill"
-                data-bs-target="#pills-annotazione"
-                type="button"
-                role="tab"
-                aria-controls="pills-annotazione"
-                aria-selected="false"
-              >
-                Annotazione
-              </button>
-            </li>
-          </ul>
-          <div
-            id="pills-tabContent"
-            class="tab-content"
-          >
-            <div
-              id="pills-bollettino_emesso"
-              class="tab-pane fade show active"
-              role="tabpanel"
-              aria-labelledby="pills-bollettino_emesso-tab"
-            >
-              <div class="col-xl-12 col-md-12 mb-3">
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <th scope="col">
-                        Aree di <br>allertamento<br> Regionale
-                      </th>
-                      <th scope="col">
-                        Livello<br> Criticità Attuale
-                      </th>
-                      <th scope="col">
-                        Probabilità<br> Criticità Attuale
-                      </th>
-                      <th scope="col">
-                        Livello<br> Criticità oggi
-                      </th>
-                      <th scope="col">
-                        Probabilità<br> Criticità oggi
-                      </th>
-                      <th scope="col">
-                        Livello<br> Criticità domani
-                      </th>
-                      <th scope="col">
-                        Probabilità<br> Criticità domani
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr
-                      v-for="area in slops.w29data_set"
-                      :key="area.id_w29"
-                    >
-                      <th scope="row">
-                        {{ area.id_w29_zone.descrizione }}
-                      </th>
-                      <CellPericolo
-                        :area="area"
-                        :campo="'livello_criticita_oss'"
-                        :pericolo="pericolo"
-                        :readonly="readonly"
-                        :required="true"
-                        @change-pericolo="saveW29DataPericolo"
-                      />
-                      <CellProbabilita
-                        :area="area"
-                        :campo="'probabilita_criticita_oss'"
-                        :probabilita="probabilita"
-                        :readonly="readonly"
-                        @change-probabilita="saveW29DataPericolo"
-                      />
-                      <CellPericolo
-                        :area="area"
-                        :campo="'livello_criticita_prev_oggi'"
-                        :pericolo="pericolo"
-                        :readonly="readonly"
-                        :required="true"
-                        @change-pericolo="saveW29DataPericolo"
-                      />
-                      <CellProbabilita
-                        :area="area"
-                        :campo="'probabilita_criticita_prev_oggi'"
-                        :probabilita="probabilita"
-                        :readonly="readonly"
-                        @change-probabilita="saveW29DataPericolo"
-                      />
-                      <CellPericolo
-                        :area="area"
-                        :campo="'livello_criticita_prev_domani'"
-                        :pericolo="pericolo"
-                        :readonly="readonly"
-                        :required="true"
-                        @change-pericolo="saveW29DataPericolo"
-                      />
-                      <CellProbabilita
-                        :area="area"
-                        :campo="'probabilita_criticita_prev_domani'"
-                        :probabilita="probabilita"
-                        :readonly="readonly"
-                        @change-probabilita="saveW29DataPericolo"
-                      />
-                    </tr>
-                    <tr>
-                      <td colspan="5">
-                        <label for="situazione_evoluzione">situazione evoluzione</label><br>
-                        <textarea
-                          id="situazione_evoluzione"
-                          v-model="slops.situazione_evoluzione"
-                          name="situazione_evoluzione"
-                          rows="3"
-                          cols="100"
-                          :readonly="readonly"
-                          @change="saveW29(slops.situazione_evoluzione, slops.id_w29, 'situazione_evoluzione')"
-                        />
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>  <!--col-->
-              <div class="col-xl-5 col-md-12 mb-3">
-                <div
-                  class="sticky-top pt-5"
-                  style="z-index: 0;"
-                />
-              </div> <!-- col -->
-            </div>
+    </div>
 
-            <div
-              id="pills-annotazione"
-              class="tab-pane fade"
-              role="tabpanel"
-              aria-labelledby="pills-annotazione-tab"
+    <div class="row mb-3">
+      <h1>Bollettino Slops {{ slops.numero_bollettino }}</h1>
+      <div
+        v-if="!validity.all"
+        class="alert alert-danger"
+      >
+        Ci sono dei campi incompleti
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2 mb-3">
+        <label for="status">Stato
+          <span v-if="slops.status == 1">
+            <input
+              id="stato"
+              disabled
+              class="form-control"
+              name="stato"
+              type="text"
+              value="Inviato"
             >
-              <div class="col-md-12 mb-3">
-                <label for="note">Note</label><br>
-                <textarea
-                  id="note"
-                  v-model="slops.note"
-                  name="note"
-                  rows="3"
-                  cols="100"
-                  :readonly="readonly"
-                  @change="saveW29(slops.note, slops.id_w29, 'note')"
-                />
-              </div>
+          </span>
+          <span v-else>
+            <input
+              id="stato"
+              disabled
+              class="form-control"
+              name="stato"
+              type="text"
+              value="Bozza"
+            >
+          </span>
+        </label>
+      </div>
+      <div class="col-md-2 mb-3">
+        <label for="data_emissione">Data emissione
+          <input
+            id="data_emissione"
+            disabled
+            class="form-control"
+            name="data_emissione"
+            type="text"
+            :value="getDateFormatted(slops.data_emissione, false)"
+          >
+        </label>
+      </div>
+      <div class="col-md-2 mb-3">
+        <label for="data_validita">Data aggiornamento
+          <Datepicker
+            v-model="slops.data_validita"
+            :disabled="readonly"
+            :style="readonly ? '--dp-disabled-color: #e9ecef' : '--dp-background-color: white'"
+            format="dd/MM/yyyy"
+            auto-apply
+            @update:model-value="saveW29(slops.data_validita, slops.id_w29, 'data_validita')"
+          />
+        </label>
+      </div>
+      <div class="col-md-2 mb-3">
+        <label for="data_simulazione">data previsione
+          <Datepicker
+            v-model="slops.data_simulazione"
+            :disabled="readonly"
+            :style="readonly ? '--dp-disabled-color: #e9ecef' : '--dp-background-color: white'"
+            format="dd/MM/yyyy"
+            auto-apply
+            @update:model-value="saveW29(slops.data_simulazione, slops.id_w29, 'data_simulazione')"
+          />
+        </label>
+      </div>
+      <div class="col-md-2 mb-3">
+        <label for="ora_simulazione">ora previsione
+          <input
+            id="ora_simulazione"
+            :readonly="readonly"
+            class="form-control"
+            name="ora_simulazione"
+            type="text"
+            :value="slops.ora_simulazione"
+            @change="saveW29($event.target.value, slops.id_w29, 'ora_simulazione')"
+          >
+        </label>
+      </div>
+      <div class="col-md-2 mb-3">
+        <label for="data_osservazione">data osservazione
+          <Datepicker
+            v-model="slops.data_osservazione"
+            :disabled="readonly"
+            :style="readonly ? '--dp-disabled-color: #e9ecef' : '--dp-background-color: white'"
+            format="dd/MM/yyyy"
+            auto-apply
+            @update:model-value="saveW29(slops.data_osservazione, slops.id_w29, 'data_osservazione')"
+          />
+        </label>
+      </div>
+      <div class="col-md-2 mb-3">
+        <label for="ora_osservazione">ora osservazione
+          <input
+            id="ora_osservazione"
+            :readonly="readonly"
+            class="form-control"
+            name="ora_osservazione"
+            type="text"
+            :value="slops.ora_osservazione"
+            @change="saveW29($event.target.value, slops.id_w29, 'ora_osservazione')"
+          >
+        </label>
+      </div>
+      <div class="col-md-2 mb-3">
+        <label for="last_update">Ultima modifica
+          <input
+            id="last_update"
+            disabled
+            class="form-control"
+            name="last_update"
+            type="text"
+            :value="getDateFormatted(slops.last_update)"
+          >
+        </label>
+      </div>
+      <div class="col-md-2 mb-3">
+        <label for="username">Autore
+          <input
+            id="username"
+            disabled
+            class="form-control"
+            name="username"
+            type="text"
+            :value="slops.username"
+          >
+        </label>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-xl-12 col-md-12 mb-3">
+        <ul
+          id="pills-tab"
+          class="nav nav-pills mb-3"
+          role="tablist"
+        >
+          <li
+            class="nav-item"
+            role="presentation"
+          >
+            <button
+              id="pills-bollettino_emesso-tab"
+              class="nav-link active"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-bollettino_emesso"
+              type="button"
+              role="tab"
+              aria-controls="pills-bollettino_emesso"
+              aria-selected="true"
+            >
+              Bollettino emesso
+            </button>
+          </li>
+          <li
+            class="nav-item"
+            role="presentation"
+          >
+            <button
+              id="pills-mappe-tab"
+              class="nav-link"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-mappe"
+              type="button"
+              role="tab"
+              aria-controls="pills-mappe"
+              aria-selected="false"
+            >
+              Mappe
+            </button>
+          </li>
+          <li
+            class="nav-item"
+            role="presentation"
+          >
+            <button
+              id="pills-annotazione-tab"
+              class="nav-link"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-annotazione"
+              type="button"
+              role="tab"
+              aria-controls="pills-annotazione"
+              aria-selected="false"
+            >
+              Annotazione
+            </button>
+          </li>
+        </ul>
+        <div
+          id="pills-tabContent"
+          class="tab-content"
+        >
+          <div
+            id="pills-bollettino_emesso"
+            class="tab-pane fade show active"
+            role="tabpanel"
+            aria-labelledby="pills-bollettino_emesso-tab"
+          >
+            <div class="col-xl-12 col-md-12 mb-3">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">
+                      Aree di <br>allertamento<br> Regionale
+                    </th>
+                    <th scope="col">
+                      Livello<br> Criticità ultime 24 ore
+                    </th>
+                    <th scope="col">
+                      Probabilità<br> Criticità ultime 24 ore
+                    </th>
+                    <th scope="col">
+                      Livello<br> Criticità oggi
+                    </th>
+                    <th scope="col">
+                      Probabilità<br> Criticità oggi
+                    </th>
+                    <th scope="col">
+                      Livello<br> Criticità domani
+                    </th>
+                    <th scope="col">
+                      Probabilità<br> Criticità domani
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr
+                    v-for="area in slops.w29data_set"
+                    :key="area.id_w29"
+                  >
+                    <th scope="row">
+                      {{ area.id_w29_zone.descrizione }}
+                    </th>
+                    <CellPericolo
+                      :area="area"
+                      :campo="'livello_criticita_oss'"
+                      :pericolo="pericolo"
+                      :readonly="readonly"
+                      :required="true"
+                      :validity="validity"
+                      @change-pericolo="saveW29DataPericolo"
+                    />
+                    <CellProbabilita
+                      :area="area"
+                      :campo="'probabilita_criticita_oss'"
+                      :probabilita="probabilita"
+                      :readonly="readonly"
+                      @change-probabilita="saveW29DataPericolo"
+                    />
+                    <CellPericolo
+                      :area="area"
+                      :campo="'livello_criticita_prev_oggi'"
+                      :pericolo="pericolo"
+                      :readonly="readonly"
+                      :required="true"
+                      :validity="validity"
+                      @change-pericolo="saveW29DataPericolo"
+                    />
+                    <CellProbabilita
+                      :area="area"
+                      :campo="'probabilita_criticita_prev_oggi'"
+                      :probabilita="probabilita"
+                      :readonly="readonly"
+                      @change-probabilita="saveW29DataPericolo"
+                    />
+                    <CellPericolo
+                      :area="area"
+                      :campo="'livello_criticita_prev_domani'"
+                      :pericolo="pericolo"
+                      :readonly="readonly"
+                      :required="true"
+                      :validity="validity"
+                      @change-pericolo="saveW29DataPericolo"
+                    />
+                    <CellProbabilita
+                      :area="area"
+                      :campo="'probabilita_criticita_prev_domani'"
+                      :probabilita="probabilita"
+                      :readonly="readonly"
+                      @change-probabilita="saveW29DataPericolo"
+                    />
+                  </tr>
+                  <tr>
+                    <td colspan="5">
+                      <label for="situazione_evoluzione">situazione evoluzione</label><br>
+                      <textarea
+                        id="situazione_evoluzione"
+                        v-model="slops.situazione_evoluzione"
+                        name="situazione_evoluzione"
+                        rows="3"
+                        cols="100"
+                        :readonly="readonly"
+                        @change="saveW29(slops.situazione_evoluzione, slops.id_w29, 'situazione_evoluzione')"
+                      />
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>  <!--col-->
+            <div class="col-xl-5 col-md-12 mb-3">
+              <div
+                class="sticky-top pt-5"
+                style="z-index: 0;"
+              />
+            </div> <!-- col -->
+          </div>
+
+          <div
+            id="pills-annotazione"
+            class="tab-pane fade"
+            role="tabpanel"
+            aria-labelledby="pills-annotazione-tab"
+          >
+            <div class="col-md-12 mb-3">
+              <label for="note">Note</label><br>
+              <textarea
+                id="note"
+                v-model="slops.note"
+                name="note"
+                rows="3"
+                cols="100"
+                :readonly="readonly"
+                @change="saveW29(slops.note, slops.id_w29, 'note')"
+              />
             </div>
-            <div
-              id="pills-mappe"
-              class="tab-pane fade"
-              role="tabpanel"
-              aria-labelledby="pills-mappe-tab"
-            >
-              <div class="col-md-12 mb-3">
-                <div>
-                  <div class="row">
-                    <div class="col-sm">
-                      CRITICITA' ATTUALE
-                    </div>
-                    <div class="col-sm">
-                      CRITICITA' OGGI
-                    </div>
-                    <div class="col-sm">
-                      CRITICITA' DOMANI
-                    </div>
+          </div>
+          <div
+            id="pills-mappe"
+            class="tab-pane fade"
+            role="tabpanel"
+            aria-labelledby="pills-mappe-tab"
+          >
+            <div class="col-md-12 mb-3">
+              <div>
+                <div class="row">
+                  <div class="col-sm">
+                    CRITICITA' ULTIME 24 ORE
                   </div>
-                  <div class="row">
-                    <div class="col-sm">
-                      <MapSlops
-                        :orography="true"
-                        :rivers="false"
-                        :provinces="false"
-                        :capitals="false"
-                        :layer="true"
-                        :venue-data="livello_criticita_oss"
-                        :slopsdata="slops_oss"
-                      />
-                    </div>
-                    <div class="col-sm">
-                      <MapSlops
-                        :orography="true"
-                        :rivers="false"
-                        :provinces="false"
-                        :capitals="false"
-                        :layer="true"
-                        :venue-data="livello_criticita_prev_oggi"
-                        :slopsdata="slops_prev_oggi"
-                      />
-                    </div>
-                    <div class="col-sm">
-                      <MapSlops
-                        :orography="true"
-                        :rivers="false"
-                        :provinces="false"
-                        :capitals="false"
-                        :layer="true"
-                        :venue-data="livello_criticita_prev_domani"
-                        :slopsdata="slops_prev_domani"
-                      />
-                    </div>
+                  <div class="col-sm">
+                    CRITICITA' OGGI
+                  </div>
+                  <div class="col-sm">
+                    CRITICITA' DOMANI
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm">
+                    <MapSlops
+                      :orography="true"
+                      :rivers="false"
+                      :provinces="false"
+                      :capitals="false"
+                      :layer="true"
+                      :venue-data="livello_criticita_oss"
+                      :slopsdata="slops_oss"
+                    />
+                  </div>
+                  <div class="col-sm">
+                    <MapSlops
+                      :orography="true"
+                      :rivers="false"
+                      :provinces="false"
+                      :capitals="false"
+                      :layer="true"
+                      :venue-data="livello_criticita_prev_oggi"
+                      :slopsdata="slops_prev_oggi"
+                    />
+                  </div>
+                  <div class="col-sm">
+                    <MapSlops
+                      :orography="true"
+                      :rivers="false"
+                      :provinces="false"
+                      :capitals="false"
+                      :layer="true"
+                      :venue-data="livello_criticita_prev_domani"
+                      :slopsdata="slops_prev_domani"
+                    />
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div> <!-- row -->
-        <div class="row" />
-      </div>
+        </div>
+      </div> <!-- row -->
+      <div class="row" />
     </div>
-  </VeeForm>
+  </div>
 </template>
 
 <script>
@@ -468,7 +490,6 @@ import store from '@/store'
 import CellPericolo from './CellPericolo.vue'
 import MapSlops from './MapSlops.vue'
 import CellProbabilita from './CellProbabilita.vue'
-import { Form as VeeForm } from 'vee-validate';
 
 export default {
 
@@ -477,7 +498,12 @@ export default {
     CellPericolo,
     CellProbabilita,
     MapSlops,
-    VeeForm
+  },
+  props: {
+    id: {
+      type: String,
+      default: () => ''
+    },
   },
   data () {
     // non reactive properties
@@ -488,10 +514,46 @@ export default {
       slopsdata: {},
       state: store.state,
       readonly: true,
-      sending: false
+      sending: false,
+      reopening: false,
+      saving: false
     }
   },
   computed: {
+    today() {
+      // returns today in 2021-04-22 format
+      let d = new Date()
+      return d.toISOString().substring(0, 10)
+    },
+    validity(){
+      let result = {all: true}
+      if (this.slops.w29data_set){
+        this.slops.w29data_set.forEach(area=>{
+          if (!(area.id_w29_data in result)){
+            result[area.id_w29_data] = {}
+          }
+          if (area['livello_criticita_oss'] == 'np'){
+            result[area.id_w29_data]['livello_criticita_oss'] = false
+            result.all = false
+          }else{
+            result[area.id_w29_data]['livello_criticita_oss'] = true
+          }
+          if (area['livello_criticita_prev_oggi'] == 'np'){
+            result[area.id_w29_data]['livello_criticita_prev_oggi'] = false
+            result.all = false
+          }else{
+            result[area.id_w29_data]['livello_criticita_prev_oggi'] = true
+          }
+          if (area['livello_criticita_prev_domani'] == 'np'){
+            result[area.id_w29_data]['livello_criticita_prev_domani'] = false
+            result.all = false
+          }else{
+            result[area.id_w29_data]['livello_criticita_prev_domani'] = true
+          }
+        })
+      }
+      return result
+    },
     livello_criticita_oss(){
       let vd = { }
       if (this.slops.w29data_set !== undefined) {
@@ -579,7 +641,7 @@ export default {
       return colore
     },
     async fetchData () {
-      this.slops_id = this.$route.params.id
+      this.slops_id = this.id
       this.pericolo  = await this.fetchPericolo()
       this.probabilita  = await this.fetchProbabilita()
       // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
@@ -596,7 +658,7 @@ export default {
         return response.json()
       }).then(data => {
         this.slops = data
-        this.readonly = (this.slops.status === '1' || !this.state.username)
+        this.readonly = (this.slops.status === '1' || this.slops.status === '2' || !this.state.username)
       }).catch(error => {
         this.$toast.open(
           {
@@ -674,6 +736,7 @@ export default {
       return api.getDateFormatted(rawString, time)
     },
     saveW29(newValue, id_w29, campo) {
+      this.saving = true
       //data_validata
       if (campo==="data_validita") {
         let month = String(newValue.getMonth() + 1);
@@ -748,6 +811,7 @@ export default {
               position: 'top-left'
             }
           )
+          this.saving = false
         }
         return response.json()
       }).then(data => {
@@ -760,6 +824,7 @@ export default {
         )
         this.slops.last_update = data.last_update
         this.slops.username = store.state.username
+        this.saving = false
       }).catch((error) => {
         this.$toast.open(
           {
@@ -768,6 +833,7 @@ export default {
             position: 'top-left'
           }
         )
+        this.saving = false
       })
     },
     saveW29DataPericolo(newValue, id_w29_zone, campo) {
@@ -840,6 +906,20 @@ export default {
       )
       return response
     },
+    execute_timeout(action, reroute, message){
+      // console.log("inizio execute_timeout")
+      if (this.saving){
+        console.log("saving è true faccio partire timeout")
+        setTimeout(() => {
+          console.log("aspetto 1 secondo finchè non finisce il salvataggio in corso")
+          this.execute_timeout(action, reroute, message)
+        }, 1000);
+      }else{
+        console.log("saving è false lancio execute")
+        this.execute(action, reroute, message)
+      }
+      // console.log("fine execute_timeout")
+    },
     execute(action, reroute, message) {
       this[action + 'ing'] = true
       this.fetchSlopsAction(action).then(response => {
@@ -864,7 +944,8 @@ export default {
           }
         )
         if (reroute) {
-          this.$router.push({ path: `/w29/${data.id_w29}`})
+          this.$router.push({ path: `/w29/`})
+          //this.$router.push({ path: `/w29/${data.id_w29}`})
         } else {
           this.fetchData()
         }

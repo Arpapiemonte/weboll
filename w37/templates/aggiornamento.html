@@ -1,0 +1,222 @@
+{% load date_extras_w37 %}
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <title>Bollettino aggiornamento</title>
+  </head>
+  <body>
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 595 842" style="enable-background:new 0 0 595 842;" xml:space="preserve">
+   <style>	
+   .testobol {
+       fill:#231f20;
+       font-size:9px;
+     font-family:'Titillium Web';   
+     text-align: justify;
+     font-style:normal;
+       font-variant:normal;
+     line-height: 10px;
+     }	
+      pericolo0 {fill: #6EBB00;}
+      pericolo1 {fill: #FFFF00;}
+      pericolo2 {fill: #FFA500;}
+      pericolo3 {fill: #FF0000;}
+      pericolo-1 {fill: #8f8c8c;}
+      pericolo-99 {fill: #8f8c8c;}
+      .pericolo0 {fill: #6EBB00;}
+      .pericolo1 {fill: #FFFF00;}
+      .pericolo2 {fill: #FFA500;}
+      .pericolo3 {fill: #FF0000;}
+      .pericolo-1 {fill: #8f8c8c;}
+      .pericolo-99 {fill: #8f8c8c;}
+      g.pericolo0 rect {fill: #6EBB00;}
+      g.pericolo1 rect {fill: #FFFF00;}
+      g.pericolo2 rect {fill: #FFA500;}
+      g.pericolo3 rect {fill: #FF0000;}
+      g.pericolo-1 {fill: #8f8c8c;}
+      g.pericolo-99 {fill: #8f8c8c;}
+   </style>
+<g transform="scale(2.90)">
+  {% include "header_w37.svg" with validity='12' title='AGGIORNAMENTO IDROGEOLOGICO E IDRAULICO' pagnum=1 seqNum=aggiornamento.numero_bollettino startValidTime=aggiornamento.data_emissione hvalidity=aggiornamento.ora_emissione haggiornamento=aggiornamento.ora_aggiornamento nextUpdate=aggiornamento.data_aggiornamento logo='regione-piemonte' username=aggiornamento.username%}
+</g> 
+
+<g id="RIGA_MAPPE">
+	<g>
+		<text transform="matrix(1 0 0 1 101.4873 134.2526)" style="font-family:'Arial'; font-size:12px;">PERICOLO ATTUALE</text>
+	</g>
+	<text transform="matrix(1 0 0 1 351.154 134.2526)" style="font-family:'Arial'; font-size:12px;">PERICOLO ULTIME 24 ORE</text>
+	<!-- QUI CI VANNO LE 2 MAPPE-->
+  <foreignObject x="35" y="138" width="270" height="248" >
+    <div xmlns="http://www.w3.org/1999/xhtml" class="testi">
+      <img src="data:image/png;base64,{{ aggiornamento.mappa_3h }}" style="width: 220px; height: 220px;">
+    </div>
+  </foreignObject>
+  <foreignObject x="320" y="138" width="270" height="248" >
+    <div xmlns="http://www.w3.org/1999/xhtml" class="testi">
+      <img src="data:image/png;base64,{{ aggiornamento.mappa_24h }}" style="width: 220px; height: 220px;">
+    </div>
+  </foreignObject>
+</g>
+
+<g id="COMMENTO_SITUAZIONE">
+	<rect x="32.5" y="392.867" style="fill:none;" width="371.833" height="154.933"/>
+	<text transform="matrix(1 0 0 1 31.8206 385.2526)" style="font-family:'Arial'; font-size:13px;">Commento alla situazione</text>
+	<foreignObject x="32" y="390" width="370" height="160" >
+    <div xmlns="http://www.w3.org/1999/xhtml" class="testobol">
+      {{ aggiornamento.situazione_attuale }}
+    </div>
+  </foreignObject>
+</g>
+
+<g id="METEO">
+	<rect x="33.167" y="571.533" style="fill:none;" width="527.667" height="81.433"/>
+	<text transform="matrix(1 0 0 1 32.4873 563.9193)" style="font-family:'Arial'; font-size:13px;">Previsione meteo prossime ore</text>
+	<foreignObject x="32" y="570" width="530" height="90" >
+    <div xmlns="http://www.w3.org/1999/xhtml" class="testobol">
+      {{ aggiornamento.previsione_meteo }}
+    </div>
+  </foreignObject>
+</g>
+
+<g id="C_ACQUA">
+	<text transform="matrix(1 0 0 1 33.4873 674)" style="font-family:'Arial'; font-size:13px;">Evoluzione corsi d&#x2019;acqua prossime ore</text>
+	<rect x="33.167" y="682.2" style="fill:none;" width="527.667" height="109.433"/>
+	<foreignObject x="32" y="680" width="530" height="110" >
+    <div xmlns="http://www.w3.org/1999/xhtml" class="testobol">
+      {{ aggiornamento.previsione_idro }}
+    </div>
+  </foreignObject>
+</g>
+
+
+<g id="LEGENDA">
+	<rect x="424" y="475.333" style="fill:#F1F1F2;" width="142" height="79.667"/>
+	<rect x="451.667" y="404.975" style="fill:#F1F1F2;" width="109.167" height="18.396"/>
+	<rect x="451.667" y="428.975" style="fill:#F1F1F2;" width="109.167" height="18.396"/>
+	<rect x="451.667" y="452.975" style="fill:#F1F1F2;" width="109.167" height="18.396"/>
+	<rect x="451.667" y="381.975" style="fill:#F1F1F2;" width="109.167" height="18.396"/>
+	<rect x="428.667" y="381.975" style="fill:#EC1E24;stroke:#404041;stroke-width:0.7;stroke-miterlimit:10;" width="18.833" height="18.396"/>
+	<rect x="428.667" y="404.573" style="fill:#F9A31A;stroke:#404041;stroke-width:0.7;stroke-miterlimit:10;" width="18.833" height="18.396"/>
+	<rect x="428.667" y="428.975" style="fill:#F6EB0F;stroke:#404041;stroke-width:0.7;stroke-miterlimit:10;" width="18.833" height="18.396"/>
+	<rect x="428.667" y="452.573" style="fill:#55B848;stroke:#404041;stroke-width:0.7;stroke-miterlimit:10;" width="18.833" height="18.396"/>
+	
+	<text transform="matrix(1 0 0 1 471.8206 377.2526)" style="font-family:'Arial'; font-size:10px;">Legenda</text>
+	<text transform="matrix(1 0 0 1 457 390.4229)" style="font-family:'Arial'; font-size:7.5px;"><tspan x="0" y="0">Numerosi o estesi effetti sul </tspan><tspan x="0" y="9" >territorio</tspan></text>
+	<text transform="matrix(1 0 0 1 457 417.2708)" style="font-family:'Arial'; font-size:7.5px;">Effetti rilevanti sul territorio</text>
+	<text transform="matrix(1 0 0 1 456.8747 441.2708)" style="font-family:'Arial'; font-size:7.5px;">Effetti localizzati sul territorio</text>
+	<text transform="matrix(1 0 0 1 457 460.7708)" style="font-family:'Arial'; font-size:7.5px;"><tspan x="0" y="0">Assenza di effetti significativi</tspan><tspan x="0" y="9">prevedibili sul territorio</tspan></text>
+	
+	<rect x="426.545" y="479.5" style="fill:none;" width="134.293" height="79.5"/>
+	<text transform="matrix(1 0 0 1 429.5448 484.5117)" style="font-family:'ArialMT'; font-size:7px;">
+		Il PERICOLO ATTUALE e DELLE</text>
+  <text transform="matrix(1 0 0 1 429.5448 493.5117)" style="font-family:'ArialMT'; font-size:7px;">
+    ULTIME 24 ORE riporta una reale</text>
+  <text transform="matrix(1 0 0 1 429.5448 502.5117)" style="font-family:'ArialMT'; font-size:7px;">
+    condizione di pericolo in atto sul</text>
+  <text transform="matrix(1 0 0 1 429.5448 510.5117)" style="font-family:'ArialMT'; font-size:7px;">
+    territorio comunale derivante da un</text> 
+  <text transform="matrix(1 0 0 1 429.5448 518.5117)" style="font-family:'ArialMT'; font-size:7px;">
+    superamento strumentale di soglie</text>
+  <text transform="matrix(1 0 0 1 429.5448 526.5117)" style="font-family:'ArialMT'; font-size:7px;">
+    registrato dai pluviometri (entro 15 km</text>
+  <text transform="matrix(1 0 0 1 429.5448 534.5117)" style="font-family:'ArialMT'; font-size:7px;">  
+  dal comune) o dagli idrometri della  
+	</text>
+  <text transform="matrix(1 0 0 1 429.5448 542.5117)" style="font-family:'ArialMT'; font-size:7px;">  
+  rete idrografica gestita da Arpa
+	</text>
+  <text transform="matrix(1 0 0 1 429.5448 550.5117)" style="font-family:'ArialMT'; font-size:7px;">  
+  Piemonte.
+  </text>
+</g>
+<g id="footer">
+  <rect x="29" y="798" style="fill:#F1F1F2;" width="429.5" height="15"/>
+  <text transform="matrix(1 0 0 1 471.5012 808.1036)" style="fill:#2E9D53; font-family:'Arial'; font-size:8.6442px;">www.arpa.piemonte.it</text>
+  <g>
+    <text transform="matrix(1 0 0 1 32 808)" style="fill:#424242; font-family:'Arial'; font-size:7.5px;">Diffusione: https://www.arpa.piemonte.it/rischi_naturali/snippets_arpa/mappa_pericolo/</text>
+  </g>
+</g>
+</svg>
+{% for n in pagecounter %}
+    <svg version="1.1" id="bollettino" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+    viewBox="0 0 595 842" style="enable-background:new 0 0 595 842;" xml:space="preserve">
+    <g transform="scale(2.90)">
+      {% include "header_w37.svg" with validity='12' title='AGGIORNAMENTO IDROGEOLOGICO E IDRAULICO' pagnum=n|page_number seqNum=aggiornamento.numero_bollettino startValidTime=aggiornamento.data_emissione hvalidity=aggiornamento.ora_emissione haggiornamento=aggiornamento.ora_aggiornamento nextUpdate=aggiornamento.data_aggiornamento logo='regione-piemonte' username=aggiornamento.username%}
+    </g>  
+    <g id="tabella-fissa_intestazione" transform="translate(0 -20)">	
+      <rect x="33" y="139" style="fill:#F4F4F4;stroke:#696A6D;stroke-width:0.5;stroke-miterlimit:10;" width="37.29" height="46.67"/>
+      <rect x="70.29" y="139" style="fill:#F4F4F4;stroke:#696A6D;stroke-width:0.5;stroke-miterlimit:10;" width="36.28" height="46.67"/>
+      <rect x="106.57" y="139" style="fill:#F4F4F4;stroke:#696A6D;stroke-width:0.5;stroke-miterlimit:10;" width="152.29" height="46.67"/>
+      <rect x="258.86" y="139" style="fill:#F4F4F4;stroke:#696A6D;stroke-width:0.5;stroke-miterlimit:10;" width="75.28" height="46.67"/>
+      <rect x="334.14" y="139" style="fill:#F4F4F4;stroke:#696A6D;stroke-width:0.5;stroke-miterlimit:10;" width="75.29" height="46.67"/>
+      <rect x="409.43" y="139" style="fill:#F4F4F4;stroke:#696A6D;stroke-width:0.5;stroke-miterlimit:10;" width="75.28" height="46.67"/>
+      <rect x="484.71" y="139" style="fill:#F4F4F4;stroke:#696A6D;stroke-width:0.5;stroke-miterlimit:10;" width="75.29" height="46.67"/>
+      <text transform="matrix(1 0 0 1 39.6665 165.6667)" style="font-family:'ArialMT'; font-size:12px;">Area</text>
+      <text transform="matrix(1 0 0 1 74.9998 165.6667)" style="font-family:'ArialMT'; font-size:12px;">Prov</text>
+      <text transform="matrix(1 0 0 1 157.6665 165.3333)" style="font-family:'ArialMT'; font-size:12px;">Comune</text>
+      <text transform="matrix(1 0 0 1 276.8931 158.3333)">
+          <tspan x="0" y="0" style="font-family:'ArialMT'; font-size:11.5px;">Pericolo</tspan>
+          <tspan x="-7.353" y="13.8" style="font-family:'ArialMT'; font-size:11.5px;">ultime 24 h</tspan>
+      </text>
+      
+      <text transform="matrix(1 0 0 1 356.0861 151.6667)">
+        <tspan x="0" y="0" style="font-family:'ArialMT'; font-size:11.5px;">FIUMI</tspan>
+        <tspan x="-2.889" y="13.8" style="font-family:'ArialMT'; font-size:11.5px;">pericolo</tspan>
+        <tspan x="-0.017" y="27.6" style="font-family:'ArialMT'; font-size:11.5px;">attuale</tspan>
+      </text>
+      
+      <text transform="matrix(1 0 0 1 422.7166 151.3333)">
+        <tspan x="0" y="0" style="font-family:'ArialMT'; font-size:11.5px;">PIOGGIA</tspan>
+        <tspan x="4.147" y="13.8" style="font-family:'ArialMT'; font-size:11.5px;">pericolo</tspan>
+        <tspan x="7.019" y="27.6" style="font-family:'ArialMT'; font-size:11.5px;">attuale</tspan>
+      </text>
+  
+      <text transform="matrix(1 0 0 1 489.7718 151)">
+        <tspan x="0" y="0" style="font-family:'ArialMT'; font-size:11.5px;">TEMPORALI</tspan>
+        <tspan x="13.092" y="13.8" style="font-family:'ArialMT'; font-size:11.5px;">pericolo</tspan>
+        <tspan x="15.964" y="27.6" style="font-family:'ArialMT'; font-size:11.5px;">attuale</tspan>
+      </text>
+    </g>
+    {% for key in aggiornamento.w37data_set %}
+      {% if forloop.counter <= n|multiply:35|add:35 and forloop.counter > n|multiply:35 %} 
+      <g transform="translate(0 {{ forloop.counter|mul:n  }})">
+        <g class="pericolo{{key.pericolo}}">
+          <rect x="258.86" y="185.67" style="stroke:#696A6D;stroke-width:0.5;stroke-miterlimit:10;" width="75.28" height="18"/>
+        </g>
+        <text transform="matrix(1 0 0 1 266 199)" style="font-family:'ArialMT'; font-size:11px;">{{key.pericolo|classes}}</text>
+
+        <g class="pericolo{{key.idro}}">
+          <rect x="334.14" y="185.67" style="stroke:#696A6D;stroke-width:0.5;stroke-miterlimit:10;" width="75.29" height="18"/>
+        </g>
+        <text transform="matrix(1 0 0 1 341 199)" style="font-family:'ArialMT'; font-size:11px;">{{key.idro|classes}}</text>
+        <g class="pericolo{{key.pluvio}}">
+          <rect x="409.43" y="185.67" style="stroke:#696A6D;stroke-width:0.5;stroke-miterlimit:10;" width="75.28" height="18"/>
+        </g>
+        <text transform="matrix(1 0 0 1 420 199)" style="font-family:'ArialMT'; font-size:11px;">{{key.pluvio|classes}}</text>
+
+        <g class="pericolo{{key.temporali}}">
+          <rect x="484.71" y="185.67" style="stroke:#696A6D;stroke-width:0.5px;stroke-miterlimit:10;" width="75.29" height="18"/>
+        </g>
+        <text transform="matrix(1 0 0 1 493 199)" style="font-family:'ArialMT'; font-size:11px;">{{key.temporali|classes}}</text>
+
+        <rect x="106.57" y="185.67" style="fill:none;stroke:#696A6D;stroke-width:0.5;stroke-miterlimit:10;" width="152.29" height="18"/>
+        <rect x="70.29" y="185.67" style="fill:none;stroke:#696A6D;stroke-width:0.5;stroke-miterlimit:10;" width="36.28" height="18"/>
+        <rect x="33" y="185.67" style="fill:none;stroke:#696A6D;stroke-width:0.5;stroke-miterlimit:10;" width="37.29" height="18"/>
+        <text transform="matrix(1 0 0 1 39.3333 199)" style="font-family:'ArialMT'; font-size:11px;">{{key.area}}</text>
+        <text transform="matrix(1 0 0 1 79.3333 199)" style="font-family:'ArialMT'; font-size:11px;">{{key.sigla_prov}}</text>
+        <text transform="matrix(1 0 0 1 119.6667 199)" style="font-family:'ArialMT'; font-size:11px;">{{key.comune}}</text>
+      </g>  
+        {% endif %}
+    {% endfor %}
+      <g id="footer">
+        <rect x="29" y="798" style="fill:#F1F1F2;" width="429.5" height="15"/>
+        <text transform="matrix(1 0 0 1 471.5012 808.1036)" style="fill:#2E9D53; font-family:'Arial'; font-size:8.6442px;">www.arpa.piemonte.it</text>
+        <g>
+          <text transform="matrix(1 0 0 1 32 808)" style="fill:#424242; font-family:'Arial'; font-size:7.5px;">Diffusione: https://www.arpa.piemonte.it/rischi_naturali/snippets_arpa/mappa_pericolo/</text>
+        </g>
+      </g>
+    </svg>
+  {% endfor %}
+  </body>
+</html>

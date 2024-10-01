@@ -1,4 +1,4 @@
-// Copyright (C) 2020-2023 simevo s.r.l. for ARPA Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
@@ -67,7 +67,6 @@
                   :key="bulletin_link.id"
                 >
                   <router-link
-                    v-if="appmode === 'development' ? true : bulletin_link.readyForProduction"
                     :to="'/' + bulletin_link.id"
                     class="dropdown-item"
                   >
@@ -118,17 +117,14 @@
         >weboll {{ vue_app_version }} - mode: {{ appmode }}</span>
       </div>
       <div class="col text-end">
-        <span class="text-light">Copyright © 2020-2023 <a
-          target="_blank"
-          href="https://simevo.com"
-          class="link-light"
-        >simevo s.r.l.</a> for ARPA Piemonte - Dipartimento Rischi Ambientali e Naturali</span>
+        <span class="text-light">Copyright (C) 2024 Arpa Piemonte - Dipartimento Rischi Ambientali e Naturali</span>
       </div>
     </div>
   </footer>
 </template>
 
 <script setup lang="ts">
+import { Dropdown } from "bootstrap"
 import { computed, ref, onMounted } from "vue"
 import store from './store'
 
@@ -164,7 +160,13 @@ const bulletins_list = computed(() => {
   return arr
 })
 
-onMounted(() => store.load())
+onMounted(() => {
+  store.load()
+  bulletins_list.value.forEach(bulletin => {
+    const element = document.getElementById(`navbarDropdownMenuLink_${bulletin.id}`)
+    new Dropdown(element)
+  })
+})
 
 function logout() {
   store.logout()

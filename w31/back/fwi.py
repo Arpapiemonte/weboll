@@ -125,9 +125,7 @@ class FWIClass:
 
     def ISIcalc(self, ffmc):
         mo = 147.2 * (101.0 - ffmc) / (59.5 + ffmc)  # eq 1
-        ff = (
-            19.115 * math.exp(mo * -0.1386) * (1.0 + (mo**5.31) / 49300000.0)
-        )  # eq 25
+        ff = 19.115 * math.exp(mo * -0.1386) * (1.0 + (mo**5.31) / 49300000.0)  # eq 25
         isi = ff * math.exp(0.05039 * self.w)  # eq 26
         return isi
 

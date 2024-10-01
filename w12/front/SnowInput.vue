@@ -1,4 +1,4 @@
-// Copyright (C) 2020-2023 simevo s.r.l. for ARPA Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
@@ -24,7 +24,9 @@ const props = defineProps<{
     refresher: number
 }>()
 
-const emit = defineEmits(['setmeasure'])
+const emit = defineEmits<{
+  setmeasure: [idW12Data: number, campo: string, value: number]
+}>()
 
 const roundedValue = computed(() => {
   let value = props.measure

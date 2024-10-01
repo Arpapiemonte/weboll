@@ -1,3 +1,123 @@
+# 1.5.0 (2024-09-30)
+
+## Features
+
+- General:
+  - send bulletin via email
+  - send email in case of error on file shipments
+  - debian 12: default font changed use Liberation Sans
+  - switch to the ergonomic defineEmits in TypeScript
+  - pass bulletin id as a prop in TypeScript
+  - ssh with options
+  - send email with django
+  - added the highways sections altitude on the frontend
+  - collapse buttons in home page for menu item
+  - celery tasks results integrated in django
+  - new celery task send auto destination
+  - remove vee-validate
+  - show date of the last sent or reopened bulletin in home page
+  - reopen bulletin everywhere
+  - new model compare utility
+
+- Autostrade:
+  - a7-a26 export the forecast xml file
+
+- new Traps bulletin
+
+- new Corriere di Novara bulletin
+
+- new Strade di Biella bulletin
+
+- new forecasts on weather areas bulletin
+
+- new forecasts Parchi Reali
+
+- new Aggiornamento Allerta bulletin
+
+- new Ondate di calore bulletin
+
+- Allerta
+  - export kml
+  - export xml
+  - automatic full sentence for plumbing alert
+
+- Piene:
+  - reopen bulletin
+  - export kml
+
+- Analisi bulletin:
+  - pdf review
+  - station altitude in front
+
+- Bollettino meteo:
+  - check snow level
+  - export kml
+
+- Vigilanza
+  - add png export button
+
+## Bugfixes
+
+- General:
+  - Fix homepage
+  - send when saving finishes
+  - restore correct bootstrap imports
+  - get Titillium Font locally
+  - Fix crontab task auto and send if bulletin time between -5 and + 5 minutes
+  - stazionemisura model defined only once
+
+- Autostrade:
+  - a7-a26 risk_freezing_rain into PDF, accept 0/8 of cloud cover
+  - a6 set risk_freezing_rain to False
+  - all highways wrong date on the third day
+
+- Verifica meteo:
+  - error in saving
+  - visibility incorrect points
+  - check the cells that do not get the max points must be bordered in red
+  - fix various errors
+
+- Verifica piene
+  - does not effectively save the criterion and excellent judgment is missing
+  - fix judgment
+
+- Vigilanza:
+  - bug on the prev column average in 6h and snow share in the snowfall box
+  - Fix mypy error
+  - Catch exception when PSA does not exists
+  - don't save Nan
+  - Fix snow level
+  - Fix png end-point
+
+- PSA:
+  - delete the forecast_zone from the psa send
+
+- Analisi bulletin:
+  - W17 front typescript error
+  - fix pdf template
+  - fix morning instead of afternoon
+
+- BIS
+  - Fix box coloring query
+  - Fix bulletin number based on validity date
+
+- Incendi
+  - Sort the areas as in the pdf and correct spelling errors in the pdf legend
+  - if there are no data build empty bulletin
+
+- Meteo
+  - Fix save correct snow_level aggregations
+
+- Allerta
+  - Fix snow level labels
+  - Fix if data in pluvoss is missing
+  - Fix warning columns not consistent between the various products
+  - The scenario column can be written and must not be deleted
+  - The note must not erase what has been written
+
+- Piene
+  - Fix the time windows
+
 # 1.4.0 (2023-10-18)
 
 ## Features

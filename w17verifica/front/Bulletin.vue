@@ -1,4 +1,4 @@
-// Copyright (C) 2020-2023 simevo s.r.l. for ARPA Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
@@ -276,7 +276,7 @@
                               </th>
                             </tr>
                           </thead>
-                          <!--<tbody>-->
+                          <tbody>
                           <tr>
                             <td
                               class="text-left"
@@ -304,14 +304,14 @@
                             </td>
                             <td
                               style="background:rgb(220, 218, 218)"
-                              class="text-center"
+                              class="text-left"
                               scope="row"
                             >
                               0
                             </td>
                             <td
                               style="background:rgb(220, 218, 218)"
-                              class="text-center"
+                              class="text-left"
                               scope="row"
                             >
                               2
@@ -344,14 +344,14 @@
                             </td>
                             <td
                               style="background:rgb(220, 218, 218)"
-                              class="text-center"
+                              class="text-left"
                               scope="row"
                             >
                               0
                             </td>
                             <td
                               style="background:rgb(220, 218, 218)"
-                              class="text-center"
+                              class="text-left"
                               scope="row"
                             >
                               2
@@ -384,14 +384,14 @@
                             </td>
                             <td
                               style="background:rgb(220, 218, 218)"
-                              class="text-center"
+                              class="text-left"
                               scope="row"
                             >
                               0
                             </td>
                             <td
                               style="background:rgb(220, 218, 218)"
-                              class="text-center"
+                              class="text-left"
                               scope="row"
                             >
                               0
@@ -413,7 +413,7 @@
                               scope="row"
                             />
                             <td
-                              class="text-center"
+                              class="text-left"
                               scope="row"
                               style="background:rgb(220, 218, 218)"
                             >
@@ -431,17 +431,17 @@
                               >
                             </td>
                             <td
-                              class="text-center"
+                              class="text-left"
                               scope="row"
                               style="background:rgb(220, 218, 218)"
                             >
                               2
                             </td>
                           </tr>
-                          <!--</tbody>
+                          </tbody>
                         </table>
                         <table class="table">
-                          <thead>-->
+                          <thead>
                           <tr>
                             <th
                               class="text-left"
@@ -450,8 +450,8 @@
                               Precipitazioni Mattino
                             </th>
                           </tr>
-                          <!--</thead>
-                          <tbody>-->
+                          </thead>
+                          <tbody>
                           <tr>
                             <td
                               class="text-left"
@@ -479,14 +479,14 @@
                             </td>
                             <td
                               style="background:rgb(220, 218, 218)"
-                              class="text-center"
+                              class="text-left"
                               scope="row"
                             >
                               0
                             </td>
                             <td
                               style="background:rgb(220, 218, 218)"
-                              class="text-center"
+                              class="text-left"
                               scope="row"
                             >
                               2
@@ -519,14 +519,14 @@
                             </td>
                             <td
                               style="background:rgb(220, 218, 218)"
-                              class="text-center"
+                              class="text-left"
                               scope="row"
                             >
                               0
                             </td>
                             <td
                               style="background:rgb(220, 218, 218)"
-                              class="text-center"
+                              class="text-left"
                               scope="row"
                             >
                               2
@@ -559,14 +559,14 @@
                             </td>
                             <td
                               style="background:rgb(220, 218, 218)"
-                              class="text-center"
+                              class="text-left"
                               scope="row"
                             >
                               0
                             </td>
                             <td
                               style="background:rgb(220, 218, 218)"
-                              class="text-center"
+                              class="text-left"
                               scope="row"
                             >
                               2
@@ -577,7 +577,7 @@
                               class="text-left"
                               scope="row"
                             >
-                              Nuvolosità
+                              Evoluzione
                             </td>
                             <td
                               style="line-height:2em;background:rgb(220, 218, 218)"
@@ -599,14 +599,14 @@
                             </td>
                             <td
                               style="background:rgb(220, 218, 218)"
-                              class="text-center"
+                              class="text-left"
                               scope="row"
                             >
                               0
                             </td>
                             <td
                               style="background:rgb(220, 218, 218)"
-                              class="text-center"
+                              class="text-left"
                               scope="row"
                             >
                               2
@@ -628,7 +628,7 @@
                               scope="row"
                             />
                             <td
-                              class="text-center"
+                              class="text-left"
                               scope="row"
                               style="background-color:rgb(220, 218, 218)"
                             >
@@ -647,16 +647,16 @@
                             </td>
                             <td
                               style="background:rgb(220, 218, 218)"
-                              class="text-center"
+                              class="text-left"
                               scope="row"
                             >
                               2
                             </td>
                           </tr>
-                          <!--</tbody>
+                          </tbody>
                         </table>
                         <table class="table">
-                          <thead>-->
+                          <thead>
                           <tr>
                             <th
                               class="text-left"
@@ -665,7 +665,7 @@
                               Zero Termico
                             </th>
                           </tr>
-                          <!--</thead>-->
+                          </thead>
                           <tbody>
                             <tr>
                               <td
@@ -687,13 +687,23 @@
                                 {{ Math.round(meteobulletins[0].w05_data['FRZLVL']['48']['0'].numeric_value) }}
                               </td>
                               <td
-                                class="text-center"
+                                class="text-left"
                                 scope="row"
                               >
-                                {{ punti['FRZLVL'][0]['48']['data'] }}
+                              <span
+                                v-if="punti['FRZLVL'][0]['48']['data']!='2'"
+                                :style="`color:rgb(246, 5, 5);`"
+                              >
+                                  {{ punti['FRZLVL'][0]['48']['data'] }}
+                              </span>
+                              <span
+                                v-else
+                              >
+                                  {{ punti['FRZLVL'][0]['48']['data'] }}
+                              </span>
                               </td>
                               <td
-                                class="text-center"
+                                class="text-left"
                                 scope="row"
                               >
                                 2
@@ -727,22 +737,32 @@
                                 />
                               </td>
                               <td
-                                class="text-center"
+                                class="text-left"
                                 scope="row"
                               >
-                                {{ punti['FRZLVL'][0]['48']['12'] }}
+                                <span
+                                  v-if="punti['FRZLVL'][0]['48']['12']!='1'"
+                                  :style="`color:rgb(246, 5, 5);`"
+                                >
+                                  {{ punti['FRZLVL'][0]['48']['12'] }}
+                                </span>
+                                <span
+                                  v-else
+                                >
+                                  {{ punti['FRZLVL'][0]['48']['12'] }}
+                                </span>
                               </td>
                               <td
-                                class="text-center"
+                                class="text-left"
                                 scope="row"
                               >
                                 1
                               </td>
                             </tr>
-                            <!--</tbody>
+                            </tbody>
                         </table>
                         <table class="table">
-                          <thead>-->
+                          <thead>
                             <tr>
                               <th
                                 class="text-left"
@@ -751,8 +771,8 @@
                                 Temperatura
                               </th>
                             </tr>
-                            <!--</thead>
-                          <tbody>-->
+                            </thead>
+                          <tbody>
                             <tr>
                               <td
                                 class="text-left"
@@ -1292,7 +1312,7 @@
                               </th>
                             </tr>
                           </thead>
-                          <!--<tbody>-->
+                          <tbody>
                           <tr>
                             <td
                               class="text-left"
@@ -1321,13 +1341,21 @@
                               />
                             </td>
                             <td
-                              class="text-center"
+                              v-if="punti['COP_TOT'][0]['48']['1']!='2'"
+                              class="text-left"
                               scope="row"
                             >
-                              {{ punti['COP_TOT'][0]['48']['1'] }}
+                            <b><font color="red">{{ punti['COP_TOT'][0]['48']['1'] }}</font></b>
                             </td>
                             <td
-                              class="text-center"
+                              v-else
+                              class="text-left"
+                              scope="row"                              
+                            >
+                              {{ punti['COP_TOT'][0]['48']['1'] }}                        
+                            </td>
+                            <td
+                              class="text-left"
                               scope="row"
                             >
                               2
@@ -1361,13 +1389,21 @@
                               />
                             </td>
                             <td
-                              class="text-center"
+                              v-if="punti['COP_TOT'][0]['48']['2']!='2'"
+                              class="text-left"
+                              scope="row"
+                            >
+                              <b><font color="red">{{ punti['COP_TOT'][0]['48']['2'] }}</font></b>
+                            </td>
+                            <td
+                              v-else
+                              class="text-left"
                               scope="row"
                             >
                               {{ punti['COP_TOT'][0]['48']['2'] }}
                             </td>
                             <td
-                              class="text-center"
+                              class="text-left"
                               scope="row"
                             >
                               2
@@ -1401,13 +1437,21 @@
                               />
                             </td>
                             <td
-                              class="text-center"
+                              v-if="punti['COP_TOT'][0]['48']['4']!='2'"
+                              class="text-left"
                               scope="row"
                             >
-                              {{ punti['COP_TOT'][0]['48']['4'] }}
+                              <b><font color="red">{{ punti['COP_TOT'][0]['48']['4'] }}</font></b>
                             </td>
                             <td
-                              class="text-center"
+                              v-else
+                              class="text-left"
+                              scope="row"
+                            >
+                              {{ punti['COP_TOT'][0]['48']['4'] }}                             
+                            </td>
+                            <td
+                              class="text-left"
                               scope="row"
                             >
                               2
@@ -1446,16 +1490,16 @@
                               >
                             </td>
                             <td
-                              class="text-center"
+                              class="text-left"
                               scope="row"
                             >
                               2
                             </td>
                           </tr>
-                          <!-- </tbody>
+                          </tbody>
                         </table>
                         <table class="table">
-                          <thead>-->
+                          <thead>
                           <tr>
                             <th
                               class="text-left"
@@ -1464,7 +1508,7 @@
                               Precipitazioni Pomeriggio
                             </th>
                           </tr>
-                          <!--</thead>-->
+                          </thead>
                           <tbody>
                             <tr>
                               <td
@@ -1494,13 +1538,21 @@
                                 />
                               </td>
                               <td
-                                class="text-center"
+                                v-if="punti['PLUV'][0]['48']['5']!='2'"
+                                class="text-left"
                                 scope="row"
                               >
-                                {{ punti['PLUV'][0]['48']['5'] }}
+                                <b><font color="red">{{ punti['PLUV'][0]['48']['5'] }}</font></b>
                               </td>
                               <td
-                                class="text-center"
+                                class="text-left"
+                                scope="row"
+                                v-else
+                              >
+                                {{ punti['PLUV'][0]['48']['5'] }}                               
+                              </td>
+                              <td
+                                class="text-left"
                                 scope="row"
                               >
                                 2
@@ -1520,7 +1572,7 @@
                               >
                                 <TableCell
                                   :meteoclasses="meteoclasses['PLUV']['6'].classes_values"
-                                  :value="analisibulletin.w17_classes['PLUV']['30']['6'].id_classes_value"
+                                  :value="analisibulletin.w17_classes['PLUV']['31']['6'].id_classes_value"
                                 />
                               </td>
                               <td
@@ -1534,13 +1586,21 @@
                                 />
                               </td>
                               <td
-                                class="text-center"
+                                v-if="punti['PLUV'][0]['48']['6']!='2'"
+                                class="text-left"
                                 scope="row"
                               >
-                                {{ punti['PLUV'][0]['48']['6'] }}
+                                <b><font color="red">{{ punti['PLUV'][0]['48']['6'] }}</font></b>
                               </td>
                               <td
-                                class="text-center"
+                                class="text-left"
+                                scope="row"
+                                v-else
+                              >
+                                {{ punti['PLUV'][0]['48']['6'] }}                                
+                              </td>
+                              <td
+                                class="text-left"
                                 scope="row"
                               >
                                 2
@@ -1560,7 +1620,7 @@
                               >
                                 <TableCell
                                   :meteoclasses="meteoclasses['PLUV']['7'].classes_values"
-                                  :value="analisibulletin.w17_classes['PLUV']['30']['7'].id_classes_value"
+                                  :value="analisibulletin.w17_classes['PLUV']['31']['7'].id_classes_value"
                                 />
                               </td>
                               <td
@@ -1574,24 +1634,32 @@
                                 />
                               </td>
                               <td
-                                class="text-center"
+                                v-if="punti['PLUV'][0]['48']['7']!='2'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['PLUV'][0]['48']['7'] }}</font></b>
+                              </td>
+                              <td
+                                v-else
+                                class="text-left"
                                 scope="row"
                               >
                                 {{ punti['PLUV'][0]['48']['7'] }}
-                              </td>
-                              <td
-                                class="text-center"
-                                scope="row"
-                              >
-                                2
-                              </td>
+                            </td>
+                            <td
+                              class="text-left"
+                              scope="row"
+                            >
+                              2
+                            </td>
                             </tr>
                             <tr>
                               <td
                                 class="text-left"
                                 scope="row"
                               >
-                                Nuvolosità
+                                Evoluzione
                               </td>
                               <td
                                 style="line-height:2em;"
@@ -1600,7 +1668,7 @@
                               >
                                 <TableCell
                                   :meteoclasses="meteoclasses['PLUV']['8'].classes_values"
-                                  :value="analisibulletin.w17_classes['PLUV']['30']['8'].id_classes_value"
+                                  :value="analisibulletin.w17_classes['PLUV']['31']['8'].id_classes_value"
                                 />
                               </td>
                               <td
@@ -1614,13 +1682,21 @@
                                 />
                               </td>
                               <td
-                                class="text-center"
+                                v-if="punti['PLUV'][0]['48']['8']!='2'"
+                                class="text-left"
                                 scope="row"
                               >
-                                {{ punti['PLUV'][0]['48']['8'] }}
+                                <b><font color="red">{{ punti['PLUV'][0]['48']['8'] }}</font></b>
                               </td>
                               <td
-                                class="text-center"
+                                v-else
+                                class="text-left"
+                                scope="row"
+                              >
+                                {{ punti['PLUV'][0]['48']['8'] }}                                
+                              </td>
+                              <td
+                                class="text-left"
                                 scope="row"
                               >
                                 2
@@ -1659,16 +1735,16 @@
                                 >
                               </td>
                               <td
-                                class="text-center"
+                                class="text-left"
                                 scope="row"
                               >
                                 2
                               </td>
                             </tr>
                           </tbody>
-                          <!--</table>
+                          </table>
                         <table class="table">
-                          <thead>-->
+                          <thead>
                           <tr>
                             <th
                               class="text-left"
@@ -1677,8 +1753,8 @@
                               Quota Neve
                             </th>
                           </tr>
-                          <!--</thead>
-                          <tbody>-->
+                          </thead>
+                          <tbody>
                           <tr>
                             <td
                               class="text-left"
@@ -1687,25 +1763,49 @@
                               Quota neve min
                             </td>
                             <td
+                                v-if="analisibulletin.w17_data['SNOW_LEV']['32']['1'].numeric_value==None"
+                                class="text-left"
+                                scope="row"
+                              >
+                                -
+                            </td>
+                            <td
+                              v-else
                               class="text-left"
                               scope="row"
                             >
-                              {{ Math.round(analisibulletin.w17_data['SNOW_LEV']['32']['1'].numeric_value) }}
+                            {{ Math.round(analisibulletin.w17_data['SNOW_LEV']['32']['1'].numeric_value) }}
                             </td>
                             <td
+                              v-if="meteobulletins[0].w05_dataaggreg['SNOW_LEV']['48']['910'].numeric_value==None"
                               class="text-left"
                               scope="row"
                             >
-                              {{ Math.round(meteobulletins[0].w05_data['SNOW_LEV']['48']['1'].numeric_value) }}
+                              -
                             </td>
                             <td
-                              class="text-center"
+                              v-else
+                              class="text-left"
                               scope="row"
                             >
-                              {{ punti['SNOW_LEV'][0]['48']['min'] }}
+                            {{ Math.round(meteobulletins[0].w05_dataaggreg['SNOW_LEV']['48']['910'].numeric_value) }}
                             </td>
                             <td
-                              class="text-center"
+                              v-if="punti['SNOW_LEV'][0]['48']['min']!='1'"
+                              class="text-left"
+                              scope="row"
+                            >
+                              <b><font color="red">{{ punti['SNOW_LEV'][0]['48']['min'] }}</font></b>
+                            </td>
+                            <td
+                              v-else
+                              class="text-left"
+                              scope="row"
+                            >
+                              {{ punti['SNOW_LEV'][0]['48']['min'] }}                              
+                            </td>
+                            <td
+                              class="text-left"
                               scope="row"
                             >
                               1
@@ -1719,34 +1819,58 @@
                               quota neve max
                             </td>
                             <td
+                                v-if="analisibulletin.w17_data['SNOW_LEV']['32']['0'].numeric_value==None"
+                                class="text-left"
+                                scope="row"
+                              >
+                                -
+                            </td>
+                            <td
+                              v-else
                               class="text-left"
                               scope="row"
                             >
-                              {{ Math.round(analisibulletin.w17_data['SNOW_LEV']['32']['0'].numeric_value) }}
+                            {{ Math.round(analisibulletin.w17_data['SNOW_LEV']['32']['0'].numeric_value) }}
                             </td>
                             <td
+                              v-if="meteobulletins[0].w05_dataaggreg['SNOW_LEV']['48']['909'].numeric_value==None"
                               class="text-left"
                               scope="row"
                             >
-                              {{ Math.round(meteobulletins[0].w05_data['SNOW_LEV']['48']['0'].numeric_value) }}
+                              -
                             </td>
                             <td
-                              class="text-center"
+                              v-else
+                              class="text-left"
                               scope="row"
                             >
-                              {{ punti['SNOW_LEV'][0]['48']['max'] }}
+                            {{ Math.round(meteobulletins[0].w05_dataaggreg['SNOW_LEV']['48']['909'].numeric_value) }}
                             </td>
                             <td
-                              class="text-center"
+                              v-if="punti['SNOW_LEV'][0]['48']['max']!='1'"
+                              class="text-left"
+                              scope="row"
+                            >
+                              <b><font color="red">{{ punti['SNOW_LEV'][0]['48']['max'] }}</font></b>
+                            </td>
+                            <td
+                              v-else
+                              class="text-left"
+                              scope="row"
+                            >
+                              {{ punti['SNOW_LEV'][0]['48']['max'] }}                              
+                            </td>
+                            <td
+                              class="text-left"
                               scope="row"
                             >
                               1
                             </td>
                           </tr>
-                          <!--</tbody>
+                          </tbody>
                         </table>
                         <table class="table">
-                          <thead>-->
+                          <thead>
                           <tr>
                             <th
                               class="text-left"
@@ -1755,7 +1879,7 @@
                               Venti
                             </th>
                           </tr>
-                          <!--</thead>-->
+                          </thead>
                           <tbody>
                             <tr>
                               <td
@@ -1785,13 +1909,21 @@
                                 />
                               </td>
                               <td
-                                class="text-center"
+                                v-if="punti['VELV'][0]['48']['16']!='2'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color=red>{{ punti['VELV'][0]['48']['16'] }}</font></b>
+                              </td>
+                              <td
+                                v-else
+                                class="text-left"
                                 scope="row"
                               >
                                 {{ punti['VELV'][0]['48']['16'] }}
                               </td>
                               <td
-                                class="text-center"
+                                class="text-left"
                                 scope="row"
                               >
                                 2
@@ -1825,13 +1957,21 @@
                                 />
                               </td>
                               <td
-                                class="text-center"
+                                v-if="punti['VELV'][0]['48']['18']!='2'"
+                                class="text-left"
                                 scope="row"
                               >
+                                <B><font color="red">{{ punti['VELV'][0]['48']['18'] }}</font></B>
+                              </td>
+                              <td
+                                v-else
+                                class="text-left"
+                                scope="row"
+                               >
                                 {{ punti['VELV'][0]['48']['18'] }}
                               </td>
                               <td
-                                class="text-center"
+                                class="text-left"
                                 scope="row"
                               >
                                 2
@@ -1865,13 +2005,21 @@
                                 />
                               </td>
                               <td
-                                class="text-center"
+                                v-if="punti['VELV'][0]['48']['17']!='1'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color=red>{{ punti['VELV'][0]['48']['17'] }}</font></b>
+                              </td>
+                              <td
+                                v-else
+                                class="text-left"
                                 scope="row"
                               >
                                 {{ punti['VELV'][0]['48']['17'] }}
                               </td>
                               <td
-                                class="text-center"
+                                class="text-left"
                                 scope="row"
                               >
                                 1
@@ -1905,13 +2053,21 @@
                                 />
                               </td>
                               <td
-                                class="text-center"
+                                v-if="punti['VELV'][0]['48']['19']!='1'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <B><font color="red">{{ punti['VELV'][0]['48']['19'] }}</font></B>
+                              </td>
+                              <td
+                                v-else
+                                class="text-left"
                                 scope="row"
                               >
                                 {{ punti['VELV'][0]['48']['19'] }}
                               </td>
                               <td
-                                class="text-center"
+                                class="text-left"
                                 scope="row"
                               >
                                 1
@@ -1945,13 +2101,21 @@
                                 />
                               </td>
                               <td
-                                class="text-center"
+                                v-if="punti['VELV'][0]['48']['20']!='1'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <B><font color="red">{{ punti['VELV'][0]['48']['20'] }}</font></B>
+                              </td>
+                              <td
+                                v-else
+                                class="text-left"
                                 scope="row"
                               >
                                 {{ punti['VELV'][0]['48']['20'] }}
                               </td>
                               <td
-                                class="text-center"
+                                class="text-left"
                                 scope="row"
                               >
                                 1
@@ -1985,13 +2149,21 @@
                                 />
                               </td>
                               <td
-                                class="text-center"
+                                v-if="punti['VELV'][0]['48']['21']!='2'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['VELV'][0]['48']['21'] }}</font></b>
+                              </td>
+                              <td
+                                v-else
+                                class="text-left"
                                 scope="row"
                               >
                                 {{ punti['VELV'][0]['48']['21'] }}
                               </td>
                               <td
-                                class="text-center"
+                                class="text-left"
                                 scope="row"
                               >
                                 2
@@ -2135,12 +2307,20 @@
                                   :meteoclasses="meteoclasses['COP_TOT']['1'].classes_values"
                                   :value="meteobulletins[1].w05_classes['COP_TOT']['64']['1'].id_classes_value"
                                 />
-                              </td>
-                              <td
-                                class="text-left"
-                                scope="row"
-                              >
-                                {{ punti['COP_TOT'][1]['64']['1'] }} 
+                                </td>
+                                <td
+                                  v-if="punti['COP_TOT'][1]['64']['1']!='2'"
+                                  class="text-left"
+                                  scope="row"
+                                >
+                                  <b><font color="red">{{ punti['COP_TOT'][1]['64']['1'] }}</font></b>
+                                </td>
+                                <td
+                                  v-else
+                                  class="text-left"
+                                  scope="row"
+                                >
+                                  {{ punti['COP_TOT'][1]['64']['1'] }}
                               </td>
                               <td
                                 class="text-left"
@@ -2177,6 +2357,14 @@
                                 />
                               </td>
                               <td
+                                v-if="punti['COP_TOT'][1]['64']['2']!='2'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['COP_TOT'][1]['64']['2'] }}</font></b>
+                              </td>
+                              <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
@@ -2217,6 +2405,14 @@
                                 />
                               </td>
                               <td
+                                v-if="punti['COP_TOT'][1]['64']['4']!='2'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['COP_TOT'][1]['64']['4'] }}</font></b>                                  
+                              </td>
+                              <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
@@ -2310,6 +2506,14 @@
                                 />
                               </td>
                               <td
+                                v-if="punti['PLUV'][1]['64']['5']!='2'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['PLUV'][1]['64']['5'] }}</font></b>                                  
+                              </td>
+                              <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
@@ -2350,6 +2554,14 @@
                                 />
                               </td>
                               <td
+                                v-if="punti['PLUV'][1]['64']['6']!='2'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['PLUV'][1]['64']['6'] }}</font></b>
+                              </td>
+                              <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
@@ -2390,6 +2602,14 @@
                                 />
                               </td>
                               <td
+                                v-if="punti['PLUV'][1]['64']['7']!='2'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['PLUV'][1]['64']['7'] }}</font></b>                                  
+                              </td>
+                              <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
@@ -2407,7 +2627,7 @@
                                 class="text-left"
                                 scope="row"
                               >
-                                Nuvolosità
+                                Evoluzione
                               </td>
                               <td
                                 style="line-height:2em;"
@@ -2430,6 +2650,14 @@
                                 />
                               </td>
                               <td
+                                v-if="punti['PLUV'][1]['64']['8']!='2'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['PLUV'][1]['64']['8'] }}</font></b>                                   
+                              </td>
+                              <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
@@ -2515,6 +2743,14 @@
                                 {{ Math.round(meteobulletins[1].w05_data['FRZLVL']['66']['0'].numeric_value) }}
                               </td>
                               <td
+                                v-if="punti['FRZLVL'][1]['66']['data']!='2'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['FRZLVL'][1]['66']['data'] }}</font></b>                                   
+                              </td>
+                              <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
@@ -2555,6 +2791,14 @@
                                 />
                               </td>
                               <td
+                                  v-if="punti['FRZLVL'][1]['66']['13']!='1'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['FRZLVL'][1]['66']['13'] }}</font></b>                                  
+                              </td>
+                              <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
@@ -2596,10 +2840,18 @@
                                 {{ scarto_temp['TERMA'][1]['67']['scarto'] }}
                               </td>
                               <td
+                                v-if="punti['TERMA'][1]['67']['data67']!='2'"
                                 class="text-left"
                                 scope="row"
                               >
-                                {{ punti['TERMA'][1]['67']['data67'] }}  
+                                <b><font color="red">{{ punti['TERMA'][1]['67']['data67'] }}</font></b>                                  
+                              </td>
+                              <td
+                                v-else
+                                class="text-left"
+                                scope="row"
+                              >
+                                  {{ punti['TERMA'][1]['67']['data67'] }}
                               </td>
                               <td
                                 class="text-left"
@@ -2623,10 +2875,18 @@
                                 {{ scarto_temp['TERMA'][1]['68']['scarto'] }}
                               </td>
                               <td
+                                v-if="punti['TERMA'][1]['68']['data68']!='2'"
                                 class="text-left"
                                 scope="row"
                               >
-                                {{ punti['TERMA'][1]['68']['data68'] }}
+                                <b><font color="red">{{ punti['TERMA'][1]['68']['data68'] }}</font></b>                                  
+                              </td>
+                              <td
+                                v-else
+                                class="text-left"
+                                scope="row"
+                              >
+                                  {{ punti['TERMA'][1]['68']['data68'] }}
                               </td>
                               <td
                                 class="text-left"
@@ -2663,6 +2923,14 @@
                                 />
                               </td>
                               <td
+                                v-if="punti['TERMA'][1]['68']['9']!='2'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['TERMA'][1]['68']['9'] }}</font></b>                                  
+                              </td>
+                              <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
@@ -2703,6 +2971,14 @@
                                 />
                               </td>
                               <td
+                                v-if="punti['TERMA'][1]['67']['10']!='2'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['TERMA'][1]['67']['10'] }}</font></b>                                   
+                              </td>
+                              <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
@@ -3128,6 +3404,14 @@
                                 />
                               </td>
                               <td
+                                v-if="punti['COP_TOT'][1]['65']['1']!='2'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['COP_TOT'][1]['65']['1'] }}</font></b>                                   
+                              </td>
+                              <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
@@ -3168,6 +3452,14 @@
                                 />
                               </td>
                               <td
+                                v-if="punti['COP_TOT'][1]['65']['2']!='2'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['COP_TOT'][1]['65']['2'] }}</font></b>                                  
+                              </td>
+                              <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
@@ -3208,6 +3500,14 @@
                                 />
                               </td>
                               <td
+                                v-if="punti['COP_TOT'][1]['65']['4']!='2'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['COP_TOT'][1]['65']['4'] }}</font></b>                                  
+                              </td>
+                              <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
@@ -3287,7 +3587,7 @@
                               >
                                 <TableCell
                                   :meteoclasses="meteoclasses['PLUV']['5'].classes_values"
-                                  :value="analisibulletin.w17_classes['PLUV']['30']['5'].id_classes_value"
+                                  :value="analisibulletin.w17_classes['PLUV']['31']['5'].id_classes_value"
                                 />
                               </td>
                               <td
@@ -3301,8 +3601,16 @@
                                 />
                               </td>
                               <td
+                                v-if="punti['PLUV'][1]['65']['5']!='2'"
                                 class="text-left"
                                 scope="row"
+                              >
+                                <b><font color="red">{{ punti['PLUV'][1]['65']['5'] }}</font></b>                                   
+                              </td>
+                              <td
+                                v-else
+                              class="text-left"
+                              scope="row"
                               >
                                 {{ punti['PLUV'][1]['65']['5'] }}
                               </td>
@@ -3327,7 +3635,7 @@
                               >
                                 <TableCell
                                   :meteoclasses="meteoclasses['PLUV']['6'].classes_values"
-                                  :value="analisibulletin.w17_classes['PLUV']['30']['6'].id_classes_value"
+                                  :value="analisibulletin.w17_classes['PLUV']['31']['6'].id_classes_value"
                                 />
                               </td>
                               <td
@@ -3341,6 +3649,14 @@
                                 />
                               </td>
                               <td
+                                v-if="punti['PLUV'][1]['65']['6']!='2'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['PLUV'][1]['65']['6'] }}</font></b>                                    
+                              </td>
+                              <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
@@ -3367,7 +3683,7 @@
                               >
                                 <TableCell
                                   :meteoclasses="meteoclasses['PLUV']['7'].classes_values"
-                                  :value="analisibulletin.w17_classes['PLUV']['30']['7'].id_classes_value"
+                                  :value="analisibulletin.w17_classes['PLUV']['31']['7'].id_classes_value"
                                 />
                               </td>
                               <td
@@ -3381,6 +3697,14 @@
                                 />
                               </td>
                               <td
+                                v-if="punti['PLUV'][1]['65']['7']!='2'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['PLUV'][1]['65']['7'] }}</font></b>                                     
+                              </td>
+                              <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
@@ -3398,7 +3722,7 @@
                                 class="text-left"
                                 scope="row"
                               >
-                                Nuvolosità
+                                Evoluzione
                               </td>
                               <td
                                 style="line-height:2em;"
@@ -3407,7 +3731,7 @@
                               >
                                 <TableCell
                                   :meteoclasses="meteoclasses['PLUV']['8'].classes_values"
-                                  :value="analisibulletin.w17_classes['PLUV']['30']['8'].id_classes_value"
+                                  :value="analisibulletin.w17_classes['PLUV']['31']['8'].id_classes_value"
                                 />
                               </td>
                               <td
@@ -3421,6 +3745,14 @@
                                 />
                               </td>
                               <td
+                                v-if="punti['PLUV'][1]['65']['8']!='2'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['PLUV'][1]['65']['8'] }}</font></b>                                   
+                              </td>
+                              <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
@@ -3494,18 +3826,42 @@
                                 Quota neve min
                               </td>
                               <td
+                                v-if="analisibulletin.w17_data['SNOW_LEV']['32']['1'].numeric_value==None"
                                 class="text-left"
                                 scope="row"
                               >
-                                {{ Math.round(analisibulletin.w17_data['SNOW_LEV']['32']['1'].numeric_value) }}
+                                -
                               </td>
                               <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
-                                {{ Math.round(meteobulletins[1].w05_data['SNOW_LEV']['66']['0'].numeric_value) }}
+                              {{ Math.round(analisibulletin.w17_data['SNOW_LEV']['32']['1'].numeric_value) }}
                               </td>
                               <td
+                                v-if="meteobulletins[1].w05_dataaggreg['SNOW_LEV']['66']['910'].numeric_value==None"
+                                class="text-left"
+                                scope="row"
+                              >
+                                -
+                              </td>
+                              <td
+                                v-else
+                                class="text-left"
+                                scope="row"
+                              >
+                              {{ Math.round(meteobulletins[1].w05_dataaggreg['SNOW_LEV']['66']['910'].numeric_value) }}
+                              </td>
+                              <td
+                                v-if="punti['SNOW_LEV'][1]['66']['min']!='1'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['SNOW_LEV'][1]['66']['min'] }}</font></b>                                
+                              </td>
+                              <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
@@ -3526,18 +3882,42 @@
                                 quota neve max
                               </td>
                               <td
+                                v-if="analisibulletin.w17_data['SNOW_LEV']['32']['0'].numeric_value==None"
                                 class="text-left"
                                 scope="row"
                               >
-                                {{ Math.round(analisibulletin.w17_data['SNOW_LEV']['32']['0'].numeric_value) }}
+                                -
                               </td>
                               <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
-                                {{ Math.round(meteobulletins[1].w05_data['SNOW_LEV']['66']['0'].numeric_value) }}
+                              {{ Math.round(analisibulletin.w17_data['SNOW_LEV']['32']['0'].numeric_value) }}
                               </td>
                               <td
+                                v-if="meteobulletins[1].w05_dataaggreg['SNOW_LEV']['66']['909'].numeric_value==None"
+                                class="text-left"
+                                scope="row"
+                              >
+                                -
+                              </td>
+                              <td
+                                v-else
+                                class="text-left"
+                                scope="row"
+                              >
+                              {{ Math.round(meteobulletins[1].w05_dataaggreg['SNOW_LEV']['66']['909'].numeric_value) }}
+                              </td>
+                              <td
+                                v-if="punti['SNOW_LEV'][1]['66']['max']!='1'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['SNOW_LEV'][1]['66']['max'] }}</font></b>                                  
+                              </td>
+                              <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
@@ -3592,6 +3972,14 @@
                                 />
                               </td>
                               <td
+                                v-if="punti['VELV'][1]['66']['16']!='2'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['VELV'][1]['66']['16'] }}</font></b>                                
+                              </td>
+                              <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
@@ -3632,6 +4020,14 @@
                                 />
                               </td>
                               <td
+                                v-if="punti['VELV'][1]['66']['18']!='2'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['VELV'][1]['66']['18'] }}</font></b>                                   
+                              </td>
+                              <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
@@ -3672,6 +4068,14 @@
                                 />
                               </td>
                               <td
+                                v-if="punti['VELV'][1]['66']['17']!='1'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['VELV'][1]['66']['17'] }}</font></b>                                  
+                              </td>
+                              <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
@@ -3712,6 +4116,14 @@
                                 />
                               </td>
                               <td
+                                v-if="punti['VELV'][1]['66']['19']!='1'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['VELV'][1]['66']['19'] }}</font></b>                                  
+                              </td>
+                              <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
@@ -3752,6 +4164,14 @@
                                 />
                               </td>
                               <td
+                                v-if="punti['VELV'][1]['66']['20']!='1'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['VELV'][1]['66']['20'] }}</font></b>                                  
+                              </td>
+                              <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
@@ -3792,6 +4212,14 @@
                                 />
                               </td>
                               <td
+                                v-if="punti['VELV'][1]['66']['21']!='2'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['VELV'][1]['66']['21'] }}</font></b>                                  
+                              </td>
+                              <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
@@ -3849,7 +4277,7 @@
                                 class="text-center"
                                 scope="row"
                               >
-                                56
+                                68
                               </td>
                               <th
                                 class="text-center"
@@ -3943,6 +4371,14 @@
                                 />
                               </td>
                               <td
+                                v-if="punti['COP_TOT'][2]['81']['1']!='2'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['COP_TOT'][2]['81']['1'] }}</font></b>                                
+                              </td>
+                              <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
@@ -3983,6 +4419,14 @@
                                 />
                               </td>
                               <td
+                                v-if="punti['COP_TOT'][2]['81']['2']!='2'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['COP_TOT'][2]['81']['2'] }}</font></b>                                
+                              </td>
+                              <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
@@ -4023,6 +4467,14 @@
                                 />
                               </td>
                               <td
+                                v-if="punti['COP_TOT'][2]['81']['4']!='2'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['COP_TOT'][2]['81']['4'] }}</font></b>                                
+                              </td>
+                              <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
@@ -4116,6 +4568,14 @@
                                 />
                               </td>
                               <td
+                                v-if="punti['PLUV'][2]['81']['5']!='2'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['PLUV'][2]['81']['5'] }}</font></b>                                
+                              </td>
+                              <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
@@ -4156,6 +4616,14 @@
                                 />
                               </td>
                               <td
+                                v-if="punti['PLUV'][2]['81']['6']!='2'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['PLUV'][2]['81']['6'] }}</font></b>                                 
+                              </td>
+                              <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
@@ -4196,6 +4664,14 @@
                                 />
                               </td>
                               <td
+                                v-if="punti['PLUV'][2]['81']['7']!='2'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['PLUV'][2]['81']['7'] }}</font></b>                                 
+                              </td>
+                              <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
@@ -4213,7 +4689,7 @@
                                 class="text-left"
                                 scope="row"
                               >
-                                Nuvolosità
+                                Evoluzione
                               </td>
                               <td
                                 style="line-height:2em;"
@@ -4236,6 +4712,14 @@
                                 />
                               </td>
                               <td
+                                v-if="punti['PLUV'][2]['81']['8']!='2'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['PLUV'][2]['81']['8'] }}</font></b>                                  
+                              </td>
+                              <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
@@ -4321,6 +4805,14 @@
                                 {{ Math.round(meteobulletins[2].w05_data['FRZLVL']['83']['0'].numeric_value) }}
                               </td>
                               <td
+                                v-if="punti['FRZLVL'][2]['83']['data']!='2'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['FRZLVL'][2]['83']['data'] }}</font></b>                                 
+                              </td>
+                              <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
@@ -4361,6 +4853,14 @@
                                 />
                               </td>
                               <td
+                                v-if="punti['FRZLVL'][2]['83']['13']!='1'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['FRZLVL'][2]['83']['13'] }}</font></b>                                
+                              </td>
+                              <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
@@ -4402,6 +4902,14 @@
                                 {{ scarto_temp['TERMA'][2]['85']['scarto'] }}
                               </td>
                               <td
+                                v-if="punti['TERMA'][2]['85']['data85']!='2'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['TERMA'][2]['85']['data85'] }}</font></b>                                
+                              </td>
+                              <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
@@ -4429,6 +4937,14 @@
                                 {{ scarto_temp['TERMA'][2]['84']['scarto'] }}
                               </td>
                               <td
+                                v-if="punti['TERMA'][2]['84']['data84']!='2'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['TERMA'][2]['84']['data84'] }}</font></b>                                
+                              </td>
+                              <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
@@ -4469,6 +4985,14 @@
                                 />
                               </td>
                               <td
+                                v-if="punti['TERMA'][2]['85']['9']!='2'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['TERMA'][2]['85']['9'] }}</font></b>                                
+                              </td>
+                              <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
@@ -4509,6 +5033,14 @@
                                 />
                               </td>
                               <td
+                                v-if="punti['TERMA'][2]['84']['10']!='2'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['TERMA'][2]['84']['10'] }}</font></b>                                
+                              </td>
+                              <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
@@ -4934,6 +5466,14 @@
                                 />
                               </td>
                               <td
+                                v-if="punti['COP_TOT'][2]['82']['1']!='2'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['COP_TOT'][2]['82']['1'] }}</font></b>                                
+                              </td>
+                              <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
@@ -4974,6 +5514,14 @@
                                 />
                               </td>
                               <td
+                                v-if="punti['COP_TOT'][2]['82']['2']!='2'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['COP_TOT'][2]['82']['2'] }}</font></b>                                
+                              </td>
+                              <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
@@ -5014,6 +5562,14 @@
                                 />
                               </td>
                               <td
+                                v-if="punti['COP_TOT'][2]['82']['4']!='2'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['COP_TOT'][2]['82']['4'] }}</font></b>                                 
+                              </td>
+                              <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
@@ -5093,7 +5649,7 @@
                               >
                                 <TableCell
                                   :meteoclasses="meteoclasses['PLUV']['5'].classes_values"
-                                  :value="analisibulletin.w17_classes['PLUV']['30']['5'].id_classes_value"
+                                  :value="analisibulletin.w17_classes['PLUV']['31']['5'].id_classes_value"
                                 />
                               </td>
                               <td
@@ -5107,6 +5663,14 @@
                                 />
                               </td>
                               <td
+                                v-if="punti['PLUV'][2]['82']['5']!='2'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['PLUV'][2]['82']['5'] }}</font></b>                                
+                              </td>
+                              <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
@@ -5133,7 +5697,7 @@
                               >
                                 <TableCell
                                   :meteoclasses="meteoclasses['PLUV']['6'].classes_values"
-                                  :value="analisibulletin.w17_classes['PLUV']['30']['6'].id_classes_value"
+                                  :value="analisibulletin.w17_classes['PLUV']['31']['6'].id_classes_value"
                                 />
                               </td>
                               <td
@@ -5147,6 +5711,14 @@
                                 />
                               </td>
                               <td
+                                v-if="punti['PLUV'][2]['82']['6']!='2'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['PLUV'][2]['82']['6'] }}</font></b>                                
+                              </td>
+                              <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
@@ -5173,7 +5745,7 @@
                               >
                                 <TableCell
                                   :meteoclasses="meteoclasses['PLUV']['7'].classes_values"
-                                  :value="analisibulletin.w17_classes['PLUV']['30']['7'].id_classes_value"
+                                  :value="analisibulletin.w17_classes['PLUV']['31']['7'].id_classes_value"
                                 />
                               </td>
                               <td
@@ -5187,6 +5759,14 @@
                                 />
                               </td>
                               <td
+                                v-if="punti['PLUV'][2]['82']['7']!='2'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['PLUV'][2]['82']['7'] }}</font></b>                                 
+                              </td>
+                              <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
@@ -5204,7 +5784,7 @@
                                 class="text-left"
                                 scope="row"
                               >
-                                Nuvolosità
+                                Evoluzione
                               </td>
                               <td
                                 style="line-height:2em;"
@@ -5213,7 +5793,7 @@
                               >
                                 <TableCell
                                   :meteoclasses="meteoclasses['PLUV']['8'].classes_values"
-                                  :value="analisibulletin.w17_classes['PLUV']['30']['8'].id_classes_value"
+                                  :value="analisibulletin.w17_classes['PLUV']['31']['8'].id_classes_value"
                                 />
                               </td>
                               <td
@@ -5227,6 +5807,14 @@
                                 />
                               </td>
                               <td
+                                v-if="punti['PLUV'][2]['82']['8']!='2'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['PLUV'][2]['82']['8'] }}</font></b>                                 
+                              </td>
+                              <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
@@ -5300,18 +5888,42 @@
                                 Quota neve min
                               </td>
                               <td
+                                v-if="analisibulletin.w17_data['SNOW_LEV']['32']['1'].numeric_value==None"
+                                class="text-left"
+                                scope="row"
+                              >
+                                -
+                              </td>
+                              <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
                                 {{ Math.round(analisibulletin.w17_data['SNOW_LEV']['32']['1'].numeric_value) }}
-                              </td>
+                              </td>                             
                               <td
+                                v-if="meteobulletins[2].w05_dataaggreg['SNOW_LEV']['83']['910'].numeric_value==None"
                                 class="text-left"
                                 scope="row"
                               >
-                                {{ Math.round(meteobulletins[2].w05_data['SNOW_LEV']['83']['1'].numeric_value) }}
+                                -
                               </td>
                               <td
+                                v-else
+                                class="text-left"
+                                scope="row"
+                              >
+                              {{ Math.round(meteobulletins[2].w05_dataaggreg['SNOW_LEV']['83']['910'].numeric_value) }}
+                              </td>
+                              <td
+                                v-if="punti['SNOW_LEV'][2]['83']['min']!='1'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['SNOW_LEV'][2]['83']['min'] }}</font></b>                                
+                              </td>
+                              <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
@@ -5332,18 +5944,42 @@
                                 quota neve max
                               </td>
                               <td
+                                v-if="analisibulletin.w17_data['SNOW_LEV']['32']['0'].numeric_value==None"
                                 class="text-left"
                                 scope="row"
                               >
-                                {{ Math.round(analisibulletin.w17_data['SNOW_LEV']['32']['0'].numeric_value) }}
+                                -
                               </td>
                               <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
-                                {{ Math.round(meteobulletins[2].w05_data['SNOW_LEV']['83']['0'].numeric_value) }}
+                              {{ Math.round(analisibulletin.w17_data['SNOW_LEV']['32']['0'].numeric_value) }}
                               </td>
                               <td
+                                v-if="meteobulletins[2].w05_dataaggreg['SNOW_LEV']['83']['909'].numeric_value==None"
+                                class="text-left"
+                                scope="row"
+                              >
+                                -
+                              </td>
+                              <td
+                                v-else
+                                class="text-left"
+                                scope="row"
+                              >
+                              {{ Math.round(meteobulletins[2].w05_dataaggreg['SNOW_LEV']['83']['909'].numeric_value) }}
+                              </td>
+                              <td
+                                v-if="punti['SNOW_LEV'][2]['83']['max']!='1'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['SNOW_LEV'][2]['83']['max'] }}</font></b>                                
+                              </td>
+                              <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
@@ -5398,6 +6034,14 @@
                                 />
                               </td>
                               <td
+                                v-if="punti['VELV'][2]['83']['16']!='2'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['VELV'][2]['83']['16'] }}</font></b>                                
+                              </td>
+                              <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
@@ -5438,6 +6082,14 @@
                                 />
                               </td>
                               <td
+                                v-if="punti['VELV'][2]['83']['18']!='2'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['VELV'][2]['83']['18'] }}</font></b>                                
+                              </td>
+                              <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
@@ -5478,6 +6130,14 @@
                                 />
                               </td>
                               <td
+                                v-if="punti['VELV'][2]['83']['17']!='1'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['VELV'][2]['83']['17'] }}</font></b>                                
+                              </td>
+                              <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
@@ -5518,6 +6178,14 @@
                                 />
                               </td>
                               <td
+                                v-if="punti['VELV'][2]['83']['19']!='1'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['VELV'][2]['83']['19'] }}</font></b>                                
+                              </td>
+                              <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
@@ -5558,6 +6226,14 @@
                                 />
                               </td>
                               <td
+                                  v-if="punti['VELV'][2]['83']['20']!='1'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['VELV'][2]['83']['20'] }}</font></b>                                
+                              </td>
+                              <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
@@ -5598,6 +6274,14 @@
                                 />
                               </td>
                               <td
+                                v-if="punti['VELV'][2]['83']['21']!='2'"
+                                class="text-left"
+                                scope="row"
+                              >
+                                <b><font color="red">{{ punti['VELV'][2]['83']['21'] }}</font></b>                                
+                              </td>
+                              <td
+                                v-else
                                 class="text-left"
                                 scope="row"
                               >
@@ -5655,7 +6339,7 @@
                                 class="text-center"
                                 scope="row"
                               >
-                                56
+                                68
                               </td>
                               <th
                                 class="text-center"
@@ -5810,7 +6494,7 @@ type W05FullRearranged = W05Full & {w05_classes?: any, w05_data?: any, rearrange
 type ArrayTransformer = (arr: Array<any>) => any
 
 // reactive properties
-let verifica_id = ref(NaN)
+let verifica_id = ref('')
 let verifica: Ref<W17verificaFull> = ref({"id_w17verifica":2,"w17_verifica_data_set":[{"id_w17_verifica_data":25,"id_w05":4955,"data_forecast":"2023-06-07","forecast_id":12,"punteggio_relativo":0,"punteggio_nubi":0,"punteggio_pioggia":0,"punteggio_vento":0,"punteggio_temperatura":0,"punteggio_zero_quota_neve":0,"coerenza_mattino_nubi":0,"coerenza_pomeriggio_nubi":0,"coerenza_mattino_pioggia":0,"coerenza_pomeriggio_pioggia":0,"id_w17verifica":2},{"id_w17_verifica_data":26,"id_w05":4955,"data_forecast":"2023-06-06","forecast_id":24,"punteggio_relativo":0,"punteggio_nubi":0,"punteggio_pioggia":0,"punteggio_vento":0,"punteggio_temperatura":0,"punteggio_zero_quota_neve":0,"coerenza_mattino_nubi":0,"coerenza_pomeriggio_nubi":0,"coerenza_mattino_pioggia":0,"coerenza_pomeriggio_pioggia":0,"id_w17verifica":2},{"id_w17_verifica_data":27,"id_w05":4955,"data_forecast":"2023-06-05","forecast_id":48,"punteggio_relativo":0,"punteggio_nubi":0,"punteggio_pioggia":0,"punteggio_vento":0,"punteggio_temperatura":0,"punteggio_zero_quota_neve":0,"coerenza_mattino_nubi":0,"coerenza_pomeriggio_nubi":0,"coerenza_mattino_pioggia":0,"coerenza_pomeriggio_pioggia":0,"id_w17verifica":2}],"data_analysis":"2023-06-07","data_emissione":"2023-06-08","next_blt_time":"2023-06-09","last_update":"2023-06-08T09:21:59","username":"aliccoop","status":"0"})
 let state = ref(store.state)
 let ready = ref(false)
@@ -5843,6 +6527,12 @@ let meteoclasses: Ref<MeteoClasses> = ref({
     "VELV":{}
 })
 let today = ref('')
+const props = defineProps({
+    id: {
+        type: String,
+        default: () => ''
+    },
+})
 
 let countfetch = ref(0)
 let actions = ref({
@@ -5911,9 +6601,16 @@ watch(() => countfetch, async (new_value) => {
         "id_parametro",
         pippo=>rearrange(pippo, "id_time_layouts", (arr: any[]) => arr)
       )
+      let rearrangemeteodataaggreg = rearrange(
+      meteobulletin.w05data_set,
+        "id_parametro",
+        pippo=>rearrange(pippo, "id_time_layouts", 
+        pippo2=>rearrange(pippo2, "id_aggregazione", (arr: any[]) => arr[0] ))
+      )
       // Assegnazione del riarrangiamento
       meteobulletin['w05_classes']=rearrangemeteoclasses
       meteobulletin['w05_data']=rearrangemeteodata
+      meteobulletin['w05_dataaggreg']=rearrangemeteodataaggreg
       // codice per riarranggiare meteo terma per id_venue
       let rearrangemeteoterma = rearrange(
         meteobulletin.w05data_set,
@@ -6023,7 +6720,8 @@ const punti = computed(() => {
         tmp['SNOW_LEV'][tab][tl] = {}
         for(const classe in meteoclasses.value[param]){
           let value = 0
-          if(param === 'COP_TOT' || param === 'PLUV' || param ==='TERMA'){
+          //if(param === 'COP_TOT' || param === 'PLUV' || param ==='TERMA'){
+          if(param === 'PLUV' || param ==='TERMA' || (param === 'COP_TOT' && classe==='1') || (param === 'COP_TOT' && classe==='2')){
             if(analisibulletin.value.w17_classes[param][corrispondenzegenerale[tl]] && meteobulletins.value[tab].w05_classes[param][tl][classe]){
               let meteovalue = meteobulletins.value[tab].w05_classes[param][tl][classe].id_classes_value
               let analisivalue = analisibulletin.value.w17_classes[param][corrispondenzegenerale[tl]][classe].id_classes_value
@@ -6035,7 +6733,21 @@ const punti = computed(() => {
               }
               tmp[param][tab][tl][classe] = tab === 0 && param === 'TERMA' ? 0 : value 
             }
-          }else if (param ==='FRZLVL'){
+          }else if(param ==='COP_TOT' && classe==='4'){
+            if(analisibulletin.value.w17_classes[param][corrispondenzegenerale[tl]] && meteobulletins.value[tab].w05_classes[param][tl][classe]){
+              let meteovalue = meteobulletins.value[tab].w05_classes[param][tl][classe].id_classes_value
+              let analisivalue = analisibulletin.value.w17_classes[param][corrispondenzegenerale[tl]][classe].id_classes_value
+              value = 0
+              if(meteovalue == analisivalue){
+                value = 2
+              }else if((meteovalue == 12 && analisivalue == 15) || (meteovalue == 15 && analisivalue == 14) || (meteovalue == 15 && analisivalue == 12) || (meteovalue == 14 && analisivalue == 15)) {
+                value = 1
+              } else if((meteovalue == 12 && analisivalue == 14) || (meteovalue == 14 && analisivalue == 12)){
+                value = 0
+              }
+              tmp[param][tab][tl][classe] = tab === 0 && param === 'TERMA' ? 0 : value 
+            }
+          }else if(param ==='FRZLVL'){
             if(analisibulletin.value.w17_classes[param][corrispondenzezerotermico[tl]] && meteobulletins.value[tab].w05_classes[param][tl][classe]){
               let meteovalue = meteobulletins.value[tab].w05_classes[param][tl][classe].id_classes_value
               let analisivalue = analisibulletin.value.w17_classes[param][corrispondenzezerotermico[tl]][classe].id_classes_value
@@ -6064,7 +6776,7 @@ const punti = computed(() => {
               }
               tmp[param][tab][tl][classe] = value
             }
-          }  
+          }
         }
       }
     }
@@ -6110,13 +6822,18 @@ const punti = computed(() => {
         }
         if(param === 'SNOW_LEV'){
           if(meteobulletins.value[tab].w05_data[param][tl] && analisibulletin.value.w17_data[param][corrispondenzeventi[tl]]){
-            let meteomin = meteobulletins.value[tab].w05_data[param][tl].find(e => e.id_aggregazione = 910).numeric_value
-            let analisimin= analisibulletin.value.w17_data[param][corrispondenzeventi[tl]].find(e => e.id_aggregazione = 324).numeric_value
-            let meteomax = meteobulletins.value[tab].w05_data[param][tl].find(e => e.id_aggregazione = 909).numeric_value
-            let analisimax= analisibulletin.value.w17_data[param][corrispondenzeventi[tl]].find(e => e.id_aggregazione = 323).numeric_value
+            let meteomin = meteobulletins.value[tab].w05_data[param][tl].find(e => e.id_aggregazione === 910).numeric_value
+            let analisimin= analisibulletin.value.w17_data[param][corrispondenzeventi[tl]].find(e => e.id_aggregazione === 324).numeric_value
+            let meteomax = meteobulletins.value[tab].w05_data[param][tl].find(e => e.id_aggregazione === 909).numeric_value
+            let analisimax= analisibulletin.value.w17_data[param][corrispondenzeventi[tl]].find(e => e.id_aggregazione === 323).numeric_value
+            if(meteomax==null){
+              meteomax = -301
+            }
+            if(analisimax==null){
+              analisimax = -301
+            }
             let absmin = Math.abs(meteomin - analisimin)
             let absmax = Math.abs(meteomax - analisimax)
-            //console.log(absmin, absmax)
             if(absmin <= 300){
               value = 1
             }
@@ -6126,6 +6843,7 @@ const punti = computed(() => {
               value = 1
             }
             tmp[param][tab][tl]['max'] = value
+            value = 0
           }
         }
       }
@@ -6300,7 +7018,6 @@ const punteggio_foehn = computed(() => {
     }
     punteggio_foehn[tab] = sum
   }
-  console.log('punteggio_foehn',punteggio_foehn)
   return punteggio_foehn
 })
 // Fine punteggio classe Venti
@@ -6498,9 +7215,7 @@ id_classes=10 id_parametro=TERMA id_time_layouts=33
 */
 
 onMounted(() => {
-  if (typeof route.params.id === 'string') {
-    verifica_id.value = parseInt(route.params.id)
-  }
+  verifica_id.value = props.id
   fetchData()
 })
 
@@ -6690,13 +7405,58 @@ function saveW17verifica(newValue: null, id_w17verifica: any, campo: null) {
 }
 
 function checkPunteggi(){
+  // console.log("checkPunteggi", punteggio.value)
   for(let tab=0; tab<3; tab++){
+    let payload = {"id_w17_verifica_data": verifica.value.w17_verifica_data_set[tab].id_w17_verifica_data}
     for(const p in punteggio.value){
       if(verifica.value.w17_verifica_data_set[tab][p] !== punteggio.value[p][tab]){
-        //console.log(punteggio.value[p][tab],verifica.value.w17_verifica_data_set[tab].id_w17_verifica_data, p)
-        saveW17verificaData(punteggio.value[p][tab],verifica.value.w17_verifica_data_set[tab].id_w17_verifica_data, p) 
+        // console.log(punteggio.value[p][tab],verifica.value.w17_verifica_data_set[tab].id_w17_verifica_data, p)
+        // saveW17verificaData(punteggio.value[p][tab],verifica.value.w17_verifica_data_set[tab].id_w17_verifica_data, p) 
+        payload[p] = punteggio.value[p][tab]
       }
     }
+    // aggiorno il db un solo update per record
+    bulkUpdateW17verificaData(payload).then((response) => {
+      if (!response.ok) {
+        toast.open(
+          {
+            message: 'Errore nel salvataggio',
+            type: 'error',
+            position: 'top-left'
+          }
+        )
+      }
+      return response.json()
+    }).then(data => {
+      toast.open(
+        {
+          message: 'Dato salvato',
+          type: 'success',
+          position: 'top-left'
+        }
+      )
+      // aggiorno il model
+      let myIdW17verifica = verifica.value.w17_verifica_data_set.find((w17verificadata: { id_w17_verifica_data: any }) => {
+        return w17verificadata.id_w17_verifica_data === verifica.value.w17_verifica_data_set[tab].id_w17_verifica_data
+      })
+      if(myIdW17verifica){
+        for(const p in punteggio.value){
+          if(verifica.value.w17_verifica_data_set[tab][p] !== punteggio.value[p][tab]){
+            // console.log(punteggio.value[p][tab],verifica.value.w17_verifica_data_set[tab].id_w17_verifica_data, p)
+            // saveW17verificaData(punteggio.value[p][tab],verifica.value.w17_verifica_data_set[tab].id_w17_verifica_data, p) 
+            myIdW17verifica[p] = punteggio.value[p][tab]
+          }
+        }
+      }
+    }).catch((error) => {
+      toast.open(
+        {
+          message: `Errore di comunicazione: ${error}`,
+          type: 'error',
+          position: 'top-left'
+        }
+      )
+    })
   }
 }
 
@@ -6840,6 +7600,18 @@ async function bulkUpdateW17verifica(payload: {}) {
   const response = await api.fetch_wrapper(
     store.state.access,
     `/api/w17verifica/bulletins/bulk_update/`,
+    {
+      method: 'POST',
+      body: JSON.stringify(payload)
+    }
+  )
+  return response
+}
+
+async function bulkUpdateW17verificaData(payload: {}) {
+  const response = await api.fetch_wrapper(
+    store.state.access,
+    `/api/w17verifica/data/bulk_update/`,
     {
       method: 'POST',
       body: JSON.stringify(payload)

@@ -19,9 +19,8 @@ DJANGO_COMPRESS_OFFLINE=True
 DJANGO_SITE_DOMAIN=weboll.example.com
 DJANGO_SITE_NAME=Weboll
 DJANGO_TIME_ZONE=Europe/Rome
+DJANGO_ADMINS=Full Name <email-with-name@example.com>,anotheremailwithoutname@example.com
 
 CELERY_BROKER_URL=redis://redis:6379
 CELERY_FLOWER_USER=fkdFOaHnHdPBuunlggcTZmrkePnGbXDN
 CELERY_FLOWER_PASSWORD=KYfpK2XBJsUa3YmzbGw9dBVFDQ1kECAXAcZmaH6K2SpMxjywjGZF6HVRkubY1mkw
-
-

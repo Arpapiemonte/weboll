@@ -20,4 +20,9 @@ class Migration(migrations.Migration):
             name="segreto",
             field=django_cryptography.fields.encrypt(models.TextField(blank=True)),
         ),
+        migrations.AddField(
+            model_name="destinazioni",
+            name="auto",
+            field=models.BooleanField(default=False),
+        ),
     ]

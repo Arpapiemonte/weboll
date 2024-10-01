@@ -1,139 +1,16 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg
-   id="Livello_2"
-   data-name="Livello 2"
-   viewBox="0 0 440 440"
-   version="1.1"
-   sodipodi:docname="caldo_1.svg"
-   width="448"
-   height="448"
-   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:dc="http://purl.org/dc/elements/1.1/">
-  <sodipodi:namedview
-     id="namedview17"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="0"
-     showgrid="false"
-     width="448px"
-     inkscape:zoom="1.688"
-     inkscape:cx="249.70379"
-     inkscape:cy="250.29621"
-     inkscape:window-width="1846"
-     inkscape:window-height="1016"
-     inkscape:window-x="74"
-     inkscape:window-y="27"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="Livello_2" />
-  <defs
-     id="defs4">
-    <style
-       id="style2">
-      .cls-1, .cls-2 {
-        fill: #fff;
-      }
-
-      .cls-1, .cls-2, .cls-3, .cls-5 {
-        stroke: #000;
-      }
-
-      .cls-1, .cls-2, .cls-3, .cls-4 {
-        stroke-miterlimit: 10;
-      }
-
-      .cls-1 {
-        stroke-width: 16.35px;
-      }
-
-      .cls-2 {
-        stroke-width: 11.21px;
-      }
-
-      .cls-3 {
-        fill: none;
-        stroke-linecap: round;
-      }
-
-      .cls-3, .cls-5 {
-        stroke-width: 9.34px;
-      }
-
-      .cls-4 {
-        fill: red;
-        stroke: red;
-        stroke-width: 7.48px;
-      }
-
-      .cls-5 {
-        stroke-linejoin: round;
-      }
-    </style>
-  </defs>
-  <title
-     id="title6">caldo_1</title>
-  <g
-     id="caldo_1"
-     transform="translate(-26,-24)">
-    <path
-       id="quadrato"
-       class="cls-1"
-       d="m 99.66,37.4 h 300.68 a 62.25,62.25 0 0 1 62.26,62.26 v 300.68 a 62.25,62.25 0 0 1 -62.25,62.25 H 99.66 A 62.25,62.25 0 0 1 37.4,400.34 V 99.66 A 62.26,62.26 0 0 1 99.66,37.4 Z" />
-    <path
-       id="contorno_termometro"
-       data-name="contorno termometro"
-       class="cls-2"
-       d="M 210.81,306.43 211,86.06 c 0,0 -2.31,-8.44 -10.23,-12.26 -8.77,-4.23 -23.25,-3.88 -23.25,-3.88 0,0 -13.2,0 -21.61,4.65 -7.62,4.24 -10.54,13.26 -10.54,13.26 l -0.92,221.59 c -22.84,10.44 -38.14,37.21 -38.34,57.9 -0.33,32.89 26.32,68.5 73,69 46.68,0.5 72.75,-29.28 73.08,-62.17 0.23,-20.73 -18.74,-56.82 -41.38,-67.72 z" />
-    <line
-       id="tacca_up_termometro"
-       data-name="tacca up termometro"
-       class="cls-3"
-       x1="210.28"
-       y1="135.52"
-       x2="242.99001"
-       y2="135.52" />
-    <line
-       id="tacca_middle_termometro"
-       data-name="tacca middle termometro"
-       class="cls-3"
-       x1="210.28"
-       y1="191.59"
-       x2="242.99001"
-       y2="191.59" />
-    <line
-       id="tacca_down_termometro"
-       data-name="tacca down termometro"
-       class="cls-3"
-       x1="210.28"
-       y1="252.34"
-       x2="242.99001"
-       y2="252.34" />
-    <path
-       id="termometro_rosso"
-       data-name="termometro rosso"
-       class="cls-4"
-       d="m 194.87,321.49 0.47,-136.9 c 0,0 1.11,-6.72 -3.16,-9.22 -4.74,-2.77 -12.56,-2.53 -12.56,-2.53 0,0 -7.13,0 -11.69,3.08 -4.12,2.8 -5.71,8.73 -5.71,8.73 l 0.41,137.3 c -12.35,6.9 -35.09,19.63 -35,44.86 0.07,39.89 28.6,52.54 53.83,52.8 25.23,0.26 46.68,-13.08 50.37,-48.13 2.75,-26.63 -24.75,-42.85 -36.96,-49.99 z" />
-    <polygon
-       id="freccia_1_su"
-       data-name="freccia 1 su"
-       class="cls-5"
-       points="362.45,171.97 417.27,249.3 375.22,250.94 373.82,336.44 346.25,336.44 343.92,252.1 305.6,253.74 " />
-  </g>
-  <metadata
-     id="metadata834">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:title>caldo_1</dc:title>
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
+<svg xmlns="http://www.w3.org/2000/svg" id="Livello_2" width="448" height="448" data-name="Livello 2" version="1.1" viewBox="0 0 440 440">
+    <defs id="defs4">
+        <style id="style2">
+            .cls-3{stroke:#000;stroke-miterlimit:10;fill:none;stroke-linecap:round;stroke-width:9.34px}
+        </style>
+    </defs>
+    <g id="caldo_1" transform="translate(-26 -24)">
+        <path id="quadrato" d="M99.66 37.4h300.68a62.25 62.25 0 0 1 62.26 62.26v300.68a62.25 62.25 0 0 1-62.25 62.25H99.66a62.25 62.25 0 0 1-62.26-62.25V99.66A62.26 62.26 0 0 1 99.66 37.4Z" style="stroke-width:16.35px;stroke-miterlimit:10;stroke:#000;fill:#fff"/>
+        <path id="contorno_termometro" d="M210.81 306.43 211 86.06s-2.31-8.44-10.23-12.26c-8.77-4.23-23.25-3.88-23.25-3.88s-13.2 0-21.61 4.65c-7.62 4.24-10.54 13.26-10.54 13.26l-.92 221.59c-22.84 10.44-38.14 37.21-38.34 57.9-.33 32.89 26.32 68.5 73 69s72.75-29.28 73.08-62.17c.23-20.73-18.74-56.82-41.38-67.72z" data-name="contorno termometro" style="stroke-width:11.21px;stroke-miterlimit:10;stroke:#000;fill:#fff"/>
+        <path id="tacca_up_termometro" d="M210.28 135.52h32.71" class="cls-3" data-name="tacca up termometro"/>
+        <path id="tacca_middle_termometro" d="M210.28 191.59h32.71" class="cls-3" data-name="tacca middle termometro"/>
+        <path id="tacca_down_termometro" d="M210.28 252.34h32.71" class="cls-3" data-name="tacca down termometro"/>
+        <path id="termometro_rosso" d="m194.87 321.49.47-136.9s1.11-6.72-3.16-9.22c-4.74-2.77-12.56-2.53-12.56-2.53s-7.13 0-11.69 3.08c-4.12 2.8-5.71 8.73-5.71 8.73l.41 137.3c-12.35 6.9-35.09 19.63-35 44.86.07 39.89 28.6 52.54 53.83 52.8 25.23.26 46.68-13.08 50.37-48.13 2.75-26.63-24.75-42.85-36.96-49.99z" data-name="termometro rosso" style="fill:red;stroke:red;stroke-width:7.48px;stroke-miterlimit:10"/>
+        <path id="freccia_1_su" d="m362.45 171.97 54.82 77.33-42.05 1.64-1.4 85.5h-27.57l-2.33-84.34-38.32 1.64z" data-name="freccia 1 su" style="stroke-linejoin:round;stroke-width:9.34px;stroke:#000"/>
+    </g>
 </svg>

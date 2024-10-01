@@ -14,7 +14,7 @@ router.register(r"classes", views.W17ClassesView)
 router.register(r"data", views.W17DataView)
 router.register(r"stazioni", views.StazioneMisura)
 router.register(r"trend", views.Trend)
-router.register(r"bulletins_full", views.W17FullView)
+router.register(r"bulletins_full", views.W17FullView, basename="bulletins_full")
 
 # Wire up our API using automatic URL routing.
 urlpatterns = [

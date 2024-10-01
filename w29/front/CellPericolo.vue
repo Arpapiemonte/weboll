@@ -1,4 +1,4 @@
-// Copyright (C) 2020-2023 simevo s.r.l. for ARPA Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
@@ -11,7 +11,7 @@
       :value="area[campo]"
       class="form-select my-1"
       :class="{
-        'is-invalid': meta && meta.validated ? !meta.valid : false
+        'is-invalid': !validity[area.id_w29_data][campo]
       }"
       :disabled="readonly"
       @change="onChange"
@@ -30,21 +30,17 @@
     >
       <span>Value[{{ area[campo] }}]: {{ }}</span>
       <br>
-      <code>
-        {{ meta }}
-      </code>
       <span
-        v-if="meta.validated && !meta.valid"
+        v-if="!validity[area.id_w29_data][campo]"
         :class="'text-danger'"
       >
-        {{ errorMessage }}
+        Questo campo è richiesto
       </span>
     </div>    
   </td>
 </template>
 
 <script setup lang="ts">
-import { useField } from 'vee-validate'
 import { watch } from "vue";
 
 export interface Props {
@@ -66,6 +62,7 @@ export interface Props {
   campo: string,
   readonly: boolean,
   required: boolean,
+  validity: object
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -87,6 +84,7 @@ const props = withDefaults(defineProps<Props>(), {
   },
   readonly: true,
   required: true,
+  validity: () => { return {}}
 })
 
 function coloreHtml() {
@@ -107,12 +105,14 @@ function coloreHtml() {
 const debug = false
 
 const emit = defineEmits<{
-  (e: "changePericolo", new_value: string, id_29_zone: number, campo: string): void
+  changePericolo: [new_value: string, id_29_zone: number, campo: string]
 }>()
 
+/*
 const { errorMessage, meta, validate } = useField(String(props.area.id_w29_data + '_' + props.campo), validateField, {
   validateOnMount: true
 })
+*/
 
 function validateField() {
   if (debug) console.log(`validateField(${props.required}, ${props.area[props.campo]})`)
@@ -132,7 +132,9 @@ function onChange(e: Event) {
   emit("changePericolo", new_value, props.area.id_w29_zone.id_w29_zone, props.campo)
 }
 
+/*
 watch(props, () => {
   validate()
 }, { immediate: true, deep: true });
+*/
 </script>

@@ -1,4 +1,4 @@
-// Copyright (C) 2020-2023 simevo s.r.l. for ARPA Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
@@ -12,10 +12,6 @@
       xmlns:dc="http://purl.org/dc/elements/1.1/"
       xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
       xmlns:cc="http://creativecommons.org/ns#"
-      xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-      xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-      inkscape:version="1.0.2 (e86c870879, 2021-01-15)"
-      sodipodi:docname="PIEMONTE9.svg"
       xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink"
       width="776"
@@ -34,32 +30,32 @@
           v-if="showAutostrade.a6"
           id="a6"
         >
-          <polyline 
-            style="fill:none;stroke:#1638DB;stroke-width:8;stroke-miterlimit:10;" 
+          <polyline
+            style="fill:none;stroke:#1638DB;stroke-width:8;stroke-miterlimit:10;"
             points="227.333,349.685 244.588,366.263 248.131,407.263 251.131,427.263 248.131,441.93 265.667,478.597 		"
             data-bs-toggle="popover"
             data-bs-placement="top"
             :title="`<div class='d-flex justify-content-between'>${venueNames[94]}<span role='button' class='closebutton btn-close' data-dismiss='alert' ><span></div>`"
             :data-bs-content="'Altezza Min - Max: ' + heights[94].min + ' - ' + heights[94].max + ' m'"
           />
-          <polyline 
-            style="fill:none;stroke:#1638DB;stroke-width:8;stroke-miterlimit:10;" 
+          <polyline
+            style="fill:none;stroke:#1638DB;stroke-width:8;stroke-miterlimit:10;"
             points="265.667,478.597 276.667,482.93 285.667,478.597 292.622,489.166 		"
             data-bs-toggle="popover"
             data-bs-placement="top"
             :title="`<div class='d-flex justify-content-between'>${venueNames[95]}<span role='button' class='closebutton btn-close' data-dismiss='alert' ><span></div>`"
             :data-bs-content="'Altezza Min - Max: ' + heights[95].min + ' - ' + heights[95].max + ' m'"
           />
-          <polyline 
-            style="fill:none;stroke:#1638DB;stroke-width:8;stroke-miterlimit:10;" 
+          <polyline
+            style="fill:none;stroke:#1638DB;stroke-width:8;stroke-miterlimit:10;"
             points="292.622,489.166 302.711,485.735 308.278,490.927 325.709,492.923 		"
             data-bs-toggle="popover"
             data-bs-placement="top"
             :title="`<div class='d-flex justify-content-between'>${venueNames[96]}<span role='button' class='closebutton btn-close' data-dismiss='alert' ><span></div>`"
             :data-bs-content="'Altezza Min - Max: ' + heights[96].min + ' - ' + heights[96].max + ' m'"
           />
-          <polyline 
-            style="fill:none;stroke:#1638DB;stroke-width:8;stroke-miterlimit:10;" 
+          <polyline
+            style="fill:none;stroke:#1638DB;stroke-width:8;stroke-miterlimit:10;"
             points="354.472,500.529 338.318,497.882 333.99,493.215 326,493.215 		"
             data-bs-toggle="popover"
             data-bs-placement="top"
@@ -71,7 +67,7 @@
           v-if="showAutostrade.a21"
           id="a21"
         >
-          <polyline 
+          <polyline
             style="fill:none;stroke:#F7A706;stroke-width:8;stroke-miterlimit:10;"
             points="242.333,353.597 254.345,361.263 279.667,361.263 		"
             data-bs-toggle="popover"
@@ -79,7 +75,7 @@
             :title="`<div class='d-flex justify-content-between'>${venueNames[66]}<span role='button' class='closebutton btn-close' data-dismiss='alert' ><span></div>`"
             :data-bs-content="'Altezza Min - Max: ' + heights[66].min + ' - ' + heights[66].max + ' m'"
           />
-          <polyline 
+          <polyline
             style="fill:none;stroke:#F7A706;stroke-width:8;stroke-miterlimit:10;"
             points="281.667,362.93 296.226,373.965 310.423,372.93 316.38,366.263 325.333,369.861 		"
             data-bs-toggle="popover"
@@ -87,16 +83,16 @@
             :title="`<div class='d-flex justify-content-between'>${venueNames[106]}<span role='button' class='closebutton btn-close' data-dismiss='alert' ><span></div>`"
             :data-bs-content="'Altezza Min - Max: ' + heights[106].min + ' - ' + heights[106].max + ' m'"
           />
-          <polyline 
-            style="fill:none;stroke:#F7A706;stroke-width:8;stroke-miterlimit:10;" 
+          <polyline
+            style="fill:none;stroke:#F7A706;stroke-width:8;stroke-miterlimit:10;"
             points="325.333,369.861 341.858,372.791 366.319,365.18 379.557,366.317 		"
             data-bs-toggle="popover"
             data-bs-placement="top"
             :title="`<div class='d-flex justify-content-between'>${venueNames[49]}<span role='button' class='closebutton btn-close' data-dismiss='alert' ><span></div>`"
             :data-bs-content="'Altezza Min - Max: ' + heights[49].min + ' - ' + heights[49].max + ' m'"
           />
-          <line 
-            style="fill:none;stroke:#F7A706;stroke-width:8;stroke-miterlimit:10;" 
+          <line
+            style="fill:none;stroke:#F7A706;stroke-width:8;stroke-miterlimit:10;"
             x1="379.644"
             y1="365.18"
             x2="402.628"
@@ -106,16 +102,16 @@
             :title="`<div class='d-flex justify-content-between'>${venueNames[107]}<span role='button' class='closebutton btn-close' data-dismiss='alert' ><span></div>`"
             :data-bs-content="'Altezza Min - Max: ' + heights[107].min + ' - ' + heights[107].max + ' m'"
           />
-          <polyline 
-            style="fill:none;stroke:#F7A706;stroke-width:8;stroke-miterlimit:10;" 
+          <polyline
+            style="fill:none;stroke:#F7A706;stroke-width:8;stroke-miterlimit:10;"
             points="402.628,368.723 410.254,369.861 430.269,354.123 458.131,341.93 479.333,336.597 		"
             data-bs-toggle="popover"
             data-bs-placement="top"
             :title="`<div class='d-flex justify-content-between'>${venueNames[24]}<span role='button' class='closebutton btn-close' data-dismiss='alert' ><span></div>`"
             :data-bs-content="'Altezza Min - Max: ' + heights[24].min + ' - ' + heights[24].max + ' m'"
           />
-          <line 
-            style="fill:none;stroke:#F7A706;stroke-width:8;stroke-miterlimit:10;" 
+          <line
+            style="fill:none;stroke:#F7A706;stroke-width:8;stroke-miterlimit:10;"
             x1="479.333"
             y1="336.597"
             x2="514.528"
@@ -130,16 +126,16 @@
           v-if="showAutostrade.a33"
           id="a33"
         >
-          <polyline 
-            style="fill:none;stroke:#F91EDA;stroke-width:8;stroke-miterlimit:10;" 
+          <polyline
+            style="fill:none;stroke:#F91EDA;stroke-width:8;stroke-miterlimit:10;"
             points="217.583,487.597 237.333,466.263 250.53,467.386 255.667,466.386 		"
             data-bs-toggle="popover"
             data-bs-placement="top"
             :title="`<div class='d-flex justify-content-between'>${venueNames[187]}<span role='button' class='closebutton btn-close' data-dismiss='alert' ><span></div>`"
             :data-bs-content="'Altezza Min - Max: ' + heights[187].min + ' - ' + heights[187].max + ' m'"
           />
-          <line 
-            style="fill:none;stroke:#F91EDA;stroke-width:8;stroke-miterlimit:10;" 
+          <line
+            style="fill:none;stroke:#F91EDA;stroke-width:8;stroke-miterlimit:10;"
             x1="254.667"
             y1="425.263"
             x2="276.667"
@@ -149,7 +145,7 @@
             :title="`<div class='d-flex justify-content-between'>${venueNames[188]}<span role='button' class='closebutton btn-close' data-dismiss='alert' ><span></div>`"
             :data-bs-content="'Altezza Min - Max: ' + heights[188].min + ' - ' + heights[188].max + ' m'"
           />
-          <polyline 
+          <polyline
             style="fill:none;stroke:#F91EDA;stroke-width:8;stroke-miterlimit:10;"
             points="291.333,417.263 308,390.93 326,370.347 		"
             data-bs-toggle="popover"
@@ -162,32 +158,32 @@
           v-if="showAutostrade.a4"
           id="a4"
         >
-          <polyline 
-            style="fill:none;stroke:#880ED4;stroke-width:8;stroke-miterlimit:10;" 
+          <polyline
+            style="fill:none;stroke:#880ED4;stroke-width:8;stroke-miterlimit:10;"
             points="259.228,313.135 240.997,323.263 227.333,328.263 		"
             data-bs-toggle="popover"
             data-bs-placement="top"
             :title="`<div class='d-flex justify-content-between'>${venueNames[47]}<span role='button' class='closebutton btn-close' data-dismiss='alert' ><span></div>`"
             :data-bs-content="'Altezza Min - Max: ' + heights[47].min + ' - ' + heights[47].max + ' m'"
           />
-          <polyline 
-            style="fill:none;stroke:#880ED4;stroke-width:8;stroke-miterlimit:10;" 
+          <polyline
+            style="fill:none;stroke:#880ED4;stroke-width:8;stroke-miterlimit:10;"
             points="294.667,283.795 286.333,297.263 259.228,313.135 		"
             data-bs-toggle="popover"
             data-bs-placement="top"
             :title="`<div class='d-flex justify-content-between'>${venueNames[25]}<span role='button' class='closebutton btn-close' data-dismiss='alert' ><span></div>`"
             :data-bs-content="'Altezza Min - Max: ' + heights[25].min + ' - ' + heights[25].max + ' m'"
           />
-          <polyline 
-            style="fill:none;stroke:#880ED4;stroke-width:8;stroke-miterlimit:10;" 
+          <polyline
+            style="fill:none;stroke:#880ED4;stroke-width:8;stroke-miterlimit:10;"
             points="294.667,283.465 314.532,259.192 355.867,249.997 364,250.242 		"
             data-bs-toggle="popover"
             data-bs-placement="top"
             :title="`<div class='d-flex justify-content-between'>${venueNames[19]}<span role='button' class='closebutton btn-close' data-dismiss='alert' ><span></div>`"
             :data-bs-content="'Altezza Min - Max: ' + heights[19].min + ' - ' + heights[19].max + ' m'"
           />
-          <polyline 
-            style="fill:none;stroke:#880ED4;stroke-width:8;stroke-miterlimit:10;" 
+          <polyline
+            style="fill:none;stroke:#880ED4;stroke-width:8;stroke-miterlimit:10;"
             points="364,249.863 379.238,247.824 409.617,247.824 421.188,241.597 442.667,241.597 		"
             data-bs-toggle="popover"
             data-bs-placement="top"
@@ -199,8 +195,8 @@
           v-if="showAutostrade.a26"
           id="A7-a26"
         >
-          <line 
-            style="fill:none;stroke:#F21111;stroke-width:8;stroke-miterlimit:10;" 
+          <line
+            style="fill:none;stroke:#F21111;stroke-width:8;stroke-miterlimit:10;"
             x1="423.753"
             y1="423.763"
             x2="413.753"
@@ -210,8 +206,8 @@
             :title="`<div class='d-flex justify-content-between'>${venueNames[99]}<span role='button' class='closebutton btn-close' data-dismiss='alert' ><span></div>`"
             :data-bs-content="'Altezza Min - Max: ' + heights[99].min + ' - ' + heights[99].max + ' m'"
           />
-          <line 
-            style="fill:none;stroke:#F21111;stroke-width:8;stroke-miterlimit:10;" 
+          <line
+            style="fill:none;stroke:#F21111;stroke-width:8;stroke-miterlimit:10;"
             x1="384.333"
             y1="441.525"
             x2="384.788"
@@ -221,48 +217,48 @@
             :title="`<div class='d-flex justify-content-between'>${venueNames[100]}<span role='button' class='closebutton btn-close' data-dismiss='alert' ><span></div>`"
             :data-bs-content="'Altezza Min - Max: ' + heights[100].min + ' - ' + heights[100].max + ' m'"
           />
-          <polyline 
-            style="fill:none;stroke:#F21111;stroke-width:8;stroke-miterlimit:10;" 
+          <polyline
+            style="fill:none;stroke:#F21111;stroke-width:8;stroke-miterlimit:10;"
             points="384.788,427.597 386.443,410.597 384.426,402.213 412.333,387.93 412.333,372.791 		"
             data-bs-toggle="popover"
             data-bs-placement="top"
             :title="`<div class='d-flex justify-content-between'>${venueNames[101]}<span role='button' class='closebutton btn-close' data-dismiss='alert' ><span></div>`"
             :data-bs-content="'Altezza Min - Max: ' + heights[101].min + ' - ' + heights[101].max + ' m'"
           />
-          <polyline 
-            style="fill:none;stroke:#F21111;stroke-width:8;stroke-miterlimit:10;" 
+          <polyline
+            style="fill:none;stroke:#F21111;stroke-width:8;stroke-miterlimit:10;"
             points="377.877,397.348 372.667,390.93 372.667,379.263 371.333,364.808 367.144,357.43 365.667,343.54 358.867,328.263 359.406,312.263 		"
             data-bs-toggle="popover"
             data-bs-placement="top"
             :title="`<div class='d-flex justify-content-between'>${venueNames[102]}<span role='button' class='closebutton btn-close' data-dismiss='alert' ><span></div>`"
             :data-bs-content="'Altezza Min - Max: ' + heights[102].min + ' - ' + heights[102].max + ' m'"
           />
-          <polyline 
-            style="fill:none;stroke:#F21111;stroke-width:8;stroke-miterlimit:10;" 
+          <polyline
+            style="fill:none;stroke:#F21111;stroke-width:8;stroke-miterlimit:10;"
             points="310.423,271.93 318.993,279.651 346.139,287.263 356.667,295.263 		"
             data-bs-toggle="popover"
             data-bs-placement="top"
             :title="`<div class='d-flex justify-content-between'>${venueNames[103]}<span role='button' class='closebutton btn-close' data-dismiss='alert' ><span></div>`"
             :data-bs-content="'Altezza Min - Max: ' + heights[103].min + ' - ' + heights[103].max + ' m'"
           />
-          <polyline 
-            style="fill:none;stroke:#F21111;stroke-width:8;stroke-miterlimit:10;" 
+          <polyline
+            style="fill:none;stroke:#F21111;stroke-width:8;stroke-miterlimit:10;"
             points="352.413,211.93 367.144,200.263 372.771,194.263 383.415,196.422 		"
             data-bs-toggle="popover"
             data-bs-placement="top"
             :title="`<div class='d-flex justify-content-between'>${venueNames[104]}<span role='button' class='closebutton btn-close' data-dismiss='alert' ><span></div>`"
             :data-bs-content="'Altezza Min - Max: ' + heights[104].min + ' - ' + heights[104].max + ' m'"
           />
-          <polyline 
-            style="fill:none;stroke:#F21111;stroke-width:8;stroke-miterlimit:10;" 
+          <polyline
+            style="fill:none;stroke:#F21111;stroke-width:8;stroke-miterlimit:10;"
             points="352.413,211.93 346.139,217.93 349.861,231.061 353,244.895 359.414,264.93 356.667,277.597 356.667,298.029 359.406,312.263 		"
             data-bs-toggle="popover"
             data-bs-placement="top"
             :title="`<div class='d-flex justify-content-between'>${venueNames[103]}<span role='button' class='closebutton btn-close' data-dismiss='alert' ><span></div>`"
             :data-bs-content="'Altezza Min - Max: ' + heights[103].min + ' - ' + heights[103].max + ' m'"
           />
-          <polyline 
-            style="fill:none;stroke:#F21111;stroke-width:8;stroke-miterlimit:10;" 
+          <polyline
+            style="fill:none;stroke:#F21111;stroke-width:8;stroke-miterlimit:10;"
             points="365.667,194.263 359.414,182.93 367.145,172.263 366,157.473 351.667,145.597 		"
             data-bs-toggle="popover"
             data-bs-placement="top"
@@ -527,7 +523,7 @@
             :style="cumulatedSnowValidity[key] ? ' border: #FFA500; border:2.5px solid #FFA500;' : 'border: #0000ff; border:1px solid #0000ff;'"
             @change="setCumulatedSnow(key)"
           >
-          <SnowLevelInput 
+          <SnowLevelInput
             :measure="values[key].snow_level"
             :idvenue="key"
             :readonly="readonly"
@@ -555,7 +551,7 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue'
-import Popover from 'bootstrap/js/dist/popover'
+import { Popover } from 'bootstrap'
 
 import { components } from '../../src/types/weboll'
 
@@ -613,7 +609,7 @@ async function initializePopovers() {
   popovers.value = popoverTriggerList.map(function (popoverTriggerEl) {
     return new Popover(popoverTriggerEl, { html: true })
   })
-  
+
   popoverTriggerList.forEach(popover => {
     popover.addEventListener('shown.bs.popover', function () {
       let closebuttons = document.getElementsByClassName('closebutton')
@@ -626,7 +622,9 @@ async function initializePopovers() {
   })
 }
 
-const emit = defineEmits(['setNeve'])
+const emit = defineEmits<{
+  setNeve: [id_venue: number, campo: string,  new_value: number]
+}>()
 
 const values = computed(() => {
   let values = {}
@@ -634,7 +632,7 @@ const values = computed(() => {
     values[e.id_venue] = {
       cumulated_snow: e.cumulated_snow,
       snow_level: e.snow_level,
-      showInputBox: icon_snowlist.includes(e.id_sky_condition) 
+      showInputBox: icon_snowlist.includes(e.id_sky_condition)
     }
   })
   return values

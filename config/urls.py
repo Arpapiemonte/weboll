@@ -35,8 +35,11 @@ urlpatterns: URLList = [
     path("w06/", include("w06.back.urls")),
     path("w07/", include("w07.back.urls")),
     path("w12/", include("w12.back.urls")),
+    path("w15/", include("w15.back.urls")),
     path("w16/", include("w16.back.urls")),
     path("w17/", include("w17.back.urls")),
+    path("w20/", include("w20.back.urls")),
+    path("w21/", include("w21.back.urls")),
     path("w23/", include("w23.back.urls")),
     path("w24/", include("w24.back.urls")),
     path("w26/", include("w26.back.urls")),
@@ -49,6 +52,11 @@ urlpatterns: URLList = [
     path("w31/", include("w31.back.urls")),
     path("w32/", include("w32.back.urls")),
     path("w33/", include("w33.back.urls")),
+    path("w34/", include("w34.back.urls")),
+    path("w35/", include("w35.back.urls")),
+    path("w37/", include("w37.back.urls")),
+    path("w36/", include("w36.back.urls")),
+    path("w99/", include("w99.back.urls")),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

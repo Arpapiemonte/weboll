@@ -8,13 +8,9 @@
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:xlink="http://www.w3.org/1999/xlink"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    viewBox="0 0 210 594"
    version="1.1"
-   id="svg8"
-   inkscape:version="1.0.2 (e86c870879, 2021-01-15)"
-   sodipodi:docname="ozono.svg">
+   id="svg8">
   <metadata
      id="metadata435">
     <rdf:RDF>
@@ -26,27 +22,6 @@
       </cc:Work>
     </rdf:RDF>
   </metadata>
-  <sodipodi:namedview
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1"
-     objecttolerance="10"
-     gridtolerance="10"
-     guidetolerance="10"
-     inkscape:pageopacity="0"
-     inkscape:pageshadow="2"
-     inkscape:window-width="1920"
-     inkscape:window-height="948"
-     id="namedview433"
-     showgrid="false"
-     inkscape:zoom="48.531501"
-     inkscape:cx="183.27304"
-     inkscape:cy="33.005279"
-     inkscape:window-x="0"
-     inkscape:window-y="27"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="layer1"
-     inkscape:document-rotation="0" />
   <defs
      id="defs2">
     <rect
@@ -1158,10 +1133,7 @@
        height="9.1425171"
        id="rect1514" />
   </defs>
-  <g
-     inkscape:label="Livello 1"
-     inkscape:groupmode="layer"
-     id="layer1">
+  <g id="layer1">
     <rect
        style="fill-opacity:1;stroke-width:0.264583"
        id="rect3625-5-3"
@@ -1245,7 +1217,7 @@
     <!--Header1-->
     {% include "header.svg" with title='Bollettino Ozono' seqNum=ozono.seq_num startValidTime=ozono.start_valid_time nextUpdate=ozono.next_blt_time validity=ozono.validity username=ozono.username logo=ozono.logo %}
     <text
-       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.175px;font-family:'Titillium Web';-inkscape-font-specification:TitilliumWeb-Bold;writing-mode:lr-tb;fill:#2e9d53;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.175px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#2e9d53;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text708"
        x="199.82204"
        y="287.82199"><tspan
@@ -1254,7 +1226,7 @@
          x="199.82204"
          y="287.82199">www.arpa.piemonte.it</tspan></text>
     <text
-       style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;font-family:'Titillium Web';-inkscape-font-specification:TitilliumWeb-Regular;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text712"
        x="10.000086"
        y="287.82785"><tspan
@@ -1263,7 +1235,7 @@
          x="10.000086"
          y="287.82785"></tspan></text>
     <text
-       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.99861px;font-family:'Titillium Web';-inkscape-font-specification:TitilliumWeb-Bold;writing-mode:lr-tb;fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.99861px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text660"
        x="57.266289"
        y="236.72974"><tspan
@@ -1272,7 +1244,7 @@
          x="57.266289"
          y="236.72974" /></text>
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:4.58611px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:4.58611px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text700"
        x="167.19363"
        y="254.4826"><tspan
@@ -1306,7 +1278,7 @@
        style="fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.242799"
        id="path644" />
     <text
-       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.58611px;font-family:'Titillium Web';-inkscape-font-specification:TitilliumWeb-Bold;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.58611px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text648"
        x="10.000085"
        y="51.993835"><tspan
@@ -1314,7 +1286,7 @@
          style="stroke-width:0.352778"
          x="10.000085"
          y="51.993835"><tspan
-   style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Light'"
+   style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Titillium Web'"
    id="tspan1759">Analisi di</tspan> {{ dates.0 | my_date_JtD }}</tspan></text>
     <g
        id="g2455"
@@ -1324,12 +1296,12 @@
          style="fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.242798"
          id="path692" />
       <text
-         style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.58611px;font-family:'Titillium Web';-inkscape-font-specification:TitilliumWeb-Bold;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+         style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.58611px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
          id="text696"
          x="110.00024"
          y="194.42815"><tspan
            id="tspan694"
-           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Light';stroke-width:0.352778"
+           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Titillium Web';stroke-width:0.352778"
            x="110.00024"
            y="194.42815">Note:</tspan></text>
       <foreignObject
@@ -1345,7 +1317,7 @@
       <!-- Test Note -->
     </g>
     <text
-       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.58611px;font-family:'Titillium Web';-inkscape-font-specification:TitilliumWeb-Bold;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.58611px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text648-2"
        x="49.875561"
        y="74.861923"><tspan
@@ -1354,7 +1326,7 @@
          x="49.875561"
          y="74.861923">A</tspan></text>
     <text
-       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'Titillium Web';-inkscape-font-specification:TitilliumWeb-Bold;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text648-2-8"
        x="25.605581"
        y="102.44756"><tspan
@@ -1363,7 +1335,7 @@
          x="25.605581"
          y="102.44756">B</tspan></text>
     <text
-       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'Titillium Web';-inkscape-font-specification:TitilliumWeb-Bold;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text648-2-8-1"
        x="42.66782"
        y="112.75868"><tspan
@@ -1372,7 +1344,7 @@
          x="42.66782"
          y="112.75868">C</tspan></text>
     <text
-       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'Titillium Web';-inkscape-font-specification:TitilliumWeb-Bold;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text648-2-8-1-6"
        x="49.890266"
        y="92.709709"><tspan
@@ -1381,96 +1353,96 @@
          x="49.890266"
          y="92.709709">D</tspan></text>
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text642-2"
        x="72.96489"
        y="61.466858"><tspan
          id="tspan640-5"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
          x="72.96489"
          y="61.466858">Zona</tspan></text>
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text642-2-5"
        x="80.625114"
        y="61.466858"><tspan
          id="tspan640-5-2"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
          x="80.625114"
          y="61.466858">Livello</tspan></text>
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text642-2-9"
        x="72.96489"
        y="64.973419"><tspan
          id="tspan640-5-81"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.352778"
          x="72.96489"
          y="64.973419">A</tspan></text>
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text642-2-5-5"
        x="80.625114"
        y="64.986122"><tspan
          id="tspan640-5-2-8"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
          x="80.625114"
          y="64.986122">{{ ozono.w16data_set.0.id_ozono_livelli | lvl_rect }}</tspan></text>
     <!-- LVL Rect A1 -->
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text642-2-9-7"
        x="72.96489"
        y="68.853966"><tspan
          id="tspan640-5-81-0"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.352778"
          x="72.96489"
          y="68.853966">B</tspan></text>
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text642-2-5-5-1"
        x="80.625114"
        y="68.863083"><tspan
          id="tspan640-5-2-8-0"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
          x="80.625114"
          y="68.863083">{{ ozono.w16data_set.1.id_ozono_livelli | lvl_rect }}</tspan></text>
     <!-- LVL Rect B1 -->
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text642-2-9-4"
        x="72.96489"
        y="72.734512"><tspan
          id="tspan640-5-81-1"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.352778"
          x="72.96489"
          y="72.734512">C</tspan></text>
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text642-2-5-5-2"
        x="80.625114"
        y="72.747215"><tspan
          id="tspan640-5-2-8-1"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
          x="80.625114"
          y="72.747215">{{ ozono.w16data_set.2.id_ozono_livelli | lvl_rect }}</tspan></text>
     <!-- LVL Rect C1-->
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text642-2-9-4-7"
        x="72.96489"
        y="76.627769"><tspan
          id="tspan640-5-81-1-2"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.352778"
          x="72.96489"
          y="76.627769">D</tspan></text>
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text642-2-5-5-2-7"
        x="80.625114"
        y="76.627769"><tspan
          id="tspan640-5-2-8-1-1"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
          x="80.625114"
          y="76.627769">{{ ozono.w16data_set.3.id_ozono_livelli | lvl_rect }}</tspan></text>
     <!--LVL Rect D1-->
@@ -1531,7 +1503,7 @@
        style="fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.242799"
        id="path644-4" />
     <text
-       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.58611px;font-family:'Titillium Web';-inkscape-font-specification:TitilliumWeb-Bold;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.58611px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text648-9"
        x="109.99477"
        y="51.993835"><tspan
@@ -1539,99 +1511,99 @@
          style="stroke-width:0.352778"
          x="109.99477"
          y="51.993835"><tspan
-   style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Light'"
+   style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Titillium Web'"
    id="tspan4024">Previsione per</tspan> {{ dates.1 | my_date_JtD }}</tspan></text>
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text642-2-1"
        x="172.95955"
        y="61.466858"><tspan
          id="tspan640-5-8"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
          x="172.95955"
          y="61.466858">Zona</tspan></text>
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text642-2-5-6"
        x="180.61977"
        y="61.466858"><tspan
          id="tspan640-5-2-3"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
          x="180.61977"
          y="61.466858">Livello</tspan></text>
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text642-2-9-8"
        x="172.95955"
        y="64.973419"><tspan
          id="tspan640-5-81-5"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.352778"
          x="172.95955"
          y="64.973419">A</tspan></text>
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text642-2-5-5-5"
        x="180.61977"
        y="64.986122"><tspan
          id="tspan640-5-2-8-3"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
          x="180.61977"
          y="64.986122">{{ozono.w16data_set.4.id_ozono_livelli | lvl_rect }}</tspan></text>
     <!-- LVL Rect A2 -->
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text642-2-9-7-3"
        x="172.95955"
        y="68.853966"><tspan
          id="tspan640-5-81-0-4"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.352778"
          x="172.95955"
          y="68.853966">B</tspan></text>
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text642-2-5-5-1-9"
        x="180.61977"
        y="68.863083"><tspan
          id="tspan640-5-2-8-0-7"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
          x="180.61977"
          y="68.863083">{{ozono.w16data_set.5.id_ozono_livelli | lvl_rect}}</tspan></text>
     <!-- LVL rect B2 -->
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text642-2-9-4-6"
        x="172.95955"
        y="72.734512"><tspan
          id="tspan640-5-81-1-1"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.352778"
          x="172.95955"
          y="72.734512">C</tspan></text>
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text642-2-5-5-2-5"
        x="180.61977"
        y="72.747215"><tspan
          id="tspan640-5-2-8-1-3"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
          x="180.61977"
          y="72.747215">{{ozono.w16data_set.6.id_ozono_livelli | lvl_rect}}</tspan></text>
     <!-- LVL Rect C2 -->
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text642-2-9-4-7-4"
        x="172.95955"
        y="76.627769"><tspan
          id="tspan640-5-81-1-2-5"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.352778"
          x="172.95955"
          y="76.627769">D</tspan></text>
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text642-2-5-5-2-7-2"
        x="180.61977"
        y="76.627769"><tspan
          id="tspan640-5-2-8-1-1-0"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
          x="180.61977"
          y="76.627769">{{ozono.w16data_set.7.id_ozono_livelli | lvl_rect }}</tspan></text>
     <!--LVL Rect D2-->
@@ -1640,12 +1612,12 @@
        style="fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.242798"
        id="path692-9" />
     <text
-       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.58611px;font-family:'Titillium Web';-inkscape-font-specification:TitilliumWeb-Bold;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.58611px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text696-1"
        x="10.000085"
        y="226.76555"><tspan
          id="tspan694-5"
-         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Light';stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Titillium Web';stroke-width:0.352778"
          x="10.000085"
          y="226.76555">Legenda</tspan></text>
     <path
@@ -1677,7 +1649,7 @@
        class=""
        style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.076158;stroke-opacity:1" />
     <text
-       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.01632px;font-family:'Titillium Web';-inkscape-font-specification:TitilliumWeb-Bold;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.232025"
+       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.01632px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.232025"
        id="text648-2-7"
        x="29.06102"
        y="241.85217"><tspan
@@ -1686,7 +1658,7 @@
          x="29.06102"
          y="241.85217">A</tspan></text>
     <text
-       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.78429px;font-family:'Titillium Web';-inkscape-font-specification:TitilliumWeb-Bold;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.232025"
+       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.78429px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.232025"
        id="text648-2-8-4"
        x="13.09846"
        y="259.99545"><tspan
@@ -1695,7 +1667,7 @@
          x="13.09846"
          y="259.99545">B</tspan></text>
     <text
-       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.78429px;font-family:'Titillium Web';-inkscape-font-specification:TitilliumWeb-Bold;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.232025"
+       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.78429px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.232025"
        id="text648-2-8-1-4"
        x="24.320435"
        y="266.77716"><tspan
@@ -1704,7 +1676,7 @@
          x="24.320435"
          y="266.77716">C</tspan></text>
     <text
-       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.78429px;font-family:'Titillium Web';-inkscape-font-specification:TitilliumWeb-Bold;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.232025"
+       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.78429px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.232025"
        id="text648-2-8-1-6-1"
        x="29.070694"
        y="253.59081"><tspan
@@ -1729,52 +1701,52 @@
        style="fill:#7b7979;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="path876-9" />
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text642-2-8"
        x="49.146694"
        y="234.03461"><tspan
          id="tspan640-5-1"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
          x="49.146694"
          y="234.03461">Zona</tspan></text>
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text642-2-9-6"
        x="49.146694"
        y="237.54117"><tspan
          id="tspan640-5-81-8"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.352778"
          x="49.146694"
          y="237.54117">A</tspan></text>
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text642-2-9-7-7"
        x="49.146694"
        y="241.42171"><tspan
          id="tspan640-5-81-0-7"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.352778"
          x="49.146694"
          y="241.42171">B</tspan></text>
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text642-2-9-4-8"
        x="49.146694"
        y="245.30226"><tspan
          id="tspan640-5-81-1-20"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.352778"
          x="49.146694"
          y="245.30226">C</tspan></text>
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text642-2-9-4-7-0"
        x="49.146694"
        y="249.19551"><tspan
          id="tspan640-5-81-1-2-2"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.352778"
          x="49.146694"
          y="249.19551">D</tspan></text>
     <text
-       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.82222px;line-height:3.75px;font-family:'Titillium Web';-inkscape-font-specification:TitilliumWeb-Bold;writing-mode:lr-tb;white-space:pre;inline-size:174.589;fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.82222px;line-height:3.75px;font-family:'Titillium Web';writing-mode:lr-tb;white-space:pre;inline-size:174.589;fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text652-7"
        x="51.08836"
        y="259.76309"
@@ -1782,20 +1754,20 @@
        transform="translate(2.9793541,-22.245347)"><tspan
          x="51.08836"
          y="259.76309"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Light'">alpi settentrionali</tspan><tspan
-           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.82222px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Light'">
+           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Titillium Web'">alpi settentrionali</tspan><tspan
+           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.82222px;font-family:'Titillium Web'">
 </tspan></tspan><tspan
          x="51.08836"
          y="263.51308"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.82222px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Light'">alpi occidentali
+           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.82222px;font-family:'Titillium Web'">alpi occidentali
 </tspan></tspan><tspan
          x="51.08836"
          y="267.26308"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.82222px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Light'">piemonte centro meridionale
+           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.82222px;font-family:'Titillium Web'">piemonte centro meridionale
 </tspan></tspan><tspan
          x="51.08836"
          y="271.01308"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.82222px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Light'">piemonte centro settentrionale</tspan></tspan></text>
+           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.82222px;font-family:'Titillium Web'">piemonte centro settentrionale</tspan></tspan></text>
     <rect
        style="fill:#ff0000;fill-opacity:1;stroke-width:0.264583"
        id="rect3625-5-3-2"
@@ -1825,48 +1797,48 @@
        x="45.621723"
        y="255.61111" />
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text642-2-5-8"
        x="49.121655"
        y="254.64243"><tspan
          id="tspan640-5-2-86"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
          x="49.121655"
          y="254.64243">Livello</tspan></text>
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text642-2-5-5-6"
        x="49.121655"
        y="258.16168"><tspan
          id="tspan640-5-2-8-7"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
          x="49.121655"
          y="258.16168">0</tspan></text>
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text642-2-5-5-1-8"
        x="49.121655"
        y="262.03864"><tspan
          id="tspan640-5-2-8-0-8"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
          x="49.121655"
          y="262.03864">1</tspan></text>
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text642-2-5-5-2-3"
        x="49.121655"
        y="265.92273"><tspan
          id="tspan640-5-2-8-1-38"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
          x="49.121655"
          y="265.92273">2</tspan></text>
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text642-2-5-5-2-7-0"
        x="49.121655"
        y="269.80322"><tspan
          id="tspan640-5-2-8-1-1-8"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
          x="49.121655"
          y="269.80322">3</tspan></text>
     <rect
@@ -1954,7 +1926,7 @@
        style="fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.242799"
        id="path644-0" />
     <text
-       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.58611px;font-family:'Titillium Web';-inkscape-font-specification:TitilliumWeb-Bold;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.58611px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text648-23"
        x="10.000085"
        y="139.83554"><tspan
@@ -1962,10 +1934,10 @@
          style="stroke-width:0.352778"
          x="10.000085"
          y="139.83554"><tspan
-   style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Light'"
+   style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Titillium Web'"
    id="tspan3339">Previsione per</tspan> {{ dates.2 | my_date_JtD }}</tspan></text>
     <text
-       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.58611px;font-family:'Titillium Web';-inkscape-font-specification:TitilliumWeb-Bold;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.58611px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text648-2-9"
        x="49.875561"
        y="162.70366"><tspan
@@ -1974,7 +1946,7 @@
          x="49.875561"
          y="162.70366">A</tspan></text>
     <text
-       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'Titillium Web';-inkscape-font-specification:TitilliumWeb-Bold;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text648-2-8-6"
        x="25.605581"
        y="190.28932"><tspan
@@ -1983,7 +1955,7 @@
          x="25.605581"
          y="190.28932">B</tspan></text>
     <text
-       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'Titillium Web';-inkscape-font-specification:TitilliumWeb-Bold;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text648-2-8-1-46"
        x="42.66782"
        y="200.60046"><tspan
@@ -1992,7 +1964,7 @@
          x="42.66782"
          y="200.60046">C</tspan></text>
     <text
-       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'Titillium Web';-inkscape-font-specification:TitilliumWeb-Bold;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text648-2-8-1-6-7"
        x="49.890266"
        y="180.55145"><tspan
@@ -2001,96 +1973,96 @@
          x="49.890266"
          y="180.55145">D</tspan></text>
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text642-2-6"
        x="72.96489"
        y="149.30858"><tspan
          id="tspan640-5-7"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
          x="72.96489"
          y="149.30858">Zona</tspan></text>
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text642-2-5-63"
        x="80.625114"
        y="149.30858"><tspan
          id="tspan640-5-2-1"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
          x="80.625114"
          y="149.30858">Livello</tspan></text>
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text642-2-9-9"
        x="72.96489"
        y="152.81514"><tspan
          id="tspan640-5-81-6"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.352778"
          x="72.96489"
          y="152.81514">A</tspan></text>
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text642-2-5-5-9"
        x="80.625114"
        y="152.82785"><tspan
          id="tspan640-5-2-8-77"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
          x="80.625114"
          y="152.82785">{{ozono.w16data_set.8.id_ozono_livelli | lvl_rect }}</tspan></text>
     <!--LVL Rect A3-->
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text642-2-9-7-5"
        x="72.96489"
        y="156.69569"><tspan
          id="tspan640-5-81-0-40"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.352778"
          x="72.96489"
          y="156.69569">B</tspan></text>
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text642-2-5-5-1-3"
        x="80.625114"
        y="156.70479"><tspan
          id="tspan640-5-2-8-0-6"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
          x="80.625114"
          y="156.70479">{{ozono.w16data_set.9.id_ozono_livelli | lvl_rect }}</tspan></text>
     <!--LVL Rect B3-->
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text642-2-9-4-2"
        x="72.96489"
        y="160.57625"><tspan
          id="tspan640-5-81-1-6"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.352778"
          x="72.96489"
          y="160.57625">C</tspan></text>
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text642-2-5-5-2-8"
        x="80.625114"
        y="160.58893"><tspan
          id="tspan640-5-2-8-1-2"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
          x="80.625114"
          y="160.58893">{{ozono.w16data_set.10.id_ozono_livelli | lvl_rect }}</tspan></text>
     <!--LVL Rect C3-->
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text642-2-9-4-7-2"
        x="72.96489"
        y="164.4695"><tspan
          id="tspan640-5-81-1-2-8"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.352778"
          x="72.96489"
          y="164.4695">D</tspan></text>
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text642-2-5-5-2-7-8"
        x="80.625114"
        y="164.4695"><tspan
          id="tspan640-5-2-8-1-1-6"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
          x="80.625114"
          y="164.4695">{{ozono.w16data_set.11.id_ozono_livelli | lvl_rect }}</tspan></text>
     <!--LVL Rect D3-->
@@ -2151,7 +2123,7 @@
        style="fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.242799"
        id="path644-4-2" />
     <text
-       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.58611px;font-family:'Titillium Web';-inkscape-font-specification:TitilliumWeb-Bold;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.58611px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text648-9-9"
        x="109.99477"
        y="139.83554"><tspan
@@ -2159,104 +2131,104 @@
          style="stroke-width:0.352778"
          x="109.99477"
          y="139.83554"><tspan
-   style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Light'"
+   style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Titillium Web'"
    id="tspan3343">Previsione per</tspan> {{ dates.3 | my_date_JtD }}</tspan></text>
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text642-2-1-2"
        x="172.95955"
        y="149.30858"><tspan
          id="tspan640-5-8-8"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
          x="172.95955"
          y="149.30858">Zona</tspan></text>
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text642-2-5-6-9"
        x="180.61977"
        y="149.30858"><tspan
          id="tspan640-5-2-3-5"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
          x="180.61977"
          y="149.30858">Livello</tspan></text>
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text642-2-9-8-6"
        x="172.95955"
        y="152.81514"><tspan
          id="tspan640-5-81-5-4"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.352778"
          x="172.95955"
          y="152.81514">A</tspan></text>
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text642-2-5-5-5-9"
        x="180.61977"
        y="152.82785"><tspan
          id="tspan640-5-2-8-3-7"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
          x="180.61977"
          y="152.82785">{{ozono.w16data_set.12.id_ozono_livelli | lvl_rect }}</tspan></text>
     <!--LVL Rect A4-->
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text642-2-9-7-3-6"
        x="172.95955"
        y="156.69569"><tspan
          id="tspan640-5-81-0-4-1"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.352778"
          x="172.95955"
          y="156.69569">B</tspan></text>
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text642-2-5-5-1-9-6"
        x="180.61977"
        y="156.70479"><tspan
          id="tspan640-5-2-8-0-7-8"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
          x="180.61977"
          y="156.70479">{{ozono.w16data_set.13.id_ozono_livelli | lvl_rect}}</tspan></text>
     <!--LVL Rect B4-->
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text642-2-9-4-6-8"
        x="172.95955"
        y="160.57625"><tspan
          id="tspan640-5-81-1-1-8"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.352778"
          x="172.95955"
          y="160.57625">C</tspan></text>
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text642-2-5-5-2-5-0"
        x="180.61977"
        y="160.58893"><tspan
          id="tspan640-5-2-8-1-3-6"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
          x="180.61977"
          y="160.58893">{{ozono.w16data_set.14.id_ozono_livelli | lvl_rect }}</tspan></text>
     <!--LVL Rect C4-->
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text642-2-9-4-7-4-0"
        x="172.95955"
        y="164.4695"><tspan
          id="tspan640-5-81-1-2-5-2"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.352778"
          x="172.95955"
          y="164.4695">D</tspan></text>
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text642-2-5-5-2-7-2-9"
        x="180.61977"
        y="164.4695"><tspan
          id="tspan640-5-2-8-1-1-0-3"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.11667px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.352778"
          x="180.61977"
          y="164.4695">{{ozono.w16data_set.15.id_ozono_livelli | lvl_rect }}</tspan></text>
     <!--LVL Rect D4-->
     <text
-       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.82222px;line-height:3.75px;font-family:'Titillium Web';-inkscape-font-specification:TitilliumWeb-Bold;writing-mode:lr-tb;white-space:pre;inline-size:174.589;fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.82222px;line-height:3.75px;font-family:'Titillium Web';writing-mode:lr-tb;white-space:pre;inline-size:174.589;fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text652-7-0"
        x="51.08836"
        y="259.76309"
@@ -2264,19 +2236,19 @@
        transform="translate(2.9793541,-1.6078466)"><tspan
          x="51.08836"
          y="259.76309"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Light'">nessuna particolare raccomandazione
+           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Titillium Web'">nessuna particolare raccomandazione
 </tspan></tspan><tspan
          x="51.08836"
          y="263.51308"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Light'">sconsigliata l'attività fisica all'aperto
+           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Titillium Web'">sconsigliata l'attività fisica all'aperto
 </tspan></tspan><tspan
          x="51.08836"
          y="267.26308"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Light'">sconsigliata l'attività motoria all'aperto
+           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Titillium Web'">sconsigliata l'attività motoria all'aperto
 </tspan></tspan><tspan
          x="51.08836"
          y="271.01308"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Light'">sconsigliata l'uscita di casa </tspan></tspan></text>
+           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Titillium Web'">sconsigliata l'uscita di casa </tspan></tspan></text>
     <path
        data-v-3074bd5c=""
        id="venue_1-09"
@@ -2306,7 +2278,7 @@
        style="fill-opacity:1;stroke:#000000;stroke-width:0.115793;stroke-opacity:1" />
     <!-- Zona D2 -->
     <text
-       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.58611px;font-family:'Titillium Web';-inkscape-font-specification:TitilliumWeb-Bold;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.58611px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text648-2-4"
        x="149.88808"
        y="74.861923"><tspan
@@ -2315,7 +2287,7 @@
          x="149.88808"
          y="74.861923">A</tspan></text>
     <text
-       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'Titillium Web';-inkscape-font-specification:TitilliumWeb-Bold;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text648-2-8-8"
        x="125.61806"
        y="102.44756"><tspan
@@ -2324,7 +2296,7 @@
          x="125.61806"
          y="102.44756">B</tspan></text>
     <text
-       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'Titillium Web';-inkscape-font-specification:TitilliumWeb-Bold;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text648-2-8-1-2"
        x="142.68033"
        y="112.75868"><tspan
@@ -2333,7 +2305,7 @@
          x="142.68033"
          y="112.75868">C</tspan></text>
     <text
-       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'Titillium Web';-inkscape-font-specification:TitilliumWeb-Bold;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text648-2-8-1-6-3"
        x="149.90279"
        y="92.709709"><tspan
@@ -2370,7 +2342,7 @@
        style="fill-opacity:1;stroke:#000000;stroke-width:0.115793;stroke-opacity:1" />
     <!--Zona D4-->
     <text
-       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.58611px;font-family:'Titillium Web';-inkscape-font-specification:TitilliumWeb-Bold;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.58611px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text648-2-9-7"
        x="149.88808"
        y="162.70366"><tspan
@@ -2379,7 +2351,7 @@
          x="149.88808"
          y="162.70366">A</tspan></text>
     <text
-       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'Titillium Web';-inkscape-font-specification:TitilliumWeb-Bold;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text648-2-8-6-7"
        x="125.61806"
        y="190.28932"><tspan
@@ -2388,7 +2360,7 @@
          x="125.61806"
          y="190.28932">B</tspan></text>
     <text
-       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'Titillium Web';-inkscape-font-specification:TitilliumWeb-Bold;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text648-2-8-1-46-3"
        x="142.68033"
        y="200.60046"><tspan
@@ -2397,7 +2369,7 @@
          x="142.68033"
          y="200.60046">C</tspan></text>
     <text
-       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'Titillium Web';-inkscape-font-specification:TitilliumWeb-Bold;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text648-2-8-1-6-7-3"
        x="149.90279"
        y="180.55145"><tspan
@@ -2406,7 +2378,7 @@
          x="149.90279"
          y="180.55145">D</tspan></text>
     <text
-       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.64583px;line-height:3px;font-family:'Titillium Web';-inkscape-font-specification:TitilliumWeb-Bold;writing-mode:lr-tb;white-space:pre;inline-size:174.589;fill:#7b7979;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.64583px;line-height:3px;font-family:'Titillium Web';writing-mode:lr-tb;white-space:pre;inline-size:174.589;fill:#7b7979;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text652-7-0-6"
        x="51.08836"
        y="259.76309"
@@ -2414,13 +2386,12 @@
        transform="translate(-5.5871686,15.614967)"><tspan
          x="51.08836"
          y="259.76309"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.64583px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';fill:#7b7979;fill-opacity:1">Per tutti i dettagli, consulta
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.64583px;font-family:'Titillium Web';fill:#7b7979;fill-opacity:1">Per tutti i dettagli, consulta
 </tspan></tspan><tspan
          x="51.08836"
          y="262.7631"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.64583px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';fill:#7b7979;fill-opacity:1">la scheda di approfondimento a pag. 2</tspan></tspan></text>
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.64583px;font-family:'Titillium Web';fill:#7b7979;fill-opacity:1">la scheda di approfondimento a pag. 2</tspan></tspan></text>
     <g
-       inkscape:label="Livello 1"
        id="layer1-2"
        transform="translate(0.20526208,301.69678)">
       <g
@@ -2434,13 +2405,12 @@
            x="10.000619"
            y="79.375557" />
         <text
-           style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:3.73204px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.622006"
+           style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:3.73204px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.622006"
            id="text642-2-5-5-1-8-2"
            x="16.170956"
            y="83.866272"><tspan
-             sodipodi:role="line"
              id="tspan640-5-2-8-0-8-2"
-             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.73204px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.622006"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.73204px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.622006"
              x="16.170956"
              y="83.866272">1</tspan></text>
       </g>
@@ -2455,13 +2425,12 @@
            x="10"
            y="103.15089" />
         <text
-           style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:3.73204px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.622006"
+           style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:3.73204px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.622006"
            id="text642-2-5-5-2-3-7"
            x="16.170956"
            y="107.6479"><tspan
-             sodipodi:role="line"
              id="tspan640-5-2-8-1-38-9"
-             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.73204px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.622006"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.73204px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.622006"
              x="16.170956"
              y="107.6479">2</tspan></text>
       </g>
@@ -2476,20 +2445,19 @@
            x="10.000619"
            y="166.90948" />
         <text
-           style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:3.73204px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.622006"
+           style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:3.73204px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.622006"
            id="text642-2-5-5-2-7-0-7"
            x="16.170956"
            y="167.40656"><tspan
-             sodipodi:role="line"
              id="tspan640-5-2-8-1-1-8-5"
-             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.73204px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.622006"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.73204px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.622006"
              x="16.170956"
              y="171.40656">3</tspan></text>
       </g>
       <!--Header2-->
       {% include "header.svg" with title='Bollettino Ozono' seqNum=ozono.seq_num startValidTime=ozono.start_valid_time nextUpdate=ozono.next_blt_time validity=ozono.validity logo=ozono.logo %}
       <text
-       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.175px;font-family:'Titillium Web';-inkscape-font-specification:TitilliumWeb-Bold;writing-mode:lr-tb;fill:#2e9d53;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.175px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#2e9d53;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text708"
        x="199.82204"
        y="287.82199"><tspan
@@ -2502,11 +2470,10 @@
          style="fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352779"
          id="path644-8" />
       <text
-         style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.58611px;font-family:'Titillium Web';-inkscape-font-specification:TitilliumWeb-Bold;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+         style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.58611px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
          id="text648-5"
          x="10.000085"
          y="51.993835"><tspan
-           sodipodi:role="line"
            id="tspan646-09"
            style="stroke-width:0.352778"
            x="10.000085"
@@ -2520,13 +2487,12 @@
          id="text721"
          style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect723);fill:#000000;fill-opacity:1;stroke:none;" />
       <text
-         style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:4.58611px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f54ab;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.0256"
+         style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:4.58611px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f54ab;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.0256"
          id="text642-2-5-8-8"
          x="16.17078"
          y="62.122887"><tspan
-           sodipodi:role="line"
            id="tspan640-5-2-86-8"
-           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:4.58611px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Light';text-align:center;text-anchor:middle;fill:#2f54ab;fill-opacity:1;stroke-width:1.0256"
+           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:4.58611px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#2f54ab;fill-opacity:1;stroke-width:1.0256"
            x="16.17078"
            y="62.122887">Livello</tspan></text>
       <g
@@ -2540,34 +2506,31 @@
            x="10"
            y="66.712669" />
         <text
-           style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:3.73204px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.622006"
+           style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:3.73204px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.622006"
            id="text642-2-5-5-6-6"
            x="16.170956"
            y="71.20974"><tspan
-             sodipodi:role="line"
              id="tspan640-5-2-8-7-0"
-             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.73204px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.622006"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.73204px;font-family:'Titillium Web';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.622006"
              x="16.170956"
              y="71.20974">0</tspan></text>
       </g>
       <text
-         style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:4.58611px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#2f54ab;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.0256"
+         style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:4.58611px;font-family:'Titillium Web Light';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#2f54ab;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.0256"
          id="text642-2-5-8-8-7"
          x="29.170216"
          y="62.118301"><tspan
-           sodipodi:role="line"
            id="tspan640-5-2-86-8-8"
-           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:4.58611px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Light';text-align:start;text-anchor:start;fill:#2f54ab;fill-opacity:1;stroke-width:1.0256"
+           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:4.58611px;font-family:'Titillium Web';text-align:start;text-anchor:start;fill:#2f54ab;fill-opacity:1;stroke-width:1.0256"
            x="29.170216"
            y="62.118301">Concentrazione Ozono</tspan></text>
       <text
-         style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:4.58611px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#2f54ab;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.0256"
+         style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:4.58611px;font-family:'Titillium Web Light';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#2f54ab;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.0256"
          id="text642-2-5-8-8-7-1"
          x="78.845345"
          y="62.122887"><tspan
-           sodipodi:role="line"
            id="tspan640-5-2-86-8-8-5"
-           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:4.58611px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Light';text-align:start;text-anchor:start;fill:#2f54ab;fill-opacity:1;stroke-width:1.0256"
+           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:4.58611px;font-family:'Titillium Web';text-align:start;text-anchor:start;fill:#2f54ab;fill-opacity:1;stroke-width:1.0256"
            x="78.845345"
            y="62.122887">Raccomandazioni</tspan></text>
       <foreignObject
@@ -2608,10 +2571,10 @@
          height="50">
         <div
            class="note">
-                  Le categorie più sensibili, cioè bambini, anziani, asmatici, bronchitici cronici, cardiopatici, 
-                  devono evitare di svolgere attività fisica anche moderata all'aperto, come ad esempio camminare velocemente, 
-                  in particolare nelle ore più calde e di massima insolazione della giornata. Si consiglia a tutta 
-                  la popolazione di integrare la propria dieta con cibi contenenti sostanze antiossidanti. 
+                  Le categorie più sensibili, cioè bambini, anziani, asmatici, bronchitici cronici, cardiopatici,
+                  devono evitare di svolgere attività fisica anche moderata all'aperto, come ad esempio camminare velocemente,
+                  in particolare nelle ore più calde e di massima insolazione della giornata. Si consiglia a tutta
+                  la popolazione di integrare la propria dieta con cibi contenenti sostanze antiossidanti.
                   Nella tabella che segue sono riportate alcune indicazioni in merito.
             </div>
       </foreignObject>
@@ -2632,16 +2595,16 @@
          height="100">
         <div
            class="note">
-                  Le categorie più sensibili, cioè bambini, anziani, asmatici, bronchitici cronici,cardiopatici, 
-                  devono evitare di svolgere qualsiasi attività fisica all'aperto, come ad esempio correre, 
-                  in particolare nelle ore più calde e di massima insolazione della giornata. 
-                  I soggetti mediamente sensibili come gli adolescenti, devono evitare di svolgere all'aperto 
-                  attività fisica intensa, come ad esempio correre, in particolare nelle ore più calde 
-                  e di massima insolazione della giornata. Tutta la popolazione, quindi anche i soggetti meno sensibili, 
-                  come gli adulti sani, devono evitare nelle ore più calde e di massima insolazione della giornata, 
-                  di fare sforzi fisici all'aperto che comportano un attività fisica molto intensa, 
-                  come ad esempio correre velocemente. Si consiglia a tutta la popolazione di integrare 
-                  la propria dieta con cibi contenenti sostanze antiossidanti. 
+                  Le categorie più sensibili, cioè bambini, anziani, asmatici, bronchitici cronici,cardiopatici,
+                  devono evitare di svolgere qualsiasi attività fisica all'aperto, come ad esempio correre,
+                  in particolare nelle ore più calde e di massima insolazione della giornata.
+                  I soggetti mediamente sensibili come gli adolescenti, devono evitare di svolgere all'aperto
+                  attività fisica intensa, come ad esempio correre, in particolare nelle ore più calde
+                  e di massima insolazione della giornata. Tutta la popolazione, quindi anche i soggetti meno sensibili,
+                  come gli adulti sani, devono evitare nelle ore più calde e di massima insolazione della giornata,
+                  di fare sforzi fisici all'aperto che comportano un attività fisica molto intensa,
+                  come ad esempio correre velocemente. Si consiglia a tutta la popolazione di integrare
+                  la propria dieta con cibi contenenti sostanze antiossidanti.
                   Nella tabella che segue sono riportate alcune indicazioni in merito.
             </div>
       </foreignObject>
@@ -2662,16 +2625,16 @@
          height="100">
         <div
            class="note">
-                  Le categorie più sensibili, cioè bambini, anziani, asmatici, bronchitici cronici,cardiopatici, 
-                  devono evitare di uscire di casa e di svolgere qualsiasi attività fisica all'aperto, 
+                  Le categorie più sensibili, cioè bambini, anziani, asmatici, bronchitici cronici,cardiopatici,
+                  devono evitare di uscire di casa e di svolgere qualsiasi attività fisica all'aperto,
                   in particolare durante le ore più calde e di massima insolazione della giornata. I
-                  soggetti mediamente sensibili, come gli adolescenti, devono evitare di svolgere 
-                  all'aperto attività fisica anche moderata, come ad esempio camminare velocemente, 
-                  in particolare nelle ore più calde e di massima insolazione della giornata. 
-                  Tutta la popolazione, quindi anche i soggetti meno sensibili, come gli adulti sani, 
-                  devono evitare nelle ore più calde e di massima insolazione della giornata, 
-                  di fare sforzi fisici all'aperto che comportano un intensa attività fisica, 
-                  come ad esempio correre. Si consiglia a tutta la popolazione di integrare la propria dieta 
+                  soggetti mediamente sensibili, come gli adolescenti, devono evitare di svolgere
+                  all'aperto attività fisica anche moderata, come ad esempio camminare velocemente,
+                  in particolare nelle ore più calde e di massima insolazione della giornata.
+                  Tutta la popolazione, quindi anche i soggetti meno sensibili, come gli adulti sani,
+                  devono evitare nelle ore più calde e di massima insolazione della giornata,
+                  di fare sforzi fisici all'aperto che comportano un intensa attività fisica,
+                  come ad esempio correre. Si consiglia a tutta la popolazione di integrare la propria dieta
                   con cibi contenenti sostanze antiossidanti. Nella tabella che segue sono riportate alcune indicazioni in merito.
             </div>
       </foreignObject>
@@ -2681,24 +2644,22 @@
          id="path644-5" />
       <!--Line Sostanze-->
       <text
-         style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.58611px;font-family:'Titillium Web';-inkscape-font-specification:TitilliumWeb-Bold;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+         style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.58611px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
          id="text648-8"
          x="10.000085"
          y="194.86887"><tspan
-           sodipodi:role="line"
            id="tspan646-6"
            style="stroke-width:0.352778"
            x="10.000085"
            y="204.86887">Sostanze antiossidanti e alimenti che le contengono</tspan></text>
       <!--Titolo Sostanze-->
       <text
-         style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:4.58611px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#2f54ab;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.0256"
+         style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:4.58611px;font-family:'Titillium Web Light';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#2f54ab;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.0256"
          id="text642-2-5-8-8-73"
          x="9.8807611"
          y="214.99794"><tspan
-           sodipodi:role="line"
            id="tspan640-5-2-86-8-0"
-           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:4.58611px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Light';text-align:start;text-anchor:start;fill:#2f54ab;fill-opacity:1;stroke-width:1.0256"
+           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:4.58611px;font-family:'Titillium Web';text-align:start;text-anchor:start;fill:#2f54ab;fill-opacity:1;stroke-width:1.0256"
            x="9.8807611"
            y="214.99794">Vitamina C</tspan></text>
       <!--Sottotitolo Vitamina C -->
@@ -2713,13 +2674,12 @@
             </div>
       </foreignObject>
       <text
-         style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:4.58611px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#2f54ab;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.0256"
+         style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:4.58611px;font-family:'Titillium Web Light';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#2f54ab;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.0256"
          id="text642-2-5-8-8-73-3"
          x="9.8807611"
          y="216.6396"><tspan
-           sodipodi:role="line"
            id="tspan640-5-2-86-8-0-5"
-           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:4.58611px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Light';text-align:start;text-anchor:start;fill:#2f54ab;fill-opacity:1;stroke-width:1.0256"
+           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:4.58611px;font-family:'Titillium Web';text-align:start;text-anchor:start;fill:#2f54ab;fill-opacity:1;stroke-width:1.0256"
            x="9.8807611"
            y="226.6396">Vitamina E</tspan></text>
       <!--Sottotitolo Vitamina E -->
@@ -2735,13 +2695,12 @@
             </div>
       </foreignObject>
       <text
-         style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:4.58611px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#2f54ab;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.0256"
+         style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:4.58611px;font-family:'Titillium Web Light';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#2f54ab;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.0256"
          id="text642-2-5-8-8-73-3-0"
          x="9.8807611"
          y="228.28127"><tspan
-           sodipodi:role="line"
            id="tspan640-5-2-86-8-0-5-9"
-           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:4.58611px;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Light';text-align:start;text-anchor:start;fill:#2f54ab;fill-opacity:1;stroke-width:1.0256"
+           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:4.58611px;font-family:'Titillium Web';text-align:start;text-anchor:start;fill:#2f54ab;fill-opacity:1;stroke-width:1.0256"
            x="9.8807611"
            y="238.28127">Selenio</tspan></text>
       <!--Sottotitolo Selenio -->

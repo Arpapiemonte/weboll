@@ -1,111 +1,14 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg
-   id="svg"
-   viewBox="0 0 440 440"
-   version="1.1"
-   sodipodi:docname="temporali_4.svg"
-   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
-   width="448"
-   height="448"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:dc="http://purl.org/dc/elements/1.1/">
-  <sodipodi:namedview
-     id="namedview16"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="0"
-     showgrid="false"
-     inkscape:zoom="1.688"
-     inkscape:cx="249.70379"
-     inkscape:cy="227.19194"
-     inkscape:window-width="1846"
-     inkscape:window-height="1016"
-     inkscape:window-x="74"
-     inkscape:window-y="27"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="temporali_4"
-     width="448px" />
-  <defs
-     id="defs4">
-    <style
-       id="style2">
-      .cls-1, .cls-3, .cls-4 {
-        stroke: #fff;
-      }
-
-      .cls-1, .cls-4 {
-        stroke-miterlimit: 10;
-      }
-
-      .cls-1 {
-        stroke-width: 16.09px;
-      }
-
-      .cls-2 {
-        font-size: 172.89px;
-        fill: #fff;
-        font-family: MyriadPro-Regular, Myriad Pro;
-      }
-
-      .cls-3 {
-        fill: none;
-        stroke-linecap: square;
-        stroke-linejoin: round;
-        stroke-width: 14.71px;
-      }
-
-      .cls-4 {
-        fill: #fbb03b;
-        stroke-width: 11.03px;
-      }
-    </style>
-  </defs>
-  <title
-     id="title6">temporali_4</title>
-  <g
-     id="temporali_4">
-    <path
-       id="quadrato_nero"
-       class="cls-1"
-       d="m 436.6,370.81 c 0,33.29 -27.88,60.28 -62.26,60.28 H 73.66 c -34.38,0 -62.26,-27 -62.26,-60.28 V 79.68 C 11.4,46.39 39.27,19.4 73.66,19.4 h 300.68 c 34.38,0 62.26,27 62.26,60.28 z"
-       style="stroke-width:0;stroke-miterlimit:10;stroke-dasharray:none" />
-    <text
-       class="cls-2"
-       transform="scale(1.069045,0.93541432)"
-       id="text9"
-       x="45.012203"
-       y="458.90894"
-       style="stroke-width:0.972831">+3h</text>
-    <path
-       id="nuvola"
-       class="cls-3"
-       d="m 308.59,189 c 64.5,0 43.2,1.24 54,-0.64 30.33,-5.25 42.73,-32.93 20.79,-46 -29.19,-17.38 -38.61,0.42 -70.65,15 28,-27.14 20.12,-62.07 -4.67,-67.86 -32.21,-7.52 -55.93,7.85 -66,32.46 11.42,-20.38 9.08,-44.65 -6,-61.17 C 224.18,47.87 203.45,42 188.52,42 175.19,42 146.83,51.5 136.28,62.37 121.36,77.74 113.89,93.89 123.55,111.12 114.33,99.65 100.07,92.94 77.89,98.5 c -16.17,4.05 -30.66,24.3 -33.07,40 -3.36,21.91 5.35,40.07 19.46,46.52 12.34,5.63 21,5.25 35,5.25" />
-    <polygon
-       id="fulmine_piccolo"
-       class="cls-4"
-       points="315,236.13 243.11,312.69 279.33,245.14 243.14,234.31 306.19,166.26 275.62,223.04 "
-       transform="translate(-26,-18)" />
-    <polygon
-       id="fulmine_grande"
-       class="cls-4"
-       points="231.15,198.26 194.08,239.8 240.78,257.66 150.72,333.61 197.48,264.03 154.5,248.91 184.6,208.42 150.43,200.65 230.44,118.57 196.97,190.49 "
-       transform="translate(-26,-18)" />
-  </g>
-  <metadata
-     id="metadata833">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:title>temporali_4</dc:title>
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
+<svg xmlns="http://www.w3.org/2000/svg" id="svg" width="448" height="448" version="1.1" viewBox="0 0 440 440">
+    <defs id="defs4">
+        <style id="style2">
+            .cls-4{stroke:#fff;stroke-miterlimit:10;fill:#fbb03b;stroke-width:11.03px}
+        </style>
+    </defs>
+    <g id="temporali_4">
+        <path id="quadrato_nero" d="M436.6 370.81c0 33.29-27.88 60.28-62.26 60.28H73.66c-34.38 0-62.26-27-62.26-60.28V79.68c0-33.29 27.87-60.28 62.26-60.28h300.68c34.38 0 62.26 27 62.26 60.28z" style="stroke-width:0;stroke-miterlimit:10;stroke-dasharray:none;stroke:#fff"/>
+        <text id="text9" x="45.012" y="458.909" style="stroke-width:.972831;font-size:172.89px;fill:#fff;font-family:MyriadPro-Regular,Myriad Pro" transform="scale(1.06905 .93541)">+3h</text>
+        <path id="nuvola" d="M308.59 189c64.5 0 43.2 1.24 54-.64 30.33-5.25 42.73-32.93 20.79-46-29.19-17.38-38.61.42-70.65 15 28-27.14 20.12-62.07-4.67-67.86-32.21-7.52-55.93 7.85-66 32.46 11.42-20.38 9.08-44.65-6-61.17C224.18 47.87 203.45 42 188.52 42c-13.33 0-41.69 9.5-52.24 20.37-14.92 15.37-22.39 31.52-12.73 48.75-9.22-11.47-23.48-18.18-45.66-12.62-16.17 4.05-30.66 24.3-33.07 40-3.36 21.91 5.35 40.07 19.46 46.52 12.34 5.63 21 5.25 35 5.25" style="fill:none;stroke-linecap:square;stroke-linejoin:round;stroke-width:14.71px;stroke:#fff"/>
+        <path id="fulmine_piccolo" d="m315 236.13-71.89 76.56 36.22-67.55-36.19-10.83 63.05-68.05-30.57 56.78z" class="cls-4" transform="translate(-26 -18)"/>
+        <path id="fulmine_grande" d="m231.15 198.26-37.07 41.54 46.7 17.86-90.06 75.95 46.76-69.58-42.98-15.12 30.1-40.49-34.17-7.77 80.01-82.08-33.47 71.92z" class="cls-4" transform="translate(-26 -18)"/>
+    </g>
 </svg>

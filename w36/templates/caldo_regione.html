@@ -1,0 +1,730 @@
+{% load date_extras_w36 %}
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <title>Bollettino caldo Regione Piemonte {{ numero_bollettino }} del {{ data_emissione }}</title>
+  </head>
+  <style>
+	  .textcit {
+		font-family:'Titillium Web';
+	  	font-size:11px;
+	}
+		rect.caldo0 {fill: #18EA2C;}
+		rect.caldo1 {fill: #FFFA43;}
+		rect.caldo2 {fill: #FC7E29;}
+		rect.caldo3 {fill: #F92B2B;}
+
+		circle.caldo0 {fill: #18EA2C;}
+		circle.caldo1 {fill: #FFFA43;}
+		circle.caldo2 {fill: #FC7E29;}
+		circle.caldo3 {fill: #F92B2B;}
+
+		
+
+
+
+	.legenda-text-meteosalute {
+				fill:#040496;
+				font-family:'Titillium Web'; 
+				font-size:11px;
+				font-weight: bold;
+				font-style: italic;
+				}
+
+	.legenda-quadrati {
+				fill:#EFEFEF;
+				stroke:#ffffff;
+				stroke-width:2px;
+				stroke-miterlimit:10px;
+				}
+
+	.legenda-text-spiegazioni {
+				fill:#000000;
+				font-family:'Titillium Web'; 
+				font-size:8.5px;			
+				}
+
+	.text-data {
+				fill:#000000;
+				font-family:'Titillium Web';
+				font-size:13px;
+				font-weight: bold;
+				}		
+
+	.text-ggconsecut {
+				fill:#000000;
+				font-family:'Titillium Web';
+				font-size:10px;
+				font-weight: bold;
+				}
+				
+	.text-footer {
+				fill:#494949;
+				font-family:'Titillium Web'; 
+				font-size:8px;
+				font-style: italic;
+				}
+
+	.testonota {
+      			fill:#231f20;
+     			font-size:10px;
+	  			font-family:'Titillium Web';   
+	  			text-align: justify;
+	  			font-style: normal;
+      			font-variant: normal;
+	  			line-height: 10px;
+				}
+  </style>
+  <body>
+
+  <?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 18.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 595 842" style="enable-background:new 0 0 595 842;" xml:space="preserve">
+
+   <g>
+    {% include "headerw36.svg" with validity='24' title='REGIONE PIEMONTE' seqNum=caldo.seq_num startValidTime=caldo.data_emissione logo='regione-piemonte' username=caldo.username%}
+    </g>
+
+
+<g id="giorno1">
+	<g>
+		<rect x="34" y="142.75" style="fill:#EDEDED;stroke:#A7A7AA;stroke-miterlimit:10;" width="98.056" height="22.904"/>
+		<rect x="34" y="268.641" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="98.056" height="14.216"/>
+		<rect x="34" y="253.899" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="98.056" height="14.216"/>
+		<rect x="34" y="239.156" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="98.056" height="14.216"/>
+		<rect x="34" y="224.413" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="98.056" height="14.216"/>
+		<rect x="34" y="209.671" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="98.056" height="14.216"/>
+		<rect x="34" y="194.928" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="98.056" height="14.216"/>
+		<rect x="34" y="180.186" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="98.056" height="14.216"/>
+		<rect x="34" y="165.443" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="98.056" height="14.216"/>
+		<text transform="matrix(0.9496 0 0 1 43.5563 177.2905)" font-weight="bold" class="textcit">TORINO</text>
+		<text transform="matrix(0.9496 0 0 1 43.5563 192.0332)" font-weight="bold" class="textcit">ALESSANDRIA</text>
+		<text transform="matrix(0.9496 0 0 1 43.5563 206.7759)" font-weight="bold" class="textcit">ASTI</text>
+		<text transform="matrix(0.9496 0 0 1 43.5563 221.5181)" font-weight="bold" class="textcit">BIELLA</text>
+		<text transform="matrix(0.9496 0 0 1 43.5563 236.2607)" font-weight="bold" class="textcit">CUNEO</text>
+		<text transform="matrix(0.9496 0 0 1 43.5563 251.0034)" font-weight="bold" class="textcit">NOVARA</text>
+		<text transform="matrix(0.9496 0 0 1 43.5563 265.7461)" font-weight="bold" class="textcit">VERBANIA</text>
+		<text transform="matrix(0.9496 0 0 1 43.5563 280.4883)" font-weight="bold" class="textcit">VERCELLI</text>
+		<rect x="136" y="142.75" style="fill:#EDEDED;stroke:#A7A7AA;stroke-miterlimit:10;" width="54.556" height="22.904"/>
+		<text transform="matrix(0.9496 0 0 1 46.5563 158.2832)" style="font-family:'Titillium Web'; font-size:14;">{{ caldo.data_emissione | my_date_dmY}}</text>
+	<g id="to">
+		<rect x="136" y="165.443" class="caldo{{caldo_rearranged.COD_COLORE.48.59.0}}" style="stroke:#A7A7AA;stroke-miterlimit:10;" width="54.556" height="14.216"/>
+		<text transform="matrix(0.9496 0 0 1 160.5562 177.2905)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.COD_COLORE.48.59.0 }}</text>
+	</g>
+	<g id="al">
+		<rect x="136" y="180.186" class="caldo{{caldo_rearranged.COD_COLORE.48.9.0}}" style="stroke:#A7A7AA;stroke-miterlimit:10;" width="54.556" height="14.216"/>
+		<text transform="matrix(0.9496 0 0 1 160.5562 192.0332)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.COD_COLORE.48.9.0 }}</text>
+	</g>
+	<g id="at">
+		<rect x="136" y="194.928" class="caldo{{caldo_rearranged.COD_COLORE.48.11.0}}" style="stroke:#A7A7AA;stroke-miterlimit:10;" width="54.556" height="14.216"/>
+		<text transform="matrix(0.9496 0 0 1 160.5562 206.7759)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.COD_COLORE.48.11.0 }}</text>
+	</g>
+	<g id="bi">
+		<rect x="136" y="209.671" class="caldo{{caldo_rearranged.COD_COLORE.48.1.0}}" style="stroke:#A7A7AA;stroke-miterlimit:10;" width="54.556" height="14.216"/>
+		<text transform="matrix(0.9496 0 0 1 160.5562 221.5181)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.COD_COLORE.48.1.0 }}</text>
+	</g>
+	<g id="cn">
+		<rect x="136" y="224.413" class="caldo{{caldo_rearranged.COD_COLORE.48.28.0}}" style="stroke:#A7A7AA;stroke-miterlimit:10;" width="54.556" height="14.216"/>
+		<text transform="matrix(0.9496 0 0 1 160.5562 236.2607)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.COD_COLORE.48.28.0 }}</text>
+	</g>
+	<g id="no">
+		<rect x="136" y="239.156" class="caldo{{caldo_rearranged.COD_COLORE.48.33.0}}" style="stroke:#A7A7AA;stroke-miterlimit:10;" width="54.556" height="14.216"/>
+		<text transform="matrix(0.9496 0 0 1 160.5562 251.0034)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.COD_COLORE.48.33.0 }}</text>
+	</g>
+	<g id="vb">
+		<rect x="136" y="253.899" class="caldo{{caldo_rearranged.COD_COLORE.48.63.0}}" style="stroke:#A7A7AA;stroke-miterlimit:10;" width="54.556" height="14.216"/>
+		<text transform="matrix(0.9496 0 0 1 160.5562 265.7461)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.COD_COLORE.48.63.0 }}</text>
+	</g>
+	<g id="vc">
+		<rect x="136" y="268.641" class="caldo{{caldo_rearranged.COD_COLORE.48.64.0}}" style="stroke:#A7A7AA;stroke-miterlimit:10;" width="54.556" height="14.216"/>
+		<text transform="matrix(0.9496 0 0 1 160.5562 280.4883)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.COD_COLORE.48.64.0 }}</text>
+	</g>
+		<text transform="matrix(0.9496 0 0 1 140.5562 158.8096)" style="font-family:'Arial-BoldMT'; font-size:12;">LIVELLO</text>
+		<rect x="194" y="142.75" style="fill:#EDEDED;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="22.904"/>
+		<rect x="194" y="268.641" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="194" y="253.899" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="194" y="239.156" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="194" y="224.413" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="194" y="209.671" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="194" y="194.928" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="194" y="180.186" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="194" y="165.443" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<text transform="matrix(0.9496 0 0 1 214.5562 176.2905)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.TERMA.48.59.328 }}</text>
+		<text transform="matrix(0.9496 0 0 1 214.5562 191.0332)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.TERMA.48.9.328 }}</text>
+		<text transform="matrix(0.9496 0 0 1 214.5562 205.7759)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.TERMA.48.11.328 }}</text>
+		<text transform="matrix(0.9496 0 0 1 214.5562 220.5181)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.TERMA.48.1.328 }}</text>
+		<text transform="matrix(0.9496 0 0 1 214.5562 235.2607)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.TERMA.48.28.328 }}</text>
+		<text transform="matrix(0.9496 0 0 1 214.5562 250.0034)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.TERMA.48.33.328 }}</text>
+		<text transform="matrix(0.9496 0 0 1 214.5562 264.7461)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.TERMA.48.63.328 }}</text>
+		<text transform="matrix(0.9496 0 0 1 214.5562 279.4883)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.TERMA.48.64.328 }}</text>
+		<text transform="matrix(0.9496 0 0 1 198.5562 158.8096)" style="font-family:'Titillium Web'; font-size:11.5834;">T</text>
+		<text transform="matrix(0.9496 0 0 1 204.0562 159.3999)" style="font-family:'Titillium Web'; font-size:8.4243;">max</text>
+		<text transform="matrix(1.0102 0 0 1 223.3126 158.3462)" style="font-family:'Titillium Web'; font-size:9.4773;">[&#xB0;C]</text>
+		<rect x="244" y="142.75" style="fill:#EDEDED;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="22.904"/>
+		<rect x="244" y="268.641" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="244" y="253.899" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="244" y="239.156" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="244" y="224.413" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="244" y="209.671" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="244" y="194.928" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="244" y="180.186" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="244" y="165.443" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<text transform="matrix(1.0102 0 0 1 276.3126 158.3462)" style="font-family:'Titillium Web'; font-size:9.4773;">[&#xB0;C]</text>
+		<text transform="matrix(0.9496 0 0 1 247.5562 158.8096)" style="font-family:'Titillium Web'; font-size:11.5834;">AT</text>
+		<text transform="matrix(0.9496 0 0 1 261.0562 159.3999)" style="font-family:'Titillium Web'; font-size:8.4243;">max</text>
+		<rect x="294" y="142.75" style="fill:#EDEDED;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="22.904"/>
+		<rect x="294" y="268.641" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="294" y="253.899" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="294" y="239.156" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="294" y="224.413" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="294" y="209.671" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="294" y="194.928" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="294" y="180.186" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="294" y="165.443" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<text transform="matrix(1.0102 0 0 1 323.3121 158.3462)" style="font-family:'Titillium Web'; font-size:9.4773;">[&#xB0;C]</text>
+		<text transform="matrix(0.9496 0 0 1 300.5562 158.8096)" style="font-family:'Titillium Web'; font-size:11.5834;">T</text>
+		<rect x="344" y="142.75" style="fill:#EDEDED;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="22.904"/>
+		<rect x="344" y="268.641" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="344" y="253.899" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="344" y="239.156" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="344" y="224.413" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="344" y="209.671" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="344" y="194.928" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="344" y="180.186" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="344" y="165.443" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<text transform="matrix(1.0102 0 0 1 375.3121 158.3462)" style="font-family:'Titillium Web'; font-size:9.4773;">[&#xB0;C]</text>
+		<g>
+			<text transform="matrix(0.9496 0 0 1 347.5562 158.8096)" style="font-family:'Titillium Web'; font-size:11.5834;">AT</text>
+		</g>
+		<text transform="matrix(0.9496 0 0 1 307.0562 159.3999)" style="font-family:'Titillium Web'; font-size:8.4243;">min</text>
+		<text transform="matrix(0.9496 0 0 1 361.0562 160.4531)" style="font-family:'Titillium Web'; font-size:8.4243;">min</text>
+		<rect x="394" y="142.75" style="fill:#EDEDED;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="22.904"/>
+		<rect x="394" y="268.641" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="394" y="253.899" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="394" y="239.156" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="394" y="224.413" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="394" y="209.671" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="394" y="194.928" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="394" y="180.186" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="394" y="165.443" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<text transform="matrix(0.9496 0 0 1 400.3121 153.0815)"><tspan x="0" y="0" style="font-family:'Titillium Web'; font-size:8.4243;">giorni caldo</tspan><tspan x="0.527" y="10.109" style="font-family:'Titillium Web'; font-size:8.4243;">consecutivi</tspan></text>
+		<!--<rect x="448.556" y="134.5" style="fill:none;stroke:#000000;stroke-miterlimit:10;" width="121" height="157"/>-->
+    <g transform="translate(428 100.5) scale(0.27)">
+      <!--Scenario ATTUALE-->
+      {% include "piemonte_caldo.svg" with vb=caldo_rearranged.COD_COLORE.48.63.0 bi=caldo_rearranged.COD_COLORE.48.1.0 at=caldo_rearranged.COD_COLORE.48.11.0 cn=caldo_rearranged.COD_COLORE.48.28.0 no=caldo_rearranged.COD_COLORE.48.33.0 to=caldo_rearranged.COD_COLORE.48.59.0 vc=caldo_rearranged.COD_COLORE.48.64.0 al=caldo_rearranged.COD_COLORE.48.9.0%}
+    </g>
+		<text transform="matrix(0.9496 0 0 1 264.5562 176.2905)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.ATMAX.48.59.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 264.5562 191.0332)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.ATMAX.48.9.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 264.5562 205.7759)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.ATMAX.48.11.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 264.5562 220.5181)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.ATMAX.48.1.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 264.5562 235.2607)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.ATMAX.48.28.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 264.5562 250.0034)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.ATMAX.48.33.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 264.5562 264.7461)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.ATMAX.48.63.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 264.5562 279.4883)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.ATMAX.48.64.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 314.5562 176.2905)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.TERMA.48.59.327 }}</text>
+		<text transform="matrix(0.9496 0 0 1 314.5562 191.0332)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.TERMA.48.9.327 }}</text>
+		<text transform="matrix(0.9496 0 0 1 314.5562 205.7759)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.TERMA.48.11.327 }}</text>
+		<text transform="matrix(0.9496 0 0 1 314.5562 220.5181)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.TERMA.48.1.327 }}</text>
+		<text transform="matrix(0.9496 0 0 1 314.5562 235.2607)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.TERMA.48.28.327 }}</text>
+		<text transform="matrix(0.9496 0 0 1 314.5562 250.0034)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.TERMA.48.33.327 }}</text>
+		<text transform="matrix(0.9496 0 0 1 314.5562 264.7461)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.TERMA.48.63.327 }}</text>
+		<text transform="matrix(0.9496 0 0 1 314.5562 279.4883)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.TERMA.48.64.327 }}</text>
+		<text transform="matrix(0.9496 0 0 1 363.5562 176.2905)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.ATMIN.48.59.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 363.5562 191.0332)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.ATMIN.48.9.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 363.5562 205.7759)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.ATMIN.48.11.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 363.5562 220.5181)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.ATMIN.48.1.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 363.5562 235.2607)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.ATMIN.48.28.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 363.5562 250.0034)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.ATMIN.48.33.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 363.5562 264.7461)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.ATMIN.48.63.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 363.5562 279.4883)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.ATMIN.48.64.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 414.5562 176.2905)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.GGCONS.48.59.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 414.5562 191.0332)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.GGCONS.48.9.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 414.5562 205.7759)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.GGCONS.48.11.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 414.5562 220.5181)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.GGCONS.48.1.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 414.5562 235.2607)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.GGCONS.48.28.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 414.5562 250.0034)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.GGCONS.48.33.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 414.5562 264.7461)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.GGCONS.48.63.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 414.5562 279.4883)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.GGCONS.48.64.0 }}</text>
+	</g>
+</g>
+<g id="giorno2">
+	<g>
+		<rect x="34" y="312.25" style="fill:#EDEDED;stroke:#A7A7AA;stroke-miterlimit:10;" width="98.056" height="22.904"/>
+		<rect x="34" y="438.141" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="98.056" height="14.216"/>
+		<rect x="34" y="423.399" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="98.056" height="14.216"/>
+		<rect x="34" y="408.656" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="98.056" height="14.216"/>
+		<rect x="34" y="393.914" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="98.056" height="14.216"/>
+		<rect x="34" y="379.171" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="98.056" height="14.216"/>
+		<rect x="34" y="364.428" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="98.056" height="14.216"/>
+		<rect x="34" y="349.686" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="98.056" height="14.216"/>
+		<rect x="34" y="334.943" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="98.056" height="14.216"/>
+		<text transform="matrix(0.9496 0 0 1 43.5563 346.7905)" font-weight="bold" class="textcit">TORINO</text>
+		<text transform="matrix(0.9496 0 0 1 43.5563 361.5332)" font-weight="bold" class="textcit">ALESSANDRIA</text>
+		<text transform="matrix(0.9496 0 0 1 43.5563 376.2759)" font-weight="bold" class="textcit">ASTI</text>
+		<text transform="matrix(0.9496 0 0 1 43.5563 391.0181)" font-weight="bold" class="textcit">BIELLA</text>
+		<text transform="matrix(0.9496 0 0 1 43.5563 405.7607)" font-weight="bold" class="textcit">CUNEO</text>
+		<text transform="matrix(0.9496 0 0 1 43.5563 420.5034)" font-weight="bold" class="textcit">NOVARA</text>
+		<text transform="matrix(0.9496 0 0 1 43.5563 435.2461)" font-weight="bold" class="textcit">VERBANIA</text>
+		<text transform="matrix(0.9496 0 0 1 43.5563 449.9883)" font-weight="bold" class="textcit">VERCELLI</text>
+		<rect x="136" y="312.25" style="fill:#EDEDED;stroke:#A7A7AA;stroke-miterlimit:10;" width="54.556" height="22.904"/>
+		
+		<text transform="matrix(0.9496 0 0 1 46.5563 327.7832)" style="font-family:'Titillium Web'; font-size:14;">{{ caldo.data_emissione | date_tomorrow}}</text>
+	<g id="to">
+		<rect x="136" y="334.943" class="caldo{{caldo_rearranged.COD_COLORE.66.59.0}}" style="stroke:#A7A7AA;stroke-miterlimit:10;" width="54.556" height="14.216"/>
+		<text transform="matrix(0.9496 0 0 1 160.5562 346.7905)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.COD_COLORE.66.59.0 }}</text>
+	</g>
+	<g id="al">
+		<rect x="136" y="349.686" class="caldo{{caldo_rearranged.COD_COLORE.66.9.0}}" style="stroke:#A7A7AA;stroke-miterlimit:10;" width="54.556" height="14.216"/>
+		<text transform="matrix(0.9496 0 0 1 160.5562 361.5332)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.COD_COLORE.66.9.0 }}</text>
+	</g>
+	<g id="at">
+		<rect x="136" y="364.428" class="caldo{{caldo_rearranged.COD_COLORE.66.11.0}}" style="stroke:#A7A7AA;stroke-miterlimit:10;" width="54.556" height="14.216"/>
+		<text transform="matrix(0.9496 0 0 1 160.5562 376.2759)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.COD_COLORE.66.11.0 }}</text>
+	</g>
+	<g id="bi">
+		<rect x="136" y="379.171" class="caldo{{caldo_rearranged.COD_COLORE.66.1.0}}" style="stroke:#A7A7AA;stroke-miterlimit:10;" width="54.556" height="14.216"/>
+		<text transform="matrix(0.9496 0 0 1 160.5562 391.0181)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.COD_COLORE.66.1.0 }}</text>
+	</g>
+	<g id="cn">
+		<rect x="136" y="393.914" class="caldo{{caldo_rearranged.COD_COLORE.66.28.0}}" style="stroke:#A7A7AA;stroke-miterlimit:10;" width="54.556" height="14.216"/>
+		<text transform="matrix(0.9496 0 0 1 160.5562 405.7607)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.COD_COLORE.66.28.0 }}</text>
+	</g>
+	<g id="no">
+		<rect x="136" y="408.656" class="caldo{{caldo_rearranged.COD_COLORE.66.33.0}}" style="stroke:#A7A7AA;stroke-miterlimit:10;" width="54.556" height="14.216"/>
+		<text transform="matrix(0.9496 0 0 1 160.5562 420.5034)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.COD_COLORE.66.33.0 }}</text>
+	</g>
+	<g id="vb">
+		<rect x="136" y="423.399" class="caldo{{caldo_rearranged.COD_COLORE.66.63.0}}" style="stroke:#A7A7AA;stroke-miterlimit:10;" width="54.556" height="14.216"/>
+		<text transform="matrix(0.9496 0 0 1 160.5562 435.2461)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.COD_COLORE.66.63.0 }}</text>
+	</g>
+	<g id="vc">
+		<rect x="136" y="438.141" class="caldo{{caldo_rearranged.COD_COLORE.66.64.0}}" style="stroke:#A7A7AA;stroke-miterlimit:10;" width="54.556" height="14.216"/>
+		<text transform="matrix(0.9496 0 0 1 160.5562 449.9883)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.COD_COLORE.66.64.0 }}</text>
+	</g>
+		<text transform="matrix(0.9496 0 0 1 140.5562 328.3096)" style="font-family:'Arial-BoldMT'; font-size:12;">LIVELLO</text>
+		<rect x="194" y="312.25" style="fill:#EDEDED;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="22.904"/>
+		<rect x="194" y="438.141" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="194" y="423.399" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="194" y="408.656" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="194" y="393.914" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="194" y="379.171" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="194" y="364.428" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="194" y="349.686" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="194" y="334.943" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<text transform="matrix(0.9496 0 0 1 214.5562 345.7905)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.TERMA.66.59.328 }}</text>
+		<text transform="matrix(0.9496 0 0 1 214.5562 360.5332)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.TERMA.66.9.328 }}</text>
+		<text transform="matrix(0.9496 0 0 1 214.5562 375.2759)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.TERMA.66.11.328 }}</text>
+		<text transform="matrix(0.9496 0 0 1 214.5562 390.0181)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.TERMA.66.1.328 }}</text>
+		<text transform="matrix(0.9496 0 0 1 214.5562 404.7607)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.TERMA.66.28.328 }}</text>
+		<text transform="matrix(0.9496 0 0 1 214.5562 419.5034)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.TERMA.66.33.328 }}</text>
+		<text transform="matrix(0.9496 0 0 1 214.5562 434.2461)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.TERMA.66.63.328 }}</text>
+		<text transform="matrix(0.9496 0 0 1 214.5562 448.9883)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.TERMA.66.64.328 }}</text>
+		<text transform="matrix(0.9496 0 0 1 198.5562 328.3096)" style="font-family:'Titillium Web'; font-size:11.5834;">T</text>
+		<text transform="matrix(0.9496 0 0 1 204.0562 328.8999)" style="font-family:'Titillium Web'; font-size:8.4243;">max</text>
+		<text transform="matrix(1.0102 0 0 1 223.3126 327.8462)" style="font-family:'Titillium Web'; font-size:9.4773;">[&#xB0;C]</text>
+		<rect x="244" y="312.25" style="fill:#EDEDED;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="22.904"/>
+		<rect x="244" y="438.141" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="244" y="423.399" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="244" y="408.656" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="244" y="393.914" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="244" y="379.171" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="244" y="364.428" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="244" y="349.686" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="244" y="334.943" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<text transform="matrix(1.0102 0 0 1 276.3126 327.8462)" style="font-family:'Titillium Web'; font-size:9.4773;">[&#xB0;C]</text>
+		<text transform="matrix(0.9496 0 0 1 247.5562 328.3096)" style="font-family:'Titillium Web'; font-size:11.5834;">AT</text>
+		<text transform="matrix(0.9496 0 0 1 261.0562 328.8999)" style="font-family:'Titillium Web'; font-size:8.4243;">max</text>
+		<rect x="294" y="312.25" style="fill:#EDEDED;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="22.904"/>
+		<rect x="294" y="438.141" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="294" y="423.399" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="294" y="408.656" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="294" y="393.914" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="294" y="379.171" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="294" y="364.428" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="294" y="349.686" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="294" y="334.943" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<text transform="matrix(1.0102 0 0 1 323.3121 327.8462)" style="font-family:'Titillium Web'; font-size:9.4773;">[&#xB0;C]</text>
+		<text transform="matrix(0.9496 0 0 1 300.5562 328.3096)" style="font-family:'Titillium Web'; font-size:11.5834;">T</text>
+		<rect x="344" y="312.25" style="fill:#EDEDED;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="22.904"/>
+		<rect x="344" y="438.141" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="344" y="423.399" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="344" y="408.656" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="344" y="393.914" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="344" y="379.171" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="344" y="364.428" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="344" y="349.686" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="344" y="334.943" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<text transform="matrix(1.0102 0 0 1 375.3121 327.8462)" style="font-family:'Titillium Web'; font-size:9.4773;">[&#xB0;C]</text>
+		<g>
+			<text transform="matrix(0.9496 0 0 1 347.5562 328.3096)" style="font-family:'Titillium Web'; font-size:11.5834;">AT</text>
+		</g>
+		<text transform="matrix(0.9496 0 0 1 307.0562 328.8999)" style="font-family:'Titillium Web'; font-size:8.4243;">min</text>
+		<text transform="matrix(0.9496 0 0 1 361.0562 329.9531)" style="font-family:'Titillium Web'; font-size:8.4243;">min</text>
+		<rect x="394" y="312.25" style="fill:#EDEDED;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="22.904"/>
+		<rect x="394" y="438.141" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="394" y="423.399" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="394" y="408.656" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="394" y="393.914" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="394" y="379.171" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="394" y="364.428" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="394" y="349.686" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="394" y="334.943" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<text transform="matrix(0.9496 0 0 1 400.3121 322.5815)"><tspan x="0" y="0" style="font-family:'Titillium Web'; font-size:8.4243;">giorni caldo</tspan><tspan x="0.527" y="10.109" style="font-family:'Titillium Web'; font-size:8.4243;">consecutivi</tspan></text>
+		<!--<rect x="448.556" y="304" style="fill:none;stroke:#000000;stroke-miterlimit:10;" width="121" height="157"/>-->
+    
+	<g transform="translate(428 265.5) scale(0.27)">
+      <!--Scenario ATTUALE-->
+      {% include "piemonte_caldo.svg" with vb=caldo_rearranged.COD_COLORE.66.63.0 bi=caldo_rearranged.COD_COLORE.66.1.0 at=caldo_rearranged.COD_COLORE.66.11.0 cn=caldo_rearranged.COD_COLORE.66.28.0 no=caldo_rearranged.COD_COLORE.66.33.0 to=caldo_rearranged.COD_COLORE.66.59.0 vc=caldo_rearranged.COD_COLORE.66.64.0 al=caldo_rearranged.COD_COLORE.66.9.0%}
+    </g>
+		<text transform="matrix(0.9496 0 0 1 264.5562 345.7905)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.ATMAX.66.59.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 264.5562 360.5332)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.ATMAX.66.9.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 264.5562 375.2759)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.ATMAX.66.11.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 264.5562 390.0181)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.ATMAX.66.1.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 264.5562 404.7607)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.ATMAX.66.28.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 264.5562 419.5034)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.ATMAX.66.33.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 264.5562 434.2461)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.ATMAX.66.63.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 264.5562 448.9883)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.ATMAX.66.64.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 314.5562 345.7905)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.TERMA.66.59.327 }}</text>
+		<text transform="matrix(0.9496 0 0 1 314.5562 360.5332)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.TERMA.66.9.327 }}</text>
+		<text transform="matrix(0.9496 0 0 1 314.5562 375.2759)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.TERMA.66.11.327 }}</text>
+		<text transform="matrix(0.9496 0 0 1 314.5562 390.0181)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.TERMA.66.1.327 }}</text>
+		<text transform="matrix(0.9496 0 0 1 314.5562 404.7607)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.TERMA.66.28.327 }}</text>
+		<text transform="matrix(0.9496 0 0 1 314.5562 419.5034)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.TERMA.66.33.327 }}</text>
+		<text transform="matrix(0.9496 0 0 1 314.5562 434.2461)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.TERMA.66.63.327 }}</text>
+		<text transform="matrix(0.9496 0 0 1 314.5562 448.9883)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.TERMA.66.64.327 }}</text>
+		<text transform="matrix(0.9496 0 0 1 363.5562 345.7905)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.ATMIN.66.59.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 363.5562 360.5332)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.ATMIN.66.9.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 363.5562 375.2759)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.ATMIN.66.11.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 363.5562 390.0181)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.ATMIN.66.1.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 363.5562 404.7607)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.ATMIN.66.28.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 363.5562 419.5034)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.ATMIN.66.33.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 363.5562 434.2461)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.ATMIN.66.63.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 363.5562 448.9883)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.ATMIN.66.64.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 414.5562 345.7905)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.GGCONS.66.59.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 414.5562 360.5332)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.GGCONS.66.9.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 414.5562 375.2759)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.GGCONS.66.11.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 414.5562 390.0181)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.GGCONS.66.1.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 414.5562 404.7607)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.GGCONS.66.28.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 414.5562 419.5034)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.GGCONS.66.33.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 414.5562 434.2461)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.GGCONS.66.63.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 414.5562 448.9883)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.GGCONS.66.64.0 }}</text>
+	</g>
+</g>
+<g id="giorno3">
+	<g>
+		<rect x="34" y="482.25" style="fill:#EDEDED;stroke:#A7A7AA;stroke-miterlimit:10;" width="98.056" height="22.904"/>
+		<rect x="34" y="608.141" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="98.056" height="14.216"/>
+		<rect x="34" y="593.399" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="98.056" height="14.216"/>
+		<rect x="34" y="578.656" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="98.056" height="14.216"/>
+		<rect x="34" y="563.914" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="98.056" height="14.216"/>
+		<rect x="34" y="549.171" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="98.056" height="14.216"/>
+		<rect x="34" y="534.428" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="98.056" height="14.216"/>
+		<rect x="34" y="519.686" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="98.056" height="14.216"/>
+		<rect x="34" y="504.943" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="98.056" height="14.216"/>
+		<text transform="matrix(0.9496 0 0 1 43.5563 516.7905)" font-weight="bold" class="textcit">TORINO</text>
+		<text transform="matrix(0.9496 0 0 1 43.5563 531.5332)" font-weight="bold" class="textcit">ALESSANDRIA</text>
+		<text transform="matrix(0.9496 0 0 1 43.5563 546.2759)" font-weight="bold" class="textcit">ASTI</text>
+		<text transform="matrix(0.9496 0 0 1 43.5563 561.0181)" font-weight="bold" class="textcit">BIELLA</text>
+		<text transform="matrix(0.9496 0 0 1 43.5563 575.7607)" font-weight="bold" class="textcit">CUNEO</text>
+		<text transform="matrix(0.9496 0 0 1 43.5563 590.5034)" font-weight="bold" class="textcit">NOVARA</text>
+		<text transform="matrix(0.9496 0 0 1 43.5563 605.2461)" font-weight="bold" class="textcit">VERBANIA</text>
+		<text transform="matrix(0.9496 0 0 1 43.5563 619.9883)" font-weight="bold" class="textcit">VERCELLI</text>
+		<rect x="136" y="482.25" style="fill:#EDEDED;stroke:#A7A7AA;stroke-miterlimit:10;" width="54.556" height="22.904"/>
+		
+		<text transform="matrix(0.9496 0 0 1 46.5563 497.7832)" style="font-family:'Titillium Web'; font-size:14;">{{ caldo.data_emissione | date_aftertomorrow}}</text>
+	<g id="to">
+		<rect x="136" y="504.943" class="caldo{{caldo_rearranged.COD_COLORE.83.59.0}}" style="stroke:#A7A7AA;stroke-miterlimit:10;" width="54.556" height="14.216"/>
+		<text transform="matrix(0.9496 0 0 1 160.5562 516.7905)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.COD_COLORE.83.59.0 }}</text>
+	</g>
+	<g id="al">
+		<rect x="136" y="519.686" class="caldo{{caldo_rearranged.COD_COLORE.83.9.0}}" style="stroke:#A7A7AA;stroke-miterlimit:10;" width="54.556" height="14.216"/>
+		<text transform="matrix(0.9496 0 0 1 160.5562 531.5332)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.COD_COLORE.83.9.0 }}</text>
+	</g>
+	<g id="at">
+		<rect x="136" y="534.428" class="caldo{{caldo_rearranged.COD_COLORE.83.11.0}}" style="stroke:#A7A7AA;stroke-miterlimit:10;" width="54.556" height="14.216"/>
+		<text transform="matrix(0.9496 0 0 1 160.5562 546.2759)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.COD_COLORE.83.11.0 }}</text>
+	</g>
+	<g id="bi">
+		<rect x="136" y="549.171" class="caldo{{caldo_rearranged.COD_COLORE.83.1.0}}" style="stroke:#A7A7AA;stroke-miterlimit:10;" width="54.556" height="14.216"/>
+		<text transform="matrix(0.9496 0 0 1 160.5562 561.0181)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.COD_COLORE.83.1.0 }}</text>
+	</g>
+	<g id="cn">
+		<rect x="136" y="563.914" class="caldo{{caldo_rearranged.COD_COLORE.83.28.0}}" style="stroke:#A7A7AA;stroke-miterlimit:10;" width="54.556" height="14.216"/>
+		<text transform="matrix(0.9496 0 0 1 160.5562 575.7607)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.COD_COLORE.83.28.0 }}</text>
+	</g>
+	<g id="no">
+		<rect x="136" y="578.656" class="caldo{{caldo_rearranged.COD_COLORE.83.33.0}}" style="stroke:#A7A7AA;stroke-miterlimit:10;" width="54.556" height="14.216"/>
+		<text transform="matrix(0.9496 0 0 1 160.5562 590.5034)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.COD_COLORE.83.33.0 }}</text>
+	</g>
+	<g id="vb">
+		<rect x="136" y="593.399" class="caldo{{caldo_rearranged.COD_COLORE.83.63.0}}" style="stroke:#A7A7AA;stroke-miterlimit:10;" width="54.556" height="14.216"/>
+		<text transform="matrix(0.9496 0 0 1 160.5562 605.2461)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.COD_COLORE.83.63.0 }}</text>
+	</g>
+	<g id="vc">
+		<rect x="136" y="608.141" class="caldo{{caldo_rearranged.COD_COLORE.83.64.0}}" style="stroke:#A7A7AA;stroke-miterlimit:10;" width="54.556" height="14.216"/>
+		<text transform="matrix(0.9496 0 0 1 160.5562 619.9883)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.COD_COLORE.83.64.0 }}</text>
+	</g>
+		<text transform="matrix(0.9496 0 0 1 140.5562 498.3096)" style="font-family:'Arial-BoldMT'; font-size:12;">LIVELLO</text>
+		<rect x="194" y="482.25" style="fill:#EDEDED;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="22.904"/>
+		<rect x="194" y="608.141" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="194" y="593.399" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="194" y="578.656" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="194" y="563.914" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="194" y="549.171" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="194" y="534.428" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="194" y="519.686" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="194" y="504.943" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<text transform="matrix(0.9496 0 0 1 214.5562 515.7905)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.TERMA.83.59.328 }}</text>
+		<text transform="matrix(0.9496 0 0 1 214.5562 530.5332)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.TERMA.83.9.328 }}</text>
+		<text transform="matrix(0.9496 0 0 1 214.5562 545.2759)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.TERMA.83.11.328 }}</text>
+		<text transform="matrix(0.9496 0 0 1 214.5562 560.0181)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.TERMA.83.1.328 }}</text>
+		<text transform="matrix(0.9496 0 0 1 214.5562 574.7607)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.TERMA.83.28.328 }}</text>
+		<text transform="matrix(0.9496 0 0 1 214.5562 589.5034)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.TERMA.83.33.328 }}</text>
+		<text transform="matrix(0.9496 0 0 1 214.5562 604.2461)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.TERMA.83.63.328 }}</text>
+		<text transform="matrix(0.9496 0 0 1 214.5562 618.9883)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.TERMA.83.64.328 }}</text>
+		<text transform="matrix(0.9496 0 0 1 198.5562 498.3096)" style="font-family:'Titillium Web'; font-size:11.5834;">T</text>
+		<text transform="matrix(0.9496 0 0 1 204.0562 498.8999)" style="font-family:'Titillium Web'; font-size:8.4243;">max</text>
+		<text transform="matrix(1.0102 0 0 1 223.3126 497.8462)" style="font-family:'Titillium Web'; font-size:9.4773;">[&#xB0;C]</text>
+		<rect x="244" y="482.25" style="fill:#EDEDED;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="22.904"/>
+		<rect x="244" y="608.141" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="244" y="593.399" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="244" y="578.656" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="244" y="563.914" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="244" y="549.171" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="244" y="534.428" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="244" y="519.686" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="244" y="504.943" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<text transform="matrix(1.0102 0 0 1 276.3126 497.8462)" style="font-family:'Titillium Web'; font-size:9.4773;">[&#xB0;C]</text>
+		<text transform="matrix(0.9496 0 0 1 247.5562 498.3096)" style="font-family:'Titillium Web'; font-size:11.5834;">AT</text>
+		<text transform="matrix(0.9496 0 0 1 261.0562 498.8999)" style="font-family:'Titillium Web'; font-size:8.4243;">max</text>
+		<rect x="294" y="482.25" style="fill:#EDEDED;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="22.904"/>
+		<rect x="294" y="608.141" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="294" y="593.399" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="294" y="578.656" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="294" y="563.914" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="294" y="549.171" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="294" y="534.428" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="294" y="519.686" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="294" y="504.943" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<text transform="matrix(1.0102 0 0 1 323.3121 497.8462)" style="font-family:'Titillium Web'; font-size:9.4773;">[&#xB0;C]</text>
+		<text transform="matrix(0.9496 0 0 1 300.5562 498.3096)" style="font-family:'Titillium Web'; font-size:11.5834;">T</text>
+		<rect x="344" y="482.25" style="fill:#EDEDED;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="22.904"/>
+		<rect x="344" y="608.141" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="344" y="593.399" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="344" y="578.656" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="344" y="563.914" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="344" y="549.171" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="344" y="534.428" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="344" y="519.686" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="344" y="504.943" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<text transform="matrix(1.0102 0 0 1 375.3121 497.8462)" style="font-family:'Titillium Web'; font-size:9.4773;">[&#xB0;C]</text>
+		<g>
+			<text transform="matrix(0.9496 0 0 1 347.5562 498.3096)" style="font-family:'Titillium Web'; font-size:11.5834;">AT</text>
+		</g>
+		<text transform="matrix(0.9496 0 0 1 307.0562 498.8999)" style="font-family:'Titillium Web'; font-size:8.4243;">min</text>
+		<text transform="matrix(0.9496 0 0 1 361.0562 499.9532)" style="font-family:'Titillium Web'; font-size:8.4243;">min</text>
+		<rect x="394" y="482.25" style="fill:#EDEDED;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="22.904"/>
+		<rect x="394" y="608.141" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="394" y="593.399" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="394" y="578.656" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="394" y="563.914" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="394" y="549.171" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="394" y="534.428" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="394" y="519.686" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<rect x="394" y="504.943" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="50.056" height="14.216"/>
+		<text transform="matrix(0.9496 0 0 1 400.3121 492.5815)"><tspan x="0" y="0" style="font-family:'Titillium Web'; font-size:8.4243;">giorni caldo</tspan><tspan x="0.527" y="10.109" style="font-family:'Titillium Web'; font-size:8.4243;">consecutivi</tspan></text>
+		<!--<rect x="448.556" y="474" style="fill:none;stroke:#000000;stroke-miterlimit:10;" width="121" height="157"/>-->
+    
+	<g transform="translate(428 435.5) scale(0.27)">
+      <!--Scenario ATTUALE-->
+      {% include "piemonte_caldo.svg" with vb=caldo_rearranged.COD_COLORE.83.63.0 bi=caldo_rearranged.COD_COLORE.83.1.0 at=caldo_rearranged.COD_COLORE.83.11.0 cn=caldo_rearranged.COD_COLORE.83.28.0 no=caldo_rearranged.COD_COLORE.83.33.0 to=caldo_rearranged.COD_COLORE.83.59.0 vc=caldo_rearranged.COD_COLORE.83.64.0 al=caldo_rearranged.COD_COLORE.83.9.0%}
+    </g>
+		<text transform="matrix(0.9496 0 0 1 264.5562 515.7905)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.ATMAX.83.59.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 264.5562 530.5332)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.ATMAX.83.9.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 264.5562 545.2759)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.ATMAX.83.11.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 264.5562 560.0181)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.ATMAX.83.1.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 264.5562 574.7607)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.ATMAX.83.28.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 264.5562 589.5034)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.ATMAX.83.33.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 264.5562 604.2461)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.ATMAX.83.63.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 264.5562 618.9883)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.ATMAX.83.64.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 314.5562 515.7905)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.TERMA.83.59.327 }}</text>
+		<text transform="matrix(0.9496 0 0 1 314.5562 530.5332)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.TERMA.83.9.327 }}</text>
+		<text transform="matrix(0.9496 0 0 1 314.5562 545.2759)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.TERMA.83.11.327 }}</text>
+		<text transform="matrix(0.9496 0 0 1 314.5562 560.0181)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.TERMA.83.1.327 }}</text>
+		<text transform="matrix(0.9496 0 0 1 314.5562 574.7607)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.TERMA.83.28.327 }}</text>
+		<text transform="matrix(0.9496 0 0 1 314.5562 589.5034)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.TERMA.83.33.327 }}</text>
+		<text transform="matrix(0.9496 0 0 1 314.5562 604.2461)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.TERMA.83.63.327 }}</text>
+		<text transform="matrix(0.9496 0 0 1 314.5562 618.9883)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.TERMA.83.64.327 }}</text>
+		<text transform="matrix(0.9496 0 0 1 363.5562 515.7905)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.ATMIN.83.59.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 363.5562 530.5332)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.ATMIN.83.9.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 363.5562 545.2759)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.ATMIN.83.11.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 363.5562 560.0181)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.ATMIN.83.1.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 363.5562 574.7607)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.ATMIN.83.28.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 363.5562 589.5034)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.ATMIN.83.33.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 363.5562 604.2461)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.ATMIN.83.63.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 363.5562 618.9883)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.ATMIN.83.64.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 414.5562 515.7905)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.GGCONS.83.59.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 414.5562 530.5332)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.GGCONS.83.9.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 414.5562 545.2759)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.GGCONS.83.11.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 414.5562 560.0181)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.GGCONS.83.1.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 414.5562 574.7607)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.GGCONS.83.28.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 414.5562 589.5034)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.GGCONS.83.33.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 414.5562 604.2461)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.GGCONS.83.63.0 }}</text>
+		<text transform="matrix(0.9496 0 0 1 414.5562 618.9883)" style="font-family:'Titillium Web'; font-size:11;">{{ caldo_rearranged.GGCONS.83.64.0 }}</text>
+	</g>
+</g>
+<g id="legenda">
+	<g id="spiegaz_temper">
+	
+		<rect x="414.333" y="729" class="legenda-quadrati" width="154" height="64.333"/>
+		
+		
+		<text transform="matrix(1 0 0 1 424.8258 750.9869)" class="legenda-text-spiegazioni">ATmax</text>
+		<text transform="matrix(1 0 0 1 427.3258 778.5474)" class="legenda-text-spiegazioni">ATmin</text>
+		<text transform="matrix(1 0 0 1 452.3258 768.9869)" class="legenda-text-spiegazioni">: Temperatura minima [&#xB0;C]</text>
+		<text transform="matrix(1 0 0 1 452.3258 750.4869)" class="legenda-text-spiegazioni">
+			<tspan x="0" y="0">: Temperatura percepita </tspan>
+			<tspan x="6" y="9.6">massima [&#xB0;C]</tspan>
+		</text>
+		<text transform="matrix(1 0 0 1 452.3258 778.9869)">
+			<tspan x="0" y="0" class="legenda-text-spiegazioni">: Temperatura percepita</tspan>
+			<tspan x="6" y="9.6" class="legenda-text-spiegazioni">minima [&#xB0;C]</tspan>
+		</text>
+		<text transform="matrix(1 0 0 1 430.6592 768.2141)" class="legenda-text-spiegazioni">Tmin</text>
+		<text transform="matrix(1 0 0 1 452.3258 739.9869)" class="legenda-text-spiegazioni">: Temperatura massima [&#xB0;C]</text>
+		<text transform="matrix(1 0 0 1 430.6592 740.2141)" class="legenda-text-spiegazioni">Tmax</text>
+	</g>
+	
+		
+	
+	<g id="spiegaz_wda">
+		<rect x="412" y="644.333" class="legenda-quadrati" width="155.333" height="80.667"/>
+		
+		<text transform="matrix(1 0 0 1 418.1791 658.1534)" class="legenda-text-spiegazioni">
+			<tspan x="0" y="0" >Il livello &#xE8; calcolato sulla base dell&#x2019;indice</tspan>
+			<tspan x="9" y="10.2" >di allerta WDA (Warm Day Alert) che </tspan>
+			<tspan x="0.339" y="20.4" > tiene conto della temperatura massima</tspan>
+			<tspan x="3.875" y="30.6" > percepita e della temperatura minima</tspan>
+			<tspan x="0.27" y="40.8" >percepita. La temperatura percepita (o </tspan>
+			<tspan x="3.6" y="51" > apparente) &#xE8; una combinazione di  </tspan>
+			<tspan x="7.797" y="61.2" >temperatura, umidit&#xE0; e vento.</tspan>
+		</text>
+	</g>
+	
+	<g id="spiegaz_livelli">
+	
+		
+	
+		<rect x="37.603" y="695.237" style="fill:#00EE11;stroke:#FFFFFF;stroke-miterlimit:10;" width="90.268" height="21.75"/>
+		<rect x="129.977" y="695.237" style="fill:#FFFF00;stroke:#FFFFFF;stroke-miterlimit:10;" width="90.268" height="21.75"/>
+		<rect x="222.351" y="695.237" style="fill:#FF7514;stroke:#FFFFFF;stroke-miterlimit:10;"  width="90.268" height="21.75"/>
+		<rect x="315.724" y="695.237" style="fill:#FF2929;stroke:#FFFFFF;stroke-miterlimit:10;" width="90.268" height="21.75"/>
+					
+		<rect x="37.603" y="719.237" class="legenda-quadrati" width="90.268" height="20.25"/>
+		<rect x="129.977" y="719.237" class="legenda-quadrati" width="90.268" height="20.25"/>
+		<rect x="222.351" y="719.237" class="legenda-quadrati" width="90.268" height="20.25"/>
+		<rect x="315.724" y="719.237" class="legenda-quadrati" width="90.268" height="20.25"/>
+		
+		<rect x="37.603" y="740.237" class="legenda-quadrati" width="90.268" height="53.917"/>
+		<rect x="129.977" y="740.237" class="legenda-quadrati" width="90.268" height="53.917"/>
+		<rect x="222.351" y="740.237" class="legenda-quadrati" width="90.268" height="53.917"/>
+		<rect x="315.724" y="740.237" class="legenda-quadrati" width="90.268" height="53.917"/>
+		
+	
+
+		
+		<text transform="matrix(1 0 0 1 48.1592 709.4869)" class="text-data">LIVELLO</text>
+		<text transform="matrix(1 0 0 1 141.1591 709.4869)" class="text-data">LIVELLO</text>
+		<text transform="matrix(1 0 0 1 233.4925 709.8202)" class="text-data">LIVELLO</text>
+		<text transform="matrix(1 0 0 1 327.1591 709.4869)" class="text-data">LIVELLO</text>
+		
+		<text transform="matrix(1 0 0 1 99.8258 709.4869)" class="text-data">0</text>
+		<text transform="matrix(1 0 0 1 192.1592 709.4869)" class="text-data">1</text>
+		<text transform="matrix(1 0 0 1 285.4925 710.4869)" class="text-data">2</text>
+		<text transform="matrix(1 0 0 1 378.1592 710.4869)" class="text-data">3</text>
+	
+		<text transform="matrix(1 0 0 1 48.1592 733.1535)" class="text-ggconsecut">Nessun disagio</text>
+		<text transform="matrix(1 0 0 1 143.4925 732.8202)" class="text-ggconsecut">Debole disagio</text>
+		<text transform="matrix(1 0 0 1 229.8258 732.4868)" class="text-ggconsecut">Moderato disagio</text>
+		<text transform="matrix(1 0 0 1 329.4925 733.1535)" class="text-ggconsecut">Forte disagio</text>
+		
+
+		<text transform="matrix(1 0 0 1 65.6862 749.4868)" class="legenda-text-spiegazioni">
+			<tspan x="-20" y="0">Condizioni meteo che</tspan>
+			<tspan x="-16" y="9.6" >non comportano un </tspan>
+			<tspan x="-16" y="19.2" >disagio bioclimatico  </tspan>
+			<tspan x="-13" y="28.8" >sulla popolazione.</tspan>
+		</text>
+		<text transform="matrix(1 0 0 1 134.8973 750.1535)" class="legenda-text-spiegazioni">
+			<tspan x="-1" y="0" >Condizioni meteo che </tspan>
+			<tspan x="4" y="9.6" >possono provocare </tspan>
+			<tspan x="4.3" y="19.2" >disagi per la salute. </tspan>
+		</text>
+		<text transform="matrix(1 0 0 1 234.5504 751.1535)" class="legenda-text-spiegazioni">
+			<tspan x="-4" y="0" >Condizioni meteo che</tspan>
+			<tspan x="-2" y="9.6" >possono provocare</tspan>
+			<tspan x="0" y="19.2" >rischi per la salute</tspan>
+			<tspan x="2" y="28.8" >in particolare nei</tspan>
+			<tspan x="-3" y="38.4" >soggetti suscettibili.</tspan>
+		</text>
+		<text transform="matrix(1 0 0 1 332.7067 750.4868)" class="legenda-text-spiegazioni">
+			<tspan x="0" y="0" >Ondata di calore.</tspan>
+			<tspan x="-6.124" y="9.6" >Disagio bioclimatico </tspan>
+			<tspan x="-7.172" y="19.2" >elevato e persistente</tspan>
+			<tspan x="-16.768" y="28.8" >da almeno 3 giorni con</tspan>
+			<tspan x="-14.78" y="38.4" >possibili effetti negativi.</tspan>
+		</text>
+		
+		
+			<!-- cerchietti su numero 	-->
+		<g>
+			<path d="M103.408,713.771c-4.411,0-8-3.589-8-8c0-4.411,3.589-8,8-8s8,3.589,8,8
+				C111.408,710.182,107.819,713.771,103.408,713.771z M103.408,698.826c-3.83,0-6.946,3.116-6.946,6.946
+				c0,3.83,3.116,6.945,6.946,6.945s6.946-3.116,6.946-6.945C110.354,701.941,107.238,698.826,103.408,698.826z"/>
+		</g>
+		<g>
+			<path d="M196.408,713.438c-4.411,0-8-3.589-8-8c0-4.411,3.589-8,8-8s8,3.589,8,8
+				C204.408,709.849,200.819,713.438,196.408,713.438z M196.408,698.492c-3.83,0-6.946,3.116-6.946,6.946
+				c0,3.83,3.116,6.945,6.946,6.945s6.946-3.116,6.946-6.945C203.354,701.608,200.238,698.492,196.408,698.492z"/>
+		</g>
+		<g>
+			<path d="M289.075,714.438c-4.411,0-8-3.589-8-8c0-4.411,3.589-8,8-8s8,3.589,8,8
+				C297.075,710.849,293.486,714.438,289.075,714.438z M289.075,699.492c-3.83,0-6.945,3.116-6.945,6.946
+				c0,3.83,3.116,6.945,6.945,6.945s6.946-3.116,6.946-6.945C296.02,702.608,292.904,699.492,289.075,699.492z"/>
+		</g>
+		<g>
+			<path d="M382.075,714.105c-4.411,0-8-3.589-8-8c0-4.411,3.589-8,8-8s8,3.589,8,8
+				C390.075,710.516,386.486,714.105,382.075,714.105z M382.075,699.159c-3.83,0-6.945,3.116-6.945,6.946
+				c0,3.83,3.116,6.945,6.945,6.945s6.946-3.116,6.946-6.945C389.02,702.275,385.904,699.159,382.075,699.159z"/>
+		</g>
+
+	
+		<text transform="matrix(1 0 0 1 144.1591 689.9869)" class="text-data">LIVELLO DI DISAGIO BIOCLIMATICO</text>
+	</g>
+	
+	<text transform="matrix(1 0 0 1 40.0002 803.1036)" class="text-footer">Per una corretta interpretazione e per approfondimenti consultare la guida al bollettino sul sito di Arpa Piemonte </text>
+	<g id="titolo-meteo-salute">
+		<text transform="matrix(1 0 0 1 38.6667 691)" class="legenda-text-meteosalute">Legenda</text>
+	</g>
+</g>
+<g id="note">
+	<rect x="31.444" y="646" style="fill:none;stroke:#A7A7AA;stroke-miterlimit:10;" width="347.556" height="30"/>
+	<!--<text transform="matrix(0.8394 0 0 1 39.0459 658.5)" style="font-family:'Titillium Web'; font-size:10;">Note: {{caldo.note}}</text>-->
+	<foreignObject transform="matrix(0.8394 0 0 1 37 648)" width="395" height="30" >
+			<div xmlns="http://www.w3.org/1999/xhtml" class="testonota">
+				Note: {{caldo.note}}
+			</div>
+  		</foreignObject>
+
+</g>
+<!--footer-->
+      <rect x="435" y="805" style="fill:#8080FF;" width="138" height="11"/>
+      <text transform="matrix(1 0 0 1 462.6602 812.6201)" style="fill:#FFFFFF; font-family:'Liberation Sans'; font-weight: 700; font-size:8;">www.arpa.piemonte.it</text>
+      <rect x="19" y="805" style="fill:#C0C0C0;" width="416" height="11"/>
+      <text transform="matrix(1 0 0 1 19 812.5996)" style="font-family:'Liberation Sans'; font-size:8;">Diffusione: https://www.arpa.piemonte.it/bollettini/</text>
+</svg>
+
+  </body>
+</html>

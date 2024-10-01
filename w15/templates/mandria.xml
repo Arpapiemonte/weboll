@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<meteo>
+	<previsione data="{{ w15.day0 }}">
+		<localita denominazione="Parco Mandria">
+			<tempo_prevalente_12_24 valore="{{ w15.w15_data.170.48.SKY_CONDIT.sky_condition }}"/>
+			<comune denominazione="Venaria Reale">
+				<temperatura_aria_max valore="{{ w15.w15_data.165.48.TERMA.numeric_value }}" unita_misura="&#176;C" tendenza_max="{{ w15.w15_data.165.48.TERMA.trend }}"/>
+				<vento valore="{{ w15.w15_data.165.48.WIND_CLASS.wind_class }}"/>
+			</comune>
+			<comune denominazione="Torino">
+				<temperatura_aria_max valore="{{ w15.w15_data.59.48.TERMA.numeric_value }}" unita_misura="&#176;C" tendenza_max="{{ w15.w15_data.59.48.TERMA.trend }}"/>
+				<vento valore="{{ w15.w15_data.59.48.WIND_CLASS.wind_class }}"/>
+			</comune>
+			<comune denominazione="Caselle Torinese">
+				<temperatura_aria_max valore="{{ w15.w15_data.55.48.TERMA.numeric_value }}" unita_misura="&#176;C" tendenza_max="{{ w15.w15_data.55.48.TERMA.trend }}"/>
+				<vento valore="{{ w15.w15_data.55.48.WIND_CLASS.wind_class }}"/>
+			</comune>
+		</localita>
+	</previsione>
+	<previsione data="{{ w15.day1 }}">
+		<localita denominazione="Parco Mandria">
+			<tempo_prevalente_00_12 valore="{{ w15.w15_data.170.64.SKY_CONDIT.sky_condition }}"/>
+			<tempo_prevalente_12_24 valore="{{ w15.w15_data.170.65.SKY_CONDIT.sky_condition }}"/>
+			<comune denominazione="Venaria Reale">
+				<temperatura_aria_min valore="{{ w15.w15_data.165.64.TERMA.numeric_value }}" unita_misura="&#176;C" tendenza_min="{{ w15.w15_data.165.64.TERMA.trend }}"/>
+				<temperatura_aria_max valore="{{ w15.w15_data.165.65.TERMA.numeric_value }}" unita_misura="&#176;C" tendenza_max="{{ w15.w15_data.165.65.TERMA.trend }}"/>
+				<vento valore="{{ w15.w15_data.165.66.WIND_CLASS.wind_class }}"/>
+			</comune>
+			<comune denominazione="Torino">
+				<temperatura_aria_min valore="{{ w15.w15_data.59.64.TERMA.numeric_value }}" unita_misura="&#176;C" tendenza_min="{{ w15.w15_data.59.64.TERMA.trend }}"/>
+				<temperatura_aria_max valore="{{ w15.w15_data.59.65.TERMA.numeric_value }}" unita_misura="&#176;C" tendenza_max="{{ w15.w15_data.59.65.TERMA.trend }}"/>
+				<vento valore="{{ w15.w15_data.59.66.WIND_CLASS.wind_class }}"/>
+			</comune>
+			<comune denominazione="Caselle Torinese">
+				<temperatura_aria_min valore="{{ w15.w15_data.55.64.TERMA.numeric_value }}" unita_misura="&#176;C" tendenza_min="{{ w15.w15_data.55.64.TERMA.trend }}"/>
+				<temperatura_aria_max valore="{{ w15.w15_data.55.65.TERMA.numeric_value }}" unita_misura="&#176;C" tendenza_max="{{ w15.w15_data.55.65.TERMA.trend }}"/>
+				<vento valore="{{ w15.w15_data.55.66.WIND_CLASS.wind_class }}"/>
+			</comune>
+		</localita>
+	</previsione>
+	<previsione data="{{ w15.day2 }}">
+		<localita denominazione="Parco Mandria">
+			<tempo_prevalente_00_12 valore="{{ w15.w15_data.170.81.SKY_CONDIT.sky_condition }}"/>
+			<tempo_prevalente_12_24 valore="{{ w15.w15_data.170.82.SKY_CONDIT.sky_condition }}"/>
+			<comune denominazione="Venaria Reale">
+				<temperatura_aria_min valore="{{ w15.w15_data.165.81.TERMA.numeric_value }}" unita_misura="&#176;C" tendenza_min="{{ w15.w15_data.165.81.TERMA.trend }}"/>
+				<temperatura_aria_max valore="{{ w15.w15_data.165.82.TERMA.numeric_value }}" unita_misura="&#176;C" tendenza_max="{{ w15.w15_data.165.82.TERMA.trend }}"/>
+				<vento valore="{{ w15.w15_data.165.83.WIND_CLASS.wind_class }}"/>
+			</comune>
+			<comune denominazione="Torino">
+				<temperatura_aria_min valore="{{ w15.w15_data.59.81.TERMA.numeric_value }}" unita_misura="&#176;C" tendenza_min="{{ w15.w15_data.59.81.TERMA.trend }}"/>
+				<temperatura_aria_max valore="{{ w15.w15_data.59.82.TERMA.numeric_value }}" unita_misura="&#176;C" tendenza_max="{{ w15.w15_data.59.82.TERMA.trend }}"/>
+				<vento valore="{{ w15.w15_data.59.83.WIND_CLASS.wind_class }}"/>
+			</comune>
+			<comune denominazione="Caselle Torinese">
+				<temperatura_aria_min valore="{{ w15.w15_data.55.81.TERMA.numeric_value }}" unita_misura="&#176;C" tendenza_min="{{ w15.w15_data.55.81.TERMA.trend }}"/>
+				<temperatura_aria_max valore="{{ w15.w15_data.55.82.TERMA.numeric_value }}" unita_misura="&#176;C" tendenza_max="{{ w15.w15_data.55.82.TERMA.trend }}"/>
+				<vento valore="{{ w15.w15_data.55.83.WIND_CLASS.wind_class }}"/>
+			</comune>
+		</localita>
+	</previsione>
+</meteo>

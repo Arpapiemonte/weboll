@@ -106,6 +106,7 @@ COPY public.w29 (id_w29, data_emissione, ora_emissione, ora_simulazione, numero_
 
 SELECT pg_catalog.setval('public.w29_id_w29_seq', 506, true);
 
+ALTER TABLE public.w29 ADD id_w29_parent INTEGER DEFAULT NULL;
 
 --
 -- Name: w29_pkey; Type: CONSTRAINT; Schema: public; Owner: weboll; Tablespace:

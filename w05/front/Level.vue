@@ -1,17 +1,17 @@
-// Copyright (C) 2020-2023 simevo s.r.l. for ARPA Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
 <template>
   <input
-    :style="'width: ' + width +'em;'"
     type="number"
     min="0"
     :max="max"
-    :value="nullable && (data[valueKey] === '' || data[valueKey] == null) ? '' : Number(data[valueKey])"
+    :value="value"
     :disabled="readonly"
     :class="{dirty: history.isDirty(data.id_w05_data, 'id_w05_data', valueKey)}"
-    @change="$emit('setLevel', data.id_w05_data, data[valueKey], nullable && $event.target.value === '' ? null : Math.max(Math.min($event.target.value, max), 0).toString(), valueKey)"
+    :style="validity[data.id_w05_data] ? 'width: ' + width +'em;border:2px solid red;':'width: ' + width +'em;'"
+    @change="$emit('setLevel', data.id_w05_data, data[valueKey], $event.target.value, valueKey)"
   >
 </template>
 
@@ -50,8 +50,39 @@ export default {
     nullable: {
       type: Boolean,
       default: false
+    },
+    validity: {
+      type: Object,
+      default: () => { return {} }
     }
   },
-  emits: ['setLevel']
+  emits: ['setLevel'],
+  computed: {
+    value (){
+      let index = this.history.snapshots.findIndex(
+        element => element.id === this.data.id_w05_data
+        && element.id_key === 'id_w05_data' 
+        && element.value_key === this.valueKey)
+      if (index < 0){
+        if (!(this.data[this.valueKey] === null)){
+          if (this.data[this.valueKey] === ''){
+            return null
+          }else{
+            return Number(this.data[this.valueKey])
+          }
+        }
+        return this.data[this.valueKey]
+      }else{
+        if (!(this.history.snapshots[index].new_value === null)){
+          if (this.history.snapshots[index].new_value === ''){
+            return null
+          }else{
+            return Number(this.history.snapshots[index].new_value)
+          }
+        }
+        return this.history.snapshots[index].new_value
+      }
+    }
+  }
 }
 </script>

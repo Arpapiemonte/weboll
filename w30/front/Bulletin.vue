@@ -1,4 +1,4 @@
-// Copyright (C) 2020-2023 simevo s.r.l. for ARPA Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
@@ -20,7 +20,7 @@
             v-if="!readonly && state.username"
             id="copyselect"
             v-model="modelToCopy"
-            class="btn btn-outline-info"
+            class="btn btn-outline-dark"
           >
             <option selected>
               Copia Valori Modello:
@@ -409,6 +409,12 @@ export default {
     ScadenzeDetailQuote,
     Scadenze12
   },
+  props: {
+    id: {
+      type: String,
+      default: () => ''
+    },
+  },
   data () {
     return {
       previsione_id: null,
@@ -598,7 +604,7 @@ export default {
       return response
     },
     getPrevisione() {
-      this.previsione_id = this.$route.params.id
+      this.previsione_id = this.id
       if (typeof this.previsione_id === 'undefined') {
         return
       }

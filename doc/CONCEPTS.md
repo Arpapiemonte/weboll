@@ -8,8 +8,6 @@ The **front-end** (1) is implemented in HTML5 with:
 
 - the [Bootstrap CSS framework](https://getbootstrap.com/) version 5 (currently in beta)
 
-- the [Babel JavaScript transpiler](https://babeljs.io/) to convert from JavaScript ES6 source code into "compiled" ES5 code that can be grokked by any browser
-
 - and [Vue.js front end JavaScript framework](https://vuejs.org/) version 2.
 
 The **back-end** (2) is implemented in the Python 3.9 language as an "API only" [Django](https://www.djangoproject.com/) project based on [Django REST framework (DRF)](https://www.django-rest-framework.org/); there are no app forms/visual interfaces except the admin interface and the API playground provided by DRF.

@@ -1,4 +1,4 @@
-// Copyright (C) 2020-2023 simevo s.r.l. for ARPA Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
@@ -468,7 +468,7 @@ import { Ref, ref, onMounted, computed, watch } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { useToast } from 'vue-toast-notification'
 
-import Modal from 'bootstrap/js/dist/modal'
+import { Modal } from 'bootstrap'
 
 import api from '../../src/api'
 import store from '../../src/store'
@@ -491,7 +491,7 @@ let showAutostrade = ref({
 })
 
 // reactive properties
-let metap_id = ref(NaN)
+let metap_id = ref("")
 let selected_time_layout = ref(45)
 let state = ref(store.state)
 let ready = ref(false)
@@ -541,6 +541,13 @@ let autostradeCheck = ref({
   a21: false,
   a33: false,
 })
+const props = defineProps({
+  id: {
+      type: String,
+      default: () => ''
+  },
+})
+
 
 const heights = ref({
   '99': {min: 207, max : 265},
@@ -593,7 +600,7 @@ const autostradeColors = {
   a21: '#F7A706',
   a33: '#F91EDA'
 }
-const icon_blacklist = [ 10, 12, 1, 32, 44, 45, 46 ]
+const icon_blacklist = [ 10, 1, 32, 44, 45, 46 ]
 
 // TODO: CONVERT sending -> actions.sending
 // let actions = ref({ sending: false })
@@ -768,9 +775,8 @@ const snowLevelInfo = computed(() => {
 })
 
 onMounted(() => {
-  if(typeof route.params.id === 'string'){
-    metap_id.value = parseInt(route.params.id)
-  }
+  metap_id.value = props.id
+
   fetchData()
   modalElement.value = new Modal(document.getElementById('iconModal'))
 })

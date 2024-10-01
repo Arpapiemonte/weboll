@@ -1,0 +1,1157 @@
+{
+  "0": {
+    "id_venue": 179,
+    "id_parametro": "FRZLVL",
+    "id_aggregazione": 0,
+    "id_time_layouts": 46,
+	"id_trend": null
+  },
+  "1": {
+    "id_venue": 179,
+    "id_parametro": "PREC_CLASS",
+    "id_aggregazione": 0,
+    "id_time_layouts": 46,
+	"id_trend": null
+  },
+  "2": {
+    "id_venue": 179,
+    "id_parametro": "SKY_CONDIT",
+    "id_aggregazione": 0,
+    "id_time_layouts": 46,
+	"id_trend": null
+  },
+  "3": {
+    "id_venue": 179,
+    "id_parametro": "SNOW_LEV",
+    "id_aggregazione": 0,
+    "id_time_layouts": 46,
+	"id_trend": null
+  },
+  "4": {
+    "id_venue": 179,
+    "id_parametro": "TERMA",
+    "id_aggregazione": 328,
+    "id_time_layouts": 46,
+	"id_trend": null
+  },
+  "5": {
+    "id_venue": 179,
+    "id_parametro": "FRZLVL",
+    "id_aggregazione": 0,
+    "id_time_layouts": 60,
+	"id_trend": null
+  },
+  "6": {
+    "id_venue": 179,
+    "id_parametro": "PREC_CLASS",
+    "id_aggregazione": 0,
+    "id_time_layouts": 60,
+	"id_trend": null
+  },
+  "7": {
+    "id_venue": 179,
+    "id_parametro": "SKY_CONDIT",
+    "id_aggregazione": 0,
+    "id_time_layouts": 60,
+	"id_trend": null
+  },
+  "8": {
+    "id_venue": 179,
+    "id_parametro": "SNOW_LEV",
+    "id_aggregazione": 0,
+    "id_time_layouts": 60,
+	"id_trend": null
+  },
+  "9": {
+    "id_venue": 179,
+    "id_parametro": "TERMA",
+    "id_aggregazione": 327,
+    "id_time_layouts": 60,
+	"id_trend": null
+  },
+  "10": {
+    "id_venue": 179,
+    "id_parametro": "FRZLVL",
+    "id_aggregazione": 0,
+    "id_time_layouts": 61,
+	"id_trend": null
+  },
+  "11": {
+    "id_venue": 179,
+    "id_parametro": "PREC_CLASS",
+    "id_aggregazione": 0,
+    "id_time_layouts": 61,
+	"id_trend": null
+  },
+  "12": {
+    "id_venue": 179,
+    "id_parametro": "SKY_CONDIT",
+    "id_aggregazione": 0,
+    "id_time_layouts": 61,
+	"id_trend": null
+  },
+  "13": {
+    "id_venue": 179,
+    "id_parametro": "SNOW_LEV",
+    "id_aggregazione": 0,
+    "id_time_layouts": 61,
+	"id_trend": null
+  },
+  "14": {
+    "id_venue": 179,
+    "id_parametro": "FRZLVL",
+    "id_aggregazione": 0,
+    "id_time_layouts": 62,
+	"id_trend": null
+  },
+  "15": {
+    "id_venue": 179,
+    "id_parametro": "PREC_CLASS",
+    "id_aggregazione": 0,
+    "id_time_layouts": 62,
+	"id_trend": null
+  },
+  "16": {
+    "id_venue": 179,
+    "id_parametro": "SKY_CONDIT",
+    "id_aggregazione": 0,
+    "id_time_layouts": 62,
+	"id_trend": null
+  },
+  "17": {
+    "id_venue": 179,
+    "id_parametro": "SNOW_LEV",
+    "id_aggregazione": 0,
+    "id_time_layouts": 62,
+	"id_trend": null
+  },
+  "18": {
+    "id_venue": 179,
+    "id_parametro": "TERMA",
+    "id_aggregazione": 328,
+    "id_time_layouts": 62,
+	"id_trend": null
+  },
+  "19": {
+    "id_venue": 179,
+    "id_parametro": "FRZLVL",
+    "id_aggregazione": 0,
+    "id_time_layouts": 63,
+	"id_trend": null
+  },
+  "20": {
+    "id_venue": 179,
+    "id_parametro": "PREC_CLASS",
+    "id_aggregazione": 0,
+    "id_time_layouts": 63,
+	"id_trend": null
+  },
+  "21": {
+    "id_venue": 179,
+    "id_parametro": "SKY_CONDIT",
+    "id_aggregazione": 0,
+    "id_time_layouts": 63,
+	"id_trend": null
+  },
+  "22": {
+    "id_venue": 179,
+    "id_parametro": "SNOW_LEV",
+    "id_aggregazione": 0,
+    "id_time_layouts": 63,
+	"id_trend": null
+  },
+  "23": {
+    "id_venue": 179,
+    "id_parametro": "FRZLVL",
+    "id_aggregazione": 0,
+    "id_time_layouts": 81,
+	"id_trend": null
+  },
+  "24": {
+    "id_venue": 179,
+    "id_parametro": "PREC_CLASS",
+    "id_aggregazione": 0,
+    "id_time_layouts": 81,
+	"id_trend": null
+  },
+  "25": {
+    "id_venue": 179,
+    "id_parametro": "SKY_CONDIT",
+    "id_aggregazione": 0,
+    "id_time_layouts": 81,
+	"id_trend": null
+  },
+  "26": {
+    "id_venue": 179,
+    "id_parametro": "SNOW_LEV",
+    "id_aggregazione": 0,
+    "id_time_layouts": 81,
+	"id_trend": null
+  },
+  "27": {
+    "id_venue": 179,
+    "id_parametro": "TERMA",
+    "id_aggregazione": 327,
+    "id_time_layouts": 81,
+	"id_trend": null
+  },
+  "28": {
+    "id_venue": 179,
+    "id_parametro": "FRZLVL",
+    "id_aggregazione": 0,
+    "id_time_layouts": 82,
+	"id_trend": null
+  },
+  "29": {
+    "id_venue": 179,
+    "id_parametro": "PREC_CLASS",
+    "id_aggregazione": 0,
+    "id_time_layouts": 82,
+	"id_trend": null
+  },
+  "30": {
+    "id_venue": 179,
+    "id_parametro": "SKY_CONDIT",
+    "id_aggregazione": 0,
+    "id_time_layouts": 82,
+	"id_trend": null
+  },
+  "31": {
+    "id_venue": 179,
+    "id_parametro": "SNOW_LEV",
+    "id_aggregazione": 0,
+    "id_time_layouts": 82,
+	"id_trend": null
+  },
+  "32": {
+    "id_venue": 179,
+    "id_parametro": "TERMA",
+    "id_aggregazione": 328,
+    "id_time_layouts": 82,
+	"id_trend": null
+  },
+  "33": {
+    "id_venue": 180,
+    "id_parametro": "FRZLVL",
+    "id_aggregazione": 0,
+    "id_time_layouts": 46,
+	"id_trend": null
+  },
+  "34": {
+    "id_venue": 180,
+    "id_parametro": "PREC_CLASS",
+    "id_aggregazione": 0,
+    "id_time_layouts": 46,
+	"id_trend": null
+  },
+  "35": {
+    "id_venue": 180,
+    "id_parametro": "SKY_CONDIT",
+    "id_aggregazione": 0,
+    "id_time_layouts": 46,
+	"id_trend": null
+  },
+  "36": {
+    "id_venue": 180,
+    "id_parametro": "SNOW_LEV",
+    "id_aggregazione": 0,
+    "id_time_layouts": 46,
+	"id_trend": null
+  },
+  "37": {
+    "id_venue": 180,
+    "id_parametro": "TERMA",
+    "id_aggregazione": 328,
+    "id_time_layouts": 46,
+	"id_trend": null
+  },
+  "38": {
+    "id_venue": 180,
+    "id_parametro": "FRZLVL",
+    "id_aggregazione": 0,
+    "id_time_layouts": 60,
+	"id_trend": null
+  },
+  "39": {
+    "id_venue": 180,
+    "id_parametro": "PREC_CLASS",
+    "id_aggregazione": 0,
+    "id_time_layouts": 60,
+	"id_trend": null
+  },
+  "40": {
+    "id_venue": 180,
+    "id_parametro": "SKY_CONDIT",
+    "id_aggregazione": 0,
+    "id_time_layouts": 60,
+	"id_trend": null
+  },
+  "41": {
+    "id_venue": 180,
+    "id_parametro": "SNOW_LEV",
+    "id_aggregazione": 0,
+    "id_time_layouts": 60,
+	"id_trend": null
+  },
+  "42": {
+    "id_venue": 180,
+    "id_parametro": "TERMA",
+    "id_aggregazione": 327,
+    "id_time_layouts": 60,
+	"id_trend": null
+  },
+  "43": {
+    "id_venue": 180,
+    "id_parametro": "FRZLVL",
+    "id_aggregazione": 0,
+    "id_time_layouts": 61,
+	"id_trend": null
+  },
+  "44": {
+    "id_venue": 180,
+    "id_parametro": "PREC_CLASS",
+    "id_aggregazione": 0,
+    "id_time_layouts": 61,
+	"id_trend": null
+  },
+  "45": {
+    "id_venue": 180,
+    "id_parametro": "SKY_CONDIT",
+    "id_aggregazione": 0,
+    "id_time_layouts": 61,
+	"id_trend": null
+  },
+  "46": {
+    "id_venue": 180,
+    "id_parametro": "SNOW_LEV",
+    "id_aggregazione": 0,
+    "id_time_layouts": 61,
+	"id_trend": null
+  },
+  "47": {
+    "id_venue": 180,
+    "id_parametro": "FRZLVL",
+    "id_aggregazione": 0,
+    "id_time_layouts": 62,
+	"id_trend": null
+  },
+  "48": {
+    "id_venue": 180,
+    "id_parametro": "PREC_CLASS",
+    "id_aggregazione": 0,
+    "id_time_layouts": 62,
+	"id_trend": null
+  },
+  "49": {
+    "id_venue": 180,
+    "id_parametro": "SKY_CONDIT",
+    "id_aggregazione": 0,
+    "id_time_layouts": 62,
+	"id_trend": null
+  },
+  "50": {
+    "id_venue": 180,
+    "id_parametro": "SNOW_LEV",
+    "id_aggregazione": 0,
+    "id_time_layouts": 62,
+	"id_trend": null
+  },
+  "51": {
+    "id_venue": 180,
+    "id_parametro": "TERMA",
+    "id_aggregazione": 328,
+    "id_time_layouts": 62,
+	"id_trend": null
+  },
+  "52": {
+    "id_venue": 180,
+    "id_parametro": "FRZLVL",
+    "id_aggregazione": 0,
+    "id_time_layouts": 63,
+	"id_trend": null
+  },
+  "53": {
+    "id_venue": 180,
+    "id_parametro": "PREC_CLASS",
+    "id_aggregazione": 0,
+    "id_time_layouts": 63,
+	"id_trend": null
+  },
+  "54": {
+    "id_venue": 180,
+    "id_parametro": "SKY_CONDIT",
+    "id_aggregazione": 0,
+    "id_time_layouts": 63,
+	"id_trend": null
+  },
+  "55": {
+    "id_venue": 180,
+    "id_parametro": "SNOW_LEV",
+    "id_aggregazione": 0,
+    "id_time_layouts": 63,
+	"id_trend": null
+  },
+  "56": {
+    "id_venue": 180,
+    "id_parametro": "FRZLVL",
+    "id_aggregazione": 0,
+    "id_time_layouts": 81,
+	"id_trend": null
+  },
+  "57": {
+    "id_venue": 180,
+    "id_parametro": "PREC_CLASS",
+    "id_aggregazione": 0,
+    "id_time_layouts": 81,
+	"id_trend": null
+  },
+  "58": {
+    "id_venue": 180,
+    "id_parametro": "SKY_CONDIT",
+    "id_aggregazione": 0,
+    "id_time_layouts": 81,
+	"id_trend": null
+  },
+  "59": {
+    "id_venue": 180,
+    "id_parametro": "SNOW_LEV",
+    "id_aggregazione": 0,
+    "id_time_layouts": 81,
+	"id_trend": null
+  },
+  "60": {
+    "id_venue": 180,
+    "id_parametro": "TERMA",
+    "id_aggregazione": 327,
+    "id_time_layouts": 81,
+	"id_trend": null
+  },
+  "61": {
+    "id_venue": 180,
+    "id_parametro": "FRZLVL",
+    "id_aggregazione": 0,
+    "id_time_layouts": 82,
+	"id_trend": null
+  },
+  "62": {
+    "id_venue": 180,
+    "id_parametro": "PREC_CLASS",
+    "id_aggregazione": 0,
+    "id_time_layouts": 82,
+	"id_trend": null
+  },
+  "63": {
+    "id_venue": 180,
+    "id_parametro": "SKY_CONDIT",
+    "id_aggregazione": 0,
+    "id_time_layouts": 82,
+	"id_trend": null
+  },
+  "64": {
+    "id_venue": 180,
+    "id_parametro": "SNOW_LEV",
+    "id_aggregazione": 0,
+    "id_time_layouts": 82,
+	"id_trend": null
+  },
+  "65": {
+    "id_venue": 180,
+    "id_parametro": "TERMA",
+    "id_aggregazione": 328,
+    "id_time_layouts": 82,
+	"id_trend": null
+  },
+  "66": {
+    "id_venue": 181,
+    "id_parametro": "FRZLVL",
+    "id_aggregazione": 0,
+    "id_time_layouts": 46,
+	"id_trend": null
+  },
+  "67": {
+    "id_venue": 181,
+    "id_parametro": "PREC_CLASS",
+    "id_aggregazione": 0,
+    "id_time_layouts": 46,
+	"id_trend": null
+  },
+  "68": {
+    "id_venue": 181,
+    "id_parametro": "SKY_CONDIT",
+    "id_aggregazione": 0,
+    "id_time_layouts": 46,
+	"id_trend": null
+  },
+  "69": {
+    "id_venue": 181,
+    "id_parametro": "SNOW_LEV",
+    "id_aggregazione": 0,
+    "id_time_layouts": 46,
+	"id_trend": null
+  },
+  "70": {
+    "id_venue": 181,
+    "id_parametro": "TERMA",
+    "id_aggregazione": 328,
+    "id_time_layouts": 46,
+	"id_trend": null
+  },
+  "71": {
+    "id_venue": 181,
+    "id_parametro": "FRZLVL",
+    "id_aggregazione": 0,
+    "id_time_layouts": 60,
+	"id_trend": null
+  },
+  "72": {
+    "id_venue": 181,
+    "id_parametro": "PREC_CLASS",
+    "id_aggregazione": 0,
+    "id_time_layouts": 60,
+	"id_trend": null
+  },
+  "73": {
+    "id_venue": 181,
+    "id_parametro": "SKY_CONDIT",
+    "id_aggregazione": 0,
+    "id_time_layouts": 60,
+	"id_trend": null
+  },
+  "74": {
+    "id_venue": 181,
+    "id_parametro": "SNOW_LEV",
+    "id_aggregazione": 0,
+    "id_time_layouts": 60,
+	"id_trend": null
+  },
+  "75": {
+    "id_venue": 181,
+    "id_parametro": "TERMA",
+    "id_aggregazione": 327,
+    "id_time_layouts": 60,
+	"id_trend": null
+  },
+  "76": {
+    "id_venue": 181,
+    "id_parametro": "FRZLVL",
+    "id_aggregazione": 0,
+    "id_time_layouts": 61,
+	"id_trend": null
+  },
+  "77": {
+    "id_venue": 181,
+    "id_parametro": "PREC_CLASS",
+    "id_aggregazione": 0,
+    "id_time_layouts": 61,
+	"id_trend": null
+  },
+  "78": {
+    "id_venue": 181,
+    "id_parametro": "SKY_CONDIT",
+    "id_aggregazione": 0,
+    "id_time_layouts": 61,
+	"id_trend": null
+  },
+  "79": {
+    "id_venue": 181,
+    "id_parametro": "SNOW_LEV",
+    "id_aggregazione": 0,
+    "id_time_layouts": 61,
+	"id_trend": null
+  },
+  "80": {
+    "id_venue": 181,
+    "id_parametro": "FRZLVL",
+    "id_aggregazione": 0,
+    "id_time_layouts": 62,
+	"id_trend": null
+  },
+  "81": {
+    "id_venue": 181,
+    "id_parametro": "PREC_CLASS",
+    "id_aggregazione": 0,
+    "id_time_layouts": 62,
+	"id_trend": null
+  },
+  "82": {
+    "id_venue": 181,
+    "id_parametro": "SKY_CONDIT",
+    "id_aggregazione": 0,
+    "id_time_layouts": 62,
+	"id_trend": null
+  },
+  "83": {
+    "id_venue": 181,
+    "id_parametro": "SNOW_LEV",
+    "id_aggregazione": 0,
+    "id_time_layouts": 62,
+	"id_trend": null
+  },
+  "84": {
+    "id_venue": 181,
+    "id_parametro": "TERMA",
+    "id_aggregazione": 328,
+    "id_time_layouts": 62,
+	"id_trend": null
+  },
+  "85": {
+    "id_venue": 181,
+    "id_parametro": "FRZLVL",
+    "id_aggregazione": 0,
+    "id_time_layouts": 63,
+	"id_trend": null
+  },
+  "86": {
+    "id_venue": 181,
+    "id_parametro": "PREC_CLASS",
+    "id_aggregazione": 0,
+    "id_time_layouts": 63,
+	"id_trend": null
+  },
+  "87": {
+    "id_venue": 181,
+    "id_parametro": "SKY_CONDIT",
+    "id_aggregazione": 0,
+    "id_time_layouts": 63,
+	"id_trend": null
+  },
+  "88": {
+    "id_venue": 181,
+    "id_parametro": "SNOW_LEV",
+    "id_aggregazione": 0,
+    "id_time_layouts": 63,
+	"id_trend": null
+  },
+  "89": {
+    "id_venue": 181,
+    "id_parametro": "FRZLVL",
+    "id_aggregazione": 0,
+    "id_time_layouts": 81,
+	"id_trend": null
+  },
+  "90": {
+    "id_venue": 181,
+    "id_parametro": "PREC_CLASS",
+    "id_aggregazione": 0,
+    "id_time_layouts": 81,
+	"id_trend": null
+  },
+  "91": {
+    "id_venue": 181,
+    "id_parametro": "SKY_CONDIT",
+    "id_aggregazione": 0,
+    "id_time_layouts": 81,
+	"id_trend": null
+  },
+  "92": {
+    "id_venue": 181,
+    "id_parametro": "SNOW_LEV",
+    "id_aggregazione": 0,
+    "id_time_layouts": 81,
+	"id_trend": null
+  },
+  "93": {
+    "id_venue": 181,
+    "id_parametro": "TERMA",
+    "id_aggregazione": 327,
+    "id_time_layouts": 81,
+	"id_trend": null
+  },
+  "94": {
+    "id_venue": 181,
+    "id_parametro": "FRZLVL",
+    "id_aggregazione": 0,
+    "id_time_layouts": 82,
+	"id_trend": null
+  },
+  "95": {
+    "id_venue": 181,
+    "id_parametro": "PREC_CLASS",
+    "id_aggregazione": 0,
+    "id_time_layouts": 82,
+	"id_trend": null
+  },
+  "96": {
+    "id_venue": 181,
+    "id_parametro": "SKY_CONDIT",
+    "id_aggregazione": 0,
+    "id_time_layouts": 82,
+	"id_trend": null
+  },
+  "97": {
+    "id_venue": 181,
+    "id_parametro": "SNOW_LEV",
+    "id_aggregazione": 0,
+    "id_time_layouts": 82,
+	"id_trend": null
+  },
+  "98": {
+    "id_venue": 181,
+    "id_parametro": "TERMA",
+    "id_aggregazione": 328,
+    "id_time_layouts": 82,
+	"id_trend": null
+  },
+  "99": {
+    "id_venue": 182,
+    "id_parametro": "FRZLVL",
+    "id_aggregazione": 0,
+    "id_time_layouts": 46,
+	"id_trend": null
+  },
+  "100": {
+    "id_venue": 182,
+    "id_parametro": "PREC_CLASS",
+    "id_aggregazione": 0,
+    "id_time_layouts": 46,
+	"id_trend": null
+  },
+  "101": {
+    "id_venue": 182,
+    "id_parametro": "SKY_CONDIT",
+    "id_aggregazione": 0,
+    "id_time_layouts": 46,
+	"id_trend": null
+  },
+  "102": {
+    "id_venue": 182,
+    "id_parametro": "SNOW_LEV",
+    "id_aggregazione": 0,
+    "id_time_layouts": 46,
+	"id_trend": null
+  },
+  "103": {
+    "id_venue": 182,
+    "id_parametro": "TERMA",
+    "id_aggregazione": 328,
+    "id_time_layouts": 46,
+	"id_trend": null
+  },
+  "104": {
+    "id_venue": 182,
+    "id_parametro": "FRZLVL",
+    "id_aggregazione": 0,
+    "id_time_layouts": 60,
+	"id_trend": null
+  },
+  "105": {
+    "id_venue": 182,
+    "id_parametro": "PREC_CLASS",
+    "id_aggregazione": 0,
+    "id_time_layouts": 60,
+	"id_trend": null
+  },
+  "106": {
+    "id_venue": 182,
+    "id_parametro": "SKY_CONDIT",
+    "id_aggregazione": 0,
+    "id_time_layouts": 60,
+	"id_trend": null
+  },
+  "107": {
+    "id_venue": 182,
+    "id_parametro": "SNOW_LEV",
+    "id_aggregazione": 0,
+    "id_time_layouts": 60,
+	"id_trend": null
+  },
+  "108": {
+    "id_venue": 182,
+    "id_parametro": "TERMA",
+    "id_aggregazione": 327,
+    "id_time_layouts": 60,
+	"id_trend": null
+  },
+  "109": {
+    "id_venue": 182,
+    "id_parametro": "FRZLVL",
+    "id_aggregazione": 0,
+    "id_time_layouts": 61,
+	"id_trend": null
+  },
+  "110": {
+    "id_venue": 182,
+    "id_parametro": "PREC_CLASS",
+    "id_aggregazione": 0,
+    "id_time_layouts": 61,
+	"id_trend": null
+  },
+  "111": {
+    "id_venue": 182,
+    "id_parametro": "SKY_CONDIT",
+    "id_aggregazione": 0,
+    "id_time_layouts": 61,
+	"id_trend": null
+  },
+  "112": {
+    "id_venue": 182,
+    "id_parametro": "SNOW_LEV",
+    "id_aggregazione": 0,
+    "id_time_layouts": 61,
+	"id_trend": null
+  },
+  "113": {
+    "id_venue": 182,
+    "id_parametro": "FRZLVL",
+    "id_aggregazione": 0,
+    "id_time_layouts": 62,
+	"id_trend": null
+  },
+  "114": {
+    "id_venue": 182,
+    "id_parametro": "PREC_CLASS",
+    "id_aggregazione": 0,
+    "id_time_layouts": 62,
+	"id_trend": null
+  },
+  "115": {
+    "id_venue": 182,
+    "id_parametro": "SKY_CONDIT",
+    "id_aggregazione": 0,
+    "id_time_layouts": 62,
+	"id_trend": null
+  },
+  "116": {
+    "id_venue": 182,
+    "id_parametro": "SNOW_LEV",
+    "id_aggregazione": 0,
+    "id_time_layouts": 62,
+	"id_trend": null
+  },
+  "117": {
+    "id_venue": 182,
+    "id_parametro": "TERMA",
+    "id_aggregazione": 328,
+    "id_time_layouts": 62,
+	"id_trend": null
+  },
+  "118": {
+    "id_venue": 182,
+    "id_parametro": "FRZLVL",
+    "id_aggregazione": 0,
+    "id_time_layouts": 63,
+	"id_trend": null
+  },
+  "119": {
+    "id_venue": 182,
+    "id_parametro": "PREC_CLASS",
+    "id_aggregazione": 0,
+    "id_time_layouts": 63,
+	"id_trend": null
+  },
+  "120": {
+    "id_venue": 182,
+    "id_parametro": "SKY_CONDIT",
+    "id_aggregazione": 0,
+    "id_time_layouts": 63,
+	"id_trend": null
+  },
+  "121": {
+    "id_venue": 182,
+    "id_parametro": "SNOW_LEV",
+    "id_aggregazione": 0,
+    "id_time_layouts": 63,
+	"id_trend": null
+  },
+  "122": {
+    "id_venue": 182,
+    "id_parametro": "FRZLVL",
+    "id_aggregazione": 0,
+    "id_time_layouts": 81,
+	"id_trend": null
+  },
+  "123": {
+    "id_venue": 182,
+    "id_parametro": "PREC_CLASS",
+    "id_aggregazione": 0,
+    "id_time_layouts": 81,
+	"id_trend": null
+  },
+  "124": {
+    "id_venue": 182,
+    "id_parametro": "SKY_CONDIT",
+    "id_aggregazione": 0,
+    "id_time_layouts": 81,
+	"id_trend": null
+  },
+  "125": {
+    "id_venue": 182,
+    "id_parametro": "SNOW_LEV",
+    "id_aggregazione": 0,
+    "id_time_layouts": 81,
+	"id_trend": null
+  },
+  "126": {
+    "id_venue": 182,
+    "id_parametro": "TERMA",
+    "id_aggregazione": 327,
+    "id_time_layouts": 81,
+	"id_trend": null
+  },
+  "127": {
+    "id_venue": 182,
+    "id_parametro": "FRZLVL",
+    "id_aggregazione": 0,
+    "id_time_layouts": 82,
+	"id_trend": null
+  },
+  "128": {
+    "id_venue": 182,
+    "id_parametro": "PREC_CLASS",
+    "id_aggregazione": 0,
+    "id_time_layouts": 82,
+	"id_trend": null
+  },
+  "129": {
+    "id_venue": 182,
+    "id_parametro": "SKY_CONDIT",
+    "id_aggregazione": 0,
+    "id_time_layouts": 82,
+	"id_trend": null
+  },
+  "130": {
+    "id_venue": 182,
+    "id_parametro": "SNOW_LEV",
+    "id_aggregazione": 0,
+    "id_time_layouts": 82,
+	"id_trend": null
+  },
+  "131": {
+    "id_venue": 182,
+    "id_parametro": "TERMA",
+    "id_aggregazione": 328,
+    "id_time_layouts": 82,
+	"id_trend": null
+  },
+  "132": {
+    "id_venue": 183,
+    "id_parametro": "FRZLVL",
+    "id_aggregazione": 0,
+    "id_time_layouts": 46,
+	"id_trend": null
+  },
+  "133": {
+    "id_venue": 183,
+    "id_parametro": "PREC_CLASS",
+    "id_aggregazione": 0,
+    "id_time_layouts": 46,
+	"id_trend": null
+  },
+  "134": {
+    "id_venue": 183,
+    "id_parametro": "SKY_CONDIT",
+    "id_aggregazione": 0,
+    "id_time_layouts": 46,
+	"id_trend": null
+  },
+  "135": {
+    "id_venue": 183,
+    "id_parametro": "SNOW_LEV",
+    "id_aggregazione": 0,
+    "id_time_layouts": 46,
+	"id_trend": null
+  },
+  "136": {
+    "id_venue": 183,
+    "id_parametro": "TERMA",
+    "id_aggregazione": 328,
+    "id_time_layouts": 46,
+	"id_trend": null
+  },
+  "137": {
+    "id_venue": 183,
+    "id_parametro": "FRZLVL",
+    "id_aggregazione": 0,
+    "id_time_layouts": 60,
+	"id_trend": null
+  },
+  "138": {
+    "id_venue": 183,
+    "id_parametro": "PREC_CLASS",
+    "id_aggregazione": 0,
+    "id_time_layouts": 60,
+	"id_trend": null
+  },
+  "139": {
+    "id_venue": 183,
+    "id_parametro": "SKY_CONDIT",
+    "id_aggregazione": 0,
+    "id_time_layouts": 60,
+	"id_trend": null
+  },
+  "140": {
+    "id_venue": 183,
+    "id_parametro": "SNOW_LEV",
+    "id_aggregazione": 0,
+    "id_time_layouts": 60,
+	"id_trend": null
+  },
+  "141": {
+    "id_venue": 183,
+    "id_parametro": "TERMA",
+    "id_aggregazione": 327,
+    "id_time_layouts": 60,
+	"id_trend": null
+  },
+  "142": {
+    "id_venue": 183,
+    "id_parametro": "FRZLVL",
+    "id_aggregazione": 0,
+    "id_time_layouts": 61,
+	"id_trend": null
+  },
+  "143": {
+    "id_venue": 183,
+    "id_parametro": "PREC_CLASS",
+    "id_aggregazione": 0,
+    "id_time_layouts": 61,
+	"id_trend": null
+  },
+  "144": {
+    "id_venue": 183,
+    "id_parametro": "SKY_CONDIT",
+    "id_aggregazione": 0,
+    "id_time_layouts": 61,
+	"id_trend": null
+  },
+  "145": {
+    "id_venue": 183,
+    "id_parametro": "SNOW_LEV",
+    "id_aggregazione": 0,
+    "id_time_layouts": 61,
+	"id_trend": null
+  },
+  "146": {
+    "id_venue": 183,
+    "id_parametro": "FRZLVL",
+    "id_aggregazione": 0,
+    "id_time_layouts": 62,
+	"id_trend": null
+  },
+  "147": {
+    "id_venue": 183,
+    "id_parametro": "PREC_CLASS",
+    "id_aggregazione": 0,
+    "id_time_layouts": 62,
+	"id_trend": null
+  },
+  "148": {
+    "id_venue": 183,
+    "id_parametro": "SKY_CONDIT",
+    "id_aggregazione": 0,
+    "id_time_layouts": 62,
+	"id_trend": null
+  },
+  "149": {
+    "id_venue": 183,
+    "id_parametro": "SNOW_LEV",
+    "id_aggregazione": 0,
+    "id_time_layouts": 62,
+	"id_trend": null
+  },
+  "150": {
+    "id_venue": 183,
+    "id_parametro": "TERMA",
+    "id_aggregazione": 328,
+    "id_time_layouts": 62,
+	"id_trend": null
+  },
+  "151": {
+    "id_venue": 183,
+    "id_parametro": "FRZLVL",
+    "id_aggregazione": 0,
+    "id_time_layouts": 63,
+	"id_trend": null
+  },
+  "152": {
+    "id_venue": 183,
+    "id_parametro": "PREC_CLASS",
+    "id_aggregazione": 0,
+    "id_time_layouts": 63,
+	"id_trend": null
+  },
+  "153": {
+    "id_venue": 183,
+    "id_parametro": "SKY_CONDIT",
+    "id_aggregazione": 0,
+    "id_time_layouts": 63,
+	"id_trend": null
+  },
+  "154": {
+    "id_venue": 183,
+    "id_parametro": "SNOW_LEV",
+    "id_aggregazione": 0,
+    "id_time_layouts": 63,
+	"id_trend": null
+  },
+  "155": {
+    "id_venue": 183,
+    "id_parametro": "FRZLVL",
+    "id_aggregazione": 0,
+    "id_time_layouts": 81,
+	"id_trend": null
+  },
+  "156": {
+    "id_venue": 183,
+    "id_parametro": "PREC_CLASS",
+    "id_aggregazione": 0,
+    "id_time_layouts": 81,
+	"id_trend": null
+  },
+  "157": {
+    "id_venue": 183,
+    "id_parametro": "SKY_CONDIT",
+    "id_aggregazione": 0,
+    "id_time_layouts": 81,
+	"id_trend": null
+  },
+  "158": {
+    "id_venue": 183,
+    "id_parametro": "SNOW_LEV",
+    "id_aggregazione": 0,
+    "id_time_layouts": 81,
+	"id_trend": null
+  },
+  "159": {
+    "id_venue": 183,
+    "id_parametro": "TERMA",
+    "id_aggregazione": 327,
+    "id_time_layouts": 81,
+	"id_trend": null
+  },
+  "160": {
+    "id_venue": 183,
+    "id_parametro": "FRZLVL",
+    "id_aggregazione": 0,
+    "id_time_layouts": 82,
+	"id_trend": null
+  },
+  "161": {
+    "id_venue": 183,
+    "id_parametro": "PREC_CLASS",
+    "id_aggregazione": 0,
+    "id_time_layouts": 82,
+	"id_trend": null
+  },
+  "162": {
+    "id_venue": 183,
+    "id_parametro": "SKY_CONDIT",
+    "id_aggregazione": 0,
+    "id_time_layouts": 82,
+	"id_trend": null
+  },
+  "163": {
+    "id_venue": 183,
+    "id_parametro": "SNOW_LEV",
+    "id_aggregazione": 0,
+    "id_time_layouts": 82,
+	"id_trend": null
+  },
+  "164": {
+    "id_venue": 183,
+    "id_parametro": "TERMA",
+    "id_aggregazione": 328,
+    "id_time_layouts": 82,
+	"id_trend": null
+  }
+}

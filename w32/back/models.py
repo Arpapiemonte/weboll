@@ -23,6 +23,7 @@ class W32(models.Model):
     data_osservazione = models.CharField(max_length=20, blank=True, null=True)
     data_simulazione = models.CharField(max_length=20, blank=True, null=True)
     note = models.TextField(blank=True, null=True)
+    id_w32_parent = models.IntegerField(blank=True, null=True)
 
     class Meta:
         managed = False

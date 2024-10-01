@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2020-2023 simevo s.r.l. for ARPA Piemonte - Dipartimento Naturali e Ambientali
+# Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
 # This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 # weboll is licensed under the AGPL-3.0-or-later License.
 # License text available at https://www.gnu.org/licenses/agpl.txt
@@ -211,22 +211,39 @@ class W24View(viewsets.ModelViewSet):
         print("Calcolo TEMPORALI")
 
         w30todayexists = False
-
-        if W30.objects.filter(status="1"):
-            if W30.objects.filter(status="1").order_by("-last_update").latest("pk"):
-                latest_w30 = (
-                    W30.objects.filter(status="1").order_by("-last_update").latest("pk")
-                )
-                if latest_w30.data_emissione.date() == today.date():
-                    w30todayexists = True
+        try:
+            if W30.objects.filter(status="1"):
+                if (
+                    W30.objects.filter(status="1")
+                    .filter(
+                        data_emissione__year=today.year,
+                        data_emissione__month=today.month,
+                        data_emissione__day=today.day,
+                    )
+                    .latest("last_update")
+                ):
+                    latest_w30 = (
+                        W30.objects.filter(status="1")
+                        .filter(
+                            data_emissione__year=today.year,
+                            data_emissione__month=today.month,
+                            data_emissione__day=today.day,
+                        )
+                        .latest("last_update")
+                    )
+                    if latest_w30.data_emissione.date() == today.date():
+                        w30todayexists = True
+                else:
+                    w30todayexists = False
             else:
                 w30todayexists = False
-        else:
+        except W30.DoesNotExist:
+            print("ERRORE: Non trovo il PSA di oggi!")
             w30todayexists = False
 
         if w30todayexists:
             pluvs_125 = (
-                W30Data.objects.filter(id_w30=latest_w30.id_w30)
+                W30Data.objects.filter(id_w30=latest_w30.id_w30)  # type: ignore
                 .filter(id_aggregazione="125")
                 .exclude(id_time_layouts="43")
                 .exclude(id_time_layouts="44")
@@ -238,7 +255,7 @@ class W24View(viewsets.ModelViewSet):
                 for tl24h in pioggia_tl:
                     max6h = 0
                     for tl6h in giorni[tl24h]:
-                        for pluv in pluvs_125.filter(id_time_layouts=tl6h).filter(
+                        for pluv in pluvs_125.filter(id_time_layouts=tl6h).filter(  # type: ignore
                             id_allertamento=area
                         ):
                             if (
@@ -312,17 +329,16 @@ class W24View(viewsets.ModelViewSet):
         print("Calcolo PRECIPITAZIONI")
 
         if w30todayexists:
-            sogliepluv901 = models.W24Soglie.objects.filter(id_parametro="PLUV").filter(
+            sogliepluv901 = models.W24Soglie.objects.filter(id_parametro="PLUV").filter(  # type: ignore
                 id_aggregazione="901"
             )
 
-            sogliepluv902 = models.W24Soglie.objects.filter(id_parametro="PLUV").filter(
+            sogliepluv902 = models.W24Soglie.objects.filter(id_parametro="PLUV").filter(  # type: ignore
                 id_aggregazione="902"
             )
 
-            print("HERE")
             pluvs_902 = (
-                W30Data.objects.filter(id_w30=latest_w30.id_w30)
+                W30Data.objects.filter(id_w30=latest_w30.id_w30)  # type: ignore
                 .filter(id_aggregazione="902")
                 .exclude(id_time_layouts="2010")
                 .exclude(id_time_layouts="2011")
@@ -334,7 +350,7 @@ class W24View(viewsets.ModelViewSet):
             )
 
             pluvs_901 = (
-                W30Data.objects.filter(id_w30=latest_w30.id_w30)
+                W30Data.objects.filter(id_w30=latest_w30.id_w30)  # type: ignore
                 .filter(id_aggregazione="901")
                 .filter(id_time_layouts="48")
                 .exclude(id_allertamento="Piem-V")
@@ -528,13 +544,13 @@ class W24View(viewsets.ModelViewSet):
 
             allw24 = models.W24Data.objects.filter(id_w24=new)
             for time_layout in pioggia_tl:
-                terma_datas = allw24.filter(id_time_layouts=time_layout).filter(
+                terma_datas = allw24.filter(id_time_layouts=time_layout).filter(  # type: ignore
                     id_parametro="TERMA"
                 )
-                terma1_datas = allw24.filter(id_time_layouts=time_layout).filter(
+                terma1_datas = allw24.filter(id_time_layouts=time_layout).filter(  # type: ignore
                     id_parametro="TERMA1"
                 )
-                terma2_datas = allw24.filter(id_time_layouts=time_layout).filter(
+                terma2_datas = allw24.filter(id_time_layouts=time_layout).filter(  # type: ignore
                     id_parametro="TERMA2"
                 )
 
@@ -580,13 +596,13 @@ class W24View(viewsets.ModelViewSet):
             allw24 = models.W24Data.objects.filter(id_w24=new)
 
             for time_layout in freddo_tl:
-                terma_datas = allw24.filter(id_time_layouts=time_layout).filter(
+                terma_datas = allw24.filter(id_time_layouts=time_layout).filter(  # type: ignore
                     id_parametro="TERMA"
                 )
-                terma1_datas = allw24.filter(id_time_layouts=time_layout).filter(
+                terma1_datas = allw24.filter(id_time_layouts=time_layout).filter(  # type: ignore
                     id_parametro="TERMA1"
                 )
-                terma2_datas = allw24.filter(id_time_layouts=time_layout).filter(
+                terma2_datas = allw24.filter(id_time_layouts=time_layout).filter(  # type: ignore
                     id_parametro="TERMA2"
                 )
                 for area in Aree:
@@ -739,7 +755,7 @@ class W24View(viewsets.ModelViewSet):
 
         if w30todayexists:
             pluvs_900 = (
-                W30Data.objects.filter(id_w30=latest_w30.id_w30)
+                W30Data.objects.filter(id_w30=latest_w30.id_w30)  # type: ignore
                 .filter(id_aggregazione="900")
                 .exclude(id_time_layouts="43")
                 .exclude(id_time_layouts="44")
@@ -748,6 +764,10 @@ class W24View(viewsets.ModelViewSet):
             )
 
             for pluv in pluvs_900:
+                if pluv.numeric_value is None:
+                    pluv_numeric_value = Decimal(0)
+                else:
+                    pluv_numeric_value = Decimal(pluv.numeric_value)
                 new_data = models.W24Data(
                     id_w24=new,
                     id_allertamento=areeAllertamento_dict[
@@ -782,7 +802,7 @@ class W24View(viewsets.ModelViewSet):
             print("Calcolo SNOW_LEV")
 
             snow_levels = (
-                W30Data.objects.filter(id_w30=latest_w30.id_w30)
+                W30Data.objects.filter(id_w30=latest_w30.id_w30)  # type: ignore
                 .filter(id_parametro="SNOW_LEV")
                 .exclude(id_time_layouts="43")
                 .exclude(id_time_layouts="44")
@@ -876,7 +896,7 @@ class W24View(viewsets.ModelViewSet):
                     summedie[tl24h]["2000"] = 0
                     for tl6h in giorni[tl24h]:
                         pluv = (
-                            pluvs_900.filter(id_allertamento=area)
+                            pluvs_900.filter(id_allertamento=area)  # type: ignore
                             .filter(id_time_layouts=tl6h)
                             .get()
                         )
@@ -886,7 +906,7 @@ class W24View(viewsets.ModelViewSet):
                             pluv_numeric_value = Decimal(pluv.numeric_value)
 
                         snow_level = (
-                            snow_levels.filter(id_allertamento=area)
+                            snow_levels.filter(id_allertamento=area)  # type: ignore
                             .filter(id_time_layouts=tl6h)
                             .get()
                         )
@@ -895,16 +915,16 @@ class W24View(viewsets.ModelViewSet):
                         else:
                             snow_level_numeric_value = Decimal(snow_level.numeric_value)
 
-                        if snow_level_numeric_value < 400:
+                        if snow_level_numeric_value <= 400:
                             summedie[tl24h]["400"] += pluv_numeric_value
 
-                        if snow_level_numeric_value < 700:
+                        if snow_level_numeric_value <= 700:
                             summedie[tl24h]["700"] += pluv_numeric_value
 
-                        if snow_level_numeric_value < 1000:
+                        if snow_level_numeric_value <= 1300:
                             summedie[tl24h]["1000"] += pluv_numeric_value
 
-                        if snow_level_numeric_value < 2000:
+                        if snow_level_numeric_value <= 2000:
                             summedie[tl24h]["2000"] += pluv_numeric_value
 
                     for mt in snow_meters:
@@ -989,25 +1009,25 @@ class W24View(viewsets.ModelViewSet):
                 value_max = Decimal(0.0)
 
                 value400 = (
-                    snow_400.filter(id_allertamento=area)
+                    snow_400.filter(id_allertamento=area)  # type: ignore
                     .filter(id_time_layouts=tlday)
                     .get()
                     .numeric_value
                 )
                 value700 = (
-                    snow_700.filter(id_allertamento=area)
+                    snow_700.filter(id_allertamento=area)  # type: ignore
                     .filter(id_time_layouts=tlday)
                     .get()
                     .numeric_value
                 )
                 value1000 = (
-                    snow_1000.filter(id_allertamento=area)
+                    snow_1000.filter(id_allertamento=area)  # type: ignore
                     .filter(id_time_layouts=tlday)
                     .get()
                     .numeric_value
                 )
                 value2000 = (
-                    snow_2000.filter(id_allertamento=area)
+                    snow_2000.filter(id_allertamento=area)  # type: ignore
                     .filter(id_time_layouts=tlday)
                     .get()
                     .numeric_value
@@ -1547,6 +1567,32 @@ class VigilanzaPDFView(VigilanzaHTMLView):
 
 
 class VigilanzaPngView(DetailView):
+    http_method_names = ["get"]
+
+    def get(self, request, *args, **kwargs):
+        r = requests.get("http://django:8000/w24/pdf/%d" % kwargs["pk"])
+
+        with tempfile.NamedTemporaryFile(suffix=".pdf") as f:
+            f.write(r.content)
+            f.flush()
+            png_name = "%s.png" % f.name
+            command = "convert -verbose -density 145 -crop 1191x1685+3x5 %s %s" % (
+                f.name,
+                png_name,
+            )
+            retcode = call(command, shell=True)
+            if retcode != 0:
+                error = "imagemagick convert failed with code: %d" % retcode
+                raise Exception(error)
+            with open(png_name, mode="rb") as png_file:
+                png_content = png_file.read()
+            os.remove(png_name)
+            return HttpResponse(
+                content=memoryview(png_content), content_type="image/png"
+            )
+
+
+class VigilanzaPngRuparView(DetailView):
     http_method_names = ["get"]
 
     def get(self, request, *args, **kwargs):

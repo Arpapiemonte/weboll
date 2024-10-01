@@ -533,15 +533,15 @@ class W12SVGView(TemplateView):
             if not data["id_time_layouts"] in tmp[data["id_venue"]]:
                 tmp[data["id_venue"]][data["id_time_layouts"]] = {}
             tmp[data["id_venue"]][data["id_time_layouts"]] = data
-            tmp[data["id_venue"]][data["id_time_layouts"]][
-                "precipitation_class"
-            ] = precipitation_classes[
-                str(
-                    tmp[data["id_venue"]][data["id_time_layouts"]][
-                        "precipitation_class"
-                    ]
-                )
-            ]
+            tmp[data["id_venue"]][data["id_time_layouts"]]["precipitation_class"] = (
+                precipitation_classes[
+                    str(
+                        tmp[data["id_venue"]][data["id_time_layouts"]][
+                            "precipitation_class"
+                        ]
+                    )
+                ]
+            )
             if tmp[data["id_venue"]][data["id_time_layouts"]]["cumulated_snow"] is None:
                 tmp[data["id_venue"]][data["id_time_layouts"]]["cumulated_snow"] = "NO"
             if (
@@ -555,11 +555,22 @@ class W12SVGView(TemplateView):
                 tmp[data["id_venue"]][data["id_time_layouts"]][
                     "temperature_below_zero"
                 ] = "SI"
-            tmp[data["id_venue"]][data["id_time_layouts"]][
-                "sky_desc"
-            ] = sky_conditions_dict[
-                tmp[data["id_venue"]][data["id_time_layouts"]]["sky_condition"]
-            ]
+            if (
+                tmp[data["id_venue"]][data["id_time_layouts"]]["risk_freezing_rain"]
+                is False
+            ):
+                tmp[data["id_venue"]][data["id_time_layouts"]][
+                    "risk_freezing_rain"
+                ] = "NO"
+            else:
+                tmp[data["id_venue"]][data["id_time_layouts"]][
+                    "risk_freezing_rain"
+                ] = "SI"
+            tmp[data["id_venue"]][data["id_time_layouts"]]["sky_desc"] = (
+                sky_conditions_dict[
+                    tmp[data["id_venue"]][data["id_time_layouts"]]["sky_condition"]
+                ]
+            )
 
         autostrada["w12data_set"] = tmp
         context = {
@@ -586,3 +597,257 @@ class W12PDFView(W12SVGView):
             },
         )
         return response
+
+
+class ArpaPiemonteView(TemplateView):
+    template_name = "Arpa_Piemonte.xml"
+    http_method_names = ["get"]
+
+    def get_context_data(self, **kwargs):
+        def tl2date(data, id_time_layouts):
+            # [45, 46, 60, 61, 62, 63]
+            if id_time_layouts == 45:
+                data = data.replace(hour=12, minute=0, second=0)
+            elif id_time_layouts == 46:
+                data = data.replace(hour=18, minute=0, second=0)
+            elif id_time_layouts == 60:
+                data = data + datetime.timedelta(days=1)
+                data = data.replace(hour=0, minute=0, second=0)
+            elif id_time_layouts == 61:
+                data = data + datetime.timedelta(days=1)
+                data = data.replace(hour=6, minute=0, second=0)
+            elif id_time_layouts == 62:
+                data = data + datetime.timedelta(days=1)
+                data = data.replace(hour=12, minute=0, second=0)
+            elif id_time_layouts == 63:
+                data = data + datetime.timedelta(days=1)
+                data = data.replace(hour=18, minute=0, second=0)
+            str_time = data.strftime("%d-%m-%Y")
+            return str_time
+
+        def tl2time(id_time_layouts):
+            # [45, 46, 60, 61, 62, 63]
+            if id_time_layouts == 45:
+                str_time = "12-18 UTC"
+            elif id_time_layouts == 46:
+                str_time = "18-24 UTC"
+            elif id_time_layouts == 60:
+                str_time = "0-6 UTC"
+            elif id_time_layouts == 61:
+                str_time = "6-12 UTC"
+            elif id_time_layouts == 62:
+                str_time = "12-18 UTC"
+            elif id_time_layouts == 63:
+                str_time = "18-24 UTC"
+            return str_time
+
+        tratte = {
+            "99_284": {
+                "idtratta": "284",
+                "nome": "Confine Liguria Piemonte-Serravalle Scrivia",
+                "latestra": "44.664410",
+                "longestra": "8.913639",
+                "latestrb": "44.727036",
+                "longestrb": "8.857040",
+                "id_time_layouts": [{}, {}, {}, {}, {}, {}],
+            },
+            "100_285": {
+                "idtratta": "285",
+                "nome": "Confine Liguria Piemonte-Ovada",
+                "latestra": "44.583117",
+                "longestra": "8.663725",
+                "latestrb": "44.628947",
+                "longestrb": "8.659497",
+                "id_time_layouts": [{}, {}, {}, {}, {}, {}],
+            },
+            "101_286": {
+                "idtratta": "286",
+                "nome": "Ovada-Interconnessione Diramazione Predosa Bettole",
+                "latestra": "44.628947",
+                "longestra": "8.659497",
+                "latestrb": "44.908026",
+                "longestrb": "8.843692",
+                "id_time_layouts": [{}, {}, {}, {}, {}, {}],
+            },
+            "101_287": {
+                "idtratta": "287",
+                "nome": "Tratto Diramazione Predosa Bettole",
+                "latestra": "44.628947",
+                "longestra": "8.659497",
+                "latestrb": "44.908026",
+                "longestrb": "8.843692",
+                "id_time_layouts": [{}, {}, {}, {}, {}, {}],
+            },
+            "101_288": {
+                "idtratta": "288",
+                "nome": "Interconessione Diramazione Predosa Bettole-Tortona",
+                "latestra": "44.628947",
+                "longestra": "8.659497",
+                "latestrb": "44.908026",
+                "longestrb": "8.843692",
+                "id_time_layouts": [{}, {}, {}, {}, {}, {}],
+            },
+            "102_289": {
+                "idtratta": "289",
+                "nome": "Diramazione Predosa Bettole-Casale Monferrato",
+                "latestra": "44.759853",
+                "longestra": "8.643769",
+                "latestrb": "45.167678",
+                "longestrb": "8.490124",
+                "id_time_layouts": [{}, {}, {}, {}, {}, {}],
+            },
+            "103_290": {
+                "idtratta": "290",
+                "nome": "Casale Monferrato-Romagnano Sesia",
+                "latestra": "45.167678",
+                "longestra": "8.490124",
+                "latestrb": "45.608255",
+                "longestrb": "8.407555",
+                "id_time_layouts": [{}, {}, {}, {}, {}, {}],
+            },
+            "103_291": {
+                "idtratta": "291",
+                "nome": "Diramazione Stroppiana Santhia",
+                "latestra": "45.167678",
+                "longestra": "8.490124",
+                "latestrb": "45.608255",
+                "longestrb": "8.407555",
+                "id_time_layouts": [{}, {}, {}, {}, {}, {}],
+            },
+            "104_292": {
+                "idtratta": "292",
+                "nome": "Romagnano Sesia-Interconnessione Dir. A8/A26",
+                "latestra": "45.608255",
+                "longestra": "8.407555",
+                "latestrb": "45.701174",
+                "longestrb": "8.607205",
+                "id_time_layouts": [{}, {}, {}, {}, {}, {}],
+            },
+            "104_293": {
+                "idtratta": "293",
+                "nome": "Interconnessione Dir. A8/A26-Castelletto Ticino",
+                "latestra": "45.608255",
+                "longestra": "8.407555",
+                "latestrb": "45.701174",
+                "longestrb": "8.607205",
+                "id_time_layouts": [{}, {}, {}, {}, {}, {}],
+            },
+            "105_294": {
+                "idtratta": "294",
+                "nome": "Dir. Gallarate Gattico-Gravellona Toce",
+                "latestra": "45.711139",
+                "longestra": "8.541824",
+                "latestrb": "45.934140",
+                "longestrb": "8.439213",
+                "id_time_layouts": [{}, {}, {}, {}, {}, {}],
+            },
+        }
+
+        idVenue = [
+            "99_284",
+            "100_285",
+            "101_286",
+            "101_287",
+            "101_288",
+            "102_289",
+            "103_290",
+            "103_291",
+            "104_292",
+            "104_293",
+            "105_294",
+        ]
+        time_layouts = [45, 46, 60, 61, 62, 63]
+
+        queryset = models.W12.objects
+        w12 = get_object_or_404(queryset, pk=kwargs["pk"])
+        serializer = W12SerializerFull(w12)
+        a7_a26 = serializer.data
+        for tratta in tratte:
+            id_venue = tratta.split("_")[0]
+            venue_data = list(
+                filter(
+                    lambda data: str(data["id_venue"]) == id_venue,
+                    a7_a26["w12data_set"],
+                )
+            )
+            for time_layout in time_layouts:
+                time_layouts_venue = list(
+                    filter(
+                        lambda data: data["id_time_layouts"] == time_layout, venue_data
+                    )
+                )[0]
+                index_tl = time_layouts.index(time_layout)
+                tratte[tratta]["id_time_layouts"][index_tl]["sky_condition"] = (  # type: ignore
+                    time_layouts_venue["sky_condition"]
+                )
+                tratte[tratta]["id_time_layouts"][index_tl]["cloud_amount"] = (  # type: ignore
+                    time_layouts_venue["cloud_amount"]
+                )
+                tratte[tratta]["id_time_layouts"][index_tl]["precipitation_class"] = (  # type: ignore
+                    time_layouts_venue["precipitation_class"]
+                )
+                tratte[tratta]["id_time_layouts"][index_tl]["cumulated_snow"] = (  # type: ignore
+                    time_layouts_venue["cumulated_snow"]
+                )
+                tratte[tratta]["id_time_layouts"][index_tl]["freezing_level"] = (  # type: ignore
+                    time_layouts_venue["freezing_level"]
+                )
+                tratte[tratta]["id_time_layouts"][index_tl]["snow_level"] = (  # type: ignore
+                    time_layouts_venue["snow_level"]
+                )
+                tratte[tratta]["id_time_layouts"][index_tl][
+                    "temperature_below_zero"
+                ] = time_layouts_venue[  # type: ignore
+                    "temperature_below_zero"
+                ]
+                tratte[tratta]["id_time_layouts"][index_tl]["risk_freezing_rain"] = (  # type: ignore
+                    time_layouts_venue["risk_freezing_rain"]
+                )
+                tratte[tratta]["id_time_layouts"][index_tl]["vis_inf_1000"] = (  # type: ignore
+                    time_layouts_venue["vis_inf_1000"]
+                )
+                tratte[tratta]["id_time_layouts"][index_tl]["vis_inf_1000_reason"] = (  # type: ignore
+                    time_layouts_venue["vis_inf_1000_reason"]
+                )
+                tratte[tratta]["id_time_layouts"][index_tl]["wind_class"] = (  # type: ignore
+                    time_layouts_venue["wind_class"]
+                )
+                tratte[tratta]["id_time_layouts"][index_tl]["precipitationType"] = 0  # type: ignore
+                if time_layouts_venue["sky_condition"] in [9, 21, 7, 26, 31, 1]:
+                    # neve
+                    tratte[tratta]["id_time_layouts"][index_tl]["precipitationType"] = 3  # type: ignore
+                if time_layouts_venue["sky_condition"] == 18:
+                    # pioggia mista neve
+                    tratte[tratta]["id_time_layouts"][index_tl]["precipitationType"] = 4  # type: ignore
+                if time_layouts_venue["sky_condition"] in [
+                    8,
+                    17,
+                    6,
+                    25,
+                    20,
+                    24,
+                    23,
+                    30,
+                ]:
+                    # pioggia
+                    tratte[tratta]["id_time_layouts"][index_tl]["precipitationType"] = 2  # type: ignore
+                tratte[tratta]["id_time_layouts"][index_tl]["data_validita"] = tl2date(  # type: ignore
+                    datetime.datetime.strptime(
+                        a7_a26["start_valid_time"], "%Y-%m-%dT%H:%M:%S"
+                    ),
+                    time_layout,
+                )
+                tratte[tratta]["id_time_layouts"][index_tl]["fascia"] = tl2time(  # type: ignore
+                    time_layout
+                )
+                # 11-04-2023 09:39:46
+                data_modello = datetime.datetime.strptime(
+                    a7_a26["start_valid_time"], "%Y-%m-%dT%H:%M:%S"
+                ).strftime("%d-%m-%Y %H:%M:%S")
+
+        previsioni_tratte = []
+        for venue in idVenue:
+            previsioni_tratte.append(tratte[venue])
+
+        context = {"previsioni_tratte": previsioni_tratte, "data_modello": data_modello}
+        return context

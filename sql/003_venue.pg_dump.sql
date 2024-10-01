@@ -208,3 +208,18 @@ VALUES(177, 'Provincia di Verbania', NULL, '2013-07-12 14:20:00.000', 'weboll');
 INSERT INTO public.venue
 (id_venue, description, altitude, last_update, username)
 VALUES(178, 'Provincia di Vercelli', NULL, '2013-07-12 14:20:00.000', 'weboll');
+INSERT INTO public.venue
+(id_venue, description, altitude, last_update, username)
+VALUES(179, 'Pray Sessera', 409.00, '2013-07-12 14:20:00.000', 'weboll');
+INSERT INTO public.venue
+(id_venue, description, altitude, last_update, username)
+VALUES(180, 'Pettinengo', 725.00, '2013-11-29 13:00:00.000', 'weboll');
+INSERT INTO public.venue
+(id_venue, description, altitude, last_update, username)
+VALUES(181, 'Piedicavallo', 1040.00, '2013-11-29 13:00:00.000', 'weboll');
+INSERT INTO public.venue
+(id_venue, description, altitude, last_update, username)
+VALUES(182, 'Masserano', 243.00, '2013-11-29 13:00:00.000', 'weboll');
+INSERT INTO public.venue
+(id_venue, description, altitude, last_update, username)
+VALUES(183, 'Massazza', 226.00, '2013-11-29 13:00:00.000', 'weboll');

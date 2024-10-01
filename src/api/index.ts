@@ -1,4 +1,4 @@
-// Copyright (C) 2020-2023 simevo s.r.l. for ARPA Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
@@ -32,7 +32,7 @@ export default {
     )
     return response.json()
   },
-  fetch_wrapper(access: string, uri: string, options: object) {
+  fetch_wrapper(access: string, uri: string, options: (object|undefined)=undefined) {
     return fetch(uri, {
       ...options,
       credentials: 'include',
@@ -44,7 +44,7 @@ export default {
       }
     })
   },
-  async fetchBulletinDelete (id: number, endpoint: string, store: {state: {access: string}}) {
+  async fetchBulletinDelete (id: string, endpoint: string, store: {state: {access: string}}) {
     const response = await this.fetch_wrapper(
       store.state.access,
       `/api/${endpoint}/${id}/`,

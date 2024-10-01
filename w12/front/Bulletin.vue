@@ -1,4 +1,4 @@
-// Copyright (C) 2020-2023 simevo s.r.l. for ARPA Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
@@ -480,7 +480,7 @@
                       <td
                         class="text-center"
                       >
-                        {{ venueNames[tratto.id_venue] }}
+                        {{ venueNames[tratto.id_venue] }} ({{ heights[tratto.id_venue].min }}-{{ heights[tratto.id_venue].max }} m)
                       </td>
                       <td class="text-center">
                         <select
@@ -688,7 +688,7 @@ import { Ref, ref, onMounted, computed, watch } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { useToast } from 'vue-toast-notification'
 
-import Modal from 'bootstrap/js/dist/modal'
+import { Modal } from 'bootstrap'
 
 import api from '../../src/api'
 import store from '../../src/store'
@@ -703,7 +703,7 @@ const route = useRoute()
 const toast = useToast()
 
 //reactive properties
-let autostrada_id = ref(NaN)
+let autostrada_id = ref("")
 let autostrada : Ref<W12Processed> = ref({
     id_w12: 0,
     start_valid_time: '',
@@ -749,7 +749,7 @@ let icons : Ref<Icons> = ref([])
 let countdown = ref(0)
 let modalElement = ref({})
 
-const icon_blacklist = [ 10, 12, 1, 32, 44, 45, 46 ]
+const icon_blacklist = [ 10, 1, 32, 44, 45, 46 ]
 const placeholder = ref({
   id_w12_data: 0,
   cloud_amount: null,
@@ -766,6 +766,13 @@ const placeholder = ref({
   id_venue: 0,
   id_time_layouts: 0,
   id_sky_condition: 0,
+})
+
+const props = defineProps({
+  id: {
+      type: String,
+      default: () => ''
+  },
 })
 
 const heights = ref({
@@ -857,6 +864,7 @@ const skycond_coptot_validity = {
   "7": [5,6,7,8],
   "8": [5,6,7,8],
   "9": [5,6,7,8],
+  "12": [],
   "11": [5,6],
   "16": [3,4],
   "17": [5,6,7,8],
@@ -870,7 +878,7 @@ const skycond_coptot_validity = {
   "26": [5,6,7,8],
   "27": [5,6,7,8],
   "28": [5,6,7,8],
-  "29": [1,2,3,4,5,6,7,8],
+  "29": [0,1,2,3,4,5,6,7,8],
   "30": [3,4,5,6,7,8],
   "31": [3,4,5,6,7,8]
 }
@@ -1102,6 +1110,7 @@ const pluvValidity = computed(() => {
       }
     })
   }
+  console.log(validity)
   return validity
 })
 
@@ -1167,9 +1176,7 @@ const sendable = computed(() => {
 })
 
 onMounted(() => {
-  if(typeof route.params.id === 'string'){
-    autostrada_id.value = parseInt(route.params.id)
-  }
+  autostrada_id.value = props.id
   fetchData()
   let element = document.getElementById('iconModal')
   if(element !== null){
@@ -1531,7 +1538,7 @@ function saveW12(stack) {
 function createTabsDate(){
   let today = dateToString(new Date(autostrada.value.start_valid_time))
   let tomorrow = dateToString(new Date(new Date(autostrada.value.start_valid_time).setDate(new Date(autostrada.value.start_valid_time).getDate()+1)))
-  let afterTomorrow = dateToString(new Date(new Date(autostrada.value.start_valid_time).setDate(new Date(autostrada.value.start_valid_time).getDate()+1)))
+  let afterTomorrow = dateToString(new Date(new Date(autostrada.value.start_valid_time).setDate(new Date(autostrada.value.start_valid_time).getDate()+2)))
   tabsDate.value = {
     45: `${today} 12-18`,
     46: `${today} 18-24`,

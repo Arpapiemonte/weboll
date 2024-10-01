@@ -7,7 +7,6 @@
        id="image2452"
        height="15"
        width="32.478226"
-       inkscape:svg-dpi="96"
        preserveAspectRatio="none" />
     <path
        d="M 180.13589,15.000273 V 10.000001 H 47.574 c 0.966612,0 1.750131,0.783872 1.750131,1.749778 v 3.250494 z"
@@ -20,7 +19,7 @@
        transform="translate(20.739051,-21.727113)"><tspan
          x="27.662109"
          y="46.381318"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Light'">{{ title }}</tspan></tspan></text>
+           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Titillium Web'">{{ title }}</tspan></tspan></text>
     <path
        id="rect3070"
        style="fill:#2e9d53;fill-opacity:1;fill-rule:evenodd;stroke-width:0.197396"
@@ -46,7 +45,7 @@
        style="fill:#2e9d53;fill-opacity:1;fill-rule:evenodd;stroke-width:0.21083"
        d="m 172.5,30.000236 v 4.999694 4.999696 h 0.50023 V 34.99993 H 200 v -4.999694 h -26.99977 z" />
     <text
-       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.82222px;font-family:'Titillium Web';-inkscape-font-specification:TitilliumWeb-Bold;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.82222px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text578"
        x="23.179239"
        y="33.396523"><tspan
@@ -55,16 +54,16 @@
          x="23.179239"
          y="33.396523">BOLLETTINO N°</tspan></text>
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.82222px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.82222px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text582"
        x="23.295902"
        y="38.397499"><tspan
          id="tspan580"
-         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Light';text-align:center;text-anchor:middle;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Titillium Web';text-align:center;text-anchor:middle;stroke-width:0.352778"
          x="23.295902"
          y="38.397499">{{seqNum}}/{{ startValidTime | year }}</tspan></text>
     <text
-       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.82222px;font-family:'Titillium Web';-inkscape-font-specification:TitilliumWeb-Bold;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.82222px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text590"
        x="52.452103"
        y="33.396523"><tspan
@@ -73,16 +72,16 @@
          x="52.452103"
          y="33.396523">DATA EMISSIONE</tspan></text>
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.82222px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.82222px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text594"
        x="53.201458"
        y="38.397499"><tspan
          id="tspan592"
-         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Light';text-align:center;text-anchor:middle;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Titillium Web';text-align:center;text-anchor:middle;stroke-width:0.352778"
          x="52.71458"
          y="38.397499">{{ startValidTime | my_date_JtD_ita}}</tspan></text>
     <text
-       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.82222px;font-family:'Titillium Web';-inkscape-font-specification:TitilliumWeb-Bold;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.82222px;font-family:'Titillium Web';text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text602"
        x="76.3013"
        y="33.396523"><tspan
@@ -91,7 +90,7 @@
          x="76.3013"
          y="33.396523">VALIDITÀ</tspan></text>
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.82222px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.82222px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text606"
        x="76.122276"
        y="38.397499"><tspan
@@ -100,7 +99,7 @@
          x="76.122276"
          y="38.397499">{{ validity }} ore</tspan></text>
     <text
-       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.82222px;font-family:'Titillium Web';-inkscape-font-specification:TitilliumWeb-Bold;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.82222px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text614"
        x="100.03834"
        y="33.396523"><tspan
@@ -109,16 +108,16 @@
          x="100.03834"
          y="33.396523">AGGIORNAMENTO</tspan></text>
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.82222px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.82222px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text618"
        x="100.49946"
        y="38.397499"><tspan
          id="tspan616"
-         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Light';text-align:center;text-anchor:middle;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Titillium Web';text-align:center;text-anchor:middle;stroke-width:0.352778"
          x="100.49946"
          y="38.397499"> {{ nextUpdate | my_date_JtD_ita}}</tspan></text>
     <text
-       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.82222px;font-family:'Titillium Web';-inkscape-font-specification:TitilliumWeb-Bold;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.82222px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text626"
        x="144.15256"
        y="33.396523"><tspan
@@ -127,16 +126,16 @@
          x="144.15256"
          y="33.396523">SERVIZIO A CURA DI</tspan></text>
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.82222px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.82222px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text630"
        x="145.08353"
        y="38.397499"><tspan
          id="tspan628"
-         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Light';text-align:center;text-anchor:middle;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Titillium Web';text-align:center;text-anchor:middle;stroke-width:0.352778"
          x="144.58353"
          y="38.397499">Dipartimento Rischi Naturali ed Ambientali</tspan></text>
     <text
-       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.82222px;font-family:'Titillium Web';-inkscape-font-specification:TitilliumWeb-Bold;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.82222px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text638"
        x="186.2881"
        y="33.396523"><tspan
@@ -145,12 +144,12 @@
          x="186.2881"
          y="33.396523">AMBITO</tspan></text>
     <text
-       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.82222px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.82222px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
        id="text642"
        x="186.19496"
        y="38.397499"><tspan
          id="tspan640"
-         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Light';text-align:center;text-anchor:middle;stroke-width:0.352778"
+         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Titillium Web';text-align:center;text-anchor:middle;stroke-width:0.352778"
          x="186.19496"
          y="38.397499">Regione Piemonte</tspan></text><!--Header LimFin-->
     <rect
@@ -181,14 +180,13 @@
       xlink:href="http://localhost:8000/static/images/{{ logo }}.svg"
       x="182.227"
       y="7.903"
-      id="imageLogos" 
+      id="imageLogos"
       height="20"
       width="20"
-      inkscape:svg-dpi="96"
       preserveAspectRatio="none" />
 {% if username == "auto" %}
 <text
-    style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.82222px;font-family:'Titillium Web Light';-inkscape-font-specification:TitilliumWeb-Light;writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778">
+    style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.82222px;font-family:'Titillium Web Light';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778">
     <tspan
         x="12"
         y="44">Emissione effettuata con sistemi automatici

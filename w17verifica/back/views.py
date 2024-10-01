@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2020-2023 simevo s.r.l. for ARPA Piemonte - Dipartimento Naturali e Ambientali
+# Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
 # This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 # weboll is licensed under the AGPL-3.0-or-later License.
 # License text available at https://www.gnu.org/licenses/agpl.txt
@@ -57,6 +57,39 @@ class W17verificaDataView(viewsets.ModelViewSet):
             w17verificaData, context={"request": request}
         )
         return Response(serializer.data)
+
+    @action(
+        detail=False, methods=["post"], permission_classes=[permissions.IsAuthenticated]
+    )
+    @atomic
+    def bulk_update(self, request):
+        inizio = datetime.datetime.now()
+        print("========== POST /w17verifica/bulletins/bulk_update/")
+        print("========== user = ", self.request.user)
+        print("========== request data = ", self.request.data)
+        updated = 0
+        snapshots = self.request.data
+        id_w17_verifica_data = snapshots["id_w17_verifica_data"]
+        w17verificaData = models.w17_verifica_data.objects.get(pk=id_w17_verifica_data)
+        for snapshot in snapshots:
+            setattr(w17verificaData, snapshot, snapshots[snapshot])
+        w17verificaData.save()
+        updated += 1
+        fine = datetime.datetime.now()
+        serializer = W17verificaDataSerializer(
+            w17verificaData, context={"request": request}
+        )
+        print(
+            "bulk_update finito in ",
+            abs((fine - inizio).total_seconds()),
+            "secondi",
+        )
+        return Response(
+            {
+                "updated": updated,
+                "bulletin": serializer.data,
+            }
+        )
 
 
 class W17verificaMassimaliSerializerView(viewsets.ModelViewSet):

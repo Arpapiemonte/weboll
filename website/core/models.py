@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2020-2023 simevo s.r.l. for ARPA Piemonte - Dipartimento Naturali e Ambientali
+# Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
 # This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 # weboll is licensed under the AGPL-3.0-or-later License.
 # License text available at https://www.gnu.org/licenses/agpl.txt
@@ -485,6 +485,47 @@ class StazioneMisura(models.Model):
         unique_together = (("codice_istat_comune", "progr_punto_com"),)
 
 
+class Sensore(models.Model):
+    codice_istat_comune = models.OneToOneField(
+        StazioneMisura,
+        models.DO_NOTHING,
+        db_column="codice_istat_comune",
+        primary_key=True,
+    )
+    progr_punto_com = models.IntegerField()
+    id_parametro = models.ForeignKey(
+        Parametro, models.DO_NOTHING, db_column="id_parametro"
+    )
+    codice_sensore_das = models.IntegerField(blank=True, null=True)
+    num_decimale_cae = models.IntegerField(blank=True, null=True)
+    tempo_campionamento = models.IntegerField(blank=True, null=True)
+    tempo_registrazione = models.IntegerField(blank=True, null=True)
+    altezza_sensore = models.DecimalField(
+        max_digits=6, decimal_places=2, blank=True, null=True
+    )
+    data_installazione = models.DateField(blank=True, null=True)
+    data_agg = models.DateTimeField()
+    autore_agg = models.CharField(max_length=30)
+
+    class Meta:
+        managed = False
+        db_table = "sensore"
+        unique_together = (("codice_istat_comune", "progr_punto_com", "id_parametro"),)
+
+
+class SensoreStazioneMisura(models.Model):
+    codice_istat_comune = models.CharField(max_length=6, primary_key=True)
+    progr_punto_com = models.IntegerField(blank=True, null=True)
+    cod_staz_meteo = models.CharField(max_length=5, blank=True, null=True)
+    denominazione = models.CharField(max_length=80, blank=True, null=True)
+    id_parametro = models.CharField(max_length=8, blank=True, null=True)
+
+    class Meta:
+        managed = False  # Created from a view. Don't remove.
+        db_table = "sensore_stazione_misura"
+        unique_together = (("codice_istat_comune", "progr_punto_com", "id_parametro"),)
+
+
 class TimeLayouts(models.Model):
     id_time_layouts = models.IntegerField(primary_key=True)
     start_day_offset = models.SmallIntegerField()
@@ -819,6 +860,7 @@ class Destinazioni(models.Model):
     endpoint = models.TextField()
     segreto = encrypt(models.TextField(blank=True))
     enabled = models.BooleanField(default=True)
+    auto = models.BooleanField(default=False)
 
     class Meta:
         managed = True

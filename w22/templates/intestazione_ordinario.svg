@@ -1,53 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
 <svg
    width="210mm"
    height="297mm"
    viewBox="0 0 210 297"
    version="1.1"
    id="svg5462"
-   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
-   sodipodi:docname="intestazione.svg"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
-  <sodipodi:namedview
-     id="namedview5464"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="0"
-     inkscape:document-units="mm"
-     showgrid="false"
-     inkscape:zoom="0.77504209"
-     inkscape:cx="397.39777"
-     inkscape:cy="147.73391"
-     inkscape:window-width="1846"
-     inkscape:window-height="1016"
-     inkscape:window-x="74"
-     inkscape:window-y="27"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" />
   <defs
      id="defs5459" />
-  <g
-     inkscape:label="Layer 1"
-     inkscape:groupmode="layer"
-     id="layer1">
+  <g id="layer1">
     <g
        id="g222"
        transform="matrix(0.35277777,0,0,-0.35277777,-0.15741874,296.97559)">
       <text
          id="text226"
-         style="font-variant:normal;font-weight:bold;font-size:8px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         style="font-variant:normal;font-weight:bold;font-size:8px;font-family:'Liberation Sans';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
          transform="matrix(1,0,0,-1,313.21,698.03)"><tspan
            id="tspan224"
            y="0"
-           x="0 5.336 9.7840004 12.008 16.896 20.007999 22.232 24.455999 29.344 33.792 38.240002 42.688 45.799999 50.248001 54.695999 57.360001">Valori osservati</tspan></text>
+           x="0">Valori osservati</tspan></text>
     </g>
     <g
        id="g228"
@@ -74,11 +46,11 @@
        transform="matrix(0.35277777,0,0,-0.35277777,-0.15741874,296.97559)">
       <text
          id="text242"
-         style="font-variant:normal;font-weight:bold;font-size:8px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         style="font-variant:normal;font-weight:bold;font-size:8px;font-family:'Liberation Sans';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
          transform="matrix(1,0,0,-1,422.76,698.03)"><tspan
            id="tspan240"
            y="0"
-           x="0 5.336 8.448 12.896 17.344 19.568001 24.016001 26.24 31.128 36.015999 40.464001 42.688 47.576 49.799999 52.023998 56.472 59.584 61.807999 64.472 66.695999 71.143997 73.367996 76.031998">Previsione di criticità</tspan></text>
+           x="0">Previsione di criticità</tspan></text>
     </g>
     <g
        id="g244"
@@ -105,11 +77,11 @@
        transform="matrix(0.35277777,0,0,-0.35277777,-0.15741874,296.97559)">
       <text
          id="text258"
-         style="font-variant:normal;font-weight:bold;font-size:8px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         style="font-variant:normal;font-weight:bold;font-size:8px;font-family:'Liberation Sans';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
          transform="matrix(1,0,0,-1,531.55,687.03)"><tspan
            id="tspan256"
            y="0"
-           x="0 4.888 9.3360004 14.224 19.112 23.559999 28.448 32.448002">Tendenza</tspan></text>
+           x="0">Tendenza</tspan></text>
     </g>
     <g
        id="g260"
@@ -136,11 +108,11 @@
        transform="matrix(0.35277777,0,0,-0.35277777,-0.15741874,296.97559)">
       <text
          id="text274"
-         style="font-variant:normal;font-weight:bold;font-size:7px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         style="font-variant:normal;font-weight:bold;font-size:7px;font-family:'Liberation Sans';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
          transform="matrix(1,0,0,-1,488.13,670.9)"><tspan
            id="tspan272"
            y="0"
-           x="0 4.277 7 10.892 12.838 16.73 20.622 22.952999 26.844999">ore 12-24</tspan></text>
+           x="0">ore 12-24</tspan></text>
     </g>
     <g
        id="g276"
@@ -167,11 +139,11 @@
        transform="matrix(0.35277777,0,0,-0.35277777,-0.15741874,296.97559)">
       <text
          id="text290"
-         style="font-variant:normal;font-weight:bold;font-size:7px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         style="font-variant:normal;font-weight:bold;font-size:7px;font-family:'Liberation Sans';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
          transform="matrix(1,0,0,-1,449.58,670.9)"><tspan
            id="tspan288"
            y="0"
-           x="0 4.277 7 10.892 12.838 16.73 19.061001 22.952999">ore 0-12</tspan></text>
+           x="0">ore 0-12</tspan></text>
     </g>
     <g
        id="g292"
@@ -198,11 +170,11 @@
        transform="matrix(0.35277777,0,0,-0.35277777,-0.15741874,296.97559)">
       <text
          id="text306"
-         style="font-variant:normal;font-weight:bold;font-size:8px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         style="font-variant:normal;font-weight:bold;font-size:8px;font-family:'Liberation Sans';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
          transform="matrix(1,0,0,-1,413.39,676.03)"><tspan
            id="tspan304"
            y="0"
-           x="0 6.224 11.112 16">Oggi</tspan></text>
+           x="0">Oggi</tspan></text>
     </g>
     <g
        id="g308"
@@ -229,18 +201,18 @@
        transform="matrix(0.35277777,0,0,-0.35277777,-0.15741874,296.97559)">
       <text
          id="text322"
-         style="font-variant:normal;font-weight:bold;font-size:8px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         style="font-variant:normal;font-weight:bold;font-size:8px;font-family:'Liberation Sans';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
          transform="matrix(1,0,0,-1,369.61,680.69)"><tspan
            id="tspan320"
            y="0"
-           x="0 5.776 8.8879995 11.112 13.776 16 20.448 22.672001 25.336">Criticità</tspan></text>
+           x="0">Criticità</tspan></text>
       <text
          id="text326"
-         style="font-variant:normal;font-weight:bold;font-size:8px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         style="font-variant:normal;font-weight:bold;font-size:8px;font-family:'Liberation Sans';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
          transform="matrix(1,0,0,-1,371.61,671.38)"><tspan
            id="tspan324"
            y="0"
-           x="0 4.448 7.112 9.776 14.664 19.112 21.336">attuale</tspan></text>
+           x="0">attuale</tspan></text>
     </g>
     <g
        id="g328"
@@ -267,18 +239,18 @@
        transform="matrix(0.35277777,0,0,-0.35277777,-0.15741874,296.97559)">
       <text
          id="text342"
-         style="font-variant:normal;font-weight:bold;font-size:8px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         style="font-variant:normal;font-weight:bold;font-size:8px;font-family:'Liberation Sans';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
          transform="matrix(1,0,0,-1,337.72,680.69)"><tspan
            id="tspan340"
            y="0"
-           x="0 5.336 10.224 13.336 16 20.448 23.112">Portata</tspan></text>
+           x="0">Portata</tspan></text>
       <text
          id="text346"
-         style="font-variant:normal;font-weight:bold;font-size:8px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         style="font-variant:normal;font-weight:bold;font-size:8px;font-family:'Liberation Sans';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
          transform="matrix(1,0,0,-1,339.72,671.38)"><tspan
            id="tspan344"
            y="0"
-           x="0 2.664 9.776 14.224 16.448 20.896">(mc/s)</tspan></text>
+           x="0">(mc/s)</tspan></text>
     </g>
     <g
        id="g348"
@@ -305,18 +277,18 @@
        transform="matrix(0.35277777,0,0,-0.35277777,-0.15741874,296.97559)">
       <text
          id="text362"
-         style="font-variant:normal;font-weight:bold;font-size:8px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         style="font-variant:normal;font-weight:bold;font-size:8px;font-family:'Liberation Sans';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
          transform="matrix(1,0,0,-1,291.55,680.69)"><tspan
            id="tspan360"
            y="0"
-           x="0 4.888 9.3360004 14.224 19.112 23.559999 28.448 32.448002">Tendenza</tspan></text>
+           x="0">Tendenza</tspan></text>
       <text
          id="text366"
-         style="font-variant:normal;font-weight:bold;font-size:8px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         style="font-variant:normal;font-weight:bold;font-size:8px;font-family:'Liberation Sans';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
          transform="matrix(1,0,0,-1,292.44,671.38)"><tspan
            id="tspan364"
            y="0"
-           x="0 4.888 7.112 9.776 12 19.112 23.559999 25.784 30.232">ultime 6h</tspan></text>
+           x="0">ultime 6h</tspan></text>
     </g>
     <g
        id="g368"
@@ -343,18 +315,18 @@
        transform="matrix(0.35277777,0,0,-0.35277777,-0.15741874,296.97559)">
       <text
          id="text382"
-         style="font-variant:normal;font-weight:bold;font-size:8px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         style="font-variant:normal;font-weight:bold;font-size:8px;font-family:'Liberation Sans';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
          transform="matrix(1,0,0,-1,230.55,702.69)"><tspan
            id="tspan380"
            y="0"
-           x="0 5.336 10.224 13.336 16 20.448 23.112 27.559999 29.784 34.672001">Portate di</tspan></text>
+           x="0">Portate di</tspan></text>
       <text
          id="text386"
-         style="font-variant:normal;font-weight:bold;font-size:8px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         style="font-variant:normal;font-weight:bold;font-size:8px;font-family:'Liberation Sans';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
          transform="matrix(1,0,0,-1,215.11,693.38)"><tspan
            id="tspan384"
            y="0"
-           x="0 3.112 5.336 8 12.448 15.56 17.784 24.896 29.344 34.231998 36.896">riferimento (mc/s)</tspan></text>
+           x="0">riferimento (mc/s)</tspan></text>
     </g>
     <g
        id="g388"
@@ -381,7 +353,7 @@
        transform="matrix(0.35277777,0,0,-0.35277777,-0.15741874,296.97559)">
       <text
          id="text402"
-         style="font-variant:normal;font-weight:bold;font-size:8px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         style="font-variant:normal;font-weight:bold;font-size:8px;font-family:'Liberation Sans';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
          transform="matrix(1,0,0,-1,246.78,676.03)"><tspan
            id="tspan400"
            y="0"
@@ -412,7 +384,7 @@
        transform="matrix(0.35277777,0,0,-0.35277777,-0.15741874,296.97559)">
       <text
          id="text418"
-         style="font-variant:normal;font-weight:bold;font-size:8px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         style="font-variant:normal;font-weight:bold;font-size:8px;font-family:'Liberation Sans';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
          transform="matrix(1,0,0,-1,222.78,676.03)"><tspan
            id="tspan416"
            y="0"
@@ -443,7 +415,7 @@
        transform="matrix(0.35277777,0,0,-0.35277777,-0.15741874,296.97559)">
       <text
          id="text434"
-         style="font-variant:normal;font-weight:bold;font-size:8px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         style="font-variant:normal;font-weight:bold;font-size:8px;font-family:'Liberation Sans';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
          transform="matrix(1,0,0,-1,270.78,676.03)"><tspan
            id="tspan432"
            y="0"
@@ -474,18 +446,18 @@
        transform="matrix(0.35277777,0,0,-0.35277777,-0.15741874,296.97559)">
       <text
          id="text450"
-         style="font-variant:normal;font-weight:bold;font-size:8px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         style="font-variant:normal;font-weight:bold;font-size:8px;font-family:'Liberation Sans';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
          transform="matrix(1,0,0,-1,185.77,680.69)"><tspan
            id="tspan448"
            y="0"
-           x="0 5.336 9.7840004 12.008 16.896 20.007999">Valore</tspan></text>
+           x="0">Valore</tspan></text>
       <text
          id="text454"
-         style="font-variant:normal;font-weight:bold;font-size:8px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         style="font-variant:normal;font-weight:bold;font-size:8px;font-family:'Liberation Sans';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
          transform="matrix(1,0,0,-1,186.22,671.38)"><tspan
            id="tspan452"
            y="0"
-           x="0 2.664 9.776 14.224 16.448 20.896">(mc/s)</tspan></text>
+           x="0">(mc/s)</tspan></text>
     </g>
     <g
        id="g456"
@@ -512,11 +484,11 @@
        transform="matrix(0.35277777,0,0,-0.35277777,-0.15741874,296.97559)">
       <text
          id="text470"
-         style="font-variant:normal;font-weight:bold;font-size:8px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         style="font-variant:normal;font-weight:bold;font-size:8px;font-family:'Liberation Sans';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
          transform="matrix(1,0,0,-1,146.94,698.03)"><tspan
            id="tspan468"
            y="0"
-           x="0 6.664 11.112 15.56 20.007999 22.232 29.344 34.231998 36.456001 40.903999 43.568001 48.456001 51.568001 53.792 58.240002">Massimo storico</tspan></text>
+           x="0">Massimo storico</tspan></text>
     </g>
     <g
        id="g472"
@@ -543,11 +515,11 @@
        transform="matrix(0.35277777,0,0,-0.35277777,-0.15741874,296.97559)">
       <text
          id="text486"
-         style="font-variant:normal;font-weight:bold;font-size:8px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         style="font-variant:normal;font-weight:bold;font-size:8px;font-family:'Liberation Sans';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
          transform="matrix(1,0,0,-1,154.83,676.03)"><tspan
            id="tspan484"
            y="0"
-           x="0 5.776 10.224 12.888">Data</tspan></text>
+           x="0">Data</tspan></text>
     </g>
     <g
        id="g488"
@@ -574,11 +546,11 @@
        transform="matrix(0.35277777,0,0,-0.35277777,-0.15741874,296.97559)">
       <text
          id="text502"
-         style="font-variant:normal;font-weight:bold;font-size:8px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         style="font-variant:normal;font-weight:bold;font-size:8px;font-family:'Liberation Sans';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
          transform="matrix(1,0,0,-1,95.55,687.03)"><tspan
            id="tspan500"
            y="0"
-           x="0 5.336 8 12.448 16.448 18.672001 23.559999 28.448">Stazione</tspan></text>
+           x="0">Stazione</tspan></text>
     </g>
     <g
        id="g504"
@@ -605,11 +577,11 @@
        transform="matrix(0.35277777,0,0,-0.35277777,-0.15741874,296.97559)">
       <text
          id="text518"
-         style="font-variant:normal;font-weight:bold;font-size:8px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         style="font-variant:normal;font-weight:bold;font-size:8px;font-family:'Liberation Sans';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
          transform="matrix(1,0,0,-1,22.38,687.03)"><tspan
            id="tspan516"
            y="0"
-           x="0 5.776 10.664 13.776 18.224001 23.112 25.336 30.224001 32.127998 36.576 41.023998 45.911999 50.799999">Corso d'acqua</tspan></text>
+           x="0">Corso d'acqua</tspan></text>
     </g>
     <g
        id="g520"
@@ -636,11 +608,11 @@
        transform="matrix(0.35277777,0,0,-0.35277777,-0.15741874,296.97559)">
       <text
          id="text7062"
-         style="font-variant:normal;font-weight:bold;font-size:8px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         style="font-variant:normal;font-weight:bold;font-size:8px;font-family:'Liberation Sans';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
          transform="matrix(1,0,0,-1,469.83,681.53)"><tspan
            id="tspan7060"
            y="0"
-           x="0 5.776 10.664 17.775999 22.224001 27.112">Domani</tspan></text>
+           x="0">Domani</tspan></text>
     </g>
     <g
        id="g7064"

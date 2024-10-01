@@ -11,8 +11,7 @@ import tempfile
 from subprocess import call
 
 import requests
-
-# from django.contrib.auth.models import User
+from django.contrib.auth.models import User
 from django.db.transaction import atomic
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
@@ -37,9 +36,7 @@ from w22.back.serializers import (
     W22ZoneSerializer,
 )
 from website.common.tasks import send_with_celery
-from website.common.views import (  # BulletinDraftLocked,ExistingTodayBulletin,
-    StandardResultsSetPagination,
-)
+from website.common.views import BulletinDraftLocked, StandardResultsSetPagination
 
 # from contextlib import closing
 
@@ -88,11 +85,62 @@ class W22View(viewsets.ModelViewSet):
         serializer = self.get_serializer(queryset, many=True)
         return Response(serializer.data)
 
+    def perform_destroy(self, instance):
+        if instance.username != self.request.user.username:
+            raise BulletinDraftLocked()
+        queryset = models.W22.objects
+        if (
+            instance.id_w22_parent
+            and queryset.filter(pk=instance.id_w22_parent).exists()
+        ):
+            w22 = get_object_or_404(queryset, pk=instance.id_w22_parent)
+            w22.status = "1"
+            if not User.objects.filter(username=w22.username).exists():
+                print("perform_destroy non trovo l'utente " + w22.username)
+                w22.username = (
+                    instance.username
+                )  # se rimane l'utente originale post_save potrebbe
+                # generare errore se non trova l'utente originale in auth_user
+            w22.save()
+        instance.delete()
+
     def retrieve(self, request, pk=None):
         queryset = models.W22.objects
         w22 = get_object_or_404(queryset, pk=pk)
         serializer = W22SerializerFull(w22, context={"request": request})
         return Response(serializer.data)
+
+    @action(detail=True, permission_classes=[permissions.IsAuthenticated])
+    @atomic
+    def reopen(self, request, pk):
+        # riapre un bollettino
+        now = datetime.datetime.now()
+        old = models.W22.objects.get(pk=pk)
+        print("w22 reopen:", old)
+        old.status = "2"
+        old_id_w22 = old.id_w22
+        old.save()
+        numero_bollettino = int(old.numero_bollettino.split("/")[0])
+        numero_bollettino = numero_bollettino + 1
+        new = old
+        new.pk = None  # resetta la chiave primaria rendendolo un nuovo record
+        new.status = "0"
+        new.numero_bollettino = (
+            str(numero_bollettino) + "/" + str(datetime.datetime.today().year)
+        )
+        new.last_update = now
+        new.username = request.user
+        new.id_w22_parent = old_id_w22
+        new.save()
+        print("created: ", new)
+        old_data = models.W22Data.objects.filter(id_w22=old_id_w22)
+        for data in old_data:
+            new_data = data
+            new_data.pk = None  # resetta la chiave primaria rendendolo un nuovo record
+            new_data.id_w22 = new
+            new_data.save()
+
+        return Response({"id_w22": new.id_w22})
 
     @action(detail=True, permission_classes=[permissions.IsAuthenticated])
     @atomic
@@ -113,6 +161,20 @@ class W22View(viewsets.ModelViewSet):
         fine = datetime.datetime.now()
         print("send finito in ", abs((fine - inizio).total_seconds()), "secondi")
         send_with_celery("piene", w22.id_w22)
+        return Response({"id_w22": w22.id_w22})
+
+    @action(detail=True, permission_classes=[permissions.IsAuthenticated])
+    @atomic
+    def send_auto(self, request, pk):
+        w22 = models.W22.objects.get(pk=pk)
+        print(
+            "send_auto del bollettino ",
+            w22.id_w22,
+            "del",
+            w22.data_emissione,
+            "iniziato",
+        )
+        send_with_celery("piene", w22.id_w22, True)
         return Response({"id_w22": w22.id_w22})
 
     @action(detail=False, permission_classes=[permissions.IsAuthenticated])
@@ -325,9 +387,9 @@ class W22View(viewsets.ModelViewSet):
                 )
 
                 # riempimento dati per ogni periodo temporale
-                dati_max_12 = dict(dati_staz_sorted[:13])
-                dati_max_24 = dict(dati_staz_sorted[:25])
-                dati_max_36 = dict(dati_staz_sorted[:37])
+                dati_max_12 = dict(dati_staz_sorted[:12])
+                dati_max_24 = dict(dati_staz_sorted[11:24])
+                dati_max_36 = dict(dati_staz_sorted[23:36])
 
                 # ricerca del massimo
                 maxvalore12 = max(dati_max_12.items(), key=lambda v: v[1])[1]
@@ -840,3 +902,27 @@ class PienePngView(DetailView):
             return HttpResponse(
                 content=memoryview(png_content), content_type="image/png"
             )
+
+
+class KmlView(TemplateView):
+    template_name = "piene.kml"
+    http_method_names = ["get"]
+
+    def get_context_data(self, **kwargs):
+        queryset = models.W22.objects
+        w22 = get_object_or_404(queryset, pk=kwargs["pk"])
+        serializer = W22SerializerFull(w22)
+        piene = serializer.data
+        data_piene = datetime.datetime.strptime(
+            str(piene["data_emissione"]), "%Y-%m-%d"
+        ).strftime("%d-%m-%Y")
+
+        convert_to_date(piene, "data_validita")
+        convert_to_date(piene, "data_emissione")
+
+        context = {
+            "piene": piene,
+            "data_piene": data_piene,
+            "title": "Bollettino piene",
+        }
+        return context

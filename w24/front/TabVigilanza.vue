@@ -1,4 +1,4 @@
-// Copyright (C) 2020-2023 simevo s.r.l. for ARPA Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
@@ -10,13 +10,22 @@
     role="tabpanel"
     :aria-labelledby="`pills-${id}-tab`"
   >
-    <div class="row">
-      <div class="col-xxl-9 col-md-12 mb-3">
+    <div 
+      class="row sticky-top"
+      style="top: 80px;"
+    >
+      <div class="col mb-3">
         <nav
           class="navbar justify-content-center sticky-top bg-light border-bottom"
           style="top: 88px;"
         >
           <ul class="nav">
+            <li
+              class="nav-item px-1 map"
+              @click="goto(`mappa-${id}`)"
+            >
+              <a class="nav-link"> Mappa </a>
+            </li>
             <li
               class="nav-item px-1"
               @click="goto(`pioggia-${id}`)"
@@ -31,8 +40,30 @@
             </li>
           </ul>
         </nav>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col mb-3">
+        <div class="col map-top">
+          <div
+            :id="`mappa-${id}`"
+            style="scroll-margin-top: 100px;"
+          >
+            <MapVigilanza 
+              :vigilanza="data[timeLayouts[0]]"
+              :quoteneve="[timeLayouts[1] ? data[timeLayouts[1]]['SNOW_LEV'] : null, timeLayouts[2] ? data[timeLayouts[2]]['SNOW_LEV'] : null, data[timeLayouts[3]]['SNOW_LEV'], data[timeLayouts[4]]['SNOW_LEV']]"
+              :pluv="[timeLayouts[1] ? data[timeLayouts[1]]['PLUV'] : null, timeLayouts[2] ? data[timeLayouts[2]]['PLUV'] : null, data[timeLayouts[3]]['PLUV'], data[timeLayouts[4]]['PLUV']]"  
+              :timelayout="timeLayouts[0]"
+            />
+          </div>
+        </div> <!-- col -->
+      </div>
+    </div>
+    <div class="row">
+      <div class="col mb-3">
         <div
           :id="`pioggia-${id}`"
+          style="scroll-margin-top: 100px;"
         >
           <h3>Pioggia</h3>
           <TabellaPioggia
@@ -43,9 +74,10 @@
             :tipoanomaliat="tipoanomaliat"
             @save-w24-data="saveW24Data"
           />
-        </div> <!-- row -->
+        </div>
         <div
           :id="`neve-${id}`"
+          style="scroll-margin-top: 100px;"
         >
           <h3>Neve</h3>
           <TabellaNeve
@@ -55,22 +87,26 @@
             @save-w24-data="saveW24Data"
             @save-w24-value="saveW24Value"
           />
-        </div> <!-- row -->
-      </div>  <!--col-->
-      <div class="col-xxl-3 col-md-12 mb-3">
-        <div
-          class="sticky-top pt-5"
-          style="z-index: 0;"
-        >
-          <MapVigilanza 
-            :vigilanza="data[timeLayouts[0]]"
-            :quoteneve="[timeLayouts[1] ? data[timeLayouts[1]]['SNOW_LEV'] : null, timeLayouts[2] ? data[timeLayouts[2]]['SNOW_LEV'] : null, data[timeLayouts[3]]['SNOW_LEV'], data[timeLayouts[4]]['SNOW_LEV']]"
-            :pluv="[timeLayouts[1] ? data[timeLayouts[1]]['PLUV'] : null, timeLayouts[2] ? data[timeLayouts[2]]['PLUV'] : null, data[timeLayouts[3]]['PLUV'], data[timeLayouts[4]]['PLUV']]"  
-            :timelayout="timeLayouts[0]"
-          />
         </div>
-      </div> <!-- col -->
-    </div> <!-- row -->
+      </div>
+      <div class="col-3 mb-3 map-right">
+        <div 
+          class="sticky-top"
+          style="top: 100px;"
+        >
+          <div
+            :id="`mappa-${id}`"
+          >
+            <MapVigilanza 
+              :vigilanza="data[timeLayouts[0]]"
+              :quoteneve="[timeLayouts[1] ? data[timeLayouts[1]]['SNOW_LEV'] : null, timeLayouts[2] ? data[timeLayouts[2]]['SNOW_LEV'] : null, data[timeLayouts[3]]['SNOW_LEV'], data[timeLayouts[4]]['SNOW_LEV']]"
+              :pluv="[timeLayouts[1] ? data[timeLayouts[1]]['PLUV'] : null, timeLayouts[2] ? data[timeLayouts[2]]['PLUV'] : null, data[timeLayouts[3]]['PLUV'], data[timeLayouts[4]]['PLUV']]"  
+              :timelayout="timeLayouts[0]"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -122,13 +158,41 @@ export default {
       element.scrollIntoView({ behavior: "smooth" })
     },
     saveW24Data(id_w24_data, value) {
-      console.log(`TabVigilanza.saveW24Data(${id_w24_data}, ${value})`)
+      // console.log(`TabVigilanza.saveW24Data(${id_w24_data}, ${value})`)
       this.$emit('saveW24Data', id_w24_data, value)
     },
     saveW24Value(id_w24_data, value) {
-      console.log(`TabVigilanza.saveW24Value(${id_w24_data}, ${value})`)
+      // console.log(`TabVigilanza.saveW24Value(${id_w24_data}, ${value})`)
       this.$emit('saveW24Value', id_w24_data, value)
     },
   }
 }
 </script>
+<style>
+.map {
+  display: none;
+}
+
+.map-top {
+  display: none;
+}
+
+.map-right {
+  display: none;
+}
+
+@media screen and (max-width: 2400px) {
+  .map-top {
+    display: block;
+  }
+  .map {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 2400px) {
+  .map-right {
+    display: block;
+  }
+}
+</style>

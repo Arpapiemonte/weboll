@@ -1,0 +1,1001 @@
+{% load date_extras_w36 %}<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+    <Document> 
+    <name>Caldo regione</name>
+    {% if oggi == 'si' %}
+        <Placemark>
+            <name> </name>
+            <snippet>Caldo</snippet>
+            <description>
+            <![CDATA[
+                <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# " class="h-100 no-touchevents inputtypes-search inputtypes-tel inputtypes-url inputtypes-email no-inputtypes-datetime inputtypes-date inputtypes-month inputtypes-week inputtypes-time inputtypes-datetime-local inputtypes-number inputtypes-range inputtypes-color details js" style="scroll-padding-top: 0px; --nav-level-spacing: 20px;"><head>
+                    <meta charset="utf-8">
+                    <head>
+                    </head>
+                    
+                    <body>
+                    <div class="leaflet-popup-content" style="width: 100px;">
+                        <h2>ALESSANDRIA</h2>
+                        <h2>LIVELLO {{caldo_rearranged.COD_COLORE.48.9.0}}</h2>
+                        <i>{{caldo.data_emissione | my_date_dmY}}</i>
+                        <!--<br>
+                        <br>	
+                        <table>
+                            <tr>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">Tmax</td>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">{{caldo_rearranged.TERMA.48.9.328}}&#176;C</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">ATmax</td>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">{{caldo_rearranged.ATMAX.48.9.0}}&#176;C</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">Tmin</td>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">{{caldo_rearranged.TERMA.48.9.327}}&#176;C</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">ATmin</td>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">{{caldo_rearranged.ATMIN.48.9.0}}&#176;C</td>
+                            </tr>
+                        </table>-->
+                    </div>
+                    </body>
+                </html>
+            ]]> 
+            </description>
+            <open>0</open>
+            <Style>
+                <IconStyle>
+                <color>ffffffff</color>
+                <scale>0.7</scale>
+                <Icon>
+                    {% if caldo_rearranged.COD_COLORE.48.9.0 == 0 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-0.png</href>{% endif %}
+                    {% if caldo_rearranged.COD_COLORE.48.9.0 == 1 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-1.png</href>{% endif %}
+                    {% if caldo_rearranged.COD_COLORE.48.9.0 == 2 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-2.png</href>{% endif %}
+                    {% if caldo_rearranged.COD_COLORE.48.9.0 == 3 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-3.png</href>{% endif %}
+                </Icon>
+                </IconStyle>
+                <LabelStyle>
+                <color>ffffffff</color>
+                <scale>1</scale>
+                </LabelStyle>
+            </Style>
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>8.615378377,44.91288563</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name> </name>
+            <snippet>Caldo</snippet>
+            <description>
+            <![CDATA[
+                <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# " class="h-100 no-touchevents inputtypes-search inputtypes-tel inputtypes-url inputtypes-email no-inputtypes-datetime inputtypes-date inputtypes-month inputtypes-week inputtypes-time inputtypes-datetime-local inputtypes-number inputtypes-range inputtypes-color details js" style="scroll-padding-top: 0px; --nav-level-spacing: 20px;"><head>
+                    <meta charset="utf-8">
+                    <head>
+                    </head>
+                    
+                    <body>
+                    <div class="leaflet-popup-content" style="width: 100px;">
+                        <h2>ASTI</h2>
+                        <h2>LIVELLO {{caldo_rearranged.COD_COLORE.48.11.0}}</h2>
+                        <i>{{caldo.data_emissione | my_date_dmY}}</i>
+                        <!--<br>
+                        <br>	
+                        <table>
+                            <tr>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">Tmax</td>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">{{caldo_rearranged.TERMA.48.11.328}}&#176;C</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">ATmax</td>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">{{caldo_rearranged.ATMAX.48.11.0}}&#176;C</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">Tmin</td>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">{{caldo_rearranged.TERMA.48.11.327}}&#176;C</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">ATmin</td>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">{{caldo_rearranged.ATMIN.48.11.0}}&#176;C</td>
+                            </tr>
+                        </table>-->
+                    </div>
+                    </body>
+                </html>
+            ]]> 
+            </description>
+            <open>0</open>
+            <Style>
+                <IconStyle>
+                <color>ffffffff</color>
+                <scale>0.7</scale>
+                <Icon>
+                    {% if caldo_rearranged.COD_COLORE.48.11.0 == 0 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-0.png</href>{% endif %}
+                    {% if caldo_rearranged.COD_COLORE.48.11.0 == 1 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-1.png</href>{% endif %}
+                    {% if caldo_rearranged.COD_COLORE.48.11.0 == 2 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-2.png</href>{% endif %}
+                    {% if caldo_rearranged.COD_COLORE.48.11.0 == 3 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-3.png</href>{% endif %}
+                </Icon>
+                </IconStyle>
+                <LabelStyle>
+                <color>ffffffff</color>
+                <scale>1</scale>
+                </LabelStyle>
+            </Style>
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>8.204917448,44.89955012</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name> </name>
+            <snippet>Caldo</snippet>
+            <description>
+            <![CDATA[
+                <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# " class="h-100 no-touchevents inputtypes-search inputtypes-tel inputtypes-url inputtypes-email no-inputtypes-datetime inputtypes-date inputtypes-month inputtypes-week inputtypes-time inputtypes-datetime-local inputtypes-number inputtypes-range inputtypes-color details js" style="scroll-padding-top: 0px; --nav-level-spacing: 20px;"><head>
+                    <meta charset="utf-8">
+                    <head>
+                    </head>
+                    
+                    <body>
+                    <div class="leaflet-popup-content" style="width: 100px;">
+                        <h2>BIELLA</h2>
+                        <h2>LIVELLO {{caldo_rearranged.COD_COLORE.48.1.0}}</h2>
+                        <i>{{caldo.data_emissione | my_date_dmY}}</i>
+                        <!--<br>
+                        <br>	
+                        <table>
+                            <tr>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">Tmax</td>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">{{caldo_rearranged.TERMA.48.1.328}}&#176;C</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">ATmax</td>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">{{caldo_rearranged.ATMAX.48.1.0}}&#176;C</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">Tmin</td>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">{{caldo_rearranged.TERMA.48.1.327}}&#176;C</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">ATmin</td>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">{{caldo_rearranged.ATMIN.48.1.0}}&#176;C</td>
+                            </tr>
+                        </table>-->
+                    </div>
+                    </body>
+                </html>
+            ]]> 
+            </description>
+            <open>0</open>
+            <Style>
+                <IconStyle>
+                <color>ffffffff</color>
+                <scale>0.7</scale>
+                <Icon>
+                    {% if caldo_rearranged.COD_COLORE.48.1.0 == 0 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-0.png</href>{% endif %}
+                    {% if caldo_rearranged.COD_COLORE.48.1.0 == 1 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-1.png</href>{% endif %}
+                    {% if caldo_rearranged.COD_COLORE.48.1.0 == 2 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-2.png</href>{% endif %}
+                    {% if caldo_rearranged.COD_COLORE.48.1.0 == 3 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-3.png</href>{% endif %}
+                </Icon>
+                </IconStyle>
+                <LabelStyle>
+                <color>ffffffff</color>
+                <scale>1</scale>
+                </LabelStyle>
+            </Style>
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>8.05400341,45.56640259</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name> </name>
+            <snippet>Caldo</snippet>
+            <description>
+            <![CDATA[
+                <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# " class="h-100 no-touchevents inputtypes-search inputtypes-tel inputtypes-url inputtypes-email no-inputtypes-datetime inputtypes-date inputtypes-month inputtypes-week inputtypes-time inputtypes-datetime-local inputtypes-number inputtypes-range inputtypes-color details js" style="scroll-padding-top: 0px; --nav-level-spacing: 20px;"><head>
+                    <meta charset="utf-8">
+                    <head>
+                    </head>
+                    
+                    <body>
+                    <div class="leaflet-popup-content" style="width: 100px;">
+                        <h2>CUNEO</h2>
+                        <h2>LIVELLO {{caldo_rearranged.COD_COLORE.48.28.0}}</h2>
+                        <i>{{caldo.data_emissione | my_date_dmY}}</i>
+                        <!--<br>
+                        <br>	
+                        <table>
+                            <tr>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">Tmax</td>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">{{caldo_rearranged.TERMA.48.28.328}}&#176;C</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">ATmax</td>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">{{caldo_rearranged.ATMAX.48.28.0}}&#176;C</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">Tmin</td>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">{{caldo_rearranged.TERMA.48.28.327}}&#176;C</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">ATmin</td>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">{{caldo_rearranged.ATMIN.48.28.0}}&#176;C</td>
+                            </tr>
+                        </table>-->
+                    </div>
+                    </body>
+                </html>
+            ]]> 
+            </description>
+            <open>0</open>
+            <Style>
+                <IconStyle>
+                <color>ffffffff</color>
+                <scale>0.7</scale>
+                <Icon>
+                    {% if caldo_rearranged.COD_COLORE.48.28.0 == 0 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-0.png</href>{% endif %}
+                    {% if caldo_rearranged.COD_COLORE.48.28.0 == 1 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-1.png</href>{% endif %}
+                    {% if caldo_rearranged.COD_COLORE.48.28.0 == 2 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-2.png</href>{% endif %}
+                    {% if caldo_rearranged.COD_COLORE.48.28.0 == 3 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-3.png</href>{% endif %}
+                </Icon>
+                </IconStyle>
+                <LabelStyle>
+                <color>ffffffff</color>
+                <scale>1</scale>
+                </LabelStyle>
+            </Style>
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>7.551387701,44.39308011</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name> </name>
+            <snippet>Caldo</snippet>
+            <description>
+            <![CDATA[
+                <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# " class="h-100 no-touchevents inputtypes-search inputtypes-tel inputtypes-url inputtypes-email no-inputtypes-datetime inputtypes-date inputtypes-month inputtypes-week inputtypes-time inputtypes-datetime-local inputtypes-number inputtypes-range inputtypes-color details js" style="scroll-padding-top: 0px; --nav-level-spacing: 20px;"><head>
+                    <meta charset="utf-8">
+                    <head>
+                    </head>
+                    
+                    <body>
+                    <div class="leaflet-popup-content" style="width: 100px;">
+                        <h2>NOVARA</h2>
+                        <h2>LIVELLO {{caldo_rearranged.COD_COLORE.48.33.0}}</h2>
+                        <i>{{caldo.data_emissione | my_date_dmY}}</i>
+                        <!--<br>
+                        <br>	
+                        <table>
+                            <tr>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">Tmax</td>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">{{caldo_rearranged.TERMA.48.33.328}}&#176;C</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">ATmax</td>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">{{caldo_rearranged.ATMAX.48.33.0}}&#176;C</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">Tmin</td>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">{{caldo_rearranged.TERMA.48.33.327}}&#176;C</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">ATmin</td>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">{{caldo_rearranged.ATMIN.48.33.0}}&#176;C</td>
+                            </tr>
+                        </table>-->
+                    </div>
+                    </body>
+                </html>
+            ]]> 
+            </description>
+            <open>0</open>
+            <Style>
+                <IconStyle>
+                <color>ffffffff</color>
+                <scale>0.7</scale>
+                <Icon>
+                    {% if caldo_rearranged.COD_COLORE.48.33.0 == 0 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-0.png</href>{% endif %}
+                    {% if caldo_rearranged.COD_COLORE.48.33.0 == 1 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-1.png</href>{% endif %}
+                    {% if caldo_rearranged.COD_COLORE.48.33.0 == 2 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-2.png</href>{% endif %}
+                    {% if caldo_rearranged.COD_COLORE.48.33.0 == 3 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-3.png</href>{% endif %}
+                </Icon>
+                </IconStyle>
+                <LabelStyle>
+                <color>ffffffff</color>
+                <scale>1</scale>
+                </LabelStyle>
+            </Style>
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>8.621898751,45.44587027</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name> </name>
+            <snippet>Caldo</snippet>
+            <description>
+            <![CDATA[
+                <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# " class="h-100 no-touchevents inputtypes-search inputtypes-tel inputtypes-url inputtypes-email no-inputtypes-datetime inputtypes-date inputtypes-month inputtypes-week inputtypes-time inputtypes-datetime-local inputtypes-number inputtypes-range inputtypes-color details js" style="scroll-padding-top: 0px; --nav-level-spacing: 20px;"><head>
+                    <meta charset="utf-8">
+                    <head>
+                    </head>
+                    
+                    <body>
+                    <div class="leaflet-popup-content" style="width: 100px;">
+                        <h2>TORINO</h2>
+                        <h2>LIVELLO {{caldo_rearranged.COD_COLORE.48.59.0}}</h2>
+                        <i>{{caldo.data_emissione | my_date_dmY}}</i>
+                        <!--<br>
+                        <br>	
+                        <table>
+                            <tr>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">Tmax</td>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">{{caldo_rearranged.TERMA.48.59.328}}&#176;C</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">ATmax</td>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">{{caldo_rearranged.ATMAX.48.59.0}}&#176;C</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">Tmin</td>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">{{caldo_rearranged.TERMA.48.59.327}}&#176;C</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">ATmin</td>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">{{caldo_rearranged.ATMIN.48.59.0}}&#176;C</td>
+                            </tr>
+                        </table>-->
+                    </div>
+                    </body>
+                </html>
+            ]]> 
+            </description>
+            <open>0</open>
+            <Style>
+                <IconStyle>
+                <color>ffffffff</color>
+                <scale>0.7</scale>
+                <Icon>
+                    {% if caldo_rearranged.COD_COLORE.48.59.0 == 0 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-0.png</href>{% endif %}
+                    {% if caldo_rearranged.COD_COLORE.48.59.0 == 1 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-1.png</href>{% endif %}
+                    {% if caldo_rearranged.COD_COLORE.48.59.0 == 2 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-2.png</href>{% endif %}
+                    {% if caldo_rearranged.COD_COLORE.48.59.0 == 3 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-3.png</href>{% endif %}
+                </Icon>
+                </IconStyle>
+                <LabelStyle>
+                <color>ffffffff</color>
+                <scale>1</scale>
+                </LabelStyle>
+            </Style>
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>7.680686328,45.07326481</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name> </name>
+            <snippet>Caldo</snippet>
+            <description>
+            <![CDATA[
+                <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# " class="h-100 no-touchevents inputtypes-search inputtypes-tel inputtypes-url inputtypes-email no-inputtypes-datetime inputtypes-date inputtypes-month inputtypes-week inputtypes-time inputtypes-datetime-local inputtypes-number inputtypes-range inputtypes-color details js" style="scroll-padding-top: 0px; --nav-level-spacing: 20px;"><head>
+                    <meta charset="utf-8">
+                    <head>
+                    </head>
+                    
+                    <body>
+                    <div class="leaflet-popup-content" style="width: 100px;">
+                        <h2>VERBANIA</h2>
+                        <h2>LIVELLO {{caldo_rearranged.COD_COLORE.48.63.0}}</h2>
+                        <i>{{caldo.data_emissione | my_date_dmY}}</i>
+                        <!--<br>
+                        <br>	
+                        <table>
+                            <tr>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">Tmax</td>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">{{caldo_rearranged.TERMA.48.63.328}}&#176;C</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">ATmax</td>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">{{caldo_rearranged.ATMAX.48.63.0}}&#176;C</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">Tmin</td>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">{{caldo_rearranged.TERMA.48.63.327}}&#176;C</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">ATmin</td>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">{{caldo_rearranged.ATMIN.48.63.0}}&#176;C</td>
+                            </tr>
+                        </table>-->
+                    </div>
+                    </body>
+                </html>
+            ]]> 
+            </description>
+            <open>0</open>
+            <Style>
+                <IconStyle>
+                <color>ffffffff</color>
+                <scale>0.7</scale>
+                <Icon>
+                    {% if caldo_rearranged.COD_COLORE.48.63.0 == 0 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-0.png</href>{% endif %}
+                    {% if caldo_rearranged.COD_COLORE.48.63.0 == 1 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-1.png</href>{% endif %}
+                    {% if caldo_rearranged.COD_COLORE.48.63.0 == 2 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-2.png</href>{% endif %}
+                    {% if caldo_rearranged.COD_COLORE.48.63.0 == 3 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-3.png</href>{% endif %}
+                </Icon>
+                </IconStyle>
+                <LabelStyle>
+                <color>ffffffff</color>
+                <scale>1</scale>
+                </LabelStyle>
+            </Style>
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>8.551125499,45.9214067</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name> </name>
+            <snippet>Caldo</snippet>
+            <description>
+            <![CDATA[
+                <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# " class="h-100 no-touchevents inputtypes-search inputtypes-tel inputtypes-url inputtypes-email no-inputtypes-datetime inputtypes-date inputtypes-month inputtypes-week inputtypes-time inputtypes-datetime-local inputtypes-number inputtypes-range inputtypes-color details js" style="scroll-padding-top: 0px; --nav-level-spacing: 20px;"><head>
+                    <meta charset="utf-8">
+                    <head>
+                    </head>
+                    
+                    <body>
+                    <div class="leaflet-popup-content" style="width: 100px;">
+                        <h2>BIELLA</h2>
+                        <h2>LIVELLO {{caldo_rearranged.COD_COLORE.48.64.0}}</h2>
+                        <i>{{caldo.data_emissione | my_date_dmY}}</i>
+                        <!--<br>
+                        <br>	
+                        <table>
+                            <tr>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">Tmax</td>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">{{caldo_rearranged.TERMA.48.64.328}}&#176;C</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">ATmax</td>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">{{caldo_rearranged.ATMAX.48.64.0}}&#176;C</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">Tmin</td>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">{{caldo_rearranged.TERMA.48.64.327}}&#176;C</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">ATmin</td>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">{{caldo_rearranged.ATMIN.48.64.0}}&#176;C</td>
+                            </tr>
+                        </table>-->
+                    </div>
+                    </body>
+                </html>
+            ]]> 
+            </description>
+            <open>0</open>
+            <Style>
+                <IconStyle>
+                <color>ffffffff</color>
+                <scale>0.7</scale>
+                <Icon>
+                    {% if caldo_rearranged.COD_COLORE.48.64.0 == 0 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-0.png</href>{% endif %}
+                    {% if caldo_rearranged.COD_COLORE.48.64.0 == 1 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-1.png</href>{% endif %}
+                    {% if caldo_rearranged.COD_COLORE.48.64.0 == 2 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-2.png</href>{% endif %}
+                    {% if caldo_rearranged.COD_COLORE.48.64.0 == 3 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-3.png</href>{% endif %}
+                </Icon>
+                </IconStyle>
+                <LabelStyle>
+                <color>ffffffff</color>
+                <scale>1</scale>
+                </LabelStyle>
+            </Style>
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>8.223619855,45.32398337</coordinates>
+            </Point>
+        </Placemark>
+    {% else %} 
+    <Placemark>
+            <name> </name>
+            <snippet>Caldo</snippet>
+            <description>
+                <![CDATA[
+                <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# " class="h-100 no-touchevents inputtypes-search inputtypes-tel inputtypes-url inputtypes-email no-inputtypes-datetime inputtypes-date inputtypes-month inputtypes-week inputtypes-time inputtypes-datetime-local inputtypes-number inputtypes-range inputtypes-color details js" style="scroll-padding-top: 0px; --nav-level-spacing: 20px;"><head>
+                    <meta charset="utf-8">
+                    <head>
+                    </head>
+                    
+                    <body>
+                    <div class="leaflet-popup-content" style="width: 100px;">
+                        <h2>ALESSANDRIA</h2>
+                        <h2>LIVELLO {{caldo_rearranged.COD_COLORE.66.9.0}}</h2>
+                        <i>{{caldo.data_emissione | date_tomorrow}}</i>
+                        <!--<br>
+                        <br>	
+                        <table>
+                            <tr>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">Tmax</td>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">{{caldo_rearranged.TERMA.66.9.328}}&#176;C</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">ATmax</td>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">{{caldo_rearranged.ATMAX.66.9.0}}&#176;C</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">Tmin</td>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">{{caldo_rearranged.TERMA.66.9.327}}&#176;C</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">ATmin</td>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">{{caldo_rearranged.ATMIN.66.9.0}}&#176;C</td>
+                            </tr>
+                        </table>-->
+                    </div>
+                    </body>
+                </html>
+            ]]> 
+            </description>
+            <open>0</open>
+            <Style>
+                <IconStyle>
+                <color>ffffffff</color>
+                <scale>0.7</scale>
+                <Icon>
+                    {% if caldo_rearranged.COD_COLORE.66.9.0 == 0 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-0.png</href>{% endif %}
+                    {% if caldo_rearranged.COD_COLORE.66.9.0 == 1 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-1.png</href>{% endif %}
+                    {% if caldo_rearranged.COD_COLORE.66.9.0 == 2 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-2.png</href>{% endif %}
+                    {% if caldo_rearranged.COD_COLORE.66.9.0 == 3 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-3.png</href>{% endif %}
+                </Icon>
+                </IconStyle>
+                <LabelStyle>
+                <color>ffffffff</color>
+                <scale>1</scale>
+                </LabelStyle>
+            </Style>
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>8.615378377,44.91288563</coordinates>
+            </Point>
+        </Placemark>
+            <Placemark>
+            <name> </name>
+            <snippet>Caldo</snippet>
+            <description>
+            <![CDATA[
+                <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# " class="h-100 no-touchevents inputtypes-search inputtypes-tel inputtypes-url inputtypes-email no-inputtypes-datetime inputtypes-date inputtypes-month inputtypes-week inputtypes-time inputtypes-datetime-local inputtypes-number inputtypes-range inputtypes-color details js" style="scroll-padding-top: 0px; --nav-level-spacing: 20px;"><head>
+                    <meta charset="utf-8">
+                    <head>
+                    </head>
+                    
+                    <body>
+                    <div class="leaflet-popup-content" style="width: 100px;">
+                        <h2>ASTI</h2>
+                        <h2>LIVELLO {{caldo_rearranged.COD_COLORE.66.11.0}}</h2>
+                        <i>{{caldo.data_emissione | date_tomorrow}}</i>
+                        <!--<br>
+                        <br>	
+                        <table>
+                            <tr>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">Tmax</td>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">{{caldo_rearranged.TERMA.66.11.328}}&#176;C</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">ATmax</td>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">{{caldo_rearranged.ATMAX.66.11.0}}&#176;C</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">Tmin</td>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">{{caldo_rearranged.TERMA.66.11.327}}&#176;C</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">ATmin</td>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">{{caldo_rearranged.ATMIN.66.11.0}}&#176;C</td>
+                            </tr>
+                        </table>-->
+                    </div>
+                    </body>
+                </html>
+            ]]> 
+            </description>
+            <open>0</open>
+            <Style>
+                <IconStyle>
+                <color>ffffffff</color>
+                <scale>0.7</scale>
+                <Icon>
+                    {% if caldo_rearranged.COD_COLORE.66.11.0 == 0 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-0.png</href>{% endif %}
+                    {% if caldo_rearranged.COD_COLORE.66.11.0 == 1 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-1.png</href>{% endif %}
+                    {% if caldo_rearranged.COD_COLORE.66.11.0 == 2 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-2.png</href>{% endif %}
+                    {% if caldo_rearranged.COD_COLORE.66.11.0 == 3 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-3.png</href>{% endif %}
+                </Icon>
+                </IconStyle>
+                <LabelStyle>
+                <color>ffffffff</color>
+                <scale>1</scale>
+                </LabelStyle>
+            </Style>
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>8.204917448,44.89955012</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name> </name>
+            <snippet>Caldo</snippet>
+            <description>
+            <![CDATA[
+                <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# " class="h-100 no-touchevents inputtypes-search inputtypes-tel inputtypes-url inputtypes-email no-inputtypes-datetime inputtypes-date inputtypes-month inputtypes-week inputtypes-time inputtypes-datetime-local inputtypes-number inputtypes-range inputtypes-color details js" style="scroll-padding-top: 0px; --nav-level-spacing: 20px;"><head>
+                    <meta charset="utf-8">
+                    <head>
+                    </head>
+                    
+                    <body>
+                    <div class="leaflet-popup-content" style="width: 100px;">
+                        <h2>BIELLA</h2>
+                        <h2>LIVELLO {{caldo_rearranged.COD_COLORE.66.1.0}}</h2>
+                        <i>{{caldo.data_emissione | date_tomorrow}}</i>
+                        <!--<br>
+                        <br>	
+                        <table>
+                            <tr>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">Tmax</td>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">{{caldo_rearranged.TERMA.66.1.328}}&#176;C</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">ATmax</td>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">{{caldo_rearranged.ATMAX.66.1.0}}&#176;C</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">Tmin</td>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">{{caldo_rearranged.TERMA.66.1.327}}&#176;C</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">ATmin</td>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">{{caldo_rearranged.ATMIN.66.1.0}}&#176;C</td>
+                            </tr>
+                        </table>-->
+                    </div>
+                    </body>
+                </html>
+            ]]> 
+            </description>
+            <open>0</open>
+            <Style>
+                <IconStyle>
+                <color>ffffffff</color>
+                <scale>0.7</scale>
+                <Icon>
+                    {% if caldo_rearranged.COD_COLORE.66.1.0 == 0 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-0.png</href>{% endif %}
+                    {% if caldo_rearranged.COD_COLORE.66.1.0 == 1 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-1.png</href>{% endif %}
+                    {% if caldo_rearranged.COD_COLORE.66.1.0 == 2 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-2.png</href>{% endif %}
+                    {% if caldo_rearranged.COD_COLORE.66.1.0 == 3 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-3.png</href>{% endif %}
+                </Icon>
+                </IconStyle>
+                <LabelStyle>
+                <color>ffffffff</color>
+                <scale>1</scale>
+                </LabelStyle>
+            </Style>
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>8.05400341,45.56640259</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name> </name>
+            <snippet>Caldo</snippet>
+            <description>
+            <![CDATA[
+                <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# " class="h-100 no-touchevents inputtypes-search inputtypes-tel inputtypes-url inputtypes-email no-inputtypes-datetime inputtypes-date inputtypes-month inputtypes-week inputtypes-time inputtypes-datetime-local inputtypes-number inputtypes-range inputtypes-color details js" style="scroll-padding-top: 0px; --nav-level-spacing: 20px;"><head>
+                    <meta charset="utf-8">
+                    <head>
+                    </head>
+                    
+                    <body>
+                    <div class="leaflet-popup-content" style="width: 100px;">
+                        <h2>CUNEO</h2>
+                        <h2>LIVELLO {{caldo_rearranged.COD_COLORE.66.28.0}}</h2>
+                        <i>{{caldo.data_emissione | date_tomorrow}}</i>
+                        <!--<br>
+                        <br>	
+                        <table>
+                            <tr>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">Tmax</td>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">{{caldo_rearranged.TERMA.66.28.328}}&#176;C</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">ATmax</td>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">{{caldo_rearranged.ATMAX.66.28.0}}&#176;C</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">Tmin</td>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">{{caldo_rearranged.TERMA.66.28.327}}&#176;C</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">ATmin</td>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">{{caldo_rearranged.ATMIN.66.28.0}}&#176;C</td>
+                            </tr>
+                        </table>-->
+                    </div>
+                    </body>
+                </html>
+            ]]> 
+            </description>
+            <open>0</open>
+            <Style>
+                <IconStyle>
+                <color>ffffffff</color>
+                <scale>0.7</scale>
+                <Icon>
+                    {% if caldo_rearranged.COD_COLORE.66.28.0 == 0 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-0.png</href>{% endif %}
+                    {% if caldo_rearranged.COD_COLORE.66.28.0 == 1 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-1.png</href>{% endif %}
+                    {% if caldo_rearranged.COD_COLORE.66.28.0 == 2 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-2.png</href>{% endif %}
+                    {% if caldo_rearranged.COD_COLORE.66.28.0 == 3 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-3.png</href>{% endif %}
+                </Icon>
+                </IconStyle>
+                <LabelStyle>
+                <color>ffffffff</color>
+                <scale>1</scale>
+                </LabelStyle>
+            </Style>
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>7.551387701,44.39308011</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name> </name>
+            <snippet>Caldo</snippet>
+            <description>
+            <![CDATA[
+                <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# " class="h-100 no-touchevents inputtypes-search inputtypes-tel inputtypes-url inputtypes-email no-inputtypes-datetime inputtypes-date inputtypes-month inputtypes-week inputtypes-time inputtypes-datetime-local inputtypes-number inputtypes-range inputtypes-color details js" style="scroll-padding-top: 0px; --nav-level-spacing: 20px;"><head>
+                    <meta charset="utf-8">
+                    <head>
+                    </head>
+                    
+                    <body>
+                    <div class="leaflet-popup-content" style="width: 100px;">
+                        <h2>NOVARA</h2>
+                        <h2>LIVELLO {{caldo_rearranged.COD_COLORE.66.33.0}}</h2>
+                        <i>{{caldo.data_emissione | date_tomorrow}}</i>
+                        <!--<br>
+                        <br>	
+                        <table>
+                            <tr>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">Tmax</td>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">{{caldo_rearranged.TERMA.66.33.328}}&#176;C</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">ATmax</td>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">{{caldo_rearranged.ATMAX.66.33.0}}&#176;C</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">Tmin</td>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">{{caldo_rearranged.TERMA.66.33.327}}&#176;C</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">ATmin</td>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">{{caldo_rearranged.ATMIN.66.33.0}}&#176;C</td>
+                            </tr>
+                        </table>-->
+                    </div>
+                    </body>
+                </html>
+            ]]> 
+            </description>
+            <open>0</open>
+            <Style>
+                <IconStyle>
+                <color>ffffffff</color>
+                <scale>0.7</scale>
+                <Icon>
+                    {% if caldo_rearranged.COD_COLORE.66.33.0 == 0 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-0.png</href>{% endif %}
+                    {% if caldo_rearranged.COD_COLORE.66.33.0 == 1 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-1.png</href>{% endif %}
+                    {% if caldo_rearranged.COD_COLORE.66.33.0 == 2 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-2.png</href>{% endif %}
+                    {% if caldo_rearranged.COD_COLORE.66.33.0 == 3 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-3.png</href>{% endif %}
+                </Icon>
+                </IconStyle>
+                <LabelStyle>
+                <color>ffffffff</color>
+                <scale>1</scale>
+                </LabelStyle>
+            </Style>
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>8.621898751,45.44587027</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name> </name>
+            <snippet>Caldo</snippet>
+            <description>
+            <![CDATA[
+                <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# " class="h-100 no-touchevents inputtypes-search inputtypes-tel inputtypes-url inputtypes-email no-inputtypes-datetime inputtypes-date inputtypes-month inputtypes-week inputtypes-time inputtypes-datetime-local inputtypes-number inputtypes-range inputtypes-color details js" style="scroll-padding-top: 0px; --nav-level-spacing: 20px;"><head>
+                    <meta charset="utf-8">
+                    <head>
+                    </head>
+                    
+                    <body>
+                    <div class="leaflet-popup-content" style="width: 100px;">
+                        <h2>TORINO</h2>
+                        <h2>LIVELLO {{caldo_rearranged.COD_COLORE.66.59.0}}</h2>
+                        <i>{{caldo.data_emissione | date_tomorrow}}</i>
+                        <!--<br>
+                        <br>	
+                        <table>
+                            <tr>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">Tmax</td>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">{{caldo_rearranged.TERMA.66.59.328}}&#176;C</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">ATmax</td>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">{{caldo_rearranged.ATMAX.66.59.0}}&#176;C</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">Tmin</td>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">{{caldo_rearranged.TERMA.66.59.327}}&#176;C</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">ATmin</td>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">{{caldo_rearranged.ATMIN.66.59.0}}&#176;C</td>
+                            </tr>
+                        </table>-->
+                    </div>
+                    </body>
+                </html>
+            ]]> 
+            </description>
+            <open>0</open>
+            <Style>
+                <IconStyle>
+                <color>ffffffff</color>
+                <scale>0.7</scale>
+                <Icon>
+                    {% if caldo_rearranged.COD_COLORE.66.59.0 == 0 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-0.png</href>{% endif %}
+                    {% if caldo_rearranged.COD_COLORE.66.59.0 == 1 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-1.png</href>{% endif %}
+                    {% if caldo_rearranged.COD_COLORE.66.59.0 == 2 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-2.png</href>{% endif %}
+                    {% if caldo_rearranged.COD_COLORE.66.59.0 == 3 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-3.png</href>{% endif %}
+                </Icon>
+                </IconStyle>
+                <LabelStyle>
+                <color>ffffffff</color>
+                <scale>1</scale>
+                </LabelStyle>
+            </Style>
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>7.680686328,45.07326481</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name> </name>
+            <snippet>Caldo</snippet>
+            <description>
+            <![CDATA[
+                <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# " class="h-100 no-touchevents inputtypes-search inputtypes-tel inputtypes-url inputtypes-email no-inputtypes-datetime inputtypes-date inputtypes-month inputtypes-week inputtypes-time inputtypes-datetime-local inputtypes-number inputtypes-range inputtypes-color details js" style="scroll-padding-top: 0px; --nav-level-spacing: 20px;"><head>
+                    <meta charset="utf-8">
+                    <head>
+                    </head>
+                    
+                    <body>
+                    <div class="leaflet-popup-content" style="width: 100px;">
+                        <h2>VERBANIA</h2>
+                        <h2>LIVELLO {{caldo_rearranged.COD_COLORE.66.63.0}}</h2>
+                        <i>{{caldo.data_emissione | date_tomorrow}}</i>
+                        <!--<br>
+                        <br>	
+                        <table>
+                            <tr>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">Tmax</td>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">{{caldo_rearranged.TERMA.66.63.328}}&#176;C</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">ATmax</td>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">{{caldo_rearranged.ATMAX.66.63.0}}&#176;C</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">Tmin</td>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">{{caldo_rearranged.TERMA.66.63.327}}&#176;C</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">ATmin</td>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">{{caldo_rearranged.ATMIN.66.63.0}}&#176;C</td>
+                            </tr>
+                        </table>-->
+                    </div>
+                    </body>
+                </html>
+            ]]> 
+            </description>
+            <open>0</open>
+            <Style>
+                <IconStyle>
+                <color>ffffffff</color>
+                <scale>0.7</scale>
+                <Icon>
+                    {% if caldo_rearranged.COD_COLORE.66.63.0 == 0 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-0.png</href>{% endif %}
+                    {% if caldo_rearranged.COD_COLORE.66.63.0 == 1 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-1.png</href>{% endif %}
+                    {% if caldo_rearranged.COD_COLORE.66.63.0 == 2 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-2.png</href>{% endif %}
+                    {% if caldo_rearranged.COD_COLORE.66.63.0 == 3 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-3.png</href>{% endif %}
+                </Icon>
+                </IconStyle>
+                <LabelStyle>
+                <color>ffffffff</color>
+                <scale>1</scale>
+                </LabelStyle>
+            </Style>
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>8.551125499,45.9214067</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name> </name>
+            <snippet>Caldo</snippet>
+            <description>
+            <![CDATA[
+                <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# " class="h-100 no-touchevents inputtypes-search inputtypes-tel inputtypes-url inputtypes-email no-inputtypes-datetime inputtypes-date inputtypes-month inputtypes-week inputtypes-time inputtypes-datetime-local inputtypes-number inputtypes-range inputtypes-color details js" style="scroll-padding-top: 0px; --nav-level-spacing: 20px;"><head>
+                    <meta charset="utf-8">
+                    <head>
+                    </head>
+                    
+                    <body>
+                    <div class="leaflet-popup-content" style="width: 100px;">
+                        <h2>VERCELLI</h2>
+                        <h2>LIVELLO {{caldo_rearranged.COD_COLORE.66.64.0}}</h2>
+                        <i>{{caldo.data_emissione | date_tomorrow}}</i>
+                        <!--<br>
+                        <br>	
+                        <table>
+                            <tr>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">Tmax</td>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">{{caldo_rearranged.TERMA.66.64.328}}&#176;C</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">ATmax</td>
+                                <td style="font-weight: bold; color:#cc0000;text-align: center;">{{caldo_rearranged.ATMAX.66.64.0}}&#176;C</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">Tmin</td>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">{{caldo_rearranged.TERMA.66.64.327}}&#176;C</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">ATmin</td>
+                                <td style="font-weight: bold; color:#003399;text-align: center;">{{caldo_rearranged.ATMIN.66.64.0}}&#176;C</td>
+                            </tr>
+                        </table>-->
+                    </div>
+                    </body>
+                </html>
+            ]]> 
+            </description>
+            <open>0</open>
+            <Style>
+                <IconStyle>
+                <color>ffffffff</color>
+                <scale>0.7</scale>
+                <Icon>
+                    {% if caldo_rearranged.COD_COLORE.66.64.0 == 0 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-0.png</href>{% endif %}
+                    {% if caldo_rearranged.COD_COLORE.66.64.0 == 1 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-1.png</href>{% endif %}
+                    {% if caldo_rearranged.COD_COLORE.66.64.0 == 2 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-2.png</href>{% endif %}
+                    {% if caldo_rearranged.COD_COLORE.66.64.0 == 3 %}<href>https://www.arpa.piemonte.it/static/kml/images/caldo/LIV-3.png</href>{% endif %}
+                </Icon>
+                </IconStyle>
+                <LabelStyle>
+                <color>ffffffff</color>
+                <scale>1</scale>
+                </LabelStyle>
+            </Style>
+            <Point>
+                <altitudeMode>clampToGround</altitudeMode>
+                <coordinates>8.223619855,45.32398337</coordinates>
+            </Point>
+        </Placemark>
+    {% endif %}   
+    </Document>
+</kml>

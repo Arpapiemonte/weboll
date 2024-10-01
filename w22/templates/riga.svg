@@ -1,43 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
 <svg
    width="210mm"
    height="297mm"
    viewBox="0 0 210 297"
    version="1.1"
    id="svg3810"
-   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
-   sodipodi:docname="riga.svg"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
-  <sodipodi:namedview
-     id="namedview3812"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="0"
-     inkscape:document-units="mm"
-     showgrid="false"
-     inkscape:zoom="1.0633188"
-     inkscape:cx="303.76591"
-     inkscape:cy="185.73922"
-     inkscape:window-width="1846"
-     inkscape:window-height="1016"
-     inkscape:window-x="74"
-     inkscape:window-y="27"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" />
   <defs
      id="defs3807" />
-  <g
-     inkscape:label="Layer 1"
-     inkscape:groupmode="layer"
-     id="layer1">
+  <g id="layer1">
     <g
        id="g_corsoacqua"
        class="{{cella_non_dinamica}}"
@@ -47,7 +19,7 @@
          d="M 20,226 H 80 V 209 H 20 Z" />
       <text
          id="text952"
-         style="text-align:center;text-anchor:middle;font-variant:normal;font-weight:bold;font-size:6px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         style="text-align:center;text-anchor:middle;font-variant:normal;font-weight:bold;font-size:6px;font-family:'Liberation Sans';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
          transform="matrix(1,0,0,-1,48.66,215.27)"><tspan
            id="tspan950">{{corso_acqua}}</tspan></text>
     </g>
@@ -80,7 +52,7 @@
          d="m 80,226 h 64 V 209 H 80 Z" />
       <text
          id="text1082"
-         style="text-align:center;text-anchor:middle;font-variant:normal;font-weight:bold;font-size:6px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         style="text-align:center;text-anchor:middle;font-variant:normal;font-weight:bold;font-size:6px;font-family:'Liberation Sans';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
          transform="matrix(1,0,0,-1,110.33,215.27)"><tspan
            id="tspan1080"
           >{{stazione}}</tspan></text>
@@ -114,7 +86,7 @@
          d="m 144,226 h 39 v -17 h -39 z" />
       <text
          id="text1548"
-         style="text-align:center;text-anchor:middle;font-variant:normal;font-weight:bold;font-size:6px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         style="text-align:center;text-anchor:middle;font-variant:normal;font-weight:bold;font-size:6px;font-family:'Liberation Sans';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
          transform="matrix(1,0,0,-1,163.49,215.27)"><tspan
            id="tspan1546">{{data_massimo_storico}}</tspan></text>
     </g>
@@ -147,7 +119,7 @@
          d="m 183,226 h 30 v -17 h -30 z" />
       <text
          id="text1982"
-         style="text-align:center;text-anchor:middle;font-variant:normal;font-weight:bold;font-size:6px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         style="text-align:center;text-anchor:middle;font-variant:normal;font-weight:bold;font-size:6px;font-family:'Liberation Sans';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
          transform="matrix(1,0,0,-1,198.16,215.27)"><tspan
            id="tspan1980">{{valore_massimo_storico}}</tspan></text>
     </g>
@@ -180,7 +152,7 @@
          d="m 213,226 h 24 v -17 h -24 z" />
       <text
          id="text2336"
-         style="text-align:center;text-anchor:middle;font-variant:normal;font-weight:bold;font-size:6px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         style="text-align:center;text-anchor:middle;font-variant:normal;font-weight:bold;font-size:6px;font-family:'Liberation Sans';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
          transform="matrix(1,0,0,-1,226.83,215.27)"><tspan
            id="tspan2334">{{codice1}}</tspan></text>
     </g>
@@ -213,7 +185,7 @@
          d="m 237,226 h 24 v -17 h -24 z" />
       <text
          id="text2770"
-         style="text-align:center;text-anchor:middle;font-variant:normal;font-weight:bold;font-size:6px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         style="text-align:center;text-anchor:middle;font-variant:normal;font-weight:bold;font-size:6px;font-family:'Liberation Sans';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
          transform="matrix(1,0,0,-1,248.33,215.27)"><tspan
            id="tspan2768">{{codice2}}</tspan></text>
     </g>
@@ -246,7 +218,7 @@
          d="m 261,226 h 24 v -17 h -24 z" />
       <text
          id="text3204"
-         style="text-align:center;text-anchor:middle;font-variant:normal;font-weight:bold;font-size:6px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         style="text-align:center;text-anchor:middle;font-variant:normal;font-weight:bold;font-size:6px;font-family:'Liberation Sans';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
          transform="matrix(1,0,0,-1,272.33,215.27)"><tspan
            id="tspan3202">{{codice3}}</tspan></text>
     </g>
@@ -279,7 +251,7 @@
          d="m 525,226 h 50 v -17 h -50 z" />
       <text
          id="text3910"
-         style="text-align:center;text-anchor:middle;font-variant:normal;font-weight:bold;font-size:6px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         style="text-align:center;text-anchor:middle;font-variant:normal;font-weight:bold;font-size:6px;font-family:'Liberation Sans';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
          transform="matrix(1,0,0,-1,550.16,215.27)"><tspan
            id="tspan3908">{{tend48h}}</tspan></text>
     </g>
@@ -312,7 +284,7 @@
          d="m 482,226 h 43 v -17 h -43 z" />
       <text
          id="text4386"
-         style="font-variant:normal;font-weight:bold;font-size:6px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         style="font-variant:normal;font-weight:bold;font-size:6px;font-family:'Liberation Sans';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
          transform="matrix(1,0,0,-1,501.33,215.27)"><tspan
            id="tspan4384">{{cella_prev_crit36h}}</tspan></text>
     </g>
@@ -345,7 +317,7 @@
          d="m 444,226 h 38 v -17 h -38 z" />
       <text
          id="text4872"
-         style="font-variant:normal;font-weight:bold;font-size:6px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         style="font-variant:normal;font-weight:bold;font-size:6px;font-family:'Liberation Sans';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
          transform="matrix(1,0,0,-1,460.83,215.27)"><tspan
            id="tspan4870">{{cella_prev_crit24h}}</tspan></text>
     </g>
@@ -378,7 +350,7 @@
          d="m 335,226 h 33 v -17 h -33 z" />
       <text
          id="text5316"
-         style="text-align:center;text-anchor:middle;font-variant:normal;font-weight:bold;font-size:6px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         style="text-align:center;text-anchor:middle;font-variant:normal;font-weight:bold;font-size:6px;font-family:'Liberation Sans';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
          transform="matrix(1,0,0,-1,349.66,215.27)"><tspan
            id="tspan5314">{{portata_attesa}}</tspan></text>
     </g>
@@ -411,7 +383,7 @@
          d="m 285,226 h 50 v -17 h -50 z" />
       <text
          id="text5750"
-         style="text-align:center;text-anchor:middle;font-variant:normal;font-weight:bold;font-size:6px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         style="text-align:center;text-anchor:middle;font-variant:normal;font-weight:bold;font-size:6px;font-family:'Liberation Sans';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
          transform="matrix(1,0,0,-1,310.16,215.27)"><tspan
            id="tspan5748">{{tendenza6hprecedenti}}</tspan></text>
     </g>
@@ -444,7 +416,7 @@
          d="m 368,226 h 33 v -17 h -33 z" />
       <text
          id="text6226"
-         style="font-variant:normal;font-weight:bold;font-size:6px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         style="font-variant:normal;font-weight:bold;font-size:6px;font-family:'Liberation Sans';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
          transform="matrix(1,0,0,-1,382.33,215.27)"><tspan
            id="tspan6224">{{cella_criticita_attesa}}</tspan></text>
     </g>
@@ -477,7 +449,7 @@
          d="m 401,226 h 43 v -17 h -43 z" />
       <text
          id="text6712"
-         style="font-variant:normal;font-weight:bold;font-size:6px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         style="font-variant:normal;font-weight:bold;font-size:6px;font-family:'Liberation Sans';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
          transform="matrix(1,0,0,-1,420.33,215.27)"><tspan
            id="tspan6710">{{cella_prev_crit12h}}</tspan></text>
     </g>

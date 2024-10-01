@@ -1,4 +1,4 @@
-// Copyright (C) 2020-2023 simevo s.r.l. for ARPA Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
@@ -378,7 +378,7 @@
 </script>
 
 <script setup lang="ts">
-import Modal from 'bootstrap/js/dist/modal'
+import { Modal } from 'bootstrap'
 import { Ref, ref, onMounted, computed } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { useToast } from 'vue-toast-notification'
@@ -409,6 +409,12 @@ let actions = ref({
 })
 let selectedarea : Ref<W26Data> = ref({})
 let today = ref('')
+const props = defineProps({
+    id: {
+        type: String,
+        default: () => ''
+    },
+})
 // TODO: CONVERT sending -> actions.sending
 // let actions = ref({ sending: false })
 
@@ -420,7 +426,7 @@ const valuesValidity = computed(() => {
       const yesterdayArea = yesterdaybis.value.w26data_set.find(l => l.id_w26_zone.id_w26_zone === area.id_w26_zone.id_w26_zone)
       let areaValidity = {}
       parametri.forEach(p => {
-        if(Math.abs(area[p] - yesterdayArea[p])/yesterdayArea[p]  >= 0.5){
+        if(Math.abs(area[p] - yesterdayArea[p])/Math.abs(yesterdayArea[p])  >= 0.5){
           areaValidity[p] = true
         }else{
           areaValidity[p] = false
@@ -441,7 +447,7 @@ const valuesValidity = computed(() => {
 })
 
 onMounted(() => {
-  bis_id.value = route.params.id
+  bis_id.value = props.id
   fetchData()
 })
 

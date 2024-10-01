@@ -1,4 +1,4 @@
-// Copyright (C) 2020-2023 simevo s.r.l. for ARPA Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
@@ -67,14 +67,14 @@
             colspan="3"
             class="align-middle"
           >
-            Da 400 m a 700 m<br>(collina)
+            Da 500 m a 700 m<br>(collina)
           </th>
           <th
             scope="col"
             colspan="3"
             class="align-middle"
           >
-            Da 700 m a 1000 m<br>(montagna)
+            Da 800 m a 1300 m<br>(montagna)
           </th>
         </tr>
         <tr>

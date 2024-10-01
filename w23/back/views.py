@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2020-2023 simevo s.r.l. for ARPA Piemonte - Dipartimento Naturali e Ambientali
+# Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
 # This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 # weboll is licensed under the AGPL-3.0-or-later License.
 # License text available at https://www.gnu.org/licenses/agpl.txt
@@ -11,6 +11,7 @@ import os
 import tempfile
 from subprocess import call
 
+import pytz
 import requests
 from django.contrib.auth.models import User
 from django.db.transaction import atomic
@@ -416,6 +417,20 @@ class W23View(viewsets.ModelViewSet):
         send_with_celery("allerta", w23.id_w23)
         return Response({"id_w23": w23.id_w23})
 
+    @action(detail=True, permission_classes=[permissions.IsAuthenticated])
+    @atomic
+    def send_auto(self, request, pk):
+        w23 = models.W23.objects.get(pk=pk)
+        print(
+            "send_auto del bollettino ",
+            w23.id_w23,
+            "del",
+            w23.data_emissione,
+            "iniziato",
+        )
+        send_with_celery("allerta", w23.id_w23, True)
+        return Response({"id_w23": w23.id_w23})
+
 
 class W23CurrentView(RetrieveAPIView):
     """
@@ -521,6 +536,12 @@ def convert_to_date(d, k):
         d[k],
         "%Y-%m-%d",
     )
+
+
+# convert localized datetime to utc and return a string representing the date and time in ISO 8601 format:
+def format_datetime(dt):
+    dt_utc = dt.astimezone(pytz.utc)
+    return dt_utc.isoformat()
 
 
 class AllertaHtmlView(TemplateView):
@@ -649,3 +670,258 @@ class AllertaPngOrigView(DetailView):
             return HttpResponse(
                 content=memoryview(png_content), content_type="image/png"
             )
+
+
+class KmlView(TemplateView):
+    template_name = "allerta.kml"
+    http_method_names = ["get"]
+
+    def get_context_data(self, **kwargs):
+        queryset = models.W23.objects
+        w23 = get_object_or_404(queryset, pk=kwargs["pk"])
+        serializer = W23SerializerFull(w23)
+        allerta = serializer.data
+        convert_to_date(allerta, "data_emissione")
+        inizio = datetime.datetime.now()
+        data_allerta = datetime.datetime.strptime(
+            str(allerta["data_emissione"]), "%Y-%m-%d %H:%M:%S"
+        ).strftime("%d-%m-%Y")
+        today = inizio.date()
+        allerta["zone"] = {}
+        livelli_oggi = [
+            "idrogeologico_oggi",
+            "temporali_oggi",
+            "idraulico_oggi",
+            "neve_oggi",
+            "valanghe_oggi",
+        ]
+        livelli_domani = [
+            "idrogeologico_domani",
+            "temporali_domani",
+            "idraulico_domani",
+            "neve_domani",
+            "valanghe_domani",
+        ]
+        colori = {}
+        sort_index = {}
+        for pericolo in models.W23Pericolo.objects.all():
+            colori[pericolo.id_w23_pericolo] = pericolo.colore_html
+            sort_index[pericolo.id_w23_pericolo] = pericolo.sort_index
+
+        for data in allerta["w23data_set"]:
+            zona_allerta = data["id_w23_zone"]["zona_allerta"]
+            data["id_w23_zone"]["offset"] = -39 * (
+                data["id_w23_zone"]["id_w23_zone"] - 1
+            )
+            lam_oggi = 0
+            for livello in livelli_oggi:
+                data[livello + "_colore"] = colori[data[livello]]
+                lam_oggi = max(lam_oggi, sort_index[data[livello]])
+            lam_domani = 0
+            for livello in livelli_domani:
+                data[livello + "_colore"] = colori[data[livello]]
+                lam_domani = max(lam_domani, sort_index[data[livello]])
+            lam = max(lam_oggi, lam_domani)
+
+            data["lam_oggi"] = models.W23Pericolo.objects.get(sort_index=lam_oggi)
+            data["lam_domani"] = models.W23Pericolo.objects.get(sort_index=lam_domani)
+            data["lam"] = models.W23Pericolo.objects.get(sort_index=lam)
+            if datetime.datetime.strptime(
+                str(allerta["data_emissione"]), "%Y-%m-%d %H:%M:%S"
+            ).strftime("%Y-%m-%d") != today.strftime("%d-%m-%Y"):
+                data["kml"] = models.W23Pericolo.objects.get(sort_index=lam_domani)
+            else:
+                data["kml"] = models.W23Pericolo.objects.get(sort_index=lam_oggi)
+                data_allerta = datetime.datetime.strptime(
+                    str(allerta["data_emissione"] + datetime.timedelta(days=1)),
+                    "%Y-%m-%d %H:%M:%S",
+                ).strftime("%d-%m-%Y")
+            if zona_allerta != "VA":
+                allerta["zone"][zona_allerta] = data
+
+        context = {
+            "allerta": allerta,
+            "data_allerta": data_allerta,
+        }
+        return context
+
+
+class Kml36hView(TemplateView):
+    template_name = "allerta.kml"
+    http_method_names = ["get"]
+
+    def get_context_data(self, **kwargs):
+        queryset = models.W23.objects
+        w23 = get_object_or_404(queryset, pk=kwargs["pk"])
+        serializer = W23SerializerFull(w23)
+        allerta = serializer.data
+        convert_to_date(allerta, "data_emissione")
+        data_allerta = datetime.datetime.strptime(
+            str(allerta["data_emissione"]), "%Y-%m-%d %H:%M:%S"
+        ).strftime("%d-%m-%Y")
+        allerta["zone"] = {}
+        livelli_oggi = [
+            "idrogeologico_oggi",
+            "temporali_oggi",
+            "idraulico_oggi",
+            "neve_oggi",
+            "valanghe_oggi",
+        ]
+        livelli_domani = [
+            "idrogeologico_domani",
+            "temporali_domani",
+            "idraulico_domani",
+            "neve_domani",
+            "valanghe_domani",
+        ]
+        colori = {}
+        sort_index = {}
+        for pericolo in models.W23Pericolo.objects.all():
+            colori[pericolo.id_w23_pericolo] = pericolo.colore_html
+            sort_index[pericolo.id_w23_pericolo] = pericolo.sort_index
+
+        for data in allerta["w23data_set"]:
+            zona_allerta = data["id_w23_zone"]["zona_allerta"]
+            data["id_w23_zone"]["offset"] = -39 * (
+                data["id_w23_zone"]["id_w23_zone"] - 1
+            )
+            lam_oggi = 0
+            for livello in livelli_oggi:
+                data[livello + "_colore"] = colori[data[livello]]
+                lam_oggi = max(lam_oggi, sort_index[data[livello]])
+            lam_domani = 0
+            for livello in livelli_domani:
+                data[livello + "_colore"] = colori[data[livello]]
+                lam_domani = max(lam_domani, sort_index[data[livello]])
+            lam = max(lam_oggi, lam_domani)
+
+            data["lam"] = models.W23Pericolo.objects.get(sort_index=lam)
+            data["kml"] = models.W23Pericolo.objects.get(sort_index=lam)
+
+            if zona_allerta != "VA":
+                allerta["zone"][zona_allerta] = data
+
+        context = {
+            "allerta": allerta,
+            "data_allerta": data_allerta,
+        }
+        return context
+
+
+# find maximum value among all parameters
+def massimo(parameters):
+    p = parameters.copy()
+    p.pop("EFFETTI SUL TERRITORIO", "")
+    lookup = {"BIANCO": -1, "VERDE": 0, "GIALLO": 1, "ARANCIONE": 2, "ROSSO": 3}
+    m = max(p, key=lambda x: lookup[p[x]])
+    return p[m]
+
+
+def rinomina(parameters):
+    mapping = {
+        "EFFETTI SUL TERRITORIO": "scenario_atteso",
+        "IDRAULICO_1224": "idraulico_oggi",
+        "IDRAULICO_2436": "idraulico_domani",
+        "IDROGEOLOGICO_1224": "idrogeologico_oggi",
+        "IDROGEOLOGICO_2436": "idrogeologico_domani",
+        "TEMPORALI_1224": "temporali_oggi",
+        "TEMPORALI_2436": "temporali_domani",
+        "NEVE_1224": "neve_oggi",
+        "NEVE_2436": "neve_domani",
+        "VALANGHE_1224": "valanghe_oggi",
+        "VALANGHE_2436": "valanghe_domani",
+    }
+    for new_key, old_key in mapping.items():
+        parameters[new_key] = parameters.pop(old_key)
+
+
+# returns parameters filtered for values containing any of hints and with uppercased key
+def filtra_valori(parameters, hints):
+    valori = {}
+    for k, v in parameters.items():
+        delimiter = "_"
+        if delimiter in k:
+            k_split = k.split(delimiter)
+            # escludo gli allarmi derivanti dalle previsioni
+            if k_split[len(k_split) - 1] != "for":
+                if v in hints:
+                    valori[k] = v
+        else:
+            if v in hints:
+                valori[k] = v
+    return valori
+    # return {k: parameters[k] for k, v in parameters.items() if v in hints}
+
+
+def parametri(zona):
+    return filtra_valori(zona, ["BIANCO", "VERDE", "GIALLO", "ARANCIONE", "ROSSO"])
+
+
+class XmlView(TemplateView):
+    template_name = "allerta.xml"
+    http_method_names = ["get"]
+
+    def get_context_data(self, **kwargs):
+        queryset = models.W23.objects
+        w23 = get_object_or_404(queryset, pk=kwargs["pk"])
+        serializer = W23SerializerFull(w23)
+        allerta = serializer.data
+
+        for i, zona in enumerate(allerta["w23data_set"]):
+            if zona["id_w23_zone"]["nome_zona"][:4] != "Piem":
+                del allerta["w23data_set"][i]
+
+        cet = pytz.timezone("CET")
+        fmt = "%Y-%m-%dT%H:%M:%S"
+        lu = cet.localize(
+            datetime.datetime.strptime(allerta["last_update"], fmt)
+        )  # fromisoformat is only available in python 3.7+
+        lu13 = lu.replace(hour=13, minute=0, second=0, microsecond=0)
+        lu37 = lu.replace(
+            hour=0, minute=0, second=0, microsecond=0
+        ) + datetime.timedelta(days=2)
+
+        allerta["sent"] = format_datetime(lu)
+        allerta["onset"] = format_datetime(lu13)
+        allerta["expires"] = format_datetime(lu37)
+        allerta["msgType"] = "Update"
+        for zona in allerta["w23data_set"]:
+            zona["onset"] = allerta["onset"]
+            zona["expires"] = allerta["expires"]
+            p = {
+                k: parametri(zona)[k]
+                for k in parametri(zona).keys()
+                if "_for" != k[-len("_for") :]
+            }
+            p["scenario_atteso"] = zona["scenario_atteso"].upper()
+            rinomina(p)
+            zona["parameters"] = p
+            # assegno il colore della criticità
+            zona["event"] = massimo(p)
+
+            zona["category"] = "Geo"  # ossia >= a giallo
+            if zona["event"] == "VERDE":
+                zona["responseType"] = "None"
+                zona["urgency"] = "Unknown"
+                zona["severity"] = "Unknown"
+                zona["category"] = "Met"
+            elif zona["event"] == "BIANCO":
+                zona["responseType"] = "None"
+                zona["urgency"] = "Unknown"
+                zona["severity"] = "Unknown"
+                zona["category"] = "Met"
+            else:
+                # se una o più icone sono nere o la criticità è più di verde il tag è prepare
+                allerta["msgType"] = "Alert"
+                zona["responseType"] = "Prepare"
+                zona["urgency"] = "Expected"
+                # assegno la severità al colore
+                if zona["event"] == "GIALLO":
+                    zona["severity"] = "Moderate"
+                elif zona["event"] == "ARANCIONE":
+                    zona["severity"] = "Severe"
+                else:
+                    zona["severity"] = "Extreme"
+
+        context = {"allerta": allerta}
+        return context

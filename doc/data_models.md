@@ -715,7 +715,7 @@ Per una più facile visualizzazione il front-end riorganizza il JSON "piatto" ri
   "situation": "Il nord Italia si trova ... locali nebbie in pianura.",
   "status": "1",
   "last_update": "2020-11-12T12:40:04+01:00",
-  "username": "lrenier",
+  "username": "weboll",
   "seq_num": 317,
   "version": 46,
   "id_w05_parent": 24303,

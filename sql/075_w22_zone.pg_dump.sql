@@ -71,7 +71,7 @@ COPY public.w22_zone (id_w22_zone, codice_istat_comune, progr_punto_com, denomin
 9	003096	900	Candoglia	Toce	PORTATA
 10	004089	901	Fossano	Stura di Demonte	PORTATA
 11	005029	900	Castelnuovo	Belbo	PORTATA
-13	006037	900	Casal Cermelli	Orba	PORTATA
+13	006012	700	Basaluzzo	Orba	PORTATA
 14	004086	900	Farigliano	Tanaro	PORTATA
 15	004003	900	Alba	Tanaro	PORTATA
 17	006091	900	Masio	Tanaro	PORTATA

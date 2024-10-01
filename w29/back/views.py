@@ -12,8 +12,7 @@ from contextlib import closing
 from subprocess import call
 
 import requests
-
-# from django.contrib.auth.models import User
+from django.contrib.auth.models import User
 from django.db.transaction import atomic
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
@@ -38,9 +37,7 @@ from w29.back.serializers import (
     W29ZoneSerializer,
 )
 from website.common.tasks import send_with_celery
-from website.common.views import (  # BulletinDraftLocked, ExistingTodayBulletin,
-    StandardResultsSetPagination,
-)
+from website.common.views import BulletinDraftLocked, StandardResultsSetPagination
 
 
 class ReadOnly(permissions.BasePermission):
@@ -82,11 +79,61 @@ class W29View(viewsets.ModelViewSet):
         serializer = self.get_serializer(queryset, many=True)
         return Response(serializer.data)
 
+    def perform_destroy(self, instance):
+        if instance.username != self.request.user.username:
+            raise BulletinDraftLocked()
+        queryset = models.W29.objects
+        if (
+            instance.id_w29_parent
+            and queryset.filter(pk=instance.id_w29_parent).exists()
+        ):
+            w29 = get_object_or_404(queryset, pk=instance.id_w29_parent)
+            w29.status = "1"
+            if not User.objects.filter(username=w29.username).exists():
+                print("perform_destroy non trovo l'utente " + w29.username)
+                w29.username = (
+                    instance.username
+                )  # se rimane l'utente originale post_save potrebbe
+                # generare errore se non trova l'utente originale in auth_user
+            w29.save()
+        instance.delete()
+
     def retrieve(self, request, pk=None):
         queryset = models.W29.objects
         w29 = get_object_or_404(queryset, pk=pk)
         serializer = W29SerializerFull(w29, context={"request": request})
         return Response(serializer.data)
+
+    @action(detail=True, permission_classes=[permissions.IsAuthenticated])
+    @atomic
+    def reopen(self, request, pk):
+        # riapre un bollettino
+        now = datetime.datetime.now()
+        old = models.W29.objects.get(pk=pk)
+        print("w29 reopen:", old)
+        old.status = "2"
+        old_id_w29 = old.id_w29
+        old.save()
+        numero_bollettino = int(old.numero_bollettino.split("/")[0])
+        new = old
+        new.pk = None  # resetta la chiave primaria rendendolo un nuovo record
+        new.status = "0"
+        new.numero_bollettino = (
+            str(numero_bollettino) + "/" + str(datetime.datetime.today().year)
+        )
+        new.last_update = now
+        new.username = request.user
+        new.id_w29_parent = old_id_w29
+        new.save()
+        print("created: ", new)
+        old_data = models.W29Data.objects.filter(id_w29=old_id_w29)
+        for data in old_data:
+            new_data = data
+            new_data.pk = None  # resetta la chiave primaria rendendolo un nuovo record
+            new_data.id_w29 = new
+            new_data.save()
+
+        return Response({"id_w29": new.id_w29})
 
     @action(detail=True, permission_classes=[permissions.IsAuthenticated])
     @atomic

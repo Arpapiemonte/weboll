@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alert xmlns="urn:oasis:names:tc:emergency:cap:1.2">
+  <identifier>{{ allerta.numero_bollettino }}</identifier>
+  <sender>centro.funzionale@arpa.piemonte.it</sender>
+  <sent>{{ allerta.sent }}</sent>
+  <status>Actual</status>
+  <msgType>{{ allerta.msgType }}</msgType>
+  <source>Operator</source>
+  <scope>Public</scope>
+  <note>{{ allerta.situazione_meteo }}</note>{% for zona in allerta.w23data_set %}
+  <info>
+    <language>it-IT</language>
+    <category>{{ zona.category }}</category>
+    <event>{{ zona.event }}</event>
+    <responseType>{{ zona.responseType }}</responseType>
+    <urgency>{{ zona.urgency }}</urgency>
+    <severity>{{ zona.severity }}</severity>
+    <certainty>Likely</certainty>
+    <onset>{{ zona.onset }}</onset>
+    <expires>{{ zona.expires }}</expires>
+    <instruction>http://www2.regione.piemonte.it/protezionecivile/index.php/allertamento/cosa-fare-in-caso-di-allerta</instruction>{% for name, value in zona.parameters.items %}
+    <parameter>
+      <valueName>{{ name|safe }}</valueName>
+      <value>{{ value|safe }}</value>
+    </parameter>{% endfor %}
+    <area>
+      <areaDesc>{{ zona.id_w23_zone.nome_zona }}</areaDesc>
+    </area>
+  </info>{% endfor %}
+</alert>

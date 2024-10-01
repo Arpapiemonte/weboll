@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2020-2023 simevo s.r.l. for ARPA Piemonte - Dipartimento Naturali e Ambientali
+# Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
 # This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 # weboll is licensed under the AGPL-3.0-or-later License.
 # License text available at https://www.gnu.org/licenses/agpl.txt
@@ -28,21 +28,21 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     # https://stackoverflow.com/a/55859751
     def validate(self, attrs):
         data = super().validate(attrs)
-        refresh = self.get_token(self.user)
+        refresh = self.get_token(self.user)  # type: ignore
         data["refresh"] = str(refresh)
-        data["access"] = str(refresh.access_token)
+        data["access"] = str(refresh.access_token)  # type: ignore
 
         # Add extra responses here
-        data["username"] = self.user.username
-        data["groups"] = self.user.groups.values_list("name", flat=True)
+        data["username"] = self.user.username  # type: ignore
+        data["groups"] = self.user.groups.values_list("name", flat=True)  # type: ignore
 
-        log.warning("login {username}".format(username=self.user.username))
+        log.warning("login {username}".format(username=self.user.username))  # type: ignore
         LogEntry.objects.log_action(
-            user_id=self.user.pk,
-            content_type_id=ContentType.objects.get_for_model(self.user).pk,
-            object_id=self.user.pk,
+            user_id=self.user.pk,  # type: ignore
+            content_type_id=ContentType.objects.get_for_model(self.user).pk,  # type: ignore
+            object_id=self.user.pk,  # type: ignore
             action_flag=CHANGE,
-            object_repr=self.user.username,
+            object_repr=self.user.username,  # type: ignore
             change_message="login",
         )
 
@@ -50,7 +50,7 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
 
 
 class MyTokenObtainPairView(TokenObtainPairView):
-    serializer_class = MyTokenObtainPairSerializer
+    serializer_class = MyTokenObtainPairSerializer  # type: ignore
 
 
 router = routers.DefaultRouter()

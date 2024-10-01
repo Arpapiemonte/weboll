@@ -1,333 +1,332 @@
-// Copyright (C) 2020-2023 simevo s.r.l. for ARPA Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
 <template>
   <LoginModal ref="login" />
-  <VeeForm>
-    <div class="container-fluid">
-      <LevelModal
-        :selected-venue="selected_venue"
-        :levels="levels"
-        @set-selected-level="setSelectedLevel"
-      />
-      <MeteoModal />
+  <div class="container-fluid">
+    <LevelModal
+      :selected-venue="selected_venue"
+      :levels="levels"
+      @set-selected-level="setSelectedLevel"
+    />
+    <MeteoModal />
 
+    <div
+      class="row justify-content-end sticky-top py-1"
+      style="background-color: #f8f9fa;"
+    >
       <div
-        class="row justify-content-end sticky-top py-1"
-        style="background-color: #f8f9fa;"
+        class="btn-group w-auto"
+        role="group"
       >
-        <div
-          class="btn-group w-auto"
-          role="group"
+        <a
+          class="btn btn-outline-primary"
+          :href="'/api/w16/pdf/' + ozono.id_w16"
+          target="_blank"
+          role="button"
         >
-          <a
-            class="btn btn-outline-primary"
-            :href="'/api/w16/pdf/' + ozono.id_w16"
-            target="_blank"
-            role="button"
-          >
+          <img
+            src="~bootstrap-icons/icons/file-earmark-pdf-fill.svg"
+            alt="PDF icon"
+            width="18"
+            height="18"
+          > PDF
+        </a>
+        <button
+          v-if="ozono.last_seq_num === ozono.seq_num && state.username"
+          :disabled="copying || reopening || sending"
+          type="button"
+          class="btn btn-outline-dark"
+          @click="execute('copy', true, 'Bollettino copiato')"
+        >
+          <span v-if="copying">
+            <span
+              class="spinner-border spinner-border-sm"
+              role="status"
+              aria-hidden="true"
+            />
+            Sto copiando il bollettino ...
+          </span>
+          <span v-else>
             <img
-              src="~bootstrap-icons/icons/file-earmark-pdf-fill.svg"
-              alt="PDF icon"
+              src="~bootstrap-icons/icons/plus-circle-fill.svg"
+              alt="plus icon"
               width="18"
               height="18"
-            > PDF
-          </a>
-          <button
-            v-if="ozono.last_seq_num === ozono.seq_num && state.username"
-            :disabled="copying || reopening || sending"
-            type="button"
-            class="btn btn-outline-dark"
-            @click="execute('copy', true, 'Bollettino copiato')"
-          >
-            <span v-if="copying">
-              <span
-                class="spinner-border spinner-border-sm"
-                role="status"
-                aria-hidden="true"
-              />
-              Sto copiando il bollettino ...
-            </span>
-            <span v-else>
-              <img
-                src="~bootstrap-icons/icons/plus-circle-fill.svg"
-                alt="plus icon"
-                width="18"
-                height="18"
-              > Copia
-            </span>
-          </button>
-          <button
-            v-if="ozono.status === '1' && state.username"
-            :disabled="copying || reopening || sending"
-            type="button"
-            class="btn btn-outline-warning"
-            @click="execute('reopen', true, 'Bollettino riaperto')"
-          >
-            <span v-if="reopening">
-              <span
-                class="spinner-border spinner-border-sm"
-                role="status"
-                aria-hidden="true"
-              />
-              Sto riaprendo il bollettino ...
-            </span>
-            <span v-else>
-              <img
-                src="~bootstrap-icons/icons/unlock-fill.svg"
-                alt="unlock icon"
-                width="18"
-                height="18"
-              > Riapri
-            </span>
-          </button>
-          <button
-            v-if="ozono.status === '0' && state.username"
-            :disabled="history.canUndo || reopening || sending"
-            type="button"
-            class="btn btn-outline-success"
-            @click="execute('send', false, 'Bollettino inviato')"
-          >
-            <span v-if="sending">
-              <span
-                class="spinner-border spinner-border-sm"
-                role="status"
-                aria-hidden="true"
-              />
-              Sto inviando il bollettino ...
-            </span>
-            <span v-else>
-              <img
-                src="~bootstrap-icons/icons/emoji-laughing.svg"
-                alt="unlock icon"
-                width="18"
-                height="18"
-              > Invia
-            </span>
-          </button>
-          <button
-            v-if="ozono.status === '0' && state.username"
-            type="button"
-            class="btn btn-outline-danger"
-            @click="remove()"
-          >
+            > Copia
+          </span>
+        </button>
+        <button
+          v-if="ozono.status === '1' && state.username && ozono.start_valid_time.substring(0, 10) === today"
+          :disabled="copying || reopening || sending"
+          type="button"
+          class="btn btn-outline-warning"
+          @click="execute('reopen', true, 'Bollettino riaperto')"
+        >
+          <span v-if="reopening">
+            <span
+              class="spinner-border spinner-border-sm"
+              role="status"
+              aria-hidden="true"
+            />
+            Sto riaprendo il bollettino ...
+          </span>
+          <span v-else>
             <img
-              src="~bootstrap-icons/icons/trash-fill.svg"
+              src="~bootstrap-icons/icons/unlock-fill.svg"
               alt="unlock icon"
               width="18"
               height="18"
-            > Elimina
-          </button>
-        </div>
-        <div
-          v-if="!readonly"
-          class="btn-group w-auto"
-          role="group"
-        >
-          <button
-            type="button"
-            class="btn btn-success"
-            :disabled="!history.canUndo"
-            @click="undo()"
-          >
-            <img
-              src="~bootstrap-icons/icons/arrow-counterclockwise.svg"
-              alt="undo icon"
-              width="18"
-              height="18"
-            > Undo
-          </button>
-          <button
-            type="button"
-            class="btn btn-info"
-            :disabled="!history.canRedo"
-            @click="redo()"
-          >
-            <img
-              src="~bootstrap-icons/icons/arrow-clockwise.svg"
-              alt="redo icon"
-              width="18"
-              height="18"
-            > Redo
-          </button>
-          <button
-            type="button"
-            class="btn btn-danger"
-            :disabled="!history.canUndo"
-            @click="save()"
-          >
-            <img
-              src="~bootstrap-icons/icons/save.svg"
-              alt="save icon"
-              width="18"
-              height="18"
-            > Save
-          </button>
-        </div>
-      </div>
-
-      <div class="row mb-3">
-        <h1>Bollettino Ozono {{ ozono.seq_num }}</h1>
-      </div>
-
-      <div class="row">
-        <div class="col-md-2 mb-3">
-          <label for="stato">Stato</label>
-          <span v-if="ozono.status == 1">
-            <input
-              id="stato"
-              disabled
-              class="form-control"
-              name="stato"
-              type="text"
-              value="Inviato"
-            >
+            > Riapri
           </span>
-          <span v-else-if="ozono.status == 2">
-            <input
-              id="stato"
-              disabled
-              class="form-control"
-              name="stato"
-              type="text"
-              value="Riaperto"
-            >
+        </button>
+        <button
+          v-if="ozono.status === '0' && state.username"
+          :disabled="history.canUndo || reopening || sending"
+          type="button"
+          class="btn btn-outline-success"
+          @click="execute('send', false, 'Bollettino inviato')"
+        >
+          <span v-if="sending">
+            <span
+              class="spinner-border spinner-border-sm"
+              role="status"
+              aria-hidden="true"
+            />
+            Sto inviando il bollettino ...
           </span>
           <span v-else>
-            <input
-              id="stato"
-              disabled
-              class="form-control"
-              name="stato"
-              type="text"
-              value="Bozza"
-            >
+            <img
+              src="~bootstrap-icons/icons/emoji-laughing.svg"
+              alt="unlock icon"
+              width="18"
+              height="18"
+            > Invia
           </span>
-        </div>
-        <div class="col-md-2 mb-3">
-          <label for="dataEmissione">Data emissione</label>
+        </button>
+        <button
+          v-if="ozono.status === '0' && state.username"
+          type="button"
+          class="btn btn-outline-danger"
+          @click="remove()"
+        >
+          <img
+            src="~bootstrap-icons/icons/trash-fill.svg"
+            alt="unlock icon"
+            width="18"
+            height="18"
+          > Elimina
+        </button>
+      </div>
+      <div
+        v-if="!readonly"
+        class="btn-group w-auto"
+        role="group"
+      >
+        <button
+          type="button"
+          class="btn btn-success"
+          :disabled="!history.canUndo"
+          @click="undo()"
+        >
+          <img
+            src="~bootstrap-icons/icons/arrow-counterclockwise.svg"
+            alt="undo icon"
+            width="18"
+            height="18"
+          > Undo
+        </button>
+        <button
+          type="button"
+          class="btn btn-info"
+          :disabled="!history.canRedo"
+          @click="redo()"
+        >
+          <img
+            src="~bootstrap-icons/icons/arrow-clockwise.svg"
+            alt="redo icon"
+            width="18"
+            height="18"
+          > Redo
+        </button>
+        <button
+          type="button"
+          class="btn btn-danger"
+          :disabled="!history.canUndo && !history.canRedo"
+          @click="save()"
+        >
+          <img
+            src="~bootstrap-icons/icons/save.svg"
+            alt="save icon"
+            width="18"
+            height="18"
+          > Save
+        </button>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <h1>Bollettino Ozono {{ ozono.seq_num }}</h1>
+    </div>
+
+    <div class="row">
+      <div class="col-md-2 mb-3">
+        <label for="stato">Stato</label>
+        <span v-if="ozono.status == 1">
           <input
-            id="dataEmissione"
+            id="stato"
             disabled
-            type="text"
             class="form-control"
-            :value="(new Date(ozono.start_valid_time)).toLocaleString()"
+            name="stato"
+            type="text"
+            value="Inviato"
           >
-        </div>
-        <div class="col-md-2 mb-3">
-          <label for="dataAggiornamento">Ultima modifica</label>
+        </span>
+        <span v-else-if="ozono.status == 2">
           <input
-            id="dataAggiornamento"
+            id="stato"
             disabled
-            type="text"
             class="form-control"
-            :value="(new Date(ozono.last_update)).toLocaleString()"
+            name="stato"
+            type="text"
+            value="Riaperto"
           >
-        </div>
-        <div class="col-md-2 mb-3">
-          <label for="versione">Versione</label>
+        </span>
+        <span v-else>
           <input
-            id="versione"
+            id="stato"
             disabled
             class="form-control"
-            name="versione"
+            name="stato"
             type="text"
-            :value="ozono.version"
+            value="Bozza"
           >
-        </div>
-        <div class="col-md-2 mb-3">
-          <label for="username">Autore</label>
-          <input
-            id="username"
-            disabled
-            class="form-control"
-            name="username"
-            type="text"
-            :value="ozono.username"
+        </span>
+      </div>
+      <div class="col-md-2 mb-3">
+        <label for="dataEmissione">Data emissione</label>
+        <input
+          id="dataEmissione"
+          disabled
+          type="text"
+          class="form-control"
+          :value="(new Date(ozono.start_valid_time)).toLocaleString()"
+        >
+      </div>
+      <div class="col-md-2 mb-3">
+        <label for="dataAggiornamento">Ultima modifica</label>
+        <input
+          id="dataAggiornamento"
+          disabled
+          type="text"
+          class="form-control"
+          :value="(new Date(ozono.last_update)).toLocaleString()"
+        >
+      </div>
+      <div class="col-md-2 mb-3">
+        <label for="versione">Versione</label>
+        <input
+          id="versione"
+          disabled
+          class="form-control"
+          name="versione"
+          type="text"
+          :value="ozono.version"
+        >
+      </div>
+      <div class="col-md-2 mb-3">
+        <label for="username">Autore</label>
+        <input
+          id="username"
+          disabled
+          class="form-control"
+          name="username"
+          type="text"
+          :value="ozono.username"
+        >
+      </div>
+    </div> <!-- end row -->
+    <div class="row">
+      <div class="col-md-12 mb-3">
+        <label for="note">Note</label>
+        <OzonoText
+          :id="'note'"
+          :readonly="readonly"
+          :data="ozono"
+          :history="history"
+          :value-key="'note'"
+          :id-key="'id_w16'"
+          :validity="validity"
+          @set-note="setNote"
+        />
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-xl-7 col-md-12 mb-3">
+        <ul class="nav nav-tabs nav-justified sticky-top">
+          <li
+            v-for="(dataGiorno, index) in giorniBulletin"
+            :key="index"
+            class="nav-item"
           >
-        </div>
-      </div> <!-- end row -->
-      <div class="row">
-        <div class="col-md-12 mb-3">
-          <label for="note">Note</label>
-          <OzonoText
-            :id="'note'"
+            <a
+              class="nav-link"
+              :class="{ active: current_day === index }"
+              @click="current_day = index"
+            >{{ dataGiorno }}</a>
+          </li>
+        </ul>
+        <div
+          v-for="(value, venue) in venue_values[current_day]"
+          :key="venue"
+        >
+          <AreaOzono
+            v-if="'w16_data' in ozono"
+            :value="value"
+            :venue="venue"
             :readonly="readonly"
-            :data="ozono"
             :history="history"
-            :value-key="'note'"
-            :id-key="'id_w16'"
-            @set-note="setNote"
+            :levels="levels"
+            @set-level="setLevel"
           />
         </div>
       </div>
-      <div class="row mt-3">
-        <div class="col-xl-7 col-md-12 mb-3">
-          <ul class="nav nav-tabs nav-justified sticky-top">
-            <li
-              v-for="(dataGiorno, index) in giorniBulletin"
-              :key="index"
-              class="nav-item"
-            >
-              <a
-                class="nav-link"
-                :class="{ active: current_day === index }"
-                @click="current_day = index"
-              >{{ dataGiorno }}</a>
-            </li>
-          </ul>
-          <div
-            v-for="(value, venue) in venue_values[current_day]"
-            :key="venue"
+      <div class="col-xl-5 col-md-12 mb-3">
+        <div
+          class="sticky-top pt-5"
+          style="z-index: 0;"
+        >
+          <MapOzono
+            v-if="'w16_data' in ozono"
+            :orography="orography"
+            :rivers="rivers"
+            :provinces="provinces"
+            :capitals="capitals"
+            :layer="layer"
+            :levels="levels"
+            :venues="ozono.w16_data[current_day]"
+            :readonly="readonly"
+            :selected-venue="selected_venue"
+            :venue-data="venue_data"
+            :ozono-status="ozono.status"
+            :ozono-date="ozono.start_valid_time"
+            @open-modal="openModal"
+            @open-meteo-modal="openMeteoModal"
+          />
+          <img
+            src="/images/ozono/BollOzo_legenda.png"
+            class="img-fluid"
+            alt="test"
           >
-            <AreaOzono
-              v-if="'w16_data' in ozono"
-              :value="value"
-              :venue="venue"
-              :readonly="readonly"
-              :history="history"
-              :levels="levels"
-              @set-level="setLevel"
-            />
-          </div>
         </div>
-        <div class="col-xl-5 col-md-12 mb-3">
-          <div
-            class="sticky-top pt-5"
-            style="z-index: 0;"
-          >
-            <MapOzono
-              v-if="'w16_data' in ozono"
-              :orography="orography"
-              :rivers="rivers"
-              :provinces="provinces"
-              :capitals="capitals"
-              :layer="layer"
-              :levels="levels"
-              :venues="ozono.w16_data[current_day]"
-              :readonly="readonly"
-              :selected-venue="selected_venue"
-              :venue-data="venue_data"
-              :ozono-status="ozono.status"
-              :ozono-date="ozono.start_valid_time"
-              @open-modal="openModal"
-              @open-meteo-modal="openMeteoModal"
-            />
-            <img
-              src="/images/ozono/BollOzo_legenda.png"
-              class="img-fluid"
-              alt="test"
-            >
-          </div>
-        </div> <!-- end col-xl-5 -->
-      </div> <!-- end row -->
-    </div> <!-- end container-fluid -->
-  </VeeForm>
+      </div> <!-- end col-xl-5 -->
+    </div> <!-- end row -->
+  </div> <!-- end container-fluid -->
 </template>
 
 <script>
-import Modal from 'bootstrap/js/dist/modal'
+import { Modal } from 'bootstrap'
 // @ is an alias to /src
 import MapOzono from './MapOzono.vue'
 import AreaOzono from './AreaOzono.vue'
@@ -339,7 +338,6 @@ import LevelModal from './LevelModal.vue'
 import MeteoModal from './MeteoModal.vue'
 import OzonoText from './OzonoText.vue'
 import LoginModal from '@/components/LoginModal.vue'
-import { Form as VeeForm } from 'vee-validate'
 
 export default {
   name: 'OzonoBulletin',
@@ -350,7 +348,12 @@ export default {
     MeteoModal,
     OzonoText,
     LoginModal,
-    VeeForm,
+  },
+  props: {
+    id: {
+      type: String,
+      default: () => ''
+    },
   },
   data () {
     // non reactive properties
@@ -379,6 +382,34 @@ export default {
     }
   },
   computed: {
+    validity() {
+      console.log("validity", this.history.snapshots)
+      let result = {
+        ozonotext: false
+      }
+      // cerca nell'history
+      let index = this.history.snapshots.findIndex(
+        element => element.id_key === "id_w16"
+        && element.value_key === "note")
+      if (index < 0){
+        if (this.ozono.note){
+          if (!(this.ozono.note === null)){
+            if (this.ozono.note.trim().length > 0){
+              result['ozonotext'] = true
+            }
+          }
+        }
+      }else{
+        if (this.history.snapshots[index].new_value){
+          if (!(this.history.snapshots[index].new_value === null)){
+            if (this.history.snapshots[index].new_value.trim().length > 0){
+              result['ozonotext'] = true
+            }
+          }
+        }
+      }
+      return result
+    },
     today() {
       // returns today in 2021-04-22 format
       let d = new Date()
@@ -790,7 +821,7 @@ export default {
      return "#" + ((1 << 24) + (Number(r) << 16) + (Number(g) << 8) + Number(b)).toString(16).slice(1);
     },
     fetchData() {
-      this.ozono_id = this.$route.params.id
+      this.ozono_id = this.id
       if (typeof this.ozono_id === 'undefined') {
         return
       }

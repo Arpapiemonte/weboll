@@ -1,0 +1,102 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+    <table class="table-autostrada">
+        <thead>
+        <tr>
+            <th class="dark" colspan="9" >{{ title }}</th>
+        </tr>
+        <tr>
+            <th class="light" colspan="2" rowspan="2">Parametro</th>
+            <th class="light b-left" colspan="1">{{ days.0 }}</th>
+            <th class="light b-left" colspan="4">{{ days.1 }}</th>
+            <th class="light b-left" colspan="2">{{ days.2 }}</th>
+        </tr>
+        <tr>
+            <th class="dark orari">18:00 - 23:59</th>
+            <th class="dark orari b-left">00:00 - 05:59</th>
+            <th class="dark orari">06:00 - 11:59</th>
+            <th class="dark orari">12:00 - 17:59</th>
+            <th class="dark orari">18:00 - 23:59</th>
+            <th class="dark orari b-left">00:00 - 11:59</th>
+            <th class="dark orari">12:00 - 23.59</th>
+        </tr>
+        </thead>
+        <tbody>
+            
+        <tr>
+            <th class="light" colspan="2" rowspan="2">Tempo Prevalente</th>
+            <td class="light"><img src="http://localhost:8000/static/images/icons/{{data.46.SKY_CONDIT.id_sky_condition}}.svg"
+                height="12" width="12"/>
+            </td>
+            <td class="light b-left"><img src="http://localhost:8000/static/images/icons/{{data.60.SKY_CONDIT.id_sky_condition}}.svg"
+                height="12" width="12"/>
+            </td>
+            <td class="light"><img src="http://localhost:8000/static/images/icons/{{data.61.SKY_CONDIT.id_sky_condition}}.svg"
+                height="12" width="12"/>
+            </td>
+            <td class="light"><img src="http://localhost:8000/static/images/icons/{{data.62.SKY_CONDIT.id_sky_condition}}.svg"
+                height="12" width="12"/>
+            </td>
+            <td class="light"><img src="http://localhost:8000/static/images/icons/{{data.63.SKY_CONDIT.id_sky_condition}}.svg"
+                height="12" width="12"/>
+            </td>
+            <td class="light b-left"><img src="http://localhost:8000/static/images/icons/{{data.81.SKY_CONDIT.id_sky_condition}}.svg"
+                height="12" width="12"/>
+            </td>
+            <td class="light"><img src="http://localhost:8000/static/images/icons/{{data.82.SKY_CONDIT.id_sky_condition}}.svg"
+                height="12" width="12"/>
+            </td>
+        </tr>
+        <tr> 
+            <td class="light">{{ data.46.SKY_CONDIT.description_ita }}</td>
+            <td class="light b-left">{{ data.60.SKY_CONDIT.description_ita }}</td>
+            <td class="light">{{ data.61.SKY_CONDIT.description_ita }}</td>
+            <td class="light">{{ data.62.SKY_CONDIT.description_ita }}</td>
+            <td class="light">{{ data.63.SKY_CONDIT.description_ita }}</td>
+            <td class="light b-left">{{ data.81.SKY_CONDIT.description_ita }}</td>
+            <td class="light">{{ data.82.SKY_CONDIT.description_ita }}</td>
+        </tr>
+        <tr>
+            <th class="dark" colspan="2">Precipitazione</td>
+            <td class="dark">{{ data.46.PREC_CLASS }}</td>
+            <td class="dark b-left">{{ data.60.PREC_CLASS }}</td>
+            <td class="dark">{{ data.61.PREC_CLASS }}</td>
+            <td class="dark">{{ data.62.PREC_CLASS }}</td>
+            <td class="dark">{{ data.63.PREC_CLASS }}</td>
+            <td class="dark b-left">{{ data.81.PREC_CLASS }}</td>
+            <td class="dark">{{ data.82.PREC_CLASS }}</td>
+        </tr>
+        <tr>
+            <th class="light" colspan="2">Zero termico (m)</th>
+            <td class="light b-left">{{ data.46.FRZLVL }}</td>
+            <td class="light b-left">{{ data.60.FRZLVL }}</td>
+            <td class="light">{{ data.61.FRZLVL }}</td>
+            <td class="light">{{ data.62.FRZLVL }}</td>
+            <td class="light">{{ data.63.FRZLVL }}</td>
+            <td class="light b-left">{{ data.81.FRZLVL }}</td>
+            <td class="light">{{ data.82.FRZLVL }}</td>
+        </tr>
+        <tr>
+            <th class="dark" colspan="2">Quota neve (m)</th>
+            <td class="dark">{{ data.46.SNOW_LEV }}</td>
+            <td class="dark b-left">{{ data.60.SNOW_LEV }}</td>
+            <td class="dark">{{ data.61.SNOW_LEV }}</td>
+            <td class="dark">{{ data.62.SNOW_LEV }}</td>
+            <td class="dark">{{ data.63.SNOW_LEV }}</td>
+            <td class="dark b-left">{{ data.81.SNOW_LEV }}</td>
+            <td class="dark">{{ data.82.SNOW_LEV }}</td>
+        </tr>
+        <tr>
+            <th class="light" colspan="2">Temperatura Min/Max (°C)</th>
+            <td class="light">{{ data.46.TERMA }}</td>
+            <td class="light b-left">{{ data.60.TERMA }}</td>
+            <td class="light">{{ data.61.TERMA }}</td>
+            <td class="light">{{ data.62.TERMA }}</td>
+            <td class="light">{{ data.63.TERMA }}</td>
+            <td class="light b-left">{{ data.81.TERMA }}</td>
+            <td class="light">{{ data.82.TERMA }}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+   
+

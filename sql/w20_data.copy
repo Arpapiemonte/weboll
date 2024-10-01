@@ -1,0 +1,520 @@
+id_w20,id_w20_zone,id_w20_data,provincia,comune,if_perc,prob_innesco
+85,0,11549,AL,Acqui Terme,"4,01",A
+85,1,11770,AL,Alice Bel Colle,"3,40",A
+84,7,11991,AL,Cremolino,"4,03",A
+85,2,12085,AL,Bistagno,"5,55",A
+84,8,12086,AL,Denice,"2,36",A
+84,13,12087,AL,Orsara Bormida,"0,27",A
+84,18,12088,AL,Ricaldone,"0,27",A
+84,23,12089,AT,Agliano,"0,16",A
+84,33,12090,AT,Castagnole delle Lanze,"0,17",A
+84,35,12091,AT,Castel Rocchero,"4,37",A
+84,43,12092,AT,Fontanile,"16,29",A
+84,48,12093,AT,Moasca,"0,29",A
+84,53,12094,AT,Montabone,"4,01",A
+84,58,12095,AT,Quaranti,"3,26",A
+84,63,12096,AT,San Giorgio Scarampi,"2,36",A
+84,68,12097,AT,Vaglio Serra,"3,20",A
+85,3,12189,AL,Cartosio,"0,80",A
+85,8,12190,AL,Denice,"2,36",A
+84,9,12191,AL,Grognardo,"4,01",A
+84,14,12192,AL,Ovada,"4,03",A
+84,19,12193,AL,Spigno Monferrato,"2,36",A
+84,24,12194,AT,Antignano,"0,20",A
+84,29,12195,AT,Calamandrana,"2,97",A
+84,34,12196,AT,Castel Boglione,"4,37",A
+84,39,12197,AT,Cessole,"2,36",A
+84,44,12198,AT,Incisa Scapaccino,"1,73",A
+84,49,12199,AT,Mombaldone,"2,36",A
+84,54,12200,AT,Montaldo Scarampi,"0,16",A
+84,64,12201,AT,San Martino Alfieri,"1,32",A
+84,69,12202,AT,Vesime,"0,42",A
+84,74,12203,CN,Bagnasco,"1,08",A
+84,79,12204,CN,Belvedere Langhe,"3,42",A
+85,4,12240,AL,Cassine,"4,80",A
+84,10,12396,AL,Melazzo,"4,01",A
+84,2,12453,AL,Bistagno,"5,55",A
+84,6,12454,AL,Cavatore,"4,01",A
+84,11,12455,AL,Merana,"1,48",A
+84,16,12456,AL,Ponzone,"0,80",A
+84,21,12457,AL,Terzo,"4,01",A
+84,26,12458,AT,Azzano d'Asti,"0,58",A
+84,31,12459,AT,Canelli,"1,13",A
+84,37,12460,AT,Castelnuovo Belbo,"1,18",A
+84,41,12461,AT,Cortiglione,"1,78",A
+84,46,12462,AT,Loazzolo,"0,54",A
+84,51,12463,AT,Mombercelli,"0,09",A
+84,56,12464,AT,Nizza Monferrato,"16,29",A
+84,61,12465,AT,Rocchetta Palafea,"23,75",A
+84,66,12466,AT,Serole,"2,36",A
+84,71,12467,CN,Alba,"3,88",A
+84,76,12468,CN,Barolo,"12,76",A
+84,81,12469,CN,Benevello,"3,88",A
+84,86,12470,CN,Bossolasco,"4,78",A
+84,91,12471,CN,Castelletto Uzzone,"3,76",A
+84,96,12472,CN,Castiglione Tinella,"0,17",A
+84,101,12473,CN,Ciglie',"4,05",A
+84,106,12474,CN,Cravanzana,"3,97",A
+84,111,12475,CN,Gorzegno,"4,78",A
+84,116,12476,CN,Igliano,"2,78",A
+84,121,12477,CN,Levice,"2,48",A
+84,126,12478,CN,Mombasiglio,"3,67",A
+84,131,12479,CN,Monforte d'Alba,"3,58",A
+84,136,12480,CN,Neive,"4,27",A
+84,141,12481,CN,Paroldo,"2,06",A
+84,146,12482,CN,Priero,"17,38",A
+84,151,12483,CN,Rocchetta Belbo,"1,07",A
+84,156,12484,CN,Sale San Giovanni,"1,34",A
+84,161,12485,CN,Scagnello,"3,67",A
+84,166,12486,CN,Torre Bormida,"0,98",A
+84,171,12487,CN,Vezza d'Alba,"2,82",A
+85,5,12488,AL,Castelletto d'Erro,"22,55",A
+85,10,12489,AL,Melazzo,"4,01",A
+85,15,12490,AL,Ponti,"6,80",A
+85,20,12491,AL,Strevi,"0,27",A
+85,25,12492,AT,ASTI,"0,58",A
+85,30,12493,AT,Calosso,"1,13",A
+85,36,12494,AT,Castelletto Molina,"3,26",A
+85,40,12495,AT,Coazzolo,"4,27",A
+85,45,12496,AT,Isola d'Asti,"0,58",A
+85,50,12497,AT,Mombaruzzo,"7,00",A
+85,55,12498,AT,Montegrosso d'Asti,"1,19",A
+85,60,12499,AT,Roccaverano,"2,36",A
+85,65,12500,AT,San Marzano Oliveto,"0,23",A
+85,70,12501,AT,Vinchio,"7,00",A
+85,75,12502,CN,Barbaresco,"0,85",A
+85,80,12503,CN,Bene Vagienna,"11,42",A
+85,85,12504,CN,Bosia,"0,98",A
+85,90,12505,CN,Castagnito,"0,85",A
+85,95,12506,CN,Castiglione Falletto,"0,87",A
+85,100,12507,CN,Cherasco,"19,32",A
+85,105,12508,CN,Cossano Belbo,"0,42",A
+85,110,12509,CN,Feisoglio,"4,78",A
+85,115,12510,CN,Guarene,"1,20",A
+85,125,12512,CN,Mombarcaro,"4,20",A
+85,130,12513,CN,Monesiglio,"3,76",A
+85,135,12514,CN,Narzole,"19,32",A
+85,140,12515,CN,Novello,"3,88",A
+85,145,12516,CN,Piozzo,"1,42",A
+85,150,12517,CN,Rocca Ciglie',"4,05",A
+85,160,12519,CN,Santo Stefano Belbo,"2,68",A
+85,165,12520,CN,Somano,"3,58",A
+85,170,12521,CN,Verduno,"19,32",A
+86,0,12522,AL,Acqui Terme,"4,01",A
+86,6,12523,AL,Cavatore,"4,01",A
+86,12,12524,AL,Montechiaro d'Acqui,"22,55",A
+86,18,12525,AL,Ricaldone,"0,27",A
+86,24,12526,AT,Antignano,"0,20",A
+86,30,12527,AT,Calosso,"1,13",A
+84,3,12547,AL,Cartosio,"0,80",A
+84,12,12548,AL,Montechiaro d'Acqui,"22,55",A
+84,17,12549,AL,Prasco,"4,03",A
+84,22,12550,AL,Visone,"4,01",A
+84,27,12551,AT,Bruno,"1,18",A
+84,28,12552,AT,Bubbio,"2,68",A
+84,32,12553,AT,Cassinasco,"2,97",A
+84,38,12554,AT,Castelnuovo Calcea,"0,16",A
+84,42,12555,AT,Costigliole d'Asti,"1,19",A
+84,47,12556,AT,Maranzana,"4,80",A
+84,52,12557,AT,Monastero Bormida,"2,36",A
+84,57,12558,AT,Olmo Gentile,"2,36",A
+84,62,12559,AT,Rocchetta Tanaro,"0,18",A
+84,67,12560,AT,Sessame,"1,84",A
+84,72,12561,CN,Albaretto della Torre,"7,69",A
+84,77,12562,CN,Bastia Mondovi',"4,05",A
+84,82,12563,CN,Bergolo,"0,98",A
+84,87,12564,CN,Briaglia,"2,39",A
+84,92,12565,CN,Castellinaldo,"0,33",A
+84,97,12566,CN,Castino,"0,98",A
+84,102,12567,CN,Cissone,"10,61",A
+84,107,12568,CN,Diano d'Alba,"3,88",A
+84,112,12569,CN,Gottasecca,"3,76",A
+84,117,12570,CN,La Morra,"0,87",A
+84,122,12571,CN,Magliano Alfieri,"0,85",A
+84,127,12572,CN,Monastero di Vasco,"18,63",A
+84,132,12573,CN,Montelupo Albese,"2,16",A
+84,137,12574,CN,Neviglie,"4,37",A
+84,142,12575,CN,Perletto,"0,98",A
+84,147,12576,CN,Priocca,"0,86",A
+84,152,12577,CN,Roddi,"0,87",A
+84,157,12578,CN,Saliceto,"5,25",A
+84,162,12579,CN,Serralunga d'Alba,"2,16",A
+84,167,12580,CN,Torresina,"2,06",A
+84,172,12581,CN,Vicoforte,"5,70",A
+85,6,12582,AL,Cavatore,"4,01",A
+85,11,12583,AL,Merana,"1,48",A
+85,16,12584,AL,Ponzone,"0,80",A
+85,21,12585,AL,Terzo,"4,01",A
+85,26,12586,AT,Azzano d'Asti,"0,58",A
+85,31,12587,AT,Canelli,"1,13",A
+85,37,12588,AT,Castelnuovo Belbo,"1,18",A
+85,41,12589,AT,Cortiglione,"1,78",A
+85,46,12590,AT,Loazzolo,"0,54",A
+85,51,12591,AT,Mombercelli,"0,09",A
+85,56,12592,AT,Nizza Monferrato,"16,29",A
+85,61,12593,AT,Rocchetta Palafea,"23,75",A
+85,66,12594,AT,Serole,"2,36",A
+85,71,12595,CN,Alba,"3,88",A
+85,76,12596,CN,Barolo,"12,76",A
+85,81,12597,CN,Benevello,"3,88",A
+85,86,12598,CN,Bossolasco,"4,78",A
+85,91,12599,CN,Castelletto Uzzone,"3,76",A
+85,96,12600,CN,Castiglione Tinella,"0,17",A
+85,101,12601,CN,Ciglie',"4,05",A
+85,106,12602,CN,Cravanzana,"3,97",A
+85,111,12603,CN,Gorzegno,"4,78",A
+85,116,12604,CN,Igliano,"2,78",A
+85,121,12605,CN,Levice,"2,48",A
+85,131,12607,CN,Monforte d'Alba,"3,58",A
+85,136,12608,CN,Neive,"4,27",A
+85,141,12609,CN,Paroldo,"2,06",A
+85,151,12611,CN,Rocchetta Belbo,"1,07",A
+85,156,12612,CN,Sale San Giovanni,"1,34",A
+85,166,12614,CN,Torre Bormida,"0,98",A
+85,171,12615,CN,Vezza d'Alba,"2,82",A
+86,1,12616,AL,Alice Bel Colle,"3,40",A
+86,7,12617,AL,Cremolino,"4,03",A
+86,13,12618,AL,Orsara Bormida,"0,27",A
+86,19,12619,AL,Spigno Monferrato,"2,36",A
+86,25,12620,AT,ASTI,"0,58",A
+86,31,12621,AT,Canelli,"1,13",A
+86,37,12622,AT,Castelnuovo Belbo,"1,18",A
+86,38,12623,AT,Castelnuovo Calcea,"0,16",A
+86,42,12624,AT,Costigliole d'Asti,"1,19",A
+86,43,12625,AT,Fontanile,"16,29",A
+86,48,12626,AT,Moasca,"0,29",A
+86,49,12627,AT,Mombaldone,"2,36",A
+86,54,12628,AT,Montaldo Scarampi,"0,16",A
+86,55,12629,AT,Montegrosso d'Asti,"1,19",A
+86,60,12630,AT,Roccaverano,"2,36",A
+86,61,12631,AT,Rocchetta Palafea,"23,75",A
+86,66,12632,AT,Serole,"2,36",A
+86,67,12633,AT,Sessame,"1,84",A
+86,72,12634,CN,Albaretto della Torre,"7,69",A
+86,73,12635,CN,Arguello,"38,36",A
+86,78,12636,CN,Battifollo,"1,08",A
+84,1,12644,AL,Alice Bel Colle,"3,40",A
+84,15,12645,AL,Ponti,"6,80",A
+84,20,12646,AL,Strevi,"0,27",A
+84,25,12647,AT,ASTI,"0,58",A
+84,30,12648,AT,Calosso,"1,13",A
+84,36,12649,AT,Castelletto Molina,"3,26",A
+84,40,12650,AT,Coazzolo,"4,27",A
+84,45,12651,AT,Isola d'Asti,"0,58",A
+84,50,12652,AT,Mombaruzzo,"7,00",A
+84,55,12653,AT,Montegrosso d'Asti,"1,19",A
+84,60,12654,AT,Roccaverano,"2,36",A
+84,65,12655,AT,San Marzano Oliveto,"0,23",A
+84,70,12656,AT,Vinchio,"7,00",A
+84,75,12657,CN,Barbaresco,"0,85",A
+84,80,12658,CN,Bene Vagienna,"11,42",A
+84,85,12659,CN,Bosia,"0,98",A
+84,90,12660,CN,Castagnito,"0,85",A
+84,95,12661,CN,Castiglione Falletto,"0,87",A
+84,100,12662,CN,Cherasco,"19,32",A
+84,105,12663,CN,Cossano Belbo,"0,42",A
+84,110,12664,CN,Feisoglio,"4,78",A
+84,115,12665,CN,Guarene,"1,20",A
+84,120,12666,CN,Lesegno,"2,78",A
+84,125,12667,CN,Mombarcaro,"4,20",A
+84,130,12668,CN,Monesiglio,"3,76",A
+84,135,12669,CN,Narzole,"19,32",A
+84,140,12670,CN,Novello,"3,88",A
+84,145,12671,CN,Piozzo,"1,42",A
+84,150,12672,CN,Rocca Ciglie',"4,05",A
+84,155,12673,CN,Sale delle Langhe,"1,34",A
+84,160,12674,CN,Santo Stefano Belbo,"2,68",A
+84,165,12675,CN,Somano,"3,58",A
+84,170,12676,CN,Verduno,"19,32",A
+85,7,12677,AL,Cremolino,"4,03",A
+85,12,12678,AL,Montechiaro d'Acqui,"22,55",A
+85,17,12679,AL,Prasco,"4,03",A
+85,22,12680,AL,Visone,"4,01",A
+85,27,12681,AT,Bruno,"1,18",A
+85,32,12682,AT,Cassinasco,"2,97",A
+86,39,12814,AT,Cessole,"2,36",A
+85,38,12683,AT,Castelnuovo Calcea,"0,16",A
+85,42,12684,AT,Costigliole d'Asti,"1,19",A
+85,47,12685,AT,Maranzana,"4,80",A
+85,52,12686,AT,Monastero Bormida,"2,36",A
+85,57,12687,AT,Olmo Gentile,"2,36",A
+85,62,12688,AT,Rocchetta Tanaro,"0,18",A
+85,67,12689,AT,Sessame,"1,84",A
+85,72,12690,CN,Albaretto della Torre,"7,69",A
+85,77,12691,CN,Bastia Mondovi',"4,05",A
+85,82,12692,CN,Bergolo,"0,98",A
+85,92,12694,CN,Castellinaldo,"0,33",A
+85,97,12695,CN,Castino,"0,98",A
+85,102,12696,CN,Cissone,"10,61",A
+85,107,12697,CN,Diano d'Alba,"3,88",A
+85,112,12698,CN,Gottasecca,"3,76",A
+85,117,12699,CN,La Morra,"0,87",A
+85,122,12700,CN,Magliano Alfieri,"0,85",A
+85,132,12702,CN,Montelupo Albese,"2,16",A
+85,137,12703,CN,Neviglie,"4,37",A
+85,142,12704,CN,Perletto,"0,98",A
+85,147,12705,CN,Priocca,"0,86",A
+85,152,12706,CN,Roddi,"0,87",A
+85,157,12707,CN,Saliceto,"5,25",A
+85,162,12708,CN,Serralunga d'Alba,"2,16",A
+85,167,12709,CN,Torresina,"2,06",A
+86,2,12711,AL,Bistagno,"5,55",A
+86,8,12712,AL,Denice,"2,36",A
+86,14,12713,AL,Ovada,"4,03",A
+86,20,12714,AL,Strevi,"0,27",A
+86,26,12715,AT,Azzano d'Asti,"0,58",A
+86,32,12716,AT,Cassinasco,"2,97",A
+86,35,12717,AT,Castel Rocchero,"4,37",A
+86,44,12718,AT,Incisa Scapaccino,"1,73",A
+86,50,12719,AT,Mombaruzzo,"7,00",A
+86,56,12720,AT,Nizza Monferrato,"16,29",A
+86,62,12721,AT,Rocchetta Tanaro,"0,18",A
+86,68,12722,AT,Vaglio Serra,"3,20",A
+86,74,12723,CN,Bagnasco,"1,08",A
+86,79,12724,CN,Belvedere Langhe,"3,42",A
+86,80,12725,CN,Bene Vagienna,"11,42",A
+86,85,12726,CN,Bosia,"0,98",A
+86,86,12727,CN,Bossolasco,"4,78",A
+86,91,12728,CN,Castelletto Uzzone,"3,76",A
+86,92,12729,CN,Castellinaldo,"0,33",A
+86,97,12730,CN,Castino,"0,98",A
+86,98,12731,CN,Cerretto Langhe,"38,36",A
+86,103,12732,CN,Clavesana,"3,14",A
+86,104,12733,CN,Cortemilia,"0,98",A
+86,109,12734,CN,Farigliano,"2,73",A
+86,110,12735,CN,Feisoglio,"4,78",A
+86,115,12736,CN,Guarene,"1,20",A
+86,116,12737,CN,Igliano,"2,78",A
+86,121,12738,CN,Levice,"2,48",A
+86,122,12739,CN,Magliano Alfieri,"0,85",A
+86,127,12740,CN,Monastero di Vasco,"18,63",A
+86,128,12741,CN,Monchiero,"3,58",A
+86,133,12742,CN,Montezemolo,"5,25",A
+86,134,12743,CN,Murazzano,"2,73",A
+86,139,12744,CN,Niella Tanaro,"4,05",A
+86,140,12745,CN,Novello,"3,88",A
+86,145,12746,CN,Piozzo,"1,42",A
+84,4,12753,AL,Cassine,"4,80",A
+84,59,12754,AT,Revigliasco d'Asti,"0,58",A
+84,73,12755,CN,Arguello,"38,36",A
+84,78,12756,CN,Battifollo,"1,08",A
+84,83,12757,CN,Bonvicino,"3,42",A
+84,88,12758,CN,Camerana,"5,25",A
+84,93,12759,CN,Castellino Tanaro,"3,14",A
+84,98,12760,CN,Cerretto Langhe,"38,36",A
+84,103,12761,CN,Clavesana,"3,14",A
+84,108,12762,CN,Dogliani,"3,42",A
+84,113,12763,CN,Govone,"1,32",A
+84,118,12764,CN,Lequio Berria,"7,69",A
+84,123,12765,CN,Mango,"1,07",A
+84,128,12766,CN,Monchiero,"3,58",A
+84,133,12767,CN,Montezemolo,"5,25",A
+84,138,12768,CN,Niella Belbo,"4,78",A
+84,143,12769,CN,Pezzolo valle Uzzone,"0,98",A
+84,148,12770,CN,Prunetto,"2,48",A
+84,153,12771,CN,Roddino,"3,58",A
+84,158,12772,CN,San Benedetto Belbo,"3,48",A
+84,163,12773,CN,Serravalle Langhe,"4,78",A
+84,168,12774,CN,Treiso,"4,37",A
+85,9,12775,AL,Grognardo,"4,01",A
+85,14,12776,AL,Ovada,"4,03",A
+85,19,12777,AL,Spigno Monferrato,"2,36",A
+85,24,12778,AT,Antignano,"0,20",A
+85,29,12779,AT,Calamandrana,"2,97",A
+85,34,12780,AT,Castel Boglione,"4,37",A
+85,39,12781,AT,Cessole,"2,36",A
+85,44,12782,AT,Incisa Scapaccino,"1,73",A
+85,49,12783,AT,Mombaldone,"2,36",A
+85,54,12784,AT,Montaldo Scarampi,"0,16",A
+85,59,12785,AT,Revigliasco d'Asti,"0,58",A
+85,64,12786,AT,San Martino Alfieri,"1,32",A
+85,69,12787,AT,Vesime,"0,42",A
+85,79,12789,CN,Belvedere Langhe,"3,42",A
+85,84,12790,CN,Borgomale,"3,88",A
+85,89,12791,CN,Camo,"4,27",A
+85,104,12794,CN,Cortemilia,"0,98",A
+85,109,12795,CN,Farigliano,"2,73",A
+85,114,12796,CN,Grinzane Cavour,"5,50",A
+85,119,12797,CN,Lequio Tanaro,"1,42",A
+85,124,12798,CN,Marsaglia,"3,14",A
+85,134,12800,CN,Murazzano,"2,73",A
+85,144,12802,CN,Piobesi d'Alba,"12,36",A
+85,149,12803,CN,Roascio,"2,06",A
+85,154,12804,CN,Rodello,"5,15",A
+85,164,12806,CN,Sinio,"6,08",A
+85,169,12807,CN,Trezzo Tinella,"2,04",A
+86,3,12808,AL,Cartosio,"0,80",A
+86,9,12809,AL,Grognardo,"4,01",A
+86,15,12810,AL,Ponti,"6,80",A
+86,21,12811,AL,Terzo,"4,01",A
+86,27,12812,AT,Bruno,"1,18",A
+86,33,12813,AT,Castagnole delle Lanze,"0,17",A
+86,45,12815,AT,Isola d'Asti,"0,58",A
+86,51,12816,AT,Mombercelli,"0,09",A
+86,57,12817,AT,Olmo Gentile,"2,36",A
+86,63,12818,AT,San Giorgio Scarampi,"2,36",A
+86,69,12819,AT,Vesime,"0,42",A
+86,75,12820,CN,Barbaresco,"0,85",A
+86,81,12821,CN,Benevello,"3,88",A
+86,84,12822,CN,Borgomale,"3,88",A
+86,87,12823,CN,Briaglia,"2,39",A
+86,90,12824,CN,Castagnito,"0,85",A
+86,93,12825,CN,Castellino Tanaro,"3,14",A
+86,96,12826,CN,Castiglione Tinella,"0,17",A
+86,99,12827,CN,Ceva,"2,06",A
+86,102,12828,CN,Cissone,"10,61",A
+86,105,12829,CN,Cossano Belbo,"0,42",A
+86,108,12830,CN,Dogliani,"3,42",A
+86,111,12831,CN,Gorzegno,"4,78",A
+86,114,12832,CN,Grinzane Cavour,"5,50",A
+86,117,12833,CN,La Morra,"0,87",A
+86,120,12834,CN,Lesegno,"2,78",A
+86,123,12835,CN,Mango,"1,07",A
+86,126,12836,CN,Mombasiglio,"3,67",A
+86,129,12837,CN,Mondovi',"4,05",A
+86,132,12838,CN,Montelupo Albese,"2,16",A
+86,135,12839,CN,Narzole,"19,32",A
+86,138,12840,CN,Niella Belbo,"4,78",A
+86,141,12841,CN,Paroldo,"2,06",A
+86,144,12842,CN,Piobesi d'Alba,"12,36",A
+86,147,12843,CN,Priocca,"0,86",A
+86,150,12844,CN,Rocca Ciglie',"4,05",A
+86,153,12845,CN,Roddino,"3,58",A
+86,156,12846,CN,Sale San Giovanni,"1,34",A
+86,159,12847,CN,San Michele Mondovi',"5,92",A
+86,162,12848,CN,Serralunga d'Alba,"2,16",A
+86,165,12849,CN,Somano,"3,58",A
+86,168,12850,CN,Treiso,"4,37",A
+86,171,12851,CN,Vezza d'Alba,"2,82",A
+84,0,12855,AL,Acqui Terme,"4,01",A
+84,5,12856,AL,Castelletto d'Erro,"22,55",A
+84,84,12857,CN,Borgomale,"3,88",A
+84,89,12858,CN,Camo,"4,27",A
+84,94,12859,CN,Castelnuovo di Ceva,"17,38",A
+84,99,12860,CN,Ceva,"2,06",A
+84,104,12861,CN,Cortemilia,"0,98",A
+84,109,12862,CN,Farigliano,"2,73",A
+84,114,12863,CN,Grinzane Cavour,"5,50",A
+84,119,12864,CN,Lequio Tanaro,"1,42",A
+84,124,12865,CN,Marsaglia,"3,14",A
+84,129,12866,CN,Mondovi',"4,05",A
+84,134,12867,CN,Murazzano,"2,73",A
+84,139,12868,CN,Niella Tanaro,"4,05",A
+84,144,12869,CN,Piobesi d'Alba,"12,36",A
+84,149,12870,CN,Roascio,"2,06",A
+84,154,12871,CN,Rodello,"5,15",A
+84,159,12872,CN,San Michele Mondovi',"5,92",A
+84,164,12873,CN,Sinio,"6,08",A
+84,169,12874,CN,Trezzo Tinella,"2,04",A
+85,13,12875,AL,Orsara Bormida,"0,27",A
+85,18,12876,AL,Ricaldone,"0,27",A
+85,23,12877,AT,Agliano,"0,16",A
+85,28,12878,AT,Bubbio,"2,68",A
+85,33,12879,AT,Castagnole delle Lanze,"0,17",A
+85,35,12880,AT,Castel Rocchero,"4,37",A
+85,43,12881,AT,Fontanile,"16,29",A
+85,48,12882,AT,Moasca,"0,29",A
+85,53,12883,AT,Montabone,"4,01",A
+85,58,12884,AT,Quaranti,"3,26",A
+85,63,12885,AT,San Giorgio Scarampi,"2,36",A
+85,68,12886,AT,Vaglio Serra,"3,20",A
+85,73,12887,CN,Arguello,"38,36",A
+85,83,12889,CN,Bonvicino,"3,42",A
+85,88,12890,CN,Camerana,"5,25",A
+85,93,12891,CN,Castellino Tanaro,"3,14",A
+85,98,12892,CN,Cerretto Langhe,"38,36",A
+85,103,12893,CN,Clavesana,"3,14",A
+85,108,12894,CN,Dogliani,"3,42",A
+85,113,12895,CN,Govone,"1,32",A
+85,118,12896,CN,Lequio Berria,"7,69",A
+85,123,12897,CN,Mango,"1,07",A
+85,128,12898,CN,Monchiero,"3,58",A
+85,133,12899,CN,Montezemolo,"5,25",A
+85,138,12900,CN,Niella Belbo,"4,78",A
+85,143,12901,CN,Pezzolo valle Uzzone,"0,98",A
+85,148,12902,CN,Prunetto,"2,48",A
+85,153,12903,CN,Roddino,"3,58",A
+85,158,12904,CN,San Benedetto Belbo,"3,48",A
+85,163,12905,CN,Serravalle Langhe,"4,78",A
+85,168,12906,CN,Treiso,"4,37",A
+86,4,12907,AL,Cassine,"4,80",A
+86,10,12908,AL,Melazzo,"4,01",A
+86,16,12909,AL,Ponzone,"0,80",A
+86,22,12910,AL,Visone,"4,01",A
+86,28,12911,AT,Bubbio,"2,68",A
+86,34,12912,AT,Castel Boglione,"4,37",A
+86,40,12913,AT,Coazzolo,"4,27",A
+86,46,12914,AT,Loazzolo,"0,54",A
+86,52,12915,AT,Monastero Bormida,"2,36",A
+86,58,12916,AT,Quaranti,"3,26",A
+86,64,12917,AT,San Martino Alfieri,"1,32",A
+86,70,12918,AT,Vinchio,"7,00",A
+86,76,12919,CN,Barolo,"12,76",A
+86,82,12920,CN,Bergolo,"0,98",A
+86,88,12921,CN,Camerana,"5,25",A
+86,94,12922,CN,Castelnuovo di Ceva,"17,38",A
+86,100,12923,CN,Cherasco,"19,32",A
+86,106,12924,CN,Cravanzana,"3,97",A
+86,112,12925,CN,Gottasecca,"3,76",A
+86,118,12926,CN,Lequio Berria,"7,69",A
+86,124,12927,CN,Marsaglia,"3,14",A
+86,130,12928,CN,Monesiglio,"3,76",A
+86,136,12929,CN,Neive,"4,27",A
+86,142,12930,CN,Perletto,"0,98",A
+86,146,12931,CN,Priero,"17,38",A
+86,148,12932,CN,Prunetto,"2,48",A
+86,152,12933,CN,Roddi,"0,87",A
+86,154,12934,CN,Rodello,"5,15",A
+86,158,12935,CN,San Benedetto Belbo,"3,48",A
+86,160,12936,CN,Santo Stefano Belbo,"2,68",A
+86,164,12937,CN,Sinio,"6,08",A
+86,166,12938,CN,Torre Bormida,"0,98",A
+86,170,12939,CN,Verduno,"19,32",A
+86,172,12940,CN,Vicoforte,"5,70",A
+86,5,12944,AL,Castelletto d'Erro,"22,55",A
+86,11,12945,AL,Merana,"1,48",A
+86,17,12946,AL,Prasco,"4,03",A
+86,23,12947,AT,Agliano,"0,16",A
+86,29,12948,AT,Calamandrana,"2,97",A
+86,36,12949,AT,Castelletto Molina,"3,26",A
+86,41,12950,AT,Cortiglione,"1,78",A
+86,47,12951,AT,Maranzana,"4,80",A
+86,53,12952,AT,Montabone,"4,01",A
+86,59,12953,AT,Revigliasco d'Asti,"0,58",A
+86,65,12954,AT,San Marzano Oliveto,"0,23",A
+86,71,12955,CN,Alba,"3,88",A
+86,77,12956,CN,Bastia Mondovi',"4,05",A
+86,83,12957,CN,Bonvicino,"3,42",A
+86,89,12958,CN,Camo,"4,27",A
+85,120,12511,CN,Lesegno,"2,78",B
+85,155,12518,CN,Sale delle Langhe,"1,34",B
+85,126,12606,CN,Mombasiglio,"3,67",B
+85,146,12610,CN,Priero,"17,38",B
+85,161,12613,CN,Scagnello,"3,67",B
+85,87,12693,CN,Briaglia,"2,39",B
+85,127,12701,CN,Monastero di Vasco,"18,63",E
+85,172,12710,CN,Vicoforte,"5,70",E
+85,74,12788,CN,Bagnasco,"1,08",B
+85,94,12792,CN,Castelnuovo di Ceva,"17,38",B
+85,99,12793,CN,Ceva,"2,06",B
+85,129,12799,CN,Mondovi',"4,05",E
+85,139,12801,CN,Niella Tanaro,"4,05",B
+85,159,12805,CN,San Michele Mondovi',"5,92",B
+85,78,12888,CN,Battifollo,"1,08",B
+86,95,12959,CN,Castiglione Falletto,"0,87",A
+86,101,12960,CN,Ciglie',"4,05",A
+86,107,12961,CN,Diano d'Alba,"3,88",A
+86,113,12962,CN,Govone,"1,32",A
+86,119,12963,CN,Lequio Tanaro,"1,42",A
+86,125,12964,CN,Mombarcaro,"4,20",A
+86,131,12965,CN,Monforte d'Alba,"3,58",A
+86,137,12966,CN,Neviglie,"4,37",A
+86,143,12967,CN,Pezzolo valle Uzzone,"0,98",A
+86,149,12968,CN,Roascio,"2,06",A
+86,151,12969,CN,Rocchetta Belbo,"1,07",A
+86,155,12970,CN,Sale delle Langhe,"1,34",A
+86,157,12971,CN,Saliceto,"5,25",A
+86,161,12972,CN,Scagnello,"3,67",A
+86,163,12973,CN,Serravalle Langhe,"4,78",A
+86,167,12974,CN,Torresina,"2,06",A
+86,169,12975,CN,Trezzo Tinella,"2,04",A

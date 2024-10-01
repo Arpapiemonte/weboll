@@ -1,4 +1,4 @@
-// Copyright (C) 2020-2023 simevo s.r.l. for ARPA Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
@@ -10,7 +10,7 @@
     class="form-select my-3"
     :class="{
       dirty: history.isDirty(data.id_w05_classes, 'id_w05_classes', 'id_classes_value'),
-      'is-invalid': meta && meta.validated ? !meta.valid : false
+      'is-invalid': validity[data.id_w05_classes]
     }"
     @change="onChange"
   >
@@ -27,22 +27,16 @@
     style="background-color: lightblue;"
   >
     <span>Value[{{ data.id_w05_classes }}]: {{ data.id_classes_value }}</span>
-    <br>
-    <code>
-      {{ meta }}
-    </code>
   </div>
   <span
-    v-if="meta.validated && !meta.valid"
+    v-if="validity[data.id_w05_classes]"
     :class="'text-danger'"
   >
-    {{ errorMessage }}
+    Questa classe deve essere impostata
   </span>
 </template>
 
 <script setup lang="ts">
-import { useField } from 'vee-validate'
-import { watch } from "vue";
 
 export interface Props {
   data: {
@@ -59,7 +53,8 @@ export interface Props {
     cursor: number,
     snapshots: any[]
   },
-  required?: boolean
+  required?: boolean,
+  validity: object
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -72,18 +67,21 @@ const props = withDefaults(defineProps<Props>(), {
   classesValue: () => [{id_classes_value: 81, description: "-"}],
   readonly: false,
   history: () => { return { isDirty: () => true, cursor: -1, snapshots: [] } },
-  required: true
+  required: true,
+  validity: () => { return {} },
 })
 
 const debug = false
 
 const emit = defineEmits<{
-  (e: "setClass", id_w05_classes: number, old_value: number, new_value: number): void
+  setClass: [id_w05_classes: number, old_value: number, new_value: number]
 }>()
 
+/*
 const { errorMessage, meta, validate } = useField(String(props.data.id_w05_classes), validateField, {
   validateOnMount: true
 })
+*/
 
 function validateField() {
   // console.log(`validateField(${props.data.id_w05_classes}, ${props.data.id_classes_value})`)
@@ -102,8 +100,4 @@ function onChange(e: Event) {
   const new_value = parseInt(target.value)
   emit("setClass", props.data.id_w05_classes, old_value, new_value)
 }
-
-watch(props, () => {
-  validate()
-}, { immediate: true, deep: true });
 </script>

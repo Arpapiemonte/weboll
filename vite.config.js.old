@@ -1,0 +1,36 @@
+// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
+// This file is part of weboll (the bulletin back-office for ARPA Piemonte).
+// weboll is licensed under the AGPL-3.0-or-later License.
+// License text available at https://www.gnu.org/licenses/agpl.txt
+
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+
+const path = require("path")
+
+export default defineConfig({
+  define: {
+    'VUE_APP_VERSION': JSON.stringify(require('./package.json').version)
+  },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://django:8000',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, '')
+      }
+    },
+    allowedHosts: [
+      'frontend'
+    ],
+    watchOptions: {
+        ignored: /node_modules/,
+    }
+  },
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
+  plugins: [vue()]
+})

@@ -66,47 +66,6 @@ class Comune(models.Model):
         db_table = "comune"
 
 
-class StazioneMisura(models.Model):
-    codice_istat_comune = models.OneToOneField(
-        Comune, models.DO_NOTHING, db_column="codice_istat_comune", primary_key=True
-    )
-    progr_punto_com = models.IntegerField()
-    codice_stazione = models.CharField(max_length=6, blank=True, null=True)
-    nazione = models.CharField(max_length=30, blank=True, null=True)
-    indirizzo_localita = models.CharField(max_length=80, blank=True, null=True)
-    denominazione = models.CharField(unique=True, max_length=80)
-    latitudine_n = models.DecimalField(
-        max_digits=10, decimal_places=8, blank=True, null=True
-    )
-    longitudine_e = models.DecimalField(
-        max_digits=10, decimal_places=8, blank=True, null=True
-    )
-    latitudine_mm = models.DecimalField(
-        max_digits=8, decimal_places=2, blank=True, null=True
-    )
-    longitudine_mm = models.DecimalField(
-        max_digits=8, decimal_places=2, blank=True, null=True
-    )
-    utm_x = models.IntegerField(blank=True, null=True)
-    utm_y = models.IntegerField(blank=True, null=True)
-    quota_stazione = models.DecimalField(
-        max_digits=6, decimal_places=2, blank=True, null=True
-    )
-    quota_sito = models.DecimalField(
-        max_digits=6, decimal_places=2, blank=True, null=True
-    )
-    cod_staz_meteo = models.CharField(unique=True, max_length=5, blank=True, null=True)
-    proprietario = models.CharField(max_length=100, blank=True, null=True)
-    idtab_allertamento_2 = models.CharField(max_length=6, blank=True, null=True)
-    data_agg = models.DateTimeField()
-    autore_agg = models.CharField(max_length=30)
-
-    class Meta:
-        managed = False
-        db_table = "stazione_misura"
-        unique_together = (("codice_istat_comune", "progr_punto_com"),)
-
-
 class W22Tendenza(models.Model):
     id_w22_tendenza = models.CharField(primary_key=True, max_length=2)
     descrizione = models.TextField(blank=True, null=True)
@@ -286,6 +245,7 @@ class W22(models.Model):
     last_update = models.DateTimeField()
     username = models.CharField(max_length=30)
     validita = models.CharField(max_length=50, blank=True, null=True)
+    id_w22_parent = models.IntegerField(blank=True, null=True)
 
     class Meta:
         managed = False

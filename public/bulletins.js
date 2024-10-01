@@ -1,4 +1,4 @@
-// Copyright (C) 2020-2023 simevo s.r.l. for ARPA Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
@@ -8,6 +8,20 @@ window.bulletins_list = [
     bollettino: 'bollettino_meteo',
     id: 'w05',
     name: 'Meteo',
+    readyForProduction: true,
+    menu: 'Meteo',
+  },
+  {
+    bollettino: 'Previsione_quantitativa_aree_allerta',
+    id: 'w30',
+    name: 'PSA',
+    readyForProduction: true,
+    menu: 'Meteo',
+  },
+  {
+    bollettino: 'bollettino_vigilanza',
+    id: 'w24',
+    name: 'Vigilanza',
     readyForProduction: true,
     menu: 'Meteo',
   },
@@ -26,18 +40,18 @@ window.bulletins_list = [
     menu: 'Meteo',
   },
   {
+    bollettino: 'bollettino_TRAPS',
+    id: 'w20',
+    name: 'TRAPS',
+    readyForProduction: true,
+    menu: 'Idro',
+  },
+  {
     bollettino: 'bollettino_allerta',
     id: 'w23',
     name: 'Allerta',
     readyForProduction: true,
     menu: 'Allerta',
-  },
-  {
-    bollettino: 'bollettino_vigilanza',
-    id: 'w24',
-    name: 'Vigilanza',
-    readyForProduction: true,
-    menu: 'Meteo',
   },
   {
     bollettino: 'bollettino_bis',
@@ -60,13 +74,7 @@ window.bulletins_list = [
     readyForProduction: true,
     menu: 'Idro',
   },
-  {
-    bollettino: 'Previsione_quantitativa_aree_allerta',
-    id: 'w30',
-    name: 'PSA',
-    readyForProduction: true,
-    menu: 'Meteo',
-  },
+
   {
     bollettino: 'bollettino_piene_verifica',
     id: 'w22verifica',
@@ -77,7 +85,7 @@ window.bulletins_list = [
   {
     bollettino: 'bollettino_verifica_meteo',
     id: 'w17verifica',
-    name: 'Meteo Verifica',
+    name: 'Verifica Meteo',
     readyForProduction: true,
     menu: 'Meteo',
   },
@@ -101,6 +109,13 @@ window.bulletins_list = [
     name: 'Metaprodotto Autostrade',
     readyForProduction: true,
     menu: 'Autostrade',
+  },
+  {
+    bollettino: 'aggiornamento_allerta',
+    id: 'w37',
+    name: 'Aggiornamento Allerta',
+    readyForProduction: true,
+    menu: 'Allerta',
   },
   {
     bollettino: 'A7-A26',
@@ -129,5 +144,54 @@ window.bulletins_list = [
     name: 'A6',
     readyForProduction: true,
     menu: 'Autostrade',
+  },
+  {
+    bollettino: 'strade_di_biella',
+    id: 'w21',
+    name: 'Strade Provincia di Biella',
+    readyForProduction: true,
+    menu: 'Autostrade',
+  },
+  {
+    bollettino: 'bollettino_previsioni_aree_meteo',
+    id: 'w35',
+    name: 'Aree meteo',
+    readyForProduction: true,
+    menu: 'Meteo',
+  },
+  {
+    bollettino: 'previsioni_parchi_reali',
+    id: 'w15',
+    name: 'Parchi Reali',
+    readyForProduction: true,
+    menu: 'Meteo',
+  },
+  {
+    bollettino: 'corriere_novara',
+    id: 'w34',
+    name: 'Corriere di Novara',
+    readyForProduction: true,
+    menu: 'Meteo',
+  },
+  {
+    bollettino: 'bollettino_ondate_calore',
+    id: 'w36',
+    name: 'Ondate di calore',
+    readyForProduction: true,
+    menu: 'Meteo',
+  },
+  {
+    bollettino: 'ultimi_modelli',
+    id: 'w99/LastModels',
+    name: 'Ultimi modelli',
+    readyForProduction: true,
+    menu: 'Tools',
+  },
+  {
+    bollettino: 'models_compare',
+    id: 'w99/ModelsCompare',
+    name: 'Models compare',
+    readyForProduction: true,
+    menu: 'Tools',
   },
 ]

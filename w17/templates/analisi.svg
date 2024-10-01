@@ -1,1374 +1,857 @@
 {% load date_extras %}
 {% load extras_w17 %}
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
-   viewBox="0 0 210 297"
-   version="1.1">
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- Generator: Adobe Illustrator 18.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 595 842" style="enable-background:new 0 0 595 842;" xml:space="preserve">
+
   <style>
-    tbody tr:nth-child(even) {
-      background-color: #eeeeee;
-    }
-    tbody tr:nth-child(odd) {
-      background-color: #fafafa;
-    }
-    thead tr:nth-child(odd) {
-      background-color: #eeeeee;
-    }
-    thead tr:nth-child(even) {
-      background-color: #fafafa;
-    }
-    td {
-      padding: 0px;
-    }
-    th {
-      padding: 0px;
-    }
-    .testi {
-      font-style:normal;
-      font-variant:normal;
-      font-weight:300;
-      font-stretch:normal;
-      font-size:2.82222px;
+   .intestazione {
+      fill:#009857;
+      font-size:29.3902px;
       font-family:'Titillium Web';
-      text-align:start;
-      text-anchor:start;
-      line-height: 4px;
-      color: #231f20;
-      text-align: justify
     }
-    .legenda{
-      width: 100px;
-      font-style:normal;
-      font-variant:normal;
-      font-weight:300;
-      font-stretch:normal;
-      font-size:2px;
+  .sito {
+      fill:#2E9D53;
+      font-size:8.6442px;
+	  fill-opacity:1;
       font-family:'Titillium Web';
-      text-align:center;
-      text-anchor:start;
-      line-height:4px;
-      border-spacing: 0px;
-      padding-top: 2px;
-      padding-left: 2px;
     }
-    .tabella-pluv{
-      width: 100%;
-      font-style:normal;
-      font-variant:normal;
-      font-weight:300;
-      font-stretch:normal;
-      font-size:2.45px;
+	
+	.campiverdi-testo {
+      fill:#FFFFFF;
+      font-size:8.0679px;
       font-family:'Titillium Web';
-      text-align:center;
-      text-anchor:start;
-      line-height: 3.95px;
-      border-spacing: 0px;
-      padding-bottom: 1px;
-    }
-    .tabella-terma{
-      width: 30px;
-      font-style:normal;
+    }	
+	
+	.aggiornam-testo {
+      fill:#2F55AC;
+      font-size:8.0679px;
+	  font-family:'Titillium Web'; 
+    }	
+	
+	.sezioni-testo {
+      fill:#2F55AC;
+      font-size:11.5256px;
+	  font-family:'Titillium Web'; 
+    }	
+	
+	.testobol {
+      fill:#231f20;
+      font-size:9px;
+	  font-family:'Titillium Web';   
+	  text-align: justify;
+	  font-style:normal;
       font-variant:normal;
-      font-weight:300;
-      font-stretch:normal;
-      font-size:2px;
-      font-family:'Titillium Web';
-      text-align:center;
-      text-anchor:start;
-      border-spacing: 0px;
-      padding-top: 2px;
+	  line-height: 10px;
+    }	
+
+    .legenda-prec-testo {
+	  fill:#231f20;
+      font-size:6px;
+	  font-family:'Titillium Web';   
+	  text-align: justify;
+	  font-style:normal;
+      font-variant:normal;
+    }	
+	
+
+    .tabella-prec-testo {
+	  fill:#231f20;
+      font-size:6px;
+	  font-family:'Titillium Web';   
+	  text-align:center;
+	  font-style:normal;
+      font-variant:normal;
+    }	
+	
+     .tabella-valori-staz {
+	  fill:#231f20;
+      font-size:6px;
+	  font-family:'Titillium Web';   
+	  text-align:center;
+	  font-style:normal;
+      font-variant:normal;
+    }	
+	
+	
+     .tabella-temp {
+	  fill:#231f20;
+      font-size:7px;
+	  font-family:'Titillium Web';   
+	  text-align:center;
+	  font-style:normal;
+      font-variant:normal;
     }
-    .custum-pre {
+	
+	 .custum-pre {
       white-space: pre-wrap;
       word-wrap: break-word;
-    }
-  </style>
-  <defs>
-    <rect
-       x="52.412698"
-       y="225.74758"
-       width="8.1465433"
-       height="5.1038582" />
-    <rect
-       x="17.569051"
-       y="220.44742"
-       width="23.359967"
-       height="14.526366" />
-    <rect
-       x="15.017121"
-       y="267.4618"
-       width="13.446704"
-       height="11.581832" />
-    <rect
-       x="55.357232"
-       y="134.66334"
-       width="120.33327"
-       height="23.359967" />
-    <rect
-       x="49.325893"
-       y="86.961893"
-       width="104.9924"
-       height="45.648263" />
-    <rect
-       x="49.325893"
-       y="56.260236"
-       width="136.02552"
-       height="30.067822" />
-    <rect
-       x="27.662396"
-       y="37.01683"
-       width="102.49787"
-       height="12.828937" />
-    <clipPath
-       clipPathUnits="userSpaceOnUse" >
-      <path
-         d="M 0,841.89 H 595.28 V 0 H 0 Z" />
-    </clipPath>
-    <clipPath
-       clipPathUnits="userSpaceOnUse" >
-      <path
-         d="M 0,841.89 H 595.28 V 0 H 0 Z" />
-    </clipPath>
-    <clipPath
-       clipPathUnits="userSpaceOnUse" >
-      <path
-         d="m 28.769,312.55 h 99.663 V 442.943 H 28.769 Z" />
-    </clipPath>
-    <clipPath
-       clipPathUnits="userSpaceOnUse" >
-      <path
-         d="m 111.454,416.2 h 20.175 v 20.175 h -20.175 z" />
-    </clipPath>
-    <mask
-       maskUnits="userSpaceOnUse"
-       x="0"
-       y="0"
-       width="1"
-       height="1">
-      <image
-         width="1"
-         height="1"
-         style="image-rendering:optimizeSpeed"
-         preserveAspectRatio="none"
-         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAAAAAA7VNdtAAAAAXNCSVQI5gpbmQAAAeBJREFUSIndld1xgzAQhDeeFKAS1EGUCqxUEEqgA5MOcAUeV4A7IB1gV4A6gA4gFVweJIGEToMfM9kZD+i4T1r9nYE/qpe4qaUERmPWiNQS3wYZiXoiq6Hyoca2VYboaVWzCWkW6SjUBQCapTkJhtAUSwKSiKjR5UREFYO0NrPSzTJM6RxqIuoYxCb24VvtJxEhh8WXfdzdD1ACs4vLqO8Fccv4s35SuAM4acgWwLo1r/4lXREJc9cQztE1HeWNQfA1+8Z5TBFu3WE+XOa5XoOvXGbAvBefAua6jKHMHoL5dovMFmY1xqpaD8MEADjtGgtO/QwAorzuIeMYtwsB7Bjb6oQQeSTf5ySiVISkSm/vCRGSJozbgChY5Ah/cOcFad3JKLYnZPCXUYe3H0BpLzXQE1EdIrXbMl8CiqAvDQCKtoiYKFQXdjUArnZECIqQmFTUUx28RMywEP1S61zxUChtNdkW2PIooQzM49tH5GCf5t328nHHnvxikBtN5xIb72tbD7NIRYPbteFJRBFRLwC4KT+B9OSYzVblkYtbZ+EPRBZRnYhn3MiUiBDRW/+BmdRWjLTOf8vk8YgtPw2zRjnET6DlzLAIs5p5xF7kji3iGR0A4JL5W8+r2PfDTP9f6BeoxrmeC0yzrAAAAABJRU5ErkJggg=="/>
-    </mask>
-    <clipPath
-       clipPathUnits="userSpaceOnUse" >
-      <path
-         d="m 30.63,421.852 h 13.757 v 8.822 H 30.63 Z" />
-    </clipPath>
-    <clipPath
-       clipPathUnits="userSpaceOnUse" >
-      <path
-         d="m 54.002,419.385 h 11.949 v 13.756 H 54.002 Z" />
-    </clipPath>
-    <clipPath
-       clipPathUnits="userSpaceOnUse" >
-      <path
-         d="m 85.776,375.383 h 29.804 v 23.844 H 85.776 Z" />
-    </clipPath>
-    <mask
-       maskUnits="userSpaceOnUse"
-       x="0"
-       y="0"
-       width="1"
-       height="1">
-      <image
-         width="1"
-         height="1"
-         style="image-rendering:optimizeSpeed"
-         preserveAspectRatio="none"
-         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAAA8CAAAAAALAhhPAAAAAXNCSVQI5gpbmQAAAXVJREFUWIXt1t1tgzAUBeDbqAO4G2QEb1CPwAiMkBHYIOoEHiEjOJ0ANjAbwAanD5BEYGMfN/SpOS+RkPPpXox/RF555e/ytn6gtFZj143P07XDlLZ+UtItHvHmqaKwTCNHtRM15VL/gtJRCoArL67dstCWYvEO58p2KwtAXSKZS4qC07Sk0hIAeLI0lezvFktZ+apozHAUNQNkWYDPWywFZGbzIPx0i8lZBQskM/QgPW9l8i79SFfWTT9GK+n7a2yEpd+9EhFzGz5YE1qbG9c6dr3aLmFHZ44ajqKH5SMffgQ2+t81pQMKGEKsISxrXUABPmzz2LhkTRFlzjk585Gk6q7KTgOb7t4ZnqrSVEmjavtl3cNtuunT7p4TZznGGrgZYCjgJHIgG83mc0dLRe6YYUBZ4wdTV09ZHdXjlbJ6yvqirG9qFLW9EeewiHB3F0Nay7t6NDVLZS9oQ8VTIqKt35LaZl6LxLf68GLrd+yKanrlf+UH33mljzWoi10AAAAASUVORK5CYII="/>
-    </mask>
-    <clipPath
-       clipPathUnits="userSpaceOnUse" >
-      <path
-         d="m 77.522,412.983 h 29.805 v 23.844 H 77.522 Z" />
-    </clipPath>
-    <mask
-       maskUnits="userSpaceOnUse"
-       x="0"
-       y="0"
-       width="1"
-       height="1">
-      <image
-         width="1"
-         height="1"
-         style="image-rendering:optimizeSpeed"
-         preserveAspectRatio="none"
-         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAAA8CAAAAAALAhhPAAAAAXNCSVQI5gpbmQAAAphJREFUWIXt1l1IU2EcBvBnx1Mz2paRrvzIwhB0BFkaVEJERnQRTCjqJujrJqJuiqIbIyhoEFHtorqom7KgsigxutiFF0LpaGQfWmyVsVLMVdNtpnO2p4sWbXr2buec3QQ+N+ds73t+//95eQ/nADPJbawNJgDA3K0W3dYVngIAXGaTbus+Q4sBrB7inQwzpfRDdZUAYJwP81nAeLQICwAANTXq+6l2v9wNoMRNRmphD5N9AHDQ+0K9taSXkXPAKh/Ju6VtJIdkWC5E+Vm9hWby1z1pU4BkbCBGMris3EXSqcE6HCXZ8yzOv4k97SZJuwbL1k+lREzpLpCV/qxfFHzvR6+3RGnwYQQorzZ53zAr61oVO93dnphidWN9ZW3dGjTvUx6emv0kybcTivc46idJNgp2ZkrOKyrJOWnIkoLZlYG6qrg2yil7LZLirkKli6b71qKqwslox3JBpdANs61C/ub7PihsaMWRjoxrxbFXAZJk1zFBxaVnvmSWkvPpQDpqs1udRJIOZarxq3qKPK1EbQlqoTi6bTpV6dFEkV3z5kyhpEsaKTLWuacgxVqp7Q4TeZKyORx6KPJd8T9qXZ8+izfzE9L6Rx90UoxsBwAYmjRtrNTEWwBAckzqp8gAAOl4LiRyBEDtSG6sQUjyTv2fQgBADyTLrpxQmLgFqaY487xs8rgVkjU3lP9EBNJkLiS67T5AzvaVmZT4eMrLMf7zx23nMAA5pN5qvz4r6Vde2O1PnFrDajdSbG+aGlK4VW1bIVfaoY3jKvu6mL5MnlMd9XGhoOfSdjXU6AbhApS0RLOm+hvEiwnDoe5QdtIDm4j5c5B2rC0rMMWFBcPDPW3PhTMSx9n5ckWx8HkyDPijY8JqM5nJ/5LfyU/SPAdzm0MAAAAASUVORK5CYII="/>
-    </mask>
-    <clipPath
-       clipPathUnits="userSpaceOnUse" >
-      <path
-         d="m 50.926,381.802 h 29.805 v 23.844 H 50.926 Z" />
-    </clipPath>
-    <mask
-       maskUnits="userSpaceOnUse"
-       x="0"
-       y="0"
-       width="1"
-       height="1">
-      <image
-         width="1"
-         height="1"
-         style="image-rendering:optimizeSpeed"
-         preserveAspectRatio="none"
-         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAAA8CAAAAAALAhhPAAAAAXNCSVQI5gpbmQAAAphJREFUWIXt1l1IU2EcBvBnx1Mz2paRrvzIwhB0BFkaVEJERnQRTCjqJujrJqJuiqIbIyhoEFHtorqom7KgsigxutiFF0LpaGQfWmyVsVLMVdNtpnO2p4sWbXr2buec3QQ+N+ds73t+//95eQ/nADPJbawNJgDA3K0W3dYVngIAXGaTbus+Q4sBrB7inQwzpfRDdZUAYJwP81nAeLQICwAANTXq+6l2v9wNoMRNRmphD5N9AHDQ+0K9taSXkXPAKh/Ju6VtJIdkWC5E+Vm9hWby1z1pU4BkbCBGMris3EXSqcE6HCXZ8yzOv4k97SZJuwbL1k+lREzpLpCV/qxfFHzvR6+3RGnwYQQorzZ53zAr61oVO93dnphidWN9ZW3dGjTvUx6emv0kybcTivc46idJNgp2ZkrOKyrJOWnIkoLZlYG6qrg2yil7LZLirkKli6b71qKqwslox3JBpdANs61C/ub7PihsaMWRjoxrxbFXAZJk1zFBxaVnvmSWkvPpQDpqs1udRJIOZarxq3qKPK1EbQlqoTi6bTpV6dFEkV3z5kyhpEsaKTLWuacgxVqp7Q4TeZKyORx6KPJd8T9qXZ8+izfzE9L6Rx90UoxsBwAYmjRtrNTEWwBAckzqp8gAAOl4LiRyBEDtSG6sQUjyTv2fQgBADyTLrpxQmLgFqaY487xs8rgVkjU3lP9EBNJkLiS67T5AzvaVmZT4eMrLMf7zx23nMAA5pN5qvz4r6Vde2O1PnFrDajdSbG+aGlK4VW1bIVfaoY3jKvu6mL5MnlMd9XGhoOfSdjXU6AbhApS0RLOm+hvEiwnDoe5QdtIDm4j5c5B2rC0rMMWFBcPDPW3PhTMSx9n5ckWx8HkyDPijY8JqM5nJ/5LfyU/SPAdzm0MAAAAASUVORK5CYII="/>
-    </mask>
-    <clipPath
-       clipPathUnits="userSpaceOnUse" >
-      <path
-         d="m 28,353.372 h 29.805 v 23.845 H 28 Z" />
-    </clipPath>
-    <mask
-       maskUnits="userSpaceOnUse"
-       x="0"
-       y="0"
-       width="1"
-       height="1">
-      <image
-         width="1"
-         height="1"
-         style="image-rendering:optimizeSpeed"
-         preserveAspectRatio="none"
-         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAAA8CAAAAAALAhhPAAAAAXNCSVQI5gpbmQAAAphJREFUWIXt1l1IU2EcBvBnx1Mz2paRrvzIwhB0BFkaVEJERnQRTCjqJujrJqJuiqIbIyhoEFHtorqom7KgsigxutiFF0LpaGQfWmyVsVLMVdNtpnO2p4sWbXr2buec3QQ+N+ds73t+//95eQ/nADPJbawNJgDA3K0W3dYVngIAXGaTbus+Q4sBrB7inQwzpfRDdZUAYJwP81nAeLQICwAANTXq+6l2v9wNoMRNRmphD5N9AHDQ+0K9taSXkXPAKh/Ju6VtJIdkWC5E+Vm9hWby1z1pU4BkbCBGMris3EXSqcE6HCXZ8yzOv4k97SZJuwbL1k+lREzpLpCV/qxfFHzvR6+3RGnwYQQorzZ53zAr61oVO93dnphidWN9ZW3dGjTvUx6emv0kybcTivc46idJNgp2ZkrOKyrJOWnIkoLZlYG6qrg2yil7LZLirkKli6b71qKqwslox3JBpdANs61C/ub7PihsaMWRjoxrxbFXAZJk1zFBxaVnvmSWkvPpQDpqs1udRJIOZarxq3qKPK1EbQlqoTi6bTpV6dFEkV3z5kyhpEsaKTLWuacgxVqp7Q4TeZKyORx6KPJd8T9qXZ8+izfzE9L6Rx90UoxsBwAYmjRtrNTEWwBAckzqp8gAAOl4LiRyBEDtSG6sQUjyTv2fQgBADyTLrpxQmLgFqaY487xs8rgVkjU3lP9EBNJkLiS67T5AzvaVmZT4eMrLMf7zx23nMAA5pN5qvz4r6Vde2O1PnFrDajdSbG+aGlK4VW1bIVfaoY3jKvu6mL5MnlMd9XGhoOfSdjXU6AbhApS0RLOm+hvEiwnDoe5QdtIDm4j5c5B2rC0rMMWFBcPDPW3PhTMSx9n5ckWx8HkyDPijY8JqM5nJ/5LfyU/SPAdzm0MAAAAASUVORK5CYII="/>
-    </mask>
-    <clipPath
-       clipPathUnits="userSpaceOnUse" >
-      <path
-         d="m 61.932,347.87 h 29.805 v 23.844 H 61.932 Z" />
-    </clipPath>
-    <mask
-       maskUnits="userSpaceOnUse"
-       x="0"
-       y="0"
-       width="1"
-       height="1">
-      <image
-         width="1"
-         height="1"
-         style="image-rendering:optimizeSpeed"
-         preserveAspectRatio="none"
-         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAAA8CAAAAAALAhhPAAAAAXNCSVQI5gpbmQAAAphJREFUWIXt1l1IU2EcBvBnx1Mz2paRrvzIwhB0BFkaVEJERnQRTCjqJujrJqJuiqIbIyhoEFHtorqom7KgsigxutiFF0LpaGQfWmyVsVLMVdNtpnO2p4sWbXr2buec3QQ+N+ds73t+//95eQ/nADPJbawNJgDA3K0W3dYVngIAXGaTbus+Q4sBrB7inQwzpfRDdZUAYJwP81nAeLQICwAANTXq+6l2v9wNoMRNRmphD5N9AHDQ+0K9taSXkXPAKh/Ju6VtJIdkWC5E+Vm9hWby1z1pU4BkbCBGMris3EXSqcE6HCXZ8yzOv4k97SZJuwbL1k+lREzpLpCV/qxfFHzvR6+3RGnwYQQorzZ53zAr61oVO93dnphidWN9ZW3dGjTvUx6emv0kybcTivc46idJNgp2ZkrOKyrJOWnIkoLZlYG6qrg2yil7LZLirkKli6b71qKqwslox3JBpdANs61C/ub7PihsaMWRjoxrxbFXAZJk1zFBxaVnvmSWkvPpQDpqs1udRJIOZarxq3qKPK1EbQlqoTi6bTpV6dFEkV3z5kyhpEsaKTLWuacgxVqp7Q4TeZKyORx6KPJd8T9qXZ8+izfzE9L6Rx90UoxsBwAYmjRtrNTEWwBAckzqp8gAAOl4LiRyBEDtSG6sQUjyTv2fQgBADyTLrpxQmLgFqaY487xs8rgVkjU3lP9EBNJkLiS67T5AzvaVmZT4eMrLMf7zx23nMAA5pN5qvz4r6Vde2O1PnFrDajdSbG+aGlK4VW1bIVfaoY3jKvu6mL5MnlMd9XGhoOfSdjXU6AbhApS0RLOm+hvEiwnDoe5QdtIDm4j5c5B2rC0rMMWFBcPDPW3PhTMSx9n5ckWx8HkyDPijY8JqM5nJ/5LfyU/SPAdzm0MAAAAASUVORK5CYII="/>
-    </mask>
-    <clipPath
-       clipPathUnits="userSpaceOnUse" >
-      <path
-         d="m 99.532,335.031 h 29.805 v 23.844 H 99.532 Z" />
-    </clipPath>
-    <mask
-       maskUnits="userSpaceOnUse"
-       x="0"
-       y="0"
-       width="1"
-       height="1">
-      <image
-         width="1"
-         height="1"
-         style="image-rendering:optimizeSpeed"
-         preserveAspectRatio="none"
-         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAAA8CAAAAAALAhhPAAAAAXNCSVQI5gpbmQAAAXVJREFUWIXt1t1tgzAUBeDbqAO4G2QEb1CPwAiMkBHYIOoEHiEjOJ0ANjAbwAanD5BEYGMfN/SpOS+RkPPpXox/RF555e/ytn6gtFZj143P07XDlLZ+UtItHvHmqaKwTCNHtRM15VL/gtJRCoArL67dstCWYvEO58p2KwtAXSKZS4qC07Sk0hIAeLI0lezvFktZ+apozHAUNQNkWYDPWywFZGbzIPx0i8lZBQskM/QgPW9l8i79SFfWTT9GK+n7a2yEpd+9EhFzGz5YE1qbG9c6dr3aLmFHZ44ajqKH5SMffgQ2+t81pQMKGEKsISxrXUABPmzz2LhkTRFlzjk585Gk6q7KTgOb7t4ZnqrSVEmjavtl3cNtuunT7p4TZznGGrgZYCjgJHIgG83mc0dLRe6YYUBZ4wdTV09ZHdXjlbJ6yvqirG9qFLW9EeewiHB3F0Nay7t6NDVLZS9oQ8VTIqKt35LaZl6LxLf68GLrd+yKanrlf+UH33mljzWoi10AAAAASUVORK5CYII="/>
-    </mask>
-    <clipPath
-       clipPathUnits="userSpaceOnUse" >
-      <path
-         d="M 39.922,317.606 H 69.726 V 341.45 H 39.922 Z" />
-    </clipPath>
-    <mask
-       maskUnits="userSpaceOnUse"
-       x="0"
-       y="0"
-       width="1"
-       height="1">
-      <image
-         width="1"
-         height="1"
-         style="image-rendering:optimizeSpeed"
-         preserveAspectRatio="none"
-         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAAA8CAAAAAALAhhPAAAAAXNCSVQI5gpbmQAAAphJREFUWIXt1l1IU2EcBvBnx1Mz2paRrvzIwhB0BFkaVEJERnQRTCjqJujrJqJuiqIbIyhoEFHtorqom7KgsigxutiFF0LpaGQfWmyVsVLMVdNtpnO2p4sWbXr2buec3QQ+N+ds73t+//95eQ/nADPJbawNJgDA3K0W3dYVngIAXGaTbus+Q4sBrB7inQwzpfRDdZUAYJwP81nAeLQICwAANTXq+6l2v9wNoMRNRmphD5N9AHDQ+0K9taSXkXPAKh/Ju6VtJIdkWC5E+Vm9hWby1z1pU4BkbCBGMris3EXSqcE6HCXZ8yzOv4k97SZJuwbL1k+lREzpLpCV/qxfFHzvR6+3RGnwYQQorzZ53zAr61oVO93dnphidWN9ZW3dGjTvUx6emv0kybcTivc46idJNgp2ZkrOKyrJOWnIkoLZlYG6qrg2yil7LZLirkKli6b71qKqwslox3JBpdANs61C/ub7PihsaMWRjoxrxbFXAZJk1zFBxaVnvmSWkvPpQDpqs1udRJIOZarxq3qKPK1EbQlqoTi6bTpV6dFEkV3z5kyhpEsaKTLWuacgxVqp7Q4TeZKyORx6KPJd8T9qXZ8+izfzE9L6Rx90UoxsBwAYmjRtrNTEWwBAckzqp8gAAOl4LiRyBEDtSG6sQUjyTv2fQgBADyTLrpxQmLgFqaY487xs8rgVkjU3lP9EBNJkLiS67T5AzvaVmZT4eMrLMf7zx23nMAA5pN5qvz4r6Vde2O1PnFrDajdSbG+aGlK4VW1bIVfaoY3jKvu6mL5MnlMd9XGhoOfSdjXU6AbhApS0RLOm+hvEiwnDoe5QdtIDm4j5c5B2rC0rMMWFBcPDPW3PhTMSx9n5ckWx8HkyDPijY8JqM5nJ/5LfyU/SPAdzm0MAAAAASUVORK5CYII="/>
-    </mask>
-    <rect
-       x="52.412697"
-       y="225.74757"
-       width="8.1465435"
-       height="5.103858" />
-    <rect
-       x="52.412697"
-       y="225.74757"
-       width="8.1465435"
-       height="5.103858" />
-    <clipPath
-       clipPathUnits="userSpaceOnUse" >
-      <path
-         d="M 0,841.89 H 595.28 V 0 H 0 Z" />
-    </clipPath>
-    <clipPath
-       clipPathUnits="userSpaceOnUse" >
-      <path
-         d="M 0,841.89 H 595.28 V 0 H 0 Z" />
-    </clipPath>
-    <rect
-       x="52.412697"
-       y="225.74757"
-       width="8.1465435"
-       height="5.103858" />
-    <rect
-       x="52.412697"
-       y="225.74757"
-       width="8.1465435"
-       height="5.103858" />
-    <rect
-       x="52.412697"
-       y="225.74757"
-       width="8.1465435"
-       height="5.103858" />
-    <rect
-       x="52.412697"
-       y="225.74757"
-       width="8.1465435"
-       height="5.103858" />
-    <clipPath
-       clipPathUnits="userSpaceOnUse" >
-      <path
-         d="m 111.454,585.324 h 20.175 V 605.5 h -20.175 z" />
-    </clipPath>
-    <mask
-       maskUnits="userSpaceOnUse"
-       x="0"
-       y="0"
-       width="1"
-       height="1">
-      <image
-         width="1"
-         height="1"
-         style="image-rendering:optimizeSpeed"
-         preserveAspectRatio="none"
-         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAAAAAA7VNdtAAAAAXNCSVQI5gpbmQAAAeBJREFUSIndld1xgzAQhDeeFKAS1EGUCqxUEEqgA5MOcAUeV4A7IB1gV4A6gA4gFVweJIGEToMfM9kZD+i4T1r9nYE/qpe4qaUERmPWiNQS3wYZiXoiq6Hyoca2VYboaVWzCWkW6SjUBQCapTkJhtAUSwKSiKjR5UREFYO0NrPSzTJM6RxqIuoYxCb24VvtJxEhh8WXfdzdD1ACs4vLqO8Fccv4s35SuAM4acgWwLo1r/4lXREJc9cQztE1HeWNQfA1+8Z5TBFu3WE+XOa5XoOvXGbAvBefAua6jKHMHoL5dovMFmY1xqpaD8MEADjtGgtO/QwAorzuIeMYtwsB7Bjb6oQQeSTf5ySiVISkSm/vCRGSJozbgChY5Ah/cOcFad3JKLYnZPCXUYe3H0BpLzXQE1EdIrXbMl8CiqAvDQCKtoiYKFQXdjUArnZECIqQmFTUUx28RMywEP1S61zxUChtNdkW2PIooQzM49tH5GCf5t328nHHnvxikBtN5xIb72tbD7NIRYPbteFJRBFRLwC4KT+B9OSYzVblkYtbZ+EPRBZRnYhn3MiUiBDRW/+BmdRWjLTOf8vk8YgtPw2zRjnET6DlzLAIs5p5xF7kji3iGR0A4JL5W8+r2PfDTP9f6BeoxrmeC0yzrAAAAABJRU5ErkJggg=="/>
-    </mask>
-    <clipPath
-       clipPathUnits="userSpaceOnUse" >
-      <path
-         d="M 0,841.89 H 595.28 V 0 H 0 Z" />
-    </clipPath>
-    <rect
-       x="49.325893"
-       y="86.961891"
-       width="123.67411"
-       height="46.361008" />
-    <rect
-       x="49.325893"
-       y="86.961891"
-       width="123.67411"
-       height="46.361008" />
-    <rect
-       x="52.412697"
-       y="225.74757"
-       width="8.1465435"
-       height="5.103858" />
-    <rect
-       x="52.412697"
-       y="225.74757"
-       width="8.1465435"
-       height="5.103858" />
-    <rect
-       x="52.412697"
-       y="225.74757"
-       width="8.1465435"
-       height="5.103858" />
-    <rect
-       x="52.412697"
-       y="225.74757"
-       width="8.1465435"
-       height="5.103858" />
-    <clipPath
-       clipPathUnits="userSpaceOnUse" >
-      <path
-         d="m 111.454,585.324 h 20.175 V 605.5 h -20.175 z" />
-    </clipPath>
-    <mask
-       maskUnits="userSpaceOnUse"
-       x="0"
-       y="0"
-       width="1"
-       height="1">
-      <image
-         width="1"
-         height="1"
-         style="image-rendering:optimizeSpeed"
-         preserveAspectRatio="none"
-         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAAAAAA7VNdtAAAAAXNCSVQI5gpbmQAAAeBJREFUSIndld1xgzAQhDeeFKAS1EGUCqxUEEqgA5MOcAUeV4A7IB1gV4A6gA4gFVweJIGEToMfM9kZD+i4T1r9nYE/qpe4qaUERmPWiNQS3wYZiXoiq6Hyoca2VYboaVWzCWkW6SjUBQCapTkJhtAUSwKSiKjR5UREFYO0NrPSzTJM6RxqIuoYxCb24VvtJxEhh8WXfdzdD1ACs4vLqO8Fccv4s35SuAM4acgWwLo1r/4lXREJc9cQztE1HeWNQfA1+8Z5TBFu3WE+XOa5XoOvXGbAvBefAua6jKHMHoL5dovMFmY1xqpaD8MEADjtGgtO/QwAorzuIeMYtwsB7Bjb6oQQeSTf5ySiVISkSm/vCRGSJozbgChY5Ah/cOcFad3JKLYnZPCXUYe3H0BpLzXQE1EdIrXbMl8CiqAvDQCKtoiYKFQXdjUArnZECIqQmFTUUx28RMywEP1S61zxUChtNdkW2PIooQzM49tH5GCf5t328nHHnvxikBtN5xIb72tbD7NIRYPbteFJRBFRLwC4KT+B9OSYzVblkYtbZ+EPRBZRnYhn3MiUiBDRW/+BmdRWjLTOf8vk8YgtPw2zRjnET6DlzLAIs5p5xF7kji3iGR0A4JL5W8+r2PfDTP9f6BeoxrmeC0yzrAAAAABJRU5ErkJggg=="/>
-    </mask>
-    <clipPath
-       clipPathUnits="userSpaceOnUse" >
-      <path
-         d="M 0,841.89 H 595.28 V 0 H 0 Z" />
-    </clipPath>
-    <rect
-       x="49.325893"
-       y="86.961891"
-       width="123.67411"
-       height="46.361008" />
-    <rect
-       x="49.325893"
-       y="86.961891"
-       width="123.67411"
-       height="46.361008" />
-    <rect
-       x="52.412697"
-       y="225.74757"
-       width="8.1465435"
-       height="5.103858" />
-    <rect
-       x="52.412697"
-       y="225.74757"
-       width="8.1465435"
-       height="5.103858" />
-    <rect
-       x="52.412697"
-       y="225.74757"
-       width="8.1465435"
-       height="5.103858" />
-    <rect
-       x="52.412697"
-       y="225.74757"
-       width="8.1465435"
-       height="5.103858" />
-    <clipPath
-       clipPathUnits="userSpaceOnUse" >
-      <path
-         d="m 111.454,585.324 h 20.175 V 605.5 h -20.175 z" />
-    </clipPath>
-    <mask
-       maskUnits="userSpaceOnUse"
-       x="0"
-       y="0"
-       width="1"
-       height="1">
-      <image
-         width="1"
-         height="1"
-         style="image-rendering:optimizeSpeed"
-         preserveAspectRatio="none"
-         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAAAAAA7VNdtAAAAAXNCSVQI5gpbmQAAAeBJREFUSIndld1xgzAQhDeeFKAS1EGUCqxUEEqgA5MOcAUeV4A7IB1gV4A6gA4gFVweJIGEToMfM9kZD+i4T1r9nYE/qpe4qaUERmPWiNQS3wYZiXoiq6Hyoca2VYboaVWzCWkW6SjUBQCapTkJhtAUSwKSiKjR5UREFYO0NrPSzTJM6RxqIuoYxCb24VvtJxEhh8WXfdzdD1ACs4vLqO8Fccv4s35SuAM4acgWwLo1r/4lXREJc9cQztE1HeWNQfA1+8Z5TBFu3WE+XOa5XoOvXGbAvBefAua6jKHMHoL5dovMFmY1xqpaD8MEADjtGgtO/QwAorzuIeMYtwsB7Bjb6oQQeSTf5ySiVISkSm/vCRGSJozbgChY5Ah/cOcFad3JKLYnZPCXUYe3H0BpLzXQE1EdIrXbMl8CiqAvDQCKtoiYKFQXdjUArnZECIqQmFTUUx28RMywEP1S61zxUChtNdkW2PIooQzM49tH5GCf5t328nHHnvxikBtN5xIb72tbD7NIRYPbteFJRBFRLwC4KT+B9OSYzVblkYtbZ+EPRBZRnYhn3MiUiBDRW/+BmdRWjLTOf8vk8YgtPw2zRjnET6DlzLAIs5p5xF7kji3iGR0A4JL5W8+r2PfDTP9f6BeoxrmeC0yzrAAAAABJRU5ErkJggg=="/>
-    </mask>
-    <clipPath
-       clipPathUnits="userSpaceOnUse" >
-      <path
-         d="M 0,841.89 H 595.28 V 0 H 0 Z" />
-    </clipPath>
-    <rect
-       x="49.325893"
-       y="86.961891"
-       width="123.67411"
-       height="46.361008" />
-    <rect
-       x="49.325893"
-       y="86.961891"
-       width="123.67411"
-       height="46.361008" />
-    <rect
-       x="52.412697"
-       y="225.74757"
-       width="8.1465435"
-       height="5.103858" />
-    <rect
-       x="52.412697"
-       y="225.74757"
-       width="8.1465435"
-       height="5.103858" />
-    <rect
-       x="52.412697"
-       y="225.74757"
-       width="8.1465435"
-       height="5.103858" />
-    <rect
-       x="52.412697"
-       y="225.74757"
-       width="8.1465435"
-       height="5.103858" />
-    <clipPath
-       clipPathUnits="userSpaceOnUse" >
-      <path
-         d="m 111.454,585.324 h 20.175 V 605.5 h -20.175 z" />
-    </clipPath>
-    <mask
-       maskUnits="userSpaceOnUse"
-       x="0"
-       y="0"
-       width="1"
-       height="1">
-      <image
-         width="1"
-         height="1"
-         style="image-rendering:optimizeSpeed"
-         preserveAspectRatio="none"
-         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAAAAAA7VNdtAAAAAXNCSVQI5gpbmQAAAeBJREFUSIndld1xgzAQhDeeFKAS1EGUCqxUEEqgA5MOcAUeV4A7IB1gV4A6gA4gFVweJIGEToMfM9kZD+i4T1r9nYE/qpe4qaUERmPWiNQS3wYZiXoiq6Hyoca2VYboaVWzCWkW6SjUBQCapTkJhtAUSwKSiKjR5UREFYO0NrPSzTJM6RxqIuoYxCb24VvtJxEhh8WXfdzdD1ACs4vLqO8Fccv4s35SuAM4acgWwLo1r/4lXREJc9cQztE1HeWNQfA1+8Z5TBFu3WE+XOa5XoOvXGbAvBefAua6jKHMHoL5dovMFmY1xqpaD8MEADjtGgtO/QwAorzuIeMYtwsB7Bjb6oQQeSTf5ySiVISkSm/vCRGSJozbgChY5Ah/cOcFad3JKLYnZPCXUYe3H0BpLzXQE1EdIrXbMl8CiqAvDQCKtoiYKFQXdjUArnZECIqQmFTUUx28RMywEP1S61zxUChtNdkW2PIooQzM49tH5GCf5t328nHHnvxikBtN5xIb72tbD7NIRYPbteFJRBFRLwC4KT+B9OSYzVblkYtbZ+EPRBZRnYhn3MiUiBDRW/+BmdRWjLTOf8vk8YgtPw2zRjnET6DlzLAIs5p5xF7kji3iGR0A4JL5W8+r2PfDTP9f6BeoxrmeC0yzrAAAAABJRU5ErkJggg=="/>
-    </mask>
-    <rect
-       x="52.412697"
-       y="225.74757"
-       width="8.1465435"
-       height="5.103858" />
-    <rect
-       x="52.412697"
-       y="225.74757"
-       width="8.1465435"
-       height="5.103858" />
-    <rect
-       x="52.412697"
-       y="225.74757"
-       width="8.1465435"
-       height="5.103858" />
-    <rect
-       x="52.412697"
-       y="225.74757"
-       width="8.1465435"
-       height="5.103858" />
-    <clipPath
-       clipPathUnits="userSpaceOnUse" >
-      <path
-         d="m 111.454,585.324 h 20.175 V 605.5 h -20.175 z" />
-    </clipPath>
-    <mask
-       maskUnits="userSpaceOnUse"
-       x="0"
-       y="0"
-       width="1"
-       height="1">
-      <image
-         width="1"
-         height="1"
-         style="image-rendering:optimizeSpeed"
-         preserveAspectRatio="none"
-         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAAAAAA7VNdtAAAAAXNCSVQI5gpbmQAAAeBJREFUSIndld1xgzAQhDeeFKAS1EGUCqxUEEqgA5MOcAUeV4A7IB1gV4A6gA4gFVweJIGEToMfM9kZD+i4T1r9nYE/qpe4qaUERmPWiNQS3wYZiXoiq6Hyoca2VYboaVWzCWkW6SjUBQCapTkJhtAUSwKSiKjR5UREFYO0NrPSzTJM6RxqIuoYxCb24VvtJxEhh8WXfdzdD1ACs4vLqO8Fccv4s35SuAM4acgWwLo1r/4lXREJc9cQztE1HeWNQfA1+8Z5TBFu3WE+XOa5XoOvXGbAvBefAua6jKHMHoL5dovMFmY1xqpaD8MEADjtGgtO/QwAorzuIeMYtwsB7Bjb6oQQeSTf5ySiVISkSm/vCRGSJozbgChY5Ah/cOcFad3JKLYnZPCXUYe3H0BpLzXQE1EdIrXbMl8CiqAvDQCKtoiYKFQXdjUArnZECIqQmFTUUx28RMywEP1S61zxUChtNdkW2PIooQzM49tH5GCf5t328nHHnvxikBtN5xIb72tbD7NIRYPbteFJRBFRLwC4KT+B9OSYzVblkYtbZ+EPRBZRnYhn3MiUiBDRW/+BmdRWjLTOf8vk8YgtPw2zRjnET6DlzLAIs5p5xF7kji3iGR0A4JL5W8+r2PfDTP9f6BeoxrmeC0yzrAAAAABJRU5ErkJggg=="/>
-    </mask>
-    <clipPath
-       clipPathUnits="userSpaceOnUse" >
-      <path
-         d="M 0,841.89 H 595.28 V 0 H 0 Z" />
-    </clipPath>
-    <clipPath
-       clipPathUnits="userSpaceOnUse" >
-      <path
-         d="M 0,841.89 H 595.28 V 0 H 0 Z" />
-    </clipPath>
-    <rect
-       x="52.412697"
-       y="225.74757"
-       width="8.1465435"
-       height="5.103858" />
-    <rect
-       x="52.412697"
-       y="225.74757"
-       width="8.1465435"
-       height="5.103858" />
-    <rect
-       x="52.412697"
-       y="225.74757"
-       width="8.1465435"
-       height="5.103858" />
-    <rect
-       x="52.412697"
-       y="225.74757"
-       width="8.1465435"
-       height="5.103858" />
-    <clipPath
-       clipPathUnits="userSpaceOnUse" >
-      <path
-         d="M 0,841.89 H 595.28 V 0 H 0 Z" />
-    </clipPath>
-    <clipPath
-       clipPathUnits="userSpaceOnUse" >
-      <path
-         d="M 0,841.89 H 595.28 V 0 H 0 Z" />
-    </clipPath>
-    <clipPath
-       clipPathUnits="userSpaceOnUse" >
-      <path
-         d="M 0,841.89 H 595.28 V 0 H 0 Z" />
-    </clipPath>
-    <rect
-       x="49.325893"
-       y="86.961891"
-       width="104.9924"
-       height="45.648262" />
-    <rect
-       x="49.325893"
-       y="86.961891"
-       width="104.9924"
-       height="45.648262" />
-    <rect
-       x="52.412697"
-       y="225.74757"
-       width="8.1465435"
-       height="5.103858" />
-    <rect
-       x="52.412697"
-       y="225.74757"
-       width="8.1465435"
-       height="5.103858" />
-    <rect
-       x="52.412697"
-       y="225.74757"
-       width="8.1465435"
-       height="5.103858" />
-    <rect
-       x="52.412697"
-       y="225.74757"
-       width="8.1465435"
-       height="5.103858" />
-    <clipPath
-       clipPathUnits="userSpaceOnUse" >
-      <path
-         d="M 0,841.89 H 595.28 V 0 H 0 Z" />
-    </clipPath>
-    <clipPath
-       clipPathUnits="userSpaceOnUse" >
-      <path
-         d="M 0,841.89 H 595.28 V 0 H 0 Z" />
-    </clipPath>
-    <clipPath
-       clipPathUnits="userSpaceOnUse" >
-      <path
-         d="M 0,841.89 H 595.28 V 0 H 0 Z" />
-    </clipPath>
-    <rect
-       x="49.325893"
-       y="86.961891"
-       width="104.9924"
-       height="45.648262" />
-    <rect
-       x="49.325893"
-       y="86.961891"
-       width="104.9924"
-       height="45.648262" />
-    <rect
-       x="52.412697"
-       y="225.74757"
-       width="8.1465435"
-       height="5.103858" />
-    <rect
-       x="52.412697"
-       y="225.74757"
-       width="8.1465435"
-       height="5.103858" />
-    <rect
-       x="52.412697"
-       y="225.74757"
-       width="8.1465435"
-       height="5.103858" />
-    <rect
-       x="52.412697"
-       y="225.74757"
-       width="8.1465435"
-       height="5.103858" />
-    <clipPath
-       clipPathUnits="userSpaceOnUse" >
-      <path
-         d="M 0,841.89 H 595.28 V 0 H 0 Z" />
-    </clipPath>
-    <clipPath
-       clipPathUnits="userSpaceOnUse" >
-      <path
-         d="M 0,841.89 H 595.28 V 0 H 0 Z" />
-    </clipPath>
-    <rect
-       x="52.412697"
-       y="225.74757"
-       width="8.1465435"
-       height="5.103858" />
-    <rect
-       x="52.412697"
-       y="225.74757"
-       width="8.1465435"
-       height="5.103858" />
-    <rect
-       x="52.412697"
-       y="225.74757"
-       width="8.1465435"
-       height="5.103858" />
-    <rect
-       x="52.412697"
-       y="225.74757"
-       width="8.1465435"
-       height="5.103858" />
-    <clipPath
-       clipPathUnits="userSpaceOnUse" >
-      <path
-         d="M 0,841.89 H 595.28 V 0 H 0 Z" />
-    </clipPath>
-    <clipPath
-       clipPathUnits="userSpaceOnUse" >
-      <path
-         d="M 0,841.89 H 595.28 V 0 H 0 Z" />
-    </clipPath>
-    <rect
-       x="49.325893"
-       y="86.961891"
-       width="189.47866"
-       height="19.689707" />
-    <rect
-       x="49.325893"
-       y="86.961891"
-       width="104.9924"
-       height="45.648262" />
-  </defs>
-  <metadata>
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
-  <g>
+    }	
+	
+  </style>	 
+<g  transform="scale(2.85)">
     <!--Header Iniz-->
     {% include "analisi_header.svg" with title='Bollettino Analisi Meteo' seqNum=w17.numero_bollettino startValidTime=w17.data_emissione data_analysis=w17.data_analysis nextUpdate=w17.next_blt_time validity='24' logo='logo_w17' username=w17.username %}
     <!--Header Fini-->
-  </g>
+</g>	 
 
-  <g transform="translate(0 -3)">
-    <text
-        style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
-        x="10.000085"
-        y="49.348007">
-      <tspan
-          style="font-size:4.23333px;stroke-width:0.352778"
-          x="10.000085"
-          y="49.348007">Situazione generale
-      </tspan>
-    </text>
-    <path d="M 10,50.793881 H 104.500011 V 50.493668 H 10 Z" style="fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778" id="path644"></path>
-  </g>
 
-  <foreignObject x="10" y="49" width="43" height="62" >
-    <div xmlns="http://www.w3.org/1999/xhtml" class="testi">
-      <img src="data:image/png;base64,{{ situation_image }}" style="width: 40px; height: 40px;">
+<g id="SITUAZIONE-GEN">
+	<rect id="riga-blu-situazgen" x="32.491" y="137.052" style="fill:#2F55AC;" width="263.475" height="0.837"/>
+	<text transform="matrix(1 0 0 1 32.4875 133.8575)" class="sezioni-testo">Situazione generale</text>
+	<!--<rect id="IMG-01-situaz" x="32" y="145" style="fill:#2F55AC;" width="112" height="113"/>-->
+	<rect x="149" y="145.5" style="fill:none;" width="145.5" height="137.833"/>
+	<!--<text id="testo_sitazione_generale" transform="matrix(1 0 0 1 149 151.2275)" class="testobol"></text>-->
+	<foreignObject x="149" y="140" width="145" height="145" >
+    <div xmlns="http://www.w3.org/1999/xhtml" class="testobol">
+      {{ w17.situation|linebreaks }}
+    </div>
+  </foreignObject>
+  
+
+  <foreignObject x="30" y="145" width="112" height="113" >
+    <div xmlns="http://www.w3.org/1999/xhtml" class="testobol">
+      <img src="data:image/png;base64,{{ situation_image }}" style="width: 140px; height: 140px;">
+    </div>
+  </foreignObject>
+  <foreignObject x="30" y="265" width="145" height="20" >
+    <div xmlns="http://www.w3.org/1999/xhtml" class="testobol" style="font-size:7px;font-style:italic;">
+      Altezza di geopotenziale
+    </div>
+  </foreignObject>
+   <foreignObject x="30" y="275" width="145" height="20" >
+    <div xmlns="http://www.w3.org/1999/xhtml" class="testobol" style="font-size:7px;font-style:italic;">
+      500 hPa (dam) ore 12
+    </div>
+  </foreignObject>
+  
+</g>
+<g id="NUVOLOSITA">
+	<text transform="matrix(1 0 0 1 316.085 133.8575)" class="sezioni-testo">Nuvolosità e visibilità</text>
+	<rect id="riga-blu-nuvolos" x="316.089" y="137.052" style="fill:#2F55AC;" width="244.245" height="0.837"/>
+	<!--<rect id="IMG-02-nuvolosit" x="317" y="144" style="fill:#2F55AC;" width="110" height="112"/>-->
+	<rect x="434" y="146" style="fill:none;" width="126.667" height="128.5"/>
+	<!--<text transform="matrix(1 0 0 1 434 151.7275)" class="testobol">BLA BLA testo nuvolosit&#xE0;</text>-->
+<foreignObject x="315" y="145" width="143" height="162" >
+    <div xmlns="http://www.w3.org/1999/xhtml" class="testobol">
+      <img src="data:image/png;base64,{{ cloudiness_image }}" style="width: 115px; height: 115px;">
+    </div>
+  </foreignObject>
+  <foreignObject x="315" y="265" width="145" height="20" >
+    <div xmlns="http://www.w3.org/1999/xhtml" class="testobol" style="font-size:7px;font-style:italic;">
+      METEOSAT ore 12
     </div>
   </foreignObject>
 
-  <foreignObject x="52" y="49" width="52" height="62" >
-    <div xmlns="http://www.w3.org/1999/xhtml" class="testi">
-      {{ w17.situation }}
+  <foreignObject x="435" y="140" width="125" height="145" >
+    <div xmlns="http://www.w3.org/1999/xhtml" class="testobol" style="padding-right: 1px;">
+        {{ w17.cloudiness|linebreaks }}
     </div>
   </foreignObject>
+</g>
+<g transform="translate(0 10)" id="PRECIPITAZIONI">
+	<g id="PARTE-STATICA-PREC">
+		<text transform="matrix(1 0 0 1 31.4875 285.9738)" class="sezioni-testo">Precipitazioni</text>
+		<rect id="riga-blu-precip" x="31.491" y="289.168" style="fill:#2F55AC;" width="529.738" height="0.837"/>
+		
+		<!--legenda prec-->
+		<g id="tabella-legenda-statica">
+			<rect id="rettangolo-legenda4" x="448.333" y="512.5" style="fill:#E6E7E8;" width="99.333" height="11.667"/>
+			<rect id="rettangolo-legenda3" x="448.333" y="500.167" style="fill:#E6E7E8;" width="99.333" height="11.667"/>
+			<rect id="rettangolo-legenda2" x="448.333" y="487.5" style="fill:#E6E7E8;" width="99.333" height="11.667"/>
+			<rect id="rettangolo-legenda1" x="448.333" y="475.167" style="fill:#E6E7E8;" width="99.333" height="11.667"/>
+			<text transform="matrix(1 0 0 1 447.3289 470.6667)" class="legenda-prec-testo">INTENSITA' PRECIPITAZIONI in 12h</text>
+			<text transform="matrix(1 0 0 1 463.3988 484.1667)" class="legenda-prec-testo">DEBOLE</text>
+			<text transform="matrix(1 0 0 1 458.4687 495.6667)" class="legenda-prec-testo">MODERATA</text>
+			<text transform="matrix(1 0 0 1 465.7339 508.6667)" class="legenda-prec-testo">FORTE</text>
+			<text transform="matrix(1 0 0 1 454.0691 520.6667)" class="legenda-prec-testo">MOLTO FORTE</text>
+			<text transform="matrix(1 0 0 1 511.9964 483.5)" class="legenda-prec-testo">0-10 mm</text>
+			<text transform="matrix(1 0 0 1 508.659 495.6667)" class="legenda-prec-testo">10-30 mm</text>
+			<text transform="matrix(1 0 0 1 508.6588 508)" class="legenda-prec-testo">30-60 mm</text>
+			<text transform="matrix(1 0 0 1 513.8271 520.3334)" class="legenda-prec-testo">>60 mm</text>
+		</g>
+			
+		<g id="TEBELLE-X2-vuote-prec">
+			<g id="vuota-mattino-prec">
+				<g id="province-mat">
+					<rect x="160" y="311.299" style="fill:#BBBDBF;" width="22.618" height="22.593"/>
+					<rect x="160" y="335.559" style="fill:#F1F1F2;" width="22.618" height="8.364"/>
+					<rect x="160" y="343.923" style="fill:#D0D2D3;" width="22.618" height="8.364"/>
+					<rect x="160" y="352.287" style="fill:#F1F1F2;" width="22.618" height="8.364"/>
+					<rect x="160" y="360.652" style="fill:#D0D2D3;" width="22.618" height="8.364"/>
+					<rect x="160" y="369.016" style="fill:#F1F1F2;" width="22.618" height="8.364"/>
+					<rect x="160" y="377.38" style="fill:#D0D2D3;" width="22.618" height="8.364"/>
+					<rect x="160" y="385.744" style="fill:#F1F1F2;" width="22.618" height="8.364"/>
+					<rect x="160" y="394.109" style="fill:#D0D2D3;" width="22.618" height="8.364"/>
+					<text transform="matrix(1 0 0 1 162 324.4124)" class="tabella-prec-testo">PROV</text>
+					<text transform="matrix(1 0 0 1 165.8796 341.7458)" class="tabella-prec-testo">AL</text>
+					<text transform="matrix(1 0 0 1 165.8848 351.0791)" class="tabella-prec-testo">AT</text>
+					<text transform="matrix(1 0 0 1 166.7222 359.0791)" class="tabella-prec-testo">BI</text>
+					<text transform="matrix(1 0 0 1 165.9737 367.7458)" class="tabella-prec-testo">CN</text>
+					<text transform="matrix(1 0 0 1 165.7792 375.7458)" class="tabella-prec-testo">NO</text>
+					<text transform="matrix(1 0 0 1 166.2322 384.0791)" class="tabella-prec-testo">TO</text>
+					<text transform="matrix(1 0 0 1 166.3599 392.0791)" class="tabella-prec-testo">VB</text>
+					<text transform="matrix(1 0 0 1 166.1671 400.7458)" class="tabella-prec-testo">VC</text>
+					<rect x="160" y="311.829" style="fill:none;stroke:#808184;stroke-width:0.5;stroke-miterlimit:10;" width="22.618" height="91.158"/>
+				</g>
+				<g id="tabella-vuota-mat">
+					<rect x="210.894" y="311.413" style="fill:#BBBDBF;" width="78.667" height="22.479"/>
+					<rect x="289.446" y="311.395" style="fill:#BBBDBF;" width="31.002" height="22.497"/>
+					<rect x="320.449" y="311.413" style="fill:#BBBDBF;" width="80" height="22.479"/>
+					<rect x="400.186" y="311.413" style="fill:#BBBDBF;" width="31.148" height="22.479"/>
+					<rect x="182.451" y="335.559" style="fill:#F1F1F2;" width="27.691" height="8.364"/>
+					<rect x="209.561" y="335.559" style="fill:#F1F1F2;" width="80" height="8.364"/>
+					<rect x="289.446" y="335.559" style="fill:#F1F1F2;" width="31.002" height="8.364"/>
+					<rect x="320.449" y="335.559" style="fill:#F1F1F2;" width="80" height="8.364"/>
+					<rect x="400.186" y="335.559" style="fill:#F1F1F2;" width="31.148" height="8.364"/>
+					<rect x="182.451" y="343.923" style="fill:#D0D2D3;" width="27.691" height="8.364"/>
+					<rect x="209.561" y="343.923" style="fill:#D0D2D3;" width="80" height="8.364"/>
+					<rect x="289.446" y="343.923" style="fill:#D0D2D3;" width="31.002" height="8.364"/>
+					<rect x="320.449" y="343.923" style="fill:#D0D2D3;" width="80" height="8.364"/>
+					<rect x="400.186" y="343.923" style="fill:#D0D2D3;" width="31.148" height="8.364"/>
+					<rect x="182.451" y="352.287" style="fill:#F1F1F2;" width="27.691" height="8.364"/>
+					<rect x="209.561" y="352.287" style="fill:#F1F1F2;" width="80" height="8.364"/>
+					<rect x="289.446" y="352.287" style="fill:#F1F1F2;" width="31.002" height="8.364"/>
+					<rect x="320.449" y="352.287" style="fill:#F1F1F2;" width="80" height="8.364"/>
+					<rect x="400.186" y="352.287" style="fill:#F1F1F2;" width="31.148" height="8.364"/>
+					<rect x="182.451" y="360.652" style="fill:#D0D2D3;" width="27.691" height="8.364"/>
+					<rect x="209.561" y="360.652" style="fill:#D0D2D3;" width="80" height="8.364"/>
+					<rect x="289.446" y="360.652" style="fill:#D0D2D3;" width="31.002" height="8.364"/>
+					<rect x="320.449" y="360.652" style="fill:#D0D2D3;" width="80" height="8.364"/>
+					<rect x="400.186" y="360.652" style="fill:#D0D2D3;" width="31.148" height="8.364"/>
+					<rect x="182.451" y="369.016" style="fill:#F1F1F2;" width="27.691" height="8.364"/>
+					<rect x="209.561" y="369.016" style="fill:#F1F1F2;" width="80" height="8.364"/>
+					<rect x="289.446" y="369.016" style="fill:#F1F1F2;" width="31.002" height="8.364"/>
+					<rect x="320.449" y="369.016" style="fill:#F1F1F2;" width="80" height="8.364"/>
+					<rect x="400.186" y="369.016" style="fill:#F1F1F2;" width="31.148" height="8.364"/>
+					<rect x="182.451" y="377.38" style="fill:#D0D2D3;" width="27.691" height="8.364"/>
+					<rect x="209.561" y="377.38" style="fill:#D0D2D3;" width="80" height="8.364"/>
+					<rect x="289.446" y="377.38" style="fill:#D0D2D3;" width="31.002" height="8.364"/>
+					<rect x="320.449" y="377.38" style="fill:#D0D2D3;" width="80" height="8.364"/>
+					<rect x="400.186" y="377.38" style="fill:#D0D2D3;" width="31.148" height="8.364"/>
+					<rect x="182.451" y="385.744" style="fill:#F1F1F2;" width="27.691" height="8.364"/>
+					<rect x="209.561" y="385.744" style="fill:#F1F1F2;" width="80" height="8.364"/>
+					<rect x="289.446" y="385.744" style="fill:#F1F1F2;" width="31.002" height="8.364"/>
+					<rect x="320.449" y="385.744" style="fill:#F1F1F2;" width="80" height="8.364"/>
+					<rect x="400.186" y="385.744" style="fill:#F1F1F2;" width="31.148" height="8.364"/>
+					<rect x="182.451" y="394.109" style="fill:#D0D2D3;" width="27.691" height="8.364"/>
+					<rect x="209.561" y="394.109" style="fill:#D0D2D3;" width="80" height="8.364"/>
+					<rect x="289.446" y="394.109" style="fill:#D0D2D3;" width="31.002" height="8.364"/>
+					<rect x="320.449" y="394.109" style="fill:#D0D2D3;" width="80" height="8.364"/>
+					<rect x="400.186" y="394.109" style="fill:#D0D2D3;" width="31.148" height="8.364"/>
+					<rect x="182.7" y="311.33" style="fill:#BBBDBF;" width="27.86" height="22.562"/>
+					<rect x="182.737" y="311.829" style="fill:none;stroke:#808184;stroke-width:0.5;stroke-miterlimit:10;" width="27.654" height="91.158"/>
+					<rect x="210.333" y="311.921" style="fill:none;stroke:#808184;stroke-width:0.5;stroke-miterlimit:10;" width="109.833" height="91.158"/>
+					<rect x="320.333" y="311.921" style="fill:none;stroke:#808184;stroke-width:0.5;stroke-miterlimit:10;" width="111.333" height="91.158"/>
+				</g>
+					
+					<text transform="matrix(1 0 0 1 186.9955 319.4124)" class="tabella-prec-testo">
+						<tspan x="0" y="0">Media</tspan>
+						<tspan x="0.665" y="6">areale</tspan>
+						<tspan x="2.339" y="12">[mm]</tspan></text>
+					<text transform="matrix(1 0 0 1 240.3332 324.7457)" class="tabella-prec-testo" >STAZIONE</text>
+					<text transform="matrix(1 0 0 1 293.9998 324.4124)" class="tabella-prec-testo">mm/12h*</text>
+					<text transform="matrix(1 0 0 1 405.6665 324.4124)" class="tabella-prec-testo">mm/3h**</text>
+					<text transform="matrix(0.8967 0 0 1 345.3708 325.0791)" class="tabella-prec-testo">STAZIONE</text>
+					<text transform="matrix(1 0 0 1 287.3332 309.4124)" class="tabella-prec-testo">MATTINO</text>
+					
+			</g>
+			<g id="vuota-pomeriggio-prec">
+				<g id="province-pom">
+					<rect x="159" y="431.747" style="fill:#BBBDBF;" width="22.618" height="22.593"/>
+					<rect x="159" y="455.892" style="fill:#F1F1F2;" width="22.618" height="8.364"/>
+					<rect x="159" y="463.923" style="fill:#D0D2D3;" width="22.618" height="8.364"/>
+					<rect x="159" y="472.287" style="fill:#F1F1F2;" width="22.618" height="8.364"/>
+					<rect x="159" y="480.652" style="fill:#D0D2D3;" width="22.618" height="8.364"/>
+					<rect x="159" y="489.016" style="fill:#F1F1F2;" width="22.618" height="8.364"/>
+					<rect x="159" y="497.38" style="fill:#D0D2D3;" width="22.618" height="8.364"/>
+					<rect x="159" y="505.744" style="fill:#F1F1F2;" width="22.618" height="8.364"/>
+					<rect x="159" y="514.442" style="fill:#D0D2D3;" width="22.618" height="8.364"/>
+					<text transform="matrix(1 0 0 1 161 444.4124)" class="tabella-prec-testo">PROV</text>
+					<text transform="matrix(1 0 0 1 164.5463 461.7457)" class="tabella-prec-testo">AL</text>
+					<text transform="matrix(1 0 0 1 164.5515 471.0791)" class="tabella-prec-testo">AT</text>
+					<text transform="matrix(1 0 0 1 165.3889 479.0791)" class="tabella-prec-testo">BI</text>
+					<text transform="matrix(1 0 0 1 164.6404 487.7457)" class="tabella-prec-testo">CN</text>
+					<text transform="matrix(1 0 0 1 164.4459 495.7457)" class="tabella-prec-testo">NO</text>
+					<text transform="matrix(1 0 0 1 164.8988 504.0791)" class="tabella-prec-testo">TO</text>
+					<text transform="matrix(1 0 0 1 165.0266 512.0791)" class="tabella-prec-testo">VB</text>
+					<text transform="matrix(1 0 0 1 164.8337 520.7457)" class="tabella-prec-testo">VC</text>
+					<rect x="159" y="432.163" style="fill:none;stroke:#808184;stroke-width:0.5;stroke-miterlimit:10;" width="22.618" height="91.158"/>
+				</g>
+				<g id="tabella-vuota-pom">
+					<rect x="209.894" y="431.747" style="fill:#BBBDBF;" width="78.667" height="22.479"/>
+					<rect x="288.446" y="431.729" style="fill:#BBBDBF;" width="31.002" height="22.497"/>
+					<rect x="319.449" y="431.747" style="fill:#BBBDBF;" width="80" height="22.479"/>
+					<rect x="399.186" y="431.747" style="fill:#BBBDBF;" width="31.148" height="22.479"/>
+					<rect x="181.451" y="455.892" style="fill:#F1F1F2;" width="27.691" height="8.364"/>
+					<rect x="208.561" y="455.892" style="fill:#F1F1F2;" width="80" height="8.364"/>
+					<rect x="288.446" y="455.892" style="fill:#F1F1F2;" width="31.002" height="8.364"/>
+					<rect x="319.449" y="455.892" style="fill:#F1F1F2;" width="80" height="8.364"/>
+					<rect x="399.186" y="455.892" style="fill:#F1F1F2;" width="31.148" height="8.364"/>
+					<rect x="181.451" y="464.256" style="fill:#D0D2D3;" width="27.691" height="8.364"/>
+					<rect x="208.561" y="464.256" style="fill:#D0D2D3;" width="80" height="8.364"/>
+					<rect x="288.446" y="464.256" style="fill:#D0D2D3;" width="31.002" height="8.364"/>
+					<rect x="319.449" y="464.256" style="fill:#D0D2D3;" width="80" height="8.364"/>
+					<rect x="399.186" y="464.256" style="fill:#D0D2D3;" width="31.148" height="8.364"/>
+					<rect x="181.451" y="472.621" style="fill:#F1F1F2;" width="27.691" height="8.364"/>
+					<rect x="208.561" y="472.621" style="fill:#F1F1F2;" width="80" height="8.364"/>
+					<rect x="288.446" y="472.621" style="fill:#F1F1F2;" width="31.002" height="8.364"/>
+					<rect x="319.449" y="472.621" style="fill:#F1F1F2;" width="80" height="8.364"/>
+					<rect x="399.186" y="472.621" style="fill:#F1F1F2;" width="31.148" height="8.364"/>
+					<rect x="181.451" y="480.985" style="fill:#D0D2D3;" width="27.691" height="8.364"/>
+					<rect x="208.561" y="480.985" style="fill:#D0D2D3;" width="80" height="8.364"/>
+					<rect x="288.446" y="480.985" style="fill:#D0D2D3;" width="31.002" height="8.364"/>
+					<rect x="319.449" y="480.985" style="fill:#D0D2D3;" width="80" height="8.364"/>
+					<rect x="399.186" y="480.985" style="fill:#D0D2D3;" width="31.148" height="8.364"/>
+					<rect x="181.451" y="489.349" style="fill:#F1F1F2;" width="27.691" height="8.364"/>
+					<rect x="208.561" y="489.349" style="fill:#F1F1F2;" width="80" height="8.364"/>
+					<rect x="288.446" y="489.349" style="fill:#F1F1F2;" width="31.002" height="8.364"/>
+					<rect x="319.449" y="489.349" style="fill:#F1F1F2;" width="80" height="8.364"/>
+					<rect x="399.186" y="489.349" style="fill:#F1F1F2;" width="31.148" height="8.364"/>
+					<rect x="181.451" y="497.713" style="fill:#D0D2D3;" width="27.691" height="8.364"/>
+					<rect x="208.561" y="497.713" style="fill:#D0D2D3;" width="80" height="8.364"/>
+					<rect x="288.446" y="497.713" style="fill:#D0D2D3;" width="31.002" height="8.364"/>
+					<rect x="319.449" y="497.713" style="fill:#D0D2D3;" width="80" height="8.364"/>
+					<rect x="399.186" y="497.713" style="fill:#D0D2D3;" width="31.148" height="8.364"/>
+					<rect x="181.451" y="506.078" style="fill:#F1F1F2;" width="27.691" height="8.364"/>
+					<rect x="208.561" y="506.078" style="fill:#F1F1F2;" width="80" height="8.364"/>
+					<rect x="288.446" y="506.078" style="fill:#F1F1F2;" width="31.002" height="8.364"/>
+					<rect x="319.449" y="506.078" style="fill:#F1F1F2;" width="80" height="8.364"/>
+					<rect x="399.186" y="506.078" style="fill:#F1F1F2;" width="31.148" height="8.364"/>
+					<rect x="181.451" y="514.442" style="fill:#D0D2D3;" width="27.691" height="8.364"/>
+					<rect x="208.561" y="514.442" style="fill:#D0D2D3;" width="80" height="8.364"/>
+					<rect x="288.446" y="514.442" style="fill:#D0D2D3;" width="31.002" height="8.364"/>
+					<rect x="319.449" y="514.442" style="fill:#D0D2D3;" width="80" height="8.364"/>
+					<rect x="399.186" y="514.442" style="fill:#D0D2D3;" width="31.148" height="8.364"/>
+					<rect x="181.7" y="431.663" style="fill:#BBBDBF;" width="27.86" height="22.562"/>
+					<rect x="181.737" y="432.163" style="fill:none;stroke:#808184;stroke-width:0.5;stroke-miterlimit:10;" width="27.654" height="91.158"/>
+					<rect x="209.333" y="432.254" style="fill:none;stroke:#808184;stroke-width:0.5;stroke-miterlimit:10;" width="109.833" height="91.158"/>
+					<rect x="319.333" y="432.254" style="fill:none;stroke:#808184;stroke-width:0.5;stroke-miterlimit:10;" width="111.333" height="91.158"/>
+					
+					<text transform="matrix(1 0 0 1 185.9954 439.7457)" class="tabella-prec-testo">
+						<tspan x="0" y="0" >Media </tspan>
+						<tspan x="0.665" y="6">areale</tspan>
+						<tspan x="2.339" y="12">[mm]</tspan></text>
+					<text transform="matrix(1 0 0 1 239.3332 445.0791)" class="tabella-prec-testo">STAZIONE</text>
+					<text transform="matrix(1 0 0 1 292.9999 444.7457)" class="tabella-prec-testo">mm/12h*</text>
+					<text transform="matrix(1 0 0 1 404.6665 444.7457)" class="tabella-prec-testo">mm/3h**</text>
+					<text transform="matrix(0.8967 0 0 1 344.3708 445.4124)" class="tabella-prec-testo">STAZIONE</text>
+					<text transform="matrix(1 0 0 1 286.3332 429.7457)" class="tabella-prec-testo">POMERIGGIO</text>
+					
+						
+					<text transform="matrix(1 0 0 1 246.8332 532.0791)" class="tabella-prec-testo">massimo puntuale su 12 ore (*) e 3 ore (**)</text>
+				</g>
+			</g>
+		</g>
+	</g>
+	
 
-  <g transform="translate(101 -3)">
-    <text
-        style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
-        x="10.000085"
-        y="49.348007">
-      <tspan
-          style="font-size:4.23333px;stroke-width:0.352778"
-          x="10.000085"
-          y="49.348007">Nuvolosità e visibilità
-      </tspan>
-    </text>
-    <path d="M 10,50.793881 H 97.500011 V 50.493668 H 10 Z" style="fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778" id="path644"></path>
-  </g>
+	<g id="PARTE-DINAMICA-PREC">
+		<rect x="442.5" y="306.2" style="fill:none;" width="117" height="153.767"/>
+		<foreignObject x="440" y="300" width="123" height="160" >
+			<div xmlns="http://www.w3.org/1999/xhtml" class="testobol" style="padding-right: 1px;">
+				{{ w17.32.PLUV.67.text_value|linebreaks }}
+			</div>
+  		</foreignObject>
+		<!--<text transform="matrix(1 0 0 1 442.5 311.9276)" class="testobol">BLA BLA testo precipitazioni</text>
+		
+		 questa parte andrÃ  modificata da Fabio e qualora ci fosse prec compilati i campi necessari e oscurare quelli che non ci sono -->
+		<g id="gruppo_x5F_MATTINA">
+		<foreignObject x="30" y="295" width="143" height="162" >
+			<div xmlns="http://www.w3.org/1999/xhtml" class="testobol">
+				<img src="data:image/png;base64,{{ prec_mattino_image }}" style="width: 120px; height: 110px;">
+			</div>
+		</foreignObject>
+			<!--<img src="data:image/png;base64,{{ prec_mattino_image }}" style=" width:45px;height:50px;">
+			<rect id="IMG-03-prec-mattino" x="38" y="299" style="fill:#2F55AC;" width="111" height="119"/>-->
+			
+			<g id="matt-media--areale">
+					<text id="matt-med-area-AL" transform="matrix(1 0 0 1 192.9998 342.5791)" class="tabella-valori-staz">{{w17.30.PLUV.901.171.0.numeric_value|format:"{:0.1f}"}}</text>
+					<text id="matt-med-area-AT" transform="matrix(1 0 0 1 192.9998 350.5791)" class="tabella-valori-staz">{{w17.30.PLUV.901.172.0.numeric_value|format:"{:0.1f}"}}</text>
+					<text id="matt-med-area-BI" transform="matrix(1 0 0 1 192.9998 358.5791)" class="tabella-valori-staz">{{w17.30.PLUV.901.173.0.numeric_value|format:"{:0.1f}"}}</text>
+					<text id="matt-med-area-CN" transform="matrix(1 0 0 1 192.9998 367.5791)" class="tabella-valori-staz">{{w17.30.PLUV.901.174.0.numeric_value|format:"{:0.1f}"}}</text>
+					<text id="matt-med-area-NO" transform="matrix(1 0 0 1 192.9998 375.5791)" class="tabella-valori-staz">{{w17.30.PLUV.901.175.0.numeric_value|format:"{:0.1f}"}}</text>
+					<text id="matt-med-area-TO" transform="matrix(1 0 0 1 192.9998 383.5791)" class="tabella-valori-staz">{{w17.30.PLUV.901.176.0.numeric_value|format:"{:0.1f}"}}</text>
+					<text id="matt-med-area-VB" transform="matrix(1 0 0 1 192.9998 392.5791)" class="tabella-valori-staz">{{w17.30.PLUV.901.177.0.numeric_value|format:"{:0.1f}"}}</text>
+					<text id="matt-med-area-VC" transform="matrix(1 0 0 1 192.9998 400.5791)" class="tabella-valori-staz">{{w17.30.PLUV.901.178.0.numeric_value|format:"{:0.1f}"}}</text>
+			</g>
+			
+			<g id="matt-prec12H">
+					<text id="matt-12h-AL" transform="matrix(1 0 0 1 300.9998 341.5791)" class="tabella-valori-staz">{{w17.30.PLUV.907.171.0.numeric_value|format:"{:0.1f}"}}</text>
+					<text id="matt-12h-AT" transform="matrix(1 0 0 1 300.9998 350.5791)" class="tabella-valori-staz">{{w17.30.PLUV.907.172.0.numeric_value|format:"{:0.1f}"}}</text>
+					<text id="matt-12h-BI" transform="matrix(1 0 0 1 300.9998 358.5791)" class="tabella-valori-staz">{{w17.30.PLUV.907.173.0.numeric_value|format:"{:0.1f}"}}</text>
+					<text id="matt-12h-CN" transform="matrix(1 0 0 1 300.9998 367.5791)" class="tabella-valori-staz">{{w17.30.PLUV.907.174.0.numeric_value|format:"{:0.1f}"}}</text>
+					<text id="matt-12h-NO" transform="matrix(1 0 0 1 300.9998 375.5791)" class="tabella-valori-staz">{{w17.30.PLUV.907.175.0.numeric_value|format:"{:0.1f}"}}</text>
+					<text id="matt-12h-TO" transform="matrix(1 0 0 1 300.9998 383.5791)" class="tabella-valori-staz">{{w17.30.PLUV.907.176.0.numeric_value|format:"{:0.1f}"}}</text>
+					<text id="matt-12h-VB" transform="matrix(1 0 0 1 300.9998 392.5791)" class="tabella-valori-staz">{{w17.30.PLUV.907.177.0.numeric_value|format:"{:0.1f}"}}</text>
+					<text id="matt-12h-VC" transform="matrix(1 0 0 1 300.9998 401.5791)" class="tabella-valori-staz">{{w17.30.PLUV.907.178.0.numeric_value|format:"{:0.1f}"}}</text>
+			</g>
+			<g id="matt-prec3H">
+					<text id="matt-3h-AL" transform="matrix(1 0 0 1 411.9998 341.5791)" class="tabella-valori-staz">{{w17.30.PLUV.905.171.0.numeric_value|format:"{:0.1f}"}}</text>
+					<text id="matt-3h-AT" transform="matrix(1 0 0 1 411.9998 350.5791)" class="tabella-valori-staz">{{w17.30.PLUV.905.172.0.numeric_value|format:"{:0.1f}"}}</text>
+					<text id="matt-3h-BI" transform="matrix(1 0 0 1 411.9998 358.5791)" class="tabella-valori-staz">{{w17.30.PLUV.905.173.0.numeric_value|format:"{:0.1f}"}}</text>
+					<text id="matt-3h-CN" transform="matrix(1 0 0 1 411.9998 367.5791)" class="tabella-valori-staz">{{w17.30.PLUV.905.174.0.numeric_value|format:"{:0.1f}"}}</text>
+					<text id="matt-3h-NO" transform="matrix(1 0 0 1 411.9998 375.5791)" class="tabella-valori-staz">{{w17.30.PLUV.905.175.0.numeric_value|format:"{:0.1f}"}}</text>
+					<text id="matt-3h-TO" transform="matrix(1 0 0 1 411.9998 383.5791)" class="tabella-valori-staz">{{w17.30.PLUV.905.176.0.numeric_value|format:"{:0.1f}"}}</text>
+					<text id="matt-3h-VB" transform="matrix(1 0 0 1 411.9998 392.5791)" class="tabella-valori-staz">{{w17.30.PLUV.905.177.0.numeric_value|format:"{:0.1f}"}}</text>
+					<text id="matt-3h-VC" transform="matrix(1 0 0 1 411.9998 401.5791)" class="tabella-valori-staz">{{w17.30.PLUV.905.178.0.numeric_value|format:"{:0.1f}"}}</text>
+			</g>
+			<g id="matt-STAZIONI-12H">
+				<text id="matt-stazione-12h-AL" transform="matrix(1 0 0 1 218 341.5791)" class="tabella-valori-staz">
+					{% if w17.30.PLUV.907.171.0.cod_staz_meteo is not None %}
+						{{stazioni|get_item:w17.30.PLUV.907.171.0.cod_staz_meteo}}
+					{% endif %}
+				</text>
+				<text id="matt-stazione-12h-AT" transform="matrix(1 0 0 1 218 350.5791)" class="tabella-valori-staz">
+					{% if w17.30.PLUV.907.172.0.cod_staz_meteo is not None %}
+						{{stazioni|get_item:w17.30.PLUV.907.172.0.cod_staz_meteo}}
+					{% endif %}
+				</text>
+				<text id="matt-stazione-12h-BI" transform="matrix(1 0 0 1 218 358.5791)" class="tabella-valori-staz">
+					{% if w17.30.PLUV.907.173.0.cod_staz_meteo is not None %}
+						{{stazioni|get_item:w17.30.PLUV.907.173.0.cod_staz_meteo}}
+					{% endif %}
+				</text>
+				<text id="matt-stazione-12h-CN" transform="matrix(1 0 0 1 218 367.5791)" class="tabella-valori-staz">
+					{% if w17.30.PLUV.907.174.0.cod_staz_meteo is not None %}
+						{{stazioni|get_item:w17.30.PLUV.907.174.0.cod_staz_meteo}}
+					{% endif %}
+				</text>
+				<text id="matt-stazione-12h-NO" transform="matrix(1 0 0 1 218 375.5791)" class="tabella-valori-staz">
+					{% if w17.30.PLUV.907.175.0.cod_staz_meteo is not None %}
+						{{stazioni|get_item:w17.30.PLUV.907.175.0.cod_staz_meteo}}
+					{% endif %}
+				</text>
+				<text id="matt-stazione-12h-TO" transform="matrix(1 0 0 1 218 383.5791)" class="tabella-valori-staz">
+					{% if w17.30.PLUV.907.176.0.cod_staz_meteo is not None %}
+						{{stazioni|get_item:w17.30.PLUV.907.176.0.cod_staz_meteo}}
+					{% endif %}
+				</text>
+				<text id="matt-stazione-12h-VB" transform="matrix(1 0 0 1 218 392.5791)" class="tabella-valori-staz">
+					{% if w17.30.PLUV.907.177.0.cod_staz_meteo is not None %}
+						{{stazioni|get_item:w17.30.PLUV.907.177.0.cod_staz_meteo}}
+					{% endif %}
+				</text>
+				<text id="matt-stazione-12h-VC" transform="matrix(1 0 0 1 218 401.5791)" class="tabella-valori-staz">
+					{% if w17.30.PLUV.907.178.0.cod_staz_meteo is not None %}
+						{{stazioni|get_item:w17.30.PLUV.907.178.0.cod_staz_meteo}}
+					{% endif %}
+				</text>
+			</g>
+			
+			
+			<g id="matt-STAZIONI-3H">
+					<text id="matt-stazione-3h-AL" transform="matrix(1 0 0 1 328 341.5791)" class="tabella-valori-staz">
+						{% if w17.30.PLUV.905.171.0.cod_staz_meteo is not None %}
+							{{stazioni|get_item:w17.30.PLUV.905.171.0.cod_staz_meteo}}
+						{% endif %}
+					</text>
+					<text id="matt-stazione-3h-AT" transform="matrix(1 0 0 1 328 350.5791)" class="tabella-valori-staz">
+						{% if w17.30.PLUV.905.172.0.cod_staz_meteo is not None %}
+							{{stazioni|get_item:w17.30.PLUV.905.172.0.cod_staz_meteo}}
+						{% endif %}
+			  		</text>
+					<text id="matt-stazione-3h-BI" transform="matrix(1 0 0 1 328 358.5791)" class="tabella-valori-staz">
+						{% if w17.30.PLUV.905.173.0.cod_staz_meteo is not None %}
+							{{stazioni|get_item:w17.30.PLUV.905.173.0.cod_staz_meteo}}
+						{% endif %}
+			  		</text>
+					<text id="matt-stazione-3h-CN" transform="matrix(1 0 0 1 328 367.5791)" class="tabella-valori-staz">
+						{% if w17.30.PLUV.905.174.0.cod_staz_meteo is not None %}
+							{{stazioni|get_item:w17.30.PLUV.905.174.0.cod_staz_meteo}}
+						{% endif %}
+			  		</text>
+					<text id="matt-stazione-3h-NO" transform="matrix(1 0 0 1 328 375.5791)" class="tabella-valori-staz">
+						{% if w17.30.PLUV.905.175.0.cod_staz_meteo is not None %}
+							{{stazioni|get_item:w17.30.PLUV.905.175.0.cod_staz_meteo}}
+						{% endif %}
+			  		</text>
+					<text id="matt-stazione-3h-TO" transform="matrix(1 0 0 1 328 383.5791)" class="tabella-valori-staz">
+						{% if w17.30.PLUV.905.176.0.cod_staz_meteo is not None %}
+							{{stazioni|get_item:w17.30.PLUV.905.176.0.cod_staz_meteo}}
+						{% endif %}
+			  		</text>
+					<text id="matt-stazione-3h-VB" transform="matrix(1 0 0 1 328 392.5791)" class="tabella-valori-staz">
+						{% if w17.30.PLUV.905.177.0.cod_staz_meteo is not None %}
+							{{stazioni|get_item:w17.30.PLUV.905.177.0.cod_staz_meteo}}
+						{% endif %}
+			  		</text>
+					<text id="matt-stazione-3h-VC" transform="matrix(1 0 0 1 328 401.5791)" class="tabella-valori-staz">
+						{% if w17.30.PLUV.905.178.0.cod_staz_meteo is not None %}
+							{{stazioni|get_item:w17.30.PLUV.905.178.0.cod_staz_meteo}}
+						{% endif %}
+			  		</text>
+			</g>
+		</g>
+		
+		
+		<g id="gruppo_x5F_POMERIGGIO">
+		<foreignObject x="30" y="415" width="143" height="162" >
+			<div xmlns="http://www.w3.org/1999/xhtml" class="testobol">
+				<img src="data:image/png;base64,{{ prec_pomeriggio_image }}" style="width: 120px; height: 120px;">
+			</div>
+		</foreignObject>
+		  <!--<img src="data:image/png;base64,{{ prec_pomeriggio_image }}" style="width:45px;height:50px;">
+      
+			<rect id="IMG-04-prec-pomeriggio" x="38" y="421" style="fill:#2F55AC;" width="111" height="119"/>-->
+			<g id="pom-media--areale">
+					<text id="pom-med-area-AL" transform="matrix(1 0 0 1 192.9998 462.5791)" class="tabella-valori-staz">{{w17.31.PLUV.901.171.0.numeric_value|format:"{:0.1f}"}}</text>
+					<text id="pom-med-area-AT" transform="matrix(1 0 0 1 192.9998 470.5791)" class="tabella-valori-staz">{{w17.31.PLUV.901.172.0.numeric_value|format:"{:0.1f}"}}</text>
+					<text id="pom-med-area-BI" transform="matrix(1 0 0 1 192.9998 479.5791)" class="tabella-valori-staz">{{w17.31.PLUV.901.173.0.numeric_value|format:"{:0.1f}"}}</text>
+					<text id="pom-med-area-CN" transform="matrix(1 0 0 1 192.9998 487.5791)" class="tabella-valori-staz">{{w17.31.PLUV.901.174.0.numeric_value|format:"{:0.1f}"}}</text>
+					<text id="pom-med-area-NO" transform="matrix(1 0 0 1 192.9998 496.5791)" class="tabella-valori-staz">{{w17.31.PLUV.901.175.0.numeric_value|format:"{:0.1f}"}}</text>
+					<text id="pom-med-area-TO" transform="matrix(1 0 0 1 192.9998 504.5791)" class="tabella-valori-staz">{{w17.31.PLUV.901.176.0.numeric_value|format:"{:0.1f}"}}</text>
+					<text id="pom-med-area-VB" transform="matrix(1 0 0 1 192.9998 513.5791)" class="tabella-valori-staz">{{w17.31.PLUV.901.177.0.numeric_value|format:"{:0.1f}"}}</text>
+					<text id="pom-med-area-VC" transform="matrix(1 0 0 1 192.9998 521.5791)" class="tabella-valori-staz">{{w17.31.PLUV.901.178.0.numeric_value|format:"{:0.1f}"}}</text>
+			</g>
+			<g id="pom-prec12H">
+					<text id="pom-12h-AL" transform="matrix(1 0 0 1 300.9998 462.5791)" class="tabella-valori-staz">{{w17.31.PLUV.907.171.0.numeric_value|format:"{:0.1f}"}}</text>
+					<text id="pom-12h-AT" transform="matrix(1 0 0 1 300.9998 470.5791)" class="tabella-valori-staz">{{w17.31.PLUV.907.172.0.numeric_value|format:"{:0.1f}"}}</text>
+					<text id="pom-12h-BI" transform="matrix(1 0 0 1 300.9998 479.5791)" class="tabella-valori-staz">{{w17.31.PLUV.907.173.0.numeric_value|format:"{:0.1f}"}}</text>
+					<text id="pom-12h-CN" transform="matrix(1 0 0 1 300.9998 487.5791)" class="tabella-valori-staz">{{w17.31.PLUV.907.174.0.numeric_value|format:"{:0.1f}"}}</text>
+					<text id="pom-12h-NO" transform="matrix(1 0 0 1 300.9998 496.5791)" class="tabella-valori-staz">{{w17.31.PLUV.907.175.0.numeric_value|format:"{:0.1f}"}}</text>
+					<text id="pom-12h-TO" transform="matrix(1 0 0 1 300.9998 504.5791)" class="tabella-valori-staz">{{w17.31.PLUV.907.176.0.numeric_value|format:"{:0.1f}"}}</text>
+					<text id="pom-12h-VB" transform="matrix(1 0 0 1 300.9998 513.5791)" class="tabella-valori-staz">{{w17.31.PLUV.907.177.0.numeric_value|format:"{:0.1f}"}}</text>
+					<text id="pom-12h-VC" transform="matrix(1 0 0 1 300.9998 521.5791)" class="tabella-valori-staz">{{w17.31.PLUV.907.178.0.numeric_value|format:"{:0.1f}"}}</text>
+			</g>
+			<g id="pom-prec3H">
+					<text id="pom-3h-AL" transform="matrix(1 0 0 1 411.9998 462.5791)" class="tabella-valori-staz">{{w17.31.PLUV.905.171.0.numeric_value|format:"{:0.1f}"}}</text>
+					<text id="pom-3h-AT" transform="matrix(1 0 0 1 411.9998 470.5791)" class="tabella-valori-staz">{{w17.31.PLUV.905.172.0.numeric_value|format:"{:0.1f}"}}</text>
+					<text id="pom-3h-BI" transform="matrix(1 0 0 1 411.9998 479.5791)" class="tabella-valori-staz">{{w17.31.PLUV.905.173.0.numeric_value|format:"{:0.1f}"}}</text>
+					<text id="pom-3h-CN" transform="matrix(1 0 0 1 411.9998 487.5791)" class="tabella-valori-staz">{{w17.31.PLUV.905.174.0.numeric_value|format:"{:0.1f}"}}</text>
+					<text id="pom-3h-NO" transform="matrix(1 0 0 1 411.9998 495.5791)" class="tabella-valori-staz">{{w17.31.PLUV.905.175.0.numeric_value|format:"{:0.1f}"}}</text>
+					<text id="pom-3h-TO" transform="matrix(1 0 0 1 411.9998 503.5791)" class="tabella-valori-staz">{{w17.31.PLUV.905.176.0.numeric_value|format:"{:0.1f}"}}</text>
+					<text id="pom-3h-VB" transform="matrix(1 0 0 1 411.9998 512.5791)" class="tabella-valori-staz">{{w17.31.PLUV.905.177.0.numeric_value|format:"{:0.1f}"}}</text>
+					<text id="pom-3h-VC" transform="matrix(1 0 0 1 411.9998 521.5791)" class="tabella-valori-staz">{{w17.31.PLUV.905.178.0.numeric_value|format:"{:0.1f}"}}</text>
+			</g>
+			<g id="pom-STAZIONI-12H">
+					<text id="pom-stazione-12h-AL" transform="matrix(1 0 0 1 218 461.5791)" class="tabella-valori-staz">
+						{% if w17.31.PLUV.907.171.0.cod_staz_meteo is not None %}
+							{{stazioni|get_item:w17.31.PLUV.907.171.0.cod_staz_meteo}}
+						{% endif %} 
+					</text>
+					<text id="pom-stazione-12h-AT" transform="matrix(1 0 0 1 218 470.5791)" class="tabella-valori-staz">
+						{% if w17.31.PLUV.907.172.0.cod_staz_meteo is not None %}
+							{{stazioni|get_item:w17.31.PLUV.907.172.0.cod_staz_meteo}}
+						{% endif %} 
+					</text>
+					<text id="pom-stazione-12h-BI" transform="matrix(1 0 0 1 218 478.5791)" class="tabella-valori-staz">
+						{% if w17.31.PLUV.907.173.0.cod_staz_meteo is not None %}
+							{{stazioni|get_item:w17.31.PLUV.907.173.0.cod_staz_meteo}}
+						{% endif %} 
+					</text>
+					<text id="pom-stazione-12h-CN" transform="matrix(1 0 0 1 218 487.5791)" class="tabella-valori-staz">
+						{% if w17.31.PLUV.907.174.0.cod_staz_meteo is not None %}
+							{{stazioni|get_item:w17.31.PLUV.907.174.0.cod_staz_meteo}}
+						{% endif %} 
+					</text>
+					<text id="pom-stazione-12h-NO" transform="matrix(1 0 0 1 218 495.5791)" class="tabella-valori-staz">
+						{% if w17.31.PLUV.907.175.0.cod_staz_meteo is not None %}
+							{{stazioni|get_item:w17.31.PLUV.907.175.0.cod_staz_meteo}}
+						{% endif %} 
+					</text>
+					<text id="pom-stazione-12h-TO" transform="matrix(1 0 0 1 218 503.5791)" class="tabella-valori-staz">
+						{% if w17.31.PLUV.907.176.0.cod_staz_meteo is not None %}
+							{{stazioni|get_item:w17.31.PLUV.907.176.0.cod_staz_meteo}}
+						{% endif %} 
+					</text>
+					<text id="pom-stazione-12h-VB" transform="matrix(1 0 0 1 218 512.5791)" class="tabella-valori-staz">
+						{% if w17.31.PLUV.907.177.0.cod_staz_meteo is not None %}
+							{{stazioni|get_item:w17.31.PLUV.907.177.0.cod_staz_meteo}}
+						{% endif %} 
+					</text>
+					<text id="pom-stazione-12h-VC" transform="matrix(1 0 0 1 218 521.5791)" class="tabella-valori-staz">
+						{% if w17.31.PLUV.907.178.0.cod_staz_meteo is not None %}
+							{{stazioni|get_item:w17.31.PLUV.907.178.0.cod_staz_meteo}}
+						{% endif %} 
+					</text>
+			</g>
+			
+			
+			
+			<g id="pom-STAZIONI-3H">
+				
+					<text id="pom-stazione-3h-AL" transform="matrix(1 0 0 1 328 461.5791)" class="tabella-valori-staz">
+						{% if w17.31.PLUV.905.171.0.cod_staz_meteo is not None %}
+							{{stazioni|get_item:w17.31.PLUV.905.171.0.cod_staz_meteo}}
+						{% endif %}
+					</text>
+					<text id="pom-stazione-3h-AT" transform="matrix(1 0 0 1 328 470.5791)" class="tabella-valori-staz">
+						{% if w17.31.PLUV.905.172.0.cod_staz_meteo is not None %}
+							{{stazioni|get_item:w17.31.PLUV.905.172.0.cod_staz_meteo}}
+						{% endif %}
+					</text>
+					<text id="pom-stazione-3h-BI" transform="matrix(1 0 0 1 328 478.5791)" class="tabella-valori-staz">
+						{% if w17.31.PLUV.905.173.0.cod_staz_meteo is not None %}
+							{{stazioni|get_item:w17.31.PLUV.905.173.0.cod_staz_meteo}}
+						{% endif %}
+					</text>
+					<text id="pom-stazione-3h-CN" transform="matrix(1 0 0 1 328 487.5791)" class="tabella-valori-staz">
+						{% if w17.31.PLUV.905.174.0.cod_staz_meteo is not None %}
+							{{stazioni|get_item:w17.31.PLUV.905.174.0.cod_staz_meteo}}
+						{% endif %}
+					</text>
+					<text id="pom-stazione-3h-NO" transform="matrix(1 0 0 1 328 495.5791)" class="tabella-valori-staz">
+						{% if w17.31.PLUV.905.175.0.cod_staz_meteo is not None %}
+							{{stazioni|get_item:w17.31.PLUV.905.175.0.cod_staz_meteo}}
+						{% endif %}
+					</text>
+					<text id="pom-stazione-3h-TO" transform="matrix(1 0 0 1 328 503.5791)" class="tabella-valori-staz">
+						{% if w17.31.PLUV.905.176.0.cod_staz_meteo is not None %}
+							{{stazioni|get_item:w17.31.PLUV.905.176.0.cod_staz_meteo}}
+						{% endif %}
+					</text>
+					<text id="pom-stazione-3h-VB" transform="matrix(1 0 0 1 328 512.5791)" class="tabella-valori-staz">
+						{% if w17.31.PLUV.905.177.0.cod_staz_meteo is not None %}
+							{{stazioni|get_item:w17.31.PLUV.905.177.0.cod_staz_meteo}}
+						{% endif %}
+					</text>
+					<text id="pom-stazione-3h-VC" transform="matrix(1 0 0 1 328 521.5791)" class="tabella-valori-staz">
+						{% if w17.31.PLUV.905.178.0.cod_staz_meteo is not None %}
+							{{stazioni|get_item:w17.31.PLUV.905.178.0.cod_staz_meteo}}
+						{% endif %}
+					</text>
+			</g>
+		</g>
+	</g>
+</g>
 
-  <foreignObject x="111.5" y="49" width="43" height="62" >
-    <div xmlns="http://www.w3.org/1999/xhtml" class="testi">
-      <img src="data:image/png;base64,{{ cloudiness_image }}" style="width: 40px; height: 40px;">
+
+<g id="TEMPERATURE">
+	<text transform="matrix(1 0 0 1 32.4875 559.1904)" class="sezioni-testo">Temperature</text>
+	<rect id="riga-blu-temp" x="32.491" y="562.385" style="fill:#2F55AC;" width="333.842" height="0.837"/>
+	<foreignObject x="30" y="570" width="143" height="162" >
+		<div xmlns="http://www.w3.org/1999/xhtml" class="testobol">
+			<img src="data:image/png;base64,{{ temp_minime_image }}" style="width: 120px; height: 130px;">
+		</div>
+	</foreignObject>
+	<foreignObject x="146" y="570" width="143" height="162" >
+		<div xmlns="http://www.w3.org/1999/xhtml" class="testobol">
+			<img src="data:image/png;base64,{{ temp_massime_image }}" style="width: 120px; height: 130px;">
+		</div>
+	</foreignObject>
+	<!--<rect id="IMG-05-tempmax-legenda" x="149" y="572" style="fill:#2F55AC;" width="124" height="131"/>
+	<rect id="IMG-06-tempmin" x="33" y="572" style="fill:#2F55AC;" width="110" height="131"/>-->
+	<rect x="34.833" y="710.667" style="fill:none;" width="329" height="17"/>
+	<foreignObject x="35" y="700" width="230" height="30" >
+		<div xmlns="http://www.w3.org/1999/xhtml" class="testobol" style="padding-right: 1px;">
+			{{w17.32.TERMA.67.text_value|linebreaks}}
+		</div>
+	</foreignObject>
+	<!--<text transform="matrix(1 0 0 1 34.8333 716.3942)" class="testobol">BLA BLA testo temperature</text>-->
+	
+	
+	<g id="tab-temperat-vuota-statica">
+		<rect x="280" y="580.47" style="fill:#F1F1F2;" width="26.284" height="10.888"/>
+		<rect x="280" y="591.358" style="fill:#D0D2D3;" width="26.284" height="10.888"/>
+		<rect x="280" y="602.246" style="fill:#F1F1F2;" width="26.284" height="10.888"/>
+		<rect x="280" y="613.134" style="fill:#D0D2D3;" width="26.284" height="10.888"/>
+		<rect x="280" y="624.022" style="fill:#F1F1F2;" width="26.284" height="10.888"/>
+		<rect x="280" y="634.91" style="fill:#D0D2D3;" width="26.284" height="10.888"/>
+		<rect x="280" y="645.798" style="fill:#F1F1F2;" width="26.284" height="10.888"/>
+		<rect x="280" y="656.686" style="fill:#D0D2D3;" width="26.284" height="10.888"/>
+		
+		<text transform="matrix(1 0 0 1 289.5463 587.579)" class="tabella-temp">AL</text>
+		<text transform="matrix(1 0 0 1 289.2181 598.9124)" class="tabella-temp">AT</text>
+		<text transform="matrix(1 0 0 1 290.0555 610.2457)" class="tabella-temp">BI</text>
+		<text transform="matrix(1 0 0 1 289.307 620.2458)" class="tabella-temp">CN</text>
+		<text transform="matrix(1 0 0 1 289.1125 630.9124)" class="tabella-temp">NO</text>
+		<text transform="matrix(1 0 0 1 289.2322 641.5791)" class="tabella-temp">TO</text>
+		<text transform="matrix(1 0 0 1 288.6932 652.9125)" class="tabella-temp">VB</text>
+		<text transform="matrix(1 0 0 1 288.8337 664.2457)" class="tabella-temp">VC</text>
+		
+		<rect x="280" y="669.642" style="fill:#F1F1F2;" width="26.284" height="10.888"/>
+		<rect x="280" y="680.53" style="fill:#D0D2D3;" width="26.284" height="10.888"/>
+		<rect x="280" y="691.418" style="fill:#F1F1F2;" width="26.284" height="10.888"/>
+		
+		<text transform="matrix(1 0 0 1 284.8337 676.2457)" class="tabella-temp">700 m</text>
+		<text transform="matrix(1 0 0 1 282.8337 688.2457)" class="tabella-temp">1500 m</text>
+		<text transform="matrix(1 0 0 1 282.8337 699.2457)" class="tabella-temp">2000 m</text>
+		
+		<rect x="308" y="580.47" style="fill:#F1F1F2;" width="26.284" height="10.888"/>
+		<rect x="308" y="591.358" style="fill:#D0D2D3;" width="26.284" height="10.888"/>
+		<rect x="308" y="602.246" style="fill:#F1F1F2;" width="26.284" height="10.888"/>
+		<rect x="308" y="613.134" style="fill:#D0D2D3;" width="26.284" height="10.888"/>
+		<rect x="308" y="624.022" style="fill:#F1F1F2;" width="26.284" height="10.888"/>
+		<rect x="308" y="634.91" style="fill:#D0D2D3;" width="26.284" height="10.888"/>
+		<rect x="308" y="645.798" style="fill:#F1F1F2;" width="26.284" height="10.888"/>
+		<rect x="308" y="656.686" style="fill:#D0D2D3;" width="26.284" height="10.888"/>
+		<rect x="308" y="669.642" style="fill:#F1F1F2;" width="26.284" height="10.888"/>
+		<rect x="308" y="680.53" style="fill:#D0D2D3;" width="26.284" height="10.888"/>
+		<rect x="308" y="691.418" style="fill:#F1F1F2;" width="26.284" height="10.888"/>
+		<rect x="336" y="580.47" style="fill:#F1F1F2;" width="26.284" height="10.888"/>
+		<rect x="336" y="591.358" style="fill:#D0D2D3;" width="26.284" height="10.888"/>
+		<rect x="336" y="602.246" style="fill:#F1F1F2;" width="26.284" height="10.888"/>
+		<rect x="336" y="613.134" style="fill:#D0D2D3;" width="26.284" height="10.888"/>
+		<rect x="336" y="624.022" style="fill:#F1F1F2;" width="26.284" height="10.888"/>
+		<rect x="336" y="634.91" style="fill:#D0D2D3;" width="26.284" height="10.888"/>
+		<rect x="336" y="645.798" style="fill:#F1F1F2;" width="26.284" height="10.888"/>
+		<rect x="336" y="656.686" style="fill:#D0D2D3;" width="26.284" height="10.888"/>
+		<rect x="336" y="669.642" style="fill:#F1F1F2;" width="26.284" height="10.888"/>
+		<rect x="336" y="680.53" style="fill:#D0D2D3;" width="26.284" height="10.888"/>
+		<rect x="336" y="691.418" style="fill:#F1F1F2;" width="26.284" height="10.888"/>
+		<rect x="308" y="567.965" style="fill:#D0D2D3;" width="26.284" height="10.888"/>
+		<rect x="336" y="567.965" style="fill:#D0D2D3;" width="26.284" height="10.888"/>
+		<text transform="matrix(1 0 0 1 310 575.2457)" class="tabella-temp">MIN(&#xB0;C)</text>
+		<text transform="matrix(1 0 0 1 337 575.2457)" class="tabella-temp">MAX(&#xB0;C)</text>
+	</g>
+	
+	
+	
+	
+	<g id="FRECCE-dinamiche">
+		<g id="frecce-min">
+			<g id="frecce-min-AL" transform="translate(323 580) scale(2.85, 2.85)" width="4" height="4">
+				{% include "analisi_arrows.svg" with id_trend=w17.34.TERMA.9.id_trend colore="blue"%}
+			</g>
+			<g id="frecce-min-AT" transform="translate(323 591) scale(2.85, 2.85)" width="4" height="4">
+				{% include "analisi_arrows.svg" with id_trend=w17.34.TERMA.11.id_trend colore="blue"%}
+			</g>
+			<g id="frecce-min-BI" transform="translate(323 602) scale(2.85, 2.85)" width="4" height="4">
+				{% include "analisi_arrows.svg" with id_trend=w17.34.TERMA.1.id_trend colore="blue"%}
+			</g>
+			<g id="frecce-min-CN" transform="translate(323 613) scale(2.85, 2.85)" width="4" height="4">
+				{% include "analisi_arrows.svg" with id_trend=w17.34.TERMA.28.id_trend colore="blue"%}
+			</g>
+			<g id="frecce-min-NO" transform="translate(323 624) scale(2.85, 2.85)" width="4" height="4">
+				{% include "analisi_arrows.svg" with id_trend=w17.34.TERMA.33.id_trend colore="blue"%}
+			</g>
+			<g id="frecce-min-TO" transform="translate(323 635) scale(2.85, 2.85)" width="4" height="4">
+				{% include "analisi_arrows.svg" with id_trend=w17.34.TERMA.59.id_trend colore="blue"%}
+			</g>
+			<g id="frecce-min-VB" transform="translate(323 646) scale(2.85, 2.85)" width="4" height="4">
+				{% include "analisi_arrows.svg" with id_trend=w17.34.TERMA.63.id_trend colore="blue"%}
+			</g>
+			<g id="frecce-min-VC" transform="translate(323 657) scale(2.85, 2.85)" width="4" height="4">
+				{% include "analisi_arrows.svg" with id_trend=w17.34.TERMA.64.id_trend colore="blue"%}
+			</g>
+			<g id="frecce-min-700" transform="translate(323 669) scale(2.85, 2.85)" width="4" height="4">
+				{% include "analisi_arrows.svg" with id_trend=w17.34.TERMA_700.67.id_trend colore="blue"%}
+			</g>
+			<g id="frecce-min-1500" transform="translate(323 680) scale(2.85, 2.85)" width="4" height="4">
+				{% include "analisi_arrows.svg" with id_trend=w17.34.TERMA_1500.67.id_trend colore="blue"%}
+			</g>
+			<g id="frecce-min-2000" transform="translate(323 691) scale(2.85, 2.85)" width="4" height="4">
+				{% include "analisi_arrows.svg" with id_trend=w17.34.TERMA_2000.67.id_trend colore="blue"%}
+			</g>
+		</g>
+		
+		<g id="frecce-max">
+			<g id="frecce-max-AL" transform="translate(352 580) scale(2.85, 2.85)" width="4" height="4">
+				{% include "analisi_arrows.svg" with id_trend=w17.33.TERMA.9.id_trend colore="red"%}
+			</g>
+			<g id="frecce-max-AT" transform="translate(352 591) scale(2.85, 2.85)" width="4" height="4">
+				{% include "analisi_arrows.svg" with id_trend=w17.33.TERMA.11.id_trend colore="red"%}
+			</g>
+			<g id="frecce-max-BI" transform="translate(352 602) scale(2.85, 2.85)" width="4" height="4">
+				{% include "analisi_arrows.svg" with id_trend=w17.33.TERMA.1.id_trend colore="red"%}
+			</g>
+			<g id="frecce-max-CN" transform="translate(352 613) scale(2.85, 2.85)" width="4" height="4">
+				{% include "analisi_arrows.svg" with id_trend=w17.33.TERMA.28.id_trend colore="red"%}
+			</g>
+			<g id="frecce-max-NO" transform="translate(352 624) scale(2.85, 2.85)" width="4" height="4">
+				{% include "analisi_arrows.svg" with id_trend=w17.33.TERMA.33.id_trend colore="red"%}
+			</g>
+			<g id="frecce-max-TO" transform="translate(352 635) scale(2.85, 2.85)" width="4" height="4">
+				{% include "analisi_arrows.svg" with id_trend=w17.33.TERMA.59.id_trend colore="red"%}
+			</g>
+			<g id="frecce-max-VB" transform="translate(352 646) scale(2.85, 2.85)" width="4" height="4">
+				{% include "analisi_arrows.svg" with id_trend=w17.33.TERMA.63.id_trend colore="red"%}
+			</g>
+			<g id="frecce-max-VC" transform="translate(352 657) scale(2.85, 2.85)" width="4" height="4">
+				{% include "analisi_arrows.svg" with id_trend=w17.33.TERMA.64.id_trend colore="red"%}
+			</g>
+			<g id="frecce-max-700" transform="translate(352 669) scale(2.85, 2.85)" width="4" height="4">
+				{% include "analisi_arrows.svg" with id_trend=w17.33.TERMA_700.67.id_trend colore="red"%}
+			</g>
+			<g id="frecce-max-1500" transform="translate(352 680) scale(2.85, 2.85)" width="4" height="4">
+				{% include "analisi_arrows.svg" with id_trend=w17.33.TERMA_1500.67.id_trend colore="red"%}
+			</g>
+			<g id="frecce-max-2000" transform="translate(352 691) scale(2.85, 2.85)" width="4" height="4">
+				{% include "analisi_arrows.svg" with id_trend=w17.33.TERMA_2000.67.id_trend colore="red"%}
+			</g>
+		</g>
+	</g>
+	
+	
+	<g id="temp-min-dinamiche">
+		<text id="tmin-AL" transform="matrix(1 0 0 1 312.8796 587.2457)" class="tabella-temp">{{w17.34.TERMA.9.numeric_value|floatformat:0}}</text>
+		<text id="tmin-AT" transform="matrix(1 0 0 1 312.8796 598.2457)" class="tabella-temp">{{w17.34.TERMA.11.numeric_value|floatformat:0}}</text>
+		<text id="tmin-BI" transform="matrix(1 0 0 1 312.8796 610.2457)" class="tabella-temp">{{w17.34.TERMA.1.numeric_value|floatformat:0}}</text>
+		<text id="tmin-CN" transform="matrix(1 0 0 1 312.8796 621.2457)" class="tabella-temp">{{w17.34.TERMA.28.numeric_value|floatformat:0}}</text>
+		<text id="tmin-NO" transform="matrix(1 0 0 1 312.8796 631.2457)" class="tabella-temp">{{w17.34.TERMA.33.numeric_value|floatformat:0}}</text>
+		<text id="tmin-TO" transform="matrix(1 0 0 1 312.8796 642.2457)" class="tabella-temp">{{w17.34.TERMA.59.numeric_value|floatformat:0}}</text>
+		<text id="tmin-VB" transform="matrix(1 0 0 1 312.8796 654.2457)" class="tabella-temp">{{w17.34.TERMA.63.numeric_value|floatformat:0}}</text>
+		<text id="tmin-VC" transform="matrix(1 0 0 1 312.8796 665.2457)" class="tabella-temp">{{w17.34.TERMA.64.numeric_value|floatformat:0}}</text>
+		<text id="tmin-700m" transform="matrix(1 0 0 1 312.8796 676.2457)" class="tabella-temp">{{w17.34.TERMA_700.67.numeric_value|floatformat:0}}</text>
+		<text id="tmin-1500m" transform="matrix(1 0 0 1 312.8796 687.2457)" class="tabella-temp">{{w17.34.TERMA_1500.67.numeric_value|floatformat:0}}</text>
+		<text id="tmin-2000m" transform="matrix(1 0 0 1 312.8796 699.2457)" class="tabella-temp">{{w17.34.TERMA_2000.67.numeric_value|floatformat:0}}</text>
+	</g>
+	<g id="temp-max-dinamiche">
+		<text id="tmax-AL" transform="matrix(1 0 0 1 341.8796 587.2457)" class="tabella-temp">{{w17.33.TERMA.9.numeric_value|floatformat:0}}</text>
+		<text id="tmax-AT" transform="matrix(1 0 0 1 341.8796 598.2457)" class="tabella-temp">{{w17.33.TERMA.11.numeric_value|floatformat:0}}</text>
+		<text id="tmax-BI" transform="matrix(1 0 0 1 341.8796 610.2457)" class="tabella-temp">{{w17.33.TERMA.1.numeric_value|floatformat:0}}</text>
+		<text id="tmax-CN" transform="matrix(1 0 0 1 341.8796 621.2457)" class="tabella-temp">{{w17.33.TERMA.28.numeric_value|floatformat:0}}</text>
+		<text id="tmax-NO" transform="matrix(1 0 0 1 341.8796 631.2457)" class="tabella-temp">{{w17.33.TERMA.33.numeric_value|floatformat:0}}</text>
+		<text id="tmax-TO" transform="matrix(1 0 0 1 341.8796 642.2457)" class="tabella-temp">{{w17.33.TERMA.59.numeric_value|floatformat:0}}</text>
+		<text id="tmax-VB" transform="matrix(1 0 0 1 341.8796 654.2457)" class="tabella-temp">{{w17.33.TERMA.63.numeric_value|floatformat:0}}</text>
+		<text id="tmax-VC" transform="matrix(1 0 0 1 341.8796 665.2457)" class="tabella-temp">{{w17.33.TERMA.64.numeric_value|floatformat:0}}</text>
+		<text id="tmax-700m" transform="matrix(1 0 0 1 341.8796 676.2457)" class="tabella-temp">{{w17.33.TERMA_700.67.numeric_value|floatformat:0}}</text>
+		<text id="tmax-1500m" transform="matrix(1 0 0 1 341.8796 687.2457)" class="tabella-temp">{{w17.33.TERMA_1500.67.numeric_value|floatformat:0}}</text>
+		<text id="tmax-2000m" transform="matrix(1 0 0 1 341.8796 699.2457)" class="tabella-temp">{{w17.33.TERMA_2000.67.numeric_value|floatformat:0}}</text>
+	</g>
+</g>
+
+
+
+<g id="ZEROTERMICO">
+	<text transform="matrix(1 0 0 1 380.4875 558.7781)" class="sezioni-testo">Zero termico</text>
+	<rect id="riga-blu-zt" x="380.491" y="561.973" style="fill:#2F55AC;" width="179.842" height="0.837"/>
+	<rect x="380.167" y="572" style="fill:none;" width="180.667" height="74.333"/>
+	<foreignObject x="380" y="565" width="175" height="84" >
+    <div xmlns="http://www.w3.org/1999/xhtml" class="testobol">
+      {{ w17.32.FRZLVL.67.text_value|linebreaks }}
     </div>
   </foreignObject>
-
-  <foreignObject x="153.5" y="49" width="46" height="62" >
-    <div xmlns="http://www.w3.org/1999/xhtml" class="testi" style="padding-right: 1px;">
-        {{ w17.cloudiness }}
+	<!--<text transform="matrix(1 0 0 1 380.1668 577.7275)" class="testobol">BLA BLA testo zero termico</text>-->
+</g>
+<g id="QUOTANEVE">
+{% if w17.32.SNOW_LEV.912.text_value|length > 0 %}	
+		<text id="Nevicate_e_quota_neve" transform="matrix(1 0 0 1 379.6011 663.4447)" class="sezioni-testo">Nevicate e quota neve</text>
+	<rect id="riga-blu-qneve" x="379.604" y="666.639" style="fill:#2F55AC;" width="180.729" height="0.837"/>
+	<rect x="379.5" y="672.333" style="fill:none;" width="182" height="65"/>
+	<foreignObject x="380" y="668" width="175" height="74" >
+    <div xmlns="http://www.w3.org/1999/xhtml" class="testobol">
+      {{ w17.32.SNOW_LEV.912.text_value|linebreaks }}
     </div>
   </foreignObject>
-
-  <g transform="translate(0 46)">
-    <text
-        style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
-        x="10.000085"
-        y="49.348007">
-      <tspan
-          style="font-size:4.23333px;stroke-width:0.352778"
-          x="10.000085"
-          y="49.348007">Precipitazioni
-      </tspan>
-    </text>
-    <path d="M 10,50.793881 H 200.00011 V 50.493668 H 10 Z" style="fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778" id="path644"></path>
-  </g>
-
-  <foreignObject x="10" y="99" width="190" height="143" >
-    <div xmlns="http://www.w3.org/1999/xhtml" >
-      <table class="tabella-pluv">
-        <thead>
-          <tr> 
-            <th rowspan="3">PROV</th>
-            <th colspan="5">MATTINO</th>
-            <th colspan="5">POMERIGGIO</th>
-          </tr>
-          <tr>
-            <th rowspan="2">Media areale</th>
-            <th colspan="2">massimo puntuale su 12 ore</th>
-            <th colspan="2">massimo puntuale su 3 ore</th>
-            <th rowspan="2">Media areale</th>
-            <th colspan="2">massimo puntuale su 12 ore</th>
-            <th colspan="2">massimo puntuale su 3 ore</th>
-          </tr>
-          <tr>
-            <th>stazione</th>
-            <th>mm/12h</th>
-            <th>stazione</th>
-            <th>mm/3h</th>
-            <th>stazione</th>
-            <th>mm/12h</th>
-            <th>stazione</th>
-            <th>mm/3h</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th>AL</th>
-            <td>{{w17.30.PLUV.901.171.0.numeric_value|floatformat:1}}</td>
-            <td>
-              {% if w17.30.PLUV.907.171.0.cod_staz_meteo is not None %}
-                {{stazioni|get_item:w17.30.PLUV.907.171.0.cod_staz_meteo}}
-              {% endif %}  
-            </td>
-            <td>{{w17.30.PLUV.907.171.0.numeric_value|floatformat:1}}</td>
-            <td>
-              {% if w17.30.PLUV.905.171.0.cod_staz_meteo is not None %}
-                {{stazioni|get_item:w17.30.PLUV.905.171.0.cod_staz_meteo}}
-              {% endif %}  
-            </td>
-            <td>{{w17.30.PLUV.905.171.0.numeric_value|floatformat:1}}</td>
-            <td>{{w17.31.PLUV.901.171.0.numeric_value|floatformat:1}}</td>
-            <td>
-              {% if w17.31.PLUV.907.171.0.cod_staz_meteo is not None %}
-                {{ stazioni | get_item:w17.31.PLUV.907.171.0.cod_staz_meteo}}  
-              {% endif %}
-            </td>
-            <td>{{w17.31.PLUV.907.171.0.numeric_value|floatformat:1}}</td>
-            <td>
-              {% if w17.31.PLUV.905.171.0.cod_staz_meteo is not None %}
-                {{ stazioni | get_item:w17.31.PLUV.905.171.0.cod_staz_meteo}}  
-              {% endif %}
-            </td>
-            <td>{{w17.31.PLUV.905.171.0.numeric_value|floatformat:1}}</td>
-          </tr>
-          <tr>
-            <th>AT</th>
-            <td>{{w17.30.PLUV.901.172.0.numeric_value|floatformat:1}}</td>
-            <td>
-              {% if w17.30.PLUV.907.172.0.cod_staz_meteo is not None %}
-                {{stazioni|get_item:w17.30.PLUV.907.172.0.cod_staz_meteo}}
-              {% endif %}  
-            </td>
-            <td>{{w17.30.PLUV.907.172.0.numeric_value|floatformat:1}}</td>
-            <td>
-              {% if w17.30.PLUV.905.172.0.cod_staz_meteo is not None %}
-                {{stazioni|get_item:w17.30.PLUV.905.172.0.cod_staz_meteo}}
-              {% endif %} 
-            </td>
-            <td>{{w17.30.PLUV.905.172.0.numeric_value|floatformat:1}}</td>
-            <td>{{w17.31.PLUV.901.172.0.numeric_value|floatformat:1}}</td>
-            <td>
-              {% if w17.31.PLUV.907.172.0.cod_staz_meteo is not None %}
-                {{stazioni|get_item:w17.31.PLUV.907.172.0.cod_staz_meteo}}
-              {% endif %} 
-            </td>
-            <td>{{w17.31.PLUV.907.172.0.numeric_value|floatformat:1}}</td>
-            <td>
-              {% if w17.31.PLUV.905.172.0.cod_staz_meteo is not None %}
-                {{stazioni|get_item:w17.31.PLUV.905.172.0.cod_staz_meteo}}
-              {% endif %} 
-            </td>
-            <td>{{w17.31.PLUV.905.172.0.numeric_value|floatformat:1}}</td>
-          </tr>
-          <tr>
-            <th>BI</th>
-            <td>{{w17.30.PLUV.901.173.0.numeric_value|floatformat:1}}</td>
-            <td>
-              {% if w17.30.PLUV.907.173.0.cod_staz_meteo is not None %}
-                {{stazioni|get_item:w17.30.PLUV.907.173.0.cod_staz_meteo}}
-              {% endif %} 
-            </td>
-            <td>{{w17.30.PLUV.907.173.0.numeric_value|floatformat:1}}</td>
-            <td>
-              {% if w17.30.PLUV.905.173.0.cod_staz_meteo is not None %}
-                {{stazioni|get_item:w17.30.PLUV.905.173.0.cod_staz_meteo}}
-              {% endif %} 
-            </td>
-            <td>{{w17.30.PLUV.905.173.0.numeric_value|floatformat:1}}</td>
-            <td>{{w17.31.PLUV.901.173.0.numeric_value|floatformat:1}}</td>
-            <td>
-              {% if w17.31.PLUV.907.173.0.cod_staz_meteo is not None %}
-                {{stazioni|get_item:w17.31.PLUV.907.173.0.cod_staz_meteo}}
-              {% endif %} 
-            </td>
-            <td>{{w17.31.PLUV.907.173.0.numeric_value|floatformat:1}}</td>
-            <td>
-              {% if w17.31.PLUV.905.173.0.cod_staz_meteo is not None %}
-                {{stazioni|get_item:w17.31.PLUV.905.173.0.cod_staz_meteo}}
-              {% endif %} 
-            </td>
-            <td>{{w17.31.PLUV.905.173.0.numeric_value|floatformat:1}}</td>
-          </tr>
-          <tr>
-            <th>CN</th>
-            <td>{{w17.30.PLUV.901.174.0.numeric_value|floatformat:1}}</td>
-            <td>
-              {% if w17.30.PLUV.907.174.0.cod_staz_meteo is not None %}
-                {{stazioni|get_item:w17.30.PLUV.907.174.0.cod_staz_meteo}}
-              {% endif %} 
-            </td>
-            <td>{{w17.30.PLUV.907.174.0.numeric_value|floatformat:1}}</td>
-            <td>
-              {% if w17.30.PLUV.905.174.0.cod_staz_meteo is not None %}
-                {{stazioni|get_item:w17.30.PLUV.905.174.0.cod_staz_meteo}}
-              {% endif %} 
-            </td>
-            <td>{{w17.30.PLUV.905.174.0.numeric_value|floatformat:1}}</td>
-            <td>{{w17.31.PLUV.901.174.0.numeric_value|floatformat:1}}</td>
-            <td>
-              {% if w17.31.PLUV.907.174.0.cod_staz_meteo is not None %}
-                {{stazioni|get_item:w17.31.PLUV.907.174.0.cod_staz_meteo}}
-              {% endif %} 
-            </td>
-            <td>{{w17.31.PLUV.907.174.0.numeric_value|floatformat:1}}</td>
-            <td>
-              {% if w17.31.PLUV.905.174.0.cod_staz_meteo is not None %}
-                {{stazioni|get_item:w17.31.PLUV.905.174.0.cod_staz_meteo}}
-              {% endif %} 
-            </td>
-            <td>{{w17.31.PLUV.905.174.0.numeric_value|floatformat:1}}</td>
-          </tr>
-          <tr>
-            <th>NO</th>
-            <td>{{w17.30.PLUV.901.175.0.numeric_value|floatformat:1}}</td>
-            <td>
-              {% if w17.30.PLUV.907.175.0.cod_staz_meteo is not None %}
-                {{stazioni|get_item:w17.30.PLUV.907.175.0.cod_staz_meteo}}
-              {% endif %} 
-            </td>
-            <td>{{w17.30.PLUV.907.175.0.numeric_value|floatformat:1}}</td>
-            <td>
-              {% if w17.30.PLUV.905.175.0.cod_staz_meteo is not None %}
-                {{stazioni|get_item:w17.30.PLUV.905.175.0.cod_staz_meteo}}
-              {% endif %} 
-            </td>
-            <td>{{w17.30.PLUV.905.175.0.numeric_value|floatformat:1}}</td>
-            <td>{{w17.31.PLUV.901.175.0.numeric_value|floatformat:1}}</td>
-            <td>
-              {% if w17.31.PLUV.907.175.0.cod_staz_meteo is not None %}
-                {{stazioni|get_item:w17.31.PLUV.907.175.0.cod_staz_meteo}}
-              {% endif %} 
-            </td>
-            <td>{{w17.31.PLUV.907.175.0.numeric_value|floatformat:1}}</td>
-            <td>
-              {% if w17.31.PLUV.905.175.0.cod_staz_meteo is not None %}
-                {{stazioni|get_item:w17.31.PLUV.905.175.0.cod_staz_meteo}}
-              {% endif %} 
-            </td>
-            <td>{{w17.31.PLUV.905.175.0.numeric_value|floatformat:1}}</td>
-          </tr>
-          <tr>
-            <th>TO</th>
-            <td>{{w17.30.PLUV.901.176.0.numeric_value|floatformat:1}}</td>
-            <td>
-              {% if w17.30.PLUV.907.176.0.cod_staz_meteo is not None %}
-                {{stazioni|get_item:w17.30.PLUV.907.176.0.cod_staz_meteo}}
-              {% endif %} 
-            </td>
-            <td>{{w17.30.PLUV.907.176.0.numeric_value|floatformat:1}}</td>
-            <td>
-              {% if w17.30.PLUV.905.176.0.cod_staz_meteo is not None %}
-                {{stazioni|get_item:w17.30.PLUV.905.176.0.cod_staz_meteo}}
-              {% endif %} 
-            </td>
-            <td>{{w17.30.PLUV.905.176.0.numeric_value|floatformat:1}}</td>
-            <td>{{w17.31.PLUV.901.176.0.numeric_value|floatformat:1}}</td>
-            <td>
-              {% if w17.31.PLUV.907.176.0.cod_staz_meteo is not None %}
-                {{stazioni|get_item:w17.31.PLUV.907.176.0.cod_staz_meteo}}
-              {% endif %} 
-            </td>
-            <td>{{w17.31.PLUV.907.176.0.numeric_value|floatformat:1}}</td>
-            <td>
-              {% if w17.31.PLUV.905.176.0.cod_staz_meteo is not None %}
-                {{stazioni|get_item:w17.31.PLUV.905.176.0.cod_staz_meteo}}
-              {% endif %} 
-            </td>
-            <td>{{w17.31.PLUV.905.176.0.numeric_value|floatformat:1}}</td>
-          </tr>
-          <tr>
-            <th>VB</th>
-            <td>{{w17.30.PLUV.901.177.0.numeric_value|floatformat:1}}</td>
-            <td>
-              {% if w17.30.PLUV.907.177.0.cod_staz_meteo is not None %}
-                {{stazioni|get_item:w17.30.PLUV.907.177.0.cod_staz_meteo}}
-              {% endif %} 
-            </td>
-            <td>{{w17.30.PLUV.907.177.0.numeric_value|floatformat:1}}</td>
-            <td>
-              {% if w17.30.PLUV.905.177.0.cod_staz_meteo is not None %}
-                {{stazioni|get_item:w17.30.PLUV.905.177.0.cod_staz_meteo}}
-              {% endif %} 
-            </td>
-            <td>{{w17.30.PLUV.905.177.0.numeric_value|floatformat:1}}</td>
-            <td>{{w17.31.PLUV.901.177.0.numeric_value|floatformat:1}}</td>
-            <td>
-              {% if w17.31.PLUV.907.177.0.cod_staz_meteo is not None %}
-                {{stazioni|get_item:w17.31.PLUV.907.177.0.cod_staz_meteo}}
-              {% endif %} 
-            </td>
-            <td>{{w17.31.PLUV.907.177.0.numeric_value|floatformat:1}}</td>
-            <td>
-              {% if w17.31.PLUV.905.177.0.cod_staz_meteo is not None %}
-                {{stazioni|get_item:w17.31.PLUV.905.177.0.cod_staz_meteo}}
-              {% endif %} 
-            </td>
-            <td>{{w17.31.PLUV.905.177.0.numeric_value|floatformat:1}}</td>
-          </tr>
-          <tr>
-            <th>VC</th>
-            <td>{{w17.30.PLUV.901.178.0.numeric_value|floatformat:1}}</td>
-            <td>
-              {% if w17.30.PLUV.907.178.0.cod_staz_meteo is not None %}
-                {{stazioni|get_item:w17.30.PLUV.907.178.0.cod_staz_meteo}}
-              {% endif %} 
-            </td>
-            <td>{{w17.30.PLUV.907.178.0.numeric_value|floatformat:1}}</td>
-            <td>
-              {% if w17.30.PLUV.905.178.0.cod_staz_meteo is not None %}
-                {{stazioni|get_item:w17.30.PLUV.905.178.0.cod_staz_meteo}}
-              {% endif %}
-            </td>
-            <td>{{w17.30.PLUV.905.178.0.numeric_value|floatformat:1}}</td>
-            <td>{{w17.31.PLUV.901.178.0.numeric_value|floatformat:1}}</td>
-            <td>
-              {% if w17.31.PLUV.907.178.0.cod_staz_meteo is not None %}
-                {{stazioni|get_item:w17.31.PLUV.907.178.0.cod_staz_meteo}}
-              {% endif %}
-            </td>
-            <td>{{w17.31.PLUV.907.178.0.numeric_value|floatformat:1}}</td>
-            <td>
-              {% if w17.31.PLUV.905.178.0.cod_staz_meteo is not None %}
-                {{stazioni|get_item:w17.31.PLUV.905.178.0.cod_staz_meteo}}
-              {% endif %}
-            </td>
-            <td>{{w17.31.PLUV.905.178.0.numeric_value|floatformat:1}}</td>
-          </tr>
-        </tbody>
-      </table>
-      <div style="display: flex; align-items: top;">
-        <img src="data:image/png;base64,{{ prec_mattino_image }}" style=" width:45px;height:50px;">
-        <img src="data:image/png;base64,{{ prec_pomeriggio_image }}" style="width:45px;height:50px;">
-        <div>
-          <table class="legenda">
-            <thead>
-              <tr>
-                <th>SCALA PIOVOSITÀ</th>
-                <th>DEBOLE</th>
-                <th>MODERATA</th>
-                <th>FORTE</th>
-                <th>MOLTO FORTE</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Intensità</td>
-                <td>0-10</td>
-                <td>10-30</td>
-                <td>30-60</td>
-                <td>>60</td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="testi" style="padding-top: 2px; padding-left: 2px;">
-            {{w17.32.PLUV.67.text_value}}
-          </div>
-        </div>
-      </div>
-    </div>
-  </foreignObject>
-
-  <g transform="translate(0 137)">
-    <text
-        style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
-        x="10.000085"
-        y="49.348007">
-      <tspan
-          style="font-size:4.23333px;stroke-width:0.352778"
-          x="10.000085"
-          y="49.348007">Temperature
-      </tspan>
-    </text>
-    <path d="M 10,50.793881 H 200.00011 V 50.493668 H 10 Z" style="fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778" id="path644"></path>
-  </g>
-
-  <foreignObject x="10" y="189" width="190" height="85">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-      <div style="display: flex; align-items: top;">
-        <img src="data:image/png;base64,{{ temp_minime_image }}" style="width:45x; height:50px;">
-        <img src="data:image/png;base64,{{ temp_massime_image }}" style="width:45px; height:50px;">
-        <div style="display: flex;">
-          <div class="testi" style="width: 65px; padding: 2px;">
-            {{w17.32.TERMA.67.text_value}}
-          </div>
-          <div>
-            <table class="tabella-terma">
-              <thead>
-                <tr>
-                  <th style=" background-color: #ffffff;"></th>
-                  <th colspan="2">MIN (°C)</th>
-                  <th colspan="2">MAX (°C)</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th>AL</th>
-                  <td>{{w17.34.TERMA.9.numeric_value|floatformat:0}}</td>
-                  <td>
-                    <svg width="4" height="4">
-                      {% include "analisi_arrows.svg" with id_trend=w17.34.TERMA.9.id_trend colore="blue"%}
-                    </svg>
-                  </td>
-                  <td>{{w17.33.TERMA.9.numeric_value|floatformat:0}}</td>
-                  <td>
-                    <svg width="4" height="4">
-                      {% include "analisi_arrows.svg" with id_trend=w17.33.TERMA.9.id_trend colore="red"%}
-                    </svg>
-                  </td>
-                </tr>
-                <tr>
-                  <th>AS</th>
-                  <td>{{w17.34.TERMA.11.numeric_value|floatformat:0}}</td>
-                  <td>
-                    <svg width="4" height="4">
-                      {% include "analisi_arrows.svg" with id_trend=w17.34.TERMA.11.id_trend colore="blue"%}
-                    </svg>
-                  </td>
-                  <td>{{w17.33.TERMA.11.numeric_value|floatformat:0}}</td>
-                  <td>
-                    <svg width="4" height="4">
-                      {% include "analisi_arrows.svg" with id_trend=w17.33.TERMA.11.id_trend colore="red"%}
-                    </svg>
-                  </td>
-                </tr>
-                <tr>
-                  <th>BI</th>
-                  <td>{{w17.34.TERMA.1.numeric_value|floatformat:0}}</td>
-                  <td>
-                    <svg width="4" height="4">
-                      {% include "analisi_arrows.svg" with id_trend=w17.34.TERMA.1.id_trend colore="blue"%}
-                    </svg>
-                  </td>
-                  <td>{{w17.33.TERMA.1.numeric_value|floatformat:0}}</td>
-                  <td>
-                    <svg width="4" height="4">
-                      {% include "analisi_arrows.svg" with id_trend=w17.33.TERMA.1.id_trend colore="red"%}
-                    </svg>
-                  </td>
-                </tr>
-                <tr>
-                  <th>CN</th>
-                  <td>{{w17.34.TERMA.28.numeric_value|floatformat:0}}</td>
-                  <td>
-                    <svg width="4" height="4">
-                      {% include "analisi_arrows.svg" with id_trend=w17.34.TERMA.28.id_trend colore="blue"%}
-                    </svg>
-                  </td>
-                  <td>{{w17.33.TERMA.28.numeric_value|floatformat:0}}</td>
-                  <td>
-                    <svg width="4" height="4">
-                      {% include "analisi_arrows.svg" with id_trend=w17.33.TERMA.28.id_trend colore="red"%}
-                    </svg>
-                  </td>
-                </tr>
-                <tr>
-                  <th>NO</th>
-                  <td>{{w17.34.TERMA.33.numeric_value|floatformat:0}}</td>
-                  <td>
-                    <svg width="4" height="4">
-                      {% include "analisi_arrows.svg" with id_trend=w17.34.TERMA.33.id_trend colore="blue"%}
-                    </svg>
-                  </td>
-                  <td>{{w17.33.TERMA.33.numeric_value|floatformat:0}}</td>
-                  <td>
-                    <svg width="4" height="4">
-                      {% include "analisi_arrows.svg" with id_trend=w17.33.TERMA.33.id_trend colore="red"%}
-                    </svg>
-                  </td>
-                </tr>
-                <tr>
-                  <th>TO</th>
-                  <td>{{w17.34.TERMA.59.numeric_value|floatformat:0}}</td>
-                  <td>
-                    <svg width="4" height="4">
-                      {% include "analisi_arrows.svg" with id_trend=w17.34.TERMA.59.id_trend colore="blue"%}
-                    </svg>
-                  </td>
-                  <td>{{w17.33.TERMA.59.numeric_value|floatformat:0}}</td>
-                  <td>
-                    <svg width="4" height="4">
-                      {% include "analisi_arrows.svg" with id_trend=w17.33.TERMA.59.id_trend colore="red"%}
-                    </svg>
-                  </td>
-                </tr>
-                <tr>
-                  <th>VB</th>
-                  <td>{{w17.34.TERMA.63.numeric_value|floatformat:0}}</td>
-                  <td> 
-                    <svg width="4" height="4">
-                      {% include "analisi_arrows.svg" with id_trend=w17.34.TERMA.63.id_trend colore="blue"%}
-                    </svg>
-                  </td>
-                  <td>{{w17.33.TERMA.63.numeric_value|floatformat:0}}</td>
-                  <td>
-                    <svg width="4" height="4">
-                      {% include "analisi_arrows.svg" with id_trend=w17.33.TERMA.63.id_trend colore="red"%}
-                    </svg>
-                  </td>
-                </tr>
-                <tr>
-                  <th>VC</th>
-                  <td>{{w17.34.TERMA.64.numeric_value|floatformat:0}}</td>
-                  <td>
-                    <svg width="4" height="4">
-                      {% include "analisi_arrows.svg" with id_trend=w17.34.TERMA.64.id_trend colore="blue"%}
-                    </svg>
-                  </td>
-                  <td>{{w17.33.TERMA.64.numeric_value|floatformat:0}}</td>
-                  <td>
-                    <svg width="4" height="4">
-                      {% include "analisi_arrows.svg" with id_trend=w17.33.TERMA.64.id_trend colore="red"%}
-                    </svg>
-                  </td>
-                </tr>
-                <tr>
-                  <th>700m</th>
-                  <td>{{w17.34.TERMA_700.67.numeric_value|floatformat:0}}</td>
-                  <td>
-                    <svg width="4" height="4">
-                      {% include "analisi_arrows.svg" with id_trend=w17.34.TERMA_700.67.id_trend colore="blue"%}
-                    </svg>
-                  </td>
-                  <td>{{w17.33.TERMA_700.67.numeric_value|floatformat:0}}</td>
-                  <td>
-                    <svg width="4" height="4">
-                      {% include "analisi_arrows.svg" with id_trend=w17.33.TERMA_700.67.id_trend colore="red"%}
-                    </svg>
-                  </td>
-                </tr>
-                <tr>
-                  <th>1500m</th>
-                  <td>{{w17.34.TERMA_1500.67.numeric_value|floatformat:0}}</td>
-                  <td>
-                    <svg width="4" height="4">
-                      {% include "analisi_arrows.svg" with id_trend=w17.34.TERMA_1500.67.id_trend colore="blue"%}
-                    </svg>
-                  </td>
-                  <td>{{w17.33.TERMA_1500.67.numeric_value|floatformat:0}}</td>
-                  <td>
-                    <svg width="4" height="4">
-                    {% include "analisi_arrows.svg" with id_trend=w17.33.TERMA_1500.67.id_trend colore="red"%}
-                    </svg>
-                  </td>
-                </tr>
-                <tr>
-                  <th>2000m</th>
-                  <td>{{w17.34.TERMA_2000.67.numeric_value|floatformat:0}}</td>
-                  <td>
-                    <svg width="4" height="4">
-                    {% include "analisi_arrows.svg" with id_trend=w17.34.TERMA_2000.67.id_trend colore="blue"%}
-                    </svg>
-                  </td>
-                  <td>{{w17.33.TERMA_2000.67.numeric_value|floatformat:0}}</td>
-                  <td>
-                    <svg width="4" height="4">
-                    {% include "analisi_arrows.svg" with id_trend=w17.33.TERMA_2000.67.id_trend colore="red"%}
-                    </svg>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div> 
-    </div>
-  </foreignObject>
-
-  <g transform="translate(0 194)">
-    <text
-        style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
-        x="10.000085"
-        y="49.348007">
-      <tspan
-          style="font-size:4.23333px;stroke-width:0.352778"
-          x="10.000085"
-          y="49.348007">Zero termico
-      </tspan>
-    </text>
-    <path d="M 10,50.793881 {% if w17.32.SNOW_LEV.912.text_value|length > 0 %}H 97.500011{% else %}H 200.00011{% endif %} V 50.493668 H 10 Z" style="fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778" id="path644"></path>
-  </g>
-
-  <foreignObject x="10" y="246" width="{% if w17.32.SNOW_LEV.912.text_value|length > 0 %}85{% else %}190{% endif %}" height="25" >
-    <div xmlns="http://www.w3.org/1999/xhtml" class="testi">
-        {{ w17.32.FRZLVL.67.text_value }}
-    </div>
-  </foreignObject>
-
-{% if w17.32.SNOW_LEV.912.text_value|length > 0 %}
-  <g transform="translate(102.5 194)">
-    <text
-        style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
-        x="10.000085"
-        y="49.348007">
-      <tspan
-          style="font-size:4.23333px;stroke-width:0.352778"
-          x="10.000085"
-          y="49.348007">Nevicate e quota neve
-      </tspan>
-    </text>
-    <path d="M 10,50.793881 H 97.500011 V 50.493668 H 10 Z" style="fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778" id="path644"></path>
-  </g>
-
-  <foreignObject x="112.5" y="246" width="85" height="25" >
-    <div xmlns="http://www.w3.org/1999/xhtml" class="testi">
-        {{ w17.32.SNOW_LEV.912.text_value }}
-    </div>
-  </foreignObject>
+	<!--<text transform="matrix(1 0 0 1 379.5 678.0609)" class="testobol">BLA BLA testo quota neve</text>-->
 {% endif %}
-
-  <g transform="translate(0 215)">
-    <text
-        style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
-        x="10.000085"
-        y="49.348007">
-      <tspan
-          style="font-size:4.23333px;stroke-width:0.352778"
-          x="10.000085"
-          y="49.348007">Venti
-      </tspan>
-    </text>
-    <path d="M 10,50.793881 H 200.00011 V 50.493668 H 10 Z" style="fill:#2f55ac;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778" id="path644"></path>
-  </g>
-
-  <foreignObject x="10" y="267" width="190" height="25" >
+</g>
+<g id="VENTI">
+	<text transform="matrix(1 0 0 1 32.4875 741.6622)" class="sezioni-testo">Venti</text>
+	<rect id="riga-blu-venti" x="32.491" y="744.856" style="fill:#2F55AC;" width="529.738" height="0.837"/>
+	<rect x="32.5" y="751.333" style="fill:none;" width="526" height="58.5"/>
+	
+	<!--<text transform="matrix(1 0 0 1 32.5 757.0609)" class="testobol">
+		<tspan x="0" y="0">BLA BLA  testo vento.</tspan>
+		<tspan x="0" y="11">Bla Massima raffica sotto i 700 m: PIETRASTRETTA(TO) alle 23:00 UTC - 10.0 m/s (36.0 km/h).</tspan>
+		<tspan x="0" y="22">Bla Massima raffica tra 700 e 1500 m: COLLE SAN BERNARDO(CN) alle 07:00 UTC - 13.0 m/s (46.8 km/h).</tspan>
+		<tspan x="0" y="33">Bla Massima raffica tra 1500 e 2000 m: CAPANNE DI COSOLA(AL) alle 11:00 UTC - 24.3 m/s (87.5 km/h).</tspan>
+	</text>-->
+</g>
+<foreignObject x="35" y="748" width="527" height="284" >
     <div xmlns="http://www.w3.org/1999/xhtml">
-      <pre class="testi custum-pre">{{ w17.32.VELS.67.text_value}}</pre>
+      <pre class="testobol custum-pre">{{ w17.32.VELS.67.text_value|linebreaks}}</pre>
     </div>
   </foreignObject>
-
-  <g>
-    <text style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.175px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#2e9d53;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778" x="199.82204" y="287.82199">
-      <tspan style="text-align:end;text-anchor:end;stroke-width:0.352778" x="199.82204" y="287.82199">www.arpa.piemonte.it
-      </tspan>
-    </text>
-  </g>
+<g>
+	<text style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8px;font-family:'Titillium Web';writing-mode:lr-tb;fill:#2e9d53;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778" x="199.82204" y="587.82199">
+		<tspan style="text-align:end;text-anchor:end;stroke-width:0.352778" x="570" y="820">www.arpa.piemonte.it
+		</tspan>
+	</text>
+</g>
+</svg>

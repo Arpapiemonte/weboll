@@ -92,42 +92,6 @@ ALTER TABLE ONLY public.w22
     ADD CONSTRAINT w22_pkey PRIMARY KEY (id_w22);
 
 
---
--- Data for Name: w22; Type: TABLE DATA; Schema: public; Owner: weboll
---
-
-COPY public.w22 (id_w22, data_emissione, ora_emissione, data_validita, numero_bollettino, annotazione, situazione_evoluzione, status, pdf_ordinario, last_update, username, validita) FROM stdin;
-2077	2023-02-14	12:00	2023-02-15	23/2023	\N	\N	1	1	2022-02-03 12:08:33	weboll	36 ore
-2078	2023-02-15	12:00	2023-02-18	24/2023	\N	\N	1	1	2022-02-04 12:07:38	weboll	36 ore
-2079	2023-02-18	12:00	2023-02-19	25/2023	\N	\N	1	1	2022-02-07 12:03:16	weboll	36 ore
-2080	2023-02-19	12:00	2023-02-20	26/2023	\N	\N	1	1	2022-02-08 12:03:55	weboll	36 ore
-2081	2023-02-20	12:00	2023-02-21	27/2023	\N	\N	1	1	2022-02-09 12:07:14	weboll	36 ore
-\.
-
---
--- Name: w22_id_w22_seq; Type: SEQUENCE SET; Schema: public; Owner: weboll
---
-
 SELECT pg_catalog.setval('public.w22_id_w22_seq', 2081, true);
 
-
---
--- Name: w22_pkey; Type: CONSTRAINT; Schema: public; Owner: weboll; Tablespace:
---
-
-
---
--- Name: TABLE w22; Type: ACL; Schema: public; Owner: weboll
---
-
-
-
---
--- Name: SEQUENCE w22_id_w22_seq; Type: ACL; Schema: public; Owner: weboll
---
-
-
-
---
--- PostgreSQL database dump complete
---
+ALTER TABLE public.w22 ADD id_w22_parent INTEGER DEFAULT NULL;

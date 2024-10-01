@@ -501,15 +501,15 @@ class W28SVGView(TemplateView):
             if not data["id_time_layouts"] in tmp[data["id_venue"]]:
                 tmp[data["id_venue"]][data["id_time_layouts"]] = {}
             tmp[data["id_venue"]][data["id_time_layouts"]] = data
-            tmp[data["id_venue"]][data["id_time_layouts"]][
-                "precipitation_class"
-            ] = precipitation_classes[
-                str(
-                    tmp[data["id_venue"]][data["id_time_layouts"]][
-                        "precipitation_class"
-                    ]
-                )
-            ]
+            tmp[data["id_venue"]][data["id_time_layouts"]]["precipitation_class"] = (
+                precipitation_classes[
+                    str(
+                        tmp[data["id_venue"]][data["id_time_layouts"]][
+                            "precipitation_class"
+                        ]
+                    )
+                ]
+            )
             if tmp[data["id_venue"]][data["id_time_layouts"]]["cumulated_snow"] is None:
                 tmp[data["id_venue"]][data["id_time_layouts"]]["cumulated_snow"] = "NO"
             if (
@@ -535,11 +535,11 @@ class W28SVGView(TemplateView):
                     "risk_freezing_rain"
                 ] = "SI"
 
-            tmp[data["id_venue"]][data["id_time_layouts"]][
-                "sky_desc"
-            ] = sky_conditions_dict[
-                tmp[data["id_venue"]][data["id_time_layouts"]]["sky_condition"]
-            ]
+            tmp[data["id_venue"]][data["id_time_layouts"]]["sky_desc"] = (
+                sky_conditions_dict[
+                    tmp[data["id_venue"]][data["id_time_layouts"]]["sky_condition"]
+                ]
+            )
 
         autostrada["w28data_set"] = tmp
         context = {

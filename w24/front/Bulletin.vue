@@ -1,4 +1,4 @@
-// Copyright (C) 2020-2023 simevo s.r.l. for ARPA Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
@@ -15,6 +15,32 @@
         class="btn-group w-auto"
         role="group"
       > 
+        <a
+          class="btn btn-outline-primary"
+          :href="'/api/w24/png/' + vigilanza.id_w24"
+          target="_blank"
+          role="button"
+        >
+          <img
+            src="~bootstrap-icons/icons/file-earmark-image.svg"
+            alt="PDF icon"
+            width="18"
+            height="18"
+          > PNG
+        </a>
+        <a
+          class="btn btn-outline-primary"
+          :href="'/api/w24/rupar_png/' + vigilanza.id_w24"
+          target="_blank"
+          role="button"
+        >
+          <img
+            src="~bootstrap-icons/icons/file-earmark-image.svg"
+            alt="PDF icon"
+            width="18"
+            height="18"
+          > RUPAR
+        </a>  
         <a
           class="btn btn-outline-primary"
           :href="'/api/w24/pdf/' + vigilanza.id_w24"
@@ -56,7 +82,7 @@
           type="button"
           class="btn btn-outline-success"
           :disabled="vigilanza.sintesi_meteo === '' || vigilanza.sintesi_meteo.startsWith('|||InputDataIsMissing|||')"
-          @click="execute('send', false, 'Bollettino inviato')"
+          @click="execute_timeout('send', false, 'Bollettino inviato')"
         >
           <span v-if="sending">
             <span
@@ -293,6 +319,12 @@ export default {
   components: {
     TabVigilanza
   },
+  props: {
+    id: {
+      type: String,
+      default: () => ''
+    },
+  },
   data () {
     // non reactive properties
     return {
@@ -304,6 +336,7 @@ export default {
       readonly: true,
       state: store.state,
       sending: false,
+      saving: false,
       reopening: false,
       countfetch: 0,
       soglievento: {},
@@ -353,7 +386,7 @@ export default {
   },
   methods: {
     getVigilanza() {
-      this.vigilanza_id = this.$route.params.id
+      this.vigilanza_id = this.id
       if (typeof this.vigilanza_id === 'undefined') {
         return
       }
@@ -362,7 +395,7 @@ export default {
     fetchData () {
       this.countfetch = 0
       this.ready = false     
-      console.log(`fetch data for ${this.vigilanza_id}!`)
+      // console.log(`fetch data for ${this.vigilanza_id}!`)
       // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
       this.fetchVigilanza().then(response => {
         if (!response.ok) {
@@ -376,7 +409,7 @@ export default {
         }
         return response.json()
       }).then(data => {
-        console.log(`received data = ${JSON.stringify(data)}`)
+        // console.log(`received data = ${JSON.stringify(data)}`)
         data.w24_data = { }
         if ('w24data_set' in data) {
           data.w24data_set.forEach((element) => {
@@ -434,7 +467,7 @@ export default {
           this.soglieneve[area] = {"901": [], "902": []}
         });
 
-        console.log(data)
+        // console.log(data)
         for(const soglia in data){
           if(data[soglia].id_parametro === "VELV"){
             this.soglievento[data[soglia].id_allertamento].push(data[soglia])
@@ -521,6 +554,7 @@ export default {
               position: 'top-left'
             }
           )
+          this.saving = false
         }
         return response.json()
       }).then(data => {
@@ -533,6 +567,7 @@ export default {
         )
         this.vigilanza.last_update = data.bulletin.last_update
         this.vigilanza.username = store.state.username
+        this.saving = false
       }).catch((error) => {
         this.$toast.open(
           {
@@ -541,23 +576,35 @@ export default {
             position: 'top-left'
           }
         )
+        this.saving = false
       })
     },
     saveW24Data(idw24data, new_value) {
+      // console.log("saveW24Data")
       let myW24data = this.vigilanza.w24data_set.find(w24data => w24data.id_w24_data === idw24data)
 
       myW24data.numeric_value = new_value
+      if (!isNaN(new_value)) {
+        let id = myW24data.id_w24_data
+        let stack = []
+        const payload = {"id_key":"id_w24_data","id": id,"value_key":"numeric_value","new_value": new_value}
+        const payloadusername = {"id_key":"id_w24","id":this.vigilanza.id_w24,"value_key":"username","new_value": store.state.username}
+        stack.push(payloadusername)
+        stack.push(payload)
 
-      let id = myW24data.id_w24_data
-      let stack = []
-      const payload = {"id_key":"id_w24_data","id": id,"value_key":"numeric_value","new_value": new_value}
-      const payloadusername = {"id_key":"id_w24","id":this.vigilanza.id_w24,"value_key":"username","new_value": store.state.username}
-      stack.push(payloadusername)
-      stack.push(payload)
-
-      this.saveW24(stack)
+        this.saveW24(stack)
+      }else{
+        this.$toast.open(
+          {
+            message: `Non si possono scrivere valori non numerici!`,
+            type: 'error',
+            position: 'top-left'
+          }
+        )
+      }
     },
     saveW24Value(idw24data, new_value) {
+      // console.log("saveW24Value")
       let stack = []
 
       let myW24data = this.vigilanza.w24data_set.find(w24data => w24data.id_w24_data === idw24data)
@@ -575,9 +622,6 @@ export default {
           max = tmp.numeric_value
         }
       })
-
-      
-      
       
       let aggregazione = ""
       if(myW24data.id_time_layouts == 48){
@@ -606,24 +650,48 @@ export default {
       let neveclass = this.vigilanza.w24data_set.find(w24data => w24data.id_allertamento === myW24data.id_allertamento 
       && w24data.id_time_layouts === myW24data.id_time_layouts && w24data.id_parametro === "SNOW")
 
+      let valid_payload = true;
       neveclass.numeric_value = value_intensità
-
-      const payloadclass = {"id_key":"id_w24_data","id": neveclass.id_w24_data,"value_key":"numeric_value","new_value": value_intensità}
-      stack.push(payloadclass)
+      // controlla new_value is not Nan
+      if (!isNaN(value_intensità)) {
+        const payloadclass = {"id_key":"id_w24_data","id": neveclass.id_w24_data,"value_key":"numeric_value","new_value": value_intensità}
+        stack.push(payloadclass)
+      }else{
+        valid_payload = false;
+        this.$toast.open(
+          {
+            message: `Non si possono scrivere valori non numerici!`,
+            type: 'error',
+            position: 'top-left'
+          }
+        )
+      }
       
-      
-      
+      // controlla new_value is not Nan
       const payload = {"id_key":"id_w24_data","id": id,"value_key":"numeric_value","new_value": new_value}
-      const payloadusername = {"id_key":"id_w24","id":this.vigilanza.id_w24,"value_key":"username","new_value": store.state.username}
-      stack.push(payloadusername)
-      
-      stack.push(payload)
+      if (isNaN(new_value)) {
+        valid_payload = false;
+        this.$toast.open(
+          {
+            message: `Non si possono scrivere valori non numerici!`,
+            type: 'error',
+            position: 'top-left'
+          }
+        )
+      }
+      if (valid_payload){
+        const payloadusername = {"id_key":"id_w24","id":this.vigilanza.id_w24,"value_key":"username","new_value": store.state.username}
+        stack.push(payloadusername)
+        
+        stack.push(payload)
 
 
 
-      this.saveW24(stack)
+        this.saveW24(stack)
+      }
     },
     saveSintesiMeteo(value) {
+      this.saving = true
       this.vigilanza.sintesi_meteo = value
       let stack = []
       const payload = {"id_key":"id_w24","id":this.vigilanza.id_w24,"value_key":"sintesi_meteo","new_value": value}
@@ -631,6 +699,20 @@ export default {
       stack.push(payloadusername)
       stack.push(payload)
       this.saveW24(stack)
+    },
+    execute_timeout(action, reroute, message){
+      // console.log("inizio execute_timeout")
+      if (this.saving){
+        console.log("saving è true faccio partire timeout")
+        setTimeout(() => {
+          console.log("aspetto 1 secondo finchè non finisce il salvataggio in corso")
+          this.execute_timeout(action, reroute, message)
+        }, 1000);
+      }else{
+        console.log("saving è false lancio execute")
+        this.execute(action, reroute, message)
+      }
+      // console.log("fine execute_timeout")
     },
     execute(action, reroute, message) {
       if (action === 'resend' && !confirm('Vuoi davvero ripetere l\'invio di questo bollettino?')) {

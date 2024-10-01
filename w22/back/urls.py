@@ -21,4 +21,9 @@ urlpatterns = [
     path("pdf/<int:pk>", views.PienePDFView.as_view(), name="piene-pdf"),
     path("html/<int:pk>", views.PieneHTMLView.as_view(), name="piene-html"),
     path("png/<int:pk>", views.PienePngView.as_view(), name="piene-png"),
+    path(
+        "kml/<int:pk>",
+        views.KmlView.as_view(content_type="text/plain; charset=windows-1252"),
+        name="piene-kml",
+    ),
 ]

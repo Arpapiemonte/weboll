@@ -1,4 +1,4 @@
-// Copyright (C) 2020-2023 simevo s.r.l. for ARPA Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
@@ -17,7 +17,7 @@
 
         <button
           v-if="verificapiene.status === '0' && state.username"
-          :disabled="sending || (meta && !meta.valid) || verificapiene.id_numero_bollettino === '0_0'"
+          :disabled="sending || verificapiene.id_numero_bollettino === '0_0'"
           type="button"
           class="btn btn-outline-success"
           @click="execute('send', false, 'Bollettino inviato')"
@@ -62,12 +62,6 @@
         class="alert alert-danger"
       >
       <h1>Manca il First guess del Piene numero {{ verificapiene.numero_bollettino.split("/")[0]+'_'+verificapiene.numero_bollettino.split("/")[1] }}</h1>
-      </div>
-      <div
-        v-if="meta && !meta.valid"
-        class="alert alert-danger"
-      >
-        Ci sono dei campi incompleti
       </div>
     </div>
     <div class="row">
@@ -430,7 +424,7 @@
                         Ok
                       </td>
                       <td bgcolor="#6EBB00">
-                      	Assenza di errore
+                        Assenza di errore
                       </td>
                     </tr>
                     <tr>
@@ -586,7 +580,7 @@
                       <tr>
                         <td rowspan=4 style="writing-mode: vertical-lr;width: 23px;"><b>Numero di errori lievi (Li)</b></td>
                         <td style="background-color: #D6EEEE; text-align:center;">0</td>
-                        <td style="background-color: #6EBB00; text-align:center;">Buono</td>
+                        <td style="background-color: #6EBB00; text-align:center;">Ottimo</td>
                         <td style="background-color: #6EBB00; text-align:center;">Buono</td>
                         <td style="background-color: #ffff00; text-align:center;">Sufficiente</td>
                         <td style="background-color: #FF0000; text-align:center;">Insufficiente</td>
@@ -601,7 +595,7 @@
                         <td style="background-color: #8f00ff; text-align:center;">Pessimo</td>
                       </tr>
                       <tr>
-                        <td style="background-color: #D6EEEE; text-align:center;">1-5</td>
+                        <td style="background-color: #D6EEEE; text-align:center;">6-10</td>
                         <td style="background-color: #ffff00; text-align:center;">Sufficiente</td>
                         <td style="background-color: #ffff00; text-align:center;">Sufficiente</td>
                         <td style="background-color: #FF0000; text-align:center;">Insufficiente</td>
@@ -642,6 +636,12 @@ export default {
   CellGiudizio,
   CellSeverita,
   CellCriticita,
+  },
+  props: {
+    id: {
+      type: String,
+      default: () => ''
+    },
   },
   data () {
   // non reactive properties
@@ -705,18 +705,21 @@ export default {
           }
         })
         //costruzione giudizio
-        if(mgr_gr<=2 && li<=5){
+        if(mgr_gr==0 && li==0){
+          //Ottimo
+          giudizio = 1
+        }else if(mgr_gr<=2 && li<=5){
           //Buono
           giudizio = 2
-        }else if(mgr_gr<=0 && li<=0){
-          //Buono
-          giudizio = 1
         }else if(mgr_gr>=11){
           //pessimo
           giudizio = 5
         }else if(mgr_gr>=3 && mgr_gr<=4 && li==0){
           //sufficiente
           giudizio = 3
+        }else if(li>=11 && mgr_gr<=2){
+          //Insufficiente
+          giudizio = 4
         }else if(mgr_gr>=3 && mgr_gr<=4 && li>=1 && li<=5){
           //Insufficiente
           giudizio = 4
@@ -726,9 +729,9 @@ export default {
         }else if(mgr_gr<=2 && li>=6 && li<=10){
           //sufficiente
           giudizio = 3
-        }else if(mgr_gr<=2 && li>=11 && li<=27){
+        // commentato da fra # }else if(mgr_gr<=2 && li>=11 && li<=27){
           //sufficiente
-          giudizio = 3
+          // commentato da fra # giudizio = 3
         }else if(mgr_gr>=3 && mgr_gr<=4 && li>=6 && li<=10){
           //Insufficiente
           giudizio = 4
@@ -748,7 +751,7 @@ export default {
   },
   methods: {
     async fetchData () {
-      this.verificapiene_id = this.$route.params.id
+      this.verificapiene_id = this.id
       this.giudizio  =  await this.fetchGiudizio()
       this.severita  =  await this.fetchSeverita()
       this.criticita  =  await this.fetchCriticita()
@@ -946,7 +949,7 @@ export default {
       if(campo=='prev_crit_tot' || campo=='oss_crit_tot'){ 
         //sto assegando e salvando il calcolo della criticità in automatico
         this.verificapiene.w22verificadata_set[id_w22_zone-1].err_crit_tot=this.Verificaseverita[id_w22_zone].severita
-        payload['err_crit_tot']=this.Verificaseverita[id_w22_zone].Severita
+        payload['err_crit_tot']=this.Verificaseverita[id_w22_zone].severita
         //sto salvando il calcolo del giudizio automatico
         this.saveW22verifica(this.gr.giudizio, this.verificapiene.id_w22verifica, 'id_w22giudizio')
       }

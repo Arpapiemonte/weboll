@@ -249,7 +249,6 @@ TERMN90	Temperatura della neve a 90 cm	02	1	2019-09-25 14:23:16	weboll
 TERMNI	Termometro neve ad infrarossi	02	1	2019-09-25 14:23:28	weboll
 \.
 
-
 --
 -- Name: parametro_pkey; Type: CONSTRAINT; Schema: public; Owner: weboll; Tablespace:
 --
@@ -261,6 +260,7 @@ ALTER TABLE ONLY public.parametro
 --
 -- Name: parametro_fkey001; Type: FK CONSTRAINT; Schema: public; Owner: weboll
 --
+
 
 ALTER TABLE ONLY public.parametro
     ADD CONSTRAINT parametro_fkey001 FOREIGN KEY (id_unita_misura) REFERENCES public.unita_misura(id_unita_misura) ON UPDATE CASCADE ON DELETE SET NULL;

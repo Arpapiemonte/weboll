@@ -58,11 +58,6 @@ ALTER TABLE ONLY public.w12 ALTER COLUMN id_w12 SET DEFAULT nextval('public.w12_
 -- Data for Name: w12; Type: TABLE DATA; Schema: public; Owner: weboll
 --
 
-COPY public.w12 (id_w12, start_valid_time, validity, next_blt_time, status, last_update, username) FROM stdin;
-2011	2023-03-30 10:13:32	24	2023-03-31 00:00:00	1	2023-03-30 10:13:32	weboll
-2012	2023-03-31 11:06:23	24	2023-04-01 00:00:00	1	2023-03-31 11:06:23	weboll
-2013	2023-04-11 09:39:46	24	2023-04-12 00:00:00	1	2023-04-11 09:39:46	weboll
-\.
 
 SELECT pg_catalog.setval('public.w12_id_w12_seq', 2013, true);
 
@@ -72,3 +67,8 @@ SELECT pg_catalog.setval('public.w12_id_w12_seq', 2013, true);
 
 ALTER TABLE ONLY public.w12
     ADD CONSTRAINT w12_pkey PRIMARY KEY (id_w12);
+
+
+\set command `echo "curl $DATA_LOCATION/w12.copy"`
+COPY public.w12
+  FROM PROGRAM :'command' CSV HEADER DELIMITER ',' ;

@@ -222,6 +222,7 @@ class W06View(viewsets.ModelViewSet):
                         freezing_level=frzlvl,
                         snow_level=data.snow_level,
                         temperature_below_zero=temperature_below_zero,
+                        risk_freezing_rain=False,
                     )
                     new_data.save()
         # Caso in cui la first guess è letta totalmente da weather_values
@@ -314,6 +315,7 @@ class W06View(viewsets.ModelViewSet):
                             freezing_level=frzlvl,
                             snow_level=snowlev,
                             temperature_below_zero=temperature_below_zero,
+                            risk_freezing_rain=False,
                         )
                         new_data.save()
 
@@ -495,15 +497,15 @@ class W06SVGView(TemplateView):
             if not data["id_time_layouts"] in tmp[data["id_venue"]]:
                 tmp[data["id_venue"]][data["id_time_layouts"]] = {}
             tmp[data["id_venue"]][data["id_time_layouts"]] = data
-            tmp[data["id_venue"]][data["id_time_layouts"]][
-                "precipitation_class"
-            ] = precipitation_classes[
-                str(
-                    tmp[data["id_venue"]][data["id_time_layouts"]][
-                        "precipitation_class"
-                    ]
-                )
-            ]
+            tmp[data["id_venue"]][data["id_time_layouts"]]["precipitation_class"] = (
+                precipitation_classes[
+                    str(
+                        tmp[data["id_venue"]][data["id_time_layouts"]][
+                            "precipitation_class"
+                        ]
+                    )
+                ]
+            )
             if tmp[data["id_venue"]][data["id_time_layouts"]]["cumulated_snow"] is None:
                 tmp[data["id_venue"]][data["id_time_layouts"]]["cumulated_snow"] = "NO"
             if (
@@ -529,11 +531,11 @@ class W06SVGView(TemplateView):
                     "risk_freezing_rain"
                 ] = "SI"
 
-            tmp[data["id_venue"]][data["id_time_layouts"]][
-                "sky_desc"
-            ] = sky_conditions_dict[
-                tmp[data["id_venue"]][data["id_time_layouts"]]["sky_condition"]
-            ]
+            tmp[data["id_venue"]][data["id_time_layouts"]]["sky_desc"] = (
+                sky_conditions_dict[
+                    tmp[data["id_venue"]][data["id_time_layouts"]]["sky_condition"]
+                ]
+            )
 
         autostrada["w06data_set"] = tmp
         context = {

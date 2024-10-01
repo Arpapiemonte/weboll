@@ -87,15 +87,22 @@ I campi sono:
 
   - se comincia con `/` viene scritto sul **filesystem** (in questo caso il campo `segreto` non viene utilizzato e può essere blank)
 
-  - se ha la struttura `username@host:/path/to` verrà copiato col protocollo **scp** usando la password utente salvata nella colonna `segreto`
+  - se ha la struttura `username@host:/path/to` verrà copiato col protocollo **scp** usando la password utente salvata nella colonna `segreto`, è possibile anche impostare delle opzioni ssh nei seguenti formati:
+    - `username@host:/path/to#KexAlgorithms=+diffie-hellman-group1-sha1/HostKeyAlgorithms=+ssh-dss/Ciphers=+aes256-cbc`
+    - `username@host:/path/to#HostKeyAlgorithms=+ssh-dss`
+    - `username@host:/path/to`
 
   - se ha la struttura `ftp://username@host/path/to` verrà copiato col protocollo **ftp** usando la password utente salvata nella colonna `segreto`
+  
+  - se ha la struttura `mail://user@example.com/file_attach_name/subject/body` verrà spedito come `file_attach_name` via mail
 
   su questa stringa oltre al placeholder `{{id}}` è possibile anche usare i placeholders `{{year}}`, `{{month}}`, `{{day}}` e `{{time}}` (senza spazi) per cambiare il nome del file di destinazione in base alla data odierna, time aggiungerà ora minuti e secondi (se ad esempio il pdf deve essere esportato più volte al giorno); ad esempio se `destinazione` è `/mnt/h/meteo_{{year}}{{month}}{{day}}.pdf`, il file verrà salvato in `/mnt/h/meteo_20211007.pdf`
 
 1. `segreto` la password utente se `destinazione` è è scp o ftp, oppure lasciare blank
 
 1. `enabled`: campo booleano per attivare (valore di difetto) o disattivare l'invio
+
+1. `auto`: campo booleano per attivare o disattivare (valore di difetto) l'invio automatico con il task `auto_send_last_one` serve per ripetere l'invio ad un determinato orario prestabilito.
 
 I task vengono eseguiti in maniera asincrona dal docker container `celeryworker` quindi il docker-compose di produzione deve essere configurato in modo da montare in questo container i volumi necessari, e con la [rete configurata](https://docs.docker.com/compose/networking/) in modo che possa accedere ai server a cui deve connettersi con `scp`.
 

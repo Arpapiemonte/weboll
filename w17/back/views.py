@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2020-2023 simevo s.r.l. for ARPA Piemonte - Dipartimento Naturali e Ambientali
+# Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
 # This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 # weboll is licensed under the AGPL-3.0-or-later License.
 # License text available at https://www.gnu.org/licenses/agpl.txt
@@ -582,9 +582,9 @@ class W17View(viewsets.ModelViewSet):
         ].numeric_value
         tmin_diff = tmin_ieri - tmin_altroieri
         if tmin_altroieri is not None and tmin_ieri is not None:
-            w17_data_new_dict[
-                HashW17Data("67", "TERMA", "327", "34")
-            ].id_trend = tmin_diff
+            w17_data_new_dict[HashW17Data("67", "TERMA", "327", "34")].id_trend = (
+                tmin_diff
+            )
         else:
             w17_data_new_dict[HashW17Data("67", "TERMA", "327", "34")].id_trend = None
 
@@ -593,9 +593,9 @@ class W17View(viewsets.ModelViewSet):
         ].numeric_value
         tmax_diff = tmax_ieri - tmax_altroieri
         if tmax_altroieri is not None and tmax_ieri is not None:
-            w17_data_new_dict[
-                HashW17Data("67", "TERMA", "328", "33")
-            ].id_trend = tmax_diff
+            w17_data_new_dict[HashW17Data("67", "TERMA", "328", "33")].id_trend = (
+                tmax_diff
+            )
         else:
             w17_data_new_dict[HashW17Data("67", "TERMA", "328", "33")].id_trend = None
         # sistema la velocità del vento tutti i VELR_* diventano VELS e sono tutti accodati
@@ -645,12 +645,12 @@ class W17View(viewsets.ModelViewSet):
 
         # imposto i valori di default per la localizzazione
         # COP_TOT, id_time_layouts 30 e 31, id_classes a 3
-        w17_classes_new_dict[
-            HashW17Classes("COP_TOT", "30", "3")
-        ].id_classes_value = classes_value_dict["11"]
-        w17_classes_new_dict[
-            HashW17Classes("COP_TOT", "31", "3")
-        ].id_classes_value = classes_value_dict["11"]
+        w17_classes_new_dict[HashW17Classes("COP_TOT", "30", "3")].id_classes_value = (
+            classes_value_dict["11"]
+        )
+        w17_classes_new_dict[HashW17Classes("COP_TOT", "31", "3")].id_classes_value = (
+            classes_value_dict["11"]
+        )
 
         # imposto i valori di default per la visibilità presi dal file visibilita_analisi_meteo.json
         if visibilita_ok:
@@ -703,24 +703,20 @@ class W17View(viewsets.ModelViewSet):
             if sum[tl_w] > 0:
                 media_prec_regione[tl_w] = sum[tl_w] / len(venues_weather_values)
         # prec media regione
-        w17_classes_new_dict[
-            HashW17Classes("PLUV", "30", "5")
-        ].id_classes_value = classes_value_dict[
-            PrecClassMedia(media_prec_regione["30"])
-        ]
-        w17_classes_new_dict[
-            HashW17Classes("PLUV", "31", "5")
-        ].id_classes_value = classes_value_dict[
-            PrecClassMedia(media_prec_regione["31"])
-        ]
+        w17_classes_new_dict[HashW17Classes("PLUV", "30", "5")].id_classes_value = (
+            classes_value_dict[PrecClassMedia(media_prec_regione["30"])]
+        )
+        w17_classes_new_dict[HashW17Classes("PLUV", "31", "5")].id_classes_value = (
+            classes_value_dict[PrecClassMedia(media_prec_regione["31"])]
+        )
 
         # prec max areale
-        w17_classes_new_dict[
-            HashW17Classes("PLUV", "30", "6")
-        ].id_classes_value = classes_value_dict[PrecClassMaxArea(prec_max_area["30"])]
-        w17_classes_new_dict[
-            HashW17Classes("PLUV", "31", "6")
-        ].id_classes_value = classes_value_dict[PrecClassMaxArea(prec_max_area["31"])]
+        w17_classes_new_dict[HashW17Classes("PLUV", "30", "6")].id_classes_value = (
+            classes_value_dict[PrecClassMaxArea(prec_max_area["30"])]
+        )
+        w17_classes_new_dict[HashW17Classes("PLUV", "31", "6")].id_classes_value = (
+            classes_value_dict[PrecClassMaxArea(prec_max_area["31"])]
+        )
 
         # prec max regione
         prec_max = {"30": 0.0, "31": 0.0}
@@ -746,12 +742,12 @@ class W17View(viewsets.ModelViewSet):
                         prec_max[tl_w] = max(
                             float(original_numeric_values), prec_max[tl_w]
                         )
-        w17_classes_new_dict[
-            HashW17Classes("PLUV", "30", "7")
-        ].id_classes_value = classes_value_dict[PrecClassMax(prec_max["30"])]
-        w17_classes_new_dict[
-            HashW17Classes("PLUV", "31", "7")
-        ].id_classes_value = classes_value_dict[PrecClassMax(prec_max["31"])]
+        w17_classes_new_dict[HashW17Classes("PLUV", "30", "7")].id_classes_value = (
+            classes_value_dict[PrecClassMax(prec_max["30"])]
+        )
+        w17_classes_new_dict[HashW17Classes("PLUV", "31", "7")].id_classes_value = (
+            classes_value_dict[PrecClassMax(prec_max["31"])]
+        )
 
         # calcolo classi vento
         classe_vento_pianura = None
@@ -765,9 +761,9 @@ class W17View(viewsets.ModelViewSet):
         ].original_numeric_values
         if valore_vento_pianura is not None:
             classe_vento_pianura = WindClassPianura(valore_vento_pianura)
-        w17_classes_new_dict[
-            HashW17Classes("VELV", "32", "16")
-        ].id_classes_value = classes_value_dict[classe_vento_pianura]
+        w17_classes_new_dict[HashW17Classes("VELV", "32", "16")].id_classes_value = (
+            classes_value_dict[classe_vento_pianura]
+        )
 
         classe_vento_montagna = None
         valore_vento_montagna = weather_values_dict[
@@ -780,9 +776,9 @@ class W17View(viewsets.ModelViewSet):
         ].original_numeric_values
         if valore_vento_montagna is not None:
             classe_vento_montagna = WindClassMontagna(valore_vento_montagna)
-        w17_classes_new_dict[
-            HashW17Classes("VELV", "32", "18")
-        ].id_classes_value = classes_value_dict[classe_vento_montagna]
+        w17_classes_new_dict[HashW17Classes("VELV", "32", "18")].id_classes_value = (
+            classes_value_dict[classe_vento_montagna]
+        )
 
         # classes min max TERMA regionale per la verifica
         if tmin_diff > 0:
@@ -791,9 +787,9 @@ class W17View(viewsets.ModelViewSet):
             tmin_diff_classes_value = 35
         elif tmin_diff < 0:
             tmin_diff_classes_value = 36
-        w17_classes_new_dict[
-            HashW17Classes("TERMA", "34", "9")
-        ].id_classes_value = classes_value_dict[str(tmin_diff_classes_value)]
+        w17_classes_new_dict[HashW17Classes("TERMA", "34", "9")].id_classes_value = (
+            classes_value_dict[str(tmin_diff_classes_value)]
+        )
 
         if tmax_diff > 0:
             tmax_diff_classes_value = 37
@@ -801,9 +797,9 @@ class W17View(viewsets.ModelViewSet):
             tmax_diff_classes_value = 38
         elif tmax_diff < 0:
             tmax_diff_classes_value = 39
-        w17_classes_new_dict[
-            HashW17Classes("TERMA", "33", "10")
-        ].id_classes_value = classes_value_dict[str(tmax_diff_classes_value)]
+        w17_classes_new_dict[HashW17Classes("TERMA", "33", "10")].id_classes_value = (
+            classes_value_dict[str(tmax_diff_classes_value)]
+        )
 
         # salvataggio w17_classes
         fine = datetime.datetime.now()
@@ -1042,12 +1038,10 @@ class W17SVGView(TemplateView):
 
         rearrange_snow(analisi[32], "SNOW_LEV")
 
-        rearrange(analisi[32], "PLUV")
+        rearrange_pluv(analisi[32], "PLUV")
 
         rearrange_pluv(analisi[30], "PLUV")
         rearrange_pluv(analisi[31], "PLUV")
-
-        print(analisi["data_analysis"])
 
         context = {
             "w17": analisi,

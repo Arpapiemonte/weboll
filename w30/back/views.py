@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2020-2023 simevo s.r.l. for ARPA Piemonte - Dipartimento Naturali e Ambientali
+# Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
 # This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 # weboll is licensed under the AGPL-3.0-or-later License.
 # License text available at https://www.gnu.org/licenses/agpl.txt
@@ -183,6 +183,15 @@ class W30View(viewsets.ModelViewSet):
             eumodel = json.load(f)
         else:
             url = f"{getenv('BASE_DATA_URL_FULL', 'http://frontend:80')}/models_for_psa/{firstguess}.json"
+            print("=======================================")
+            print("=======================================")
+            print("=======================================")
+            print("=======================================")
+            print(url)
+            print("=======================================")
+            print("=======================================")
+            print("=======================================")
+            print("=======================================")
             with requests.get(url) as r:
                 if r.status_code == 200:
                     eumodel = json.loads(r.content)
@@ -375,12 +384,6 @@ class W30View(viewsets.ModelViewSet):
         today = datetime.datetime.today()
         data_emissione = today.replace(hour=12, minute=0, second=0, microsecond=0)
 
-        old_forecast_zone = models.ForecastZone.objects.filter(
-            data_emissione=data_emissione
-        ).filter(model_name="PSA_00_DO")
-
-        old_forecast_zone.delete()
-        print("==============ELIMINAZIONE VECCHI DATI============")
         start = today.replace(hour=12, minute=0, second=0, microsecond=0)
 
         psa_time_layouts = [45, 46, 48, 60, 61, 62, 63, 66, 77, 78, 79, 80]
@@ -401,30 +404,6 @@ class W30View(viewsets.ModelViewSet):
                 + datetime.timedelta(days=offset)
             )
             date_riferimento[str(psa_tl)] = end_time
-
-        allW30Data = (
-            models.W30Data.objects.filter(id_w30=w30.id_w30)
-            .exclude(id_time_layouts="43")
-            .exclude(id_time_layouts="44")
-        )  # Skip the first two time_layouts
-
-        for w30data in allW30Data:
-            newforecastzone = models.ForecastZone(
-                id_allertamento=w30data.id_allertamento,
-                id_parametro=w30data.id_parametro,
-                id_aggregazione=w30data.id_aggregazione,
-                model_type="DMO",
-                model_name="PSA_00_DO",
-                data_emissione=data_emissione,
-                data_riferimento=date_riferimento[
-                    str(w30data.id_time_layouts.id_time_layouts)
-                ],
-                valore_originale=w30data.numeric_value,
-                valore_validato=None,
-                last_update=inizio,
-                username=request.user.username,
-            )
-            newforecastzone.save()
 
         psa_time_layouts6h = [45, 46, 60, 61, 62, 63, 77, 78, 79, 80]
 
@@ -456,20 +435,6 @@ class W30View(viewsets.ModelViewSet):
         for scadenza in range(9):
             area = 0
             for media in medieArray[scadenza]:
-                newforecastzone = models.ForecastZone(
-                    id_allertamento=media.id_allertamento,
-                    id_parametro=parametro_dict["PLUV"],
-                    id_aggregazione=aggregazione_dict["901"],
-                    model_type="DMO",
-                    model_name="PSA_00_DO",
-                    data_emissione=data_emissione,
-                    data_riferimento=data_riferimento,
-                    valore_originale=sommeMedia[scadenza][area],
-                    valore_validato=None,
-                    last_update=inizio,
-                    username=request.user.username,
-                )
-                newforecastzone.save()
                 new901 = models.W30Data(
                     id_w30=w30,
                     id_aggregazione=aggregazione_dict["901"],
@@ -501,21 +466,6 @@ class W30View(viewsets.ModelViewSet):
         for scadenza in range(7):
             area = 0
             for media in medieArray[scadenza]:
-                newforecastzone = models.ForecastZone(
-                    id_allertamento=media.id_allertamento,
-                    id_parametro=parametro_dict["PLUV"],
-                    id_aggregazione=aggregazione_dict["902"],
-                    model_type="DMO",
-                    model_name="PSA_00_DO",
-                    data_emissione=data_emissione,
-                    data_riferimento=data_riferimento,
-                    valore_originale=sommeMedia[scadenza][area],
-                    valore_validato=None,
-                    last_update=inizio,
-                    username=request.user.username,
-                )
-                newforecastzone.save()
-
                 new902 = models.W30Data(
                     id_w30=w30,
                     id_aggregazione=aggregazione_dict["902"],
@@ -548,21 +498,6 @@ class W30View(viewsets.ModelViewSet):
         for scadenza in range(0, 3, 1):
             area = 0
             for media in medieArray[scadenza]:
-                newforecastzone = models.ForecastZone(
-                    id_allertamento=media.id_allertamento,
-                    id_parametro=parametro_dict["PLUV"],
-                    id_aggregazione=aggregazione_dict["903"],
-                    model_type="DMO",
-                    model_name="PSA_00_DO",
-                    data_emissione=data_emissione,
-                    data_riferimento=data_riferimento,
-                    valore_originale=sommeMedia[scadenza][area],
-                    valore_validato=None,
-                    last_update=inizio,
-                    username=request.user.username,
-                )
-                newforecastzone.save()
-
                 new903 = models.W30Data(
                     id_w30=w30,
                     id_aggregazione=aggregazione_dict["903"],

@@ -1,0 +1,852 @@
+{% load date_extras_w36 %}
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <title>Bollettino caldo città di Torino {{ numero_bollettino }} del {{ data_emissione }}</title>
+  </head>
+  <body>
+    <svg version="1.1" id="bollettino" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+      viewBox="0 0 595 842" style="enable-background:new 0 0 595 842;" xml:space="preserve">
+
+      <style type="text/css">
+        rect.caldo0 {fill: #18EA2C;}
+        rect.caldo1 {fill: #FFFA43;}
+        rect.caldo2 {fill: #FC7E29;}
+        rect.caldo3 {fill: #F92B2B;}
+    
+        .riqu-meteosalute {
+              fill:#040496;
+              font-family:'Titillium Web';
+              font-size:16px;
+              font-weight: bold;
+              }
+        .riga-meteosalute {			
+              fill:none;
+              stroke:#040496;
+              stroke-width:0.5px;
+              stroke-linecap:round;
+              stroke-miterlimit:10;
+              }
+      
+        .riquadri-intestaz {			
+              fill:#EDEDED;
+              stroke:#A7A7AA;
+              stroke-miterlimit:10px;
+              }
+              
+        .riquadri-valori {			
+              fill:none;
+              stroke:#A7A7AA;
+              stroke-miterlimit:10;
+              }
+              
+              
+        .text-data {
+              fill:#000000;
+              font-family:'Titillium Web';
+              font-size:12.5px;
+              font-weight: bold;
+              }
+        
+        .text-intestaz {
+              fill:#000000;
+              font-family:'Titillium Web';
+              font-size:11px;
+              font-weight: bold;
+              }
+              
+        .text-ggconsecut {
+              fill:#000000;
+              font-family:'Titillium Web';
+              font-size:10px;
+              font-weight: bold;
+              }
+              
+        .legenda-quadrati {
+              fill:#EFEFEF;
+              stroke:#ffffff;
+              stroke-width:2px;
+              stroke-miterlimit:10px;
+              }
+      
+        .legenda-text-meteosalute {
+              fill:#040496;
+              font-family:'Titillium Web'; 
+              font-size:11px;
+              font-weight: bold;
+              font-style: italic;
+              }
+        
+        .legenda-text-spiegazioni {
+              fill:#000000;
+              font-family:'Titillium Web'; 
+              font-size:8px;
+      
+              }
+        
+        
+        <!-- da cambiare e automatizzare-->
+        .colore-livello {
+              fill:#00ae45;
+              }
+              
+        .text-footer {
+              fill:#494949;
+              font-family:'Titillium Web'; 
+              font-size:8px;
+              font-style: italic;
+              }
+      
+      
+      </style>
+      
+      <g>
+        {% include "headerw36_torino.svg" with validity='24' title='Città di Torino e Area Metropolitana' seqNum=caldo.seq_num startValidTime=caldo.data_emissione nextUpdate=caldo.data_validita logo='regione-piemonte' username=caldo.username%}
+      </g>
+      
+      <g id="RIQUADRI_METEO-SALUTE">
+        <g>
+          <g>
+            <text transform="matrix(0.99 0 0 1 172 146.6165)" class="riqu-meteosalute">METEO</text>
+          </g>
+          <text transform="matrix(0.99 0 0 1 451.5 145.7731)" class="riqu-meteosalute">SALUTE</text>
+          <g>
+            <path class="riqu-meteosalute" d="M535.224,136.794c-0.004,1.783-0.758,3.636-2.29,5.129c-2.907,2.835-5.846,5.639-8.778,8.449
+              c-0.798,0.765-1.455,0.755-2.263-0.023c-1.928-1.856-3.847-3.721-5.773-5.58c-0.3-0.289-0.629-0.601-0.247-1.004
+              c0.419-0.442,0.746-0.082,1.059,0.221c1.856,1.795,3.727,3.575,5.566,5.388c0.397,0.391,0.625,0.452,1.06,0.026
+              c2.818-2.759,5.684-5.469,8.498-8.232c1.888-1.854,2.473-4.113,1.719-6.647c-1.009-3.394-4.148-4.965-7.488-3.817
+              c-0.99,0.341-1.873,0.862-2.616,1.599c-0.419,0.416-0.797,0.415-1.211,0.002c-0.266-0.264-0.552-0.51-0.846-0.743
+              c-3.306-2.627-7.606-1.434-9.145,2.527c-0.329,0.847-0.461,1.716-0.426,2.617c0.015,0.402-0.121,0.717-0.568,0.727
+              c-0.467,0.011-0.546-0.326-0.57-0.717c-0.262-4.139,3.198-7.815,7.343-7.779c1.667,0.015,3.006,0.831,4.214,1.87
+              c0.455,0.391,0.718,0.406,1.208,0.029c1.73-1.332,3.724-1.91,5.883-1.544C532.876,129.857,535.209,132.857,535.224,136.794z"/>
+              
+            <path class="riqu-meteosalute" d="M517.713,140.101c0.568-1.452,1.093-2.796,1.618-4.139c0.068-0.174,0.143-0.346,0.206-0.522
+              c0.105-0.291,0.276-0.494,0.614-0.471c0.337,0.023,0.469,0.243,0.544,0.547c0.408,1.66,0.827,3.318,1.243,4.976
+              c0.079,0.315,0.162,0.629,0.286,1.114c0.544-1.021,1.015-1.908,1.488-2.793c0.162-0.304,0.259-0.692,0.696-0.706
+              c0.443-0.015,0.61,0.36,0.718,0.673c0.441,1.268,1.287,1.783,2.605,1.518c0.023-0.005,0.047-0.001,0.07,0
+              c0.441,0.008,1.01-0.085,1.008,0.56c-0.002,0.628-0.56,0.572-1.008,0.574c-0.446,0.002-0.898-0.045-1.337,0.01
+              c-0.832,0.104-1.402-0.169-1.7-0.977c-0.07-0.189-0.151-0.398-0.372-0.514c-0.565,1.078-1.131,2.153-1.691,3.231
+              c-0.155,0.298-0.294,0.605-0.711,0.563c-0.428-0.043-0.483-0.398-0.563-0.711c-0.46-1.807-0.911-3.617-1.393-5.536
+              c-0.405,0.588-0.534,1.18-0.762,1.722c-0.29,0.69-0.555,1.391-0.819,2.091c-0.111,0.295-0.212,0.578-0.592,0.603
+              c-0.344,0.022-0.491-0.219-0.644-0.462c-0.361-0.572-0.724-1.143-1.097-1.732c-0.079,0.098-0.124,0.151-0.167,0.206
+              c-0.368,0.477-0.481,1.239-1.063,1.437c-0.794,0.27-1.672,0.094-2.513,0.092c-0.352-0.001-0.567-0.261-0.536-0.61
+              c0.027-0.304,0.228-0.508,0.57-0.505c0.047,0,0.096-0.011,0.141-0.001c1.496,0.346,2.302-0.411,2.903-1.683
+              c0.406-0.86,0.821-0.818,1.338-0.002C517.077,139.103,517.362,139.549,517.713,140.101z"/>
+          </g>
+          <g>
+            <path class="riqu-meteosalute" d="M231.177,140.386c-0.018-4.025,3.239-7.297,7.269-7.302c4.025-0.005,7.292,3.265,7.283,7.289
+              c-0.009,4.001-3.222,7.228-7.23,7.263C234.481,147.67,231.195,144.417,231.177,140.386z M244.76,140.421
+              c0.025-3.485-2.775-6.349-6.226-6.368c-3.504-0.019-6.351,2.748-6.387,6.207c-0.037,3.494,2.749,6.379,6.187,6.407
+              C241.882,146.695,244.734,143.923,244.76,140.421z"/>
+            <path class="riqu-meteosalute" d="M230.801,145.113c-0.166,0.175-0.305,0.393-0.503,0.516c-0.616,0.381-1.237,0.761-1.893,1.063
+              c-0.211,0.097-0.534-0.05-0.806-0.086c0.096-0.234,0.126-0.568,0.301-0.684c0.666-0.443,1.364-0.849,2.085-1.194
+              c0.2-0.095,0.524,0.071,0.791,0.117C230.785,144.935,230.793,145.024,230.801,145.113z"/>
+            <path class="riqu-meteosalute" d="M242.651,132.188c0.197-0.362,0.362-0.682,0.542-0.994c0.296-0.515,0.576-1.043,0.921-1.525
+              c0.092-0.128,0.452-0.206,0.582-0.128c0.135,0.081,0.252,0.435,0.183,0.571c-0.397,0.782-0.833,1.548-1.304,2.288
+              c-0.087,0.137-0.399,0.192-0.596,0.173C242.861,132.562,242.765,132.332,242.651,132.188z"/>
+            <path class="riqu-meteosalute" d="M246.665,136.21c-0.197-0.168-0.389-0.256-0.437-0.393c-0.05-0.143-0.021-0.431,0.075-0.49
+              c0.812-0.502,1.641-0.978,2.483-1.427c0.103-0.055,0.372,0.05,0.461,0.162c0.086,0.109,0.11,0.428,0.041,0.474
+              C248.435,135.109,247.56,135.647,246.665,136.21z"/>
+            <path class="riqu-meteosalute" d="M234.281,148.6c-0.546,0.879-1.065,1.738-1.619,2.574c-0.052,0.079-0.385,0.083-0.472,0.001
+              c-0.124-0.117-0.248-0.404-0.187-0.52c0.432-0.823,0.897-1.63,1.393-2.415c0.069-0.109,0.383-0.135,0.55-0.085
+              C234.073,148.192,234.147,148.41,234.281,148.6z"/>
+            <path class="riqu-meteosalute" d="M228.07,133.787c0.877,0.538,1.739,1.052,2.576,1.602c0.081,0.053,0.086,0.393,0.002,0.487
+              c-0.111,0.122-0.401,0.235-0.52,0.172c-0.821-0.432-1.627-0.897-2.413-1.391c-0.109-0.069-0.146-0.377-0.096-0.537
+              C227.66,133.991,227.881,133.918,228.07,133.787z"/>
+            <path class="riqu-meteosalute" d="M246.669,144.525c0.884,0.543,1.746,1.058,2.584,1.608c0.085,0.056,0.104,0.409,0.029,0.468
+              c-0.153,0.123-0.448,0.252-0.585,0.183c-0.783-0.397-1.548-0.833-2.288-1.304c-0.136-0.087-0.19-0.399-0.17-0.597
+              C246.251,144.768,246.481,144.674,246.669,144.525z"/>
+            <path class="riqu-meteosalute" d="M245.049,150.782c-0.174,0.199-0.271,0.412-0.403,0.435c-0.167,0.03-0.453-0.035-0.53-0.158
+              c-0.478-0.767-0.926-1.553-1.343-2.354c-0.066-0.126,0.027-0.414,0.143-0.53c0.089-0.089,0.438-0.098,0.488-0.021
+              C243.968,149.009,244.497,149.887,245.049,150.782z"/>
+            <path class="riqu-meteosalute" d="M234.277,132.113c-0.136,0.195-0.208,0.414-0.332,0.449c-0.17,0.048-0.487,0.022-0.555-0.087
+              c-0.502-0.81-0.968-1.643-1.411-2.488c-0.049-0.093,0.085-0.362,0.205-0.442c0.116-0.076,0.424-0.079,0.476,0
+              C233.214,130.379,233.732,131.236,234.277,132.113z"/>
+            <path class="riqu-meteosalute" d="M237.971,129.567c0-0.386-0.057-0.785,0.022-1.154c0.045-0.209,0.313-0.37,0.481-0.553
+              c0.152,0.172,0.425,0.336,0.436,0.517c0.048,0.821,0.049,1.649,0.002,2.47c-0.01,0.179-0.288,0.343-0.443,0.514
+              c-0.166-0.186-0.435-0.352-0.476-0.562C237.917,130.402,237.971,129.979,237.971,129.567z"/>
+            <path class="riqu-meteosalute" d="M227.673,140.84c-0.412-0.001-0.833,0.049-1.233-0.023c-0.185-0.033-0.326-0.305-0.488-0.468
+              c0.168-0.156,0.329-0.438,0.505-0.448c0.822-0.048,1.649-0.048,2.471-0.001c0.183,0.01,0.351,0.28,0.525,0.43
+              c-0.182,0.171-0.342,0.448-0.549,0.489C228.509,140.897,228.086,140.841,227.673,140.84z"/>
+            <path class="riqu-meteosalute" d="M249.19,140.841c-0.412,0-0.833,0.049-1.233-0.021c-0.189-0.033-0.339-0.293-0.506-0.451
+              c0.162-0.162,0.316-0.454,0.487-0.464c0.848-0.048,1.701-0.048,2.548,0.002c0.164,0.01,0.311,0.314,0.467,0.483
+              c-0.175,0.15-0.334,0.398-0.529,0.431C250.023,140.887,249.603,140.84,249.19,140.841z"/>
+            <path class="riqu-meteosalute" d="M238.936,151.081c0.001,0.387,0.062,0.787-0.021,1.155c-0.052,0.233-0.319,0.418-0.489,0.624
+              c-0.152-0.199-0.421-0.389-0.435-0.597c-0.052-0.77-0.053-1.547,0.001-2.316c0.014-0.205,0.292-0.392,0.449-0.587
+              c0.165,0.187,0.427,0.354,0.472,0.567C238.991,150.296,238.935,150.695,238.936,151.081z"/>
+          </g>
+        </g>
+        
+      
+        <polyline class="riga-meteosalute" points="259.333,138 
+          379,138 379,399 25,399 25,138 162.333,138 	"/>
+        <polyline class="riga-meteosalute"  points="543.391,138 
+          562,138 562,399 385,399 385,138 446.343,138 	"/>
+      </g>
+      
+      <!-- spazio per grafici Temperature-->
+      <g id="grafici">
+        
+          <!--<rect id="graf_sinistra" x="25" y="408.083" style="fill:none;stroke:#000000;stroke-miterlimit:10;" width="260.667" height="189.917"/>-->
+          <foreignObject x="27" y="415" width="270" height="248" >
+            <div xmlns="http://www.w3.org/1999/xhtml" class="testi">
+              <img src="data:image/png;base64,{{ graphic_min }}" style="width: 250px; height: 180px;">
+            </div>
+          </foreignObject>
+          <!--<rect id="graf_destra" x="301" y="408.083" style="fill:none;stroke:#000000;stroke-miterlimit:10;" width="260.667" height="189.917"/>-->
+          <foreignObject x="303" y="415" width="270" height="248" >
+            <div xmlns="http://www.w3.org/1999/xhtml" class="testi">
+              <img src="data:image/png;base64,{{ graphic_max }}" style="width: 250px; height: 180px;">
+            </div>
+          </foreignObject>
+      </g>
+      
+      
+      
+      <g id="GIORNO_1">
+        <g id="gg1">
+          <g id="meteo-gg1">
+          
+            <text transform="matrix(0.9496 0 0 1 33.5563 160.0801)" class="text-data" >{{ caldo.data_emissione | my_date_dmY}}</text>
+              
+              <!-- RIGA INTESTAZIONE -->
+            <rect x="32" y="163.464" class="riquadri-intestaz" width="67" height="28.892"/>
+            <rect x="103.333" y="163.464" class="riquadri-intestaz" width="53.212" height="28.892"/>
+            <rect x="156.485" y="163.464" class="riquadri-intestaz" width="53.212" height="28.892"/>
+            <rect x="209.637" y="163.464" class="riquadri-intestaz" width="53.212" height="28.892"/>
+            <rect x="262.788" y="163.464" class="riquadri-intestaz" width="53.212" height="28.892"/>
+            <rect x="319.788" y="163.464" class="riquadri-intestaz" width="53.212" height="28.892"/>
+            
+            <text transform="matrix(0.9496 0 0 1 44.5519 175.4134)" class="text-data">
+              <tspan x="0" y="0">LIVELLO</tspan>
+              <tspan x="-7.512" y="12">DI DISAGIO</tspan>
+            </text>
+            <text transform="matrix(0.9496 0 0 1 118.3896 174.8635)" class="text-data">Tmax</text>
+            <text transform="matrix(1.0102 0 0 1 122.9793 187.1431)" class="text-intestaz">[&#xB0;C]</text>
+            <text transform="matrix(0.9496 0 0 1 168.3896 174.8635)" class="text-data">ATmax</text>
+            <text transform="matrix(1.0102 0 0 1 174.9793 187.1431)" class="text-intestaz">[&#xB0;C]</text>
+            <text transform="matrix(0.9496 0 0 1 323.6197 174.2118)" class="text-ggconsecut">
+              <tspan x="0" y="0">giorni caldo</tspan>
+              <tspan x="0.625" y="12">consecutivi</tspan>
+            </text>
+            <text transform="matrix(0.9496 0 0 1 223.8896 175.3635)" class="text-data">Tmin</text>
+            <text transform="matrix(1.0102 0 0 1 228.4793 187.6431)" class="text-intestaz">[&#xB0;C]</text>
+            <text transform="matrix(0.9496 0 0 1 273.8896 175.3635)" class="text-data">ATmin</text>
+            <text transform="matrix(1.0102 0 0 1 280.4793 187.6431)" class="text-intestaz">[&#xB0;C]</text>
+            
+            <!-- RIGA quadrati fissi per valori  -->
+            <rect x="103.333" y="192.761" class="riquadri-valori" width="53.212" height="29.779"/>
+            <rect x="156.485" y="192.761" class="riquadri-valori" width="53.212" height="29.779"/>
+            <rect x="209.637" y="192.761" class="riquadri-valori" width="53.212" height="29.779"/>
+            <rect x="262.788" y="192.761" class="riquadri-valori" width="53.212" height="29.779"/>
+            <rect x="319.788" y="192.761" class="riquadri-valori" width="53.212" height="29.779"/>
+                
+            
+            <!-- RIGA valori DA CAMBIARE gg 1 -->
+            
+              <!-- rettangolo da colorare e livello-->	
+              <rect x="32" y="192.761"  class="caldo{{caldo_rearranged.COD_COLORE.48.59.0}}" width="67" height="29.779"/>						
+              <text transform="matrix(0.9496 0 0 1 63.5563 211.7541)" class="text-data">{{ caldo_rearranged.COD_COLORE.48.59.0 }}</text>
+              <!-- Tmax-->	
+              <text transform="matrix(0.9496 0 0 1 121.5563 212.0874)" class="text-data">{{ caldo_rearranged.TERMA.48.59.328 }}</text>
+              <!-- ATmax-->
+              <text transform="matrix(0.9496 0 0 1 177.2229 212.4207)" class="text-data">{{ caldo_rearranged.ATMAX.48.59.0 }}</text>
+              <!-- Tmin-->
+              <text transform="matrix(0.9496 0 0 1 226.5562 212.0874)" class="text-data">{{ caldo_rearranged.TERMA.48.59.327 }}</text>
+              <!-- ATmin-->
+              <text transform="matrix(0.9496 0 0 1 281.5562 212.0874)" class="text-data">{{ caldo_rearranged.ATMIN.48.59.0 }}</text>
+              <!-- gg consecutivi-->
+              <text transform="matrix(0.9496 0 0 1 337.5562 212.0874)" class="text-data">{{ caldo_rearranged.GGCONS.48.59.0 }}</text>
+          </g>
+          
+          <g id="salute-gg1">
+          
+              <!-- RIGA INTESTAZIONE -->			
+            <rect x="393" y="163.464" class="riquadri-intestaz" width="163" height="28.892"/>
+            <rect x="393" y="192.761" class="riquadri-valori" width="163" height="29.779"/>			
+            <text transform="matrix(0.9496 0 0 1 395 181.2118)" class="text-data">ECCESSO DI EVENTI SANITARI</text>
+            
+            <!-- RIGA da cambiare -->			
+            <text transform="matrix(0.9496 0 0 1 394.5562 160.0801)" class="text-data">{{ caldo.data_emissione | my_date_dmY}}</text>	
+            
+            
+            <!-- Rettangolo di riferimento dove mettere le croci -->	
+            <!-- croci giorno 1-->
+            {% if caldo_rearranged.COD_SALUTE.48.59.0 == 3  %}
+            <text transform="matrix(0.9496 0 0 1 493.2229 212.0874)" class="text-data">ALTO</text>
+            <g transform="translate(397 144.5) scale(0.15)">
+                {% include "croci_alto.svg" with validity='24' %}
+              </g>
+            {% endif %}
+            {% if caldo_rearranged.COD_SALUTE.48.59.0 == 2  %}
+            <text transform="matrix(0.9496 0 0 1 493.2229 212.0874)" class="text-data">MEDIO</text>
+            <g transform="translate(397 144.5) scale(0.15)">
+                {% include "croci_medio.svg" with validity='24' %}
+              </g>
+            {% endif %}
+            {% if caldo_rearranged.COD_SALUTE.48.59.0 == 1  %}
+            <text transform="matrix(0.9496 0 0 1 493.2229 212.0874)" class="text-data">BASSO</text>
+            <g transform="translate(397 144.5) scale(0.15)">
+                {% include "croci_basso.svg" with validity='24' %}
+              </g>
+              {% endif %}
+              {% if caldo_rearranged.COD_SALUTE.48.59.0 == 0  %}
+            <text transform="matrix(0.9496 0 0 1 493.2229 212.0874)" class="text-data">ASSENTE</text>
+            <g transform="translate(397 144.5) scale(0.15)">
+                {% include "croci_assente.svg" with validity='24' %}
+              </g>
+            {% endif %}	
+            <!--<rect x="404.5" y="195.297" style="fill:#F20DF9;" width="76.5" height="24.5"/>-->
+          </g>
+        </g>
+      </g>
+      
+      
+      
+      
+      <g id="GIORNO_2">
+        <g id="gg2">
+          <g id="meteo-gg2">
+          
+            <text transform="matrix(0.9496 0 0 1 33.5563 240.0801)" class="text-data">{{ caldo.data_emissione | date_tomorrow}}</text>
+          
+              <!-- RIGA INTESTAZIONE -->
+            <rect x="32" y="243.464" class="riquadri-intestaz" width="67" height="28.892"/>
+            <rect x="103.333" y="243.464" class="riquadri-intestaz" width="53.212" height="28.892"/>
+            <rect x="156.485" y="243.464" class="riquadri-intestaz" width="53.212" height="28.892"/>
+            <rect x="209.637" y="243.464" class="riquadri-intestaz" width="53.212" height="28.892"/>
+            <rect x="262.788" y="243.464" class="riquadri-intestaz" width="53.212" height="28.892"/>
+            <rect x="319.788" y="243.464" class="riquadri-intestaz" width="53.212" height="28.892"/>
+            
+            <text transform="matrix(0.9496 0 0 1 44.5519 255.4134)" class="text-data">
+              <tspan x="0" y="0" >LIVELLO</tspan>
+              <tspan x="-7.512" y="12" >DI DISAGIO</tspan>
+            </text>
+            
+            <text transform="matrix(0.9496 0 0 1 118.3896 254.8635)" class="text-data">Tmax</text>
+            <text transform="matrix(1.0102 0 0 1 122.9793 267.1431)" class="text-intestaz">[&#xB0;C]</text>
+            <text transform="matrix(0.9496 0 0 1 168.3896 254.8635)" class="text-data">ATmax</text>
+            <text transform="matrix(1.0102 0 0 1 174.9793 267.1431)" class="text-intestaz">[&#xB0;C]</text>			
+            <text transform="matrix(0.9496 0 0 1 223.8896 255.3635)" class="text-data">Tmin</text>
+            <text transform="matrix(1.0102 0 0 1 228.4793 267.6431)" class="text-intestaz">[&#xB0;C]</text>
+            <text transform="matrix(0.9496 0 0 1 273.8896 255.3635)" class="text-data">ATmin</text>
+            <text transform="matrix(1.0102 0 0 1 280.4793 267.6431)" class="text-intestaz">[&#xB0;C]</text>
+            <text transform="matrix(0.9496 0 0 1 323.6197 254.2118)" class="text-ggconsecut">
+              <tspan x="0" y="0">giorni caldo</tspan>
+              <tspan x="0.625" y="12" >consecutivi</tspan>
+            </text>
+            
+            <!-- RIGA quadrati fissi per valori  -->
+            <rect x="103.333" y="272.761" class="riquadri-valori" width="53.212" height="29.779"/>
+            <rect x="156.485" y="272.761" class="riquadri-valori" width="53.212" height="29.779"/>
+            <rect x="209.637" y="272.761" class="riquadri-valori" width="53.212" height="29.779"/>
+            <rect x="262.788" y="272.761" class="riquadri-valori" width="53.212" height="29.779"/>
+            <rect x="319.788" y="272.761" class="riquadri-valori" width="53.212" height="29.779"/>
+            
+            <!-- RIGA valori DA CAMBIARE gg 1-->
+            
+              <!-- rettangolo da colorare e livello-->	
+              <rect x="32" y="272.761" class="caldo{{caldo_rearranged.COD_COLORE.66.59.0}}" width="67" height="29.779"/>
+              <text transform="matrix(0.9496 0 0 1 63.5563 291.7541)" class="text-data">{{ caldo_rearranged.COD_COLORE.66.59.0 }}</text>
+        
+            
+            <!-- Tmax-->	
+            <text transform="matrix(0.9496 0 0 1 121.5563 292.0874)" class="text-data">{{ caldo_rearranged.TERMA.66.59.328 }}</text>
+            <!-- ATmax-->
+            <text transform="matrix(0.9496 0 0 1 177.2229 292.4207)" class="text-data">{{ caldo_rearranged.ATMAX.66.59.0 }}</text>
+            <!-- Tmin-->
+            <text transform="matrix(0.9496 0 0 1 226.5562 292.0874)" class="text-data">{{ caldo_rearranged.TERMA.66.59.327 }}</text>
+            <!-- ATmin-->
+            <text transform="matrix(0.9496 0 0 1 281.5562 292.0874)" class="text-data">{{ caldo_rearranged.ATMIN.66.59.0 }}</text>           
+            <!-- gg consecutivi-->
+            <text transform="matrix(0.9496 0 0 1 337.5562 292.0874)" class="text-data">{{ caldo_rearranged.GGCONS.66.59.0 }}</text>
+      
+            
+          </g>
+          
+          <g id="salute-gg2">
+                  
+            <!-- RIGA INTESTAZIONE -->	
+            <rect x="393" y="243.464" class="riquadri-intestaz" width="163" height="28.892"/>
+            <rect x="393" y="272.761" class="riquadri-valori" width="163" height="29.779"/>
+            <text transform="matrix(0.9496 0 0 1 395 261.2118)" class="text-data">ECCESSO DI EVENTI SANITARI</text>	
+      
+            <!-- RIGA da cambiare -->
+            <text transform="matrix(0.9496 0 0 1 394.5562 240.0801)" class="text-data">{{ caldo.data_emissione | date_tomorrow}}</text>
+            
+          
+            <!-- Rettangolo di riferimento dove mettere le croci -->
+            <!-- croci giorno 2-->
+            {% if caldo_rearranged.COD_SALUTE.66.59.0 == 3  %}
+            <text transform="matrix(0.9496 0 0 1 493.2229 292.0874)" class="text-data">ALTO</text>
+            <g transform="translate(397 224.5) scale(0.15)">
+                {% include "croci_alto.svg" with validity='24' %}
+              </g>
+            {% endif %}
+            {% if caldo_rearranged.COD_SALUTE.66.59.0 == 2  %}
+            <text transform="matrix(0.9496 0 0 1 493.2229 292.0874)" class="text-data">MEDIO</text>
+            <g transform="translate(397 224.5) scale(0.15)">
+                {% include "croci_medio.svg" with validity='24' %}
+              </g>
+            {% endif %}
+            {% if caldo_rearranged.COD_SALUTE.66.59.0 == 1  %}
+            <text transform="matrix(0.9496 0 0 1 493.2229 292.0874)" class="text-data">BASSO</text>
+            <g transform="translate(397 224.5) scale(0.15)">
+                {% include "croci_basso.svg" with validity='24' %}
+              </g>
+              {% endif %}
+              {% if caldo_rearranged.COD_SALUTE.66.59.0 == 0  %}
+            <text transform="matrix(0.9496 0 0 1 493.2229 292.0874)" class="text-data">ASSENTE</text>
+            <g transform="translate(397 224.5) scale(0.15)">
+                {% include "croci_assente.svg" with validity='24' %}
+              </g>
+            {% endif %}
+            		
+            <!--<rect x="404.5" y="275.297" style="fill:#F20DF9;" width="76.5" height="24.5"/>-->
+            
+            
+          </g>
+        </g>
+      </g>
+      
+      
+      
+      
+      <g id="GIORNO_3">
+        <g id="gg3">
+          <g id="meteo-gg3">
+          
+            <text transform="matrix(0.9496 0 0 1 33.5563 320.0801)" class="text-data">{{ caldo.data_emissione | date_aftertomorrow}}</text>
+          
+            <!-- RIGA INTESTAZIONE -->
+            <rect x="32" y="323.464" class="riquadri-intestaz" width="67" height="28.892"/>
+            <rect x="103.333" y="323.464" class="riquadri-intestaz" width="53.212" height="28.892"/>
+            <rect x="156.485" y="323.464" class="riquadri-intestaz" width="53.212" height="28.892"/>
+            <rect x="209.637" y="323.464" class="riquadri-intestaz" width="53.212" height="28.892"/>
+            <rect x="262.788" y="323.464" class="riquadri-intestaz" width="53.212" height="28.892"/>
+            <rect x="319.788" y="323.464" class="riquadri-intestaz" width="53.212" height="28.892"/>
+            
+            <text transform="matrix(0.9496 0 0 1 44.5519 335.4134)" class="text-data">
+              <tspan x="0" y="0" >LIVELLO</tspan>
+              <tspan x="-7.512" y="12">DI DISAGIO</tspan>
+            </text>
+            
+            <text transform="matrix(0.9496 0 0 1 118.3896 334.8635)" class="text-data">Tmax</text>
+            <text transform="matrix(1.0102 0 0 1 122.9793 347.1431)" class="text-intestaz">[&#xB0;C]</text>
+            <text transform="matrix(0.9496 0 0 1 168.3896 334.8635)" class="text-data">ATmax</text>
+            <text transform="matrix(1.0102 0 0 1 174.9793 347.1431)" class="text-intestaz">[&#xB0;C]</text>
+            <text transform="matrix(0.9496 0 0 1 223.8896 335.3635)" class="text-data">Tmin</text>
+            <text transform="matrix(1.0102 0 0 1 228.4793 347.6431)" class="text-intestaz">[&#xB0;C]</text>
+            <text transform="matrix(0.9496 0 0 1 273.8896 335.3635)" class="text-data">ATmin</text>
+            <text transform="matrix(1.0102 0 0 1 280.4793 347.6431)" class="text-intestaz">[&#xB0;C]</text>
+            <text transform="matrix(0.9496 0 0 1 323.6197 334.2118)" class="text-ggconsecut">
+              <tspan x="0" y="0" >giorni caldo</tspan>
+              <tspan x="0.625" y="12" >consecutivi</tspan>
+            </text>
+            
+            <!-- RIGA quadrati fissi per valori  -->
+            
+            <rect x="103.333" y="352.761" class="riquadri-valori" width="53.212" height="29.779"/>
+            <rect x="156.485" y="352.761" class="riquadri-valori" width="53.212" height="29.779"/>
+            <rect x="209.637" y="352.761" class="riquadri-valori" width="53.212" height="29.779"/>
+            <rect x="262.788" y="352.761" class="riquadri-valori" width="53.212" height="29.779"/>
+            <rect x="319.788" y="352.761" class="riquadri-valori" width="53.212" height="29.779"/>
+      
+            <!-- RIGA valori DA CAMBIARE gg 1-->
+            
+              <!-- rettangolo da colorare e livello-->	
+              <rect x="32" y="352.761" class="caldo{{caldo_rearranged.COD_COLORE.83.59.0}}" width="67" height="29.779"/>
+              <text transform="matrix(0.9496 0 0 1 63.5563 371.7541)" class="text-data">{{ caldo_rearranged.COD_COLORE.83.59.0 }}</text>
+            
+            
+            <!-- Tmax-->	
+            <text transform="matrix(0.9496 0 0 1 121.5563 372.0874)" class="text-data">{{ caldo_rearranged.TERMA.83.59.328 }}</text>		
+            <!-- ATmax-->
+            <text transform="matrix(0.9496 0 0 1 177.2229 372.4207)" class="text-data">{{ caldo_rearranged.ATMAX.83.59.0 }}</text>
+            <!-- Tmin-->
+            <text transform="matrix(0.9496 0 0 1 226.5562 372.0874)" class="text-data">{{ caldo_rearranged.TERMA.83.59.327 }}</text>
+            <!-- ATmin-->
+            <text transform="matrix(0.9496 0 0 1 281.5562 372.0874)" class="text-data">{{ caldo_rearranged.ATMIN.83.59.0 }}</text>
+            <!-- gg consecutivi-->
+            <text transform="matrix(0.9496 0 0 1 337.5562 372.0874)" class="text-data">{{ caldo_rearranged.GGCONS.83.59.0 }}</text>
+        
+          
+          </g>
+          
+          <g id="salute-gg3">
+          
+            <!-- RIGA INTESTAZIONE -->	
+            <rect x="393" y="323.464" class="riquadri-intestaz" width="163" height="28.892"/>
+            <rect x="393" y="352.761" class="riquadri-valori" width="163" height="29.779"/>
+            <text transform="matrix(0.9496 0 0 1 395 341.2118)" class="text-data">ECCESSO DI EVENTI SANITARI</text>
+            
+            <!-- RIGA da cambiare -->
+            <text transform="matrix(0.9496 0 0 1 394.5562 320.0801)" class="text-data">{{ caldo.data_emissione | date_aftertomorrow}}</text>
+            
+      
+            <!-- Rettangolo di riferimento dove mettere le croci -->	
+            <!-- croci giorno 3-->
+            {% if caldo_rearranged.COD_SALUTE.83.59.0 == 3  %}
+            <text transform="matrix(0.9496 0 0 1 493.2229 372.0874)" class="text-data">ALTO</text>
+              <g transform="translate(397 304.5) scale(0.15)">
+                {% include "croci_alto.svg" with validity='24' %}
+              </g>
+            {% endif %}
+            {% if caldo_rearranged.COD_SALUTE.83.59.0 == 2  %}
+            <text transform="matrix(0.9496 0 0 1 493.2229 372.0874)" class="text-data">MEDIO</text>
+              <g transform="translate(397 304.5) scale(0.15)">
+                {% include "croci_medio.svg" with validity='24' %}
+              </g>
+            {% endif %}
+            {% if caldo_rearranged.COD_SALUTE.83.59.0 == 1  %}
+            <text transform="matrix(0.9496 0 0 1 493.2229 372.0874)" class="text-data">BASSO</text>
+              <g transform="translate(397 304.5) scale(0.15)">
+                {% include "croci_basso.svg" with validity='24' %}
+              </g>
+            {% endif %}
+            {% if caldo_rearranged.COD_SALUTE.83.59.0 == 0  %}
+            <text transform="matrix(0.9496 0 0 1 493.2229 372.0874)" class="text-data">ASSENTE</text>
+              <g transform="translate(397 304.5) scale(0.15)">
+                {% include "croci_assente.svg" with validity='24' %}
+              </g>
+            {% endif %}
+            	
+            <!-- <rect x="404.5" y="355.297" style="fill:#F20DF9;" width="76.5" height="24.5"/>-->
+          </g>
+        </g>
+      </g>
+      
+      
+      
+      
+      <g id="legenda">
+        <g id="spiegaz_temper">
+        
+        
+          <rect x="36.993" y="622" class="legenda-quadrati" width="176.5" height="57"/>
+          <text transform="matrix(1 0 0 1 70.3258 634.1536)" class="legenda-text-spiegazioni">: Temperatura massima [&#xB0;C]</text>
+          <text transform="matrix(1 0 0 1 47.3258 634.4869)" class="legenda-text-spiegazioni">T</text>
+          <text transform="matrix(1 0 0 1 53.6592 634.2141)" class="legenda-text-spiegazioni">max</text>
+          <text transform="matrix(1 0 0 1 42.8258 646.6536)" class="legenda-text-spiegazioni">AT</text>
+          <text transform="matrix(1 0 0 1 54.3258 647.2141)" class="legenda-text-spiegazioni">max</text>
+          <text transform="matrix(1 0 0 1 42.8258 672.1536)" class="legenda-text-spiegazioni"> AT</text>
+          <text transform="matrix(1 0 0 1 56.1592 660.0474)" class="legenda-text-spiegazioni">min</text>
+          <text transform="matrix(1 0 0 1 56.3258 672.2141)" class="legenda-text-spiegazioni">min</text>
+          <text transform="matrix(1 0 0 1 49.3258 660.4869)" class="legenda-text-spiegazioni">T</text>
+          <text transform="matrix(1 0 0 1 70.3258 659.6536)" class="legenda-text-spiegazioni">: Temperatura minima [&#xB0;C]</text>
+          <text transform="matrix(1 0 0 1 70.3258 647.1536)" class="legenda-text-spiegazioni">: Temperatura massima percepita [&#xB0;C]</text>
+          <text transform="matrix(1 0 0 1 70.3258 672.6536)" class="legenda-text-spiegazioni">: Temperatura minima percepita [&#xB0;C]</text>
+        </g>
+        
+        
+        <g id="spiegaz_wda">
+          <rect x="219.5" y="622" class="legenda-quadrati" width="201.5" height="57.5"/>
+          <text transform="matrix(1 0 0 1 234.5319 633.4868)" class="legenda-text-spiegazioni">
+            <tspan x="0" y="0">Il livello &#xE8; calcolato sulla base dell&#x2019;indice di allerta </tspan>
+            <tspan x="-12" y="10.2" >WDA (Warm Day Alert) che tiene conto della temperatura</tspan>
+            <tspan x="-3.621" y="20.4" > massima percepita e della temperatura minima </tspan>
+            <tspan x="-10.166" y="30.6" >percepita. La temperatura percepita (o apparente) &#xE8; una</tspan>
+            <tspan x="4.891" y="40.8" >combinazione di temperatura, umidit&#xE0; e vento.</tspan>
+          </text>
+        </g>
+        
+        
+        <g id="spiegaz_x5F_livelli">
+        
+          
+          <!-- rettangoli colorati -->
+          <rect x="37.603" y="695.237" style="fill:#00EE11;stroke:#FFFFFF;stroke-miterlimit:10;" width="90.268" height="21.75"/>
+          <rect x="135.977" y="695.237" style="fill:#FFFF00;stroke:#FFFFFF;stroke-miterlimit:10;" width="90.268" height="21.75"/>
+          <rect x="233.351" y="695.237" style="fill:#FF7514;stroke:#FFFFFF;stroke-miterlimit:10;" width="90.268" height="21.75"/>
+          <rect x="330.724" y="695.237" style="fill:#FF2929;stroke:#FFFFFF;stroke-miterlimit:10;" width="90.268" height="21.75"/>
+              
+          <!-- rettangoli grigi -->
+          <rect x="37.603" y="719.237" class="legenda-quadrati" width="90.268" height="20.25"/>
+          <rect x="135.977" y="719.237" class="legenda-quadrati" width="90.268" height="20.25"/>
+          <rect x="233.351" y="719.237" class="legenda-quadrati" width="90.268" height="20.25"/>
+          <rect x="330.724" y="719.237" class="legenda-quadrati" width="90.268" height="20.25"/>
+          <rect x="37.603" y="740.237" class="legenda-quadrati" width="90.268" height="53.917"/>
+          <rect x="135.977" y="740.237" class="legenda-quadrati" width="90.268" height="53.917"/>
+          <rect x="233.351" y="740.237" class="legenda-quadrati" width="90.268" height="53.917"/>
+          <rect x="330.724" y="740.237" class="legenda-quadrati" width="90.268" height="53.917"/>
+          
+          <!-- testi legende -->
+          
+          <text transform="matrix(1 0 0 1 38.1591 691.9869)" class="text-data"> LIVELLO DI DISAGIO BIOCLIMATICO</text>
+          
+          <text transform="matrix(1 0 0 1 47.1592 709.1535)" class="text-data">LIVELLO</text>
+          <text transform="matrix(1 0 0 1 146.1591 709.4869)" class="text-data">LIVELLO</text>
+          <text transform="matrix(1 0 0 1 243.4925 709.8202)" class="text-data">LIVELLO</text>
+          <text transform="matrix(1 0 0 1 341.1591 709.4869)" class="text-data">LIVELLO</text>
+          
+          <text transform="matrix(1 0 0 1 48.1592 733.1535)" class="text-ggconsecut">Nessun disagio</text>
+          <text transform="matrix(1 0 0 1 149.4925 732.8202)" class="text-ggconsecut">Debole disagio</text>
+          <text transform="matrix(1 0 0 1 240.8258 732.4868)" class="text-ggconsecut">Moderato disagio</text>
+          <text transform="matrix(1 0 0 1 344.4925 733.1535)" class="text-ggconsecut">Forte disagio</text>
+          
+          <text transform="matrix(1 0 0 1 65.6862 749.4868)" class="legenda-text-spiegazioni">
+            <tspan x="-21" y="0">Condizioni meteo che </tspan>
+            <tspan x="-13.563" y="9.6">non comportano</tspan>
+            <tspan x="-24.355" y="19.2" >un disagio bioclimatico</tspan>
+            <tspan x="-13.068" y="28.8" >sulla popolazione.</tspan>
+          </text>
+          <text transform="matrix(1 0 0 1 140.8973 750.1535)" class="legenda-text-spiegazioni">
+            <tspan x="3" y="0" >Condizioni meteo che</tspan>
+            <tspan x="4.892" y="9.6">possono provocare</tspan>
+            <tspan x="4.308" y="19.2" >disagi per la salute. </tspan>
+          </text>
+          <text transform="matrix(1 0 0 1 245.5504 751.1535)" class="legenda-text-spiegazioni">
+            <tspan x="-5.5" y="0" >Condizioni meteo che</tspan>
+            <tspan x="0.508" y="9.6" >possono provocare</tspan>
+            <tspan x="0.476" y="19.2" >rischi per la salute</tspan>
+            <tspan x="0.476" y="28.8" >in particolare nei</tspan>
+            <tspan x="-2.78" y="38.4" >soggetti suscettibili.</tspan>
+          </text>
+          <text transform="matrix(1 0 0 1 347.7067 750.4868)" class="legenda-text-spiegazioni">
+            <tspan x="0" y="0" >Ondata di calore.</tspan>
+            <tspan x="-6.124" y="9.6" >Disagio bioclimatico </tspan>
+            <tspan x="-7.172" y="19.2" >elevato e persistente</tspan>
+            <tspan x="-10.768" y="28.8" >da almeno 3 giorni con</tspan>
+            <tspan x="-12.78" y="38.4" >possibili effetti negativi.</tspan>
+          </text>
+          
+          <text transform="matrix(1 0 0 1 99.8258 709.4869)" class="text-data">0</text>
+          <text transform="matrix(1 0 0 1 198.1592 709.4869)" class="text-data">1</text>
+          <text transform="matrix(1 0 0 1 296.4925 709.4869)" class="text-data">2</text>
+          <text transform="matrix(1 0 0 1 393.1592 709.4869)" class="text-data">3</text>
+          
+        
+          <!-- cerchietti su numero 	-->
+          <g>
+            <path d="M103.408,713.771c-4.411,0-8-3.589-8-8c0-4.411,3.589-8,8-8s8,3.589,8,8
+              C111.408,710.182,107.819,713.771,103.408,713.771z M103.408,698.826c-3.83,0-6.946,3.116-6.946,6.946
+              c0,3.83,3.116,6.945,6.946,6.945s6.946-3.116,6.946-6.945C110.354,701.941,107.238,698.826,103.408,698.826z"/>
+          </g>	
+          
+          <g>
+            <path d="M202.408,713.438c-4.411,0-8-3.589-8-8c0-4.411,3.589-8,8-8s8,3.589,8,8
+              C210.408,709.849,206.819,713.438,202.408,713.438z M202.408,698.492c-3.83,0-6.946,3.116-6.946,6.946
+              c0,3.83,3.116,6.945,6.946,6.945s6.946-3.116,6.946-6.945C209.354,701.608,206.238,698.492,202.408,698.492z"/>
+          </g>
+          <g>
+            <path d="M300.075,714.438c-4.411,0-8-3.589-8-8c0-4.411,3.589-8,8-8s8,3.589,8,8
+              C308.075,710.849,304.486,714.438,300.075,714.438z M300.075,699.492c-3.83,0-6.945,3.116-6.945,6.946
+              c0,3.83,3.116,6.945,6.945,6.945s6.946-3.116,6.946-6.945C307.02,702.608,303.904,699.492,300.075,699.492z"/>
+          </g>
+          <g>
+            <path d="M397.075,714.105c-4.411,0-8-3.589-8-8c0-4.411,3.589-8,8-8s8,3.589,8,8
+              C405.075,710.516,401.486,714.105,397.075,714.105z M397.075,699.159c-3.83,0-6.945,3.116-6.945,6.946
+              c0,3.83,3.116,6.945,6.945,6.945s6.946-3.116,6.946-6.945C404.02,702.275,400.904,699.159,397.075,699.159z"/>
+          </g>
+      
+          <text transform="matrix(1 0 0 1 40.0002 803.1036)" 	class="text-footer" >Per una corretta interpretazione e per approfondimenti consultare la guida al bollettino sul sito di Arpa Piemonte </text>
+        </g>
+        
+        
+        <g id="parte_salute_legenda">
+        
+          <g id="legenda-croci">
+          
+          
+            <text transform="matrix(1 0 0 1 438.3353 728.3292)" class="text-intestaz">Basso</text>
+            <text transform="matrix(1 0 0 1 439.3353 752.9958)" class="text-intestaz">Medio</text>
+            <text transform="matrix(1 0 0 1 440.002 777.6625)" class="text-intestaz">Alto</text>
+            <text transform="matrix(1 0 0 1 431.6516 705.9915)" class="text-intestaz">Assente</text>
+            
+            
+            
+            <!-- croci 	-->
+            <g>
+              <circle style="fill:#C0C0C0;" cx="483.929" cy="703.463" r="10.463"/>
+              <polygon style="fill:#FFFFFF;" points="491.373,701.115 486.277,701.115 486.277,696.018 481.581,696.018 481.581,701.115 
+                476.484,701.115 476.484,705.811 481.581,705.811 481.581,710.907 486.277,710.907 486.277,705.811 491.373,705.811 				"/>
+            </g>
+            <g>
+              <circle style="fill:#C0C0C0;" cx="507.233" cy="703.463" r="10.463"/>
+              <polygon style="fill:#FFFFFF;" points="514.677,701.115 509.581,701.115 509.581,696.018 504.885,696.018 504.885,701.115 
+                499.789,701.115 499.789,705.811 504.885,705.811 504.885,710.907 509.581,710.907 509.581,705.811 514.677,705.811 				"/>
+            </g>
+            <g>
+              <circle style="fill:#C0C0C0;" cx="530.071" cy="703.463" r="10.463"/>
+              <polygon style="fill:#FFFFFF;" points="537.515,701.115 532.419,701.115 532.419,696.018 527.723,696.018 527.723,701.115 
+                522.626,701.115 522.626,705.811 527.723,705.811 527.723,710.907 532.419,710.907 532.419,705.811 537.515,705.811 				"/>
+            </g>
+            <g>
+              <g>
+                <circle style="fill:#FFFFFF;" cx="483.929" cy="727.233" r="10.463"/>
+                <path style="fill:#23703A;" d="M483.929,738.162c-6.026,0-10.929-4.903-10.929-10.929c0-6.026,4.903-10.929,10.929-10.929
+                  c6.026,0,10.929,4.903,10.929,10.929C494.858,733.259,489.955,738.162,483.929,738.162z M483.929,717.236
+                  c-5.512,0-9.997,4.485-9.997,9.997c0,5.512,4.485,9.997,9.997,9.997c5.512,0,9.997-4.485,9.997-9.997
+                  C493.926,721.721,489.441,717.236,483.929,717.236z"/>
+              </g>
+              <polygon style="fill:#EC1C25;" points="491.373,724.885 486.277,724.885 486.277,719.789 481.581,719.789 481.581,724.885 
+                476.484,724.885 476.484,729.581 481.581,729.581 481.581,734.678 486.277,734.678 486.277,729.581 491.373,729.581 				"/>
+            </g>
+            <g>
+              <circle style="fill:#C0C0C0;" cx="507.233" cy="727.233" r="10.463"/>
+              <polygon style="fill:#FFFFFF;" points="514.677,724.885 509.581,724.885 509.581,719.789 504.885,719.789 504.885,724.885 
+                499.789,724.885 499.789,729.581 504.885,729.581 504.885,734.678 509.581,734.678 509.581,729.581 514.677,729.581 				"/>
+            </g>
+            <g>
+              <circle style="fill:#C0C0C0;" cx="530.071" cy="727.233" r="10.463"/>
+              <polygon style="fill:#FFFFFF;" points="537.515,724.885 532.419,724.885 532.419,719.789 527.723,719.789 527.723,724.885 
+                522.626,724.885 522.626,729.581 527.723,729.581 527.723,734.678 532.419,734.678 532.419,729.581 537.515,729.581 				"/>
+            </g>
+            <g>
+              <g>
+                <circle style="fill:#FFFFFF;" cx="483.929" cy="750.071" r="10.463"/>
+                <path style="fill:#23703A;" d="M483.929,761c-6.026,0-10.929-4.903-10.929-10.929c0-6.026,4.903-10.929,10.929-10.929
+                  c6.026,0,10.929,4.903,10.929,10.929C494.858,756.097,489.955,761,483.929,761z M483.929,740.074
+                  c-5.512,0-9.997,4.485-9.997,9.997c0,5.512,4.485,9.997,9.997,9.997c5.512,0,9.997-4.485,9.997-9.997
+                  C493.926,744.559,489.441,740.074,483.929,740.074z"/>
+              </g>
+              <polygon style="fill:#EC1C25;" points="491.373,747.723 486.277,747.723 486.277,742.627 481.581,742.627 481.581,747.723 
+                476.484,747.723 476.484,752.419 481.581,752.419 481.581,757.516 486.277,757.516 486.277,752.419 491.373,752.419 				"/>
+            </g>
+            <g>
+              <g>
+                <circle style="fill:#FFFFFF;" cx="507.233" cy="750.071" r="10.463"/>
+                <path style="fill:#23703A;" d="M507.233,761c-6.026,0-10.929-4.903-10.929-10.929c0-6.026,4.903-10.929,10.929-10.929
+                  c6.026,0,10.929,4.903,10.929,10.929C518.162,756.097,513.259,761,507.233,761z M507.233,740.074
+                  c-5.512,0-9.997,4.485-9.997,9.997c0,5.512,4.485,9.997,9.997,9.997c5.512,0,9.997-4.485,9.997-9.997
+                  C517.23,744.559,512.745,740.074,507.233,740.074z"/>
+              </g>
+              <polygon style="fill:#EC1C25;" points="514.677,747.723 509.581,747.723 509.581,742.627 504.885,742.627 504.885,747.723 
+                499.789,747.723 499.789,752.419 504.885,752.419 504.885,757.516 509.581,757.516 509.581,752.419 514.677,752.419 				"/>
+            </g>
+            <g>
+              <circle style="fill:#C0C0C0;" cx="530.071" cy="750.071" r="10.463"/>
+              <polygon style="fill:#FFFFFF;" points="537.515,747.723 532.419,747.723 532.419,742.627 527.723,742.627 527.723,747.723 
+                522.626,747.723 522.626,752.419 527.723,752.419 527.723,757.516 532.419,757.516 532.419,752.419 537.515,752.419 				"/>
+            </g>
+            <g>
+              <g>
+                <circle style="fill:#FFFFFF;" cx="483.929" cy="773.375" r="10.463"/>
+                <path style="fill:#23703A;" d="M483.929,784.304c-6.026,0-10.929-4.903-10.929-10.929c0-6.026,4.903-10.929,10.929-10.929
+                  c6.026,0,10.929,4.902,10.929,10.929C494.858,779.401,489.955,784.304,483.929,784.304z M483.929,763.378
+                  c-5.512,0-9.997,4.485-9.997,9.997c0,5.512,4.485,9.997,9.997,9.997c5.512,0,9.997-4.485,9.997-9.997
+                  C493.926,767.863,489.441,763.378,483.929,763.378z"/>
+              </g>
+              <polygon style="fill:#EC1C25;" points="491.373,771.027 486.277,771.027 486.277,765.931 481.581,765.931 481.581,771.027 
+                476.484,771.027 476.484,775.723 481.581,775.723 481.581,780.82 486.277,780.82 486.277,775.723 491.373,775.723 				"/>
+            </g>
+            <g>
+              <g>
+                <circle style="fill:#FFFFFF;" cx="507.233" cy="773.375" r="10.463"/>
+                <path style="fill:#23703A;" d="M507.233,784.304c-6.026,0-10.929-4.903-10.929-10.929c0-6.026,4.903-10.929,10.929-10.929
+                  c6.026,0,10.929,4.902,10.929,10.929C518.162,779.401,513.259,784.304,507.233,784.304z M507.233,763.378
+                  c-5.512,0-9.997,4.485-9.997,9.997c0,5.512,4.485,9.997,9.997,9.997c5.512,0,9.997-4.485,9.997-9.997
+                  C517.23,767.863,512.745,763.378,507.233,763.378z"/>
+              </g>
+              <polygon style="fill:#EC1C25;" points="514.677,771.027 509.581,771.027 509.581,765.931 504.885,765.931 504.885,771.027 
+                499.789,771.027 499.789,775.723 504.885,775.723 504.885,780.82 509.581,780.82 509.581,775.723 514.677,775.723 				"/>
+            </g>
+            <g>
+              <g>
+                <circle style="fill:#FFFFFF;" cx="530.071" cy="773.375" r="10.463"/>
+                <path style="fill:#23703A;" d="M530.071,784.304c-6.026,0-10.929-4.903-10.929-10.929c0-6.026,4.903-10.929,10.929-10.929
+                  c6.026,0,10.929,4.902,10.929,10.929C541,779.401,536.097,784.304,530.071,784.304z M530.071,763.378
+                  c-5.512,0-9.997,4.485-9.997,9.997c0,5.512,4.485,9.997,9.997,9.997c5.512,0,9.997-4.485,9.997-9.997
+                  C540.068,767.863,535.583,763.378,530.071,763.378z"/>
+              </g>
+              <polygon style="fill:#EC1C25;" points="537.515,771.027 532.419,771.027 532.419,765.931 527.723,765.931 527.723,771.027 
+                522.626,771.027 522.626,775.723 527.723,775.723 527.723,780.82 532.419,780.82 532.419,775.723 537.515,775.723 				"/>
+            </g>
+          </g>
+          
+          
+          
+          <g id="spiegaz_x5F_eccessi">
+            <rect x="428.5" y="622" style="fill:#E8E8E8;" width="123.5" height="66.5"/>
+            <text transform="matrix(1 0 0 1 441.0404 636.8249)" >
+              <tspan x="0" y="0" class="text-ggconsecut" >ECCESSO DI EVENTI </tspan>
+              <tspan x="23.969" y="13.2" class="text-ggconsecut" >SANITARI </tspan>
+              <tspan x="-3.121" y="22.8" class="legenda-text-spiegazioni">previsti in base alle condizioni</tspan>
+              <tspan x="2.291" y="32.4" class="legenda-text-spiegazioni" >meteorologiche del giorno </tspan>
+              <tspan x="0.167" y="42" class="legenda-text-spiegazioni" >stesso e dei giorni pregressi</tspan>
+            </text>
+          </g>
+        </g>
+        <g id="titolo-meteo-salute">
+          <text transform="matrix(1 0 0 1 55.1667 614.6667)" class="legenda-text-meteosalute">Legenda METEO:</text>
+          <text transform="matrix(1 0 0 1 449.8334 614.4603)" class="legenda-text-meteosalute">Legenda SALUTE:</text>
+          
+          <!-- sole-cuore -->
+          <g>
+            <path style="fill:#040496;" d="M446.606,609.998c-0.003,1.297-0.551,2.644-1.665,3.73c-2.115,2.062-4.252,4.101-6.384,6.145
+              c-0.58,0.556-1.058,0.549-1.646-0.016c-1.402-1.35-2.798-2.706-4.198-4.058c-0.218-0.21-0.457-0.437-0.179-0.73
+              c0.304-0.321,0.542-0.06,0.77,0.161c1.35,1.305,2.711,2.6,4.048,3.918c0.288,0.284,0.454,0.329,0.771,0.019
+              c2.049-2.007,4.134-3.977,6.181-5.987c1.373-1.348,1.798-2.991,1.25-4.834c-0.734-2.468-3.016-3.611-5.446-2.776
+              c-0.72,0.248-1.362,0.627-1.903,1.163c-0.305,0.303-0.58,0.302-0.881,0.002c-0.193-0.192-0.402-0.371-0.615-0.54
+              c-2.405-1.911-5.532-1.043-6.651,1.838c-0.239,0.616-0.335,1.248-0.31,1.903c0.011,0.293-0.088,0.522-0.413,0.529
+              c-0.339,0.008-0.397-0.237-0.415-0.522c-0.191-3.01,2.326-5.684,5.341-5.657c1.213,0.011,2.186,0.605,3.064,1.36
+              c0.331,0.284,0.522,0.295,0.878,0.021c1.258-0.969,2.708-1.389,4.278-1.123C444.899,604.953,446.595,607.135,446.606,609.998z"/>
+            <path style="fill:#040496;" d="M433.871,612.403c0.413-1.056,0.795-2.033,1.177-3.01c0.05-0.127,0.104-0.252,0.15-0.38
+              c0.076-0.211,0.201-0.359,0.447-0.343c0.245,0.017,0.341,0.176,0.395,0.398c0.297,1.207,0.601,2.413,0.904,3.619
+              c0.057,0.229,0.118,0.457,0.208,0.81c0.396-0.743,0.738-1.387,1.083-2.031c0.118-0.221,0.189-0.503,0.506-0.514
+              c0.322-0.011,0.443,0.262,0.522,0.489c0.32,0.922,0.936,1.297,1.895,1.104c0.016-0.003,0.034-0.001,0.051,0
+              c0.32,0.006,0.735-0.062,0.733,0.408c-0.002,0.457-0.407,0.416-0.733,0.417c-0.324,0.001-0.653-0.033-0.973,0.007
+              c-0.605,0.075-1.02-0.123-1.236-0.711c-0.051-0.137-0.11-0.29-0.27-0.374c-0.411,0.784-0.822,1.565-1.23,2.349
+              c-0.113,0.217-0.214,0.44-0.517,0.409c-0.311-0.032-0.351-0.29-0.409-0.517c-0.335-1.314-0.663-2.631-1.013-4.026
+              c-0.294,0.428-0.388,0.858-0.554,1.253c-0.211,0.502-0.404,1.011-0.596,1.521c-0.081,0.214-0.154,0.421-0.431,0.439
+              c-0.25,0.016-0.357-0.16-0.468-0.336c-0.262-0.416-0.527-0.831-0.798-1.259c-0.058,0.071-0.09,0.11-0.121,0.15
+              c-0.268,0.347-0.349,0.901-0.773,1.045c-0.577,0.196-1.216,0.068-1.828,0.067c-0.256,0-0.413-0.19-0.39-0.444
+              c0.02-0.221,0.166-0.369,0.415-0.367c0.034,0,0.07-0.008,0.102-0.001c1.088,0.252,1.674-0.299,2.111-1.224
+              c0.296-0.625,0.597-0.595,0.973-0.001C433.409,611.677,433.616,612.002,433.871,612.403z"/>
+          </g>
+          <g>
+            <path style="fill:#040496;" d="M39.36,611.788c-0.011-2.576,2.073-4.67,4.652-4.673c2.576-0.003,4.667,2.089,4.661,4.665
+              c-0.006,2.561-2.062,4.626-4.627,4.648C41.475,616.45,39.372,614.368,39.36,611.788z M48.053,611.81
+              c0.016-2.231-1.776-4.063-3.985-4.075c-2.242-0.012-4.065,1.759-4.088,3.972c-0.024,2.236,1.759,4.082,3.96,4.1
+              C46.211,615.826,48.037,614.052,48.053,611.81z"/>
+            <path style="fill:#040496;" d="M39.119,614.813c-0.106,0.112-0.195,0.252-0.322,0.33c-0.394,0.244-0.792,0.487-1.211,0.681
+              c-0.135,0.062-0.342-0.032-0.516-0.055c0.062-0.15,0.081-0.364,0.192-0.438c0.426-0.284,0.873-0.544,1.335-0.764
+              c0.128-0.061,0.335,0.045,0.506,0.075C39.109,614.699,39.114,614.756,39.119,614.813z"/>
+            <path style="fill:#040496;" d="M46.703,606.541c0.126-0.232,0.232-0.436,0.347-0.636c0.19-0.33,0.369-0.668,0.589-0.976
+              c0.059-0.082,0.289-0.132,0.372-0.082c0.086,0.052,0.161,0.278,0.117,0.366c-0.254,0.501-0.533,0.99-0.834,1.464
+              c-0.056,0.087-0.255,0.123-0.382,0.111C46.838,606.781,46.777,606.633,46.703,606.541z"/>
+            <path style="fill:#040496;" d="M49.272,609.115c-0.126-0.108-0.249-0.164-0.279-0.252c-0.032-0.092-0.014-0.276,0.048-0.314
+              c0.52-0.321,1.05-0.626,1.589-0.913c0.066-0.035,0.238,0.032,0.295,0.104c0.055,0.07,0.071,0.274,0.026,0.304
+              C50.405,608.41,49.845,608.755,49.272,609.115z"/>
+            <path style="fill:#040496;" d="M41.347,617.045c-0.349,0.563-0.682,1.112-1.036,1.647c-0.033,0.05-0.246,0.053-0.302,0.001
+              c-0.079-0.075-0.159-0.258-0.12-0.333c0.277-0.527,0.574-1.043,0.892-1.546c0.044-0.07,0.245-0.086,0.352-0.054
+              C41.214,616.784,41.261,616.923,41.347,617.045z"/>
+            <path style="fill:#040496;" d="M37.371,607.564c0.561,0.344,1.113,0.673,1.649,1.026c0.052,0.034,0.055,0.252,0.001,0.311
+              c-0.071,0.078-0.257,0.15-0.333,0.11c-0.526-0.276-1.041-0.574-1.544-0.89c-0.07-0.044-0.093-0.241-0.061-0.344
+              C37.109,607.695,37.25,607.648,37.371,607.564z"/>
+            <path style="fill:#040496;" d="M49.275,614.437c0.566,0.348,1.117,0.677,1.654,1.029c0.054,0.036,0.066,0.261,0.019,0.3
+              c-0.098,0.079-0.287,0.162-0.374,0.117c-0.501-0.254-0.99-0.533-1.464-0.834c-0.087-0.055-0.121-0.256-0.109-0.382
+              C49.007,614.592,49.155,614.532,49.275,614.437z"/>
+            <path style="fill:#040496;" d="M48.238,618.441c-0.112,0.128-0.174,0.263-0.258,0.279c-0.107,0.019-0.29-0.022-0.339-0.101
+              c-0.306-0.491-0.593-0.994-0.86-1.507c-0.042-0.081,0.017-0.265,0.092-0.339c0.057-0.057,0.28-0.062,0.312-0.014
+              C47.546,617.306,47.885,617.869,48.238,618.441z"/>
+            <path style="fill:#040496;" d="M41.344,606.493c-0.087,0.125-0.133,0.265-0.213,0.287c-0.109,0.031-0.312,0.014-0.355-0.056
+              c-0.321-0.519-0.62-1.052-0.903-1.592c-0.031-0.06,0.054-0.232,0.131-0.283c0.074-0.049,0.271-0.051,0.305,0
+              C40.664,605.383,40.996,605.932,41.344,606.493z"/>
+            <path style="fill:#040496;" d="M43.708,604.864c0-0.247-0.036-0.502,0.014-0.739c0.029-0.134,0.2-0.237,0.308-0.354
+              c0.097,0.11,0.272,0.215,0.279,0.331c0.031,0.526,0.031,1.055,0.001,1.581c-0.007,0.115-0.184,0.22-0.283,0.329
+              c-0.106-0.119-0.279-0.225-0.305-0.36C43.674,605.398,43.708,605.127,43.708,604.864z"/>
+            <path style="fill:#040496;" d="M37.118,612.078c-0.264-0.001-0.533,0.031-0.789-0.015c-0.118-0.021-0.209-0.195-0.312-0.299
+              c0.108-0.1,0.21-0.28,0.323-0.287c0.526-0.031,1.056-0.031,1.582-0.001c0.117,0.007,0.224,0.179,0.336,0.275
+              c-0.116,0.109-0.219,0.286-0.352,0.313C37.653,612.115,37.382,612.079,37.118,612.078z"/>
+            <path style="fill:#040496;" d="M50.889,612.079c-0.264,0-0.533,0.031-0.789-0.013c-0.121-0.021-0.217-0.188-0.324-0.289
+              c0.104-0.104,0.203-0.291,0.312-0.297c0.542-0.031,1.089-0.031,1.631,0.001c0.105,0.006,0.199,0.201,0.299,0.309
+              c-0.112,0.096-0.214,0.255-0.338,0.276C51.421,612.109,51.152,612.079,50.889,612.079z"/>
+            <path style="fill:#040496;" d="M44.326,618.633c0.001,0.247,0.039,0.504-0.014,0.739c-0.034,0.149-0.204,0.267-0.313,0.4
+              c-0.097-0.127-0.269-0.249-0.278-0.382c-0.033-0.492-0.034-0.99,0.001-1.482c0.009-0.131,0.187-0.251,0.287-0.376
+              c0.105,0.12,0.273,0.227,0.302,0.363C44.361,618.13,44.325,618.385,44.326,618.633z"/>
+          </g>
+        </g>
+      </g>
+
+
+
+      <!--footer-->
+      <rect x="435" y="805" style="fill:#8080FF;" width="138" height="11"/>
+      <text transform="matrix(1 0 0 1 462.6602 812.6201)" style="fill:#FFFFFF; font-family:'TitilliumWeb'; font-weight: 700; font-size:8;">www.arpa.piemonte.it</text>
+      <rect x="19" y="805" style="fill:#C0C0C0;" width="416" height="11"/>
+      <text transform="matrix(1 0 0 1 19 812.5996)" style="font-family:'TitilliumWeb'; font-size:8;">Diffusione: https://www.arpa.piemonte.it/bollettini/</text>
+    </svg>
+  </body>
+</html>

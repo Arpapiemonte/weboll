@@ -1,4 +1,4 @@
-// Copyright (C) 2020-2023 simevo s.r.l. for ARPA Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
@@ -32,7 +32,7 @@
           :disabled="actions.sending || sendValidity"
           type="button"
           class="btn btn-outline-success"
-          @click="execute('send', false, 'Bollettino inviato')"
+          @click="execute_timeout('send', false, 'Bollettino inviato')"
         >
           <span v-if="actions.sending">
             <span
@@ -557,7 +557,7 @@
                       Prov
                     </th>
                     <th colspan="5">
-                      MATTINO
+                      POMERIGGIO
                     </th>
                   </tr>
                   <tr>
@@ -1341,24 +1341,6 @@
               <div class="row">
                 <h3>Radiosondaggi</h3>
                 <div class="col-4">
-                  <h4>Cuneo 00 ieri</h4>
-                  <button
-                    type="button"
-                    @click="openTab(url_sound_1)"
-                  >
-                    <img
-                      v-if="today == analisi.data_emissione"
-                      :src="url_sound_1"
-                      alt="Anteprima immagine"
-                      style="max-width: 150px; max-height: 150px;"
-                    >
-                    <img 
-                      v-else
-                      src="../back/static/images/empty.png"
-                      alt="Anteprima immagine"
-                      style="max-width: 150px; max-height: 150px;"
-                    >
-                  </button>
                   <h4>Cameri 00 ieri</h4>
                   <button
                     type="button"
@@ -1377,16 +1359,14 @@
                       style="max-width: 150px; max-height: 150px;"
                     >
                   </button>
-                </div>
-                <div class="col-4">
-                  <h4>Cuneo 12 ieri</h4>
+                  <h4>Cuneo 00 ieri</h4>
                   <button
                     type="button"
-                    @click="openTab(url_sound_2)"
+                    @click="openTab(url_sound_3)"
                   >
                     <img
                       v-if="today == analisi.data_emissione"
-                      :src="url_sound_2"
+                      :src="url_sound_3"
                       alt="Anteprima immagine"
                       style="max-width: 150px; max-height: 150px;"
                     >
@@ -1397,6 +1377,8 @@
                       style="max-width: 150px; max-height: 150px;"
                     >
                   </button>
+                </div>
+                <div class="col-4">
                   <h4>Cameri 12 ieri</h4>
                   <button
                     type="button"
@@ -1405,6 +1387,24 @@
                     <img
                       v-if="today == analisi.data_emissione"
                       :src="url_sound_5"
+                      alt="Anteprima immagine"
+                      style="max-width: 150px; max-height: 150px;"
+                    >
+                    <img 
+                      v-else
+                      src="../back/static/images/empty.png"
+                      alt="Anteprima immagine"
+                      style="max-width: 150px; max-height: 150px;"
+                    >
+                  </button>
+                  <h4>Cuneo 12 ieri</h4>
+                  <button
+                    type="button"
+                    @click="openTab(url_sound_2)"
+                  >
+                    <img
+                      v-if="today == analisi.data_emissione"
+                      :src="url_sound_2"
                       alt="Anteprima immagine"
                       style="max-width: 150px; max-height: 150px;"
                     >
@@ -1435,14 +1435,14 @@
                   </button>
                 </div>
                 <div class="col-4">
-                  <h4>Cuneo 00 oggi</h4>
+                  <h4>Cameri 00 oggi</h4>
                   <button
                     type="button"
-                    @click="openTab(url_sound_3)"
+                    @click="openTab(url_sound_4)"
                   >
                     <img
                       v-if="today == analisi.data_emissione"
-                      :src="url_sound_3"
+                      :src="url_sound_4"
                       alt="Anteprima immagine"
                       style="max-width: 150px; max-height: 150px;"
                     >
@@ -1453,14 +1453,14 @@
                       style="max-width: 150px; max-height: 150px;"
                     >
                   </button>
-                  <h4>Cameri 00 oggi</h4>
+                  <h4>Cuneo 00 oggi</h4>
                   <button
                     type="button"
-                    @click="openTab(url_sound_4)"
+                    @click="openTab(url_sound_1)"
                   >
                     <img 
                       v-if="today == analisi.data_emissione"
-                      :src="url_sound_4"
+                      :src="url_sound_1"
                       alt="Anteprima immagine"
                       style="max-width: 150px; max-height: 150px;"
                     >
@@ -2412,6 +2412,7 @@ let analisi : Ref<W17FullRearranged> = ref({
   "id_w17_parent":null
   })
 let ready = ref(false)
+let saving = ref(false)
 let countfetch = ref(0)
 let state = ref(store.state)
 let today = ref('')
@@ -2433,6 +2434,12 @@ let province = ref({
   178: 'VC'
 })
 let selectedTab = ref('Situazione generale')
+const props = defineProps({
+    id: {
+        type: String,
+        default: () => ''
+    },
+})
 
 let nullClass = ref([81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101])
 
@@ -2616,10 +2623,8 @@ const url_wind_1000 = computed(() => {
 });
 
 onMounted(async () => {
-  if (typeof route.params.id == "string") {
-    analisi_id.value = route.params.id
-    await fetchData()
-  }
+  analisi_id.value = props.id
+  await fetchData()
 })
 
 watch(countfetch, (count) => {
@@ -2790,7 +2795,7 @@ function getStazioni() {
   }).then(data => {
     data.forEach(x => {
       if (x.cod_staz_meteo != null) {
-        stazioni.value[x.cod_staz_meteo] = x.denominazione
+        stazioni.value[x.cod_staz_meteo] = x.denominazione+' ('+(x.quota_stazione).split('.')[0]+'m)'
       }
     })
     // console.log("stazioni.value", stazioni.value)
@@ -2879,6 +2884,7 @@ function updateW17(id_w17) {
           position: 'top-left'
         }
       )
+      saving.value = false
     }
     return response.json()
   }).then((data: W17) => {
@@ -2891,6 +2897,7 @@ function updateW17(id_w17) {
     )
     analisi.value.last_update = data.last_update
     analisi.value.username = store.state.username
+    saving.value = false
   }).catch((error) => {
     toast.open(
       {
@@ -2899,6 +2906,7 @@ function updateW17(id_w17) {
         position: 'top-left'
       }
     )
+    saving.value = false
   })
 }
 
@@ -2967,6 +2975,7 @@ function savew17class(payload, id_parametro, id_time_layouts, id_classes) {
 }
 
 function saveText(id_parametro, id_time_layouts, id_venue, id_aggregazione) {
+  saving.value = true
   let id = analisi.value.w17data[id_parametro][id_time_layouts][id_venue][id_aggregazione].id_w17_data
   let payload = {}
   payload["text_value"] = analisi.value.w17data[id_parametro][id_time_layouts][id_venue][id_aggregazione].text_value
@@ -2979,6 +2988,7 @@ function saveText(id_parametro, id_time_layouts, id_venue, id_aggregazione) {
           position: 'top-left'
         }
       )
+      saving.value = false
     } else {
       updateW17(analisi.value.id_w17)
     }
@@ -2990,6 +3000,7 @@ function saveText(id_parametro, id_time_layouts, id_venue, id_aggregazione) {
         position: 'top-left'
       }
     )
+    saving.value = false
   })
 }
 
@@ -3169,6 +3180,21 @@ function clearValue(x) {
 
 }
 
+function execute_timeout(action, reroute, message){
+  // console.log("inizio execute_timeout")
+  if (saving.value){
+    console.log("saving è true faccio partire timeout")
+    setTimeout(() => {
+      console.log("aspetto 1 secondo finchè non finisce il salvataggio in corso")
+      execute_timeout(action, reroute, message)
+    }, 1000);
+  }else{
+    console.log("saving è false lancio execute")
+    execute(action, reroute, message)
+  }
+  // console.log("fine execute_timeout")
+}
+
 function execute(action, reroute, message) {
   actions.value[action + 'ing'] = true
   fetchAnalisiAction(action).then(response => {
@@ -3215,7 +3241,7 @@ function remove() {
   if (
     confirm('Vuoi davvero cancellare questo bollettino?')
   ) {
-    api.fetchBulletinDelete(analisi.value.id_w17, 'w17/bulletins', store).then(response => {
+    api.fetchBulletinDelete(analisi_id.value, 'w17/bulletins', store).then(response => {
       if (response.ok) {
         toast.open(
           {

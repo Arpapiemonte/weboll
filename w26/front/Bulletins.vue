@@ -1,4 +1,4 @@
-// Copyright (C) 2020-2023 simevo s.r.l. for ARPA Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
@@ -71,7 +71,7 @@
 </template>
 
 <script>
-import Modal from 'bootstrap/js/dist/modal'
+import { Modal } from 'bootstrap'
 
 import 'vue-toast-notification/dist/theme-default.css'
 import api from '@/api'

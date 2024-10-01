@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2020-2023 simevo s.r.l. for ARPA Piemonte - Dipartimento Naturali e Ambientali
+# Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
 # This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 # weboll is licensed under the AGPL-3.0-or-later License.
 # License text available at https://www.gnu.org/licenses/agpl.txt
@@ -76,10 +76,38 @@ def first_guess(username, start, draft=0):
     tl_min = 49 - 17 * days_offset
     tl_max = 49 + 17 * 8 - 17 * days_offset
 
+    rolling = {}
     # filtro la vista rolling e sort per microaree e timelayouts perchè devono essere ciclati
-    rolling = models.W31Rolling.objects.filter(
+    rolling_qs = models.W31Rolling.objects.filter(
         id_time_layouts__range=(tl_min, tl_max)
     ).order_by("id_w31_microaree", "id_time_layouts")
+
+    id = 1
+    if rolling_qs.count() == 0:
+        # crea i dati se la w31input è vuota
+        for id_tl in [49, 66, 83, 100, 117, 134, 151, 168, 185]:
+            for microarea in models.W31Microaree.objects.all():
+                rolling[id] = models.W31Rolling(
+                    id=id,
+                    temp=-9999,
+                    umid=-9999,
+                    velv=-9999,
+                    prec=-9999,
+                    id_w31_microaree=microarea,
+                    id_time_layouts=id_tl,
+                )
+                id = id + 1
+    else:
+        for roll_rec in rolling_qs:
+            rolling[roll_rec.id] = models.W31Rolling(
+                id=roll_rec.id,
+                temp=roll_rec.temp,
+                umid=roll_rec.umid,
+                velv=roll_rec.velv,
+                prec=roll_rec.prec,
+                id_w31_microaree=roll_rec.id_w31_microaree,
+                id_time_layouts=roll_rec.id_time_layouts,
+            )
 
     yesterday_fwi = {}
     yesterday = start - datetime.timedelta(days=1)
@@ -157,7 +185,14 @@ def first_guess(username, start, draft=0):
     )
     new_w31.save()
 
-    for record in rolling:
+    # 2024-08-30
+    # le condizioni iniziali vengono prese dall'ultimo bollettino valida con id_time_layout = 49
+    # altrimenti ci sonod dei valori iniziali di default che sono poco realistici
+    # l'alimentatore di w31_input sostituisce i valori iniziali nella tabella
+    # public.w31_data_microaree_parametri con un update dat w31_input_valori_iniziali
+
+    for rec_id in rolling:
+        record = rolling[rec_id]
         corrected_id_time_layout = record.id_time_layouts + 17 * days_offset
 
         if corrected_id_time_layout == 49:  # timelayout che indicata la giornata oggi
@@ -200,13 +235,26 @@ def first_guess(username, start, draft=0):
             "dc0",
             dc0,
         )
-        fwisystem = FWIClass(record.temp, record.umid, record.velv, record.prec)
-        ffmc = fwisystem.FFMCcalc(ffmc0)
-        dmc = fwisystem.DMCcalc(dmc0, mth)
-        dc = fwisystem.DCcalc(dc0, mth)
-        isi = fwisystem.ISIcalc(ffmc)
-        bui = fwisystem.BUIcalc(dmc, dc)
-        fwi = fwisystem.FWIcalc(isi, bui)
+        if (
+            record.temp != -9999
+            and record.umid != -9999
+            and record.velv != -9999
+            and record.prec != -9999
+        ):
+            fwisystem = FWIClass(record.temp, record.umid, record.velv, record.prec)
+            ffmc = fwisystem.FFMCcalc(ffmc0)
+            dmc = fwisystem.DMCcalc(dmc0, mth)
+            dc = fwisystem.DCcalc(dc0, mth)
+            isi = fwisystem.ISIcalc(ffmc)
+            bui = fwisystem.BUIcalc(dmc, dc)
+            fwi = fwisystem.FWIcalc(isi, bui)
+        else:
+            ffmc = -9999
+            dmc = -9999
+            dc = -9999
+            isi = -9999
+            bui = -9999
+            fwi = -9999
 
         giorno = min(
             int((start + datetime.timedelta(days=days_offset)).strftime("%j")), 365
@@ -220,19 +268,24 @@ def first_guess(username, start, draft=0):
         ).order_by("soglia_superiore")
 
         # ciclo queryset per confronto soglie e fwi
-        livello = None
-        for agl in agls_filtrati:
-            soglia_superiore = agl.soglia_superiore
-            if (
-                fwi <= soglia_superiore
-            ):  # se fwi è più piccolo della soglia, essendo ordinate ho il livello e posso uscire dal loop
-                livello = agl.id_w31_livelli
-                break
-            else:
-                pass
+        if fwi != -9999:
+            livello = None
+            for agl in agls_filtrati:
+                soglia_superiore = agl.soglia_superiore
+                if (
+                    fwi <= soglia_superiore
+                ):  # se fwi è più piccolo della soglia, essendo ordinate ho il livello e posso uscire dal loop
+                    livello = agl.id_w31_livelli
+                    break
+                else:
+                    pass
 
-        if livello is None:  # se è True: fwi > 21.3
-            livello = models.W31Livelli.objects.get(id_w31_livelli=5)  # livello 5
+            if livello is None:  # se è True: fwi > 21.3
+                livello = models.W31Livelli.objects.get(id_w31_livelli=5)  # livello 5
+        else:
+            livello = models.W31Livelli.objects.get(
+                id_w31_livelli=-9999
+            )  # livello -9999
 
         # trasformo corrected_id_time_layout in una vera istanza del modello TimeLayouts
         tl_instance = models.TimeLayouts.objects.get(
@@ -246,6 +299,7 @@ def first_guess(username, start, draft=0):
             id_w31_livelli=livello,
             id_time_layouts=tl_instance,
         )
+        # print("---- inserisco W31DataMicroareeLivelli", new_w31, mi, livello, tl_instance)
         new_data_microaree_livelli.save()
 
         # inserisco valori nella tabella data_parametri, per i 10 parametri diversi
@@ -256,6 +310,7 @@ def first_guess(username, start, draft=0):
             id_parametro=parametro_terma,
             numeric_value=record.temp,
         )
+        # print("---- inserisco W31DataMicroareeParametri", new_data_microaree_livelli, parametro_terma, record.temp)
         new_data_microcaree_parametri.save()
 
         # IGRO
@@ -264,6 +319,7 @@ def first_guess(username, start, draft=0):
             id_parametro=parametro_igro,
             numeric_value=record.umid,
         )
+        # print("---- inserisco W31DataMicroareeParametri", new_data_microaree_livelli, parametro_igro, record.umid)
         new_data_microcaree_parametri.save()
 
         # VELV
@@ -272,6 +328,7 @@ def first_guess(username, start, draft=0):
             id_parametro=parametro_velv,
             numeric_value=record.velv,
         )
+        # print("---- inserisco W31DataMicroareeParametri", new_data_microaree_livelli, parametro_velv, record.velv)
         new_data_microcaree_parametri.save()
 
         # CUM_PLUV
@@ -280,6 +337,7 @@ def first_guess(username, start, draft=0):
             id_parametro=parametro_cum_pluv,
             numeric_value=record.prec,
         )
+        # print("---- inserisco W31DataMicroareeParametri", new_data_microaree_livelli, parametro_cum_pluv, record.prec)
         new_data_microcaree_parametri.save()
 
         # FFMC_INDEX
@@ -288,6 +346,7 @@ def first_guess(username, start, draft=0):
             id_parametro=parametro_ffmc,
             numeric_value=ffmc,
         )
+        # print("---- inserisco W31DataMicroareeParametri", new_data_microaree_livelli, parametro_ffmc, ffmc)
         new_data_microcaree_parametri.save()
 
         # DMC_INDEX
@@ -296,6 +355,7 @@ def first_guess(username, start, draft=0):
             id_parametro=parametro_dmc,
             numeric_value=dmc,
         )
+        # print("---- inserisco W31DataMicroareeParametri", new_data_microaree_livelli, parametro_dmc, dmc)
         new_data_microcaree_parametri.save()
 
         # DC_INDEX
@@ -304,6 +364,7 @@ def first_guess(username, start, draft=0):
             id_parametro=parametro_dc,
             numeric_value=dc,
         )
+        # print("---- inserisco W31DataMicroareeParametri", new_data_microaree_livelli, parametro_dc, dc)
         new_data_microcaree_parametri.save()
 
         # ISI_INDEX
@@ -312,6 +373,7 @@ def first_guess(username, start, draft=0):
             id_parametro=parametro_isi,
             numeric_value=isi,
         )
+        # print("---- inserisco W31DataMicroareeParametri", new_data_microaree_livelli, parametro_isi, isi)
         new_data_microcaree_parametri.save()
 
         # BUI_INDEX
@@ -320,6 +382,7 @@ def first_guess(username, start, draft=0):
             id_parametro=parametro_bui,
             numeric_value=bui,
         )
+        # print("---- inserisco W31DataMicroareeParametri", new_data_microaree_livelli, parametro_bui, bui)
         new_data_microcaree_parametri.save()
 
         # FWI_INDEX
@@ -328,6 +391,7 @@ def first_guess(username, start, draft=0):
             id_parametro=parametro_fwi,
             numeric_value=fwi,
         )
+        # print("---- inserisco W31DataMicroareeParametri", new_data_microaree_livelli, parametro_fwi, fwi)
         new_data_microcaree_parametri.save()
 
     # calcolo della first guess per le macroaree
@@ -337,7 +401,12 @@ def first_guess(username, start, draft=0):
     dml = models.W31DataMicroareeLivelli.objects.all()
 
     # prendere solo colonna id_time_layouts da rolling
-    tls = rolling.order_by("id_time_layouts").distinct("id_time_layouts")
+    tls = []
+    if rolling_qs.count() > 0:
+        for id_tl in rolling_qs.order_by("id_time_layouts").distinct("id_time_layouts"):  # type: ignore
+            tls.append(id_tl.id_time_layouts)  # type: ignore
+    else:
+        tls = [49, 66, 83, 100, 117, 134, 151, 168, 185]
 
     for ma in Ma:
         aree_giuste = mMa.filter(
@@ -355,7 +424,7 @@ def first_guess(username, start, draft=0):
             )  # lista py dei valori degli ettari delle micro per una macro
 
         for tl in tls:
-            corrected_id_time_layout = tl.id_time_layouts + 17 * days_offset
+            corrected_id_time_layout = tl + 17 * days_offset
 
             temp = dml.filter(
                 id_time_layouts_id=corrected_id_time_layout,
@@ -395,6 +464,7 @@ def first_guess(username, start, draft=0):
                 id_time_layouts=tl_instance,
                 wind="N",
             )
+            # print("---- inserisco W31DataMacroareeLivelli", new_w31, ma, livello, tl_instance, "N")
             new_data_macroaree_livelli.save()
 
     return new_w31

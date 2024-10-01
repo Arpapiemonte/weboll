@@ -1,4 +1,4 @@
-// Copyright (C) 2020-2023 simevo s.r.l. for ARPA Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
@@ -29,10 +29,10 @@
         </a>
         <button
           v-if="piene.status === '0' && state.username"
-          :disabled="sending || (meta && !meta.valid)"
+          :disabled="sending"
           type="button"
           class="btn btn-outline-success"
-          @click="execute('send', false, 'Bollettino inviato')"
+          @click="execute_timeout('send', false, 'Bollettino inviato')"
         >
           <span v-if="sending">
             <span
@@ -49,6 +49,53 @@
               width="18"
               height="18"
             > Invia
+          </span>
+        </button>
+        <!-- <button
+          v-if="piene.status === '1' && state.username"
+          :disabled="reopening"
+          type="button"
+          class="btn btn-outline-success"
+          @click="execute('reopen', true, 'Bollettino inviato')"
+        >
+          <span v-if="reopening">
+            <span
+              class="spinner-border spinner-border-sm"
+              role="status"
+              aria-hidden="true"
+            />
+            Sto riaprendo il bollettino ...
+          </span>
+          <span v-else>
+            <img
+              src="~bootstrap-icons/icons/unlock-fill.svg"
+              alt="unlock icon"
+              width="18"
+              height="18"
+            > Riapri
+          </span>
+        </button>-->
+        <button
+          v-if="piene.status === '1' && state.username && piene.data_emissione.substring(0, 10) === today"
+          type="button"
+          class="btn btn-outline-warning"
+          @click="execute('reopen', true, 'Bollettino riaperto')"
+        >
+          <span v-if="reopening">
+            <span
+              class="spinner-border spinner-border-sm"
+              role="status"
+              aria-hidden="true"
+            />
+            Sto riaprendo il bollettino ...
+          </span>
+          <span v-else>
+            <img
+              src="~bootstrap-icons/icons/unlock-fill.svg"
+              alt="unlock icon"
+              width="18"
+              height="18"
+            > Riapri
           </span>
         </button>
         <button
@@ -69,12 +116,6 @@
 
     <div class="row mb-3">
       <h1>Bollettino Piene {{ piene.numero_bollettino }}</h1>
-      <div
-        v-if="meta && !meta.valid"
-        class="alert alert-danger"
-      >
-        Ci sono dei campi incompleti
-      </div>
     </div>
     <div class="row">
       <div class="col-md-2 mb-3">
@@ -575,6 +616,12 @@ export default {
     MapPiene,
     MapPieneDettaglio
   },
+  props: {
+    id: {
+      type: String,
+      default: () => ''
+    },
+  },
   data () {
   // non reactive properties
     return {
@@ -586,10 +633,17 @@ export default {
       criticita: [],
       state: store.state,
       readonly: true,
-      sending: false
+      sending: false,
+      saving: false,
+      reopening: false
    }
  },
  computed: {
+   today() {
+      // returns today in 2021-04-22 format
+      let d = new Date()
+      return d.toISOString().substring(0, 10)
+    },
    criticita_tot() {
       let vd = { }
       if (this.piene.w22data_set !== undefined) {
@@ -691,6 +745,9 @@ export default {
       return vd
    },
  },
+  watch: {
+    '$route': 'fetchData',
+  },
  created() {
   // https://vuejs.org/v2/guide/instance.html
     this.fetchData()
@@ -710,7 +767,7 @@ export default {
     },
 
     async fetchData () {
-      this.piene_id = this.$route.params.id
+      this.piene_id = this.id
       this.tendenza  =  await this.fetchTendenza()
       this.criticita  =  await this.fetchCriticita()
       // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
@@ -728,7 +785,7 @@ export default {
       }).then(data => {
         data['pippo'] = 'pluto'
         this.piene = data
-        this.readonly = (this.piene.status === '1' || !this.state.username)
+        this.readonly = (this.piene.status === '1' || this.piene.status === '2' ||!this.state.username)
       }).catch(error => {
         this.$toast.open(
           {
@@ -860,6 +917,7 @@ export default {
       return m
     },
     saveW22(newValue, id_w22, campo) {
+      this.saving = true
       if (campo==="data_validita") {
         let month = String(newValue.getMonth() + 1);
         let day = String(newValue.getDate());
@@ -890,6 +948,7 @@ export default {
               position: 'top-left'
             }
           )
+          this.saving = false
         }
         return response.json()
       }).then(data => {
@@ -902,6 +961,7 @@ export default {
         )
         this.piene.last_update = data.last_update
         this.piene.username = store.state.username
+        this.saving = false
       }).catch((error) => {
         this.$toast.open(
           {
@@ -910,6 +970,7 @@ export default {
             position: 'top-left'
           }
         )
+        this.saving = false
       })
     },
     getDateFormatted(rawString, time = true) {
@@ -1034,8 +1095,23 @@ export default {
       )
       return response
     },
+    execute_timeout(action, reroute, message){
+      // console.log("inizio execute_timeout")
+      if (this.saving){
+        console.log("saving è true faccio partire timeout")
+        setTimeout(() => {
+          console.log("aspetto 1 secondo finchè non finisce il salvataggio in corso")
+          this.execute_timeout(action, reroute, message)
+        }, 1000);
+      }else{
+        console.log("saving è false lancio execute")
+        this.execute(action, reroute, message)
+      }
+      // console.log("fine execute_timeout")
+    },
     execute(action, reroute, message) {
       this[action + 'ing'] = true
+      console.log('action',action,reroute,message)
       this.fetchPieneAction(action).then(response => {
         this[action + 'ing'] = false
         if (response.ok) {
@@ -1050,6 +1126,7 @@ export default {
           )
         }
       }).then(data => {
+        console.log('data',data)
         this.$toast.open(
           {
             message: message,

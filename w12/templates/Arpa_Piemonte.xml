@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PrevisioneTratte DataModello="{{ data_modello}}">{%for tratta in previsioni_tratte %}
+	<Tratta>
+		<IdTratta>{{ tratta.idtratta }}</IdTratta>
+		<Nome>{{ tratta.nome }}</Nome>
+		<LatEstrA>{{ tratta.latestra }}</LatEstrA>
+		<LongEstrA>{{ tratta.longestra }}</LongEstrA>
+		<LatEstrB>{{ tratta.latestrb }}</LatEstrB>
+		<LongEstrB>{{ tratta.longestrb }}</LongEstrB>
+    <SerieTemporale>{%for scad in tratta.id_time_layouts %}
+      <Scad id="{{  forloop.counter }}" DataValidita="{{ scad.data_validita }}" Fascia="{{ scad.fascia}}">
+        <CoperturaNuvolosa>{{ scad.cloud_amount }}</CoperturaNuvolosa>{%if scad.precipitationType > 0 %}
+				<Precipitazioni tipo="{{ scad.precipitationType }}">
+					<Intensita>{{ scad.precipitation_class }}</Intensita>{%if scad.precipitationType == 2 %}
+					<AccumuloNeve unita="centimetri">0</AccumuloNeve>{%else%}
+          <AccumuloNeve unita="centimetri">{{ scad.cumulated_snow }}</AccumuloNeve>{% endif %}
+				</Precipitazioni>{% endif %}
+				<Temperature>
+					<ZeroTermico unita="metri">{{ scad.freezing_level }}</ZeroTermico>{%if scad.temperature_below_zero %}
+					<TempInfZero />{% endif %}
+				</Temperature>{%if scad.precipitationType > 0 %}
+        <QuotaNeve unita="metri">{{ scad.snow_level }}</QuotaNeve>{%else%}
+				<QuotaNeve unita="metri">9999</QuotaNeve>{% endif %}{%if scad.vis_inf_1000 %}
+				<VisInf1000 causa="{{ scad.vis_inf_1000_reason }}" />{% endif %}{%if scad.wind_class >= 6 %}
+				<Vento unita="beaufort">{{ scad.wind_class }}</Vento>{% endif %}
+      </Scad>{%endfor%}
+    </SerieTemporale>
+  </Tratta>{%endfor%}
+</PrevisioneTratte>

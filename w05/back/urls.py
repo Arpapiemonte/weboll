@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2020-2023 simevo s.r.l. for ARPA Piemonte - Dipartimento Naturali e Ambientali
+# Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
 # This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 # weboll is licensed under the AGPL-3.0-or-later License.
 # License text available at https://www.gnu.org/licenses/agpl.txt
@@ -17,6 +17,7 @@ router.register(r"meteo_classes", views.W05ClassesView)
 router.register(r"classes", views.ClassesView)
 router.register(r"data", views.W05DataView)
 router.register(r"venue_names", views.VenueNamesView)
+
 
 # Wire up our API using automatic URL routing.
 urlpatterns = [
@@ -47,4 +48,35 @@ urlpatterns = [
         views.MeteoWebarpaOldView.as_view(content_type="text/xml"),
         name="meteo-webarpa-old",
     ),
+    path(
+        "kml0/<int:pk>",
+        views.Kml0View.as_view(content_type="text/plain; charset=windows-1252"),
+        name="meteo-kml",
+    ),
+    path(
+        "kml1/<int:pk>",
+        views.Kml1View.as_view(content_type="text/plain; charset=windows-1252"),
+        name="meteo-kml",
+    ),
+    path(
+        "kml2/<int:pk>",
+        views.Kml2View.as_view(content_type="text/plain; charset=windows-1252"),
+        name="meteo-kml",
+    ),
+    path(
+        "kml3/<int:pk>",
+        views.Kml3View.as_view(content_type="text/plain; charset=windows-1252"),
+        name="meteo-kml",
+    ),
+    path(
+        "kml4/<int:pk>",
+        views.Kml4View.as_view(content_type="text/plain; charset=windows-1252"),
+        name="meteo-kml",
+    ),
+    path(
+        "kml5/<int:pk>",
+        views.Kml5View.as_view(content_type="text/plain; charset=windows-1252"),
+        name="meteo-kml",
+    ),
+    path("current/<yyyy-mm-dd:emissione>/", views.W05CurrentView.as_view()),
 ]

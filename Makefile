@@ -9,7 +9,7 @@ init.dev:
 
 up.dev:
 	@echo "▶ Starting local services ..."
-	docker-compose -f local.yml up -d
+	docker-compose -f local.yml up
 
 build.dev:
 	@echo "⚙ Building dev images with compose ..."

@@ -160,44 +160,21 @@ class W26View(viewsets.ModelViewSet):
         today = datetime.datetime.combine(
             today, datetime.datetime.min.time()
         )  # porto today alle 00:00
-        yesterday = today - datetime.timedelta(days=1)
-        # validita = "2023-01-13"
 
-        create_empty = False
         if (
-            not models.W26.objects.filter(data_emissione=yesterday.date())
+            models.W26.objects.filter(data_validita__year=validita[:4])
             .filter(status="1")
             .exists()
         ):
-            create_empty = True
-            print("new creazione bollettino vuoto!")
-
-        if create_empty:
             old_w26 = (
                 models.W26.objects.filter(status="1")
-                .order_by("-last_update")
-                .latest("pk")
+                .filter(data_validita__year=validita[:4])
+                .latest("data_validita")
             )
+            # aumento il sequenziale perchè è una nuova emissione
+            numero_bollettino = int(old_w26.numero_bollettino.split("/")[0])
+            numero_bollettino = numero_bollettino + 1
         else:
-            old_w26 = (
-                models.W26.objects.filter(data_emissione=yesterday.date())
-                .filter(status="1")
-                .order_by("-last_update")
-                .latest("pk")
-            )
-        print(
-            "new del bollettino ",
-            old_w26.id_w26,
-            "del",
-            old_w26.data_emissione,
-            "iniziato",
-        )
-        # aumento il sequenziale perchè è una nuova emissione
-        numero_bollettino = int(old_w26.numero_bollettino.split("/")[0])
-        numero_bollettino = numero_bollettino + 1
-        # gestione anno nuovo
-        if old_w26.data_validita.year < today.year:
-            print("new(): cambio dell'anno imposto il sequenziale a 1")
             numero_bollettino = 1
 
         new = models.W26(
@@ -206,7 +183,7 @@ class W26View(viewsets.ModelViewSet):
             status=0,
             last_update=datetime.datetime.now(),
             username=request.user,
-            numero_bollettino=str(numero_bollettino) + "/" + str(today.year),
+            numero_bollettino=str(numero_bollettino) + "/" + validita[:4],
         )
         new.save()
 

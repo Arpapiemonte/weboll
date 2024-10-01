@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<meteo>
+	<previsione data="{{ w15.day0 }}">
+		<localita denominazione="Parco naturale di Stupinigi">
+			<tempo_prevalente_12_24 valore="{{ w15.w15_data.166.48.SKY_CONDIT.sky_condition }}"/>
+			<comune denominazione="Nichelino">
+				<temperatura_aria_max valore="{{ w15.w15_data.157.48.TERMA.numeric_value }}" unita_misura="&#176;C" tendenza_max="{{ w15.w15_data.157.48.TERMA.trend }}"/>
+				<vento valore="{{ w15.w15_data.157.48.WIND_CLASS.wind_class }}"/>
+			</comune>
+			<comune denominazione="Candiolo">
+				<temperatura_aria_max valore="{{ w15.w15_data.158.48.TERMA.numeric_value }}" unita_misura="&#176;C" tendenza_max="{{ w15.w15_data.158.48.TERMA.trend }}"/>
+				<vento valore="{{ w15.w15_data.158.48.WIND_CLASS.wind_class }}"/>
+			</comune>
+			<comune denominazione="Orbassano">
+				<temperatura_aria_max valore="{{ w15.w15_data.159.48.TERMA.numeric_value }}" unita_misura="&#176;C" tendenza_max="{{ w15.w15_data.159.48.TERMA.trend }}"/>
+				<vento valore="{{ w15.w15_data.159.48.WIND_CLASS.wind_class }}"/>
+			</comune>
+		</localita>
+	</previsione>
+	<previsione data="{{ w15.day1 }}">
+		<localita denominazione="Parco naturale di Stupinigi">
+			<tempo_prevalente_00_12 valore="{{ w15.w15_data.166.64.SKY_CONDIT.sky_condition }}"/>
+			<tempo_prevalente_12_24 valore="{{ w15.w15_data.166.65.SKY_CONDIT.sky_condition }}"/>
+			<comune denominazione="Nichelino">
+				<temperatura_aria_min valore="{{ w15.w15_data.157.64.TERMA.numeric_value }}" unita_misura="&#176;C" tendenza_min="{{ w15.w15_data.157.64.TERMA.trend }}"/>
+				<temperatura_aria_max valore="{{ w15.w15_data.157.65.TERMA.numeric_value }}" unita_misura="&#176;C" tendenza_max="{{ w15.w15_data.157.65.TERMA.trend }}"/>
+				<vento valore="{{ w15.w15_data.157.66.WIND_CLASS.wind_class }}"/>
+			</comune>
+			<comune denominazione="Candiolo">
+				<temperatura_aria_min valore="{{ w15.w15_data.158.64.TERMA.numeric_value }}" unita_misura="&#176;C" tendenza_min="{{ w15.w15_data.158.64.TERMA.trend }}"/>
+				<temperatura_aria_max valore="{{ w15.w15_data.158.65.TERMA.numeric_value }}" unita_misura="&#176;C" tendenza_max="{{ w15.w15_data.158.65.TERMA.trend }}"/>
+				<vento valore="{{ w15.w15_data.158.66.WIND_CLASS.wind_class }}"/>
+			</comune>
+			<comune denominazione="Orbassano">
+				<temperatura_aria_min valore="{{ w15.w15_data.159.64.TERMA.numeric_value }}" unita_misura="&#176;C" tendenza_min="{{ w15.w15_data.159.64.TERMA.trend }}"/>
+				<temperatura_aria_max valore="{{ w15.w15_data.159.65.TERMA.numeric_value }}" unita_misura="&#176;C" tendenza_max="{{ w15.w15_data.159.65.TERMA.trend }}"/>
+				<vento valore="{{ w15.w15_data.159.66.WIND_CLASS.wind_class }}"/>
+			</comune>
+		</localita>
+	</previsione>
+	<previsione data="{{ w15.day2 }}">
+		<localita denominazione="Parco naturale di Stupinigi">
+			<tempo_prevalente_00_12 valore="{{ w15.w15_data.166.81.SKY_CONDIT.sky_condition }}"/>
+			<tempo_prevalente_12_24 valore="{{ w15.w15_data.166.82.SKY_CONDIT.sky_condition }}"/>
+			<comune denominazione="Nichelino">
+				<temperatura_aria_min valore="{{ w15.w15_data.157.81.TERMA.numeric_value }}" unita_misura="&#176;C" tendenza_min="{{ w15.w15_data.157.81.TERMA.trend }}"/>
+				<temperatura_aria_max valore="{{ w15.w15_data.157.82.TERMA.numeric_value }}" unita_misura="&#176;C" tendenza_max="{{ w15.w15_data.157.82.TERMA.trend }}"/>
+				<vento valore="{{ w15.w15_data.157.83.WIND_CLASS.wind_class }}"/>
+			</comune>
+			<comune denominazione="Candiolo">
+				<temperatura_aria_min valore="{{ w15.w15_data.158.81.TERMA.numeric_value }}" unita_misura="&#176;C" tendenza_min="{{ w15.w15_data.158.81.TERMA.trend }}"/>
+				<temperatura_aria_max valore="{{ w15.w15_data.158.82.TERMA.numeric_value }}" unita_misura="&#176;C" tendenza_max="{{ w15.w15_data.158.82.TERMA.trend }}"/>
+				<vento valore="{{ w15.w15_data.158.83.WIND_CLASS.wind_class }}"/>
+			</comune>
+			<comune denominazione="Orbassano">
+				<temperatura_aria_min valore="{{ w15.w15_data.159.81.TERMA.numeric_value }}" unita_misura="&#176;C" tendenza_min="{{ w15.w15_data.159.81.TERMA.trend }}"/>
+				<temperatura_aria_max valore="{{ w15.w15_data.159.82.TERMA.numeric_value }}" unita_misura="&#176;C" tendenza_max="{{ w15.w15_data.159.82.TERMA.trend }}"/>
+				<vento valore="{{ w15.w15_data.159.83.WIND_CLASS.wind_class }}"/>
+			</comune>
+		</localita>
+	</previsione>
+</meteo>

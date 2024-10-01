@@ -42,6 +42,7 @@ COPY public.w31_livelli (id_w31_livelli, colore) FROM stdin;
 3	yellow
 4	orange
 5	red
+-9999	grey
 \.
 
 

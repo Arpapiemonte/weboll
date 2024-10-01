@@ -1,7 +1,9 @@
 """
 Base settings to build other settings files upon.
 """
+
 from datetime import timedelta
+from email.utils import getaddresses
 from pathlib import Path
 from typing import List, Tuple
 
@@ -77,6 +79,7 @@ DJANGO_APPS = [
 THIRD_PARTY_APPS = [
     "crispy_forms",
     "django_celery_beat",
+    "django_celery_results",
     "massadmin",
     "django_filters",
     "drf_spectacular",
@@ -88,8 +91,11 @@ LOCAL_APPS = [
     "w06.back.apps.ApiConfig",
     "w07.back.apps.ApiConfig",
     "w12.back.apps.ApiConfig",
+    "w15.back.apps.ApiConfig",
     "w16.back.apps.ApiConfig",
     "w17.back.apps.ApiConfig",
+    "w20.back.apps.ApiConfig",
+    "w21.back.apps.ApiConfig",
     "w23.back.apps.ApiConfig",
     "w24.back.apps.ApiConfig",
     "w26.back.apps.ApiConfig",
@@ -101,8 +107,13 @@ LOCAL_APPS = [
     "w17verifica.back.apps.ApiConfig",
     "w31.back.apps.ApiConfig",
     "w33.back.apps.ApiConfig",
+    "w34.back.apps.ApiConfig",
+    "w35.back.apps.ApiConfig",
+    "w37.back.apps.ApiConfig",
     "website.core.apps.CoreConfig",
     "w32.back.apps.ApiConfig",
+    "w36.back.apps.ApiConfig",
+    "w99.back.apps.ApiConfig",
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -222,7 +233,6 @@ MIDDLEWARE = [
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
-    "django.middleware.common.BrokenLinkEmailsMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "django.contrib.sites.middleware.CurrentSiteMiddleware",
 ]
@@ -270,8 +280,11 @@ TEMPLATES = [
             str(ROOT_DIR / "w06" / "templates"),
             str(ROOT_DIR / "w07" / "templates"),
             str(ROOT_DIR / "w12" / "templates"),
+            str(ROOT_DIR / "w15" / "templates"),
             str(ROOT_DIR / "w16" / "templates"),
             str(ROOT_DIR / "w17" / "templates"),
+            str(ROOT_DIR / "w20" / "templates"),
+            str(ROOT_DIR / "w21" / "templates"),
             str(ROOT_DIR / "w23" / "templates"),
             str(ROOT_DIR / "w29" / "templates"),
             str(ROOT_DIR / "w22" / "templates"),
@@ -284,6 +297,11 @@ TEMPLATES = [
             str(ROOT_DIR / "w31" / "templates"),
             str(ROOT_DIR / "w32" / "templates"),
             str(ROOT_DIR / "w33" / "templates"),
+            str(ROOT_DIR / "w34" / "templates"),
+            str(ROOT_DIR / "w35" / "templates"),
+            str(ROOT_DIR / "w37" / "templates"),
+            str(ROOT_DIR / "w36" / "templates"),
+            str(ROOT_DIR / "w99" / "templates"),
         ],
         "OPTIONS": {
             # https://docs.djangoproject.com/en/dev/ref/settings/#template-loaders
@@ -352,11 +370,7 @@ EMAIL_BACKEND = env(
 )
 # https://docs.djangoproject.com/en/dev/ref/settings/#email-timeout
 EMAIL_TIMEOUT = 5
-EMAIL_CONFIG = env.email_url("DJANGO_EMAIL_URL", default="consolemail://")
-vars().update(EMAIL_CONFIG)
-DEFAULT_FROM_EMAIL = env(
-    "DJANGO_DEFAULT_FROM_EMAIL", default=f"webmaster@{SITE_DOMAIN}"
-)
+DEFAULT_FROM_EMAIL = env("DJANGO_DEFAULT_FROM_EMAIL", default=f"weboll@{SITE_DOMAIN}")
 
 # ADMIN
 # ------------------------------------------------------------------------------
@@ -364,7 +378,8 @@ DEFAULT_FROM_EMAIL = env(
 ADMIN_URL = "admin/"
 # https://docs.djangoproject.com/en/dev/ref/settings/#admins
 
-ADMINS: List[Tuple[str, str]] = []
+# DJANGO_ADMINS=Full Name <email-with-name@example.com>,anotheremailwithoutname@example.com
+ADMINS: List[Tuple[str, str]] = getaddresses([env("DJANGO_ADMINS")])
 # https://docs.djangoproject.com/en/dev/ref/settings/#managers
 MANAGERS = ADMINS
 
@@ -438,6 +453,10 @@ CELERY_TASK_SOFT_TIME_LIMIT = 60
 CELERY_BEAT_SCHEDULER = "django_celery_beat.schedulers:DatabaseScheduler"
 # http://docs.celeryproject.org/en/latest/userguide/configuration.html#task-eager-propagates
 CELERY_TASK_EAGER_PROPAGATES = True
+
+CELERY_TASK_TRACK_STARTED = True
+CELERY_RESULT_EXTENDED = True
+CELERY_RESULT_BACKEND = "django-db"
 
 # drf-spectacular
 # ------------------------------------------------------------------------------

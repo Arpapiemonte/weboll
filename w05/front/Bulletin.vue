@@ -1,616 +1,621 @@
-// Copyright (C) 2020-2023 simevo s.r.l. for ARPA Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
 <template>
   <LoginModal ref="login" />
-  <VeeForm 
-    ref="form"
-    as="div"
-    class="container-fluid my-3 py-1"
+  <div
+    id="iconModal"
+    class="modal"
+    tabindex="-1"
+    aria-labelledby="iconModalLabel"
+    aria-hidden="true"
   >
-    <div
-      id="iconModal"
-      class="modal"
-      tabindex="-1"
-      aria-labelledby="iconModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5
-              id="iconModalLabel"
-              class="modal-title"
-            >
-              Cambia l'icona per {{ venueSelection }}
-            </h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            />
-          </div>
-          <div class="modal-body">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5
+            id="iconModalLabel"
+            class="modal-title"
+          >
+            Cambia l'icona per {{ venueSelection }}
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          />
+        </div>
+        <div class="modal-body">
+          <div
+            class="row"
+            role="group"
+            aria-label="Icons"
+          >
             <div
-              class="row"
-              role="group"
-              aria-label="Icons"
+              v-for="(class_name, icon_class) in iconClasses"
+              :key="icon_class"
             >
-              <div
-                v-for="(class_name, icon_class) in iconClasses"
-                :key="icon_class"
+              <h5
+                class="mt-3"
               >
-                <h5
-                  class="mt-3"
+                {{ class_name }}
+              </h5>
+              <button
+                v-for="icon in groupedIcons[icon_class]"
+                :key="icon.id_sky_condition"
+                type="button"
+                class="btn btn-outline-dark col"
+                @click="setIcon(icon.id_sky_condition)"
+              >
+                <svg
+                  width="75"
+                  height="60"
+                  viewBox="0 0 750 600"
                 >
-                  {{ class_name }}
-                </h5>
-                <button
-                  v-for="icon in groupedIcons[icon_class]"
-                  :key="icon.id_sky_condition"
-                  type="button"
-                  class="btn btn-outline-dark col"
-                  @click="setIcon(icon.id_sky_condition)"
-                >
-                  <svg
-                    width="75"
-                    height="60"
-                    viewBox="0 0 750 600"
-                  >
-                    <use
-                      :href="'#id_' + icon.id_sky_condition"
-                      x="0"
-                      y="0"
-                    />
-                  </svg>
-                </button>
-              </div>
+                  <use
+                    :href="'#id_' + icon.id_sky_condition"
+                    x="0"
+                    y="0"
+                  />
+                </svg>
+              </button>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+  <div
+    v-if="!ready"
+    class="text-center"
+  >
+    <span
+      class="spinner-border spinner-border-sm"
+      role="status"
+      aria-hidden="true"
+    />
+    Sto caricando il bollettino
+  </div>
+  <div v-else>
     <div
-      v-if="!ready"
-      class="text-center"
+      class="row justify-content-end sticky-top py-1"
+      style="background-color: #f8f9fa;"
     >
-      <span
-        class="spinner-border spinner-border-sm"
-        role="status"
-        aria-hidden="true"
-      />
-      Sto caricando il bollettino
-    </div>
-    <div v-else>
       <div
-        class="row justify-content-end sticky-top py-1"
-        style="background-color: #f8f9fa;"
+        class="btn-group w-auto"
+        role="group"
       >
-        <div
-          class="btn-group w-auto"
-          role="group"
+        <a
+          class="btn btn-outline-primary"
+          :href="'/api/w05/pdf/' + meteo.id_w05"
+          target="_blank"
+          role="button"
         >
-          <a
-            class="btn btn-outline-primary"
-            :href="'/api/w05/pdf/' + meteo.id_w05"
-            target="_blank"
-            role="button"
-          >
+          <img
+            src="~bootstrap-icons/icons/file-earmark-pdf-fill.svg"
+            alt="PDF icon"
+            width="18"
+            height="18"
+          > PDF
+        </a>
+        <button
+          v-if="meteo.status === '0' && meteo.start_valid_time.substring(0, 10) === today && state.username"
+          :disabled="reopening || sending || resending || reloading"
+          type="button"
+          class="btn btn-outline-dark"
+          @click="execute('reload', false, true, 'Temperature ricaricate con le nuove emissioni di multimodel')"
+        >
+          <span v-if="reloading">
+            <span
+              class="spinner-border spinner-border-sm"
+              role="status"
+              aria-hidden="true"
+            />
+            Sto ricaricando le temperature ...
+          </span>
+          <span v-else>
             <img
-              src="~bootstrap-icons/icons/file-earmark-pdf-fill.svg"
-              alt="PDF icon"
-              width="18"
-              height="18"
-            > PDF
-          </a>
-          <button
-            v-if="meteo.status === '0' && meteo.start_valid_time.substring(0, 10) === today && state.username"
-            :disabled="reopening || sending || resending || reloading"
-            type="button"
-            class="btn btn-outline-info"
-            @click="execute('reload', false, true, 'Temperature ricaricate con le nuove emissioni di multimodel')"
-          >
-            <span v-if="reloading">
-              <span
-                class="spinner-border spinner-border-sm"
-                role="status"
-                aria-hidden="true"
-              />
-              Sto ricaricando le temperature ...
-            </span>
-            <span v-else>
-              <img
-                src="~bootstrap-icons/icons/arrow-repeat.svg"
-                alt="unlock icon"
-                width="18"
-                height="18"
-              > Ricarica TERMA
-            </span>
-          </button>
-          <button
-            v-if="meteo.status === '1' && meteo.start_valid_time.substring(0, 10) === today && ! bozza_presente && state.username"
-            :disabled="reopening || sending || reloading"
-            type="button"
-            class="btn btn-outline-warning"
-            @click="execute('reopen', true, true, 'Bollettino riaperto')"
-          >
-            <span v-if="reopening">
-              <span
-                class="spinner-border spinner-border-sm"
-                role="status"
-                aria-hidden="true"
-              />
-              Sto riaprendo il bollettino ...
-            </span>
-            <span v-else>
-              <img
-                src="~bootstrap-icons/icons/unlock-fill.svg"
-                alt="unlock icon"
-                width="18"
-                height="18"
-              > Riapri
-            </span>
-          </button>
-          <button
-            v-if="meteo.status === '0' && meteo.start_valid_time.substring(0, 10) === today && state.username"
-            :disabled="history.canUndo || reopening || sending || w05_classes_invalid"
-            type="button"
-            class="btn btn-outline-success"
-            @click="execute('send', false, false, 'Bollettino inviato')"
-          >
-            <span v-if="sending">
-              <span
-                class="spinner-border spinner-border-sm"
-                role="status"
-                aria-hidden="true"
-              />
-              Sto inviando il bollettino ...
-            </span>
-            <span v-else>
-              <img
-                src="~bootstrap-icons/icons/send-fill.svg"
-                alt="unlock icon"
-                width="18"
-                height="18"
-              > Invia
-            </span>
-          </button>
-
-          <button
-            v-if="meteo.status === '1' && meteo.start_valid_time.substring(0, 10) === today && state.username"
-            :disabled="reopening || resending"
-            type="button"
-            class="btn btn-outline-danger"
-            @click="execute('resend', false, false, 'Invio ripetuto')"
-          >
-            <span v-if="resending">
-              <span
-                class="spinner-border spinner-border-sm"
-                role="status"
-                aria-hidden="true"
-              />
-              Sto inviando il bollettino ...
-            </span>
-            <span v-else>
-              <img
-                src="~bootstrap-icons/icons/send-fill.svg"
-                alt="unlock icon"
-                width="18"
-                height="18"
-              > Ripeti invio
-            </span>
-          </button>
-
-          <button
-            v-if="meteo.status === '0' && state.username"
-            type="button"
-            class="btn btn-outline-danger"
-            @click="remove()"
-          >
-            <img
-              src="~bootstrap-icons/icons/trash-fill.svg"
+              src="~bootstrap-icons/icons/arrow-repeat.svg"
               alt="unlock icon"
               width="18"
               height="18"
-            > Elimina
-          </button>
-        </div>
-        <div
-          v-if="!readonly"
-          class="btn-group w-auto"
-          role="group"
+            > Ricarica TERMA
+          </span>
+        </button>
+        <button
+          v-if="meteo.status === '1' && meteo.start_valid_time.substring(0, 10) === today && ! bozza_presente && state.username"
+          :disabled="reopening || sending || reloading"
+          type="button"
+          class="btn btn-outline-warning"
+          @click="execute('reopen', true, true, 'Bollettino riaperto')"
         >
-          <button
-            type="button"
-            class="btn btn-success"
-            :disabled="!history.canUndo"
-            @click="undo()"
-          >
-            <img
-              src="~bootstrap-icons/icons/arrow-counterclockwise.svg"
-              alt="undo icon"
-              width="18"
-              height="18"
-            > Undo
-          </button>
-          <button
-            type="button"
-            class="btn btn-info"
-            :disabled="!history.canRedo"
-            @click="redo()"
-          >
-            <img
-              src="~bootstrap-icons/icons/arrow-clockwise.svg"
-              alt="redo icon"
-              width="18"
-              height="18"
-            > Redo
-          </button>
-          <button
-            type="button"
-            class="btn btn-danger"
-            :disabled="!history.canUndo"
-            @click="save()"
-          >
-            <img
-              src="~bootstrap-icons/icons/save.svg"
-              alt="save icon"
-              width="18"
-              height="18"
-            > Save
-          </button>
-        </div>
-      </div>
-      <div class="row mb-3">
-        <h1>Bollettino Meteo {{ meteo.seq_num }}</h1>
-        <div
-          v-if="w05_classes_invalid"
-          class="alert alert-danger"
-        >
-          Ci sono dei campi incompleti
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-2 mb-3">
-          <label for="stato">Stato</label>
-          <span v-if="meteo.status == 1">
-            <input
-              id="stato"
-              disabled
-              class="form-control"
-              name="stato"
-              type="text"
-              value="Inviato"
-            >
+          <span v-if="reopening">
+            <span
+              class="spinner-border spinner-border-sm"
+              role="status"
+              aria-hidden="true"
+            />
+            Sto riaprendo il bollettino ...
           </span>
           <span v-else>
-            <input
-              id="stato"
-              disabled
-              class="form-control"
-              name="stato"
-              type="text"
-              value="Bozza"
-            >
+            <img
+              src="~bootstrap-icons/icons/unlock-fill.svg"
+              alt="unlock icon"
+              width="18"
+              height="18"
+            > Riapri
           </span>
-        </div>
-        <div class="col-md-2 mb-3">
-          <label for="start_valid_time">Data emissione</label>
-          <input
-            id="start_valid_time"
-            disabled
-            class="form-control"
-            name="start_valid_time"
-            type="text"
-            :value="getDateFormatted(meteo.start_valid_time)"
-          >
-        </div>
-        <div class="col-md-2 mb-3">
-          <label for="last_update">Ultima modifica</label>
-          <input
-            id="last_update"
-            disabled
-            class="form-control"
-            name="last_update"
-            type="text"
-            :value="getDateFormatted(meteo.last_update)"
-          >
-        </div>
-        <div class="col-md-2 mb-3">
-          <label for="versione">Versione</label>
-          <input
-            id="versione"
-            disabled
-            class="form-control"
-            name="versione"
-            type="text"
-            :value="meteo.version"
-          >
-        </div>
-        <div class="col-md-2 mb-3">
-          <label for="username">Autore</label>
-          <input
-            id="username"
-            disabled
-            class="form-control"
-            name="username"
-            type="text"
-            :value="meteo.username"
-          >
-        </div>
-      </div> <!-- end row -->
-      <div class="row">
-        <div class="col-md-12 mb-3">
-          <label for="situazione">Situazione</label>
-          <MeteoText
-            :id="'situazione'"
-            :readonly="readonly"
-            :data="meteo"
-            :history="history"
-            :value-key="'situation'"
-            :id-key="'id_w05'"
-            @set-level="setLevel"
-          />
-        </div>
+        </button>
+        <button
+          v-if="meteo.status === '0' && meteo.start_valid_time.substring(0, 10) === today && state.username"
+          :disabled="history.canUndo || reopening || sending || validity.all"
+          type="button"
+          class="btn btn-outline-success"
+          @click="execute('send', false, false, 'Bollettino inviato')"
+        >
+          <span v-if="sending">
+            <span
+              class="spinner-border spinner-border-sm"
+              role="status"
+              aria-hidden="true"
+            />
+            Sto inviando il bollettino ...
+          </span>
+          <span v-else>
+            <img
+              src="~bootstrap-icons/icons/send-fill.svg"
+              alt="unlock icon"
+              width="18"
+              height="18"
+            > Invia
+          </span>
+        </button>
+
+        <button
+          v-if="meteo.status === '1' && meteo.start_valid_time.substring(0, 10) === today && state.username"
+          :disabled="reopening || resending"
+          type="button"
+          class="btn btn-outline-danger"
+          @click="execute('resend', false, false, 'Invio ripetuto')"
+        >
+          <span v-if="resending">
+            <span
+              class="spinner-border spinner-border-sm"
+              role="status"
+              aria-hidden="true"
+            />
+            Sto inviando il bollettino ...
+          </span>
+          <span v-else>
+            <img
+              src="~bootstrap-icons/icons/send-fill.svg"
+              alt="unlock icon"
+              width="18"
+              height="18"
+            > Ripeti invio
+          </span>
+        </button>
+
+        <button
+          v-if="meteo.status === '0' && state.username"
+          type="button"
+          class="btn btn-outline-danger"
+          @click="remove()"
+        >
+          <img
+            src="~bootstrap-icons/icons/trash-fill.svg"
+            alt="unlock icon"
+            width="18"
+            height="18"
+          > Elimina
+        </button>
       </div>
       <div
-        v-if="'w05_data' in meteo"
-        class="row mt-5"
+        v-if="!readonly"
+        class="btn-group w-auto"
+        role="group"
       >
-        <div class="col-xl-7 col-md-12 mb-3">
-          <!-- tabs start -->
-          <ul
-            class="nav nav-tabs nav-justified sticky-top bg-light"
-            role="tablist"
-            style="top: 46px"
+        <button
+          type="button"
+          class="btn btn-success"
+          :disabled="!history.canUndo"
+          @click="undo()"
+        >
+          <img
+            src="~bootstrap-icons/icons/arrow-counterclockwise.svg"
+            alt="undo icon"
+            width="18"
+            height="18"
+          > Undo
+        </button>
+        <button
+          type="button"
+          class="btn btn-info"
+          :disabled="!history.canRedo"
+          @click="redo()"
+        >
+          <img
+            src="~bootstrap-icons/icons/arrow-clockwise.svg"
+            alt="redo icon"
+            width="18"
+            height="18"
+          > Redo
+        </button>
+        <button
+          type="button"
+          class="btn btn-danger"
+          :disabled="!history.canUndo && !history.canRedo"
+          @click="save()"
+        >
+          <img
+            src="~bootstrap-icons/icons/save.svg"
+            alt="save icon"
+            width="18"
+            height="18"
+          > Save
+        </button>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <h1>Bollettino Meteo {{ meteo.seq_num }}</h1>
+      <div
+        v-if="validity.all"
+        class="alert alert-danger"
+      >
+        Ci sono dei campi incompleti
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2 mb-3">
+        <label for="stato">Stato</label>
+        <span v-if="meteo.status == 1">
+          <input
+            id="stato"
+            disabled
+            class="form-control"
+            name="stato"
+            type="text"
+            value="Inviato"
           >
-            <li
-              v-for="i in giorni"
-              :key="i"
-              class="nav-item"
-              role="presentation"
+        </span>
+        <span v-else>
+          <input
+            id="stato"
+            disabled
+            class="form-control"
+            name="stato"
+            type="text"
+            value="Bozza"
+          >
+        </span>
+      </div>
+      <div class="col-md-2 mb-3">
+        <label for="start_valid_time">Data emissione</label>
+        <input
+          id="start_valid_time"
+          disabled
+          class="form-control"
+          name="start_valid_time"
+          type="text"
+          :value="getDateFormatted(meteo.start_valid_time)"
+        >
+      </div>
+      <div class="col-md-2 mb-3">
+        <label for="last_update">Ultima modifica</label>
+        <input
+          id="last_update"
+          disabled
+          class="form-control"
+          name="last_update"
+          type="text"
+          :value="getDateFormatted(meteo.last_update)"
+        >
+      </div>
+      <div class="col-md-2 mb-3">
+        <label for="versione">Versione</label>
+        <input
+          id="versione"
+          disabled
+          class="form-control"
+          name="versione"
+          type="text"
+          :value="meteo.version"
+        >
+      </div>
+      <div class="col-md-2 mb-3">
+        <label for="username">Autore</label>
+        <input
+          id="username"
+          disabled
+          class="form-control"
+          name="username"
+          type="text"
+          :value="meteo.username"
+        >
+      </div>
+    </div> <!-- end row -->
+    <div class="row">
+      <div class="col-md-12 mb-3">
+        <label for="situazione">Situazione</label>
+        <SituationText
+          :id="'situazione'"
+          :readonly="readonly"
+          :data="meteo"
+          :history="history"
+          :value-key="'situation'"
+          :id-key="'id_w05'"
+          :validity="validity"
+          @set-level="setLevel"
+        />
+      </div>
+    </div>
+    <div
+      v-if="'w05_data' in meteo"
+      class="row mt-5"
+    >
+      <div class="col-xl-8 col-md-12 mb-3">
+        <!-- tabs start -->
+        <ul
+          class="nav nav-tabs nav-justified sticky-top bg-light"
+          role="tablist"
+          style="top: 46px"
+        >
+          <li
+            v-for="i in giorni"
+            :key="i"
+            class="nav-item"
+            role="presentation"
+          >
+            <button
+              class="nav-link"
+              :class="{active: giorno == i, 'text-danger': validity.giorni[i-1].all}"
+              :aria-selected="giorno == i"
+              type="button"
+              role="tab"
+              :aria-controls="'giorno' + i + '-tab'"
+              @click="setGiorno(i)"
             >
-              <button
-                class="nav-link"
-                :class="{active: giorno == i, 'text-danger': w05_classes_invalid_giornos[i]}"
-                :aria-selected="giorno == i"
-                type="button"
-                role="tab"
-                :aria-controls="'giorno' + i + '-tab'"
-                @click="setGiorno(i)"
-              >
-                {{ giorniBulletin[i-1] }}
-              </button>
-            </li>
-          </ul>
+              {{ giorniBulletin[i-1] }}
+            </button>
+          </li>
+        </ul>
+        <div
+          v-if="ready"
+          id="top"
+          class="p-3"
+        >
+          <ValidTime
+            :copertura-nuvolosa="meteo.w05_data[giorno == 1 ? 48 : (giorno + 2) * 17 - 2].COP_TOT[0]"
+            :previsioni-meteo="meteo.w05_data[giorno == 1 ? 48 : (giorno + 2) * 17 - 2].WFR[0]"
+            :readonly="readonly"
+            :history="history"
+            :giorno="giorno"
+            @set-level="setLevel"
+          />
+          <SubMenu
+            :skycondit-invalid="validity.giorni[giorno-1].submenu[0]"
+            :nuvolosita-invalid="validity.giorni[giorno-1].submenu[1]"
+            :precipitazioni-invalid="validity.giorni[giorno-1].submenu[2]"
+            :zero-invalid="validity.giorni[giorno-1].submenu[3] || validity_frzlvl.giorni[giorno-1].submenu[3]"
+            :venti-invalid="validity.giorni[giorno-1].submenu[4]"
+            :altri-fenomeni-invalid="validity.giorni[giorno-1].submenu[5]"
+          />
           <div
-            v-if="ready"
-            id="top"
-            class="p-3"
+            v-if="giorno == 1"
+            id="SkyCond"
+            role="tabpanel"
+            aria-labelledby="giorno1-tab"
           >
-            <ValidTime
-              :copertura-nuvolosa="meteo.w05_data[giorno == 1 ? 48 : (giorno + 2) * 17 - 2].COP_TOT[0]"
-              :previsioni-meteo="meteo.w05_data[giorno == 1 ? 48 : (giorno + 2) * 17 - 2].WFR[0]"
-              :readonly="readonly"
-              :history="history"
-              :giorno="giorno"
-              @set-level="setLevel"
-            />
-            <SubMenu
-              :nuvolosita-invalid="w05_classes_invalid_parametros.COP_TOT"
-              :precipitazioni-invalid="w05_classes_invalid_parametros.PLUV"
-              :zero-invalid="w05_classes_invalid_parametros.FRZLVL"
-              :venti-invalid="w05_classes_invalid_parametros.VELV"
-              :altri-fenomeni-invalid="w05_classes_invalid_parametros.WFOP"
-            />
-            <div
-              v-if="giorno == 1"
-              id="SkyCond"
-              role="tabpanel"
-              aria-labelledby="giorno1-tab"
-            >
-              <SkyCond1
-                title="Situazione meteo"
-                class="offset"
-                :cieli="[meteo.w05_data[48], meteo.w05_data[51], meteo.w05_data[50]]"
-                :index="1"
-                :readonly="readonly"
-                :selected-venues="selectedVenues"
-                :icons="icons"
-                :history="history"
-                :venue-names="venueNames"
-                @transformed="onTransformed"
-                @set-venue="setVenue"
-              />
-            </div>
-            <div
-              v-else
-              id="SkyCond"
-              role="tabpanel"
-              aria-labelledby="giorno2-tab"
-            >
-              <SkyCond2
-                title="Situazione meteo"
-                class="offset"
-                :cieli="[meteo.w05_data[(giorno + 2) * 17 - 4], meteo.w05_data[(giorno + 2) * 17 - 3], meteo.w05_data[(giorno + 2) * 17], meteo.w05_data[(giorno + 2) * 17 - 1]]"
-                :index="2"
-                :readonly="readonly"
-                :selected-venues="selectedVenues"
-                :icons="icons"
-                :periodo="periodo"
-                :history="history"
-                :venue-names="venueNames"
-                @period-changed="changePeriod"
-                @transformed="onTransformed"
-                @set-venue="setVenue"
-              />
-            </div>
-            <Nuvolosita
-              id="Nuvolosita"
+            <SkyCond1
+              title="Situazione meteo"
               class="offset"
-              :copertura-nuvolosa="meteo.w05_data[giorno == 1 ? 48 : (giorno + 2) * 17 - 2].COP_TOT[0]"
-              :classes0012="giorno == 1 ? null : meteo.w05_classes[(giorno + 2) * 17 - 4].COP_TOT"
-              :classes1224="meteo.w05_classes[(giorno + 2) * 17 - 3].COP_TOT"
-              :class-description="classes.COP_TOT"
+              :cieli="[meteo.w05_data[48], meteo.w05_data[51], meteo.w05_data[50]]"
+              :index="1"
               :readonly="readonly"
-              :history="history"
-              @set-class="setClass"
-              @set-level="setLevel"
-            />
-            <Precipitazioni
-              id="Precipitazioni"
-              class="offset"
-              :livello-pioggia="meteo.w05_data[giorno == 1 ? 48 : (giorno + 2) * 17 - 2].PLUV[0]"
-              :classes0012="giorno == 1 ? null : meteo.w05_classes[(giorno + 2) * 17 - 4].PLUV"
-              :classes1224="meteo.w05_classes[(giorno + 2) * 17 - 3].PLUV"
-              :class-description="classes.PLUV"
-              :readonly="readonly"
-              :history="history"
-              @set-class="setClass"
-              @set-level="setLevel"
-            />
-            <ZeroTermico
-              id="ZeroTermico"
-              class="offset"
-              :freezing-level-giornata="meteo.w05_data[giorno == 1 ? 48 : (giorno + 2) * 17 - 2].FRZLVL[0]"
-              :freezing-level-mattino="giorno == 1 ? null : meteo.w05_data[(giorno + 2) * 17 - 4].FRZLVL[0]"
-              :freezing-level-pomeriggio="meteo.w05_data[(giorno + 2) * 17 - 3].FRZLVL[0]"
-              :classes0024="giorno == 1 ? null : meteo.w05_classes[(giorno + 2) * 17 - 2].FRZLVL[0]"
-              :classes0012="giorno == 1 ? null : meteo.w05_classes[(giorno + 2) * 17 - 4].FRZLVL[0]"
-              :classes1224="meteo.w05_classes[(giorno + 2) * 17 - 3].FRZLVL[0]"
-              :class-description="classes.FRZLVL"
-              :readonly="readonly"
-              :history="history"
-              @set-class="setClass"
-              @set-level="setLevel"
-            />
-            <QuotaNeve
-              id="QuotaNeve"
-              class="offset"
-              :data="meteo.w05_data[giorno == 1 ? 48 : (giorno + 2) * 17 - 2].SNOW_LEV"
-              :classes="meteo.w05_classes[giorno == 1 ? 48 : (giorno + 2) * 17 - 2].SNOW_LEV"
-              :class-description="classes.SNOW_LEV"
-              :readonly="readonly"
-              :history="history"
-              @set-class="setClass"
-              @set-level="setLevel"
-            />
-            <Venti
-              id="Venti"
-              class="offset"
-              :velocita-vento="meteo.w05_data[giorno == 1 ? 48 : (giorno + 2) * 17 - 2].VELV[0]"
-              :classes="meteo.w05_classes[giorno == 1 ? 48 : (giorno + 2) * 17 - 2].VELV"
-              :class-description="classes.VELV"
-              :readonly="readonly"
-              :history="history"
-              @set-class="setClass"
-              @set-level="setLevel"
-            />
-            <AltriFenomeni
-              id="AltriFenomeni"
-              class="offset"
-              :altri-fenomeni="meteo.w05_data[giorno == 1 ? 48 : (giorno + 2) * 17 - 2].WFOP[0]"
-              :readonly="readonly"
-              :history="history"
-              @set-class="setClass"
-              @set-level="setLevel"
-            />
-          </div> <!-- end top -->
-          <div
-            v-else
-            class="d-flex justify-content-center m-5"
-          >
-            <div
-              class="spinner-border text-info"
-              role="status"
-            >
-              <span class="visually-hidden">Loading ...</span>
-            </div>
-          </div>
-        </div> <!-- end col-md-7 -->
-
-        <div class="col-xl-5 col-md-12 mb-3">
-          <div
-            class="sticky-top pt-5"
-            style="z-index: 0;"
-          >
-            <MapMeteo
-              :orography="true"
-              :rivers="false"
-              :provinces="false"
-              :capitals="true"
-              :meteo="true"
-              :grouped-icons="groupedIcons"
               :selected-venues="selectedVenues"
               :icons="icons"
-              :sky-condition="meteo.w05_data[timeLayout].SKY_CONDIT"
-              :readonly="readonly"
-              @open-modal="openModal"
-              @toggle-venue="toggleVenue"
+              :history="history"
+              :venue-names="venueNames"
+              :validity="validity"
+              @transformed="onTransformed"
+              @set-venue="setVenue"
             />
-            <div
-              v-if="giorno != 1"
-              class="caption text-center mt-5"
+          </div>
+          <div
+            v-else
+            id="SkyCond"
+            role="tabpanel"
+            aria-labelledby="giorno2-tab"
+          >
+            {{ (giorno + 2) * 17 }} - {{(giorno + 2) * 17 - 1 }}
+            <SkyCond2
+              title="Situazione meteo"
+              class="offset"
+              :cieli="[meteo.w05_data[(giorno + 2) * 17 - 4], meteo.w05_data[(giorno + 2) * 17 - 3], meteo.w05_data[(giorno + 2) * 17], meteo.w05_data[(giorno + 2) * 17 - 1]]"
+              :index="2"
+              :readonly="readonly"
+              :selected-venues="selectedVenues"
+              :icons="icons"
+              :periodo="periodo"
+              :history="history"
+              :venue-names="venueNames"
+              :validity="validity"
+              @period-changed="changePeriod"
+              @transformed="onTransformed"
+              @set-venue="setVenue"
+            />
+          </div>
+          <Nuvolosita
+            id="Nuvolosita"
+            class="offset"
+            :copertura-nuvolosa="meteo.w05_data[giorno == 1 ? 48 : (giorno + 2) * 17 - 2].COP_TOT[0]"
+            :classes0012="giorno == 1 ? null : meteo.w05_classes[(giorno + 2) * 17 - 4].COP_TOT"
+            :classes1224="meteo.w05_classes[(giorno + 2) * 17 - 3].COP_TOT"
+            :class-description="classes.COP_TOT"
+            :readonly="readonly"
+            :history="history"
+            :validity="validity"
+            @set-class="setClass"
+            @set-level="setLevel"
+          />
+          <Precipitazioni
+            id="Precipitazioni"
+            class="offset"
+            :livello-pioggia="meteo.w05_data[giorno == 1 ? 48 : (giorno + 2) * 17 - 2].PLUV[0]"
+            :classes0012="giorno == 1 ? null : meteo.w05_classes[(giorno + 2) * 17 - 4].PLUV"
+            :classes1224="meteo.w05_classes[(giorno + 2) * 17 - 3].PLUV"
+            :class-description="classes.PLUV"
+            :readonly="readonly"
+            :history="history"
+            :validity="validity"
+            @set-class="setClass"
+            @set-level="setLevel"
+          />
+          <ZeroTermico
+            id="ZeroTermico"
+            class="offset"
+            :freezing-level-giornata="meteo.w05_data[giorno == 1 ? 48 : (giorno + 2) * 17 - 2].FRZLVL[0]"
+            :freezing-level-mattino="giorno == 1 ? null : meteo.w05_data[(giorno + 2) * 17 - 4].FRZLVL[0]"
+            :freezing-level-pomeriggio="meteo.w05_data[(giorno + 2) * 17 - 3].FRZLVL[0]"
+            :classes0024="giorno == 1 ? null : meteo.w05_classes[(giorno + 2) * 17 - 2].FRZLVL[0]"
+            :classes0012="giorno == 1 ? null : meteo.w05_classes[(giorno + 2) * 17 - 4].FRZLVL[0]"
+            :classes1224="meteo.w05_classes[(giorno + 2) * 17 - 3].FRZLVL[0]"
+            :class-description="classes.FRZLVL"
+            :readonly="readonly"
+            :history="history"
+            :validity="validity"
+            :validity_frzlvl="validity_frzlvl"
+            @set-class="setClass"
+            @set-level="setLevel"
+          />
+          <QuotaNeve
+            id="QuotaNeve"
+            class="offset"
+            :data="meteo.w05_data[giorno == 1 ? 48 : (giorno + 2) * 17 - 2].SNOW_LEV"
+            :classes="meteo.w05_classes[giorno == 1 ? 48 : (giorno + 2) * 17 - 2].SNOW_LEV"
+            :class-description="classes.SNOW_LEV"
+            :readonly="readonly"
+            :history="history"
+            :validity="validity"
+            @set-class="setClass"
+            @set-level="setLevel"
+          />
+          <Venti
+            id="Venti"
+            class="offset"
+            :velocita-vento="meteo.w05_data[giorno == 1 ? 48 : (giorno + 2) * 17 - 2].VELV[0]"
+            :classes="meteo.w05_classes[giorno == 1 ? 48 : (giorno + 2) * 17 - 2].VELV"
+            :class-description="classes.VELV"
+            :readonly="readonly"
+            :history="history"
+            :validity="validity"
+            :ready="ready"
+            @set-class="setClass"
+            @set-level="setLevel"
+          />
+          <AltriFenomeni
+            id="AltriFenomeni"
+            class="offset"
+            :altri-fenomeni="meteo.w05_data[giorno == 1 ? 48 : (giorno + 2) * 17 - 2].WFOP[0]"
+            :readonly="readonly"
+            :history="history"
+            :validity="validity"
+            :ready="ready"
+            @set-class="setClass"
+            @set-level="setLevel"
+          />
+        </div> <!-- end top -->
+        <div
+          v-else
+          class="d-flex justify-content-center m-5"
+        >
+          <div
+            class="spinner-border text-info"
+            role="status"
+          >
+            <span class="visually-hidden">Loading ...</span>
+          </div>
+        </div>
+      </div> <!-- end col-md-7 -->
+
+      <div class="col-xl-4 col-md-12 mb-3">
+        <div
+          class="sticky-top pt-5"
+          style="z-index: 0;"
+        >
+          <MapMeteo
+            :orography="true"
+            :rivers="false"
+            :provinces="false"
+            :capitals="true"
+            :meteo="true"
+            :grouped-icons="groupedIcons"
+            :selected-venues="selectedVenues"
+            :icons="icons"
+            :sky-condition="meteo.w05_data[timeLayout].SKY_CONDIT"
+            :readonly="readonly"
+            @open-modal="openModal"
+            @toggle-venue="toggleVenue"
+          />
+          <div
+            v-if="giorno != 1"
+            class="caption text-center mt-5"
+          >
+            <button
+              v-if="periodo==1"
+              type="button"
+              class="btn btn-outline-dark"
+              title="passa a Pomeriggio"
+              @click="periodo = 2"
             >
-              <button
-                v-if="periodo==1"
-                type="button"
-                class="btn btn-outline-dark"
-                title="passa a Pomeriggio"
-                @click="periodo = 2"
-              >
-                <img
-                  src="~bootstrap-icons/icons/clock-fill.svg"
-                  alt="print icon"
-                  width="18"
-                  height="18"
-                > Mattino
-              </button>
-              <button
-                v-else
-                type="button"
-                class="btn btn-outline-dark"
-                title="passa a Mattino"
-                @click="periodo = 1"
-              >
-                <img
-                  src="~bootstrap-icons/icons/clock.svg"
-                  alt="print icon"
-                  width="18"
-                  height="18"
-                > Pomeriggio
-              </button>
-            </div>
-            <div
+              <img
+                src="~bootstrap-icons/icons/clock-fill.svg"
+                alt="print icon"
+                width="18"
+                height="18"
+              > Mattino
+            </button>
+            <button
               v-else
-              class="caption text-center mt-5"
+              type="button"
+              class="btn btn-outline-dark"
+              title="passa a Mattino"
+              @click="periodo = 1"
             >
-              <span>          <img
+              <img
                 src="~bootstrap-icons/icons/clock.svg"
                 alt="print icon"
                 width="18"
                 height="18"
-              > Pomeriggio</span>
-            </div>
+              > Pomeriggio
+            </button>
           </div>
-        </div> <!-- end col-md-5 -->
-      </div> <!-- end row -->
-    </div>
-  </VeeForm>
+          <div
+            v-else
+            class="caption text-center mt-5"
+          >
+            <span>          <img
+              src="~bootstrap-icons/icons/clock.svg"
+              alt="print icon"
+              width="18"
+              height="18"
+            > Pomeriggio</span>
+          </div>
+        </div>
+      </div> <!-- end col-md-5 -->
+    </div> <!-- end row -->
+  </div>
 </template>
 
 <script>
-import Modal from 'bootstrap/js/dist/modal'
-
-import { Form as VeeForm } from 'vee-validate'
+import { Modal } from 'bootstrap'
 
 // @ is an alias to /src
 import SubMenu from './SubMenu.vue'
 import ValidTime from './ValidTime.vue'
 
-import MeteoText from './MeteoText.vue'
 import SkyCond1 from './SkyCond1.vue'
 import SkyCond2 from './SkyCond2.vue'
 import MapMeteo from './MapMeteo.vue'
@@ -621,6 +626,7 @@ import apply from '@/components/apply'
 import Nuvolosita from './Nuvolosita.vue'
 import Precipitazioni from './Precipitazioni.vue'
 import ZeroTermico from './ZeroTermico.vue'
+import SituationText from './SituationText.vue'
 import QuotaNeve from './QuotaNeve.vue'
 import Venti from './Venti.vue'
 import AltriFenomeni from './AltriFenomeni.vue'
@@ -629,7 +635,7 @@ import LoginModal from '@/components/LoginModal.vue'
 export default {
   name: 'MeteoBulletin',
   components: {
-    MeteoText,
+    SituationText,
     SubMenu,
     ValidTime,
     SkyCond1,
@@ -641,8 +647,13 @@ export default {
     QuotaNeve,
     Venti,
     AltriFenomeni,
-    VeeForm,
     LoginModal,
+  },
+  props: {
+    id: {
+      type: String,
+      default: () => ''
+    },
   },
   data() {
     // non reactive properties
@@ -685,6 +696,39 @@ export default {
         92: false,
         93: false
       },
+      id_tl2day: {
+        33:0,
+        48:0,
+        50:0,
+        51:0,
+        64:1,
+        65:1,
+        66:1,
+        67:1,
+        68:1,
+        81:2,
+        82:2,
+        83:2,
+        84:2,
+        85:2,
+        98:3,
+        99:3,
+        100:3,
+        101:3,
+        102:3
+      },
+      id_param2submenu:{
+        'SKY_CONDIT':0,
+        'TERMA':0,
+        'TERMA_700':0,
+        'TERMA_1500':0,
+        'TERMA_2000':0,
+        'COP_TOT':1,
+        'PLUV':2,
+        'FRZLVL':3,
+        'VELV':4,
+        'WFOP':5
+      },
       venueNames: [],
       readonly: true,
       history: new HistoryStack(),
@@ -702,6 +746,98 @@ export default {
     }
   },
   computed: {
+    validity() {
+      let result = {giorni:[
+        {all:false,submenu:[false,false,false,false,false,false]}, 
+        {all:false,submenu:[false,false,false,false,false,false]}, 
+        {all:false,submenu:[false,false,false,false,false,false]}, 
+        {all:false,submenu:[false,false,false,false,false,false]}
+        ],
+        all:false,
+        situation: false
+      }
+      if (this.ready){
+        result = this.check_validity_w05('situation', result, true)
+        let tls = [48, 66, 83, 100]
+        let params = ['COP_TOT', 'PLUV', 'FRZLVL', 'VELV', 'WFOP']
+        tls.forEach(tl => {
+          params.forEach(param => {
+            result = this.check_validity_w05data(tl, param, 'text_value', result, 0, true)
+          })
+        })
+        tls = [48, 64, 65, 81, 82, 98, 99]
+        params = ['SKY_CONDIT']
+        tls.forEach(tl => {
+          params.forEach(param => {
+            result = this.check_validity_w05data_all(tl, param, 'numeric_value', result)
+          })
+        })
+        tls = [50, 51, 67, 68, 84, 85, 101, 102]
+        params = ['TERMA']
+        tls.forEach(tl => {
+          params.forEach(param => {
+            result = this.check_validity_w05data_all(tl, param, 'numeric_value', result)
+          })
+        })
+        params = ['TERMA_700', 'TERMA_1500', 'TERMA_2000']
+        tls.forEach(tl => {
+          params.forEach(param => {
+            result = this.check_validity_w05data(tl, param, 'numeric_value', result, 0, false)
+          })
+        })
+        tls = [48, 64, 65, 81, 82, 98, 99]
+        params = ['COP_TOT', 'PLUV']
+        tls.forEach(tl => {
+          params.forEach(param => {
+            result = this.check_validity_w05classes(tl, param, 0, 'id_classes_value', result)
+            result = this.check_validity_w05classes(tl, param, 1, 'id_classes_value', result)
+            result = this.check_validity_w05classes(tl, param, 2, 'id_classes_value', result)
+            result = this.check_validity_w05classes(tl, param, 3, 'id_classes_value', result)
+          })
+        })
+        tls = [48, 64, 65, 66, 81, 82, 83, 98, 99, 100]
+        params = ['FRZLVL']
+        tls.forEach(tl => {
+          params.forEach(param => {
+            result = this.check_validity_w05classes(tl, param, 0, 'id_classes_value', result)
+          })
+        })
+        tls = [48, 66, 83, 100]
+        params = ['VELV']
+        tls.forEach(tl => {
+          params.forEach(param => {
+            result = this.check_validity_w05classes(tl, param, 0, 'id_classes_value', result)
+            result = this.check_validity_w05classes(tl, param, 1, 'id_classes_value', result)
+            result = this.check_validity_w05classes(tl, param, 2, 'id_classes_value', result)
+            result = this.check_validity_w05classes(tl, param, 3, 'id_classes_value', result)
+            result = this.check_validity_w05classes(tl, param, 4, 'id_classes_value', result)
+            result = this.check_validity_w05classes(tl, param, 5, 'id_classes_value', result)
+          })
+        })
+      }
+      return result
+    },
+    validity_frzlvl(){
+      // altrimenti va in conflitto con i text_value
+      let result = {giorni:[
+        {all:false,submenu:[false,false,false,false,false,false]}, 
+        {all:false,submenu:[false,false,false,false,false,false]}, 
+        {all:false,submenu:[false,false,false,false,false,false]}, 
+        {all:false,submenu:[false,false,false,false,false,false]}
+        ],
+        all:false
+      }
+      if (this.ready){
+        let tls = [48, 64, 65, 66, 81, 82, 83, 98, 99, 100]
+        let params = ['FRZLVL']
+        tls.forEach(tl => {
+          params.forEach(param => {
+            result = this.check_validity_w05data(tl, param, 'numeric_value', result, 0, false)
+          })
+        })
+      }
+      return result
+    },
     timeLayout() {
       let tl = (this.giorno + 2) * 17 - 5 + this.periodo
       return tl.toString()
@@ -820,113 +956,7 @@ export default {
         // 4° giorno: id_trend (id_time_layouts=101) valorizzato in base a value(tl=101)-value(tl=84)
         t[3][1] = this.terma_67[101].numeric_value - this.terma_67[84].numeric_value
       }
-
       return t
-    },
-    w05_classes_invalid_time_layouts_id_parametro() {
-      // validate the meteo classes and associated text_values for each combination of id_time_layout and id_parametro
-      // returns a data structure like this (false means valid, true means invalid/incomplete data):
-      // {
-      //   48: {COP_TOT: true, PLUV: true, FRZLVL: true, SNOW_LEV: true, VELV: true, WFOP: false},
-      //   50: {TERMA: true},
-      //   51: {TERMA: true},
-      //   64: {COP_TOT: true, PLUV: true, FRZLVL: true},
-      //   65: {COP_TOT: true, PLUV: false, FRZLVL: false},
-      //   66: {FRZLVL: true, SNOW_LEV: true, VELV: true, WFOP: false},
-      //   67: {TERMA: true},
-      //   68: {TERMA: false},
-      //   ...
-      // }
-      let data = {}
-      if ('w05_classes' in this.meteo) {
-        let id_time_layouts = Object.keys(this.meteo.w05_classes)
-        id_time_layouts.forEach(id_time_layout => {
-          let id_parametros = Object.keys(this.meteo.w05_classes[id_time_layout])
-          if (!('id_time_layout' in data)) {
-            data[id_time_layout] = {}
-          }
-          id_parametros.forEach(id_parametro => {
-            data[id_time_layout][id_parametro] = this.meteo.w05_classes[id_time_layout][id_parametro].some(element => element.id_classes_value > 80 )
-          })
-        })
-      }
-      if ('w05_data' in this.meteo) {
-        let id_time_layouts = Object.keys(this.meteo.w05_data)
-        const text_values = ['WFOP', 'COP_TOT', 'PLUV', 'VELV', 'FRZLVL']
-        id_time_layouts.forEach(id_time_layout => {
-          // array intersection https://stackoverflow.com/a/1885569
-          let id_parametros = Object.keys(this.meteo.w05_data[id_time_layout]).filter(value => text_values.includes(value))
-          if (!(id_time_layout in data)) {
-            data[id_time_layout] = {}
-          }
-          id_parametros.forEach(id_parametro => {
-            let invalid = this.meteo.w05_data[id_time_layout][id_parametro].some(element => this.isEmpty(element.text_value) )
-            if (id_parametro === 'FRZLVL' && !(['48', '66', '83', '100'].includes(id_time_layout))) {
-              // skip check for mattina / pomeriggio
-            } else {
-              if (id_parametro in data[id_time_layout]) {
-                data[id_time_layout][id_parametro] = data[id_time_layout][id_parametro] || invalid
-              } else {
-                data[id_time_layout][id_parametro] = invalid
-              }
-            }
-          })
-        })
-      }
-      return data
-    },
-    w05_classes_invalid_giornos_id_parametro() {
-      // validate the meteo classes and associated text_values for each combination of giorno and id_parametro
-      // returns a data structure like this (false means valid, true means invalid/incomplete data):
-      // {
-      //   1: {COP_TOT: true, PLUV: true, FRZLVL: true, SNOW_LEV: true, VELV: true, WFOP: false},
-      //   2: {COP_TOT: true, PLUV: true, FRZLVL: true, SNOW_LEV: true, VELV: true, WFOP: false},
-      //   3: {COP_TOT: true, PLUV: false, FRZLVL: false, SNOW_LEV: false, VELV: true, WFOP: false},
-      //   4: {COP_TOT: true, PLUV: false, FRZLVL: false, SNOW_LEV: false, VELV: true, WFOP: false}
-      // }
-      let data = {}
-      if ('w05_data' in this.meteo) {
-        data[1] = {
-          COP_TOT: this.w05_classes_invalid_time_layouts_id_parametro[48]['COP_TOT'],
-          PLUV: this.w05_classes_invalid_time_layouts_id_parametro[48]['PLUV'],
-          FRZLVL: this.w05_classes_invalid_time_layouts_id_parametro[48]['FRZLVL'],
-          VELV: this.w05_classes_invalid_time_layouts_id_parametro[48]['VELV'],
-          WFOP: this.w05_classes_invalid_time_layouts_id_parametro[48]['WFOP'],
-        };
-        [2, 3, 4].forEach(giorno => {
-          data[giorno] = {
-            COP_TOT: this.w05_classes_invalid_time_layouts_id_parametro[(giorno + 2) * 17 - 4]['COP_TOT'] || this.w05_classes_invalid_time_layouts_id_parametro[(giorno + 2) * 17 - 3]['COP_TOT'] || this.w05_classes_invalid_time_layouts_id_parametro[(giorno + 2) * 17 - 2]['COP_TOT'],
-            PLUV: this.w05_classes_invalid_time_layouts_id_parametro[(giorno + 2) * 17 - 4]['PLUV'] || this.w05_classes_invalid_time_layouts_id_parametro[(giorno + 2) * 17 - 3]['PLUV'] || this.w05_classes_invalid_time_layouts_id_parametro[(giorno + 2) * 17 - 2]['PLUV'],
-            FRZLVL: this.w05_classes_invalid_time_layouts_id_parametro[(giorno + 2) * 17 - 2]['FRZLVL'] || this.w05_classes_invalid_time_layouts_id_parametro[(giorno + 2) * 17 - 4]['FRZLVL'] || this.w05_classes_invalid_time_layouts_id_parametro[(giorno + 2) * 17 - 3]['FRZLVL'] || this.w05_classes_invalid_time_layouts_id_parametro[(giorno + 2) * 17 - 2]['FRZLVL'],
-            VELV: this.w05_classes_invalid_time_layouts_id_parametro[(giorno + 2) * 17 - 2]['VELV'],
-            WFOP: this.w05_classes_invalid_time_layouts_id_parametro[(giorno + 2) * 17 - 2]['WFOP'],
-          }
-        })
-      }
-      return data
-    },
-    w05_classes_invalid_giornos() {
-      // validate the meteo classes and associated text_values for each giorno
-      // returns a data structure like this (false means valid, true means invalid/incomplete data):
-      // {1: true, 2: true, 3: true, 4: true}
-      let data = {}
-      Object.keys(this.w05_classes_invalid_giornos_id_parametro).forEach(giorno => {
-        let element = this.w05_classes_invalid_giornos_id_parametro[giorno]
-        data[giorno] = Object.values(element).some(element => element)
-      })
-      return data
-    },
-    w05_classes_invalid_parametros() {
-      // validate the meteo classes and associated text_values for the current giorno
-      return this.w05_classes_invalid_giornos_id_parametro[this.giorno]
-    },
-    w05_classes_invalid() {
-      // validate all the meteo classes and associated text_values
-      if ('w05_data' in this.meteo) {
-        return Object.values(this.w05_classes_invalid_giornos).some(element => element) || !this.meteo.situation.trim()
-      } else {
-        return false
-      }
     },
     venueSelection() {
       return Object.keys(this.selectedVenues).filter(venue => { return this.selectedVenues[venue] })
@@ -1000,8 +1030,217 @@ export default {
     })
   },
   methods: {
+    check_validity_w05(campo, result, check_trim){
+      // cerco nell'history
+      let element = this.history.snapshots.find(element => element.id === this.meteo[campo])
+      if (element){
+        if (element['id_key'] == 'id_w05'){
+          if (element['value_key'] == campo){
+            console.log("check_validity_w05 trovato nell'history", campo)
+            if (element['new_value'] === null){
+              result[campo] = true
+              result.all=true
+            }else{
+              if (check_trim){
+                if (element['new_value'].trim().length === 0){
+                  result[campo] = true
+                  result.all=true
+                }else{
+                  result[campo] = false
+                }
+              }else{
+                if (element['new_value'] === ''){
+                  result[campo] = true
+                  result.all=true
+                }else{
+                  result[campo] = false
+                }
+              }
+            }
+          }
+        }
+      }else{
+        if (this.meteo[campo] === null){
+          result[campo] = true
+          result.all=true
+        }else{
+          if (check_trim){
+            if (this.meteo[campo].trim().length === 0){
+              result[campo] = true
+              result.all=true
+            }else{
+              result[campo] = false
+            }
+          }else{
+            if (this.meteo[campo] === ''){
+              result[campo] = true
+              result.all=true
+            }else{
+              result.all=false
+            }
+          }
+        }
+      }
+      return result
+    },
+    check_validity_w05data(tl, param, campo, result, idx_element, check_trim){
+      let soglie = {
+        terma_max: 50,
+        terma_min: -30,
+        frzlvl_max: 6000,
+        frzlvl_min: 0,
+        // snow_lev_max: 6000,
+        // snow_lev_min: 0,
+        terma_1500_max: 50,
+        terma_1500_min: -30,
+        terma_2000_max: 50,
+        terma_2000_min: -30,
+        terma_700_max: 50,
+        terma_700_min: -30
+      }
+      let min = soglie[param.toLowerCase() + "_min"]
+      let max = soglie[param.toLowerCase() + "_max"]
+      // cerco nell'history
+      let element = this.history.snapshots.find(element => element.id === this.meteo.w05_data[tl][param][idx_element].id_w05_data)
+      if (element){
+        let value = element['new_value']
+        if (element['id_key'] == 'id_w05_data'){
+          if (element['value_key'] == campo){
+            if (element['new_value'] === null){
+              result[this.meteo.w05_data[tl][param][idx_element].id_w05_data] = true
+              result.giorni[this.id_tl2day[tl]].all=true
+              result.giorni[this.id_tl2day[tl]].submenu[this.id_param2submenu[param]]=true
+              result.all=true
+            }else{
+              if (check_trim){
+                // è 1 testo
+                if (element['new_value'].trim().length === 0){
+                  result[this.meteo.w05_data[tl][param][idx_element].id_w05_data] = true
+                  result.giorni[this.id_tl2day[tl]].submenu[this.id_param2submenu[param]]=true
+                  result.giorni[this.id_tl2day[tl]].all=true
+                  result.all=true
+                }else{
+                  result[this.meteo.w05_data[tl][param][idx_element].id_w05_data] = false
+                }
+              }else{
+                if (element['new_value'] === ''){
+                  result[this.meteo.w05_data[tl][param][idx_element].id_w05_data] = true
+                  result.giorni[this.id_tl2day[tl]].submenu[this.id_param2submenu[param]]=true
+                  result.giorni[this.id_tl2day[tl]].all=true
+                }else{
+                  if (param.toLowerCase() + "_min" in soglie){
+                    if (value>=min && value<=max){
+                      result[this.meteo.w05_data[tl][param][idx_element].id_w05_data] = false
+                    }else{
+                      result[this.meteo.w05_data[tl][param][idx_element].id_w05_data] = true
+                      result.giorni[this.id_tl2day[tl]].submenu[this.id_param2submenu[param]]=true
+                      result.giorni[this.id_tl2day[tl]].all=true
+                      result.all=true
+                    }
+                  }else{
+                    result[this.meteo.w05_data[tl][param][idx_element].id_w05_data] = false
+                  }
+                }
+              }
+            }
+          }
+        }
+      }else{
+        let value = this.meteo.w05_data[tl][param][idx_element][campo]
+        if (this.meteo.w05_data[tl][param][idx_element][campo] === null){
+          result[this.meteo.w05_data[tl][param][idx_element].id_w05_data] = true
+          result.giorni[this.id_tl2day[tl]].all=true
+          result.giorni[this.id_tl2day[tl]].submenu[this.id_param2submenu[param]]=true
+          result.all=true
+        }else{
+          if (check_trim){
+            // è 1 testo
+            if (this.meteo.w05_data[tl][param][idx_element][campo].trim().length === 0){
+              result[this.meteo.w05_data[tl][param][idx_element].id_w05_data] = true
+              result.giorni[this.id_tl2day[tl]].all=true
+              result.giorni[this.id_tl2day[tl]].submenu[this.id_param2submenu[param]]=true
+              result.all=true
+            }else{
+              result[this.meteo.w05_data[tl][param][idx_element].id_w05_data] = false
+            }
+          }else{
+            if (this.meteo.w05_data[tl][param][idx_element][campo] === ''){
+              result[this.meteo.w05_data[tl][param][idx_element].id_w05_data] = true
+              result.giorni[this.id_tl2day[tl]].all=true
+              result.giorni[this.id_tl2day[tl]].submenu[this.id_param2submenu[param]]=true
+              result.all=true
+            }else{
+              if (param.toLowerCase() + "_min" in soglie){
+                if (value>=min && value<=max){
+                  result[this.meteo.w05_data[tl][param][idx_element].id_w05_data] = false
+                }else{
+                  result[this.meteo.w05_data[tl][param][idx_element].id_w05_data] = true
+                  result.giorni[this.id_tl2day[tl]].all=true
+                  result.giorni[this.id_tl2day[tl]].submenu[this.id_param2submenu[param]]=true
+                  result.all=true
+                }
+              }else{
+                result[this.meteo.w05_data[tl][param][idx_element].id_w05_data] = false
+              }
+            }
+          }
+        }
+      }
+      
+      return result
+    },
+    check_validity_w05data_all(tl, param, campo, result){
+      let elements = this.meteo.w05_data[tl][param]
+      for (const [i, value] of elements.entries()) {
+        result = this.check_validity_w05data(tl, param, campo, result, i, false)
+      }
+      return result
+    },
+    check_validity_w05classes(tl, param, id_classes,campo, result){
+      // cerco nell'history
+      let element = this.history.snapshots.find(element => element.id === this.meteo.w05_classes[tl][param][id_classes].id_w05_classes)
+      if (element){
+        if (element['id_key'] == 'id_w05_classes'){
+          if (element['new_value'] === null){
+            result[this.meteo.w05_classes[tl][param][id_classes].id_w05_classes] = true
+            result.giorni[this.id_tl2day[tl]].all=true
+            result.giorni[this.id_tl2day[tl]].submenu[this.id_param2submenu[param]]=true
+            result.all=true
+          }else{
+            if (element['new_value'] > 80){
+              result[this.meteo.w05_classes[tl][param][id_classes].id_w05_classes] = true
+              result.giorni[this.id_tl2day[tl]].all=true
+              result.giorni[this.id_tl2day[tl]].submenu[this.id_param2submenu[param]]=true
+              result.all=true
+            }else{
+              result[this.meteo.w05_classes[tl][param][id_classes].id_w05_classes] = false
+            }
+          }
+        }
+      }else{
+        if (this.meteo.w05_classes[tl][param][id_classes][campo] === null){
+          result[this.meteo.w05_classes[tl][param][id_classes].id_w05_classes] = true
+          result.giorni[this.id_tl2day[tl]].all=true
+          result.giorni[this.id_tl2day[tl]].submenu[this.id_param2submenu[param]]=true
+          result.all=true
+        }else{
+          if (this.meteo.w05_classes[tl][param][id_classes][campo] > 80){
+            result[this.meteo.w05_classes[tl][param][id_classes].id_w05_classes] = true
+            result.giorni[this.id_tl2day[tl]].all=true
+            result.giorni[this.id_tl2day[tl]].submenu[this.id_param2submenu[param]]=true
+            result.all=true
+          }else{
+            result[this.meteo.w05_classes[tl][param][id_classes].id_w05_classes] = false
+          }
+        }
+      }
+      return result
+    },
     isEmpty(s) {
       return ((typeof s == 'undefined') || (s == null) || (!s) || (s.trim().length == 0))
+    },
+    isEmpty_noTrim(s) {
+      return ((typeof s == 'undefined') || (s == null) || (!s))
     },
     goto(page) {
       this.current_page = page
@@ -1098,7 +1337,7 @@ export default {
         } else {
           this.$toast.open(
               {
-                message: 'Undo: icona nella venue ' + found.id_venue + ' con scadenza ' + found.end_valid_time +' a ' + snapshot.old_value,
+                message: 'Undo: venue ' + found.id_venue + ' con scadenza ' + found.end_valid_time +' a ' + snapshot.old_value,
                 type: 'success',
                 position: 'top-left'
               }
@@ -1180,7 +1419,7 @@ export default {
       // reroute: if true, will push a new location to the router (https://router.vuejs.org/guide/essentials/navigation.html#router-push-location-oncomplete-onabort)
       // draft: records the current bulletin as draft
       // message: on success, it will be shown in the toast
-      if (action === 'send' && this.w05_classes_invalid) {
+      if (action === 'send' && this.validity.all) {
         this.$toast.open(
           {
             message: `Ci sono dei campi incompleti, impossibile inviare`,
@@ -1455,7 +1694,7 @@ export default {
       return response
     },
     fetchData() {
-      this.meteo_id = this.$route.params.id
+      this.meteo_id = this.id
       if (typeof this.meteo_id === 'undefined') {
         return
       }

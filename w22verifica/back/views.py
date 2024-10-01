@@ -237,14 +237,16 @@ class W22VerificaView(viewsets.ModelViewSet):
         # riempo il dizionario con i dati del json di default
         w22verifica_data_new_dict = {}
         for w in w22verifica_data_config:
-            w22verifica_data_new_dict[
-                w22verifica_data_config[w]["id_w22_zone"]
-            ] = models.W22VerificaData(
-                id_w22verifica=new,
-                id_w22_zone=zone_dict[str(w22verifica_data_config[w]["id_w22_zone"])],
-                prev_crit_tot=w22verifica_data_config[w]["prev_crit_tot"],
-                oss_crit_tot=w22verifica_data_config[w]["oss_crit_tot"],
-                err_crit_tot=w22verifica_data_config[w]["err_crit_tot"],
+            w22verifica_data_new_dict[w22verifica_data_config[w]["id_w22_zone"]] = (
+                models.W22VerificaData(
+                    id_w22verifica=new,
+                    id_w22_zone=zone_dict[
+                        str(w22verifica_data_config[w]["id_w22_zone"])
+                    ],
+                    prev_crit_tot=w22verifica_data_config[w]["prev_crit_tot"],
+                    oss_crit_tot=w22verifica_data_config[w]["oss_crit_tot"],
+                    err_crit_tot=w22verifica_data_config[w]["err_crit_tot"],
+                )
             )
         try:
             with closing(requests.get(url, stream=True)) as r:

@@ -1,4 +1,4 @@
-// Copyright (C) 2020-2023 simevo s.r.l. for ARPA Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
@@ -44,7 +44,7 @@
           rowspan="3"
           class="align-middle"
         >
-          Intensità neve
+          Intensità<br>neve
         </th>
       </tr>
       <tr>
@@ -83,28 +83,28 @@
           rowspan="2"
           class="align-middle"
         >
-          Pianura 0-400m
+          Pianura<br>0-400m
         </th>
         <th
           scope="col"
           rowspan="2"
           class="align-middle"
         >
-          Collina 500-<br>700m
+          Collina<br>500-700m
         </th>
         <th
           scope="col"
           rowspan="2"
           class="align-middle"
         >
-          Montagna 800-<br>1300m
+          Montagna<br>800-1300m
         </th>
         <th
           scope="col"
           rowspan="2"
           class="align-middle"
         >
-          Montagna 1400-<br>2000m
+          Montagna<br>1400-2000m
         </th>
       </tr>
       <tr>
@@ -418,6 +418,7 @@ export default {
         }
         vd.push(vvd)
       })
+      // console.log("area_data",vd)
       return vd
     }
   },
@@ -438,11 +439,11 @@ export default {
       this.refresher += 1
     },
     setClasse(id_w24_data, value) {
-      console.log(`TabellaNeve.setData(${id_w24_data}, ${value})`)
+      // console.log(`TabellaNeve.setClasse(${id_w24_data}, ${value})`)
       this.$emit('saveW24Data', id_w24_data, Number(value).toFixed(2))
     },
     setValue(id_w24_data, value) {
-      console.log(`TabellaNeve.setValue(${id_w24_data}, ${value})`)
+      // console.log(`TabellaNeve.setValue(${id_w24_data}, ${value})`)
       this.$emit('saveW24Value', id_w24_data, Number(value).toFixed(2))
     },
   }

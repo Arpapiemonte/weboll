@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2020-2023 simevo s.r.l. for ARPA Piemonte - Dipartimento Naturali e Ambientali
+# Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
 # This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 # weboll is licensed under the AGPL-3.0-or-later License.
 # License text available at https://www.gnu.org/licenses/agpl.txt
@@ -14,8 +14,11 @@ from django.utils.safestring import mark_safe
 from w06.back.models import W06, W06Data
 from w07.back.models import W07, W07Data
 from w12.back.models import W12, W12Data
+from w15.back.models import W15, W15Data
 from w17.back.models import W17, W17Data
 from w17verifica.back.models import w17_verifica, w17_verifica_data
+from w20.back.models import W20, W20Data
+from w21.back.models import W21, W21Data
 from w22.back.models import W22, W22Data
 from w22verifica.back.models import W22Verifica
 from w23.back.models import W23, W23Data
@@ -27,6 +30,10 @@ from w30.back.models import W30, W30Data
 from w31.back.models import W31
 from w32.back.models import W32, W32Data
 from w33.back.models import W33, W33Data
+from w34.back.models import W34, W34Data
+from w35.back.models import W35, W35Data
+from w36.back.models import W36, W36Data
+from w37.back.models import W37, W37Data
 
 from .models import W05, W16, Bulletins, Destinazioni, W05Data, W16Data
 
@@ -39,12 +46,18 @@ admin.register(
     W07Data,
     W12,
     W12Data,
+    W15,
+    W15Data,
     W16,
     W16Data,
     W17,
     W17Data,
     w17_verifica,
     w17_verifica_data,
+    W20,
+    W20Data,
+    W21,
+    W21Data,
     W22,
     W22Data,
     W22Verifica,
@@ -65,6 +78,14 @@ admin.register(
     W32Data,
     W33,
     W33Data,
+    W34,
+    W34Data,
+    W35,
+    W35Data,
+    W37,
+    W37Data,
+    W36,
+    W36Data,
 )(admin.ModelAdmin)
 
 
@@ -118,7 +139,14 @@ class LogEntryAdmin(admin.ModelAdmin):
 
 @admin.register(Destinazioni)
 class DestinazioniAdmin(admin.ModelAdmin):
-    list_display = ["prodotto", "destinazione", "endpoint", "segreto", "enabled"]
+    list_display = [
+        "prodotto",
+        "destinazione",
+        "endpoint",
+        "segreto",
+        "enabled",
+        "auto",
+    ]
 
 
 @admin.register(Bulletins)

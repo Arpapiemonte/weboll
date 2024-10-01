@@ -101,7 +101,7 @@
      font-weight:200;
      font-stretch:normal;
      font-size:4px;
-     font-family:'ArialMT';
+     font-family:'Liberation Sans';
      text-align:start;
      text-anchor:start;
      line-height: 4px;
@@ -874,7 +874,7 @@
        y="49.348007"><tspan
           style="font-size:4.23333px;stroke-width:0.352778"
          x="10.000085"
-         y="49.348007">Il</tspan> 
+         y="49.348007">Il</tspan>
          <tspan
           style="font-variant:normal;font-weight:bold;font-size:4.23333px;stroke-width:0.352778"
          x="13.000085"
@@ -895,7 +895,7 @@
          <tspan
           style="font-variant:normal;font-weight:bold;font-size:4.23333px;stroke-width:0.352778"
          x="15.000085"
-         y="49.348007"> freccia</tspan> 
+         y="49.348007"> freccia</tspan>
          <tspan
           style="font-size:4.23333px;stroke-width:0.352778"
          x="28.000085"
@@ -938,13 +938,13 @@
             <td >La propagazione del fuoco avviene solo a seguito di un innesco importante, ma comunque lenta. L'estinzione è facilmente </br>realizzabile.</td>
         </tr>        <tr>
             <td style="background-color: yellow; line-height: 7px;">3. Medio</td>
-            <td>Gli eventiuali incendi si propagano con moderata velocità. L'estinzione è efficace se attuata tempestivamente.</td>
+            <td>Gli eventuali incendi si propagano con moderata velocità. L'estinzione è efficace se attuata tempestivamente.</td>
         </tr>        <tr>
             <td style="background-color: orange; line-height: 7px;">4. Elevato</td>
             <td>A seguito di un innesco il fronte di fiamma si può diffondere molto rapidamente e la sua estinzione risulta difficile.</td>
         </tr>        <tr>
             <td style="background-color: red">5. Molto elevato</td>
-            <td>A seguito di un innesco possono verificarsi incendi che si propagano con violenza e la cui estionzione è oltremodo </br>impegnativa e di difficile riuscita.</td>
+            <td>A seguito di un innesco possono verificarsi incendi che si propagano con violenza e la cui estinzione è oltremodo </br>impegnativa e di difficile riuscita.</td>
         </tr>
         </tbody>
       </table>
@@ -1018,7 +1018,7 @@
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.32 %}</td>
             {% else %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
-            {% endif %} 
+            {% endif %}
          {% endif %}
          <!--Fine zona 1 -->
          <!-- zona 2 -->
@@ -1057,7 +1057,7 @@
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.32 %}</td>
             {% else %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
-            {% endif %} 
+            {% endif %}
          {% endif %}
          <!--Fine zona 2 -->
          <!-- zona 3 -->
@@ -1096,7 +1096,7 @@
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.32 %}</td>
             {% else %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
-            {% endif %} 
+            {% endif %}
          {% endif %}
          <!--Fine zona 3 -->
          <!-- zona 4 -->
@@ -1135,7 +1135,7 @@
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.32 %}</td>
             {% else %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
-            {% endif %} 
+            {% endif %}
          {% endif %}
          <!--Fine zona 4 -->
          <!-- zona 5 -->
@@ -1174,7 +1174,7 @@
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.32 %}</td>
             {% else %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
-            {% endif %} 
+            {% endif %}
          {% endif %}
          <!--Fine zona 5 -->
          <!-- zona 6 -->
@@ -1213,12 +1213,12 @@
             <td class="light">{% include "incendi_icone.svg" with vento_classe=l.32 %}</td>
             {% else %}
             <td class="light">{% include "incendi_icone.svg" with vento_classe=3 %}</td>
-            {% endif %} 
+            {% endif %}
          {% endif %}
          <!--Fine zona 6 -->
          </tr>
          <tr class="riga 3">
-            <td class="dark">Umidità relativa</td> 
+            <td class="dark">Umidità relativa</td>
             <td class="dark">{% include "incendi_icone.svg" with umidità_classe=l.3 %}</td>
             <td class="dark">{% include "incendi_icone.svg" with umidità_classe=l.8 %}</td>
             <td class="dark">{% include "incendi_icone.svg" with umidità_classe=l.13 %}</td>
@@ -1343,24 +1343,24 @@
         <tr>
             <th>Piemonte Nord</th>
             <td> Biella, Novara, Verbano-Cusio-Ossola, Vercelli </td>
-        </tr>        
+        </tr>
         <tr>
             <th>Torino Nord</th>
             <td> Torino </td>
-        </tr>        
+        </tr>
         <tr>
             <th>Torino Ovest</th>
             <td> Torino </td>
-         </tr>        
+         </tr>
         <tr>
             <th>Cuneo Sud-Ovest</th>
             <td> Cuneo </td>
-         </tr>        
+         </tr>
         <tr>
             <th>Cuneo Sud-Est</th>
             <td> Cuneo </td>
          </tr>
-        </tr>        
+        </tr>
         <tr>
             <th>Piemonte Sud-Est</th>
             <td> Asti, Alessandria</td>
@@ -1378,7 +1378,6 @@
       y="274"
       height="15"
       width="49"
-      inkscape:svg-dpi="96"
       preserveAspectRatio="none"/>
 
       <text
@@ -1387,21 +1386,20 @@
        y="293.3"><tspan
           style="font-size:2.7px;stroke-width:0.352778"
          x="10"
-         y="293.3">Per unca corretta interpretazione e per approfondimenti consultare la guida al bollettino incendi </tspan>
+         y="293.3">Per una corretta interpretazione e per approfondimenti consultare la guida al bollettino incendi </tspan>
          <tspan
           style="font-size:2.7px;stroke-width:0.352778"
          x="10"
-         y="296">Diffusione: http://www.arpa.piemonte.it/bollettini/elenco-bollettini   </tspan>
+         y="296">Diffusione: https://www.arpa.piemonte.it/bollettini/   </tspan>
   </g>
 
   <g>
     <image
-      xlink:href="http://localhost:8000/static/images/regione_piemonte_logo.svg" 
+      xlink:href="http://localhost:8000/static/images/regione_piemonte_logo.svg"
       x="151"
       y="274"
       height="15"
       width="49"
-      inkscape:svg-dpi="96"
       preserveAspectRatio="none" />
 
       <text
@@ -1426,7 +1424,6 @@
       y="571"
       height="15"
       width="49"
-      inkscape:svg-dpi="96"
       preserveAspectRatio="none"/>
 
       <text
@@ -1439,17 +1436,16 @@
          <tspan
           style="font-size:2.7px;stroke-width:0.352778"
          x="10"
-         y="593">Diffusione: http://www.arpa.piemonte.it/bollettini/elenco-bollettini   </tspan>
+         y="593">Diffusione: https://www.arpa.piemonte.it/bollettini/   </tspan>
   </g>
 
   <g>
     <image
-      xlink:href="http://localhost:8000/static/images/regione_piemonte_logo.svg" 
+      xlink:href="http://localhost:8000/static/images/regione_piemonte_logo.svg"
       x="151"
       y="571"
       height="15"
       width="49"
-      inkscape:svg-dpi="96"
       preserveAspectRatio="none" />
 
       <text
@@ -1477,7 +1473,6 @@
       y="868"
       height="15"
       width="49"
-      inkscape:svg-dpi="96"
       preserveAspectRatio="none"/>
 
       <text
@@ -1490,17 +1485,16 @@
          <tspan
           style="font-size:2.7px;stroke-width:0.352778"
          x="10"
-         y="890">Diffusione: http://www.arpa.piemonte.it/bollettini/elenco-bollettini   </tspan>
+         y="890">Diffusione: https://www.arpa.piemonte.it/bollettini/   </tspan>
   </g>
 
   <g>
     <image
-      xlink:href="http://localhost:8000/static/images/regione_piemonte_logo.svg" 
+      xlink:href="http://localhost:8000/static/images/regione_piemonte_logo.svg"
       x="151"
       y="868"
       height="15"
       width="49"
-      inkscape:svg-dpi="96"
       preserveAspectRatio="none" />
 
       <text

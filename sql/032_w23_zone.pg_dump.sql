@@ -34,15 +34,15 @@ ALTER TABLE public.w23_zone OWNER TO weboll;
 COPY public.w23_zone (id_w23_zone, zona_allerta, bacino, provincia, nome_zona) FROM stdin;
 12	VA	Val d Aosta	AO	VdAo-A
 1	A	Toce	NO-VB	Piem-A
-2	B	Chiusella, Cervo, Val Sesia	BI-NO-TO-VC	Piem-B
-3	C	Orco, Lanzo, Sangone	TO	Piem-C
-4	D	Susa, Chisone, Pellice	CN-TO	Piem-D
-5	E	Varaita, Maira, Stura di Demonte	CN	Piem-E
-6	F	Tanaro	CN	Piem-F
-7	G	Belbo, Bormida	AL-AT-CN	Piem-G
+2	B	Val Sesia, Chiusella e Cervo 	BI-NO-TO-VC	Piem-B
+3	C	Valli Orco, Lanzo, Sangone	TO	Piem-C
+4	D	Alta val Susa, Chisone, Pellicee Po	CN-TO	Piem-D
+5	E	Valli Varaita, Maira e Stura	CN	Piem-E
+6	F	Valle Tanaro	CN	Piem-F
+7	G	Belbo e Bormida	AL-AT-CN	Piem-G
 8	H	Scrivia	AL	Piem-H
 9	I	Pianura Settentrionale	AL-AT-BI-NO-TO-VC	Piem-I
-10	L	Pianura Torinese, Colline	AL-AT-CN-TO	Piem-L
+10	L	Pianura Torinese e Colline	AL-AT-CN-TO	Piem-L
 11	M	Pianura Cuneese	CN-TO	Piem-M
 \.
 

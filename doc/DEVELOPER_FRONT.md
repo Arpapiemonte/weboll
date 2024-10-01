@@ -10,8 +10,6 @@ The front-end is implemented in HTML5 with:
 
 - [esbuild](https://esbuild.github.io/) in development mode and for transpilation / minification during build - for production the bundling is performed by [Rollup](https://rollupjs.org/guide/en/)
 
-All HTML5 / JavaScript code is checked with the [ESLint static analyzer](https://eslint.org/), configured for the latest final ECMAScript standard as extended by Babel and the [Official ESLint plugin for Vue.js](https://eslint.vuejs.org/).
-
 ## Features
 
 - SPA (single-page-application) with dynamic routing, see [/src/router/index.ts](/src/router/index.ts)
@@ -26,7 +24,7 @@ All HTML5 / JavaScript code is checked with the [ESLint static analyzer](https:/
 
 - back-end RESTful API proxying
     - the back-end must be running locally or via docker (see the [back-end Developer Guide](DEVELOPER_BACK.md) at http://localhost:8080/api
-    - during development API requests to the API server get proxied using [`server.proxy` setting in `vite.config.js`](https://vitejs.dev/config/server-options.html#server-proxy)
+    - during development API requests to the API server get proxied using [`server.proxy` setting in `vite.config.ts`](https://vitejs.dev/config/server-options.html#server-proxy)
     - with the default settings the API endpoints are proxied like this: https://localhost:8000/api/token/ -> http://localhost:8080/api/token/
 
 - authentication:

@@ -12,8 +12,7 @@ from contextlib import closing
 from subprocess import call
 
 import requests
-
-# from django.contrib.auth.models import User
+from django.contrib.auth.models import User
 from django.db.transaction import atomic
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
@@ -40,9 +39,7 @@ from w32.back.serializers import (
     W32ZoneSerializer,
 )
 from website.common.tasks import send_with_celery
-from website.common.views import (  # BulletinDraftLocked, ExistingTodayBulletin,
-    StandardResultsSetPagination,
-)
+from website.common.views import BulletinDraftLocked, StandardResultsSetPagination
 
 
 class ReadOnly(permissions.BasePermission):
@@ -84,11 +81,67 @@ class W32View(viewsets.ModelViewSet):
         serializer = self.get_serializer(queryset, many=True)
         return Response(serializer.data)
 
+    def perform_destroy(self, instance):
+        if instance.username != self.request.user.username:
+            raise BulletinDraftLocked()
+        queryset = models.W32.objects
+        if (
+            instance.id_w32_parent
+            and queryset.filter(pk=instance.id_w32_parent).exists()
+        ):
+            w32 = get_object_or_404(queryset, pk=instance.id_w32_parent)
+            w32.status = "1"
+            if not User.objects.filter(username=w32.username).exists():
+                print("perform_destroy non trovo l'utente " + w32.username)
+                w32.username = (
+                    instance.username
+                )  # se rimane l'utente originale post_save potrebbe
+                # generare errore se non trova l'utente originale in auth_user
+            w32.save()
+        instance.delete()
+
     def retrieve(self, request, pk=None):
         queryset = models.W32.objects
         w32 = get_object_or_404(queryset, pk=pk)
         serializer = W32SerializerFull(w32, context={"request": request})
         return Response(serializer.data)
+
+    @action(detail=True, permission_classes=[permissions.IsAuthenticated])
+    @atomic
+    def reopen(self, request, pk):
+        # riapre un bollettino
+        now = datetime.datetime.now()
+        old = models.W32.objects.get(pk=pk)
+        print("w32 reopen:", old)
+        old.status = "2"
+        old_id_w32 = old.id_w32
+        old.save()
+        numero_bollettino = int(old.numero_bollettino.split("/")[0])
+        new = old
+        new.pk = None  # resetta la chiave primaria rendendolo un nuovo record
+        new.status = "0"
+        new.numero_bollettino = (
+            str(numero_bollettino) + "/" + str(datetime.datetime.today().year)
+        )
+        new.last_update = now
+        new.username = request.user
+        new.id_w32_parent = old_id_w32
+        new.save()
+        print("created: ", new)
+        old_data = models.W32Data.objects.filter(id_w32=old_id_w32)
+        for data in old_data:
+            new_data = data
+            new_data.pk = None  # resetta la chiave primaria rendendolo un nuovo record
+            new_data.id_w32 = new
+            new_data.save()
+        old_datam = models.W32MbaciniData.objects.filter(id_w32=old_id_w32)
+        for data in old_datam:  # type: ignore
+            new_datam = data
+            new_datam.pk = None  # resetta la chiave primaria rendendolo un nuovo record
+            new_datam.id_w32 = new
+            new_datam.save()
+
+        return Response({"id_w32": new.id_w32})
 
     @action(detail=True, permission_classes=[permissions.IsAuthenticated])
     @atomic
@@ -277,15 +330,15 @@ class W32View(viewsets.ModelViewSet):
                         for w32_firstguessdata_tmp in csvfile:
                             # print('w32_firstguessdata_tmp---------',w32_firstguessdata_tmp)
                             # w32_firstguessdata_tmp = w.split(delimiter_firstguess)
-                            w32_data_new_dict[
-                                numriga
-                            ].livello_criticita_oss = w32_firstguessdata_tmp[1]
-                            w32_data_new_dict[
-                                numriga
-                            ].livello_criticita_prev_oggi = w32_firstguessdata_tmp[2]
-                            w32_data_new_dict[
-                                numriga
-                            ].livello_criticita_prev_domani = w32_firstguessdata_tmp[3]
+                            w32_data_new_dict[numriga].livello_criticita_oss = (
+                                w32_firstguessdata_tmp[1]
+                            )
+                            w32_data_new_dict[numriga].livello_criticita_prev_oggi = (
+                                w32_firstguessdata_tmp[2]
+                            )
+                            w32_data_new_dict[numriga].livello_criticita_prev_domani = (
+                                w32_firstguessdata_tmp[3]
+                            )
                             numriga = numriga + 1
         except Exception:
             pass
@@ -301,22 +354,22 @@ class W32View(viewsets.ModelViewSet):
         # riempo il dizionario con i dati del json di default
         w32_mbacini_data_new_dict = {}
         for w in w32_mbacini_data_config:
-            w32_mbacini_data_new_dict[
-                w32_mbacini_data_config[w]["id_w32_mbacini"]
-            ] = models.W32MbaciniData(
-                id_w32=new,
-                id_w32_mbacini=mbacini_dict[
-                    str(w32_mbacini_data_config[w]["id_w32_mbacini"])
-                ],
-                livello_criticita_oss=w32_mbacini_data_config[w][
-                    "livello_criticita_oss"
-                ],
-                livello_criticita_prev_oggi=w32_mbacini_data_config[w][
-                    "livello_criticita_prev_oggi"
-                ],
-                livello_criticita_prev_domani=w32_mbacini_data_config[w][
-                    "livello_criticita_prev_domani"
-                ],
+            w32_mbacini_data_new_dict[w32_mbacini_data_config[w]["id_w32_mbacini"]] = (
+                models.W32MbaciniData(
+                    id_w32=new,
+                    id_w32_mbacini=mbacini_dict[
+                        str(w32_mbacini_data_config[w]["id_w32_mbacini"])
+                    ],
+                    livello_criticita_oss=w32_mbacini_data_config[w][
+                        "livello_criticita_oss"
+                    ],
+                    livello_criticita_prev_oggi=w32_mbacini_data_config[w][
+                        "livello_criticita_prev_oggi"
+                    ],
+                    livello_criticita_prev_domani=w32_mbacini_data_config[w][
+                        "livello_criticita_prev_domani"
+                    ],
+                )
             )
         try:
             with closing(requests.get(urlmbacini, stream=True)) as r:
@@ -558,9 +611,12 @@ class DefensePngView(DetailView):
             f.write(r.content)
             f.flush()
             png_name = "%s.png" % f.name
-            command = "convert -verbose -density 145 -crop 1191x1685+3x5 %s %s" % (
-                f.name,
-                png_name,
+            command = (
+                "convert -verbose -density 145 -crop 1191x1685+3x5 %s -append %s"
+                % (
+                    f.name,
+                    png_name,
+                )
             )
             retcode = call(command, shell=True)
             if retcode != 0:

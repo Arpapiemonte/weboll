@@ -92,10 +92,10 @@ ALTER TABLE ONLY public.w32 ALTER COLUMN id_w32 SET DEFAULT nextval('public.w32_
 --
 
 COPY public.w32 (id_w32, data_emissione, ora_emissione, ora_simulazione, numero_bollettino, situazione_evoluzione, status, last_update, username, data_validita, ora_osservazione, data_osservazione, data_simulazione, note) FROM stdin;
-11	2020-03-03	16:00	11:40	1/2020		1	2020-03-03 16:21:28	weboll	2020-03-04	15:30	03/03/2020	03/03/2020	-
-14	2020-03-04	12:00	12:22	2/2020		1	2020-03-04 12:09:44	weboll	2020-03-05	11:40	04/03/2020	04/03/2020	-
-15	2020-03-05	12:00	11:02	3/2020		1	2020-03-05 12:10:52	weboll	2020-03-06	11:40	05/03/2020	05/03/2020	-
-16	2020-03-06	12:00	10:56	4/2020		1	2020-03-06 12:08:50	weboll	2020-03-09	11:40	06/03/2020	06/03/2020	-
+11	2023-02-18	16:00	11:40	1/2020		1	2023-02-18 16:21:28	weboll	2023-02-19	15:30	18/02/2023	18/02/2023	-
+14	2023-02-19	12:00	12:22	2/2020		1	2023-02-19 12:09:44	weboll	2023-02-20	11:40	19/02/2023	19/02/2023	-
+15	2023-02-20	12:00	11:02	3/2020		1	2023-02-20 12:10:52	weboll	2023-02-21	11:40	20/02/2023	20/02/2023	-
+16	2023-02-21	12:00	10:56	4/2020		1	2023-02-21 12:08:50	weboll	2023-02-21	11:40	21/02/2023	21/02/2023	-
 \.
 
 
@@ -104,6 +104,9 @@ COPY public.w32 (id_w32, data_emissione, ora_emissione, ora_simulazione, numero_
 --
 
 SELECT pg_catalog.setval('public.w32_id_w32_seq', 1, true);
+
+
+ALTER TABLE public.w32 ADD id_w32_parent INTEGER DEFAULT NULL;
 
 
 --

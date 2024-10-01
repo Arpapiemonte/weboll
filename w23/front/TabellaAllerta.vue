@@ -1,4 +1,4 @@
-// Copyright (C) 2020-2023 simevo s.r.l. for ARPA Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
@@ -83,7 +83,7 @@
               </datalist>
               <input
                 v-model="area.scenario_atteso"
-                onfocus="this.value.trim()!=''?this.setAttribute('placeholder',this.value):'';this.value='';"
+                onfocus="if (this.value.trim()==='-') this.value=''"
                 size="55"
                 list="scenari"
                 @change="$emit('saveData', area.scenario_atteso, area.id_w23_zone.id_w23_zone, 'scenario_atteso')"

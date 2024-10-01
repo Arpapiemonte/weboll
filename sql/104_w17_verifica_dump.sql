@@ -108,18 +108,4 @@ COPY w17_verifica FROM PROGRAM :'command' CSV HEADER;
 
 
 \set command `echo "curl $DATA_LOCATION/w17_verifica_data_last_days.copy"`
-COPY w17_verifica_data(
-    id_w17verifica,
-	id_w05,
-	data_forecast,
-	forecast_id,
-	punteggio_relativo,
-	punteggio_nubi,
-	punteggio_pioggia,
-	punteggio_vento,
-	punteggio_temperatura,
-	punteggio_zero_quota_neve,
-	coerenza_mattino_nubi,
-	coerenza_pomeriggio_nubi,
-	coerenza_mattino_pioggia,
-	coerenza_pomeriggio_pioggia) FROM PROGRAM :'command' CSV HEADER;
+COPY w17_verifica_data FROM PROGRAM :'command' CSV HEADER;

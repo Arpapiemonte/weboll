@@ -1,4 +1,4 @@
-// Copyright (C) 2020-2023 simevo s.r.l. for ARPA Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
@@ -102,15 +102,29 @@ export default {
     area_data() {
       let vd = { }
       this.data.forEach(element => {
-        vd[element.id_w31_macroaree.id_w31_macroaree] = element
+        //vd[element.id_w31_macroaree.id_w31_macroaree] = element
+        vd[element.id_w31_macroaree.ordine_bollettino] = element
       })
       return vd
     }
   },
   methods: {
     setValue(area, value) {
-      console.log(`setValue(${area}, ${value})`)
-      console.log(area)
+      //console.log(`setValue(${area}, ${value})`)
+      //console.log('area',area)
+      //console.log('value',value)
+      if (value=='S'){
+        if((parseInt(area["id_w31_livelli"])>0) && (parseInt(area["id_w31_livelli"])<3)){
+          this.$toast.open(
+              {
+                message: "Attenzione aumento il livello",
+                type: 'warning',
+                position: 'top-left'
+              }
+          )
+          this.$emit('saveW31Data', area, parseInt(area["id_w31_livelli"])+1)
+        }
+      }
       this.$emit('saveW31Data', area, value)
     },
   }

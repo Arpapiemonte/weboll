@@ -1,4 +1,4 @@
-// Copyright (C) 2020-2023 simevo s.r.l. for ARPA Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
@@ -14,6 +14,7 @@
           :readonly="readonly"
           :data="altriFenomeni"
           :history="history"
+          :validity="validity"
           @set-level="setLevel"
         />
       </div>
@@ -46,6 +47,10 @@ export default {
     history: {
       type: Object,
       default: () => { return { cursor: -1, snapshots: [] } }
+    },
+    validity: {
+      type: Object,
+      default: () => { return {} }
     }
   },
   emits: ['setLevel'],

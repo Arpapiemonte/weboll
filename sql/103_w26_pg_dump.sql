@@ -85,13 +85,6 @@ ALTER TABLE ONLY public.w26 ALTER COLUMN id_w26 SET DEFAULT nextval('public.w26_
 -- Data for Name: w26; Type: TABLE DATA; Schema: public; Owner: weboll
 --
 
-COPY public.w26 (id_w26, data_emissione, numero_bollettino, status, last_update, username, data_validita) FROM stdin;
-2736	2023-01-16	15/2023	1	2023-01-16 11:40:19	weboll	2023-01-15
-2737	2023-01-17	16/2023	1	2023-01-17 11:51:47	weboll	2023-01-16
-2738	2023-01-18	17/2023	1	2023-01-18 11:24:00	weboll	2023-01-17
-\.
-
-
 --
 -- Name: w26_id_w26_seq; Type: SEQUENCE SET; Schema: public; Owner: weboll
 --
@@ -136,3 +129,8 @@ GRANT ALL ON SEQUENCE public.w26_id_w26_seq TO weboll;
 --
 -- PostgreSQL database dump complete
 --
+
+
+\set command `echo "curl $DATA_LOCATION/w26.copy"`
+COPY public.w26
+  FROM PROGRAM :'command' CSV HEADER;

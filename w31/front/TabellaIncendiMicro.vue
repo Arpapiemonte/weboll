@@ -1,4 +1,4 @@
-// Copyright (C) 2020-2023 simevo s.r.l. for ARPA Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
@@ -75,6 +75,47 @@ export default {
     area_data() {
       let vd = { }
       this.data.forEach(element => {
+        element.w31datamicroareeparametri_set.forEach(el => {
+          let priority = 9999
+          switch (el.id_parametro) {
+            case 'TERMA':
+              priority = 0
+              break;
+            case 'IGRO':
+              priority = 1
+              break;
+            case 'VELV':
+              priority = 2
+              break;
+            case 'CUM_PLUV':
+              priority = 3
+              break;
+            case 'FWI_INDEX':
+              priority = 4
+              break;
+            case 'FFMC_INDEX':
+              priority = 5
+              break;
+            case 'DMC_INDEX':
+              priority = 6
+              break;
+            case 'DC_INDEX':
+              priority = 7
+              break;
+            case 'ISI_INDEX':
+              priority = 8
+              break;
+            case 'BUI_INDEX':
+              priority = 9
+              break;
+            default:
+              priority = 9999
+          }
+          el['priority'] = priority
+        })
+        element.w31datamicroareeparametri_set.sort(function(a,b) {
+          return a.priority - b.priority
+        });
         vd[element.id_w31_microaree.id_w31_microaree] = element
       })
       return vd

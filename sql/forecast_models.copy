@@ -1,0 +1,27 @@
+fore_name,fore_type,fore_desc,model_ris,data_agg,autore_agg
+ALMOE0063,DMO,LM sull'area Europea Centro-Meridionale con previsione fino ,0.63,2004-07-16 21:06:47,weboll
+ALMOI0063,DMO,LM sull'area italiana con previsione fino a +72,0.63,2004-07-16 21:06:47,weboll
+ECMWF2000,DMO,GMT sull'area Europea e Nord Atlantica con previsione fino a,2   ,2004-07-16 21:06:47,weboll
+VIG_MODEL,DMO,Dati per vigilanza,,2017-05-30 10:16:47,weboll
+LAMIN0063,DMO,LM sull'area italiana con previsione fino a +72,0.63,2004-07-16 21:06:47,weboll
+LAMIS0063,DMO,LM sull'area italiana con previsione fino a +72,0.63,2004-07-16 21:06:47,weboll
+LOKAL0063,DMO,LM sull'area italiana centro-settentrionale con previsione f,0.63,2004-07-16 21:06:47,weboll
+LOKAL0250,DMO,LM sull'area italiana centro-settentrionale con previsione f,0.25,2004-07-16 21:06:47,weboll
+ALMOE0063,KAL,LM sull'area Europea Centro-Meridionale con previsione fino ,0.63,2004-11-09 15:56:56,weboll
+ALMOI0063,KAL,LM sull'area italiana con previsione fino a +72,0.63,2004-11-09 15:57:27,weboll
+ECMWF0500,KAL,GMT sull'area Europea Centro-Meridionale con previsione fino,0.5 ,2004-11-09 15:57:39,weboll
+ECMWF2000,KAL,GMT sull'area Europea e Nord Atlantica con previsione fino a,2   ,2004-11-09 15:57:46,weboll
+ECMWF0200,DMO,GTM sull'area Europea Nord Atlantica,0.2 ,2022-02-28 14:55:00,weboll
+LAMIN0063,KAL,LM sull'area italiana con previsione fino a +72,0.63,2004-11-09 15:57:59,weboll
+LAMIS0063,KAL,LM sull'area italiana con previsione fino a +72,0.63,2004-11-09 15:58:04,weboll
+LOKAL0063,KAL,LM sull'area italiana centro-settentrionale con previsione f,0.63,2004-11-09 15:58:10,weboll
+LOKAL0250,KAL,LM sull'area italiana centro-settentrionale con previsione f,0.25,2004-11-09 15:58:30,weboll
+ECMWF0500,DMO,GTM sull'area Europea Centro-Meridionale con previsione fino,0.5 ,2004-07-16 21:06:47,weboll
+ECMWF0250,KAL,GTM sull'area Europea Centro-Meridionale con previsione fino,0.25,2006-11-27 12:46:25,redhat
+ECMWF0250,DMO,GTM sull'area Europea Centro-Meridionale con previsione fino,0.25,2006-11-27 12:46:07,redhat
+MULTMODEL,DMO,Multi Model,,2005-06-17 10:45:15,weboll
+SKY_MODEL,DMO,Algoritmo tipo di tempo,,2011-10-10 10:29:54,weboll
+ECMEA0250,DMO,GTM sull'area Europea Nord Atlantica,0.25,2017-05-17 14:52:13,weboll
+ECMEA0250,KAL,GTM sull'area Europea Nord Atlantica,0.25,2017-05-17 14:52:13,weboll
+LAMIN0045,DMO,GTM sull'area italiana con previsione fino a +72,0.04,2017-05-17 14:52:13,weboll
+LAMIN0045,KAL,GTM sull'area italiana con previsione fino a +72,0.04,2017-05-17 14:52:13,weboll

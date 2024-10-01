@@ -1,4 +1,4 @@
-// Copyright (C) 2020-2023 simevo s.r.l. for ARPA Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
@@ -47,7 +47,7 @@
           v-if="allerta.status === '0' && allerta.data_emissione === today && state.username"
           :disabled="sending || firstguessing"
           type="button"
-          class="btn btn-outline-info"
+          class="btn btn-outline-dark"
           @click="execute('firstguess', false, 'First guess completata')"
         >
           <span v-if="firstguessing">
@@ -67,6 +67,32 @@
             > Aggiorna First Guess
           </span>
         </button>
+        <a
+          class="btn btn-outline-primary"
+          :href="'/api/w23/xml/' + allerta.id_w23"
+          target="_blank"
+          role="button"
+        >
+          <img
+            src="~bootstrap-icons/icons/filetype-xml.svg"
+            alt="PDF icon"
+            width="18"
+            height="18"
+          > XML-CAP
+        </a>
+        <a
+          class="btn btn-outline-primary"
+          :href="'/api/w23/kml36h/' + allerta.id_w23"
+          target="_blank"
+          role="button"
+        >
+          <img
+            src="~bootstrap-icons/icons/filetype-xml.svg"
+            alt="PDF icon"
+            width="18"
+            height="18"
+          > KML
+        </a>
         <a
           class="btn btn-outline-primary"
           :href="'/api/w23/png/' + allerta.id_w23"
@@ -131,10 +157,10 @@
         </button>
         <button
           v-if="allerta.status === '0' && allerta.data_emissione === today && state.username"
-          :disabled="sending || firstguessing || allerta.fraserisknat.length===0"
+          :disabled="sending || firstguessing || allerta.fraserisknat.trim().length===0 || allerta.fraserisknat === vigilanza.sintesi_meteo" 
           type="button"
           class="btn btn-outline-success"
-          @click="execute('send', false, 'Bollettino inviato')"
+          @click="execute_timeout('send', false, 'Bollettino inviato')"
         >
           <span v-if="sending">
             <span
@@ -359,7 +385,7 @@
             <button
               id="pills-frase_risknat-tab"
               class="nav-link"
-              :class="{'text-danger': availability.vigilanza && allerta.fraserisknat === vigilanza.sintesi_meteo }"
+              :class="{'text-danger': allerta.fraserisknat.trim().length===0 || allerta.fraserisknat === vigilanza.sintesi_meteo }"
               data-bs-toggle="pill"
               data-bs-target="#pills-frase_risknat"
               type="button"
@@ -628,6 +654,8 @@
                 @change="saveField('fraserisknat')"
               />
             </div>
+            <br>
+            <h4>NB: La frase deve essere diversa dalla frase proposta dal bollettino di vigilanza e non vuota.</h4>
           </div>
 
           <div
@@ -742,10 +770,16 @@ export default {
     TabellaPioggiaMax,
     TabellaPioggiaAvg
   },
+  props: {
+    id: {
+      type: String,
+      default: () => ''
+    },
+  },
   data () {
     // non reactive properties
     this.righe = ["Piem-A", "Piem-B", "Piem-C", "Piem-D", "Piem-E", "Piem-F", "Piem-G", "Piem-H", "Piem-I", "Piem-L", "Piem-M"]
-    this.lista_parametri = ['idrogeologico', 'idraulico', 'temporali', 'neve', 'valanghe']
+    this.lista_parametri = ['idrogeologico', 'temporali', 'idraulico', 'neve', 'valanghe']
     this.lista_parametri_oggi = this.lista_parametri.map(p => p + '_oggi')
     this.lista_parametri_domani = this.lista_parametri.map(p => p + '_domani')
     this.lista_parametri_oggi_for = this.lista_parametri_oggi.map(p => p + '_for')
@@ -753,6 +787,11 @@ export default {
     this.lista_parametri_oggi_domani = this.lista_parametri_oggi.concat(this.lista_parametri_domani)
     this.lista_parametri_oggi_domani_for = this.lista_parametri_oggi_domani.map(p => p + '_for')
     this.lista_parametri_completa = this.lista_parametri_oggi_domani.concat(this.lista_parametri_oggi_domani_for)
+    //Fenomeno idraulico
+    this.lista_parametro_idraulico = ['idraulico']
+    this.lista_parametri_oggi_idraulico = this.lista_parametro_idraulico.map(p => p + '_oggi')
+    this.lista_parametri_domani_idraulico = this.lista_parametro_idraulico.map(p => p + '_domani')
+    this.lista_parametri_oggi_domani_idraulico = this.lista_parametri_oggi_idraulico.concat(this.lista_parametri_domani_idraulico)
     this.tls = {
       900: [{id:45, role:0}, {id:46, role:0}, {id:60, role:0}, {id:61, role:0}, {id:62, role:0}, {id:63, role:0}, {id:77, role:1}, {id:78, role:1}, {id:79, role:1}, {id:80, role:1}],
       901: [
@@ -855,6 +894,7 @@ export default {
       debug: false,
       ready: false,
       sending: false,
+      saving: false,
       reopening: false,
       firstguessing: false,
       state: store.state,
@@ -888,10 +928,17 @@ export default {
   },
   computed: {
     avverse() {
+      let vd = { }
       // vero se c'è un fenomeno giallo o superiore in una qualsiasi cella di "bollettino emesso" anche in bozza
       let max = 2
       Object.keys(this.pericolo_massimo).forEach(id => max = Math.max(max, this.pericolo_massimo[id].sort_index))
-      return max > 2
+      vd["pericolo_massimo"] = max
+      // vero se c'è un fenomeno giallo o superiore in una qualsiasi cella del fenomeno idraulico di "bollettino emesso" anche in bozza
+      let max_idraulico = 2
+      Object.keys(this.pericolo_massimo_idraulico).forEach(id => max_idraulico = Math.max(max_idraulico, this.pericolo_massimo_idraulico[id].sort_index))
+      vd["max_idraulico"] = max_idraulico
+      //console.log('vd',vd)
+      return vd
     },
     today() {
       // returns today in 2021-04-22 format
@@ -902,6 +949,13 @@ export default {
       let vd = { }
       this.allerta.w23data_set.forEach(area => {
         vd[area.id_w23_zone.id_w23_zone] = this.massimo(area.id_w23_zone.id_w23_zone, this.lista_parametri_oggi_domani)
+      })
+      return vd
+    },
+    pericolo_massimo_idraulico () {
+      let vd = { }
+      this.allerta.w23data_set.forEach(area => {
+        vd[area.id_w23_zone.id_w23_zone] = this.massimo(area.id_w23_zone.id_w23_zone, this.lista_parametri_oggi_domani_idraulico)
       })
       return vd
     },
@@ -974,17 +1028,30 @@ export default {
     },
   },
   watch: {
-    avverse(value) {
-      const frase = 'AVVISO DI CONDIZIONI METEOROLOGICHE AVVERSE per i dettagli consultare il bollettino di Vigilanza Meteorologica.'
+    avverse(new_value, old_value) {
+      const frase = 'AVVISO DI CONDIZIONI METEOROLOGICHE AVVERSE per i dettagli consultare il bollettino di Vigilanza Meteorologica. '
+      const frase_idraulico = 'Consultare il Bollettino di previsione delle Piene.'
       // console.log(`avverse = ${value}, allerta.situazione_meteo = ${this.allerta.situazione_meteo}`)
+      // console.log('this.allerta', this.allerta, 'new_value',new_value, 'old_value',old_value)
       if (this.allerta && this.allerta.status === '0' && this.state.username) {
         if (this.allerta.situazione_meteo.includes(frase)) {
-          if (!value) {
+          if (new_value["pericolo_massimo"]<=2) {
             this.allerta.situazione_meteo = this.allerta.situazione_meteo.replace(frase, '')
           }
         } else {
-          if (value) {
-            this.allerta.situazione_meteo += frase
+          if (new_value["pericolo_massimo"]>2) {
+            if (!(this.allerta.situazione_meteo.includes("il bollettino di Vigilanza"))) { 
+              this.allerta.situazione_meteo += frase
+            }
+          }
+        }
+        if (this.allerta.situazione_meteo.includes(frase_idraulico)) {
+          if (new_value["max_idraulico"]<=2) {
+            this.allerta.situazione_meteo = this.allerta.situazione_meteo.replace(frase_idraulico, '')
+          }
+        } else {
+          if (new_value["max_idraulico"]>2) {
+            this.allerta.situazione_meteo += frase_idraulico
           }
         }
         this.saveField('situazione_meteo')
@@ -1252,7 +1319,7 @@ export default {
           })
         } else {
           if (this.pluv) {
-            // console.log('========== compute forecasts from pluv')
+            // console.log('========== compute forecasts from pluv', piogge_medie)
             Object.keys(piogge_medie).forEach(id_aggregazione => {
               time_layouts[id_aggregazione].forEach(id_time_layouts => {
                 if (id_time_layouts in this.pluv) {
@@ -1261,9 +1328,11 @@ export default {
                     piogge_medie[id_aggregazione][id_time_layouts] = {...value_data[id_aggregazione]}
                   }
                 } else {
-                  // console.log(`tls[${id_aggregazione}] = ${JSON.stringify(this.tls[id_aggregazione])}`)
+                  //console.log(`tls[${id_aggregazione}] = ${JSON.stringify(this.tls[id_aggregazione])}`)
                   let agg = this.tls[id_aggregazione].find(item => item.id == id_time_layouts)
+                  // console.log('agg.sources',agg.sources,agg)
                   if (agg && agg.sources) {
+                    // console.log("chiamo add")
                     piogge_medie[id_aggregazione][id_time_layouts] = Object.fromEntries(this.righe.map(k => [k, 0]))
                     piogge_medie[id_aggregazione][id_time_layouts]["Piem-V"] = 0
                     agg.counts = this.add(piogge_medie[id_aggregazione][id_time_layouts], agg.sources)
@@ -1273,6 +1342,7 @@ export default {
               // console.log(`piogge_medie[${id_aggregazione}] = ${JSON.stringify(piogge_medie[id_aggregazione])}`)
             })
           }
+          // console.log('this.availability.pluvoss ',this.availability.pluvoss)
           if (this.availability.pluvoss) {
             //console.log('========== compute mixed observation/forecasts from pluvossh6')
             Object.keys(this.tls).forEach(key => {
@@ -1371,13 +1441,15 @@ export default {
       this.colore_risk_storm_domani = rsd
     },
     getAllerta() {
-      this.allerta_id = this.$route.params.id
+      this.allerta_id = this.id
       if (typeof this.allerta_id === 'undefined') {
         return
       }
       this.fetchData()
     },
     saveField(field) {
+      // console.log("saveField")
+      this.saving = true
       let stack = []
       const payload = {"id_key":"id_w23","id":this.allerta.id_w23,"value_key":field,"new_value": this.allerta[field]}
       const payloadusername = {"id_key":"id_w23","id":this.allerta.id_w23,"value_key":"username","new_value": store.state.username}
@@ -1414,6 +1486,20 @@ export default {
     },
     arrayMax(arr) {
       return Math.max.apply(Math, arr)
+    },
+    execute_timeout(action, reroute, message){
+      // console.log("inizio execute_timeout")
+      if (this.saving){
+        console.log("saving è true faccio partire timeout")
+        setTimeout(() => {
+          console.log("aspetto 1 secondo finchè non finisce il salvataggio in corso")
+          this.execute_timeout(action, reroute, message)
+        }, 1000);
+      }else{
+        console.log("saving è false lancio execute")
+        this.execute(action, reroute, message)
+      }
+      // console.log("fine execute_timeout")
     },
     execute(action, reroute, message) {
       if (action === 'firstguess') {
@@ -1868,6 +1954,7 @@ export default {
       }
     },
     add(agg, sources) {
+      // console.log('-----------------',agg, sources)
       let total = 0
       let countObservations = 0
       let countForecasts = 0
@@ -1875,17 +1962,59 @@ export default {
         total = 0
         countObservations = 0
         countForecasts = 0
+        //console.log(this.pluv)
         sources.forEach(tl => {
           total += 6
-          if (tl in this.pluvossh6[area]) {
-            // prefer observations
-            agg[area] += Number(this.pluvossh6[area][tl])
-            countObservations += 6
-          } else if (this.pluv && tl in this.pluv && 900 in this.pluv[tl]) {
-            // when observations are missing, try forecasts
-            agg[area] += this.pluv[tl][900][area]
-            countForecasts += 6
+          if(this.availability.pluvoss){
+            if (tl in this.pluvossh6[area]) {
+              //console.log("preferisco le osservazioni")
+              // prefer observations
+              agg[area] += Number(this.pluvossh6[area][tl])
+              countObservations += 6
+            } else{
+              //console.log("quando le osservazionimancano preferisci le previsioni")
+              if (this.pluv){
+                //console.log("this.pluv")
+                if (tl in this.pluv){
+                  //console.log(tl, "tl in this.pluv")
+                  if (900 in this.pluv[tl]) {
+                    //console.log(tl, "900 è dentro", this.pluv[tl])
+                    // when observations are missing, try forecasts
+                    agg[area] += this.pluv[tl][900][area]
+                    countForecasts += 6
+                  /*}else{
+                    console.log(tl, "900 non in",this.pluv[tl])*/
+                  }
+                }/*else{
+                  console.log(tl,"non in this.pluv", this.pluv)
+                }*/
+              }/*else{
+                console.log("this.pluv non c'è")
+              }*/
+            }
+          }else{
+            //console.log("non abbiamo pluvoss")
+            if (this.pluv){
+              //console.log("this.pluv")
+              if (tl in this.pluv){
+                //console.log(tl, "tl in this.pluv")
+                if (900 in this.pluv[tl]) {
+                  //console.log(tl, "900 è dentro", this.pluv[tl])
+                  // when observations are missing, try forecasts
+                  agg[area] += this.pluv[tl][900][area]
+                  countForecasts += 6
+                }/*else{
+                  //console.log(tl, "900 non in",this.pluv[tl])
+                }*/
+              }else{
+                //console.log(tl,"non in this.pluv", this.pluv)
+                countForecasts += 6
+              }
+            }/*else{
+              console.log("this.pluv non c'è")
+            }*/
           }
+          //console.log(tl, countObservations, countForecasts)
         })
       })
       return {
@@ -1997,14 +2126,21 @@ export default {
       // console.log('DOPO this.risk_val_domani-------',this.risk_val_domani)
       // aggregate data in 6-hours groups and compute id_time_layouts
       let pluvossh6_from_db = await this.fetchJson(`/api/w23/pluvossh6/`, "Precipitazioni medie esaorarie osservate")
-      this.pluvossh6 = this.pluvoss(pluvossh6_from_db)
+      // console.log("pluvossh6_from_db.length", pluvossh6_from_db.length)
+      let pluvoss_availability=false
+      if(pluvossh6_from_db.length>0){
+        // this.pluvoss_available(this.pluvossh6)
+        pluvoss_availability=true
+        this.pluvossh6 = this.pluvoss(pluvossh6_from_db)
+      }
       this.availability = {
         risk_val_oggi: this.risk_val_oggi && Object.keys(this.risk_val_oggi).length > 0,
         risk_val_domani: this.risk_val_domani && Object.keys(this.risk_val_domani).length > 0,
         vigilanza: this.vigilanza && 'w24data_set' in this.vigilanza,
         psa: this.psa && 'w30data_set' in this.psa,
-        pluvoss: this.pluvoss_available(this.pluvossh6)
+        pluvoss: pluvoss_availability
       }
+
       this.fill_neve()
       this.fill_risk_storm()
       this.fill_pluv()
@@ -2112,6 +2248,7 @@ export default {
               position: 'top-left'
             }
           )
+          this.saving = false
         }
         return response.json()
       }).then(data => {
@@ -2125,6 +2262,7 @@ export default {
         this.allerta.last_update = data.bulletin.last_update
         this.allerta.last_update_annotazione = data.bulletin.last_update_annotazione
         this.allerta.username = store.state.username
+        this.saving = false
         if (callback) {
           callback()
         }
@@ -2136,6 +2274,7 @@ export default {
             position: 'top-left'
           }
         )
+        this.saving = false
       })
     },
     async bulkUpdateW23(snapshots) {

@@ -1,4 +1,4 @@
-// Copyright (C) 2020-2023 simevo s.r.l. for ARPA Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
@@ -6,13 +6,13 @@
   <textarea
     :id="id"
     :name="id"
-    :value="data[valueKey]"
+    :value="value"
     class="form-control"
     rows="5"
     :readonly="readonly"
     :class="{
       dirty: history.isDirty(data[idKey], idKey, valueKey),
-      'is-invalid': meta && meta.validated ? !meta.valid : false
+      'is-invalid': validity[data[idKey]]
     }"
     @change="onChange"
   />
@@ -27,16 +27,15 @@
     </code>
   </div>
   <span
-    v-if="meta.validated && !meta.valid"
+    v-if="validity[data[idKey]]"
     :class="'text-danger'"
   >
-    {{ errorMessage }}
+    Questo campo è richiesto
   </span>
 </template>
 
 <script setup lang="ts">
-import { useField } from 'vee-validate'
-import { watch } from "vue"
+import { computed } from 'vue'
 
 export interface Props {
   data: {
@@ -54,6 +53,7 @@ export interface Props {
   id: string,
   valueKey?: string,
   idKey?: string,
+  validity: object,
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -62,25 +62,54 @@ const props = withDefaults(defineProps<Props>(), {
       situation: "",
       text_value: "",
       id_w05_data: 0,
-      id_w05: 0
+      id_w05: 0,
     }
   },
   readonly: false,
   history: () => { return { isDirty: () => true, cursor: -1, snapshots: [] } },
   id: "",
   valueKey: "text_value",
-  idKey: "id_w05_data"
+  idKey: "id_w05_data",
+  validity: () => { return {}}
+})
+
+const value = computed(() => {
+  let index = props.history.snapshots.findIndex(
+    element => element.id === props.data[props.idKey]
+    && element.id_key === props.idKey 
+    && element.value_key === props.valueKey)
+  if (index < 0){
+    if (!(props.data[props.valueKey] === null)){
+      if (props.data[props.valueKey] === ''){
+        return null
+      }else{
+        return props.data[props.valueKey]
+      }
+    }
+    return props.data[props.valueKey]
+  }else{
+    if (!(props.history.snapshots[index].new_value === null)){
+      if (props.history.snapshots[index].new_value === ''){
+        return null
+      }else{
+        return props.history.snapshots[index].new_value
+      }
+    }
+    return props.history.snapshots[index].new_value
+  }
 })
 
 const debug = false
 
 const emit = defineEmits<{
-  (e: "setLevel", id_value: string, old_value: string, new_value: string, value_key: string, id_key: string): void
+  setLevel: [id_value: string, old_value: string, new_value: string, value_key: string, id_key: string]
 }>()
 
+/*
 const { errorMessage, meta, validate } = useField(String(props.id), validateField, {
   validateOnMount: true
 })
+*/
 
 function validateField() {
   let value = props.data[props.valueKey]
@@ -98,7 +127,4 @@ function onChange(e: Event) {
   emit('setLevel', props.data[props.idKey], props.data[props.valueKey], new_value, props.valueKey, props.idKey)
 }
 
-watch(props, () => {
-  validate()
-}, { immediate: true, deep: true });
 </script>

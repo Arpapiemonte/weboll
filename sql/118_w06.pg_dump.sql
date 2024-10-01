@@ -53,8 +53,11 @@ ALTER TABLE ONLY public.w06_data
     ADD CONSTRAINT w06_data_fkey003 FOREIGN KEY (id_time_layouts) REFERENCES public.time_layouts(id_time_layouts) ON UPDATE CASCADE ON DELETE CASCADE;
 
 \set command `echo "curl $DATA_LOCATION/w06.copy"`
-COPY w06(id_w06,start_valid_time,validity,next_blt_time,status,last_update,username) 
+COPY w06
   FROM PROGRAM :'command' CSV HEADER DELIMITER ',' ;
 \set command `echo "curl $DATA_LOCATION/w06_data.copy"`
-COPY w06_data(id_w06,id_venue,id_time_layouts,sky_condition,precipitation_class,cumulated_snow,freezing_level,snow_level,temperature_below_zero,risk_freezing_rain) 
+COPY w06_data 
   FROM PROGRAM :'command' CSV HEADER;
+
+SELECT setval('public.w06_id_w06_seq', max(id_w06)) FROM public.w06;
+SELECT setval('public.w06_data_id_w06_data_seq', max(id_w06_data)) FROM public.w06_data;

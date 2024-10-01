@@ -7,6 +7,8 @@
 # Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
 
+from website.core import models as models_w05
+
 
 class Comune(models.Model):
     codice_istat_comune = models.CharField(primary_key=True, max_length=6)
@@ -66,51 +68,10 @@ class Regione(models.Model):
         db_table = "regione"
 
 
-class StazioneMisura(models.Model):
-    codice_istat_comune = models.OneToOneField(
-        Comune, models.DO_NOTHING, db_column="codice_istat_comune", primary_key=True
-    )
-    progr_punto_com = models.IntegerField()
-    codice_stazione = models.CharField(max_length=6, blank=True, null=True)
-    nazione = models.CharField(max_length=30, blank=True, null=True)
-    indirizzo_localita = models.CharField(max_length=80, blank=True, null=True)
-    denominazione = models.CharField(unique=True, max_length=80)
-    latitudine_n = models.DecimalField(
-        max_digits=10, decimal_places=8, blank=True, null=True
-    )
-    longitudine_e = models.DecimalField(
-        max_digits=10, decimal_places=8, blank=True, null=True
-    )
-    latitudine_mm = models.DecimalField(
-        max_digits=8, decimal_places=2, blank=True, null=True
-    )
-    longitudine_mm = models.DecimalField(
-        max_digits=8, decimal_places=2, blank=True, null=True
-    )
-    utm_x = models.IntegerField(blank=True, null=True)
-    utm_y = models.IntegerField(blank=True, null=True)
-    quota_stazione = models.DecimalField(
-        max_digits=6, decimal_places=2, blank=True, null=True
-    )
-    quota_sito = models.DecimalField(
-        max_digits=6, decimal_places=2, blank=True, null=True
-    )
-    cod_staz_meteo = models.CharField(unique=True, max_length=5, blank=True, null=True)
-    proprietario = models.CharField(max_length=100, blank=True, null=True)
-    idtab_allertamento_2 = models.CharField(max_length=6, blank=True, null=True)
-    data_agg = models.DateTimeField()
-    autore_agg = models.CharField(max_length=30)
-
-    class Meta:
-        managed = False
-        db_table = "stazione_misura"
-        unique_together = (("codice_istat_comune", "progr_punto_com"),)
-
-
 class W22Zone(models.Model):
     id_w22_zone = models.AutoField(primary_key=True)
     codice_istat_comune = models.ForeignKey(
-        StazioneMisura, models.DO_NOTHING, db_column="codice_istat_comune"
+        models_w05.StazioneMisura, models.DO_NOTHING, db_column="codice_istat_comune"
     )
     progr_punto_com = models.IntegerField()
     denominazione_stazione = models.CharField(max_length=80)

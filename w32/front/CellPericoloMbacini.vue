@@ -1,4 +1,4 @@
-// Copyright (C) 2020-2023 simevo s.r.l. for ARPA Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
@@ -13,9 +13,6 @@
       v-bind="field"
       :value="idPericolombacini"
       class="form-select my-1"
-      :class="{
-        'is-invalid': meta && meta.validated ? !meta.valid : false
-      }"
       :disabled="readonly"
       @change="$emit('changePericolombacini', $event.target.value, area.id_w32_mbacini.id_w32_mbacini, campo.slice(0, -8));"
     >
@@ -42,6 +39,10 @@ export default {
     area: {
       type: Object,
       default: () => { return { colore_html: 'white', id_w32_pericolombacini: 'np' } }
+    },
+    field: {
+      type: String,
+      default: ''
     },
     campo: {
       type: String,

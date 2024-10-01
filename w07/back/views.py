@@ -567,15 +567,15 @@ class W07SVGView(TemplateView):
             if not data["id_time_layouts"] in tmp[data["id_venue"]]:
                 tmp[data["id_venue"]][data["id_time_layouts"]] = {}
             tmp[data["id_venue"]][data["id_time_layouts"]] = data
-            tmp[data["id_venue"]][data["id_time_layouts"]][
-                "precipitation_class"
-            ] = precipitation_classes[
-                str(
-                    tmp[data["id_venue"]][data["id_time_layouts"]][
-                        "precipitation_class"
-                    ]
-                )
-            ]
+            tmp[data["id_venue"]][data["id_time_layouts"]]["precipitation_class"] = (
+                precipitation_classes[
+                    str(
+                        tmp[data["id_venue"]][data["id_time_layouts"]][
+                            "precipitation_class"
+                        ]
+                    )
+                ]
+            )
             tmp[data["id_venue"]][data["id_time_layouts"]]["wind_class"] = wind_classes[
                 str(tmp[data["id_venue"]][data["id_time_layouts"]]["wind_class"])
             ]
@@ -593,11 +593,11 @@ class W07SVGView(TemplateView):
                     "temperature_below_zero"
                 ] = "SI"
 
-            tmp[data["id_venue"]][data["id_time_layouts"]][
-                "sky_desc"
-            ] = sky_conditions_dict[
-                tmp[data["id_venue"]][data["id_time_layouts"]]["sky_condition"]
-            ]
+            tmp[data["id_venue"]][data["id_time_layouts"]]["sky_desc"] = (
+                sky_conditions_dict[
+                    tmp[data["id_venue"]][data["id_time_layouts"]]["sky_condition"]
+                ]
+            )
             if (
                 tmp[data["id_venue"]][data["id_time_layouts"]]["air_temperature"]
                 is not None

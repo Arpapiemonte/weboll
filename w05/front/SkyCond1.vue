@@ -1,4 +1,4 @@
-// Copyright (C) 2020-2023 simevo s.r.l. for ARPA Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
@@ -120,6 +120,7 @@
                 :data="data.SKY_CONDIT[0]"
                 :icons="icons"
                 :history="history"
+                :validity="validity"
                 @set-level="setLevel"
               />
               <td v-else />
@@ -129,6 +130,7 @@
                     :readonly="readonly || t_min_locked"
                     :data="data.TERMA[0]"
                     :history="history"
+                    :validity="validity"
                     @set-level="setLevel"
                   />
                   <template v-if="'TERMA_700' in data">
@@ -142,6 +144,7 @@
                           :readonly="readonly || t_min_locked"
                           :data="data.TERMA_700[0]"
                           :history="history"
+                          :validity="validity"
                           @set-level="setLevel"
                         />
                       </dd>
@@ -151,6 +154,7 @@
                           :readonly="readonly || t_min_locked"
                           :data="data.TERMA_1500[0]"
                           :history="history"
+                          :validity="validity"
                           @set-level="setLevel"
                         />
                       </dd>
@@ -160,6 +164,7 @@
                           :readonly="readonly || t_min_locked"
                           :data="data.TERMA_2000[0]"
                           :history="history"
+                          :validity="validity"
                           @set-level="setLevel"
                         />
                       </dd>
@@ -171,6 +176,7 @@
                     :readonly="readonly"
                     :data="data.TERMA[1]"
                     :history="history"
+                    :validity="validity"
                     @set-level="setLevel"
                   />
                   <template v-if="'TERMA_700' in data">
@@ -184,6 +190,7 @@
                           :readonly="readonly"
                           :data="data.TERMA_700[1]"
                           :history="history"
+                          :validity="validity"
                           @set-level="setLevel"
                         />
                         700 m
@@ -194,6 +201,7 @@
                           :readonly="readonly"
                           :data="data.TERMA_1500[1]"
                           :history="history"
+                          :validity="validity"
                           @set-level="setLevel"
                         />
                         1500 m
@@ -204,6 +212,7 @@
                           :readonly="readonly"
                           :data="data.TERMA_2000[1]"
                           :history="history"
+                          :validity="validity"
                           @set-level="setLevel"
                         />
                         2000 m
@@ -299,6 +308,10 @@ export default {
     venueNames: {
       type: Array,
       default: () => []
+    },
+    validity: {
+      type: Object,
+      default: () => { return {} }
     },
   },
   emits: ["setVenue"],

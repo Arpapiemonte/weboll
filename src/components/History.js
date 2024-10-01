@@ -1,4 +1,4 @@
-// Copyright (C) 2020-2023 simevo s.r.l. for ARPA Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
@@ -27,20 +27,42 @@ class History {
   }
 
   record(snapshot) {
-    if (this.cursor >= 0 && this.snapshots[this.cursor].id === snapshot.id && this.snapshots[this.cursor].id_key === snapshot.id_key && this.snapshots[this.cursor].value_key === snapshot.value_key) {
-      // collapse with last active change if they share the same id/id_key/value_key
-      this.snapshots[this.cursor].new_value = snapshot.new_value
-    } else {
-      while (this.cursor < this.snapshots.length - 1) {
-        this.snapshots.pop()
+    for (const [key, value] of Object.entries(snapshot)) {
+      if (key == 'new_value'){
+        if (value === ''){
+          snapshot['new_value'] = null
+        }
       }
-      this.snapshots.push(roughlyToPlain(snapshot))
-      this.cursor = this.snapshots.length - 1
     }
+    // riscrivo tutta l'history tenendo solo l'ultima modifica x stessi id
+    let new_snapshots = []
+    let new_cursor = 0
+    this.snapshots.forEach(element => {
+      if (element.id === snapshot.id
+        && element.id_key === snapshot.id_key
+        && element.value_key === snapshot.value_key){
+        // salto questo elemento perchè corrisponde a quello nuovo che voglio inserire
+        // console.log("riscrittura history lo salto perchè corrisponde al nuovo", element)
+      }else{
+        // riporto la vecchia history e il vecchio cursor
+        // console.log("riscrittura history lo inserisco", element)
+        new_snapshots.push(roughlyToPlain(element))
+        new_cursor = new_cursor + 1
+      }
+    })
+    this.snapshots = new_snapshots
+    this.cursor = new_cursor
+    this.snapshots.push(roughlyToPlain(snapshot))
+    this.cursor = this.snapshots.length - 1
+    //console.log(this.snapshots, this.cursor)
   }
 
   undo() {
     if (this.canUndo) {
+      let new_value = this.snapshots[this.cursor].new_value
+      let old_value = this.snapshots[this.cursor].old_value
+      this.snapshots[this.cursor].new_value = old_value
+      this.snapshots[this.cursor].old_value = new_value
       return this.snapshots[this.cursor--]
     }
     return null
@@ -48,6 +70,11 @@ class History {
 
   redo() {
     if (this.canRedo) {
+      let cursor = this.cursor + 1
+      let new_value = this.snapshots[cursor].new_value
+      let old_value = this.snapshots[cursor].old_value
+      this.snapshots[cursor].new_value = old_value
+      this.snapshots[cursor].old_value = new_value
       return this.snapshots[++this.cursor]
     }
     return null
@@ -76,7 +103,10 @@ class History {
     this.cursor = this.snapshots.length - 1
   }
   isDirty(id, id_key, value_key) {
-    let index = this.snapshots.findIndex(element => element.id === id && element.id_key === id_key && element.value_key === value_key) 
+    let index = this.snapshots.findIndex(
+      element => element.id === id 
+      && element.id_key === id_key 
+      && element.value_key === value_key) 
     return index >= 0 && index <= this.cursor
   }
   shake() {

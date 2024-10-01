@@ -33,7 +33,7 @@ services:
       CELERY_FLOWER_PASSWORD: 'KYfpK2XBJsUa3YmzbGw9dBVFDQ1kECAXAcZmaH6K2SpMxjywjGZF6HVRkubY1mkw'
     command: sh -c '
       echo NEEDLE_SAVE_BASELINE=$$NEEDLE_SAVE_BASELINE;
-      wait-for-it "$$TEST_SITE" --timeout=10 --strict -- pytest-3 tests/ &&
+      wait-for-it "$$TEST_SITE" --timeout=10 --strict -- pytest tests/ &&
       if [ "$$NEEDLE_SAVE_BASELINE" = 1 ]; then
         echo "📷 Saved new visual regressions baselines in 'screenshots/baseline/'";
         strip-nondeterminism screenshots/baseline/*.png;

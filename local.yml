@@ -12,6 +12,7 @@ services:
       args:
         LDAP_CA: $LDAP_CA
         LOCAL_CA: $LOCAL_CA
+        DOMAIN: $DOMAIN
     image: weboll_local_django
     container_name: weboll_local_django
     restart: unless-stopped
@@ -61,9 +62,12 @@ services:
       - ./w05:/app/w05
       - ./w06:/app/w06
       - ./w07:/app/w07
-      - ./w12:/app/w12
+      - ./w12:/app/w12      
+      - ./w15:/app/w15
       - ./w16:/app/w16
       - ./w17:/app/w17
+      - ./w20:/app/w20
+      - ./w21:/app/w21
       - ./w23:/app/w23
       - ./w24:/app/w24
       - ./w26:/app/w26
@@ -75,7 +79,12 @@ services:
       - ./w22verifica:/app/w22verifica
       - ./w17verifica:/app/w17verifica
       - ./w31:/app/w31
-      - ./w33:/app/w33
+      - ./w33:/app/w33      
+      - ./w34:/app/w34
+      - ./w37:/app/w37
+      - ./w35:/app/w35
+      - ./w36:/app/w36
+      - ./w99:/app/w99
       - ./tests:/app/tests
   ldap:
     image: osixia/openldap:1.5.0

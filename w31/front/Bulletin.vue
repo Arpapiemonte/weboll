@@ -1,4 +1,4 @@
-// Copyright (C) 2020-2023 simevo s.r.l. for ARPA Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
@@ -59,7 +59,7 @@
             > PDF
           </a>
           <button
-            v-if="incendi.status === '1' && state.username"
+            v-if="incendi.status === '1' && state.username && incendi.start_valid_time.substring(0, 10) === today"
             type="button"
             class="btn btn-outline-warning"
             @click="execute('reopen', true, 'Bollettino riaperto')"
@@ -85,7 +85,7 @@
             v-if="incendi.status === '0' && state.username"
             type="button"
             class="btn btn-outline-success"
-            @click="execute('send', false, 'Bollettino inviato')"
+            @click="execute_timeout('send', false, 'Bollettino inviato')"
           >
             <span v-if="sending">
               <span
@@ -286,7 +286,7 @@
 </template>
 
 <script>
-import Modal from 'bootstrap/js/dist/modal'
+import { Modal } from 'bootstrap'
 import api from '@/api'
 import store from '@/store'
 import TabellaIncendiMicro from './TabellaIncendiMicro.vue'
@@ -304,6 +304,12 @@ export default {
     TabellaIncendiMacro,
     ModaleLivelli
   },
+  props: {
+    id: {
+      type: String,
+      default: () => ''
+    },
+  },
   data () {
     // non reactive properties
     this.modaleLivelli = null
@@ -313,6 +319,7 @@ export default {
       current_day: 0,
       incendi: {},
       livelli: [],
+      saving: false,
       readonly: true,
       ready: false,
       reopening: false,
@@ -348,8 +355,9 @@ export default {
     venue_data_micro() {
       let vd = { }	
       this.incendi.micro[this.time_layouts[this.current_day]].forEach(element => {
+        let livello = this.livelli.find((element2) => element2.id_w31_livelli == element.id_w31_livelli)
         vd[element.id_w31_microaree.id_w31_microaree] = {
-          color: this.livelli[element.id_w31_livelli - 1].colore,
+          color: livello.colore,
           id_w31_livelli: element.id_w31_livelli,
         }
       })
@@ -358,8 +366,9 @@ export default {
     venue_data_macro() {
       let vdm = { }	
       this.incendi.macro[this.time_layouts[this.current_day]].forEach(element => {
+        let livello = this.livelli.find((element2) => element2.id_w31_livelli == element.id_w31_livelli)
         vdm[element.id_w31_macroaree.id_w31_macroaree] = {
-          color: this.livelli[element.id_w31_livelli - 1].colore,
+          color: livello.colore,
           id_w31_livelli: element.id_w31_livelli,
           denominazione: element.id_w31_macroaree.nome
         }
@@ -383,7 +392,7 @@ export default {
   },
   methods: {
     getTest() {
-      this.incendi_id = this.$route.params.id
+      this.incendi_id = this.id
       if (typeof this.incendi_id === 'undefined') {
         return
       }
@@ -499,7 +508,17 @@ export default {
     getDateFormatted(rawString) {
       return api.getDateFormatted(rawString)
     },
+    // tests the time taken to save
+    saveW31_timeout(newValue, id_w31, campo) {
+      this.saving = true
+      setTimeout(() => {
+        console.log("saveW31_timeout aspetto 5 secondi prima di salvare")
+        this.saveW31(newValue, id_w31, campo)
+      }, 5000);
+    },
     saveW31(newValue, id_w31, campo) {
+      // console.log("saveW31")
+      this.saving = true
       const payload = { }
       if (campo) {
         payload[campo] = newValue
@@ -515,6 +534,7 @@ export default {
               position: 'top-left'
             }
           )
+          this.saving = false
         }
         return response.json()
       }).then(data => {
@@ -527,6 +547,7 @@ export default {
         )
         this.incendi.last_update = data.last_update
         this.incendi.username = store.state.username
+        this.saving = false
       }).catch((error) => {
         this.$toast.open(
           {
@@ -535,6 +556,7 @@ export default {
             position: 'top-left'
           }
         )
+        this.saving = false
       })
     },
     updateW31(id_w31) {
@@ -551,6 +573,7 @@ export default {
               position: 'top-left'
             }
           )
+          this.saving = false
         }
         return response.json()
       }).then(data => {
@@ -564,6 +587,7 @@ export default {
         this.incendi.last_update = data.last_update
         this.incendi.username = store.state.username
         this.incendi.version = this.incendi.version + 1
+        this.saving = false
       }).catch((error) => {
         this.$toast.open(
           {
@@ -572,14 +596,19 @@ export default {
             position: 'top-left'
           }
         )
+        this.saving = false
       })
     },
     saveLevel(value) {
+      // console.log("saveLevel")
+      this.saving = true
       let area = this.incendi.macro[this.time_layouts[this.current_day]][this.selected_shape - 1]
       this.saveW31Data(area, value)
       this.modaleLivelli.hide()
     },
     saveW31Data(area, value) {
+      // console.log("saveW31Data")
+      this.saving = true
       const payload = { }
       let campo = 'id_w31_livelli' 
       if (value === 'N' || value === 'S') {
@@ -595,6 +624,7 @@ export default {
               position: 'top-left'
             }
           )
+          this.saving = false
         } else {
           area[campo] = value
           this.updateW31(this.incendi.id_w31)
@@ -607,6 +637,7 @@ export default {
             position: 'top-left'
           }
         )
+        this.saving = false
       })
     },
     async fetchAction(action) {
@@ -616,7 +647,22 @@ export default {
       )
       return response
     },
+    execute_timeout(action, reroute, message){
+      // console.log("inizio execute_timeout")
+      if (this.saving){
+        console.log("saving è true faccio partire timeout")
+        setTimeout(() => {
+          console.log("aspetto 1 secondo finchè non finisce il salvataggio in corso")
+          this.execute_timeout(action, reroute, message)
+        }, 1000);
+      }else{
+        console.log("saving è false lancio execute")
+        this.execute(action, reroute, message)
+      }
+      // console.log("fine execute_timeout")
+    },
     execute(action, reroute, message) {
+      // console.log("inizio execute")
       this[action + 'ing'] = true
       this.fetchAction(action).then(response => {
         this[action + 'ing'] = false

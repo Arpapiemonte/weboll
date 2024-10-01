@@ -1,4 +1,4 @@
-// Copyright (C) 2020-2023 simevo s.r.l. for ARPA Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
@@ -28,10 +28,6 @@ export default {
       type: Array,
       default: () => { return [] }
     },
-    criticitaRe: {
-      type: Object,
-      default: () => { return {} }
-    },
     area: {
       type: Object,
       default: () => { return { id_w22_criticita: 'A' } }
@@ -50,14 +46,16 @@ export default {
     idCriticita () {
       return this.area[this.campo]
     },
+    criticitaRe(){
+      let result = []
+      Object.keys(this.criticita).forEach(id => {
+        result[this.criticita[id].id_w22_criticita] = this.criticita[id].colore_html
+      })
+      return result
+    },
     coloreHtml () {
       return this.criticitaRe[this.area[this.campo]]
     }
-  },
-  beforeMount() {
-    Object.keys(this.criticita).forEach(id => {
-      this.criticitaRe[this.criticita[id].id_w22_criticita] = this.criticita[id].colore_html
-    })
   },
 }
 </script>
