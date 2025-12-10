@@ -1,11 +1,11 @@
 ---
 
-publiccodeYmlVersion: "0.2"
+publiccodeYmlVersion: "0.5"
 
 name: Weboll
 url: "https://github.com/Arpapiemonte/weboll.git"
-softwareVersion: "v1.5.0+a67914fd"
-releaseDate: "2024-09-30"
+softwareVersion: "v1.5.176+dc327f2b"
+releaseDate: "2025-11-23"
 platforms:
   - web
 
@@ -124,21 +124,6 @@ description:
       - doc/destinazioni_admin.png
       - doc/flower.png
       - doc/user_admin.png
-it:
-  countryExtensionVersion: '0.2'
-    riuso:
-      codiceIPA: arlpa_to
-  conforme:
-    gdpr: false
-    lineeGuidaDesign: true
-    misureMinimeSicurezza: false
-    modelloInteroperabilita: false
-  countryExtensionVersion: '0.2'
-  piattaforme:
-    anpr: false
-    cie: false
-    pagopa: false
-    spid: false
 
 legal:
   license: AGPL-3.0-or-later
@@ -177,3 +162,20 @@ intendedAudience:
     - environment
   countries:
     - it
+
+it:
+  countryExtensionVersion: '0.2'
+
+  riuso:
+    codiceIPA: arlpa_to
+  conforme:
+    gdpr: false
+    lineeGuidaDesign: true
+    misureMinimeSicurezza: false
+    modelloInteroperabilita: false
+
+  piattaforme:
+    anpr: false
+    cie: false
+    pagopa: false
+    spid: false
