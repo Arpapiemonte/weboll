@@ -1,4 +1,4 @@
-// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2025 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
@@ -21,7 +21,7 @@
       >
         <a
           class="btn btn-outline-primary"
-          :href="'/api/w07/pdf/' + autostrada.id_w07"
+          :href="'/api/w07/pdf_a21/' + autostrada.id_w07"
           target="_blank"
           role="button"
         >
@@ -30,7 +30,20 @@
             alt="PDF icon"
             width="18"
             height="18"
-          > PDF
+          > PDF A21
+        </a>
+        <a
+          class="btn btn-outline-primary"
+          :href="'/api/w07/pdf_a4/' + autostrada.id_w07"
+          target="_blank"
+          role="button"
+        >
+          <img
+            src="~bootstrap-icons/icons/file-earmark-pdf-fill.svg"
+            alt="PDF icon"
+            width="18"
+            height="18"
+          > PDF A4
         </a>
         <button
           v-if="autostrada.status === '0' && state.username"

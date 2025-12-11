@@ -14,6 +14,7 @@ router.register(r"data", views.W22VerificaDataView)
 router.register(r"zone", views.W22ZoneView)
 router.register(r"giudizio", views.W22GiudizioView)
 router.register(r"severita", views.W22SeveritaView)
+router.register(r"criticita", views.W22verificaCriticitaView)
 # Wire up our API using automatic URL routing.
 urlpatterns = [
     path("", include(router.urls)),

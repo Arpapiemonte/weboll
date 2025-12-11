@@ -29,6 +29,7 @@ COPY w29 ./w29
 COPY w22 ./w22
 COPY w30 ./w30
 COPY w22verifica ./w22verifica
+COPY w23verifica ./w23verifica
 COPY w17verifica ./w17verifica
 COPY w31 ./w31
 COPY w32 ./w32
@@ -36,6 +37,7 @@ COPY w33 ./w33
 COPY w34 ./w34
 COPY w35 ./w35
 COPY w37 ./w37
+COPY w38 ./w38
 COPY w36 ./w36
 COPY w99 ./w99
 COPY .env ./.env

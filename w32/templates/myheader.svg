@@ -1,7 +1,8 @@
+{% load static %}
 {% load date_extras_w32 %}
 <g transform="translate(-3 -3)">
 <!--Header LimIni--><image
-       xlink:href="http://localhost:8000/static/images/logo_colori.svg"
+       xlink:href="{% static 'images/logo_colori.svg' %}"
        y="10"
        x="10"
        id="image2452"

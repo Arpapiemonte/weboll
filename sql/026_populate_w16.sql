@@ -1,6 +1,6 @@
 -- author    = "weboll"
 -- credits   = ""
--- copyright = "Copyright (C) 2024 Arpa Piemonte - Dipartimento Rischi Naturali e Ambientali"
+-- copyright = "Copyright (C) 2025 Arpa Piemonte - Dipartimento Rischi Naturali e Ambientali"
 -- date      = "2021-07-28"
 -- manteiner = "weboll"
 -- email     = "noreply@arpa.piemonte.it"

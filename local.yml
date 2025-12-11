@@ -77,11 +77,13 @@ services:
       - ./w30:/app/w30
       - ./w32:/app/w32
       - ./w22verifica:/app/w22verifica
+      - ./w23verifica:/app/w23verifica
       - ./w17verifica:/app/w17verifica
       - ./w31:/app/w31
       - ./w33:/app/w33      
       - ./w34:/app/w34
       - ./w37:/app/w37
+      - ./w38:/app/w38
       - ./w35:/app/w35
       - ./w36:/app/w36
       - ./w99:/app/w99

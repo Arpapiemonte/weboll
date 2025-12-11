@@ -1,4 +1,4 @@
-// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2025 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
@@ -31,7 +31,7 @@
         <p>
           Quota:
           <Level
-            :readonly="readonly"
+            :readonly="true"
             :data="freezingLevelMattino"
             :history="history"
             :step="100"
@@ -40,9 +40,9 @@
           />
         </p>
         <ClassSelect
-          :readonly="readonly"
+          :readonly="true"
           :data="classes0012"
-          :classes-value="classDescription[classes0012.id_classes].classes_value"
+          :classes-value="classDescription['11'].classes_value"
           :history="history"
           :validity="validity"
           @set-class="setClass"

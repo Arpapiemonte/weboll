@@ -19,6 +19,7 @@ def populate_bulletins(apps, schema_editor):
     BulletinsModel.objects.get_or_create(prodotto="a7_a26", tabella="w12")
     BulletinsModel.objects.get_or_create(prodotto="a4_a21", tabella="w07")
     BulletinsModel.objects.get_or_create(prodotto="a6", tabella="w06")
+    BulletinsModel.objects.get_or_create(prodotto="a33", tabella="w28")
     BulletinsModel.objects.get_or_create(
         prodotto="verificameteo", tabella="w17verifica"
     )
@@ -32,6 +33,13 @@ def populate_bulletins(apps, schema_editor):
         prodotto="aggiornamento_allerta", tabella="w37"
     )
     BulletinsModel.objects.get_or_create(prodotto="ondatecalore", tabella="w36")
+    BulletinsModel.objects.get_or_create(
+        prodotto="verificapiene", tabella="w22verifica"
+    )
+    BulletinsModel.objects.get_or_create(
+        prodotto="verificaallerta", tabella="w23verifica"
+    )
+    BulletinsModel.objects.get_or_create(prodotto="uvi", tabella="w38")
 
 
 class Migration(migrations.Migration):

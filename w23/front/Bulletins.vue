@@ -1,4 +1,4 @@
-// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2025 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
@@ -19,7 +19,7 @@
         width="100px"
         @click="slotProps.sort('numero_bollettino')"
       >
-        Seq {{ slotProps.currentSort === 'numero_bollettino' ? slotProps.currentSortDir === 'asc' ? '▲' : '▼' : ' ' }}
+        Seq {{ slotProps.currentSort === 'numero_bollettino' ? slotProps.currentSortDir === '' ? '▲' : '▼' : ' ' }}
       </th>
       <th
         scope="col"
@@ -28,13 +28,13 @@
         width="300px"
         @click="slotProps.sort('data_emissione')"
       >
-        Data di emissione {{ slotProps.currentSort === 'data_emissione' ? slotProps.currentSortDir === 'asc' ? '▲' : '▼' : ' ' }}
+        Data di emissione {{ slotProps.currentSort === 'data_emissione' ? slotProps.currentSortDir === '' ? '▲' : '▼' : ' ' }}
       </th>
     </template>
     <template #td1="slotProps">
       <td>{{ slotProps.bulletin['numero_bollettino'] }}</td>
       <td>
-        {{ getDateFormattedNoTime(slotProps.bulletin['data_emissione']) }}
+        {{ getDateFormattedNoTime_eng(slotProps.bulletin['data_emissione']) }}
       </td>
     </template>
     <template #th2="slotProps">
@@ -45,11 +45,11 @@
         width="300px"
         @click="slotProps.sort('last_update_annotazione')"
       >
-        Data ultima modifica annotazione {{ slotProps.currentSort === 'last_update_annotazione' ? slotProps.currentSortDir === 'asc' ? '▲' : '▼' : ' ' }}
+        Data ultima modifica annotazione {{ slotProps.currentSort === 'last_update_annotazione' ? slotProps.currentSortDir === '' ? '▲' : '▼' : ' ' }}
       </th>
     </template>
     <template #td2="slotProps">
-      <td>{{ getDateFormatted(slotProps.bulletin['last_update_annotazione']) }}</td>
+      <td>{{ getDateFormatted_eng(slotProps.bulletin['last_update_annotazione']) }}</td>
     </template>
   </Bulletins>
 </template>
@@ -69,7 +69,13 @@ export default {
     },
     getDateFormattedNoTime(rawString) {
       return api.getDateFormatted(rawString, false)
-    }
+    },
+    getDateFormatted_eng(rawString) {
+      return api.getDateFormatted_eng(rawString)
+    },
+    getDateFormattedNoTime_eng(rawString) {
+      return api.getDateFormatted_eng(rawString, false)
+    },
   }
 }
 </script>

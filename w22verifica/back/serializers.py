@@ -40,6 +40,12 @@ class W22SeveritaSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
 
+class W22verificaCriticitaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.W22verificaCriticita
+        fields = "__all__"
+
+
 class W22VerificaSerializerFull(serializers.ModelSerializer):
     w22verificadata_set = serializers.SerializerMethodField()
 

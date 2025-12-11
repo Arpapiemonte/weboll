@@ -1,4 +1,4 @@
-// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2025 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
@@ -2435,8 +2435,11 @@ async function updateAllVenue(id_venue, tl){
   let inizio = new Date().getMilliseconds()
   loading.value=true
   let stack : Array<Object> = []
-  await varWdaVenue(id_venue, tl, true)
-  let mystack = await varGiorniConsVenue(id_venue, false)
+  let mystack = await varWdaVenue(id_venue, tl, false)
+  mystack.forEach(element => {
+    stack.push(element)
+  })
+  mystack = await varGiorniConsVenue(id_venue, false)
   mystack.forEach(element => {
     stack.push(element)
   })
@@ -2450,6 +2453,7 @@ async function updateAllVenue(id_venue, tl){
 }
 
 async function varWdaVenue(id_venue, tl, notify){
+  let stack : Array<Object> = []
   let myAggreg = [940, 941, 942]
   if (!(id_venue in wda.value))
     wda.value[id_venue] = {}
@@ -2460,9 +2464,19 @@ async function varWdaVenue(id_venue, tl, notify){
     let atmin_prevista = caldo.value.w36_data[tl][id_venue]['ATMIN'][0].numeric_value
     let atmax_percentile = caldo.value.w36_data[tl][id_venue]['ATMAX'][aggreg].numeric_value
     let atmin_percentile = caldo.value.w36_data[tl][id_venue]['ATMIN'][aggreg].numeric_value
+
     let cc = calcolaWda(atmax_prevista, atmax_percentile, atmin_prevista, atmin_percentile, notify, id_venue, tl, aggreg)
-    console.log("\tvarWdaVenue - atmax_prevista, atmax_percentile, atmin_prevista, atmin_percentile", id_venue, tl, aggreg, atmax_prevista, atmax_percentile, atmin_prevista, atmin_percentile, cc)
+    //console.log("\tvarWdaVenue - atmax_prevista, atmax_percentile, atmin_prevista, atmin_percentile", id_venue, tl, aggreg, atmax_prevista, atmax_percentile, atmin_prevista, atmin_percentile, cc)
     wda.value[id_venue][tl][aggreg] = {'numeric_value': cc}
+    
+    // introdotto salvataggio del valore di WDA sul db
+    if ([32, 48, 66, 83].includes(Number(tl))){
+      let id_w36_data = caldo.value.w36_data[tl][id_venue]['WDA'][aggreg].id_w36_data
+      let w36data = caldo.value.w36_data[tl][id_venue]['WDA'][aggreg]
+      const payload = {"id_key":"id_w36_data","id":id_w36_data,"value_key": "numeric_value","new_value": cc}
+      w36data.numeric_value = cc
+      stack.push(payload)
+    }
   });
   if (id_venue == 59){
     var tloss = [15, 32]
@@ -2479,17 +2493,27 @@ async function varWdaVenue(id_venue, tl, notify){
 
         let cc = calcolaWda(atmax_prevista, atmax_percentile, atmin_prevista, atmin_percentile, notify, id_venue, mytl, aggreg)
         wda.value[id_venue][mytl][aggreg] = {'numeric_value': cc}
+        
       })
     }
   }
   console.log("\tvarWdaVenue - return", id_venue, tl, wda.value[id_venue][tl])
+  const payloadusername = {"id_key":"id_w36","id":caldo.value.id_w36,"value_key":"username","new_value": store.state.username}
+  stack.push(payloadusername)
+  if (caldo.value.status === 'X' || caldo.value.status === '0') await saveW36(stack)
+  return stack
 }
 
-function varWda(){
+async function varWda(){
   console.log("varWda - inizio")
+  let stack : Array<Object> = []
   for (const [id_venue, valueV] of Object.entries(myVenues)) {
+
     for (const [tl, valuetl] of Object.entries(myDate.value)) {
-      varWdaVenue(id_venue, tl, false)
+      let mystack = await varWdaVenue(id_venue, tl, false)  //await-cdl
+      mystack.forEach(element => {
+        stack.push(element)
+      })
     }
   }
   var tloss = [15, 32]
@@ -2497,8 +2521,12 @@ function varWda(){
   // nel caso di Torino devo calcolare il wda anche per il giorno precedente
   for (var ii=0; ii < tloss.length; ii++) {
     var tl = tloss[ii]
-    varWdaVenue(id_venue, tl)
+    let mystack = await varWdaVenue(id_venue, tl, false) //await-cdl
+    mystack.forEach(element => {
+      stack.push(element)
+    })
   }
+  if (caldo.value.status === 'X' || caldo.value.status === '0')  await saveW36(stack) //await-cdl
   console.log("varWda - fine")
 }
 
@@ -2588,7 +2616,26 @@ async function varColoreVenue(id_venue, save){
     } else {
       colore[id_venue][tl] = {'numeric_value': 0}
     }
-
+    // aggiunta condizione che se Atmin > 95p & => incremento di 1 il livello
+    // se è arancione incremento solo se il sistema è acceso da 3 giorni
+    
+    let atmin_prev = caldo.value.w36_data[tl][id_venue]['ATMIN'][0].numeric_value
+    let atmin_95p = caldo.value.w36_data[tl][id_venue]['ATMIN'][942].numeric_value
+    let colore_prima = colore[id_venue][tl].numeric_value
+    let ggcons = caldo.value.w36_data[tl][id_venue]['GGCONS'][0].numeric_value
+    let conditionIncrement = (atmin_prev >= 24 && atmin_prev >= atmin_95p && colore_prima === 1) ||
+      (atmin_prev >= 24 && atmin_prev >= atmin_95p && colore_prima === 2 && ggcons >= 3)
+    if (conditionIncrement) {
+      colore[id_venue][tl] = {'numeric_value': colore_prima + 1}
+      toast.open(
+        {
+          message: 'Colore incrementato di 1 poiché ATMIN >= 95p:' + idVenue2Name[id_venue] + ', ' + idTL2Date(tl) ,
+          type: 'info',
+          position: 'top-left',
+          duration: 6000
+        }
+      )
+    }
     // console.log("w36data.locked", w36data.locked, !(w36data.locked))
     if (!(w36data.locked)){
       let id_w36_data = w36data.id_w36_data  
@@ -2923,8 +2970,6 @@ function valoreStima(parametro, valore) {
     "popday2 - decr.estivo": "popday_",
     "dow - day of week": "dow"
   }
-
-  // CDL occhio a come gestire -1.... non è nel nome del campo del db
 
   if (parametro == 'WDA75p' || parametro == 'WDA90p'|| parametro == 'WDA95p') {
     if ( valore == 1) { 
@@ -3403,10 +3448,12 @@ async function setMeasure(id_w36_data, campo, tl, aggreg, id_venue, locked){
       stack.push(element)
     })
     if (caldo.value.status === 'X' || caldo.value.status === '0'){
-      if (id_venue == 59)
-        await saveW36(stack, true, true)
-      else
+      if (id_venue == 59){
         await saveW36(stack, true)
+        await updateChart()
+      }else{
+        await saveW36(stack, true)
+      }
     }
   }
   console.log("setMeasure fine millisecondi", (new Date().getMilliseconds()) - inizio)
@@ -3440,7 +3487,8 @@ async function saveW36Data(id_w36_data, campo, id_venue, tl,aggreg, new_value, n
   if (w36data.id_parametro == 'ATMAX' || w36data.id_parametro == 'ATMIN' || w36data.id_parametro == 'TERMA') {
     replot = true
   }
-  if (save) saveW36(stack, notify_success, replot)
+  if (save) await saveW36(stack, notify_success)
+  if (replot) await updateChart()
   return stack
 }
 
@@ -3465,10 +3513,10 @@ function saveField(field) {
   }
 }
 
-async function saveW36(stack, notify_success = false, replot=false) {
+async function saveW36(stack, notify_success = false) {
   const username = stack.find((element) => element.value_key == 'username');
   if (username.new_value === owner.value){
-    // console.log("saveW36 salvo", username.new_value, owner.value, stack)
+    //console.log("saveW36 salvo", username.new_value, owner.value, stack)
     await bulkUpdateW36(stack).then((response) => {
       if (response === undefined || !response.ok) {
         toast.open(
@@ -3502,34 +3550,35 @@ async function saveW36(stack, notify_success = false, replot=false) {
         }
       )
     })
-    if (replot) {
-      await fetchChart(caldo_id.value).then(response => {
-        if (!response.ok) {
-          toast.open(
-            {
-              message: `Errore ${response.status} nel recupero del bollettino`,
-              type: 'error',
-              position: 'top-left'
-            }
-          )
-        }
-        return response.json() // Serve casting al tipo
-      }).then(data => { 
-        image_max.value = data['graphic_max']
-        image_min.value = data['graphic_min']
-      }).catch(error => {
-        toast.open(
-          {
-            message: error,
-            type: 'error',
-            position: 'top-left'
-          }
-        )
-      })
-    }
   }else{
     console.log("username diverso non salvo!")
   }
+}
+
+async function updateChart(){
+  await fetchChart(caldo_id.value).then(response => {
+    if (!response.ok) {
+      toast.open(
+        {
+          message: `Errore ${response.status} nel recupero del bollettino`,
+          type: 'error',
+          position: 'top-left'
+        }
+      )
+    }
+    return response.json() // Serve casting al tipo
+  }).then(data => { 
+    image_max.value = data['graphic_max']
+    image_min.value = data['graphic_min']
+  }).catch(error => {
+    toast.open(
+      {
+        message: error,
+        type: 'error',
+        position: 'top-left'
+      }
+    )
+  })
 }
 
 async function bulkUpdateW36(payload) {
@@ -3762,7 +3811,8 @@ async function fetchBollMeteoTemp(user_request = false){
     }
     const payloadusername = {"id_key":"id_w36","id":caldo.value.id_w36,"value_key":"username","new_value": store.state.username}
     stack.push(payloadusername)
-    saveW36(stack, false, true)
+    await saveW36(stack, false)
+    await updateChart()
   }else{
     toast.open(
 		{
@@ -3880,6 +3930,7 @@ async function fetchData () {
       }
     )
   })
+  await getTempMeteo()
   // console.log("fetchChart")
   await fetchChart(caldo_id.value).then(response => {
     if (!response.ok) {
@@ -3905,16 +3956,6 @@ async function fetchData () {
       }
     )
   })
-  if (caldo.value.status === "X"){
-    await fetchBollMeteoTemp()
-    // console.log("lo status è a X lo metto a zero!")
-    const payloadstatus = {"id_key":"id_w36","id":caldo.value.id_w36,"value_key":"status","new_value": "0"}
-    stack.push(payloadstatus)
-    const payloadusername = {"id_key":"id_w36","id":caldo.value.id_w36,"value_key":"username","new_value": store.state.username}
-    stack.push(payloadusername)
-    await saveW36(stack)
-    caldo.value.status = '0'
-  }
   createDate()
   await updateAll()
   // console.log("caldo.value.status", caldo.value.status, caldo.value.status === '0')
@@ -3927,6 +3968,20 @@ async function fetchData () {
     });
   }
   countdown.value += 1
+}
+
+async function getTempMeteo(){
+  let stack : Array<Object> = []
+  if (caldo.value.status === "X"){
+    await fetchBollMeteoTemp()
+    // console.log("lo status è a X lo metto a zero!")
+    const payloadstatus = {"id_key":"id_w36","id":caldo.value.id_w36,"value_key":"status","new_value": "0"}
+    stack.push(payloadstatus)
+    const payloadusername = {"id_key":"id_w36","id":caldo.value.id_w36,"value_key":"username","new_value": store.state.username}
+    stack.push(payloadusername)
+    await saveW36(stack)
+    caldo.value.status = '0'
+  }
 }
 
 async function fetchChart (id) {

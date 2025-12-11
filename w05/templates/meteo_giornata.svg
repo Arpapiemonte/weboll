@@ -1,3 +1,4 @@
+{% load static %}
 {% load date_extras %}
 
     <g
@@ -239,7 +240,7 @@
 
     {% if meteo0 != None %}
     <image
-       xlink:href="http://localhost:8000/static/images/PIEMONTE.svg"
+       xlink:href="{% static 'images/PIEMONTE.svg' %}"
        y="137.09155"
        x="10.13641"
        height="42.336746"
@@ -249,7 +250,7 @@
     {% include "meteo_icone.svg" with SKY_CONDIT=meteo0.SKY_CONDIT id='icone_64' e="-0.91625226" f="53.310581" %}
     {% else %}
         <image
-       xlink:href="http://localhost:8000/static/images/PIEMONTE.svg"
+       xlink:href="{% static 'images/PIEMONTE.svg' %}"
        y="137.09155"
        x="10.13641"
        height="42.336746"
@@ -259,7 +260,7 @@
     {% endif %}
 
     <image
-       xlink:href="http://localhost:8000/static/images/PIEMONTE.svg"
+       xlink:href="{% static 'images/PIEMONTE.svg' %}"
        y="137.09155"
        x="45.21492"
        height="42.336746"

@@ -222,6 +222,16 @@ RETE1_KO	Mancanza corrente elettrica 1	98	\N	2021-10-27 00:00:00	weboll
 RETE2_KO	Mancanza corrente elettrica 2	98	\N	2021-10-27 00:00:00	weboll
 PORT_FIU	Portata fiume: totale portate al netto di derivazioni	14	3	2020-09-18 10:11:30	weboll
 PORT_NAT	Portata naturale: totale portate fiume e derivazioni	14	3	2020-09-18 10:11:34	weboll
+ORAT1MAX	offset alle ore 00 della temperatura massima 1 giornaliera	26	0	2024-07-16 00:00:00	weboll
+TERM1MAX	Temperatura massima dell'aria terma1	02	1	2024-07-16 00:00:00	weboll
+BAROMAX	Pressione atmosferica massima	07	1	2020-11-18 00:00:00	weboll
+ORABMAX	offset alle ore 00 della pressione massima giornaliera	26	1	2020-11-18 00:00:00	weboll
+ORAT1MIN	offset alle ore 00 della temperatura minima 1 giornaliera	26	0	2024-07-16 00:00:00	weboll
+TERM1MIN	Temperatura minima dell'aria terma1	02	1	2024-07-16 00:00:00	weboll
+BAROMIN	Pressione atmosferica minima	07	1	2020-11-18 00:00:00	weboll
+ORABMIN	offset alle ore 00 della pressione minima giornaliera	26	1	2020-11-18 00:00:00	weboll
+VELR1	Velocità vento 1 (raffica)	22	1	2023-02-08 00:00:00	weboll
+VELS1	Velocita' vento 1 (scalare)	22	1	2023-02-08 00:00:00	weboll
 TERMN10	Temperatura della neve a 180 cm	02	1	2017-10-09 07:51:25	weboll
 TERMN11	Temperatura della neve a 200 cm	02	1	2017-10-09 07:51:25	weboll
 TERMN12	Temperatura della neve a 220 cm	02	1	2017-10-09 07:51:25	weboll
@@ -247,6 +257,7 @@ TERMN9	Temperatura della neve a 160 cm	02	1	2017-10-09 07:51:25	weboll
 TERMN30	Temperatura della neve a 30 cm	02	1	2019-09-25 14:22:33	weboll
 TERMN90	Temperatura della neve a 90 cm	02	1	2019-09-25 14:23:16	weboll
 TERMNI	Termometro neve ad infrarossi	02	1	2019-09-25 14:23:28	weboll
+UVICS	UV Index cielo sereno	02	0	2019-09-25 14:23:28	weboll
 \.
 
 --

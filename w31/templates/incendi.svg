@@ -1,3 +1,4 @@
+{% load static %}
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -831,7 +832,7 @@
           </tr>
           {% endfor %}
           <tr>
-            <td><img src="http://localhost:8000/static/images/mappa_legenda_macroaree.svg" height="46" width="35" preserveAspectRatio="none" style="image-rendering:optimizeSpeed"></td>
+            <td><img src="{% static 'images/mappa_legenda_macroaree.svg' %}" height="46" width="35" preserveAspectRatio="none" style="image-rendering:optimizeSpeed"></td>
             {% for i in '012'|make_list %}
             <td>{% include "mappa_legenda_macroaree.svg" with tabella_incendi=tabella_incendi %}</td>
             {% endfor %}
@@ -1267,7 +1268,7 @@
                <td>{% include "incendi_icone.svg" with precipitazione_classe=1 %}</td>
                <td>diffuse (> 50%area) <strong>deboli</strong></td>
                <td >2-5 mm </td>
-               <td rowspan="101"><img src="http://localhost:8000/static/images/mappa_legenda_macroaree.svg" height="70" width="55" preserveAspectRatio="none" style="image-rendering:optimizeSpeed"></td>
+               <td rowspan="101"><img src="{% static 'images/mappa_legenda_macroaree.svg' %}" height="70" width="55" preserveAspectRatio="none" style="image-rendering:optimizeSpeed"></td>
             </tr>
             <tr>
                <td>{% include "incendi_icone.svg" with precipitazione_classe=2 %}</td>
@@ -1373,7 +1374,7 @@
 <!-- inizio logo pagina 1 -->
   <g>
    <image
-      xlink:href="http://localhost:8000/static/images/ipla_logo.png"
+      xlink:href="{% static 'images/ipla_logo.png' %}"
       x="10"
       y="274"
       height="15"
@@ -1395,7 +1396,7 @@
 
   <g>
     <image
-      xlink:href="http://localhost:8000/static/images/regione_piemonte_logo.svg"
+      xlink:href="{% static 'images/regione_piemonte_logo.svg' %}"
       x="151"
       y="274"
       height="15"
@@ -1419,7 +1420,7 @@
 <!-- inizio logo pagina 2 -->
   <g>
    <image
-      xlink:href="http://localhost:8000/static/images/ipla_logo.png"
+      xlink:href="{% static 'images/ipla_logo.png' %}"
       x="10"
       y="571"
       height="15"
@@ -1441,7 +1442,7 @@
 
   <g>
     <image
-      xlink:href="http://localhost:8000/static/images/regione_piemonte_logo.svg"
+      xlink:href="{% static 'images/regione_piemonte_logo.svg' %}"
       x="151"
       y="571"
       height="15"
@@ -1468,7 +1469,7 @@
 <!-- inizio logo pagina 3 -->
   <g>
    <image
-      xlink:href="http://localhost:8000/static/images/ipla_logo.png"
+      xlink:href="{% static 'images/ipla_logo.png' %}"
       x="10"
       y="868"
       height="15"
@@ -1490,7 +1491,7 @@
 
   <g>
     <image
-      xlink:href="http://localhost:8000/static/images/regione_piemonte_logo.svg"
+      xlink:href="{% static 'images/regione_piemonte_logo.svg' %}"
       x="151"
       y="868"
       height="15"

@@ -1,8 +1,9 @@
+{% load static %}
 <g id="{{ id }}"
     transform="matrix(1.0550114,0,0,1.0550114,{{e}},{{f}})">
 {% if SKY_CONDIT.89.numeric_value %}
   <image
-      xlink:href="http://localhost:8000/static/images/icons/{{ SKY_CONDIT.89.numeric_value | floatformat }}.svg"
+      xlink:href="{% static 'images/icons/' %}{{ SKY_CONDIT.89.numeric_value | floatformat }}.svg"
       y="83.347969"
       x="25.295887"
       height="5.6693143"
@@ -11,7 +12,7 @@
 {% endif %}
 {% if SKY_CONDIT.88.numeric_value %}
   <image
-      xlink:href="http://localhost:8000/static/images/icons/{{ SKY_CONDIT.88.numeric_value | floatformat }}.svg"
+      xlink:href="{% static 'images/icons/' %}{{ SKY_CONDIT.88.numeric_value | floatformat }}.svg"
       y="93.139885"
       x="17.312559"
       height="5.6693143"
@@ -20,7 +21,7 @@
 {% endif %}
 {% if SKY_CONDIT.64.numeric_value %}
   <image
-      xlink:href="http://localhost:8000/static/images/icons/{{ SKY_CONDIT.64.numeric_value | floatformat }}.svg"
+      xlink:href="{% static 'images/icons/' %}{{ SKY_CONDIT.64.numeric_value | floatformat }}.svg"
       y="92.536887"
       x="27.311699"
       height="5.6693143"
@@ -29,7 +30,7 @@
 {% endif %}
 {% if SKY_CONDIT.9.numeric_value %}
   <image
-      xlink:href="http://localhost:8000/static/images/icons/{{ SKY_CONDIT.9.numeric_value | floatformat }}.svg"
+      xlink:href="{% static 'images/icons/' %}{{ SKY_CONDIT.9.numeric_value | floatformat }}.svg"
       y="102.536887"
       x="27.811699"
       height="5.6693143"
@@ -38,7 +39,7 @@
 {% endif %}
 {% if SKY_CONDIT.59.numeric_value %}
   <image
-      xlink:href="http://localhost:8000/static/images/icons/{{ SKY_CONDIT.59.numeric_value | floatformat }}.svg"
+      xlink:href="{% static 'images/icons/' %}{{ SKY_CONDIT.59.numeric_value | floatformat }}.svg"
       y="100.636887"
       x="19.411699"
       height="5.6693143"
@@ -47,7 +48,7 @@
 {% endif %}
 {% if SKY_CONDIT.28.numeric_value %}
   <image
-      xlink:href="http://localhost:8000/static/images/icons/{{ SKY_CONDIT.28.numeric_value | floatformat }}.svg"
+      xlink:href="{% static 'images/icons/' %}{{ SKY_CONDIT.28.numeric_value | floatformat }}.svg"
       y="108.036887"
       x="19.111699"
       height="5.6693143"
@@ -56,7 +57,7 @@
 {% endif %}
 {% if SKY_CONDIT.91.numeric_value %}
   <image
-      xlink:href="http://localhost:8000/static/images/icons/{{ SKY_CONDIT.91.numeric_value | floatformat }}.svg"
+      xlink:href="{% static 'images/icons/' %}{{ SKY_CONDIT.91.numeric_value | floatformat }}.svg"
       y="107.33118"
       x="31.949068"
       height="5.6693143"
@@ -65,7 +66,7 @@
 {% endif %}
 {% if SKY_CONDIT.90.numeric_value %}
   <image
-      xlink:href="http://localhost:8000/static/images/icons/{{ SKY_CONDIT.90.numeric_value | floatformat }}.svg"
+      xlink:href="{% static 'images/icons/' %}{{ SKY_CONDIT.90.numeric_value | floatformat }}.svg"
       y="112.10069"
       x="14.107773"
       height="5.6693143"
@@ -74,7 +75,7 @@
 {% endif %}
 {% if SKY_CONDIT.87.numeric_value %}
   <image
-      xlink:href="http://localhost:8000/static/images/icons/{{ SKY_CONDIT.87.numeric_value | floatformat }}.svg"
+      xlink:href="{% static 'images/icons/' %}{{ SKY_CONDIT.87.numeric_value | floatformat }}.svg"
       y="101.24177"
       x="10.232578"
       height="5.6693143"

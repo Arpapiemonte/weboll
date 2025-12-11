@@ -121,7 +121,7 @@ class W22View(viewsets.ModelViewSet):
         old_id_w22 = old.id_w22
         old.save()
         numero_bollettino = int(old.numero_bollettino.split("/")[0])
-        numero_bollettino = numero_bollettino + 1
+        # numero_bollettino = numero_bollettino + 1
         new = old
         new.pk = None  # resetta la chiave primaria rendendolo un nuovo record
         new.status = "0"
@@ -844,6 +844,75 @@ class W22ZoneView(viewsets.ModelViewSet):
     permission_classes = [permissions.IsAuthenticated | ReadOnly]
 
 
+class PieneComHtmlView(TemplateView):
+    template_name = "piene_comunicazione.html"
+    http_method_names = ["get"]
+
+    def get_context_data(self, **kwargs):
+        queryset = models.W22.objects
+        w22 = get_object_or_404(queryset, pk=kwargs["pk"])
+        serializer = W22SerializerFull(w22)
+        piene = serializer.data
+
+        convert_to_date(piene, "data_validita")
+        convert_to_date(piene, "data_emissione")
+
+        context = {"piene": piene, "title": "Bollettino piene"}
+        return context
+
+
+class PieneComPDFView(PieneComHtmlView):
+    def get(self, request, *args, **kwargs):
+        os.environ.pop("http_proxy", None)
+        os.environ.pop("https_proxy", None)
+        os.environ.pop("HTTP_PROXY", None)
+        os.environ.pop("HTTPS_PROXY", None)
+        response = PDFTemplateResponse(
+            request=request,
+            template=self.template_name,
+            context=self.get_context_data(**kwargs),
+            filename="piene_comunicazione.pdf",
+            cmd_options={
+                "margin-bottom": 0,
+                "margin-left": 0,
+                "margin-right": 0,
+                "margin-top": 0,
+            },
+        )
+        return response
+
+
+class PieneComPngView(DetailView):
+    http_method_names = ["get"]
+
+    def get(self, request, *args, **kwargs):
+        os.environ.pop("http_proxy", None)
+        os.environ.pop("https_proxy", None)
+        os.environ.pop("HTTP_PROXY", None)
+        os.environ.pop("HTTPS_PROXY", None)
+        django_url = os.getenv("DJANGO_URL", "http://django:8000")
+        r = requests.get(django_url + "/w22/comunicazione_pdf/%d" % kwargs["pk"])
+
+        with tempfile.NamedTemporaryFile(suffix=".pdf") as f:
+            f.write(r.content)
+            f.flush()
+            png_name = "%s.png" % f.name
+            command = "convert -verbose -density 145 -crop 900x1000+3x5 %s %s" % (
+                f.name,
+                png_name,
+            )
+            retcode = call(command, shell=True)
+            if retcode != 0:
+                error = "imagemagick convert failed with code: %d" % retcode
+                raise Exception(error)
+            with open(png_name, mode="rb") as png_file:
+                png_content = png_file.read()
+            os.remove(png_name)
+            return HttpResponse(
+                content=memoryview(png_content), content_type="image/png"
+            )
+
+
 class PieneHTMLView(TemplateView):
     template_name = "piene.html"
     http_method_names = ["get"]
@@ -863,6 +932,10 @@ class PieneHTMLView(TemplateView):
 
 class PienePDFView(PieneHTMLView):
     def get(self, request, *args, **kwargs):
+        os.environ.pop("http_proxy", None)
+        os.environ.pop("https_proxy", None)
+        os.environ.pop("HTTP_PROXY", None)
+        os.environ.pop("HTTPS_PROXY", None)
         response = PDFTemplateResponse(
             request=request,
             template=self.template_name,
@@ -882,7 +955,12 @@ class PienePngView(DetailView):
     http_method_names = ["get"]
 
     def get(self, request, *args, **kwargs):
-        r = requests.get("http://django:8000/w22/pdf/%d" % kwargs["pk"])
+        os.environ.pop("http_proxy", None)
+        os.environ.pop("https_proxy", None)
+        os.environ.pop("HTTP_PROXY", None)
+        os.environ.pop("HTTPS_PROXY", None)
+        django_url = os.getenv("DJANGO_URL", "http://django:8000")
+        r = requests.get(django_url + "/w22/pdf/%d" % kwargs["pk"])
 
         with tempfile.NamedTemporaryFile(suffix=".pdf") as f:
             f.write(r.content)

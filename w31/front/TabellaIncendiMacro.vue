@@ -1,4 +1,4 @@
-// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2025 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
@@ -60,7 +60,7 @@
             aria-label="Default select example"
             :disabled="readonly"
             :value="area.wind"
-            @change="setValue(area, $event.target.value)"
+            @change="setValueWind(area, $event.target.value)"
           >
             <option
               v-for="livello in vento"
@@ -97,7 +97,7 @@ export default {
       default: false
     },
   },
-  emits: ['saveW31Data'],
+  emits: ['saveW31Data', 'saveW31DataMultiple'],
   computed: {
     area_data() {
       let vd = { }
@@ -110,22 +110,35 @@ export default {
   },
   methods: {
     setValue(area, value) {
-      //console.log(`setValue(${area}, ${value})`)
+      console.log(`setValue(${area}, ${value})`)
+      //console.log('area',area)
+      //console.log('value',value)
+      console.log("chiamo emit saveW31Data")
+      this.$emit('saveW31Data', area, value)
+    },
+    setValueWind(area, value) {
+      console.log(`setValueWind(${area}, ${value})`)
       //console.log('area',area)
       //console.log('value',value)
       if (value=='S'){
         if((parseInt(area["id_w31_livelli"])>0) && (parseInt(area["id_w31_livelli"])<3)){
           this.$toast.open(
               {
-                message: "Attenzione aumento il livello",
+                message: "Attenzione porto il livello a giallo a causa del foehn",
                 type: 'warning',
                 position: 'top-left'
               }
           )
-          this.$emit('saveW31Data', area, parseInt(area["id_w31_livelli"])+1)
+          console.log("chiamo emit saveW31DataMultiple")
+          this.$emit('saveW31DataMultiple', area, 3, value)
+        }else{
+          console.log("chiamo emit saveW31Data")
+          this.$emit('saveW31Data', area, value)  
         }
+      }else{
+        console.log("chiamo emit saveW31Data")
+        this.$emit('saveW31Data', area, value)
       }
-      this.$emit('saveW31Data', area, value)
     },
   }
 }

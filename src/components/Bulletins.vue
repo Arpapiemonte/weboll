@@ -1,4 +1,4 @@
-// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2025 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
@@ -63,6 +63,61 @@
               >ultime 3 ore</a>
             </h4>
           </div>
+          <div
+            v-if="name === 'AllertaVerifica' && !errore555"
+            class="alert alert-danger"
+          >
+            <h3>Json Osservati: </h3>
+            <h4>
+              <a
+                :href="verifica_allerta_url"
+                target="_blank"
+              >Lista bollettini allerta osservati</a>
+            </h4>
+          </div>
+          <div
+            v-if="name === 'AllertaVerifica' && errore555"
+            class="alert alert-success"
+          >
+            <h3>Json Osservati:</h3>
+            <h4>
+              <a
+                :href="verifica_allerta_url"
+                target="_blank"
+              >Lista bollettini allerta osservati</a>
+            </h4>
+          </div>
+          <div
+            v-if="name === 'AllertaVerifica'"
+          >
+            <h4>
+              I criteri sono sull'istruzione operativa U.RP.I064
+            </h4>
+          </div>
+          <div
+            v-if="name === 'PieneVerifica' && !errore555"
+            class="alert alert-danger"
+          >
+            <h3>Json Osservati: </h3>
+            <h4>
+              <a
+                :href="verifica_piene_url"
+                target="_blank"
+              >Lista bollettini piene osservati</a>
+            </h4>
+          </div>
+          <div
+            v-if="name === 'PieneVerifica' && errore555"
+            class="alert alert-success"
+          >
+            <h3>Json Osservati:</h3>
+            <h4>
+              <a
+                :href="verifica_piene_url"
+                target="_blank"
+              >Lista bollettini piene osservati</a>
+            </h4>
+          </div>
           <h2>Bollettini {{ name }}</h2>
           <div class="btn-toolbar mb-2 mb-md-0">
             <div class="input-group mb-3">
@@ -90,9 +145,14 @@
                       Inserire Numero boll piene
                     </span>
                   </span>
+                  <span v-if="!verifica_allerta && state.username">
+                    <span style="font-size: small;">
+                      Inserire Numero boll allerta
+                    </span>
+                  </span>
                 </legend>
                 <input
-                  v-if="!verifica && state.username"
+                  v-if="(!verifica || !verifica_allerta) && state.username"
                   id="num_bollettino"
                   v-model="num_bollettino"
                   :readonly="readonly"
@@ -208,6 +268,11 @@
             </div>
           </div>
         </div>
+        <div v-if="loading" class="row justify-content-center">
+          <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
         <div class="table-responsive">
           <table class="table table-striped table-sm">
             <thead class="thead-dark">
@@ -218,7 +283,7 @@
                   class="cursor-pointer align-middle"
                   @click="sort(primaryKeyName)"
                 >
-                  Id {{ currentSort === primaryKeyName ? currentSortDir === 'asc' ? '▲' : '▼' : ' ' }}
+                  Id {{ currentSort === primaryKeyName ? currentSortDir === '' ? '▲' : '▼' : ' ' }}
                 </th>
                 <slot
                   name="th1"
@@ -232,7 +297,7 @@
                   class="cursor-pointer align-middle"
                   @click="sort('last_update')"
                 >
-                  Data ultima modifica {{ currentSort === 'last_update' ? currentSortDir === 'asc' ? '▲' : '▼' : ' ' }}
+                  Data ultima modifica {{ currentSort === 'last_update' ? currentSortDir === '' ? '▲' : '▼' : ' ' }}
                 </th>
                 <slot
                   name="th2"
@@ -246,7 +311,7 @@
                   class="cursor-pointer align-middle"
                   @click="sort('username')"
                 >
-                  Autore {{ currentSort === 'username' ? currentSortDir === 'asc' ? '▲' : '▼' : ' ' }}
+                  Autore {{ currentSort === 'username' ? currentSortDir === '' ? '▲' : '▼' : ' ' }}
                 </th>
                 <th 
                   scope="col"
@@ -268,11 +333,39 @@
                   PDF <br>Regione
                 </th>
                 <th
+                  v-if="name=='Defense'" 
+                  scope="col"
+                  class="align-middle"
+                >
+                  PDF <br>Totale
+                </th>
+                <th
+                  v-if="name=='Slops'" 
+                  scope="col"
+                  class="align-middle"
+                >
+                  PDF <br>Totale
+                </th>
+                <th
                   v-if="name=='Caldo'" 
                   scope="col"
                   class="align-middle"
                 >
                   PDF <br>Torino
+                </th>
+                <th
+                  v-if="name=='A4-A21'" 
+                  scope="col"
+                  class="align-middle"
+                >
+                  PDF <br>A4
+                </th>
+                <th
+                  v-if="name=='A4-A21'" 
+                  scope="col"
+                  class="align-middle"
+                >
+                  PDF <br>A21
                 </th>
                 <th
                   v-else 
@@ -302,7 +395,7 @@
                   name="td1"
                 />
                 <td>
-                  {{ getDateFormatted(bulletin.last_update) }}
+                  {{ getDateFormatted_eng(bulletin.last_update) }}
                 </td>
                 <slot
                   :bulletin="bulletin"
@@ -354,6 +447,66 @@
                   <a
                     class="btn btn-outline-primary btn-sm"
                     :href="`/api/w36/pdf_torino/${bulletin[primaryKeyName]}`"
+                    target="_blank"
+                    role="button"
+                  >
+                    <img
+                      src="~bootstrap-icons/icons/file-earmark-pdf-fill.svg"
+                      alt="PDF icon"
+                      width="18"
+                      height="18"
+                    >
+                  </a>
+                </td>
+                <td v-if="name=='Slops'">
+                  <a
+                    class="btn btn-outline-primary btn-sm"
+                    :href="`/api/w29/pdf_frane/${bulletin[primaryKeyName]}`"
+                    target="_blank"
+                    role="button"
+                  >
+                    <img
+                      src="~bootstrap-icons/icons/file-earmark-pdf-fill.svg"
+                      alt="PDF icon"
+                      width="18"
+                      height="18"
+                    >
+                  </a>
+                </td>
+                <td v-if="name=='Defense'">
+                  <a
+                    class="btn btn-outline-primary btn-sm"
+                    :href="`/api/w32/pdf_frane/${bulletin[primaryKeyName]}`"
+                    target="_blank"
+                    role="button"
+                  >
+                    <img
+                      src="~bootstrap-icons/icons/file-earmark-pdf-fill.svg"
+                      alt="PDF icon"
+                      width="18"
+                      height="18"
+                    >
+                  </a>
+                </td>
+                <td v-if="name=='A4-A21'">
+                  <a
+                    class="btn btn-outline-primary btn-sm"
+                    :href="`/api/w07/pdf_a4/${bulletin[primaryKeyName]}`"
+                    target="_blank"
+                    role="button"
+                  >
+                    <img
+                      src="~bootstrap-icons/icons/file-earmark-pdf-fill.svg"
+                      alt="PDF icon"
+                      width="18"
+                      height="18"
+                    >
+                  </a>
+                </td>
+                <td v-if="name=='A4-A21'">
+                  <a
+                    class="btn btn-outline-primary btn-sm"
+                    :href="`/api/w07/pdf_a21/${bulletin[primaryKeyName]}`"
                     target="_blank"
                     role="button"
                   >
@@ -512,19 +665,21 @@ export default {
       state: store.state,
       bulletins: [],
       currentSort: null,
-      currentSortDir: 'desc',
+      currentSortDir: null,
       count: 0,
       current_page: 0,
       creating: false,
       deleting_primary_key: 0,
       oggi_presente: true,
       verifica: true,
+      verifica_allerta: true,
       w26: true,
       updatew26fetch: 0,
       year_list: [],
       num_bollettino: "num_yyyy",
       validita: "yyyy-mm-dd",
       errore555: true,
+      loading: false,
       //data_oggi: "2022-02-10",
       filter: {
         year: (new Date()).getFullYear(),
@@ -535,6 +690,12 @@ export default {
   computed: {
     base_data_url () {
       return import.meta.env.VITE_BASE_DATA_URL || ""
+    },
+    verifica_piene_url(){
+      return this.base_data_url + "/piene_valutazione_bollettino/"
+    },
+    verifica_allerta_url(){
+      return this.base_data_url + "/allerta_valutazione_bollettino/"
     },
     pericolo_piemonte(){
       return this.base_data_url + "/sc05_intranet/public/cf/pericolo/pericolo_piemonte.json"
@@ -561,6 +722,7 @@ export default {
     },
     sortedBulletins() {
       var sortedBull = this.bulletins
+      /*
       return sortedBull.sort((a,b) => {
         let modifier = 1;
         if(this.currentSortDir === 'desc') modifier = -1;
@@ -568,6 +730,8 @@ export default {
         if(a[this.currentSort] > b[this.currentSort]) return 1 * modifier;
         return 0;
       });
+      */
+     return sortedBull;
     }
   },
   watch: {
@@ -583,6 +747,7 @@ export default {
   },
   mounted() {
     this.currentSort = this.primaryKeyName
+    this.currentSortDir = "-"
     this.goto(0)
     //this.data_oggi = new Date()
     //this.num_bollettino = "172_2022"
@@ -598,11 +763,15 @@ export default {
       this.current_page = page
       this.oggi_presente = true
       this.verifica = true
+      this.verifica_allerta = true
       this.w26 = true
+      this.loading = true
+      //console.log(this.currentSortDir + this.currentSort)
       api.fetchBulletinsFilter(this.endpoint, {
         page: page,
         year: this.filter.year,
         month: this.filter.month,
+        order: this.currentSortDir + this.currentSort
       })
       .then(response => {
         if (!response.ok) {
@@ -645,12 +814,15 @@ export default {
           this.oggi_presente = false
         }else if(this.endpoint === 'w22verifica/bulletins'){
           this.verifica = false
+        }else if(this.endpoint === 'w23verifica/bulletins'){
+          this.verifica_allerta = false
         }else if(this.endpoint === 'w26/bulletins'){
           this.w26 = false
         }
         else{
           this.oggi_presente = data.results.some(bulletin => bulletin[this.dateField].substring(0, 10) == today)
         }
+        this.loading = false
       }).catch((error) => {
         this.$toast.open(
           {
@@ -807,12 +979,16 @@ export default {
     },
     sort(s) {
       if(s === this.currentSort) {
-        this.currentSortDir = this.currentSortDir==='asc'?'desc':'asc';
+        this.currentSortDir = this.currentSortDir===''?'-':'';
       }
       this.currentSort = s;
+      this.goto(this.current_page)
     },
     getDateFormatted(rawString, time = true) {
       return api.getDateFormatted(rawString, time)
+    },
+    getDateFormatted_eng(rawString, time = true) {
+      return api.getDateFormatted_eng(rawString, time)
     }
   }
 }

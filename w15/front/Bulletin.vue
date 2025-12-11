@@ -1,4 +1,4 @@
-// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2025 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
@@ -517,7 +517,7 @@ let tabsDate = ref({
   2: ''
 })
 
-const icon_blacklist = [ 10, 12, 1, 32, 44, 45, 46, 26 ]
+const icon_blacklist = [ 10, 12, 1, 26 ]
 const venue_terma = [ 55, 59, 157, 158, 159, 165 ]
 const tl_12h = [48, 64, 65, 81, 82]
 

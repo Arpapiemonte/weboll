@@ -15,7 +15,7 @@ RUN apt-get update \
     fontconfig \
     fonts-liberation \
     lftp \
-    graphicsmagick-imagemagick-compat \
+    imagemagick \
     ghostscript \
     locales \
     openssh-client \
@@ -43,6 +43,9 @@ RUN apt-get update \
   && chmod 644 /usr/local/share/ca-certificates/ca1.crt \
   && chmod 644 /usr/local/share/ca-certificates/ca2.crt \
   && apt-get -y remove fonts-dejavu-core
+
+# This package change allerta and vigilanza header
+RUN sed -i '/policy domain="coder" rights="none" pattern="PDF"/d' /etc/ImageMagick-6/policy.xml
 
 # Configure postfix
 RUN sed -i "/^#myorigin.*/a myorigin = weboll.${DOMAIN}" /etc/postfix/main.cf \

@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
+# Copyright (C) 2025 Arpa Piemonte - Dipartimento Naturali e Ambientali
 # This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 # weboll is licensed under the AGPL-3.0-or-later License.
 # License text available at https://www.gnu.org/licenses/agpl.txt
@@ -22,6 +22,7 @@ from w21.back.models import W21, W21Data
 from w22.back.models import W22, W22Data
 from w22verifica.back.models import W22Verifica
 from w23.back.models import W23, W23Data
+from w23verifica.back.models import W23Verifica
 from w24.back.models import W24, W24Data
 from w26.back.models import W26, W26Data
 from w28.back.models import W28, W28Data
@@ -34,6 +35,7 @@ from w34.back.models import W34, W34Data
 from w35.back.models import W35, W35Data
 from w36.back.models import W36, W36Data
 from w37.back.models import W37, W37Data
+from w38.back.models import W38, W38Data
 
 from .models import W05, W16, Bulletins, Destinazioni, W05Data, W16Data
 
@@ -63,6 +65,7 @@ admin.register(
     W22Verifica,
     W23,
     W23Data,
+    W23Verifica,
     W24,
     W24Data,
     W26,
@@ -84,6 +87,8 @@ admin.register(
     W35Data,
     W37,
     W37Data,
+    W38,
+    W38Data,
     W36,
     W36Data,
 )(admin.ModelAdmin)

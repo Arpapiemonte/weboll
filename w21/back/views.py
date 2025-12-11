@@ -8,6 +8,7 @@ import datetime
 import json
 import os
 import tempfile
+from decimal import Decimal
 
 # from contextlib import closing
 from subprocess import call
@@ -58,18 +59,21 @@ class W21View(viewsets.ModelViewSet):
     def list(self, request, *args, **kwargs):
         month = self.request.query_params.get("month", "all")
         year = self.request.query_params.get("year", "all")
+        order = self.request.query_params.get("order", "-last_update")
+
         if month != "all":
             queryset = (
                 self.get_queryset()
                 .filter(data_emissione__year=year)
                 .filter(data_emissione__month=month)
+                .order_by(order)
             )
         elif year != "all":
             queryset = self.filter_queryset(
-                self.get_queryset().filter(data_emissione__year=year)
+                self.get_queryset().filter(data_emissione__year=year).order_by(order)
             )
         else:
-            queryset = self.filter_queryset(self.get_queryset())
+            queryset = self.filter_queryset(self.get_queryset().order_by(order))
 
         page = self.paginate_queryset(queryset)
         if page is not None:
@@ -242,9 +246,9 @@ class W21View(viewsets.ModelViewSet):
                 id_time_layouts=my_time_layouts,
             )
 
-        # with open("config/skycond_firstguess.json") as json_file:
-        #    firstguessdict = json.load(json_file)
-        #   skycond_to_pluv = firstguessdict["skycond_to_pluv"]
+        with open("config/skycond_firstguess.json") as json_file:
+            firstguessdict = json.load(json_file)
+            skycond_to_pluv = firstguessdict["skycond_to_pluv"]
 
         # leggo i valori da weather_values per w21_data
         fine = datetime.datetime.now()
@@ -254,6 +258,10 @@ class W21View(viewsets.ModelViewSet):
             "secondi",
         )
         for w in weather_values_dict:
+            if weather_values_dict[w].original_numeric_values == 32:
+                weather_values_dict[w].original_numeric_values = Decimal(22)
+            if weather_values_dict[w].original_numeric_values in (45, 46):
+                weather_values_dict[w].original_numeric_values = Decimal(29)
             w_keys = w.split(delimiter)  # type: ignore
             # leggo tutti i parametri ad eccezione della temperatura perchè
             # usa tl differenti
@@ -261,11 +269,24 @@ class W21View(viewsets.ModelViewSet):
                 HashW21Data(w_keys[0], w_keys[1], w_keys[2], w_keys[3])
                 in w21_data_new_dict
             ):
-                w21_data_new_dict[
-                    HashW21Data(w_keys[0], w_keys[1], w_keys[2], w_keys[3])
-                ].numeric_value = weather_values_dict[w].original_numeric_values
+                if w_keys[1] != "PREC_CLASS" and w_keys[1] != "TERMA":
+                    w21_data_new_dict[
+                        HashW21Data(w_keys[0], w_keys[1], w_keys[2], w_keys[3])
+                    ].numeric_value = weather_values_dict[w].original_numeric_values
+
+                # in caso di sky_condition valorizzo anche la classe di precipitazione corrispondente
+                if w_keys[1] == "SKY_CONDIT":
+
+                    w21_data_new_dict[
+                        HashW21Data(w_keys[0], "PREC_CLASS", w_keys[2], w_keys[3])
+                    ].numeric_value = skycond_to_pluv[
+                        str(int(weather_values_dict[w].original_numeric_values))  # type: ignore
+                    ][
+                        "precipitation_class"
+                    ]
 
             # ora controllo i tl della temperatura
+
             if w_keys[1] == "TERMA":
                 if int(w_keys[3]) in maptl.keys():
                     new_keytl = maptl[int(w_keys[3])]
@@ -486,6 +507,10 @@ class W21SVGView(TemplateView):
 
 class W21PDFView(W21SVGView):
     def get(self, request, *args, **kwargs):
+        os.environ.pop("http_proxy", None)
+        os.environ.pop("https_proxy", None)
+        os.environ.pop("HTTP_PROXY", None)
+        os.environ.pop("HTTPS_PROXY", None)
         response = PDFTemplateResponse(
             request=request,
             template=self.template_name,
@@ -505,7 +530,12 @@ class W21PngView(DetailView):
     http_method_names = ["get"]
 
     def get(self, request, *args, **kwargs):
-        r = requests.get("http://django:8000/w21/pdf/%d" % kwargs["pk"])
+        os.environ.pop("http_proxy", None)
+        os.environ.pop("https_proxy", None)
+        os.environ.pop("HTTP_PROXY", None)
+        os.environ.pop("HTTPS_PROXY", None)
+        django_url = os.getenv("DJANGO_URL", "http://django:8000")
+        r = requests.get(django_url + "/w21/pdf/%d" % kwargs["pk"])
         # print("--------------------------------------r", r)
         with tempfile.NamedTemporaryFile(suffix=".pdf") as f:
             f.write(r.content)

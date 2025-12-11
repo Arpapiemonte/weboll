@@ -22,6 +22,21 @@ urlpatterns = [
     path("html/<int:pk>", views.PieneHTMLView.as_view(), name="piene-html"),
     path("png/<int:pk>", views.PienePngView.as_view(), name="piene-png"),
     path(
+        "comunicazione_pdf/<int:pk>",
+        views.PieneComPDFView.as_view(),
+        name="piene-comunicazione-html",
+    ),
+    path(
+        "comunicazione_html/<int:pk>",
+        views.PieneComHtmlView.as_view(),
+        name="piene-comunicazione-html",
+    ),
+    path(
+        "comunicazione_png/<int:pk>",
+        views.PieneComPngView.as_view(),
+        name="piene-comunicazione-png",
+    ),
+    path(
         "kml/<int:pk>",
         views.KmlView.as_view(content_type="text/plain; charset=windows-1252"),
         name="piene-kml",

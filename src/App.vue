@@ -1,4 +1,4 @@
-// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2025 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
@@ -117,7 +117,7 @@
         >weboll {{ vue_app_version }} - mode: {{ appmode }}</span>
       </div>
       <div class="col text-end">
-        <span class="text-light">Copyright (C) 2024 Arpa Piemonte - Dipartimento Rischi Ambientali e Naturali</span>
+        <span class="text-light">Copyright (C) 2025 Arpa Piemonte - Dipartimento Rischi Ambientali e Naturali</span>
       </div>
     </div>
   </footer>

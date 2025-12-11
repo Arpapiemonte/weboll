@@ -1,4 +1,4 @@
-// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2025 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
@@ -924,10 +924,12 @@ export default {
       risk_storm_domani: {},
       neve: {},
       labels: {},
+      fix_frase_note: false,
     }
   },
   computed: {
     avverse() {
+      console.log("inizio Avverse computed")
       let vd = { }
       // vero se c'è un fenomeno giallo o superiore in una qualsiasi cella di "bollettino emesso" anche in bozza
       let max = 2
@@ -938,6 +940,7 @@ export default {
       Object.keys(this.pericolo_massimo_idraulico).forEach(id => max_idraulico = Math.max(max_idraulico, this.pericolo_massimo_idraulico[id].sort_index))
       vd["max_idraulico"] = max_idraulico
       //console.log('vd',vd)
+      console.log("fine Avverse computed")
       return vd
     },
     today() {
@@ -1029,33 +1032,39 @@ export default {
   },
   watch: {
     avverse(new_value, old_value) {
+      console.log("inizio avverse watch", this.fix_frase_note)
       const frase = 'AVVISO DI CONDIZIONI METEOROLOGICHE AVVERSE per i dettagli consultare il bollettino di Vigilanza Meteorologica. '
       const frase_idraulico = 'Consultare il Bollettino di previsione delle Piene.'
       // console.log(`avverse = ${value}, allerta.situazione_meteo = ${this.allerta.situazione_meteo}`)
       // console.log('this.allerta', this.allerta, 'new_value',new_value, 'old_value',old_value)
       if (this.allerta && this.allerta.status === '0' && this.state.username) {
-        if (this.allerta.situazione_meteo.includes(frase)) {
-          if (new_value["pericolo_massimo"]<=2) {
-            this.allerta.situazione_meteo = this.allerta.situazione_meteo.replace(frase, '')
-          }
-        } else {
-          if (new_value["pericolo_massimo"]>2) {
-            if (!(this.allerta.situazione_meteo.includes("il bollettino di Vigilanza"))) { 
-              this.allerta.situazione_meteo += frase
+        if (this.fix_frase_note){
+          if (this.allerta.situazione_meteo.includes(frase)) {
+            if (new_value["pericolo_massimo"]<=2) {
+              this.allerta.situazione_meteo = this.allerta.situazione_meteo.replace(frase, '')
+            }
+          } else {
+            if (new_value["pericolo_massimo"]>2) {
+              if (!(this.allerta.situazione_meteo.includes("il bollettino di Vigilanza"))) { 
+                this.allerta.situazione_meteo += frase
+              }
             }
           }
-        }
-        if (this.allerta.situazione_meteo.includes(frase_idraulico)) {
-          if (new_value["max_idraulico"]<=2) {
-            this.allerta.situazione_meteo = this.allerta.situazione_meteo.replace(frase_idraulico, '')
+          if (this.allerta.situazione_meteo.includes(frase_idraulico)) {
+            if (new_value["max_idraulico"]<=2) {
+              this.allerta.situazione_meteo = this.allerta.situazione_meteo.replace(frase_idraulico, '')
+              
+            }
+          } else {
+            if (new_value["max_idraulico"]>2) {
+              this.allerta.situazione_meteo += frase_idraulico
+            }
           }
-        } else {
-          if (new_value["max_idraulico"]>2) {
-            this.allerta.situazione_meteo += frase_idraulico
-          }
+          this.saveField('situazione_meteo')
+          this.fix_frase_note = false
         }
-        this.saveField('situazione_meteo')
       }
+      console.log("fine avverse watch")
     }
   },
   created() {
@@ -1448,7 +1457,7 @@ export default {
       this.fetchData()
     },
     saveField(field) {
-      // console.log("saveField")
+      console.log("inizio saveField",field, this.allerta[field])
       this.saving = true
       let stack = []
       const payload = {"id_key":"id_w23","id":this.allerta.id_w23,"value_key":field,"new_value": this.allerta[field]}
@@ -1456,6 +1465,7 @@ export default {
       stack.push(payloadusername)
       stack.push(payload)
       this.saveW23(stack)
+      console.log("fine saveField",field, this.allerta[field])
     },
     saveData(value, id_w23_zone, field) {
       let myW23zone = this.allerta.w23data_set.find(w23data => {
@@ -1469,6 +1479,8 @@ export default {
       this.saveW23(stack)
     },
     saveDataPericolo(value, id_w23_zone, field) {
+      console.log("saveDataPericolo")
+      this.fix_frase_note = true
       let myW23zone = this.allerta.w23data_set.find(w23data => {
         return w23data.id_w23_zone.id_w23_zone === id_w23_zone
       })
@@ -1488,7 +1500,7 @@ export default {
       return Math.max.apply(Math, arr)
     },
     execute_timeout(action, reroute, message){
-      // console.log("inizio execute_timeout")
+      console.log("inizio execute_timeout")
       if (this.saving){
         console.log("saving è true faccio partire timeout")
         setTimeout(() => {
@@ -1499,7 +1511,7 @@ export default {
         console.log("saving è false lancio execute")
         this.execute(action, reroute, message)
       }
-      // console.log("fine execute_timeout")
+      console.log("fine execute_timeout")
     },
     execute(action, reroute, message) {
       if (action === 'firstguess') {

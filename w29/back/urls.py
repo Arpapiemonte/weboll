@@ -21,4 +21,6 @@ urlpatterns = [
     path("pdf/<int:pk>", views.SlopsPDFView.as_view(), name="slops-pdf"),
     path("html/<int:pk>", views.SlopsHTMLView.as_view(), name="slops-html"),
     path("png/<int:pk>", views.SlopsPngView.as_view(), name="slops-png"),
+    path("pdf_frane/<int:pk>", views.FranePDFView.as_view(), name="frane-pdf"),
+    path("html_frane/<int:pk>", views.FraneHTMLView.as_view(), name="frane-html"),
 ]

@@ -11,7 +11,6 @@ id_w22,id_w22_zone,codice1,codice2,codice3,tendenza6hprecedenti,portata_attesa,c
 2788,10,250,370,670,stazionario,38,A,A,A,A,stazionario,A,2000-06-13,835,72235
 2788,11,160,280,460,stazionario,1,A,A,A,A,stazionario,A,2009-04-27,425,72236
 2788,12,750,1000,1400,diminuzione,4,A,A,A,A,stazionario,A,2016-11-25,2110,72237
-2788,13,700,1000,1500,diminuzione,4,A,A,A,A,stazionario,A,n.d.,n.d.,72238
 2788,14,600,870,1500,stazionario,18,A,A,A,A,stazionario,A,2016-11-25,3120,72239
 2788,15,890,1300,2000,diminuzione,36,A,A,A,A,stazionario,A,1994-11-06,4200,72240
 2788,16,900,1400,2100,crescita,79,A,A,A,A,stazionario,A,2016-11-25,3450,72241
@@ -38,7 +37,6 @@ id_w22,id_w22_zone,codice1,codice2,codice3,tendenza6hprecedenti,portata_attesa,c
 2791,10,250,370,670,stazionario,69,A,A,A,A,stazionario,A,2000-06-13,835,72316
 2791,11,160,280,460,crescita,1,A,A,A,A,stazionario,A,2009-04-27,425,72317
 2791,12,750,1000,1400,crescita,6,A,A,A,A,stazionario,A,2016-11-25,2110,72318
-2791,13,700,1000,1500,stazionario,5,A,A,A,A,stazionario,A,n.d.,n.d.,72319
 2791,14,600,870,1500,stazionario,19,A,A,A,A,stazionario,A,2016-11-25,3120,72320
 2791,15,890,1300,2000,diminuzione,51,A,A,A,A,stazionario,A,1994-11-06,4200,72321
 2791,16,900,1400,2100,stazionario,79,A,A,A,A,stazionario,A,2016-11-25,3450,72322
@@ -63,7 +61,6 @@ id_w22,id_w22_zone,codice1,codice2,codice3,tendenza6hprecedenti,portata_attesa,c
 2790,10,250,370,670,stazionario,56,A,A,A,A,stazionario,A,2000-06-13,835,72289
 2790,11,160,280,460,stazionario,1,A,A,A,A,stazionario,A,2009-04-27,425,72290
 2790,12,750,1000,1400,diminuzione,4,A,A,A,A,stazionario,A,2016-11-25,2110,72291
-2790,13,700,1000,1500,stazionario,4,A,A,A,A,stazionario,A,n.d.,n.d.,72292
 2790,14,600,870,1500,stazionario,21,A,A,A,A,stazionario,A,2016-11-25,3120,72293
 2790,15,890,1300,2000,diminuzione,42,A,A,A,A,stazionario,A,1994-11-06,4200,72294
 2790,16,900,1400,2100,crescita,81,A,A,A,A,stazionario,A,2016-11-25,3450,72295
@@ -91,7 +88,6 @@ id_w22,id_w22_zone,codice1,codice2,codice3,tendenza6hprecedenti,portata_attesa,c
 2792,10,250,370,670,stazionario,65,A,A,A,A,stazionario,A,2000-06-13,835,72343
 2792,11,160,280,460,stazionario,1,A,A,A,A,stazionario,A,2009-04-27,425,72344
 2792,12,750,1000,1400,stazionario,5,A,A,A,A,stazionario,A,2016-11-25,2110,72345
-2792,13,700,1000,1500,stazionario,6,A,A,A,A,stazionario,A,n.d.,n.d.,72346
 2792,14,600,870,1500,stazionario,41,A,A,A,A,stazionario,A,2016-11-25,3120,72347
 2792,15,890,1300,2000,stazionario,53,A,A,A,A,stazionario,A,1994-11-06,4200,72348
 2792,16,900,1400,2100,crescita,82,A,A,A,A,stazionario,A,2016-11-25,3450,72349

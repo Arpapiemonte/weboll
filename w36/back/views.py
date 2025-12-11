@@ -7,6 +7,7 @@
 import datetime
 import json
 import math
+import os
 from collections import OrderedDict
 
 # import locale
@@ -92,18 +93,21 @@ class W36View(viewsets.ModelViewSet):
     def list(self, request, *args, **kwargs):
         month = self.request.query_params.get("month", "all")
         year = self.request.query_params.get("year", "all")
+        order = self.request.query_params.get("order", "-last_update")
+
         if month != "all":
             queryset = (
                 self.get_queryset()
                 .filter(data_emissione__year=year)
                 .filter(data_emissione__month=month)
+                .order_by(order)
             )
         elif year != "all":
             queryset = self.filter_queryset(
-                self.get_queryset().filter(data_emissione__year=year)
+                self.get_queryset().filter(data_emissione__year=year).order_by(order)
             )
         else:
-            queryset = self.filter_queryset(self.get_queryset())
+            queryset = self.filter_queryset(self.get_queryset().order_by(order))
 
         page = self.paginate_queryset(queryset)
         if page is not None:
@@ -699,6 +703,9 @@ class W36View(viewsets.ModelViewSet):
                     k = 0
                     start_date = inizio_date
                     perc_array = []
+                    min_terma = 9999
+                    min_igro = 9999
+                    min_velv = 9999
                     while start_date <= fine_date:
                         param = "AT" + parametro.upper()
                         for aggreg in [940, 941, 942]:
@@ -738,6 +745,14 @@ class W36View(viewsets.ModelViewSet):
                             + ";"
                             + str(perc_array[2])
                         )
+                        # print("terma[k]", terma[k])
+                        if not math.isnan(terma[k]):
+                            if terma[k] < min_terma:
+                                if not math.isnan(igro[k]) and not math.isnan(velv[k]):
+                                    min_terma = terma[k]
+                                    min_igro = igro[k]
+                                    min_velv = velv[k]
+                        # print(min_index)
                         at_dict_key = (
                             id_venue + delimiter + fine_date.strftime("%Y-%m-%d")
                         )
@@ -870,6 +885,29 @@ class W36View(viewsets.ModelViewSet):
                                             id_venue, tl[diff_from_today], "TERMA", 327
                                         )
                                     ].numeric_value = value
+                                if tl[diff_from_today] == 48:
+                                    print("min_terma", min_terma, id_venue)
+                                    print("min_igro", min_igro, id_venue)
+                                    print("min_velv", min_velv, id_venue)
+                                    if min_igro != 9999:
+                                        value = min_igro
+                                    else:
+                                        value = None
+                                    w36_data_dict[
+                                        HashW36Data(
+                                            id_venue, tl[diff_from_today], "IGRO", 327
+                                        )
+                                    ].numeric_value = value
+                                    if min_velv != 9999:
+                                        value = min_velv
+                                    else:
+                                        value = None
+                                    w36_data_dict[
+                                        HashW36Data(
+                                            id_venue, tl[diff_from_today], "VELV", 327
+                                        )
+                                    ].numeric_value = value
+
         # print("osservati", osservati)
         # print("at_dict", at_dict)
 
@@ -1066,27 +1104,28 @@ class W36View(viewsets.ModelViewSet):
                 )
                 """
 
-                for dayago in range(3):
+                for dayfor in range(3):
+                    print("dayfor", dayfor)
                     for parametro in ["min", "max"]:
-                        # print(parametro, tl[dayago])
+                        print(parametro, tl[dayfor])
                         if parametro == "min":
                             inizio = (
-                                today + datetime.timedelta(days=dayago - 1)
+                                today + datetime.timedelta(days=dayfor - 1)
                             ).replace(hour=18, minute=10)
-                            # print("inizio", dayago, inizio)
-                            fine = (today + datetime.timedelta(days=dayago)).replace(
+                            # print("inizio", dayfor, inizio)
+                            fine = (today + datetime.timedelta(days=dayfor)).replace(
                                 hour=6, minute=0
                             )
-                            # print("fine", dayago, fine)
+                            # print("fine", dayfor, fine)
                         if parametro == "max":
-                            inizio = (today + datetime.timedelta(days=dayago)).replace(
+                            inizio = (today + datetime.timedelta(days=dayfor)).replace(
                                 hour=6, minute=10
                             )
-                            # print("inizio", dayago, inizio)
-                            fine = (today + datetime.timedelta(days=dayago)).replace(
+                            # print("inizio", dayfor, inizio)
+                            fine = (today + datetime.timedelta(days=dayfor)).replace(
                                 hour=18, minute=0
                             )
-                            # print("fine", dayago, fine)
+                            # print("fine", dayfor, fine)
                         inizio = inizio.timestamp()  # type: ignore
                         fine = fine.timestamp()  # type: ignore
 
@@ -1097,7 +1136,7 @@ class W36View(viewsets.ModelViewSet):
                             "TERMA",
                             inizio,
                             fine,
-                            dayago,
+                            dayfor,
                         )
                         igro = filterFV(
                             fv_dict,
@@ -1106,7 +1145,7 @@ class W36View(viewsets.ModelViewSet):
                             "IGRO",
                             inizio,
                             fine,
-                            dayago,
+                            dayfor,
                         )
                         velv = filterFV(
                             fv_dict,
@@ -1115,7 +1154,7 @@ class W36View(viewsets.ModelViewSet):
                             "VELV",
                             inizio,
                             fine,
-                            dayago,
+                            dayfor,
                         )
                         if np.isnan(velv).all():
                             # inizializzo l'array con la velocità vento 1 m/s
@@ -1124,9 +1163,9 @@ class W36View(viewsets.ModelViewSet):
                                 + " VELV non ha dati setto tutto l'array con valori di 1 m/s!"
                             )
                             velv = np.full(12, 1)
-                        # print("terma", dayago, terma)
-                        # print("igro", dayago, igro)
-                        # print("velv", dayago, velv)
+                        # print("terma", dayfor, terma)
+                        # print("igro", dayfor, igro)
+                        # print("velv", dayfor, velv)
                         # calcolo il max
                         if parametro == "max":
                             t_max = np.nanmax(terma)
@@ -1180,38 +1219,48 @@ class W36View(viewsets.ModelViewSet):
 
                         if parametro == "max":
                             w36_data_dict[
-                                HashW36Data(venue, tl[dayago], "ATMAX", 0)
+                                HashW36Data(venue, tl[dayfor], "ATMAX", 0)
                             ].numeric_value = round(at_max, 1)
                             w36_data_dict[
-                                HashW36Data(venue, tl[dayago], "TERMA", 328)
+                                HashW36Data(venue, tl[dayfor], "TERMA", 328)
                             ].numeric_value = round(t_max, 1)
                             w36_data_dict[
-                                HashW36Data(venue, tl[dayago], "IGRO", 328)
+                                HashW36Data(venue, tl[dayfor], "IGRO", 328)
                             ].numeric_value = (round((i_igro_max / 10) * 2, 0) * 5)
                             w36_data_dict[
-                                HashW36Data(venue, tl[dayago], "VELV", 328)
+                                HashW36Data(venue, tl[dayfor], "VELV", 328)
                             ].numeric_value = round(i_velv_max, 0)
-                        if parametro == "min":
+                        if parametro == "min" and dayfor > 0:
+                            # if parametro == "min":  ## minime D0 da realtime non da forecast_values
                             w36_data_dict[
-                                HashW36Data(venue, tl[dayago], "ATMIN", 0)
+                                HashW36Data(venue, tl[dayfor], "ATMIN", 0)
                             ].numeric_value = round(at_min, 1)
                             w36_data_dict[
-                                HashW36Data(venue, tl[dayago], "TERMA", 327)
+                                HashW36Data(venue, tl[dayfor], "TERMA", 327)
                             ].numeric_value = round(t_min, 1)
                             w36_data_dict[
-                                HashW36Data(venue, tl[dayago], "IGRO", 327)
+                                HashW36Data(venue, tl[dayfor], "IGRO", 327)
                             ].numeric_value = (round((i_igro_min / 10) * 2, 0) * 5)
                             w36_data_dict[
-                                HashW36Data(venue, tl[dayago], "VELV", 327)
+                                HashW36Data(venue, tl[dayfor], "VELV", 327)
                             ].numeric_value = round(i_velv_min, 0)
 
                     # creazione record impostati a 0 per il codice_colore previsto
                     # sono valorizzati a livello di frontend
                     w36_data_dict[
-                        HashW36Data(venue, tl[dayago], "COD_COLORE", 0)
+                        HashW36Data(venue, tl[dayfor], "COD_COLORE", 0)
                     ].numeric_value = 0
                     w36_data_dict[
-                        HashW36Data(venue, tl[dayago], "COD_COLORE_ORIG", 0)
+                        HashW36Data(venue, tl[dayfor], "COD_COLORE_ORIG", 0)
+                    ].numeric_value = 0
+                    w36_data_dict[
+                        HashW36Data(venue, tl[dayfor], "WDA", 940)
+                    ].numeric_value = 0
+                    w36_data_dict[
+                        HashW36Data(venue, tl[dayfor], "WDA", 941)
+                    ].numeric_value = 0
+                    w36_data_dict[
+                        HashW36Data(venue, tl[dayfor], "WDA", 942)
                     ].numeric_value = 0
             fine_log = datetime.datetime.now()
             print(
@@ -1296,7 +1345,7 @@ class W36View(viewsets.ModelViewSet):
             codice_colore = 0
             # il codice è rosso solo se era caldo sia 2 sia 3 giorni fa
             if wda95p == 1:
-                if ggcons_ggprec == 2:
+                if ggcons_ggprec >= 2:
                     codice_colore = 3
                 else:
                     codice_colore = 2
@@ -1849,6 +1898,10 @@ class CaldoRegioneHTMLView(TemplateView):
 
 class CaldoTorinoPDFView(CaldoTorinoHTMLView):
     def get(self, request, *args, **kwargs):
+        os.environ.pop("http_proxy", None)
+        os.environ.pop("https_proxy", None)
+        os.environ.pop("HTTP_PROXY", None)
+        os.environ.pop("HTTPS_PROXY", None)
         response = PDFTemplateResponse(
             request=request,
             template=self.template_name,
@@ -1866,6 +1919,10 @@ class CaldoTorinoPDFView(CaldoTorinoHTMLView):
 
 class CaldoRegionePDFView(CaldoRegioneHTMLView):
     def get(self, request, *args, **kwargs):
+        os.environ.pop("http_proxy", None)
+        os.environ.pop("https_proxy", None)
+        os.environ.pop("HTTP_PROXY", None)
+        os.environ.pop("HTTPS_PROXY", None)
         response = PDFTemplateResponse(
             request=request,
             template=self.template_name,

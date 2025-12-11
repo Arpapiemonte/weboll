@@ -1,3 +1,53 @@
+# 1.6 (2025-12-11)
+
+## Features
+
+- General:
+  - displays a spinner while the list of bulletins is loading
+  - add new Verifica Allerta bulletin
+  - parameterized the URL of the django backend and static_url
+  - remove proxy environment for cointainers urls
+  - new UVI bulletin
+
+- Incendi:
+  - yellow if there is foehn
+
+- Verifica Piene
+  - Add - criticality and other fixes
+
+- Piene
+  - new png export
+
+- Metaprodotto
+  - Add special icons
+
+- Strade di Biella
+  - fix PREC_CLASS parameter
+
+- A7-A26
+  - change logo
+
+- Bollettino meteo:
+  - disable unused fields
+
+- A4-A21
+  - the companies separated
+
+- Ondate di calore
+  - added save to WDA db and changed color code algorithm
+  - fix consecutive days >=2 not ==2
+  - fix observed data for today
+  - fix chart refresh
+
+- Ozono
+  - change models images names
+
+- Allerta
+  - resize png for rupar
+
+- Verifica Allerta:
+  - added iso procedure number
+
 # 1.5.0 (2024-09-30)
 
 ## Features

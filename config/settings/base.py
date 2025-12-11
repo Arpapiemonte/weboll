@@ -104,12 +104,14 @@ LOCAL_APPS = [
     "w22.back.apps.ApiConfig",
     "w30.back.apps.ApiConfig",
     "w22verifica.back.apps.ApiConfig",
+    "w23verifica.back.apps.ApiConfig",
     "w17verifica.back.apps.ApiConfig",
     "w31.back.apps.ApiConfig",
     "w33.back.apps.ApiConfig",
     "w34.back.apps.ApiConfig",
     "w35.back.apps.ApiConfig",
     "w37.back.apps.ApiConfig",
+    "w38.back.apps.ApiConfig",
     "website.core.apps.CoreConfig",
     "w32.back.apps.ApiConfig",
     "w36.back.apps.ApiConfig",
@@ -247,7 +249,7 @@ INSTALLED_APPS = ["whitenoise.runserver_nostatic"] + INSTALLED_APPS  # noqa F405
 # https://docs.djangoproject.com/en/dev/ref/settings/#static-root
 STATIC_ROOT = str(ROOT_DIR / "staticfiles")
 # https://docs.djangoproject.com/en/dev/ref/settings/#static-url
-STATIC_URL = "/static/"
+STATIC_URL = env("DJANGO_STATIC_URL", default="/static/")
 # https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
 STATICFILES_DIRS = [
     str(APPS_DIR / "static"),
@@ -293,6 +295,7 @@ TEMPLATES = [
             str(ROOT_DIR / "w28" / "templates"),
             str(ROOT_DIR / "w30" / "templates"),
             str(ROOT_DIR / "w22verifica" / "templates"),
+            str(ROOT_DIR / "w23verifica" / "templates"),
             str(ROOT_DIR / "w17verifica" / "templates"),
             str(ROOT_DIR / "w31" / "templates"),
             str(ROOT_DIR / "w32" / "templates"),
@@ -300,6 +303,7 @@ TEMPLATES = [
             str(ROOT_DIR / "w34" / "templates"),
             str(ROOT_DIR / "w35" / "templates"),
             str(ROOT_DIR / "w37" / "templates"),
+            str(ROOT_DIR / "w38" / "templates"),
             str(ROOT_DIR / "w36" / "templates"),
             str(ROOT_DIR / "w99" / "templates"),
         ],
@@ -336,6 +340,11 @@ CSRF_COOKIE_HTTPONLY = False
 SECURE_BROWSER_XSS_FILTER = True
 # https://docs.djangoproject.com/en/dev/ref/settings/#x-frame-options
 X_FRAME_OPTIONS = "DENY"
+
+django_csrf_trusted_origins = env("DJANGO_CSRF_TRUSTED_ORIGINS", default="")
+CSRF_TRUSTED_ORIGINS = (
+    django_csrf_trusted_origins.split(",") if django_csrf_trusted_origins else []
+)
 
 if env.bool("DJANGO_SSL", default=False):
     # https://docs.djangoproject.com/en/dev/ref/settings/#secure-proxy-ssl-header

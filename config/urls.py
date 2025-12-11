@@ -48,6 +48,7 @@ urlpatterns: URLList = [
     path("w22/", include("w22.back.urls")),
     path("w30/", include("w30.back.urls")),
     path("w22verifica/", include("w22verifica.back.urls")),
+    path("w23verifica/", include("w23verifica.back.urls")),
     path("w17verifica/", include("w17verifica.back.urls")),
     path("w31/", include("w31.back.urls")),
     path("w32/", include("w32.back.urls")),
@@ -55,6 +56,7 @@ urlpatterns: URLList = [
     path("w34/", include("w34.back.urls")),
     path("w35/", include("w35.back.urls")),
     path("w37/", include("w37.back.urls")),
+    path("w38/", include("w38.back.urls")),
     path("w36/", include("w36.back.urls")),
     path("w99/", include("w99.back.urls")),
 ]

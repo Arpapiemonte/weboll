@@ -1,208 +1,96 @@
-// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2025 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
 <template>
   <div class="container-fluid">
-    <div
-      class="row justify-content-end sticky-top py-1"
-      style="background-color: #f8f9fa;"
-    >
+    <div class="row justify-content-end sticky-top py-1" style="background-color: #f8f9fa;">
       <!-- https://getbootstrap.com/docs/5.1/components/button-group/ -->
-      <div
-        class="btn-group w-auto"
-        role="group"
-        aria-label="Basic outlined example"
-      >
+      <div class="btn-group w-auto" role="group" aria-label="Basic outlined example">
 
-        <button
-          v-if="verificapiene.status === '0' && state.username"
-          :disabled="sending || verificapiene.id_numero_bollettino === '0_0'"
-          type="button"
-          class="btn btn-outline-success"
-          @click="execute('send', false, 'Bollettino inviato')"
-        >
+        <button v-if="verificapiene.status === '0' && state.username"
+          :disabled="sending || verificapiene.id_numero_bollettino === '0_0'" type="button"
+          class="btn btn-outline-success" @click="execute_timeout('send', false, 'Bollettino inviato')">
           <span v-if="sending">
-            <span
-              class="spinner-border spinner-border-sm"
-              role="status"
-              aria-hidden="true"
-            />
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" />
             Sto inviando il bollettino ...
           </span>
           <span v-else>
-            <img
-              src="~bootstrap-icons/icons/send-fill.svg"
-              alt="unlock icon"
-              width="18"
-              height="18"
-            > Invia
+            <img src="~bootstrap-icons/icons/send-fill.svg" alt="unlock icon" width="18" height="18"> Invia
           </span>
         </button>
-        <button
-          v-if="verificapiene.status === '0' && state.username"
-          type="button"
-          class="btn btn-outline-danger"
-          @click="remove()"
-        >
-          <img
-            src="~bootstrap-icons/icons/trash-fill.svg"
-            alt="unlock icon"
-            width="18"
-            height="18"
-          > Elimina
+        <button v-if="verificapiene.status === '0' && state.username" type="button" class="btn btn-outline-danger"
+          @click="remove()">
+          <img src="~bootstrap-icons/icons/trash-fill.svg" alt="unlock icon" width="18" height="18"> Elimina
         </button>
       </div>
     </div>
 
     <div class="row mb-3">
       <h1>Bollettino Verifica Piene {{ verificapiene.id_w22verifica }}</h1>
-      <div
-        v-if="verificapiene.id_numero_bollettino == '0_0'"
-        class="alert alert-danger"
-      >
-      <h1>Manca il First guess del Piene numero {{ verificapiene.numero_bollettino.split("/")[0]+'_'+verificapiene.numero_bollettino.split("/")[1] }}</h1>
+      <div v-if="verificapiene.id_numero_bollettino == '0_0'" class="alert alert-danger">
+        <h1>Manca il First guess del Piene numero {{
+          verificapiene.numero_bollettino.split("/")[0] + '_' + verificapiene.numero_bollettino.split("/")[1] }}</h1>
       </div>
     </div>
     <div class="row">
       <div class="col-md-2 mb-3">
         <label for="status">Stato</label>
         <span v-if="verificapiene.status == 1">
-          <input
-            id="stato"
-            disabled
-            class="form-control"
-            name="stato"
-            type="text"
-            value="Inviato"
-          >
+          <input id="stato" disabled class="form-control" name="stato" type="text" value="Inviato">
         </span>
         <span v-else>
-          <input
-            id="stato"
-            disabled
-            class="form-control"
-            name="stato"
-            type="text"
-            value="Bozza"
-          >
+          <input id="stato" disabled class="form-control" name="stato" type="text" value="Bozza">
         </span>
       </div>
       <div class="col-md-2 mb-3">
         <label for="data_emissione">Data emissione</label>
-        <input
-          id="data_emissione"
-          disabled
-          class="form-control"
-          name="data_emissione"
-          type="text"
-          :value="getDateFormatted(verificapiene.data_emissione, time = false)"
-        >
+        <input id="data_emissione" disabled class="form-control" name="data_emissione" type="text"
+          :value="getDateFormatted(verificapiene.data_emissione, time = false)">
       </div>
       <div class="col-md-2 mb-3">
         <label for="ora_emissione">Num bollettino Piene</label>
-        <input
-          id="id_numero_bollettino"
-          :readonly="readonly"
-          class="form-control"
-          name="id_numero_bollettino"
-          type="text"
-          :value="verificapiene.id_numero_bollettino"
-          @change="saveW22verifica($event.target.value, verificapiene.id_w22verifica, 'id_numero_bollettino')"
-        >
+        <input id="id_numero_bollettino" :readonly="readonly" class="form-control" name="id_numero_bollettino"
+          type="text" :value="verificapiene.id_numero_bollettino"
+          @change="saveW22verifica($event.target.value, verificapiene.id_w22verifica, 'id_numero_bollettino')">
       </div>
 
       <div class="col-md-2 mb-3">
         <label for="last_update">Ultima modifica</label>
-        <input
-          id="last_update"
-          disabled
-          class="form-control"
-          name="last_update"
-          type="text"
-          :value="getDateFormatted(verificapiene.last_update)"
-        >
+        <input id="last_update" disabled class="form-control" name="last_update" type="text"
+          :value="getDateFormatted(verificapiene.last_update)">
       </div>
       <div class="col-md-2 mb-3">
         <label for="username">Autore</label>
-        <input
-          id="username"
-          disabled
-          class="form-control"
-          name="username"
-          type="text"
-          :value="verificapiene.username"
-        >
+        <input id="username" disabled class="form-control" name="username" type="text" :value="verificapiene.username">
       </div>
       <div class="row mt-3">
         <div class="col-xl-12 col-md-12 mb-3">
-          <ul
-            id="pills-tab"
-            class="nav nav-pills mb-3"
-            role="tablist"
-          >
-            <li
-              class="nav-item"
-              role="presentation"
-            >
-              <button
-                id="pills-bollettino_emesso-tab"
-                class="nav-link active"
-                data-bs-toggle="pill"
-                data-bs-target="#pills-bollettino_emesso"
-                type="button"
-                role="tab"
-                aria-controls="pills-bollettino_emesso"
-                aria-selected="true"
-              >
+          <ul id="pills-tab" class="nav nav-pills mb-3" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button id="pills-bollettino_emesso-tab" class="nav-link active" data-bs-toggle="pill"
+                data-bs-target="#pills-bollettino_emesso" type="button" role="tab"
+                aria-controls="pills-bollettino_emesso" aria-selected="true">
                 Bollettino emesso
               </button>
             </li>
-            <li
-              class="nav-item"
-              role="presentation"
-            >
-              <button
-                id="pills-annotazione-tab"
-                class="nav-link"
-                data-bs-toggle="pill"
-                data-bs-target="#pills-annotazione"
-                type="button"
-                role="tab"
-                aria-controls="pills-annotazione"
-                aria-selected="false"
-              >
+            <li class="nav-item" role="presentation">
+              <button id="pills-annotazione-tab" class="nav-link" data-bs-toggle="pill"
+                data-bs-target="#pills-annotazione" type="button" role="tab" aria-controls="pills-annotazione"
+                aria-selected="false">
                 Annotazione
               </button>
             </li>
-            <li
-              class="nav-item"
-              role="presentation"
-            >
-              <button
-                id="pills-criteri-tab"
-                class="nav-link"
-                data-bs-toggle="pill"
-                data-bs-target="#pills-criteri"
-                type="button"
-                role="tab"
-                aria-controls="pills-criteri"
-                aria-selected="false"
-              >
+            <li class="nav-item" role="presentation">
+              <button id="pills-criteri-tab" class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-criteri"
+                type="button" role="tab" aria-controls="pills-criteri" aria-selected="false">
                 Criteri
               </button>
             </li>
           </ul>
-          <div
-            id="pills-tabContent"
-            class="tab-content"
-          >
-            <div
-              id="pills-bollettino_emesso"
-              class="tab-pane fade show active"
-              role="tabpanel"
-              aria-labelledby="pills-bollettino_emesso-tab"
-            >
+          <div id="pills-tabContent" class="tab-content">
+            <div id="pills-bollettino_emesso" class="tab-pane fade show active" role="tabpanel"
+              aria-labelledby="pills-bollettino_emesso-tab">
               <div class="col-xl-12 col-md-12 mb-3">
                 <div class="row">
                   <div class="col-md-12 mb-3">
@@ -211,16 +99,9 @@
                         <tr>
                           <td>
                             <label for="situazione_evoluzione">Situazione ed evoluzione</label><br>
-                            <textarea
-                              id="situazione_evoluzione"
-                              v-model="verificapiene.situazione_evoluzione"
-                              class="form-control"
-                              name="situazione_evoluzione"
-                              rows="2"
-                              cols="200"
-                              :readonly="readonly"
-                              @change="saveW22verifica(verificapiene.situazione_evoluzione, verificapiene.id_w22verifica, 'situazione_evoluzione')"
-                            />
+                            <textarea id="situazione_evoluzione" v-model="verificapiene.situazione_evoluzione"
+                              class="form-control" name="situazione_evoluzione" rows="2" cols="200" :readonly="readonly"
+                              @change="saveW22verifica(verificapiene.situazione_evoluzione, verificapiene.id_w22verifica, 'situazione_evoluzione')" />
                           </td>
                         </tr>
                       </tbody>
@@ -232,37 +113,22 @@
                 <table class="table table-striped">
                   <thead>
                     <tr>
-                      <th
-                        class="text-center"
-                        colspan="2"
-                      >
+                      <th class="text-center" colspan="2">
                         ANAGRAFICA
                       </th>
-                      <th
-                        class="text-left"
-                        colspan="1"
-                      >
-                        Criticità Osservata
-                      </th>
-                      <th
-                        class="text-left"
-                        colspan="1"
-                      >
+                      <th class="text-left" colspan="1">
                         Criticità Prevista
                       </th>
-                      <th
-                        class="text-left"
-                        colspan="1"
-                      >
+                      <th class="text-left" colspan="1">
+                        Criticità Osservata
+                      </th>
+                      <th class="text-left" colspan="1">
                         Severità
                       </th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr
-                      v-for="area in verificapiene.w22verificadata_set"
-                      :key="area.id_w22verifica_data"
-                    >
+                    <tr v-for="area in verificapiene.w22verificadata_set" :key="area.id_w22verifica_data">
                       <th scope="row">
                         {{ area.id_w22_zone.corso_acqua }}
                       </th>
@@ -271,34 +137,20 @@
                       </th>
                       <th scope="row">
                       <td>
-                        <CellCriticita
-                          :area="area"
-                          :campo="'oss_crit_tot'"
-                          :criticita="criticita"
-                          :readonly="readonly"
-                          @changeCriticita="saveW22verificaDataSelect"
-                        />
+                        <CellCriticita :area="area" :campo="'prev_crit_tot'" :criticita="criticita" :readonly="readonly"
+                          @changeCriticita="saveW22verificaDataSelect" />
                       </td>
                       </th>
                       <th scope="row">
                       <td>
-                        <CellCriticita
-                          :area="area"
-                          :campo="'prev_crit_tot'"
-                          :criticita="criticita"
-                          :readonly="readonly"
-                          @changeCriticita="saveW22verificaDataSelect"
-                        />
+
+                        <CellCriticita :area="area" :campo="'oss_crit_tot'" :criticita="criticita" :readonly="readonly"
+                          @changeCriticita="saveW22verificaDataSelect" />
                       </td>
                       </th>
                       <th scope="row">
-                      <CellSeverita
-                        :area="area"
-                        :campo="'err_crit_tot'"
-                        :severita="severita"
-                        :readonly="readonly"
-                        @changeSeverita="saveW22verificaDataSelect"
-                      />
+                        <CellSeverita :area="area" :campo="'err_crit_tot'" :severita="severita" :readonly="readonly"
+                          @changeSeverita="saveW22verificaDataSelect" />
                       </th>
                     </tr>
                   </tbody>
@@ -311,17 +163,11 @@
                         <tr>
                           <td>
                             <label for="id_w22giudizio">Giudizio</label><br>
-                            </td>
-                            </tr>
-                            <tr>
-                            <CellGiudizio
-                              :w22verifica="verificapiene"
-                              :area="verificapiene"
-                              :campo="'id_w22giudizio'"
-                              :giudizio="giudizio"
-                              :readonly="readonly"
-                              @changeGiudizio="saveW22verifica"
-                            />
+                          </td>
+                        </tr>
+                        <tr>
+                          <CellGiudizio :w22verifica="verificapiene" :area="verificapiene" :campo="'id_w22giudizio'"
+                            :giudizio="giudizio" :readonly="readonly" @changeGiudizio="saveW22verifica" />
                         </tr>
                       </tbody>
                     </table>
@@ -345,141 +191,133 @@
                         </tr>
                       </tbody>
                     </table>
-</div>
-</div>
-                    <div class="row">
-                      <div class="col-md-12 mb-3">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 mb-3">
                     <label>Legenda Giudizio</label>
                     <table border=1>
-                    <tbody>
-                      <tr>
-                        <th>
-                          Giudizio
-                        </th>
-                        <th>
-                          Valore
-                        </th>
-                      </tr>
-                    <tr>
-                      <td bgcolor="#6EBB00">
-                        Ottimo
-                      </td>
-                      <td bgcolor="#6EBB00">
-                        1
-                      </td>
-                    </tr>
-                    <tr>
-                      <td bgcolor="#6EBB00">
-                        Buono
-                      </td>
-                      <td bgcolor="#6EBB00">
-                        2
-                      </td>
-                      </tr>
-                      <tr>
-                      <td bgcolor="#ffff00">
-                        Sufficiente
-                      </td>
-                      <td bgcolor="#ffff00">
-                        3
-                      </td>
-                      </tr>
-                      <tr>
-                      <td bgcolor="#FF0000">
-                        Insufficiente
-                      </td>
-                      <td bgcolor="#FF0000">
-                        4
-                      </td>
-                      </tr>
-                      <tr>
-                      <td bgcolor="#8f00ff">
-                        Pessimo
-                      </td>
-                      <td bgcolor="#8f00ff">
-                        5
-                      </td>
-                    </tr>
-                    </tbody>
+                      <tbody>
+                        <tr>
+                          <th>
+                            Giudizio
+                          </th>
+                          <th>
+                            Valore
+                          </th>
+                        </tr>
+                        <tr>
+                          <td bgcolor="#6EBB00">
+                            Ottimo
+                          </td>
+                          <td bgcolor="#6EBB00">
+                            1
+                          </td>
+                        </tr>
+                        <tr>
+                          <td bgcolor="#6EBB00">
+                            Buono
+                          </td>
+                          <td bgcolor="#6EBB00">
+                            2
+                          </td>
+                        </tr>
+                        <tr>
+                          <td bgcolor="#ffff00">
+                            Sufficiente
+                          </td>
+                          <td bgcolor="#ffff00">
+                            3
+                          </td>
+                        </tr>
+                        <tr>
+                          <td bgcolor="#FF0000">
+                            Insufficiente
+                          </td>
+                          <td bgcolor="#FF0000">
+                            4
+                          </td>
+                        </tr>
+                        <tr>
+                          <td bgcolor="#8f00ff">
+                            Pessimo
+                          </td>
+                          <td bgcolor="#8f00ff">
+                            5
+                          </td>
+                        </tr>
+                      </tbody>
                     </table>
                     <label>Legenda Severità</label>
                     <table border=1>
-                    <tbody>
-                      <tr>
-                      <th>
-                        Severità
-                      </th>
-                        <th>
-                          Sigla
-                        </th>
-                        <th>
-                          Valore
-                        </th>
-                      </tr>
-                    <tr>
-                      <td bgcolor="#6EBB00">
-                        1
-                      </td>
-                      <td bgcolor="#6EBB00">
-                        Ok
-                      </td>
-                      <td bgcolor="#6EBB00">
-                        Assenza di errore
-                      </td>
-                    </tr>
-                    <tr>
-                      <td bgcolor="#ffff00">
-                        2
-                      </td>
-                      <td bgcolor="#ffff00">
-                        Li
-                      </td>
-                      <td bgcolor="#ffff00">
-                        Errore lieve
-                      </td>
-                      </tr>
-                      <tr>
-                      <td bgcolor="#FF0000">
-                        3
-                      </td>
-                      <td bgcolor="#FF0000">
-                        Gr
-                      </td>
-                      <td bgcolor="#FF0000">
-                        Errore grave
-                      </td>
-                      </tr>
-                      <tr>
-                      <td bgcolor="#8f00ff">
-                        4
-                      </td>
-                      <td bgcolor="#8f00ff">
-                        MGr
-                      </td>
-                      <td bgcolor="#8f00ff">
-                        Errore molto grave
-                      </td>
-                      </tr>
+                      <tbody>
+                        <tr>
+                          <th>
+                            Severità
+                          </th>
+                          <th>
+                            Sigla
+                          </th>
+                          <th>
+                            Valore
+                          </th>
+                        </tr>
+                        <tr>
+                          <td bgcolor="#6EBB00">
+                            1
+                          </td>
+                          <td bgcolor="#6EBB00">
+                            Ok
+                          </td>
+                          <td bgcolor="#6EBB00">
+                            Assenza di errore
+                          </td>
+                        </tr>
+                        <tr>
+                          <td bgcolor="#ffff00">
+                            2
+                          </td>
+                          <td bgcolor="#ffff00">
+                            Li
+                          </td>
+                          <td bgcolor="#ffff00">
+                            Errore lieve
+                          </td>
+                        </tr>
+                        <tr>
+                          <td bgcolor="#FF0000">
+                            3
+                          </td>
+                          <td bgcolor="#FF0000">
+                            Gr
+                          </td>
+                          <td bgcolor="#FF0000">
+                            Errore grave
+                          </td>
+                        </tr>
+                        <tr>
+                          <td bgcolor="#8f00ff">
+                            4
+                          </td>
+                          <td bgcolor="#8f00ff">
+                            MGr
+                          </td>
+                          <td bgcolor="#8f00ff">
+                            Errore molto grave
+                          </td>
+                        </tr>
 
-                    </tbody>
+                      </tbody>
                     </table>
                   </div>
                 </div>
                 <div class="col-xl-9 col-md-14 mb-3">
-                  <div
-                    class="sticky-top pt-5"
-                    style="z-index: 0;"
-                  />
+                  <div class="sticky-top pt-5" style="z-index: 0;" />
                 </div> <!-- col -->
-              </div>  <!--col-->
+              </div> <!--col-->
             </div>
 
-            <div
-              id="pills-annotazione"
-              class="tab-pane fade"
-              role="tabpanel"
-              aria-labelledby="pills-annotazione-tab"
-            >
+            <div id="pills-annotazione" class="tab-pane fade" role="tabpanel" aria-labelledby="pills-annotazione-tab">
               <div class="col-md-12 mb-3">
                 <div class="row">
                   <div class="col-md-12 mb-3">
@@ -488,16 +326,9 @@
                         <tr>
                           <td>
                             <label for="annotazione">Annotazione</label><br>
-                            <textarea
-                              id="annotazione"
-                              v-model="verificapiene.annotazione"
-                              class="form-control"
-                              name="annotazione"
-                              rows="2"
-                              cols="200"
-                              :readonly="readonly"
-                              @change="saveW22verifica(verificapiene.annotazione, verificapiene.id_w22verifica, 'annotazione')"
-                            />
+                            <textarea id="annotazione" v-model="verificapiene.annotazione" class="form-control"
+                              name="annotazione" rows="2" cols="200" :readonly="readonly"
+                              @change="saveW22verifica(verificapiene.annotazione, verificapiene.id_w22verifica, 'annotazione')" />
                           </td>
                         </tr>
                       </tbody>
@@ -507,12 +338,7 @@
               </div>
             </div>
 
-            <div
-              id="pills-criteri"
-              class="tab-pane fade"
-              role="tabpanel"
-              aria-labelledby="pills-criteri-tab"
-            >
+            <div id="pills-criteri" class="tab-pane fade" role="tabpanel" aria-labelledby="pills-criteri-tab">
               <div class="col-md-12 mb-3">
                 <div class="row">
                   <div class="col-md-12 mb-3">
@@ -558,7 +384,7 @@
                         <td bgcolor="#FF0000">Gr</td>
                         <td bgcolor="#6EBB00">Ok</td>
                       </tr>
-                    </table> 
+                    </table>
                     <table>
                       <tr>
                         <th style="text-align:center;" colspan=7>Giudizio</th>
@@ -578,7 +404,8 @@
                         <td style="background-color: #D6EEEE; text-align:center;">11-27</td>
                       </tr>
                       <tr>
-                        <td rowspan=4 style="writing-mode: vertical-lr;width: 23px;"><b>Numero di errori lievi (Li)</b></td>
+                        <td rowspan=4 style="writing-mode: vertical-lr;width: 23px;"><b>Numero di errori lievi (Li)</b>
+                        </td>
                         <td style="background-color: #D6EEEE; text-align:center;">0</td>
                         <td style="background-color: #6EBB00; text-align:center;">Ottimo</td>
                         <td style="background-color: #6EBB00; text-align:center;">Buono</td>
@@ -610,7 +437,7 @@
                         <td style="background-color: #8f00ff; text-align:center;">Pessimo</td>
                         <td style="background-color: #8f00ff; text-align:center;">Pessimo</td>
                       </tr>
-                    </table> 
+                    </table>
                   </div>
                 </div>
               </div>
@@ -633,9 +460,9 @@ import CellCriticita from './CellCriticita.vue'
 export default {
   name: 'VerificaPieneBulletin',
   components: {
-  CellGiudizio,
-  CellSeverita,
-  CellCriticita,
+    CellGiudizio,
+    CellSeverita,
+    CellCriticita,
   },
   props: {
     id: {
@@ -643,8 +470,8 @@ export default {
       default: () => ''
     },
   },
-  data () {
-  // non reactive properties
+  data() {
+    // non reactive properties
     return {
       // reactive properties
       verificapiene: {
@@ -655,26 +482,27 @@ export default {
       criticita: [],
       state: store.state,
       readonly: true,
-      sending: false
-   }
- },
- mounted() {
-   console.log(`the component is now mounted.`)
- },
- computed: {
-   //calcolo della severita
-   Verificaseverita() {
-      let vd = { }
+      sending: false,
+      saving: false,
+    }
+  },
+  mounted() {
+    console.log(`the component is now mounted.`)
+  },
+  computed: {
+    //calcolo della severita
+    Verificaseverita() {
+      let vd = {}
       if (this.verificapiene.w22verificadata_set !== undefined) {
         this.verificapiene.w22verificadata_set.forEach(area => {
-          let data = { }
-          if(area.oss_crit_tot==area.prev_crit_tot){ 
+          let data = {}
+          if (area.oss_crit_tot == area.prev_crit_tot) {
             data['severita'] = '1'
-          }else if((area.oss_crit_tot==='A' && area.prev_crit_tot==='O') || (area.oss_crit_tot==='O' && area.prev_crit_tot==='A') || (area.oss_crit_tot==='O' && area.prev_crit_tot==='M')){ 
+          } else if ((area.oss_crit_tot === 'A' && area.prev_crit_tot === 'O') || (area.oss_crit_tot === 'O' && area.prev_crit_tot === 'A') || (area.oss_crit_tot === 'O' && area.prev_crit_tot === 'M')) {
             data['severita'] = '2'
-          }else if((area.oss_crit_tot==='A' && area.prev_crit_tot==='M') || (area.oss_crit_tot==='M' && area.prev_crit_tot==='O') || (area.oss_crit_tot==='M' && area.prev_crit_tot==='E') || (area.oss_crit_tot==='E' && area.prev_crit_tot==='M')){ 
+          } else if ((area.oss_crit_tot === 'A' && area.prev_crit_tot === 'M') || (area.oss_crit_tot === 'M' && area.prev_crit_tot === 'O') || (area.oss_crit_tot === 'M' && area.prev_crit_tot === 'E') || (area.oss_crit_tot === 'E' && area.prev_crit_tot === 'M')) {
             data['severita'] = '3'
-          }else{ 
+          } else {
             data['severita'] = '4'
           }
           data['area'] = area.id_w22_zone.id_w22_zone
@@ -682,79 +510,79 @@ export default {
         })
       }
       return vd
-   },
-   //calcolo del giudizio
-   gr() {
-     let vd = { }
-     let giudizio = 0
-     let li = 0
-     let mgr_gr = 0
+    },
+    //calcolo del giudizio
+    gr() {
+      let vd = {}
+      let giudizio = 0
+      let li = 0
+      let mgr_gr = 0
       if (this.verificapiene.w22verificadata_set !== undefined) {
         this.verificapiene.w22verificadata_set.forEach(area => {
-          vd['num_li']=li
-          vd['num_mgr_gr']=mgr_gr
-          if(area.err_crit_tot==2) {
-            li=li+1
-            vd['num_li']=li
-          }else if(area.err_crit_tot==3) {
-            mgr_gr=mgr_gr+1
-            vd['num_mgr_gr']=mgr_gr
-          }else if(area.err_crit_tot==4) {
-            mgr_gr=mgr_gr+1
-            vd['num_mgr_gr']=mgr_gr
+          vd['num_li'] = li
+          vd['num_mgr_gr'] = mgr_gr
+          if (area.err_crit_tot == 2) {
+            li = li + 1
+            vd['num_li'] = li
+          } else if (area.err_crit_tot == 3) {
+            mgr_gr = mgr_gr + 1
+            vd['num_mgr_gr'] = mgr_gr
+          } else if (area.err_crit_tot == 4) {
+            mgr_gr = mgr_gr + 1
+            vd['num_mgr_gr'] = mgr_gr
           }
         })
         //costruzione giudizio
-        if(mgr_gr==0 && li==0){
+        if (mgr_gr == 0 && li == 0) {
           //Ottimo
           giudizio = 1
-        }else if(mgr_gr<=2 && li<=5){
+        } else if (mgr_gr <= 2 && li <= 5) {
           //Buono
           giudizio = 2
-        }else if(mgr_gr>=11){
+        } else if (mgr_gr >= 11) {
           //pessimo
           giudizio = 5
-        }else if(mgr_gr>=3 && mgr_gr<=4 && li==0){
+        } else if (mgr_gr >= 3 && mgr_gr <= 4 && li == 0) {
           //sufficiente
           giudizio = 3
-        }else if(li>=11 && mgr_gr<=2){
+        } else if (li >= 11 && mgr_gr <= 2) {
           //Insufficiente
           giudizio = 4
-        }else if(mgr_gr>=3 && mgr_gr<=4 && li>=1 && li<=5){
+        } else if (mgr_gr >= 3 && mgr_gr <= 4 && li >= 1 && li <= 5) {
           //Insufficiente
           giudizio = 4
-        }else if(mgr_gr>=5 && mgr_gr<=10 && li<=5){
+        } else if (mgr_gr >= 5 && mgr_gr <= 10 && li <= 5) {
           //Insufficiente
           giudizio = 4
-        }else if(mgr_gr<=2 && li>=6 && li<=10){
+        } else if (mgr_gr <= 2 && li >= 6 && li <= 10) {
           //sufficiente
           giudizio = 3
-        // commentato da fra # }else if(mgr_gr<=2 && li>=11 && li<=27){
+          // commentato da fra # }else if(mgr_gr<=2 && li>=11 && li<=27){
           //sufficiente
           // commentato da fra # giudizio = 3
-        }else if(mgr_gr>=3 && mgr_gr<=4 && li>=6 && li<=10){
+        } else if (mgr_gr >= 3 && mgr_gr <= 4 && li >= 6 && li <= 10) {
           //Insufficiente
           giudizio = 4
-        }else{
+        } else {
           //pessimo
           giudizio = 5
         }
         //fine costruzione giudizio
-        vd['giudizio']=giudizio
+        vd['giudizio'] = giudizio
       }
       return vd
-   },
- },
- created() {
-  // https://vuejs.org/v2/guide/instance.html
+    },
+  },
+  created() {
+    // https://vuejs.org/v2/guide/instance.html
     this.fetchData()
   },
   methods: {
-    async fetchData () {
+    async fetchData() {
       this.verificapiene_id = this.id
-      this.giudizio  =  await this.fetchGiudizio()
-      this.severita  =  await this.fetchSeverita()
-      this.criticita  =  await this.fetchCriticita()
+      this.giudizio = await this.fetchGiudizio()
+      this.severita = await this.fetchSeverita()
+      this.criticita = await this.fetchCriticita()
 
       // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
       this.fetchVerificaPiene().then(response => {
@@ -782,7 +610,7 @@ export default {
         )
       })
     },
-    async fetchVerificaPiene () {
+    async fetchVerificaPiene() {
       // https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
       const response = await fetch('/api/w22verifica/bulletins/' + this.verificapiene_id + '/', {
         headers: {
@@ -791,7 +619,7 @@ export default {
       })
       return response
     },
-    async fetchGiudizio () {
+    async fetchGiudizio() {
       try {
         const response = await fetch('/api/w22verifica/giudizio/', {
           headers: {
@@ -808,7 +636,7 @@ export default {
           )
         }
         return await response.json()
-      } catch(error) {
+      } catch (error) {
         this.$toast.open(
           {
             message: error,
@@ -818,7 +646,7 @@ export default {
         )
       }
     },
-    async fetchSeverita () {
+    async fetchSeverita() {
       try {
         const response = await fetch('/api/w22verifica/severita/', {
           headers: {
@@ -835,7 +663,7 @@ export default {
           )
         }
         return await response.json()
-      } catch(error) {
+      } catch (error) {
         this.$toast.open(
           {
             message: error,
@@ -845,9 +673,9 @@ export default {
         )
       }
     },
-    async fetchCriticita () {
+    async fetchCriticita() {
       try {
-        const response = await fetch('/api/w22/criticita/', {
+        const response = await fetch('/api/w22verifica/criticita/', {
           headers: {
             accept: 'application/json'
           }
@@ -862,7 +690,7 @@ export default {
           )
         }
         return await response.json()
-      } catch(error) {
+      } catch (error) {
         this.$toast.open(
           {
             message: error,
@@ -885,20 +713,21 @@ export default {
     },
     saveW22verifica(newValue, id_w22verifica, campo) {
       //se sto calcolando il giudizio in automatico
-      if(campo==null){
-        campo='id_w22giudizio'
-        newValue=this.gr.giudizio
+      this.saving = true
+      if (campo == null) {
+        campo = 'id_w22giudizio'
+        newValue = this.gr.giudizio
       }
-      if(campo==="id_numero_bollettino"){
-        this.verificapiene.id_numero_bollettino=newValue;
-        this.verificapiene.numero_bollettino=newValue.split("_")[0]+'/'+newValue.split("_")[1];
+      if (campo === "id_numero_bollettino") {
+        this.verificapiene.id_numero_bollettino = newValue;
+        this.verificapiene.numero_bollettino = newValue.split("_")[0] + '/' + newValue.split("_")[1];
       }
-      const payload = { }
+      const payload = {}
       if (campo) {
         payload[campo] = newValue
       }
-      if(campo==="id_numero_bollettino"){
-        payload['numero_bollettino'] = newValue.split("_")[0]+'/'+newValue.split("_")[1];
+      if (campo === "id_numero_bollettino") {
+        payload['numero_bollettino'] = newValue.split("_")[0] + '/' + newValue.split("_")[1];
       }
       payload['id_w22verifica'] = id_w22verifica
       payload['username'] = store.state.username
@@ -911,6 +740,7 @@ export default {
               position: 'top-left'
             }
           )
+          this.saving = false
         }
         return response.json()
       }).then(data => {
@@ -923,9 +753,10 @@ export default {
         )
         this.verificapiene.last_update = data.last_update
         this.verificapiene.username = store.state.username
-        if(campo==="id_w22giudizio"){
-          this.verificapiene.id_w22giudizio=newValue;
+        if (campo === "id_w22giudizio") {
+          this.verificapiene.id_w22giudizio = newValue;
         }
+        this.saving = false
       }).catch((error) => {
         this.$toast.open(
           {
@@ -934,22 +765,23 @@ export default {
             position: 'top-left'
           }
         )
+        this.saving = false
       })
     },
     getDateFormatted(rawString, time = true) {
       return api.getDateFormatted(rawString, time)
     },
     // Metodo generico per salvare i dati delle select di criticita e tendenza
-    saveW22verificaDataSelect(newValue,id_w22verifica_data, id_w22_zone, campo) {
+    saveW22verificaDataSelect(newValue, id_w22verifica_data, id_w22_zone, campo) {
       let myW22zone = this.verificapiene.w22verificadata_set.find(w22verificadata => {
         return w22verificadata.id_w22_zone.id_w22_zone === id_w22_zone
       })
       myW22zone[campo] = newValue
-      const payload = { }
-      if(campo=='prev_crit_tot' || campo=='oss_crit_tot'){ 
+      const payload = {}
+      if (campo == 'prev_crit_tot' || campo == 'oss_crit_tot') {
         //sto assegando e salvando il calcolo della criticità in automatico
-        this.verificapiene.w22verificadata_set[id_w22_zone-1].err_crit_tot=this.Verificaseverita[id_w22_zone].severita
-        payload['err_crit_tot']=this.Verificaseverita[id_w22_zone].severita
+        this.verificapiene.w22verificadata_set[id_w22_zone - 1].err_crit_tot = this.Verificaseverita[id_w22_zone].severita
+        payload['err_crit_tot'] = this.Verificaseverita[id_w22_zone].severita
         //sto salvando il calcolo del giudizio automatico
         this.saveW22verifica(this.gr.giudizio, this.verificapiene.id_w22verifica, 'id_w22giudizio')
       }
@@ -1011,12 +843,26 @@ export default {
         })
       }
     },
-    async fetchVerificaPieneAction (action) {
+    async fetchVerificaPieneAction(action) {
       const response = await api.fetch_wrapper(
         store.state.access,
         `/api/w22verifica/bulletins/${this.verificapiene_id}/${action}/`
       )
       return response
+    },
+    execute_timeout(action, reroute, message){
+      // console.log("inizio execute_timeout")
+      if (this.saving){
+        console.log("saving è true faccio partire timeout")
+        setTimeout(() => {
+          console.log("aspetto 1 secondo finchè non finisce il salvataggio in corso")
+          this.execute_timeout(action, reroute, message)
+        }, 1000);
+      }else{
+        console.log("saving è false lancio execute")
+        this.execute(action, reroute, message)
+      }
+      // console.log("fine execute_timeout")
     },
     execute(action, reroute, message) {
       this[action + 'ing'] = true
@@ -1042,7 +888,7 @@ export default {
           }
         )
         if (reroute) {
-          this.$router.push({ path: `/w22verifica/${data.id_w22verifica}`})
+          this.$router.push({ path: `/w22verifica/${data.id_w22verifica}` })
         } else {
           this.fetchData()
         }

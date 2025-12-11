@@ -1,3 +1,4 @@
+{% load static %}
 {% load date_extras_w24 %}
 <!DOCTYPE html>
 <html lang="it">
@@ -33,7 +34,7 @@
     <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 770 1100" width="980" height="1400" xml:space="preserve" id="svg2" version="1.1">
       <g transform="matrix(1.3333333,0,0,-1.3333333,0,1122.6667)" id="g10">
         <g id="logo_arpa" transform="matrix(75.83,0,0,35,24,783)">
-          <image xlink:href="http://localhost:8000/static/images/logo_colori.svg" transform="matrix(1,0,0,-1,0,1)" preserveAspectRatio="none" style="image-rendering:optimizeSpeed" height="1" width="1"/>
+          <image xlink:href="{% static 'images/logo_colori.svg' %}" transform="matrix(1,0,0,-1,0,1)" preserveAspectRatio="none" style="image-rendering:optimizeSpeed" height="1" width="1"/>
         </g>
         <g id="titolo">
           <text id="text18" style="font-variant:normal;font-weight:bold;font-size:14px;font-family:Verdana;writing-mode:lr-tb;fill:#329a65;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(1,0,0,-1,191.54,776.43)">
@@ -41,7 +42,7 @@
           </text>
         </g>
         <g id="header_bollettino" transform="matrix(350,0,0,20.97,130,796.03)">
-          <image xlink:href="http://localhost:8000/static/images/bollettino.png" transform="matrix(1,0,0,-1,0,1)" preserveAspectRatio="none" style="image-rendering:optimizeSpeed" height="1" width="1"/>
+          <image xlink:href="{% static 'images/bollettino.png' %}" transform="matrix(1,0,0,-1,0,1)" preserveAspectRatio="none" style="image-rendering:optimizeSpeed" height="1" width="1"/>
         </g>
         <g id="numero">
           <path id="path36" style="fill:#c1c1c1;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m 20,767 h 85 V 752 H 20 Z"/><text id="text40" style="font-variant:normal;font-weight:normal;font-size:8px;font-family:Verdana;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(1,0,0,-1,32.49,756.32)">
@@ -125,7 +126,7 @@
           <path id="path204" style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="M 495,753 V 733"/>
         </g>
         <g id="logo_regione_piemonte_settore_protezione_civile">
-          <image xlink:href="http://localhost:8000/static/images/rpspc.png" preserveAspectRatio="none" style="image-rendering:optimizeSpeed" height="1" width="1"  transform="matrix(24,0,0,-24,518,818)"/>
+          <image xlink:href="{% static 'images/rpspc.png' %}" preserveAspectRatio="none" style="image-rendering:optimizeSpeed" height="1" width="1"  transform="matrix(24,0,0,-24,518,818)"/>
           <text id="text214" style="font-variant:normal;font-weight:normal;font-size:8px;font-family:'Liberation Sans';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(1,0,0,-1,497,785)">
             <tspan id="tspan212" y="0" x="0">Regione Piemonte</tspan>
           </text>
@@ -189,7 +190,7 @@
         </g>
         <g id="legenda">
           <g id="tabella_legenda" transform="matrix(260,0,0,283.64,308,50.36)">
-            <image width="1" height="1" style="image-rendering:optimizeSpeed" preserveAspectRatio="none" transform="matrix(1,0,0,-1,0,1)" xlink:href="http://localhost:8000/static/images/legenda.png" id="image336"/>
+            <image width="1" height="1" style="image-rendering:optimizeSpeed" preserveAspectRatio="none" transform="matrix(1,0,0,-1,0,1)" xlink:href="{% static 'images/legenda.png' %}" id="image336"/>
           </g>
         </g>
         <g id="avvertenza">

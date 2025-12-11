@@ -30,6 +30,11 @@ def my_date_JtD(value):
 
 
 @register.filter
+def my_date_JtD_comunicazione(value):
+    return value.strftime("%A %d/%m/%Y").lower().title()
+
+
+@register.filter
 def my_date_JtD_ita(value):
     return value.strftime("%d/%m/%Y ore %H:%M").lower()
 
@@ -47,3 +52,17 @@ def year(value):
 @register.filter
 def mul(value):
     return str((value * 22.65) + 162)
+
+
+@register.filter
+def mul_comunicazione(value):
+    return str((value * 6) + 179)
+
+
+@register.filter
+def no_asterisco(value):
+    carattere_cercato = "*"
+    if carattere_cercato in value:
+        return value[:-2]
+    else:
+        return value

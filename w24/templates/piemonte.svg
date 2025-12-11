@@ -1,3 +1,4 @@
+{% load static %}
 {% load date_extras_w24 %}
 <?xml version="1.0"?>
 <svg xmlns="http://www.w3.org/2000/svg" id="id_07" viewBox="0 0 475.26 597.1">
@@ -44,31 +45,31 @@
       <div style="text-align: center;">
         {% if tl.RISK_TCOLD %}
           {% if tl.RISK_TCOLD|get_numeric_value:k > 0 %}
-            <img height="45" width="45" src="http://localhost:8000/static/images/icons/freddo_{{ tl.RISK_TCOLD | get_numeric_value:k | floatformat:"0" }}.svg">
+            <img height="45" width="45" src="{% static 'images/icons/' %}freddo_{{ tl.RISK_TCOLD | get_numeric_value:k | floatformat:"0" }}.svg">
           {% endif %}
         {% endif %}
         {% if tl.RISK_THOT %}
           {% if tl.RISK_THOT|get_numeric_value:k > 0 %}
-            <img height="45" width="45" src="http://localhost:8000/static/images/icons/caldo_{{ tl.RISK_THOT | get_numeric_value:k | floatformat:"0" }}.svg">
+            <img height="45" width="45" src="{% static 'images/icons/' %}caldo_{{ tl.RISK_THOT | get_numeric_value:k | floatformat:"0" }}.svg">
           {% endif %}
         {% endif %}
         {% if tl.RISK_FROST|get_numeric_value:k > 0 %}
-          <img height="45" width="45" src="http://localhost:8000/static/images/icons/gelate_{{ tl.RISK_FROST | get_numeric_value:k | floatformat:"0" }}.svg">
+          <img height="45" width="45" src="{% static 'images/icons/' %}gelate_{{ tl.RISK_FROST | get_numeric_value:k | floatformat:"0" }}.svg">
         {% endif %}
         {% if tl.RISK_FOG|get_numeric_value:k > 0 %}
-          <img height="45" width="45" src="http://localhost:8000/static/images/icons/nebbie_{{ tl.RISK_FOG | get_numeric_value:k | floatformat:"0" }}.svg">
+          <img height="45" width="45" src="{% static 'images/icons/' %}nebbie_{{ tl.RISK_FOG | get_numeric_value:k | floatformat:"0" }}.svg">
         {% endif %}
         {% if tl.SNOW|get_numeric_value:k > 0 %}
-          <img height="45" width="45" src="http://localhost:8000/static/images/icons/neve_{{ tl.SNOW | get_numeric_value:k | floatformat:"0" }}.svg">
+          <img height="45" width="45" src="{% static 'images/icons/' %}neve_{{ tl.SNOW | get_numeric_value:k | floatformat:"0" }}.svg">
         {% endif %}
         {% if tl.RISK_STORM|get_numeric_value:k > 0 %}
-          <img height="45" width="45" src="http://localhost:8000/static/images/icons/temporali_{{ tl.RISK_STORM | get_numeric_value:k | floatformat:"0" }}.svg">
+          <img height="45" width="45" src="{% static 'images/icons/' %}temporali_{{ tl.RISK_STORM | get_numeric_value:k | floatformat:"0" }}.svg">
         {% endif %}
         {% if tl.RISK_WIND|get_numeric_value:k > 0 %}
-          <img height="45" width="45" src="http://localhost:8000/static/images/icons/vento_{{ tl.RISK_WIND | get_numeric_value:k | floatformat:"0" }}.svg">
+          <img height="45" width="45" src="{% static 'images/icons/' %}vento_{{ tl.RISK_WIND | get_numeric_value:k | floatformat:"0" }}.svg">
         {% endif %}
         {% if tl.SNOW|get_numeric_value:k > 0 %}
-          <img height="55" width="55" src="http://localhost:8000/static/images/icons/quota_neve.svg" style="position: fixed; height: 100px; width: 100px; left: 55px; top: {{ imgpx | get_item:k }}; z-index: 0;">
+          <img height="55" width="55" src="{% static 'images/icons/' %}quota_neve.svg" style="position: fixed; height: 100px; width: 100px; left: 55px; top: {{ imgpx | get_item:k }}; z-index: 0;">
           <text style="position: fixed; left: 82px; top: {{  textpx | get_item:k }}; font-size: 14px;">{{ qn|get_item:k }}</text>
         {% endif %}
       </div>

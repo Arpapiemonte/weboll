@@ -342,7 +342,7 @@
 					<text transform="matrix(1 0 0 1 286.3332 429.7457)" class="tabella-prec-testo">POMERIGGIO</text>
 					
 						
-					<text transform="matrix(1 0 0 1 246.8332 532.0791)" class="tabella-prec-testo">massimo puntuale su 12 ore (*) e 3 ore (**)</text>
+					<text transform="matrix(1 0 0 1 236.8332 532.0791)" class="tabella-prec-testo">massimo puntuale su 12 ore (*) e 3 ore (**) - dati validati automaticamente</text>
 				</g>
 			</g>
 		</g>
@@ -697,6 +697,7 @@
 		<rect x="336" y="567.965" style="fill:#D0D2D3;" width="26.284" height="10.888"/>
 		<text transform="matrix(1 0 0 1 310 575.2457)" class="tabella-temp">MIN(&#xB0;C)</text>
 		<text transform="matrix(1 0 0 1 337 575.2457)" class="tabella-temp">MAX(&#xB0;C)</text>
+		<text transform="matrix(1 0 0 1 286 710.0792)" class="tabella-prec-testo">dati validati automaticamente</text>
 	</g>
 	
 	

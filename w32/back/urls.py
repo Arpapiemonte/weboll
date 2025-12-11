@@ -23,4 +23,6 @@ urlpatterns = [
     path("pdf/<int:pk>", views.DefensePDFView.as_view(), name="defense-pdf"),
     path("html/<int:pk>", views.DefenseHTMLView.as_view(), name="defense-html"),
     path("png/<int:pk>", views.DefensePngView.as_view(), name="defense-png"),
+    path("pdf_frane/<int:pk>", views.FranePDFView.as_view(), name="frane-pdf"),
+    path("html_frane/<int:pk>", views.FraneHTMLView.as_view(), name="frane-html"),
 ]

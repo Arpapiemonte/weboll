@@ -230,6 +230,6 @@ For visual regression testing Selenium is used to take screenshots and reports a
 
 ## License
 
-Copyright (C) 2024 Arpa Piemonte - Dipartimento Rischi Naturali e Ambientali.
+Copyright (C) 2025 Arpa Piemonte - Dipartimento Rischi Naturali e Ambientali.
 
 Licensed under the [GNU Affero General Public License version 3 or later](LICENSE) as per [linee guida per l’Acquisizione e il riuso di software per la Pubblica Amministrazione](https://docs.italia.it/italia/developers-italia/lg-acquisizione-e-riuso-software-per-pa-docs/it/stabile/riuso-software/licenze-aperte-e-scelta-di-una-licenza.html#scelta-di-una-licenza).

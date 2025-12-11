@@ -1,0 +1,380 @@
+[
+    {
+        "id_venue": "9",
+        "id_time_layouts": 48,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 0.53
+    },
+    {
+        "id_venue": "11",
+        "id_time_layouts": 48,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 0.57
+    },
+    {
+        "id_venue": "1",
+        "id_time_layouts": 48,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 0.6
+    },
+    {
+        "id_venue": "28",
+        "id_time_layouts": 48,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 1.0
+    },
+    {
+        "id_venue": "33",
+        "id_time_layouts": 48,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 0.73
+    },
+    {
+        "id_venue": "59",
+        "id_time_layouts": 48,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 0.67
+    },
+    {
+        "id_venue": "63",
+        "id_time_layouts": 48,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 0.77
+    },
+    {
+        "id_venue": "64",
+        "id_time_layouts": 48,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 0.73
+    },
+    {
+        "id_venue": "89",
+        "id_time_layouts": 48,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 0.63
+    },
+    {
+        "id_venue": "190",
+        "id_time_layouts": 48,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 0.67
+    },
+    {
+        "id_venue": "88",
+        "id_time_layouts": 48,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 0.7
+    },
+    {
+        "id_venue": "87",
+        "id_time_layouts": 48,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 0.87
+    },
+    {
+        "id_venue": "90",
+        "id_time_layouts": 48,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 1.0
+    },
+    {
+        "id_venue": "116",
+        "id_time_layouts": 48,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 0.93
+    },
+    {
+        "id_venue": "91",
+        "id_time_layouts": 48,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 0.43
+    },
+    {
+        "id_venue": "191",
+        "id_time_layouts": 48,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 0.67
+    },
+    {
+        "id_venue": "192",
+        "id_time_layouts": 48,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 1.0
+    },
+    {
+        "id_venue": "16",
+        "id_time_layouts": 48,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 0.83
+    },
+    {
+        "id_venue": "9",
+        "id_time_layouts": 66,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 0.87
+    },
+    {
+        "id_venue": "11",
+        "id_time_layouts": 66,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 1.0
+    },
+    {
+        "id_venue": "1",
+        "id_time_layouts": 66,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 1.0
+    },
+    {
+        "id_venue": "28",
+        "id_time_layouts": 66,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 1.0
+    },
+    {
+        "id_venue": "33",
+        "id_time_layouts": 66,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 0.83
+    },
+    {
+        "id_venue": "59",
+        "id_time_layouts": 66,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 0.67
+    },
+    {
+        "id_venue": "63",
+        "id_time_layouts": 66,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 0.93
+    },
+    {
+        "id_venue": "64",
+        "id_time_layouts": 66,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 0.73
+    },
+    {
+        "id_venue": "89",
+        "id_time_layouts": 66,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 0.67
+    },
+    {
+        "id_venue": "190",
+        "id_time_layouts": 66,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 0.83
+    },
+    {
+        "id_venue": "88",
+        "id_time_layouts": 66,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 0.93
+    },
+    {
+        "id_venue": "87",
+        "id_time_layouts": 66,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 1.0
+    },
+    {
+        "id_venue": "90",
+        "id_time_layouts": 66,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 1.0
+    },
+    {
+        "id_venue": "116",
+        "id_time_layouts": 66,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 1.0
+    },
+    {
+        "id_venue": "91",
+        "id_time_layouts": 66,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 0.8
+    },
+    {
+        "id_venue": "191",
+        "id_time_layouts": 66,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 0.93
+    },
+    {
+        "id_venue": "192",
+        "id_time_layouts": 66,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 0.93
+    },
+    {
+        "id_venue": "16",
+        "id_time_layouts": 66,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 1.0
+    },
+    {
+        "id_venue": "9",
+        "id_time_layouts": 83,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 1.0
+    },
+    {
+        "id_venue": "11",
+        "id_time_layouts": 83,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 1.0
+    },
+    {
+        "id_venue": "1",
+        "id_time_layouts": 83,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 1.0
+    },
+    {
+        "id_venue": "28",
+        "id_time_layouts": 83,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 1.0
+    },
+    {
+        "id_venue": "33",
+        "id_time_layouts": 83,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 1.0
+    },
+    {
+        "id_venue": "59",
+        "id_time_layouts": 83,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 0.8
+    },
+    {
+        "id_venue": "63",
+        "id_time_layouts": 83,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 1.0
+    },
+    {
+        "id_venue": "64",
+        "id_time_layouts": 83,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 1.0
+    },
+    {
+        "id_venue": "89",
+        "id_time_layouts": 83,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 1.0
+    },
+    {
+        "id_venue": "190",
+        "id_time_layouts": 83,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 1.0
+    },
+    {
+        "id_venue": "88",
+        "id_time_layouts": 83,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 1.0
+    },
+    {
+        "id_venue": "87",
+        "id_time_layouts": 83,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 1.0
+    },
+    {
+        "id_venue": "90",
+        "id_time_layouts": 83,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 1.0
+    },
+    {
+        "id_venue": "116",
+        "id_time_layouts": 83,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 1.0
+    },
+    {
+        "id_venue": "91",
+        "id_time_layouts": 83,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 1.0
+    },
+    {
+        "id_venue": "191",
+        "id_time_layouts": 83,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 1.0
+    },
+    {
+        "id_venue": "192",
+        "id_time_layouts": 83,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 1.0
+    },
+    {
+        "id_venue": "16",
+        "id_time_layouts": 83,
+        "id_parametro": "COP_TOT",
+        "id_aggregazione": 0,
+        "numeric_values": 1.0
+    }
+]

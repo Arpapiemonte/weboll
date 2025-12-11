@@ -1,4 +1,4 @@
-// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2025 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
@@ -13,7 +13,7 @@
     >
       <h3>Quota neve</h3>
       <div class="col-sm">
-        <h5>Valore di riferimento min</h5>
+        <h5>Valore di riferimento min dalle 00 alle 24</h5>
         <p>
           Quota:
           <Level
@@ -28,9 +28,9 @@
           />
         </p>
         <ClassSelect
-          :readonly="readonly"
+          :readonly="true"
           :data="orderedClasses[1]"
-          :classes-value="classDescription[orderedClasses[1].id_classes].classes_value"
+          :classes-value="classDescription['14'].classes_value"
           :history="history"
           :required="false"
           :validity="validity"
@@ -38,7 +38,7 @@
         />
       </div>
       <div class="col-sm">
-        <h5>Valore di riferimento max</h5>
+        <h5>Valore di riferimento max dalle 00 alle 24 </h5>
         <p>
           Quota:
           <Level
@@ -52,9 +52,9 @@
           />
         </p>
         <ClassSelect
-          :readonly="readonly"
+          :readonly="true"
           :data="orderedClasses[0]"
-          :classes-value="classDescription[orderedClasses[0].id_classes].classes_value"
+          :classes-value="classDescription['15'].classes_value"
           :history="history"
           :required="false"
           :validity="validity"

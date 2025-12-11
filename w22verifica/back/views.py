@@ -6,8 +6,8 @@
 import csv
 import datetime
 import json
+import os
 
-# import os
 # import tempfile
 from contextlib import closing
 from os import getenv
@@ -35,6 +35,7 @@ from w22verifica.back import models
 from w22verifica.back.serializers import (
     W22GiudizioSerializer,
     W22SeveritaSerializer,
+    W22verificaCriticitaSerializer,
     W22VerificaDataSerializer,
     W22VerificaSerializer,
     W22VerificaSerializerFull,
@@ -64,18 +65,21 @@ class W22VerificaView(viewsets.ModelViewSet):
     def list(self, request, *args, **kwargs):
         month = self.request.query_params.get("month", "all")
         year = self.request.query_params.get("year", "all")
+        order = self.request.query_params.get("order", "-last_update")
+
         if month != "all":
             queryset = (
                 self.get_queryset()
                 .filter(data_emissione__year=year)
                 .filter(data_emissione__month=month)
+                .order_by(order)
             )
         elif year != "all":
             queryset = self.filter_queryset(
-                self.get_queryset().filter(data_emissione__year=year)
+                self.get_queryset().filter(data_emissione__year=year).order_by(order)
             )
         else:
-            queryset = self.filter_queryset(self.get_queryset())
+            queryset = self.filter_queryset(self.get_queryset().order_by(order))
 
         page = self.paginate_queryset(queryset)
         if page is not None:
@@ -186,7 +190,7 @@ class W22VerificaView(viewsets.ModelViewSet):
         )
         num_bollettinotemp = num_bollettino.split("_")
         numero_bollettino = num_bollettinotemp[0] + "/" + num_bollettinotemp[1]
-        print(url)
+        print("**************url", url)
         # controllo che il file ci sia
         try:
             with closing(requests.get(url, stream=True)) as r:
@@ -374,6 +378,16 @@ class W22ZoneView(viewsets.ModelViewSet):
     permission_classes = [permissions.IsAuthenticated | ReadOnly]
 
 
+class W22verificaCriticitaView(viewsets.ModelViewSet):
+    """
+    API endpoint that allows W22 bulletin Criticità to be viewed
+    """
+
+    queryset = models.W22verificaCriticita.objects.all()
+    serializer_class = W22verificaCriticitaSerializer
+    permission_classes = [permissions.IsAuthenticated | ReadOnly]
+
+
 class VerificaPieneHTMLView(TemplateView):
     template_name = "verificapiene.html"
     http_method_names = ["get"]
@@ -390,6 +404,10 @@ class VerificaPieneHTMLView(TemplateView):
 
 class VerificaPienePDFView(VerificaPieneHTMLView):
     def get(self, request, *args, **kwargs):
+        os.environ.pop("http_proxy", None)
+        os.environ.pop("https_proxy", None)
+        os.environ.pop("HTTP_PROXY", None)
+        os.environ.pop("HTTPS_PROXY", None)
         response = PDFTemplateResponse(
             request=request,
             template=self.template_name,

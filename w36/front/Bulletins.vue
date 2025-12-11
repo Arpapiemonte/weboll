@@ -1,4 +1,4 @@
-// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2025 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
@@ -15,18 +15,20 @@
       <th
         scope="col"
         role="button"
+        class="align-middle"
         width="100px"
         @click="slotProps.sort('seq_num')"
       >
-        Num {{ slotProps.currentSort === 'seq_num' ? slotProps.currentSortDir === 'asc' ? '▲' : '▼' : ' ' }}
+        Num {{ slotProps.currentSort === 'seq_num' ? slotProps.currentSortDir === '' ? '▲' : '▼' : ' ' }}
       </th>
       <th
         scope="col"
         role="button"
+        class="align-middle"
         width="300px"
         @click="slotProps.sort('data_emissione')"
       >
-        Data di emissione {{ slotProps.currentSort === 'data_emissione' ? slotProps.currentSortDir === 'asc' ? '▲' : '▼' : ' ' }}
+        Data di emissione {{ slotProps.currentSort === 'data_emissione' ? slotProps.currentSortDir === '' ? '▲' : '▼' : ' ' }}
       </th>
     </template>
     <template #td1="slotProps">
@@ -39,10 +41,11 @@
       <th
         scope="col"
         role="button"
+        class="align-middle"
         width="300px"
         @click="slotProps.sort('data_emissione')"
       >
-        Data di validità {{ slotProps.currentSort === 'data_validita' ? slotProps.currentSortDir === 'asc' ? '▲' : '▼' : ' ' }}
+        Data di validità {{ slotProps.currentSort === 'data_validita' ? slotProps.currentSortDir === '' ? '▲' : '▼' : ' ' }}
       </th>
     </template>
     <template #td2="slotProps">

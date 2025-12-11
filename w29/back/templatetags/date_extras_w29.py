@@ -54,3 +54,8 @@ def my_date_dmY(value):
 @register.filter
 def year(value):
     return value.strftime("%Y")
+
+
+@register.filter
+def mul(value):
+    return str((value * 10) + 32)

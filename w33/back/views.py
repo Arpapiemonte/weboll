@@ -6,12 +6,14 @@
 # import csv
 import datetime
 import json
+import os
 
-# import os
 # import tempfile
 # from contextlib import closing
 # from subprocess import call
 # import requests
+from decimal import Decimal
+
 from django.contrib.auth.models import User
 from django.db.transaction import atomic
 
@@ -61,18 +63,21 @@ class W33View(viewsets.ModelViewSet):
     def list(self, request, *args, **kwargs):
         month = self.request.query_params.get("month", "all")
         year = self.request.query_params.get("year", "all")
+        order = self.request.query_params.get("order", "-last_update")
+
         if month != "all":
             queryset = (
                 self.get_queryset()
                 .filter(data_emissione__year=year)
                 .filter(data_emissione__month=month)
+                .order_by(order)
             )
         elif year != "all":
             queryset = self.filter_queryset(
-                self.get_queryset().filter(data_emissione__year=year)
+                self.get_queryset().filter(data_emissione__year=year).order_by(order)
             )
         else:
-            queryset = self.filter_queryset(self.get_queryset())
+            queryset = self.filter_queryset(self.get_queryset().order_by(order))
 
         page = self.paginate_queryset(queryset)
         if page is not None:
@@ -272,7 +277,12 @@ class W33View(viewsets.ModelViewSet):
                     nivo_value = w_value_nivo
                     if w_value_sky_condit not in snow_icons and w_value_nivo == 0:
                         nivo_value = None
-
+                    # poiché le velature non sono accettate nel set di icone delle autostrade,
+                    # sono convertite in "poco nuvoloso", stessa cosa per vento e sole e vento e nuvola
+                    if w_value_sky_condit == 32:
+                        w_value_sky_condit = Decimal(22)
+                    if w_value_sky_condit in (45, 46):
+                        w_value_sky_condit = Decimal(29)
                     if w_value_sky_condit is not None:
                         new_data = models.W33Data(  # type: ignore
                             id_w33=new,
@@ -338,7 +348,12 @@ class W33View(viewsets.ModelViewSet):
                     nivo_value = w_value_nivo
                     if w_value_sky_condit not in snow_icons and w_value_nivo == 0:
                         nivo_value = None
-
+                    # poiché le velature non sono accettate nel set di icone delle autostrade,
+                    # sono convertite in "poco nuvoloso"
+                    if w_value_sky_condit == 32:
+                        w_value_sky_condit = Decimal(22)
+                    if w_value_sky_condit in (45, 46):
+                        w_value_sky_condit = Decimal(29)
                     if w_value_sky_condit is not None:
                         new_data = models.W33Data(  # type: ignore
                             id_w33=new,
@@ -502,6 +517,10 @@ class HtmlView(TemplateView):
 
 class PdfView(HtmlView):
     def get(self, request, *args, **kwargs):
+        os.environ.pop("http_proxy", None)
+        os.environ.pop("https_proxy", None)
+        os.environ.pop("HTTP_PROXY", None)
+        os.environ.pop("HTTPS_PROXY", None)
         response = PDFTemplateResponse(
             request=request,
             template=self.template_name,

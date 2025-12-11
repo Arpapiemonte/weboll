@@ -6,12 +6,14 @@
 # import csv
 import datetime
 import json
+import os
 
-# import os
 # import tempfile
 # from contextlib import closing
 # from subprocess import call
 # import requests
+from decimal import Decimal
+
 from django.contrib.auth.models import User
 from django.db.transaction import atomic
 
@@ -60,18 +62,21 @@ class W07View(viewsets.ModelViewSet):
     def list(self, request, *args, **kwargs):
         month = self.request.query_params.get("month", "all")
         year = self.request.query_params.get("year", "all")
+        order = self.request.query_params.get("order", "-last_update")
+
         if month != "all":
             queryset = (
                 self.get_queryset()
                 .filter(start_valid_time__year=year)
                 .filter(start_valid_time__month=month)
+                .order_by(order)
             )
         elif year != "all":
             queryset = self.filter_queryset(
-                self.get_queryset().filter(start_valid_time__year=year)
+                self.get_queryset().filter(start_valid_time__year=year).order_by(order)
             )
         else:
-            queryset = self.filter_queryset(self.get_queryset())
+            queryset = self.filter_queryset(self.get_queryset().order_by(order))
 
         page = self.paginate_queryset(queryset)
         if page is not None:
@@ -362,7 +367,11 @@ class W07View(viewsets.ModelViewSet):
 
                     if cumnivo == 0:
                         cumnivo = None
-
+                    # gestione dei tipi di tempo non previsti dalle autostrade (es. velature)
+                    if skycondition == 32:
+                        skycondition = Decimal(22)
+                    if skycondition in (45, 46):
+                        skycondition = Decimal(29)
                     if skycondition is not None:
                         new_data = models.W07Data(  # type: ignore
                             id_w07=new,
@@ -507,8 +516,8 @@ class W07DataView(viewsets.ModelViewSet):
         return Response(serializer.data)
 
 
-class W07SVGView(TemplateView):
-    template_name = "a21.svg"
+class W07a4SVGView(TemplateView):
+    template_name = "w07a4.svg"
     http_method_names = ["get"]
 
     def get_context_data(self, **kwargs):
@@ -613,18 +622,154 @@ class W07SVGView(TemplateView):
             "w07": autostrada,
             "venues": venue_dict,
             "days": days,
-            "title": "Autostrada A4-A21",
+            "title": "Autostrada A4",
         }
         return context
 
 
-class W07PDFView(W07SVGView):
+class W07a21SVGView(TemplateView):
+    template_name = "w07a21.svg"
+    http_method_names = ["get"]
+
+    def get_context_data(self, **kwargs):
+        queryset = models.W07.objects
+        w07 = get_object_or_404(queryset, pk=kwargs["pk"])
+        serializer = W07SerializerFull(w07)
+        autostrada = serializer.data
+
+        autostrada["start_valid_time"] = datetime.datetime.strptime(
+            autostrada["start_valid_time"], "%Y-%m-%dT%H:%M:%S"
+        )
+        autostrada["next_blt_time"] = datetime.datetime.strptime(
+            autostrada["next_blt_time"], "%Y-%m-%dT%H:%M:%S"
+        )
+        autostrada["last_update"] = datetime.datetime.strptime(
+            autostrada["last_update"], "%Y-%m-%dT%H:%M:%S"
+        )
+
+        days = []
+        dayDate = autostrada["start_valid_time"]
+        for r in range(3):
+            day = dayDate.strftime("%d/%m/%Y")
+            days.append(day)
+            dayDate = dayDate + datetime.timedelta(days=1)
+
+        venue = models.Venue.objects.all()
+        venue_dict = {}
+        for m in venue:
+            venue_dict[str(m.id_venue)] = m.description
+
+        sky_conditions = models.SkyCondition.objects.all()
+        sky_conditions_dict = {}
+        for mmm in sky_conditions:
+            sky_conditions_dict[mmm.id_sky_condition] = mmm.description_ita
+
+        precipitation_classes = {
+            "0": "Assente",
+            "1": "Debole",
+            "2": "Moderata",
+            "3": "Forte",
+            "4": "Molto forte",
+        }
+
+        wind_classes = {
+            "0": "Calmo",
+            "1": "Debole",
+            "2": "Moderato",
+            "3": "Forte",
+            "4": "Molto forte",
+        }
+
+        tmp: dict = {}
+        for data in autostrada["w07data_set"]:
+            if not data["id_venue"] in tmp:
+                tmp[data["id_venue"]] = {}
+            if not data["id_time_layouts"] in tmp[data["id_venue"]]:
+                tmp[data["id_venue"]][data["id_time_layouts"]] = {}
+            tmp[data["id_venue"]][data["id_time_layouts"]] = data
+            tmp[data["id_venue"]][data["id_time_layouts"]]["precipitation_class"] = (
+                precipitation_classes[
+                    str(
+                        tmp[data["id_venue"]][data["id_time_layouts"]][
+                            "precipitation_class"
+                        ]
+                    )
+                ]
+            )
+            tmp[data["id_venue"]][data["id_time_layouts"]]["wind_class"] = wind_classes[
+                str(tmp[data["id_venue"]][data["id_time_layouts"]]["wind_class"])
+            ]
+            if tmp[data["id_venue"]][data["id_time_layouts"]]["cumulated_snow"] is None:
+                tmp[data["id_venue"]][data["id_time_layouts"]]["cumulated_snow"] = "NO"
+            if (
+                tmp[data["id_venue"]][data["id_time_layouts"]]["temperature_below_zero"]
+                is False
+            ):
+                tmp[data["id_venue"]][data["id_time_layouts"]][
+                    "temperature_below_zero"
+                ] = "NO"
+            else:
+                tmp[data["id_venue"]][data["id_time_layouts"]][
+                    "temperature_below_zero"
+                ] = "SI"
+
+            tmp[data["id_venue"]][data["id_time_layouts"]]["sky_desc"] = (
+                sky_conditions_dict[
+                    tmp[data["id_venue"]][data["id_time_layouts"]]["sky_condition"]
+                ]
+            )
+            if (
+                tmp[data["id_venue"]][data["id_time_layouts"]]["air_temperature"]
+                is not None
+            ):
+                tmp[data["id_venue"]][data["id_time_layouts"]]["air_temperature"] = tmp[
+                    data["id_venue"]
+                ][data["id_time_layouts"]]["air_temperature"]
+            else:
+                tmp[data["id_venue"]][data["id_time_layouts"]]["air_temperature"] = ""
+
+        autostrada["w07data_set"] = tmp
+        context = {
+            "w07": autostrada,
+            "venues": venue_dict,
+            "days": days,
+            "title": "Autostrada A21",
+        }
+        return context
+
+
+class W07a4PDFView(W07a4SVGView):
     def get(self, request, *args, **kwargs):
+        os.environ.pop("http_proxy", None)
+        os.environ.pop("https_proxy", None)
+        os.environ.pop("HTTP_PROXY", None)
+        os.environ.pop("HTTPS_PROXY", None)
         response = PDFTemplateResponse(
             request=request,
-            template=self.template_name,
+            template="w07a4.svg",
             context=self.get_context_data(**kwargs),
-            filename="w07.pdf",
+            filename="w07_a4.pdf",
+            cmd_options={
+                "margin-bottom": 0,
+                "margin-left": 0,
+                "margin-right": 0,
+                "margin-top": 0,
+            },
+        )
+        return response
+
+
+class W07a21PDFView(W07a21SVGView):
+    def get(self, request, *args, **kwargs):
+        os.environ.pop("http_proxy", None)
+        os.environ.pop("https_proxy", None)
+        os.environ.pop("HTTP_PROXY", None)
+        os.environ.pop("HTTPS_PROXY", None)
+        response = PDFTemplateResponse(
+            request=request,
+            template="w07a21.svg",
+            context=self.get_context_data(**kwargs),
+            filename="w07_a21.pdf",
             cmd_options={
                 "margin-bottom": 0,
                 "margin-left": 0,

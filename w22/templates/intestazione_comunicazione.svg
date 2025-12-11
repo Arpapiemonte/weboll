@@ -1,0 +1,28 @@
+
+
+    <g
+       id="g498"
+       transform="matrix(0.35277777,0,0,-0.35277777,-0.15741874,296.97559)">
+       <rect x="20" y="668" style="fill:none;stroke:#000000;stroke-miterlimit:5;;stroke-width:0.5;" width="80" height="45"/>
+      <text
+         id="text502"
+         style="font-variant:normal;font-weight:bold;font-size:10px;font-family:'Liberation Sans';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         transform="matrix(1,0,0,-1,95.55,687.03)"><tspan
+           id="tspan500"
+           y="0"
+           x="27">Stazione</tspan></text>
+    </g>
+    
+    <g
+       id="g514"
+       transform="matrix(0.35277777,0,0,-0.35277777,-0.15741874,296.97559)">
+       <rect x="100" y="668" style="fill:none;stroke:#000000;stroke-miterlimit:5;;stroke-width:0.5;" width="85" height="45"/>
+      <text
+         id="text518"
+         style="font-variant:normal;font-weight:bold;font-size:10px;font-family:'Liberation Sans';writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         transform="matrix(1,0,0,-1,22.38,687.03)"><tspan
+           id="tspan516"
+           y="0"
+           x="4">Corso d'acqua</tspan></text>
+    </g>
+    

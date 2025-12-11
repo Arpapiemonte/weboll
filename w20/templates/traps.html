@@ -1,3 +1,4 @@
+{% load static %}
 {% load date_extras_w20 %}
 <!DOCTYPE html>
 <html lang="it">
@@ -143,17 +144,17 @@
 				</g>
 				<foreignObject x="430" y="30" width="110" height="130" >
 				<div xmlns="http://www.w3.org/1999/xhtml" class="testi">
-				  <img src="http://frontend:80/images/traps1.png" style="width: 100px; height: 120px;">
+				  <img src="{% static 'images/traps1.png' %}" style="width: 100px; height: 120px;">
 				</div>
 				</foreignObject>
 				<foreignObject x="380" y="240" width="135" height="69" >
 					<div xmlns="http://www.w3.org/1999/xhtml" class="testi">
-					  <img src="http://frontend:80/images/traps2.png" style="width: 130px; height: 60px;">
+					  <img src="{% static 'images/traps2.png' %}" style="width: 130px; height: 60px;">
 					</div>
 				</foreignObject>-
 				<foreignObject x="380" y="185" width="135" height="70" >
 					<div xmlns="http://www.w3.org/1999/xhtml" class="testi">
-						<img src="http://frontend:80/images/traps3.png" style="width: 140px; height: 60px;">
+						<img src="{% static 'images/traps3.png' %}" style="width: 140px; height: 60px;">
 					</div>
 				</foreignObject>
 				<!--<image style="overflow:visible;" width="1694" height="789" xlink:href="E76FCC2A.png"  transform="matrix(0.0969 0 0 0.087 363.548 176.0815)">

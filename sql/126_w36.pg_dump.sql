@@ -237,6 +237,9 @@ VALUES('ATTESI', 'Decessi attesi', NULL, 1, 'now'::text::timestamp(6) with time 
 INSERT INTO public.parametro
 (id_parametro, denominazione, id_unita_misura, num_decimali, data_agg, autore_agg)
 VALUES('COD_SALUTE', 'Codice eccessi sanitari', NULL, 1, 'now'::text::timestamp(6) with time zone, 'weboll');
+INSERT INTO public.parametro
+(id_parametro, denominazione, id_unita_misura, num_decimali, data_agg, autore_agg)
+VALUES('WDA', 'indice Warm Day Alert', NULL, 1, 'now'::text::timestamp(6) with time zone, 'weboll');
 
 --------------- Nuove time_layouts        --------------------------------------
 INSERT INTO public.time_layouts

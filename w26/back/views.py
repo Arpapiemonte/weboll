@@ -7,7 +7,8 @@
 import datetime
 
 # import json
-# import os
+import os
+
 # import tempfile
 # from contextlib import closing
 # from subprocess import call
@@ -73,18 +74,21 @@ class W26View(viewsets.ModelViewSet):
     def list(self, request, *args, **kwargs):
         month = self.request.query_params.get("month", "all")
         year = self.request.query_params.get("year", "all")
+        order = self.request.query_params.get("order", "-last_update")
+
         if month != "all":
             queryset = (
                 self.get_queryset()
                 .filter(data_emissione__year=year)
                 .filter(data_emissione__month=month)
+                .order_by(order)
             )
         elif year != "all":
             queryset = self.filter_queryset(
-                self.get_queryset().filter(data_emissione__year=year)
+                self.get_queryset().filter(data_emissione__year=year).order_by(order)
             )
         else:
-            queryset = self.filter_queryset(self.get_queryset())
+            queryset = self.filter_queryset(self.get_queryset().order_by(order))
 
         page = self.paginate_queryset(queryset)
         if page is not None:
@@ -338,6 +342,10 @@ class W26SVGView(TemplateView):
 
 class W26PDFView(W26SVGView):
     def get(self, request, *args, **kwargs):
+        os.environ.pop("http_proxy", None)
+        os.environ.pop("https_proxy", None)
+        os.environ.pop("HTTP_PROXY", None)
+        os.environ.pop("HTTPS_PROXY", None)
         response = PDFTemplateResponse(
             request=request,
             template=self.template_name,

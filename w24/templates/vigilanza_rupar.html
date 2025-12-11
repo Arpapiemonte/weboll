@@ -1,3 +1,4 @@
+{% load static %}
 {% load date_extras_w24 %}
 <!DOCTYPE html>
 <html lang="it">
@@ -33,7 +34,7 @@
     <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 770 1100" width="980" height="1400" xml:space="preserve" id="svg2" version="1.1">
       <g transform="matrix(1.3333333,0,0,-1.3333333,0,1122.6667)" id="g10">
         <g id="logo_arpa" transform="matrix(75.83,0,0,35,480,783)">
-          <image xlink:href="http://localhost:8000/static/images/logo_colori.svg" transform="matrix(1,0,0,-1,0,1)" preserveAspectRatio="none" style="image-rendering:optimizeSpeed" height="1" width="1"/>
+          <image xlink:href="{% static 'images/logo_colori.svg' %}" transform="matrix(1,0,0,-1,0,1)" preserveAspectRatio="none" style="image-rendering:optimizeSpeed" height="1" width="1"/>
         </g>
         <g id="titolo">
           <text id="text18" style="font-variant:normal;font-weight:normal;font-size:25px;font-family:Verdana;writing-mode:lr-tb;fill:#0a0a0a;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(1,0,0,-1,33,776.43)">
@@ -97,7 +98,7 @@
         </g>
         <g id="legenda">
           <g id="tabella_legenda" transform="matrix(260,0,0,283.64,308,50.36)">
-            <image width="1" height="1" style="image-rendering:optimizeSpeed" preserveAspectRatio="none" transform="matrix(1,0,0,-1,0,1)" xlink:href="http://localhost:8000/static/images/legenda.png" id="image336"/>
+            <image width="1" height="1" style="image-rendering:optimizeSpeed" preserveAspectRatio="none" transform="matrix(1,0,0,-1,0,1)" xlink:href="{% static 'images/legenda.png' %}" id="image336"/>
           </g>
         </g>
       </g>

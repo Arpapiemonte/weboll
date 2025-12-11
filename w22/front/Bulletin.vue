@@ -1,4 +1,4 @@
-// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2025 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
@@ -26,6 +26,19 @@
             width="18"
             height="18"
           > PDF
+        </a>
+        <a
+          class="btn btn-outline-primary"
+          :href="'/api/w22/comunicazione_png/' + piene.id_w22"
+          target="_blank"
+          role="button"
+        >
+          <img
+            src="~bootstrap-icons/icons/file-earmark-image.svg"
+            alt="PDF icon"
+            width="18"
+            height="18"
+          > COMUNICAZIONE
         </a>
         <button
           v-if="piene.status === '0' && state.username"

@@ -1,8 +1,8 @@
 {
   "name": "weboll",
-  "version": "v1.5.0+a67914fd",
+  "version": "v1.6.0+709b8fc4",
   "description": "Bulletin back-office for ARPA Piemonte Centro Funzionale",
-  "author": "Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali",
+  "author": "Copyright (C) 2025 Arpa Piemonte - Dipartimento Naturali e Ambientali",
   "license": "AGPL-3.0-or-later",
   "private": true,
   "main": "public/index.html",

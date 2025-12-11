@@ -13,6 +13,9 @@ def populate_bulletins(apps, schema_editor):
     BulletinsModel.objects.get_or_create(
         prodotto="verificapiene", tabella="w22verifica"
     )
+    BulletinsModel.objects.get_or_create(
+        prodotto="verificaallerta", tabella="w23verifica"
+    )
 
 
 class Migration(migrations.Migration):

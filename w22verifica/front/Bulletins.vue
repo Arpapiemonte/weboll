@@ -1,4 +1,4 @@
-// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2025 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
@@ -16,43 +16,47 @@
       <th
         scope="col"
         role="button"
+        class="align-middle"
         width="100px"
-        @click="slotProps.sort('id_numero_bollettino2')"
+        @click="slotProps.sort('id_numero_bollettino')"
       >
-        Num Piene {{ slotProps.currentSort === 'id_numero_bollettino' ? slotProps.currentSortDir === 'asc' ? '▲' : '▼' : ' ' }}
+        Num Piene {{ slotProps.currentSort === 'id_numero_bollettino' ? slotProps.currentSortDir === '' ? '▲' : '▼' : ' ' }}
       </th>
       <th
         scope="col"
         role="button"
+        class="align-middle"
         width="300px"
         @click="slotProps.sort('data_emissione')"
       >
-        Data di emissione Piene {{ slotProps.currentSort === 'data_emissione' ? slotProps.currentSortDir === 'asc' ? '▲' : '▼' : ' ' }}
+        Data di emissione Piene {{ slotProps.currentSort === 'data_emissione' ? slotProps.currentSortDir === '' ? '▲' : '▼' : ' ' }}
       </th>
       <th
         scope="col"
         role="button"
+        class="align-middle"
         width="300px"
         @click="slotProps.sort('data_analisi')"
       >
-        Data di verifica Piene {{ slotProps.currentSort === 'data_analisi' ? slotProps.currentSortDir === 'asc' ? '▲' : '▼' : ' ' }}
+        Data di verifica Piene {{ slotProps.currentSort === 'data_analisi' ? slotProps.currentSortDir === '' ? '▲' : '▼' : ' ' }}
       </th>
       <th
         scope="col"
         role="button"
+        class="align-middle"
         width="300px"
         @click="slotProps.sort('id_w22giudizio')"
       >
-        Giudizio {{ slotProps.currentSort === 'id_w22giudizio' ? slotProps.currentSortDir === 'asc' ? '▲' : '▼' : ' ' }}
+        Giudizio {{ slotProps.currentSort === 'id_w22giudizio' ? slotProps.currentSortDir === '' ? '▲' : '▼' : ' ' }}
       </th>
     </template>
     <template #td1="slotProps">
       <td>{{ slotProps.bulletin['id_numero_bollettino'] }}</td>
       <td>
-        {{ getDateFormatted(slotProps.bulletin['data_emissione']) }}
+        {{ getDateFormatted_eng(slotProps.bulletin['data_emissione']) }}
       </td>
       <td>
-        {{ slotProps.bulletin['data_analisi'] }}
+        {{ getDateFormatted_eng(slotProps.bulletin['data_analisi']) }}
       </td>
       <td>{{ slotProps.bulletin['id_w22giudizio'] }}</td>
     </template>
@@ -70,7 +74,10 @@ export default {
   },
   methods: {
     getDateFormatted(rawString) {
-      return api.getDateFormatted(rawString)
+      return api.getDateFormatted(rawString,false)
+    },
+    getDateFormatted_eng(rawString) {
+      return api.getDateFormatted_eng(rawString, false)
     }
   }
 }

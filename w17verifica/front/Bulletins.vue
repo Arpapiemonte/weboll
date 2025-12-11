@@ -1,8 +1,8 @@
-// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2025 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
-/ Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
+/ Copyright (C) 2025 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
@@ -19,30 +19,32 @@
       <th
         scope="col"
         role="button"
+        class="align-middle"
         width="300px"
         @click="slotProps.sort('data_emissione')"
       >
-        Data di emissione {{ slotProps.currentSort === 'data_emissione' ? slotProps.currentSortDir === 'asc' ? '▲' : '▼' : ' ' }}
+        Data di emissione {{ slotProps.currentSort === 'data_emissione' ? slotProps.currentSortDir === '' ? '▲' : '▼' : ' ' }}
       </th>
     </template>
     <template #td1="slotProps">
       <td>
-        {{ getDateFormatted(slotProps.bulletin['data_emissione']) }}
+        {{ getDateFormatted_eng(slotProps.bulletin['data_emissione']) }}
       </td>
     </template>
     <template #th2="slotProps">
       <th
         scope="col"
         role="button"
+        class="align-middle"
         width="300px"
         @click="slotProps.sort('data_analysis')"
       >
-        Data Analisi {{ slotProps.currentSort === 'data_analysis' ? slotProps.currentSortDir === 'asc' ? '▲' : '▼' : ' ' }}
+        Data Analisi {{ slotProps.currentSort === 'data_analysis' ? slotProps.currentSortDir === '' ? '▲' : '▼' : ' ' }}
       </th>
     </template>
     <template #td2="slotProps">
       <td>
-        {{ getDateFormatted(slotProps.bulletin['data_analysis']) }}
+        {{ getDateFormatted_eng(slotProps.bulletin['data_analysis']) }}
       </td>
     </template>
   </Bulletins>
@@ -60,6 +62,9 @@ export default{
   methods: {
     getDateFormatted(rawString) {
       return api.getDateFormatted(rawString, false)
+    },
+    getDateFormatted_eng(rawString) {
+      return api.getDateFormatted_eng(rawString, false)
     }
   }
 }

@@ -1,4 +1,4 @@
-// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2025 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
@@ -231,6 +231,7 @@
             :livelli="livelli"
             :readonly="readonly"
             @save-w31-data="saveW31Data"
+            @save-w31-data-multiple="saveW31DataMultiple"
           />
         </div>
       </div>
@@ -607,7 +608,7 @@ export default {
       this.modaleLivelli.hide()
     },
     saveW31Data(area, value) {
-      // console.log("saveW31Data")
+      console.log("saveW31Data")
       this.saving = true
       const payload = { }
       let campo = 'id_w31_livelli' 
@@ -627,6 +628,39 @@ export default {
           this.saving = false
         } else {
           area[campo] = value
+          this.updateW31(this.incendi.id_w31)
+        }
+        }).catch((error) => {
+        this.$toast.open(
+          {
+            message: `Errore di comunicazione: ${error}`,
+            type: 'error',
+            position: 'top-left'
+          }
+        )
+        this.saving = false
+      })
+    },
+    saveW31DataMultiple(area, value, value_wind) {
+      console.log("saveW31DataMultiple")
+      this.saving = true
+      const payload = { }
+      payload['wind'] = value_wind
+      payload['id_w31_livelli'] = value
+      console.log("payload",payload)
+      this.fetchPatch(area.id_w31_data_macroaree_livelli, 'data', payload).then((response) => {
+        if (!response.ok) {
+          this.$toast.open(
+            {
+              message: 'Errore nel salvataggio',
+              type: 'error',
+              position: 'top-left'
+            }
+          )
+          this.saving = false
+        } else {
+          area['id_w31_livelli'] = value
+          area['wind'] = value_wind
           this.updateW31(this.incendi.id_w31)
         }
         }).catch((error) => {

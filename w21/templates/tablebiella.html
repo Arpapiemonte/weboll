@@ -1,3 +1,4 @@
+{% load static %}
 <div xmlns="http://www.w3.org/1999/xhtml">
     <table class="table-autostrada">
         <thead>
@@ -24,25 +25,25 @@
             
         <tr>
             <th class="light" colspan="2" rowspan="2">Tempo Prevalente</th>
-            <td class="light"><img src="http://localhost:8000/static/images/icons/{{data.46.SKY_CONDIT.id_sky_condition}}.svg"
+            <td class="light"><img src="{% static 'images/icons/' %}{{data.46.SKY_CONDIT.id_sky_condition}}.svg"
                 height="12" width="12"/>
             </td>
-            <td class="light b-left"><img src="http://localhost:8000/static/images/icons/{{data.60.SKY_CONDIT.id_sky_condition}}.svg"
+            <td class="light b-left"><img src="{% static 'images/icons/' %}{{data.60.SKY_CONDIT.id_sky_condition}}.svg"
                 height="12" width="12"/>
             </td>
-            <td class="light"><img src="http://localhost:8000/static/images/icons/{{data.61.SKY_CONDIT.id_sky_condition}}.svg"
+            <td class="light"><img src="{% static 'images/icons/' %}{{data.61.SKY_CONDIT.id_sky_condition}}.svg"
                 height="12" width="12"/>
             </td>
-            <td class="light"><img src="http://localhost:8000/static/images/icons/{{data.62.SKY_CONDIT.id_sky_condition}}.svg"
+            <td class="light"><img src="{% static 'images/icons/' %}{{data.62.SKY_CONDIT.id_sky_condition}}.svg"
                 height="12" width="12"/>
             </td>
-            <td class="light"><img src="http://localhost:8000/static/images/icons/{{data.63.SKY_CONDIT.id_sky_condition}}.svg"
+            <td class="light"><img src="{% static 'images/icons/' %}{{data.63.SKY_CONDIT.id_sky_condition}}.svg"
                 height="12" width="12"/>
             </td>
-            <td class="light b-left"><img src="http://localhost:8000/static/images/icons/{{data.81.SKY_CONDIT.id_sky_condition}}.svg"
+            <td class="light b-left"><img src="{% static 'images/icons/' %}{{data.81.SKY_CONDIT.id_sky_condition}}.svg"
                 height="12" width="12"/>
             </td>
-            <td class="light"><img src="http://localhost:8000/static/images/icons/{{data.82.SKY_CONDIT.id_sky_condition}}.svg"
+            <td class="light"><img src="{% static 'images/icons/' %}{{data.82.SKY_CONDIT.id_sky_condition}}.svg"
                 height="12" width="12"/>
             </td>
         </tr>

@@ -71,7 +71,6 @@ COPY public.w22_zone (id_w22_zone, codice_istat_comune, progr_punto_com, denomin
 9	003096	900	Candoglia	Toce	PORTATA
 10	004089	901	Fossano	Stura di Demonte	PORTATA
 11	005029	900	Castelnuovo	Belbo	PORTATA
-13	006012	700	Basaluzzo	Orba	PORTATA
 14	004086	900	Farigliano	Tanaro	PORTATA
 15	004003	900	Alba	Tanaro	PORTATA
 17	006091	900	Masio	Tanaro	PORTATA
@@ -88,6 +87,7 @@ COPY public.w22_zone (id_w22_zone, codice_istat_comune, progr_punto_com, denomin
 8	018107	700	Palestro	Sesia	PORT_FIU
 12	006043	900	Cassine	Bormida	PORT_FIU
 24	006039	901	Casale Monferrato	Po	PORT_FIU
+13	006012	700	Basaluzzo	Orba	PORTATA
 \.
 
 
@@ -117,8 +117,8 @@ CREATE UNIQUE INDEX w22_zone_idx001 ON public.w22_zone USING btree (codice_istat
 -- Name: w22_zone_fkey001; Type: FK CONSTRAINT; Schema: public; Owner: weboll
 --
 
-ALTER TABLE ONLY public.w22_zone
-    ADD CONSTRAINT w22_zone_fkey001 FOREIGN KEY (codice_istat_comune, progr_punto_com) REFERENCES public.stazione_misura(codice_istat_comune, progr_punto_com) ON UPDATE CASCADE ON DELETE CASCADE;
+-- ALTER TABLE ONLY public.w22_zone
+--     ADD CONSTRAINT w22_zone_fkey001 FOREIGN KEY (codice_istat_comune, progr_punto_com) REFERENCES public.stazione_misura(codice_istat_comune, progr_punto_com) ON UPDATE CASCADE ON DELETE CASCADE;
 
 
 --

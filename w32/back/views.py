@@ -27,6 +27,8 @@ from rest_framework.response import Response
 # from rest_framework_xml.renderers import XMLRenderer
 from wkhtmltopdf.views import PDFTemplateResponse
 
+from w29.back import models as models_w29
+from w29.back.serializers import W29SerializerFull as W29SerializerFull_w29
 from w32.back import models
 from w32.back.serializers import (
     W32DataSerializer,
@@ -60,18 +62,21 @@ class W32View(viewsets.ModelViewSet):
     def list(self, request, *args, **kwargs):
         month = self.request.query_params.get("month", "all")
         year = self.request.query_params.get("year", "all")
+        order = self.request.query_params.get("order", "-last_update")
+
         if month != "all":
             queryset = (
                 self.get_queryset()
                 .filter(data_emissione__year=year)
                 .filter(data_emissione__month=month)
+                .order_by(order)
             )
         elif year != "all":
             queryset = self.filter_queryset(
-                self.get_queryset().filter(data_emissione__year=year)
+                self.get_queryset().filter(data_emissione__year=year).order_by(order)
             )
         else:
-            queryset = self.filter_queryset(self.get_queryset())
+            queryset = self.filter_queryset(self.get_queryset().order_by(order))
 
         page = self.paginate_queryset(queryset)
         if page is not None:
@@ -219,6 +224,7 @@ class W32View(viewsets.ModelViewSet):
         # aumento il sequenziale perchè è una nuova emissione
         numero_bollettino = int(old_w32.numero_bollettino.split("/")[0])
         numero_bollettino = numero_bollettino + 1
+        print(numero_bollettino, old_w32.data_emissione.year)
         # gestione anno nuovo
         if old_w32.data_emissione.year < today.year:
             print("new(): cambio dell'anno imposto il sequenziale a 1")
@@ -562,6 +568,147 @@ def calcolomaxmbacini(defense):
     return maxdefense
 
 
+def defenseValue(class_name):
+    value = -1
+    if class_name == "A":
+        value = 0
+    elif class_name == "I":
+        value = 1
+    elif class_name == "P":
+        value = 2
+    elif class_name == "D":
+        value = 3
+    else:
+        print("defenseValue: classe non trovata", class_name)
+        raise Exception("defenseValue: classe non trovata", class_name)
+    return value
+
+
+def slopsValue(class_name):
+    value = -1
+    if class_name == "-":
+        value = 0
+    elif class_name == "1":
+        value = 1
+    elif class_name == "2":
+        value = 2
+    elif class_name == "3":
+        value = 3
+    else:
+        print("slopsValue: classe non trovata", class_name)
+        raise Exception("slopsValue: classe non trovata", class_name)
+    return value
+
+
+class FraneHTMLView(TemplateView):
+    template_name = "franew32tot.html"
+    http_method_names = ["get"]
+
+    def get_context_data(self, **kwargs):
+        queryset = models.W32.objects
+        w32 = get_object_or_404(queryset, pk=kwargs["pk"])
+        serializer = W32SerializerFull(w32)
+        defense = serializer.data
+        maxdefense = calcolomaxmbacini(defense)
+        convert_to_date(defense, "data_validita")
+        convert_to_date(defense, "data_emissione")
+
+        w29 = (
+            models_w29.W29.objects.filter(
+                numero_bollettino=defense["numero_bollettino"]
+            )
+            .order_by("-last_update")
+            .first()
+        )
+        W29Serializer_w29 = W29SerializerFull_w29(w29)
+        slops = W29Serializer_w29.data
+
+        chiavi = [
+            "livello_criticita_oss",
+            "livello_criticita_prev_oggi",
+            "livello_criticita_prev_domani",
+        ]
+        massimi_slops = {
+            "A": -1,
+            "B": -1,
+            "C": -1,
+            "D": -1,
+            "E": -1,
+            "F": -1,
+            "G": -1,
+            "H": -1,
+            "I": -1,
+            "L": -1,
+            "M": -1,
+        }
+
+        massimi_defense = {"A": -1, "B": -1, "C": -1, "D": -1, "E": -1, "F": -1}
+
+        for slop in slops["w29data_set"]:
+            for chiave in chiavi:
+                if (
+                    slopsValue(slop[chiave])
+                    > massimi_slops[slop["id_w29_zone"]["descrizione"]]
+                ):
+                    massimi_slops[slop["id_w29_zone"]["descrizione"]] = slopsValue(
+                        slop[chiave]
+                    )
+
+        for defe in defense["w32data_set"]:
+            for chiave in chiavi:
+                if (
+                    defenseValue(defe[chiave])
+                    > massimi_defense[defe["id_w32_zone"]["descrizione"]]
+                ):
+                    massimi_defense[defe["id_w32_zone"]["descrizione"]] = defenseValue(
+                        defe[chiave]
+                    )
+
+        massimi_frane = {
+            "A": max(massimi_slops["A"], massimi_defense["A"]),
+            "B": max(massimi_slops["B"], massimi_defense["B"]),
+            "C": max(massimi_slops["C"], massimi_defense["C"]),
+            "D": max(massimi_slops["D"], massimi_defense["D"]),
+            "E": max(massimi_slops["E"], massimi_defense["E"]),
+            "F": max(massimi_slops["F"], massimi_defense["F"]),
+            "G": massimi_slops["G"],
+            "H": massimi_slops["H"],
+            "I": massimi_slops["I"],
+            "L": massimi_slops["L"],
+            "M": massimi_slops["M"],
+        }
+
+        context = {
+            "massimi_frane": massimi_frane,
+            "defense": defense,
+            "slops": slops,
+            "title": "Bollettino Defense",
+            "maxdefense": maxdefense,
+        }
+        return context
+
+
+class FranePDFView(FraneHTMLView):
+    def get(self, request, *args, **kwargs):
+        os.environ.pop("http_proxy", None)
+        os.environ.pop("https_proxy", None)
+        os.environ.pop("HTTP_PROXY", None)
+        os.environ.pop("HTTPS_PROXY", None)
+        response = PDFTemplateResponse(
+            request=request,
+            template=self.template_name,
+            context=self.get_context_data(**kwargs),
+            filename="frane.pdf",
+            cmd_options={
+                "margin-bottom": 0,
+                "margin-left": 0,
+                "margin-right": 0,
+                "margin-top": 0,
+            },
+        )
+        return response
+
+
 class DefenseHTMLView(TemplateView):
     template_name = "defense.html"
     http_method_names = ["get"]
@@ -586,6 +733,10 @@ class DefenseHTMLView(TemplateView):
 
 class DefensePDFView(DefenseHTMLView):
     def get(self, request, *args, **kwargs):
+        os.environ.pop("http_proxy", None)
+        os.environ.pop("https_proxy", None)
+        os.environ.pop("HTTP_PROXY", None)
+        os.environ.pop("HTTPS_PROXY", None)
         response = PDFTemplateResponse(
             request=request,
             template=self.template_name,
@@ -605,7 +756,12 @@ class DefensePngView(DetailView):
     http_method_names = ["get"]
 
     def get(self, request, *args, **kwargs):
-        r = requests.get("http://django:8000/w32/pdf/%d" % kwargs["pk"])
+        os.environ.pop("http_proxy", None)
+        os.environ.pop("https_proxy", None)
+        os.environ.pop("HTTP_PROXY", None)
+        os.environ.pop("HTTPS_PROXY", None)
+        django_url = os.getenv("DJANGO_URL", "http://django:8000")
+        r = requests.get(django_url + "/w32/pdf/%d" % kwargs["pk"])
 
         with tempfile.NamedTemporaryFile(suffix=".pdf") as f:
             f.write(r.content)

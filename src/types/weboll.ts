@@ -880,6 +880,22 @@ export interface paths {
     /** @description API endpoint that allows W22 bulletins to be viewed or edited */
     get: operations["w22verifica_bulletins_new_retrieve"];
   };
+  "/w22verifica/criticita/": {
+    /** @description API endpoint that allows W22 bulletin Criticità to be viewed */
+    get: operations["w22verifica_criticita_list"];
+    /** @description API endpoint that allows W22 bulletin Criticità to be viewed */
+    post: operations["w22verifica_criticita_create"];
+  };
+  "/w22verifica/criticita/{id_w22_criticita}/": {
+    /** @description API endpoint that allows W22 bulletin Criticità to be viewed */
+    get: operations["w22verifica_criticita_retrieve"];
+    /** @description API endpoint that allows W22 bulletin Criticità to be viewed */
+    put: operations["w22verifica_criticita_update"];
+    /** @description API endpoint that allows W22 bulletin Criticità to be viewed */
+    delete: operations["w22verifica_criticita_destroy"];
+    /** @description API endpoint that allows W22 bulletin Criticità to be viewed */
+    patch: operations["w22verifica_criticita_partial_update"];
+  };
   "/w22verifica/data/": {
     /** @description API endpoint that allows W22 bulletin Data to be viewed or edited */
     get: operations["w22verifica_data_list"];
@@ -1097,6 +1113,114 @@ export interface paths {
     delete: operations["w23_zone_destroy"];
     /** @description API endpoint that allows W23 bulletin Zone to be viewed */
     patch: operations["w23_zone_partial_update"];
+  };
+  "/w23verifica/bulletins/": {
+    /** @description API endpoint that allows W23 bulletins to be viewed or edited */
+    get: operations["w23verifica_bulletins_list"];
+    /** @description API endpoint that allows W23 bulletins to be viewed or edited */
+    post: operations["w23verifica_bulletins_create"];
+  };
+  "/w23verifica/bulletins/{id_w23verifica}/": {
+    /** @description API endpoint that allows W23 bulletins to be viewed or edited */
+    get: operations["w23verifica_bulletins_retrieve"];
+    /** @description API endpoint that allows W23 bulletins to be viewed or edited */
+    put: operations["w23verifica_bulletins_update"];
+    /** @description API endpoint that allows W23 bulletins to be viewed or edited */
+    delete: operations["w23verifica_bulletins_destroy"];
+    /** @description API endpoint that allows W23 bulletins to be viewed or edited */
+    patch: operations["w23verifica_bulletins_partial_update"];
+  };
+  "/w23verifica/bulletins/{id_w23verifica}/send/": {
+    /** @description API endpoint that allows W23 bulletins to be viewed or edited */
+    get: operations["w23verifica_bulletins_send_retrieve"];
+  };
+  "/w23verifica/bulletins/bulk_update/": {
+    /** @description API endpoint that allows W23 bulletins to be viewed or edited */
+    post: operations["w23verifica_bulletins_bulk_update_create"];
+  };
+  "/w23verifica/bulletins/new/{num_bollettino}/": {
+    /** @description API endpoint that allows W23 bulletins to be viewed or edited */
+    get: operations["w23verifica_bulletins_new_retrieve"];
+  };
+  "/w23verifica/criticita/": {
+    /** @description API endpoint that allows W23 bulletin Criticità to be viewed */
+    get: operations["w23verifica_criticita_list"];
+    /** @description API endpoint that allows W23 bulletin Criticità to be viewed */
+    post: operations["w23verifica_criticita_create"];
+  };
+  "/w23verifica/criticita/{id_w23_criticita}/": {
+    /** @description API endpoint that allows W23 bulletin Criticità to be viewed */
+    get: operations["w23verifica_criticita_retrieve"];
+    /** @description API endpoint that allows W23 bulletin Criticità to be viewed */
+    put: operations["w23verifica_criticita_update"];
+    /** @description API endpoint that allows W23 bulletin Criticità to be viewed */
+    delete: operations["w23verifica_criticita_destroy"];
+    /** @description API endpoint that allows W23 bulletin Criticità to be viewed */
+    patch: operations["w23verifica_criticita_partial_update"];
+  };
+  "/w23verifica/data/": {
+    /** @description API endpoint that allows W23 bulletin Data to be viewed or edited */
+    get: operations["w23verifica_data_list"];
+    /** @description API endpoint that allows W23 bulletin Data to be viewed or edited */
+    post: operations["w23verifica_data_create"];
+  };
+  "/w23verifica/data/{id_w23verifica_data}/": {
+    /** @description API endpoint that allows W23 bulletin Data to be viewed or edited */
+    get: operations["w23verifica_data_retrieve"];
+    /** @description API endpoint that allows W23 bulletin Data to be viewed or edited */
+    put: operations["w23verifica_data_update"];
+    /** @description API endpoint that allows W23 bulletin Data to be viewed or edited */
+    delete: operations["w23verifica_data_destroy"];
+    /** @description API endpoint that allows W23 bulletin Data to be viewed or edited */
+    patch: operations["w23verifica_data_partial_update"];
+  };
+  "/w23verifica/giudizio/": {
+    /** @description API endpoint that allows W23 bulletin Tendenza to be viewed */
+    get: operations["w23verifica_giudizio_list"];
+    /** @description API endpoint that allows W23 bulletin Tendenza to be viewed */
+    post: operations["w23verifica_giudizio_create"];
+  };
+  "/w23verifica/giudizio/{id_w23giudizio}/": {
+    /** @description API endpoint that allows W23 bulletin Tendenza to be viewed */
+    get: operations["w23verifica_giudizio_retrieve"];
+    /** @description API endpoint that allows W23 bulletin Tendenza to be viewed */
+    put: operations["w23verifica_giudizio_update"];
+    /** @description API endpoint that allows W23 bulletin Tendenza to be viewed */
+    delete: operations["w23verifica_giudizio_destroy"];
+    /** @description API endpoint that allows W23 bulletin Tendenza to be viewed */
+    patch: operations["w23verifica_giudizio_partial_update"];
+  };
+  "/w23verifica/severita/": {
+    /** @description API endpoint that allows W23 bulletin Criticità to be viewed */
+    get: operations["w23verifica_severita_list"];
+    /** @description API endpoint that allows W23 bulletin Criticità to be viewed */
+    post: operations["w23verifica_severita_create"];
+  };
+  "/w23verifica/severita/{id_w23severita}/": {
+    /** @description API endpoint that allows W23 bulletin Criticità to be viewed */
+    get: operations["w23verifica_severita_retrieve"];
+    /** @description API endpoint that allows W23 bulletin Criticità to be viewed */
+    put: operations["w23verifica_severita_update"];
+    /** @description API endpoint that allows W23 bulletin Criticità to be viewed */
+    delete: operations["w23verifica_severita_destroy"];
+    /** @description API endpoint that allows W23 bulletin Criticità to be viewed */
+    patch: operations["w23verifica_severita_partial_update"];
+  };
+  "/w23verifica/zone/": {
+    /** @description API endpoint that allows W23 bulletin Zone to be viewed or edited */
+    get: operations["w23verifica_zone_list"];
+    /** @description API endpoint that allows W23 bulletin Zone to be viewed or edited */
+    post: operations["w23verifica_zone_create"];
+  };
+  "/w23verifica/zone/{id_w23_zone}/": {
+    /** @description API endpoint that allows W23 bulletin Zone to be viewed or edited */
+    get: operations["w23verifica_zone_retrieve"];
+    /** @description API endpoint that allows W23 bulletin Zone to be viewed or edited */
+    put: operations["w23verifica_zone_update"];
+    /** @description API endpoint that allows W23 bulletin Zone to be viewed or edited */
+    delete: operations["w23verifica_zone_destroy"];
+    /** @description API endpoint that allows W23 bulletin Zone to be viewed or edited */
+    patch: operations["w23verifica_zone_partial_update"];
   };
   "/w24/bulletins/": {
     /** @description API endpoint that allows W24 bulletins to be viewed or edited */
@@ -1320,6 +1444,10 @@ export interface paths {
     /** @description API endpoint that allows W29 bulletins to be viewed or edited */
     patch: operations["w29_bulletins_partial_update"];
   };
+  "/w29/bulletins/{id_w29}/reopen/": {
+    /** @description API endpoint that allows W29 bulletins to be viewed or edited */
+    get: operations["w29_bulletins_reopen_retrieve"];
+  };
   "/w29/bulletins/{id_w29}/send/": {
     /** @description API endpoint that allows W29 bulletins to be viewed or edited */
     get: operations["w29_bulletins_send_retrieve"];
@@ -1539,6 +1667,10 @@ export interface paths {
     delete: operations["w32_bulletins_destroy"];
     /** @description API endpoint that allows W32 bulletins to be viewed or edited */
     patch: operations["w32_bulletins_partial_update"];
+  };
+  "/w32/bulletins/{id_w32}/reopen/": {
+    /** @description API endpoint that allows W32 bulletins to be viewed or edited */
+    get: operations["w32_bulletins_reopen_retrieve"];
   };
   "/w32/bulletins/{id_w32}/send/": {
     /** @description API endpoint that allows W32 bulletins to be viewed or edited */
@@ -1818,16 +1950,6 @@ export interface paths {
     delete: operations["w35_forecast_comuni_destroy"];
     patch: operations["w35_forecast_comuni_partial_update"];
   };
-  "/w35/last_models/": {
-    get: operations["w35_last_models_list"];
-    post: operations["w35_last_models_create"];
-  };
-  "/w35/last_models/{id_forecast_station}/": {
-    get: operations["w35_last_models_retrieve"];
-    put: operations["w35_last_models_update"];
-    delete: operations["w35_last_models_destroy"];
-    patch: operations["w35_last_models_partial_update"];
-  };
   "/w35/tasks/": {
     get: operations["w35_tasks_list"];
     post: operations["w35_tasks_create"];
@@ -1862,6 +1984,10 @@ export interface paths {
     /** @description API endpoint that allows W36 bulletins to be viewed or edited */
     get: operations["w36_bulletins_send_retrieve"];
   };
+  "/w36/bulletins/{id_w36}/send_auto/": {
+    /** @description API endpoint that allows W36 bulletins to be viewed or edited */
+    get: operations["w36_bulletins_send_auto_retrieve"];
+  };
   "/w36/bulletins/bulk_update/": {
     /** @description API endpoint that allows W36 bulletins to be viewed or edited */
     post: operations["w36_bulletins_bulk_update_create"];
@@ -1869,6 +1995,10 @@ export interface paths {
   "/w36/bulletins/new/": {
     /** @description API endpoint that allows W36 bulletins to be viewed or edited */
     get: operations["w36_bulletins_new_retrieve"];
+  };
+  "/w36/current/{emissione}/": {
+    /** @description API endpoint that allows W36 bulletin Data to be viewed or edited */
+    get: operations["w36_current_retrieve"];
   };
   "/w36/data/": {
     /** @description API endpoint that allows W36 bulletin Data to be viewed or edited */
@@ -1918,6 +2048,10 @@ export interface paths {
     /** @description API endpoint that allows W37 bulletins to be viewed or edited */
     patch: operations["w37_bulletins_partial_update"];
   };
+  "/w37/bulletins/{id_w37}/reload_data/": {
+    /** @description API endpoint that allows W37 bulletins to be viewed or edited */
+    get: operations["w37_bulletins_reload_data_retrieve"];
+  };
   "/w37/bulletins/{id_w37}/reopen/": {
     /** @description API endpoint that allows W37 bulletins to be viewed or edited */
     get: operations["w37_bulletins_reopen_retrieve"];
@@ -1949,6 +2083,110 @@ export interface paths {
     delete: operations["w37_data_destroy"];
     /** @description API endpoint that allows W37 bulletin Data to be viewed or edited */
     patch: operations["w37_data_partial_update"];
+  };
+  "/w38/bulletins/": {
+    /** @description API endpoint that allows W38 bulletins to be viewed or edited */
+    get: operations["w38_bulletins_list"];
+    /** @description API endpoint that allows W38 bulletins to be viewed or edited */
+    post: operations["w38_bulletins_create"];
+  };
+  "/w38/bulletins/{id_w38}/": {
+    /** @description API endpoint that allows W38 bulletins to be viewed or edited */
+    get: operations["w38_bulletins_retrieve"];
+    /** @description API endpoint that allows W38 bulletins to be viewed or edited */
+    put: operations["w38_bulletins_update"];
+    /** @description API endpoint that allows W38 bulletins to be viewed or edited */
+    delete: operations["w38_bulletins_destroy"];
+    /** @description API endpoint that allows W38 bulletins to be viewed or edited */
+    patch: operations["w38_bulletins_partial_update"];
+  };
+  "/w38/bulletins/{id_w38}/reopen/": {
+    /** @description API endpoint that allows W38 bulletins to be viewed or edited */
+    get: operations["w38_bulletins_reopen_retrieve"];
+  };
+  "/w38/bulletins/{id_w38}/send/": {
+    /** @description API endpoint that allows W38 bulletins to be viewed or edited */
+    get: operations["w38_bulletins_send_retrieve"];
+  };
+  "/w38/bulletins/bulk_update/": {
+    /** @description API endpoint that allows W38 bulletins to be viewed or edited */
+    post: operations["w38_bulletins_bulk_update_create"];
+  };
+  "/w38/bulletins/new/": {
+    /** @description API endpoint that allows W38 bulletins to be viewed or edited */
+    get: operations["w38_bulletins_new_retrieve"];
+  };
+  "/w38/data/": {
+    /** @description API endpoint that allows W38 bulletin Data to be viewed or edited */
+    get: operations["w38_data_list"];
+    /** @description API endpoint that allows W38 bulletin Data to be viewed or edited */
+    post: operations["w38_data_create"];
+  };
+  "/w38/data/{id_w38_data}/": {
+    /** @description API endpoint that allows W38 bulletin Data to be viewed or edited */
+    get: operations["w38_data_retrieve"];
+    /** @description API endpoint that allows W38 bulletin Data to be viewed or edited */
+    put: operations["w38_data_update"];
+    /** @description API endpoint that allows W38 bulletin Data to be viewed or edited */
+    delete: operations["w38_data_destroy"];
+    /** @description API endpoint that allows W38 bulletin Data to be viewed or edited */
+    patch: operations["w38_data_partial_update"];
+  };
+  "/w38/dataIvrea/": {
+    /** @description API endpoint that allows W38 DatiI vrea to be viewed */
+    get: operations["w38_dataIvrea_list"];
+    /** @description API endpoint that allows W38 DatiI vrea to be viewed */
+    post: operations["w38_dataIvrea_create"];
+  };
+  "/w38/dataIvrea/{id_w38}/": {
+    /** @description API endpoint that allows W38 DatiI vrea to be viewed */
+    get: operations["w38_dataIvrea_retrieve"];
+    /** @description API endpoint that allows W38 DatiI vrea to be viewed */
+    put: operations["w38_dataIvrea_update"];
+    /** @description API endpoint that allows W38 DatiI vrea to be viewed */
+    delete: operations["w38_dataIvrea_destroy"];
+    /** @description API endpoint that allows W38 DatiI vrea to be viewed */
+    patch: operations["w38_dataIvrea_partial_update"];
+  };
+  "/w99/forecast_values/": {
+    get: operations["w99_forecast_values_list"];
+    post: operations["w99_forecast_values_create"];
+  };
+  "/w99/forecast_values/{id_forecast_value}/": {
+    get: operations["w99_forecast_values_retrieve"];
+    put: operations["w99_forecast_values_update"];
+    delete: operations["w99_forecast_values_destroy"];
+    patch: operations["w99_forecast_values_partial_update"];
+  };
+  "/w99/last_models/": {
+    get: operations["w99_last_models_list"];
+    post: operations["w99_last_models_create"];
+  };
+  "/w99/last_models/{id_forecast_station}/": {
+    get: operations["w99_last_models_retrieve"];
+    put: operations["w99_last_models_update"];
+    delete: operations["w99_last_models_destroy"];
+    patch: operations["w99_last_models_partial_update"];
+  };
+  "/w99/meteo_real_time/": {
+    get: operations["w99_meteo_real_time_list"];
+    post: operations["w99_meteo_real_time_create"];
+  };
+  "/w99/meteo_real_time/{codice_istat_comune}/": {
+    get: operations["w99_meteo_real_time_retrieve"];
+    put: operations["w99_meteo_real_time_update"];
+    delete: operations["w99_meteo_real_time_destroy"];
+    patch: operations["w99_meteo_real_time_partial_update"];
+  };
+  "/w99/stazione_misura/": {
+    get: operations["w99_stazione_misura_list"];
+    post: operations["w99_stazione_misura_create"];
+  };
+  "/w99/stazione_misura/{codice_istat_comune}/": {
+    get: operations["w99_stazione_misura_retrieve"];
+    put: operations["w99_stazione_misura_update"];
+    delete: operations["w99_stazione_misura_destroy"];
+    patch: operations["w99_stazione_misura_partial_update"];
   };
 }
 
@@ -1989,7 +2227,7 @@ export interface components {
       id_classes: number;
       id_parametro: string;
       description?: string | null;
-      classes_value: readonly (components["schemas"]["ClassesValue"])[];
+      classes_value: readonly components["schemas"]["ClassesValue"][];
     };
     ClassesValue: {
       id_classes_value: number;
@@ -2028,6 +2266,18 @@ export interface components {
       time_emiss: string;
       last_update: string;
     };
+    ForecastValues: {
+      station: string;
+      parameter: string;
+      date_emiss: string;
+      time_emiss: string;
+      /** Format: date */
+      date_rif: string;
+      /** Format: time */
+      time_rif: string;
+      /** Format: decimal */
+      value?: string | null;
+    };
     ForecastZone: {
       id_forecast_zone: number;
       model_name: string;
@@ -2047,6 +2297,26 @@ export interface components {
       id_parametro: string;
       id_aggregazione: number;
     };
+    MeteoRealTime: {
+      codice_istat_comune: string;
+      id_rete_monit: string;
+      progr_punto_com: number;
+      /** Format: date */
+      data: string;
+      /** Format: time */
+      ora: string;
+      id_parametro: string;
+      id_aggregazione: number;
+      /** Format: decimal */
+      valore_originale?: string | null;
+      /** Format: decimal */
+      valore_validato?: string | null;
+      tipologia_validaz?: string | null;
+      flag_validaz_autom?: string | null;
+      flag_gestore_sistema?: string | null;
+      /** Format: date-time */
+      data_agg: string;
+    };
     MyTokenObtainPair: {
       username: string;
       password: string;
@@ -2063,393 +2333,423 @@ export interface components {
     };
     PaginatedW05List: {
       /** @example 123 */
-      count?: number;
+      count: number;
       /**
-       * Format: uri 
+       * Format: uri
        * @example http://api.example.org/accounts/?page=4
        */
       next?: string | null;
       /**
-       * Format: uri 
+       * Format: uri
        * @example http://api.example.org/accounts/?page=2
        */
       previous?: string | null;
-      results?: (components["schemas"]["W05"])[];
+      results: components["schemas"]["W05"][];
     };
     PaginatedW06List: {
       /** @example 123 */
-      count?: number;
+      count: number;
       /**
-       * Format: uri 
+       * Format: uri
        * @example http://api.example.org/accounts/?page=4
        */
       next?: string | null;
       /**
-       * Format: uri 
+       * Format: uri
        * @example http://api.example.org/accounts/?page=2
        */
       previous?: string | null;
-      results?: (components["schemas"]["W06"])[];
+      results: components["schemas"]["W06"][];
     };
     PaginatedW07List: {
       /** @example 123 */
-      count?: number;
+      count: number;
       /**
-       * Format: uri 
+       * Format: uri
        * @example http://api.example.org/accounts/?page=4
        */
       next?: string | null;
       /**
-       * Format: uri 
+       * Format: uri
        * @example http://api.example.org/accounts/?page=2
        */
       previous?: string | null;
-      results?: (components["schemas"]["W07"])[];
+      results: components["schemas"]["W07"][];
     };
     PaginatedW12List: {
       /** @example 123 */
-      count?: number;
+      count: number;
       /**
-       * Format: uri 
+       * Format: uri
        * @example http://api.example.org/accounts/?page=4
        */
       next?: string | null;
       /**
-       * Format: uri 
+       * Format: uri
        * @example http://api.example.org/accounts/?page=2
        */
       previous?: string | null;
-      results?: (components["schemas"]["W12"])[];
+      results: components["schemas"]["W12"][];
     };
     PaginatedW15List: {
       /** @example 123 */
-      count?: number;
+      count: number;
       /**
-       * Format: uri 
+       * Format: uri
        * @example http://api.example.org/accounts/?page=4
        */
       next?: string | null;
       /**
-       * Format: uri 
+       * Format: uri
        * @example http://api.example.org/accounts/?page=2
        */
       previous?: string | null;
-      results?: (components["schemas"]["W15"])[];
+      results: components["schemas"]["W15"][];
     };
     PaginatedW16List: {
       /** @example 123 */
-      count?: number;
+      count: number;
       /**
-       * Format: uri 
+       * Format: uri
        * @example http://api.example.org/accounts/?page=4
        */
       next?: string | null;
       /**
-       * Format: uri 
+       * Format: uri
        * @example http://api.example.org/accounts/?page=2
        */
       previous?: string | null;
-      results?: (components["schemas"]["W16"])[];
+      results: components["schemas"]["W16"][];
     };
     PaginatedW17List: {
       /** @example 123 */
-      count?: number;
+      count: number;
       /**
-       * Format: uri 
+       * Format: uri
        * @example http://api.example.org/accounts/?page=4
        */
       next?: string | null;
       /**
-       * Format: uri 
+       * Format: uri
        * @example http://api.example.org/accounts/?page=2
        */
       previous?: string | null;
-      results?: (components["schemas"]["W17"])[];
+      results: components["schemas"]["W17"][];
     };
     PaginatedW17SerializerFullList: {
       /** @example 123 */
-      count?: number;
+      count: number;
       /**
-       * Format: uri 
+       * Format: uri
        * @example http://api.example.org/accounts/?page=4
        */
       next?: string | null;
       /**
-       * Format: uri 
+       * Format: uri
        * @example http://api.example.org/accounts/?page=2
        */
       previous?: string | null;
-      results?: (components["schemas"]["W17SerializerFull"])[];
+      results: components["schemas"]["W17SerializerFull"][];
     };
     PaginatedW17verificaList: {
       /** @example 123 */
-      count?: number;
+      count: number;
       /**
-       * Format: uri 
+       * Format: uri
        * @example http://api.example.org/accounts/?page=4
        */
       next?: string | null;
       /**
-       * Format: uri 
+       * Format: uri
        * @example http://api.example.org/accounts/?page=2
        */
       previous?: string | null;
-      results?: (components["schemas"]["W17verifica"])[];
+      results: components["schemas"]["W17verifica"][];
     };
     PaginatedW20List: {
       /** @example 123 */
-      count?: number;
+      count: number;
       /**
-       * Format: uri 
+       * Format: uri
        * @example http://api.example.org/accounts/?page=4
        */
       next?: string | null;
       /**
-       * Format: uri 
+       * Format: uri
        * @example http://api.example.org/accounts/?page=2
        */
       previous?: string | null;
-      results?: (components["schemas"]["W20"])[];
+      results: components["schemas"]["W20"][];
     };
     PaginatedW21List: {
       /** @example 123 */
-      count?: number;
+      count: number;
       /**
-       * Format: uri 
+       * Format: uri
        * @example http://api.example.org/accounts/?page=4
        */
       next?: string | null;
       /**
-       * Format: uri 
+       * Format: uri
        * @example http://api.example.org/accounts/?page=2
        */
       previous?: string | null;
-      results?: (components["schemas"]["W21"])[];
+      results: components["schemas"]["W21"][];
     };
     PaginatedW22List: {
       /** @example 123 */
-      count?: number;
+      count: number;
       /**
-       * Format: uri 
+       * Format: uri
        * @example http://api.example.org/accounts/?page=4
        */
       next?: string | null;
       /**
-       * Format: uri 
+       * Format: uri
        * @example http://api.example.org/accounts/?page=2
        */
       previous?: string | null;
-      results?: (components["schemas"]["W22"])[];
+      results: components["schemas"]["W22"][];
     };
     PaginatedW22VerificaList: {
       /** @example 123 */
-      count?: number;
+      count: number;
       /**
-       * Format: uri 
+       * Format: uri
        * @example http://api.example.org/accounts/?page=4
        */
       next?: string | null;
       /**
-       * Format: uri 
+       * Format: uri
        * @example http://api.example.org/accounts/?page=2
        */
       previous?: string | null;
-      results?: (components["schemas"]["W22Verifica"])[];
+      results: components["schemas"]["W22Verifica"][];
     };
     PaginatedW23List: {
       /** @example 123 */
-      count?: number;
+      count: number;
       /**
-       * Format: uri 
+       * Format: uri
        * @example http://api.example.org/accounts/?page=4
        */
       next?: string | null;
       /**
-       * Format: uri 
+       * Format: uri
        * @example http://api.example.org/accounts/?page=2
        */
       previous?: string | null;
-      results?: (components["schemas"]["W23"])[];
+      results: components["schemas"]["W23"][];
+    };
+    PaginatedW23VerificaList: {
+      /** @example 123 */
+      count: number;
+      /**
+       * Format: uri
+       * @example http://api.example.org/accounts/?page=4
+       */
+      next?: string | null;
+      /**
+       * Format: uri
+       * @example http://api.example.org/accounts/?page=2
+       */
+      previous?: string | null;
+      results: components["schemas"]["W23Verifica"][];
     };
     PaginatedW24List: {
       /** @example 123 */
-      count?: number;
+      count: number;
       /**
-       * Format: uri 
+       * Format: uri
        * @example http://api.example.org/accounts/?page=4
        */
       next?: string | null;
       /**
-       * Format: uri 
+       * Format: uri
        * @example http://api.example.org/accounts/?page=2
        */
       previous?: string | null;
-      results?: (components["schemas"]["W24"])[];
+      results: components["schemas"]["W24"][];
     };
     PaginatedW26List: {
       /** @example 123 */
-      count?: number;
+      count: number;
       /**
-       * Format: uri 
+       * Format: uri
        * @example http://api.example.org/accounts/?page=4
        */
       next?: string | null;
       /**
-       * Format: uri 
+       * Format: uri
        * @example http://api.example.org/accounts/?page=2
        */
       previous?: string | null;
-      results?: (components["schemas"]["W26"])[];
+      results: components["schemas"]["W26"][];
     };
     PaginatedW28List: {
       /** @example 123 */
-      count?: number;
+      count: number;
       /**
-       * Format: uri 
+       * Format: uri
        * @example http://api.example.org/accounts/?page=4
        */
       next?: string | null;
       /**
-       * Format: uri 
+       * Format: uri
        * @example http://api.example.org/accounts/?page=2
        */
       previous?: string | null;
-      results?: (components["schemas"]["W28"])[];
+      results: components["schemas"]["W28"][];
     };
     PaginatedW29List: {
       /** @example 123 */
-      count?: number;
+      count: number;
       /**
-       * Format: uri 
+       * Format: uri
        * @example http://api.example.org/accounts/?page=4
        */
       next?: string | null;
       /**
-       * Format: uri 
+       * Format: uri
        * @example http://api.example.org/accounts/?page=2
        */
       previous?: string | null;
-      results?: (components["schemas"]["W29"])[];
+      results: components["schemas"]["W29"][];
     };
     PaginatedW30List: {
       /** @example 123 */
-      count?: number;
+      count: number;
       /**
-       * Format: uri 
+       * Format: uri
        * @example http://api.example.org/accounts/?page=4
        */
       next?: string | null;
       /**
-       * Format: uri 
+       * Format: uri
        * @example http://api.example.org/accounts/?page=2
        */
       previous?: string | null;
-      results?: (components["schemas"]["W30"])[];
+      results: components["schemas"]["W30"][];
     };
     PaginatedW31List: {
       /** @example 123 */
-      count?: number;
+      count: number;
       /**
-       * Format: uri 
+       * Format: uri
        * @example http://api.example.org/accounts/?page=4
        */
       next?: string | null;
       /**
-       * Format: uri 
+       * Format: uri
        * @example http://api.example.org/accounts/?page=2
        */
       previous?: string | null;
-      results?: (components["schemas"]["W31"])[];
+      results: components["schemas"]["W31"][];
     };
     PaginatedW32List: {
       /** @example 123 */
-      count?: number;
+      count: number;
       /**
-       * Format: uri 
+       * Format: uri
        * @example http://api.example.org/accounts/?page=4
        */
       next?: string | null;
       /**
-       * Format: uri 
+       * Format: uri
        * @example http://api.example.org/accounts/?page=2
        */
       previous?: string | null;
-      results?: (components["schemas"]["W32"])[];
+      results: components["schemas"]["W32"][];
     };
     PaginatedW33List: {
       /** @example 123 */
-      count?: number;
+      count: number;
       /**
-       * Format: uri 
+       * Format: uri
        * @example http://api.example.org/accounts/?page=4
        */
       next?: string | null;
       /**
-       * Format: uri 
+       * Format: uri
        * @example http://api.example.org/accounts/?page=2
        */
       previous?: string | null;
-      results?: (components["schemas"]["W33"])[];
+      results: components["schemas"]["W33"][];
     };
     PaginatedW34List: {
       /** @example 123 */
-      count?: number;
+      count: number;
       /**
-       * Format: uri 
+       * Format: uri
        * @example http://api.example.org/accounts/?page=4
        */
       next?: string | null;
       /**
-       * Format: uri 
+       * Format: uri
        * @example http://api.example.org/accounts/?page=2
        */
       previous?: string | null;
-      results?: (components["schemas"]["W34"])[];
+      results: components["schemas"]["W34"][];
     };
     PaginatedW35List: {
       /** @example 123 */
-      count?: number;
+      count: number;
       /**
-       * Format: uri 
+       * Format: uri
        * @example http://api.example.org/accounts/?page=4
        */
       next?: string | null;
       /**
-       * Format: uri 
+       * Format: uri
        * @example http://api.example.org/accounts/?page=2
        */
       previous?: string | null;
-      results?: (components["schemas"]["W35"])[];
+      results: components["schemas"]["W35"][];
     };
     PaginatedW36List: {
       /** @example 123 */
-      count?: number;
+      count: number;
       /**
-       * Format: uri 
+       * Format: uri
        * @example http://api.example.org/accounts/?page=4
        */
       next?: string | null;
       /**
-       * Format: uri 
+       * Format: uri
        * @example http://api.example.org/accounts/?page=2
        */
       previous?: string | null;
-      results?: (components["schemas"]["W36"])[];
+      results: components["schemas"]["W36"][];
     };
     PaginatedW37List: {
       /** @example 123 */
-      count?: number;
+      count: number;
       /**
-       * Format: uri 
+       * Format: uri
        * @example http://api.example.org/accounts/?page=4
        */
       next?: string | null;
       /**
-       * Format: uri 
+       * Format: uri
        * @example http://api.example.org/accounts/?page=2
        */
       previous?: string | null;
-      results?: (components["schemas"]["W37"])[];
+      results: components["schemas"]["W37"][];
+    };
+    PaginatedW38List: {
+      /** @example 123 */
+      count: number;
+      /**
+       * Format: uri
+       * @example http://api.example.org/accounts/?page=4
+       */
+      next?: string | null;
+      /**
+       * Format: uri
+       * @example http://api.example.org/accounts/?page=2
+       */
+      previous?: string | null;
+      results: components["schemas"]["W38"][];
     };
     PatchedAreeMeteo: {
       id_area_meteo?: string;
@@ -2484,7 +2784,7 @@ export interface components {
       id_classes?: number;
       id_parametro?: string;
       description?: string | null;
-      classes_value?: readonly (components["schemas"]["ClassesValue"])[];
+      classes_value?: readonly components["schemas"]["ClassesValue"][];
     };
     PatchedForecastComuni: {
       id_forecast_comuni?: number;
@@ -2519,6 +2819,18 @@ export interface components {
       time_emiss?: string;
       last_update?: string;
     };
+    PatchedForecastValues: {
+      station?: string;
+      parameter?: string;
+      date_emiss?: string;
+      time_emiss?: string;
+      /** Format: date */
+      date_rif?: string;
+      /** Format: time */
+      time_rif?: string;
+      /** Format: decimal */
+      value?: string | null;
+    };
     PatchedForecastZone: {
       id_forecast_zone?: number;
       model_name?: string;
@@ -2538,6 +2850,26 @@ export interface components {
       id_parametro?: string;
       id_aggregazione?: number;
     };
+    PatchedMeteoRealTime: {
+      codice_istat_comune?: string;
+      id_rete_monit?: string;
+      progr_punto_com?: number;
+      /** Format: date */
+      data?: string;
+      /** Format: time */
+      ora?: string;
+      id_parametro?: string;
+      id_aggregazione?: number;
+      /** Format: decimal */
+      valore_originale?: string | null;
+      /** Format: decimal */
+      valore_validato?: string | null;
+      tipologia_validaz?: string | null;
+      flag_validaz_autom?: string | null;
+      flag_gestore_sistema?: string | null;
+      /** Format: date-time */
+      data_agg?: string;
+    };
     PatchedOzonoLivelli: {
       id_ozono_livelli?: number;
       livelli?: number;
@@ -2553,7 +2885,7 @@ export interface components {
       sky_condition?: string;
       description?: string;
       description_ita?: string;
-      classes?: (components["schemas"]["SkyConditionClasses"])[];
+      classes?: components["schemas"]["SkyConditionClasses"][];
     };
     PatchedSoglieNivoAreaPrev: {
       idtab_allertamento?: string;
@@ -2845,7 +3177,7 @@ export interface components {
     };
     PatchedW16Data: {
       id_w16_data?: number;
-      w16data1_set?: readonly (components["schemas"]["W16Data1"])[];
+      w16data1_set?: readonly components["schemas"]["W16Data1"][];
       /** Format: date-time */
       data_emissione?: string;
       /** Format: date-time */
@@ -2896,9 +3228,9 @@ export interface components {
     };
     PatchedW17SerializerFull: {
       id_w17?: number;
-      w17data_set?: readonly (components["schemas"]["W17Data"])[];
-      w17classes_set?: readonly (components["schemas"]["W17Classes"])[];
-      w17blob_set?: readonly (components["schemas"]["W17Blob"])[];
+      w17data_set?: readonly components["schemas"]["W17Data"][];
+      w17classes_set?: readonly components["schemas"]["W17Classes"][];
+      w17blob_set?: readonly components["schemas"]["W17Blob"][];
       /** Format: date */
       data_analysis?: string;
       /** Format: date */
@@ -3101,6 +3433,11 @@ export interface components {
       corso_acqua?: string;
       id_parametro?: string | null;
     };
+    PatchedW22verificaCriticita: {
+      id_w22_criticita?: string;
+      descrizione?: string | null;
+      colore_html?: string;
+    };
     PatchedW23: {
       id_w23?: number;
       /** Format: date */
@@ -3220,6 +3557,12 @@ export interface components {
       id_w23_effettiterritorio?: string;
       descrizione?: string | null;
     };
+    PatchedW23Giudizio: {
+      /** Format: int64 */
+      id_w23giudizio?: number;
+      descrizione?: string | null;
+      colore_html?: string;
+    };
     PatchedW23Pericolo: {
       id_w23_pericolo?: string;
       colore_html?: string;
@@ -3234,12 +3577,75 @@ export interface components {
       area?: string;
       valore?: string | null;
     };
+    PatchedW23Severita: {
+      /** Format: int64 */
+      id_w23severita?: number;
+      sigla?: string;
+      descrizione?: string | null;
+      colore_html?: string;
+    };
+    PatchedW23Verifica: {
+      id_w23verifica?: number;
+      id_numero_bollettino?: string;
+      numero_bollettino?: string;
+      /** Format: date */
+      data_emissione?: string;
+      /** Format: date */
+      data_analisi?: string;
+      /** Format: int64 */
+      id_w23giudizio?: number;
+      annotazione?: string | null;
+      situazione_evoluzione?: string | null;
+      status?: string;
+      /** Format: date-time */
+      last_update?: string;
+      username?: string;
+    };
+    PatchedW23VerificaData: {
+      id_w23verifica_data?: number;
+      id_w23_zone?: components["schemas"]["W23Zone"];
+      prev_crit_idraulico_oggi?: string | null;
+      oss_crit_idraulico_oggi?: string | null;
+      prev_crit_idraulico_domani?: string | null;
+      oss_crit_idraulico_domani?: string | null;
+      prev_crit_idrogeologico_oggi?: string | null;
+      oss_crit_idrogeologico_oggi?: string | null;
+      prev_crit_idrogeologico_domani?: string | null;
+      oss_crit_idrogeologico_domani?: string | null;
+      prev_crit_temporali_oggi?: string | null;
+      oss_crit_temporali_oggi?: string | null;
+      prev_crit_temporali_domani?: string | null;
+      oss_crit_temporali_domani?: string | null;
+      prev_crit_neve_oggi?: string | null;
+      oss_crit_neve_oggi?: string | null;
+      prev_crit_neve_domani?: string | null;
+      oss_crit_neve_domani?: string | null;
+      prev_crit_valanghe_oggi?: string | null;
+      oss_crit_valanghe_oggi?: string | null;
+      prev_crit_valanghe_domani?: string | null;
+      oss_crit_valanghe_domani?: string | null;
+      prev_crit_tot?: string | null;
+      oss_crit_tot?: string | null;
+      err_crit_tot?: string | null;
+      prev_crit_oggi?: string | null;
+      oss_crit_oggi?: string | null;
+      err_crit_oggi?: string | null;
+      prev_crit_domani?: string | null;
+      oss_crit_domani?: string | null;
+      err_crit_domani?: string | null;
+      id_w23verifica?: number;
+    };
     PatchedW23Zone: {
       id_w23_zone?: number;
       zona_allerta?: string;
       bacino?: string;
       provincia?: string;
       nome_zona?: string | null;
+    };
+    PatchedW23verificaCriticita: {
+      id_w23_criticita?: string;
+      descrizione?: string | null;
+      colore_html?: string;
     };
     PatchedW24: {
       id_w24?: number;
@@ -3358,6 +3764,7 @@ export interface components {
       data_osservazione?: string | null;
       data_simulazione?: string | null;
       note?: string | null;
+      id_w29_parent?: number | null;
     };
     PatchedW29Data: {
       id_w29_data?: number;
@@ -3455,6 +3862,7 @@ export interface components {
       data_osservazione?: string | null;
       data_simulazione?: string | null;
       note?: string | null;
+      id_w32_parent?: number | null;
     };
     PatchedW32Data: {
       id_w32_data?: number;
@@ -3564,11 +3972,19 @@ export interface components {
       username?: string;
       /** Format: int64 */
       id_w36_parent?: number | null;
+      /** Format: byte */
+      chart_max?: string | null;
+      /** Format: byte */
+      chart_min?: string | null;
+      internal_note?: string;
+      osservati?: string;
+      debug?: string;
     };
     PatchedW36Data: {
       id_w36_data?: number;
       /** Format: double */
       numeric_value?: number | null;
+      locked?: boolean;
       id_w36?: number;
       id_venue?: number;
       id_time_layouts?: number;
@@ -3614,12 +4030,45 @@ export interface components {
       temporali?: number | null;
       id_w37?: number;
     };
+    PatchedW38: {
+      id_w38?: number;
+      /** Format: date */
+      data_emissione?: string;
+      /** Format: date */
+      data_validita?: string;
+      numero_bollettino?: string;
+      situazione_evoluzione?: string | null;
+      status?: string;
+      /** Format: date-time */
+      last_update?: string;
+      username?: string;
+      note?: string | null;
+      id_w38_parent?: number | null;
+    };
+    PatchedW38Data: {
+      id_w38_data?: number;
+      id_venue?: string;
+      /** Format: double */
+      numeric_value?: number | null;
+      id_w38?: number;
+      id_time_layouts?: number;
+      id_parametro?: string;
+      id_aggregazione?: number;
+    };
+    PatchedW38DatiIvrea: {
+      id_w38?: number;
+      id_venue?: number | null;
+      /** Format: date */
+      data_emissione?: string;
+      numeric_value?: number | null;
+      id_time_layouts?: number;
+    };
     SkyCondition: {
       id_sky_condition: number;
       sky_condition: string;
       description: string;
       description_ita: string;
-      classes: (components["schemas"]["SkyConditionClasses"])[];
+      classes: components["schemas"]["SkyConditionClasses"][];
     };
     SkyConditionClasses: {
       id_parametro: string;
@@ -3790,8 +4239,8 @@ export interface components {
     };
     W05SerializerFull: {
       id_w05: number;
-      w05data_set: readonly (components["schemas"]["W05Data"])[];
-      w05classes_set: readonly (components["schemas"]["W05Classes"])[];
+      w05data_set: readonly components["schemas"]["W05Data"][];
+      w05classes_set: readonly components["schemas"]["W05Classes"][];
       /** Format: date-time */
       start_valid_time: string;
       validity: number;
@@ -3944,7 +4393,7 @@ export interface components {
     };
     W16Data: {
       id_w16_data: number;
-      w16data1_set: readonly (components["schemas"]["W16Data1"])[];
+      w16data1_set: readonly components["schemas"]["W16Data1"][];
       /** Format: date-time */
       data_emissione: string;
       /** Format: date-time */
@@ -4020,9 +4469,9 @@ export interface components {
     };
     W17SerializerFull: {
       id_w17: number;
-      w17data_set: readonly (components["schemas"]["W17Data"])[];
-      w17classes_set: readonly (components["schemas"]["W17Classes"])[];
-      w17blob_set: readonly (components["schemas"]["W17Blob"])[];
+      w17data_set: readonly components["schemas"]["W17Data"][];
+      w17classes_set: readonly components["schemas"]["W17Classes"][];
+      w17blob_set: readonly components["schemas"]["W17Blob"][];
       /** Format: date */
       data_analysis: string;
       /** Format: date */
@@ -4225,6 +4674,11 @@ export interface components {
       corso_acqua: string;
       id_parametro?: string | null;
     };
+    W22verificaCriticita: {
+      id_w22_criticita: string;
+      descrizione?: string | null;
+      colore_html: string;
+    };
     W23: {
       id_w23: number;
       /** Format: date */
@@ -4344,6 +4798,12 @@ export interface components {
       id_w23_effettiterritorio: string;
       descrizione?: string | null;
     };
+    W23Giudizio: {
+      /** Format: int64 */
+      id_w23giudizio: number;
+      descrizione?: string | null;
+      colore_html: string;
+    };
     W23Pericolo: {
       id_w23_pericolo: string;
       colore_html: string;
@@ -4375,12 +4835,75 @@ export interface components {
       last_update_annotazione: string;
       id_w23_parent?: number | null;
     };
+    W23Severita: {
+      /** Format: int64 */
+      id_w23severita: number;
+      sigla: string;
+      descrizione?: string | null;
+      colore_html: string;
+    };
+    W23Verifica: {
+      id_w23verifica: number;
+      id_numero_bollettino: string;
+      numero_bollettino: string;
+      /** Format: date */
+      data_emissione: string;
+      /** Format: date */
+      data_analisi: string;
+      /** Format: int64 */
+      id_w23giudizio: number;
+      annotazione?: string | null;
+      situazione_evoluzione?: string | null;
+      status: string;
+      /** Format: date-time */
+      last_update: string;
+      username: string;
+    };
+    W23VerificaData: {
+      id_w23verifica_data: number;
+      id_w23_zone: components["schemas"]["W23Zone"];
+      prev_crit_idraulico_oggi?: string | null;
+      oss_crit_idraulico_oggi?: string | null;
+      prev_crit_idraulico_domani?: string | null;
+      oss_crit_idraulico_domani?: string | null;
+      prev_crit_idrogeologico_oggi?: string | null;
+      oss_crit_idrogeologico_oggi?: string | null;
+      prev_crit_idrogeologico_domani?: string | null;
+      oss_crit_idrogeologico_domani?: string | null;
+      prev_crit_temporali_oggi?: string | null;
+      oss_crit_temporali_oggi?: string | null;
+      prev_crit_temporali_domani?: string | null;
+      oss_crit_temporali_domani?: string | null;
+      prev_crit_neve_oggi?: string | null;
+      oss_crit_neve_oggi?: string | null;
+      prev_crit_neve_domani?: string | null;
+      oss_crit_neve_domani?: string | null;
+      prev_crit_valanghe_oggi?: string | null;
+      oss_crit_valanghe_oggi?: string | null;
+      prev_crit_valanghe_domani?: string | null;
+      oss_crit_valanghe_domani?: string | null;
+      prev_crit_tot?: string | null;
+      oss_crit_tot?: string | null;
+      err_crit_tot?: string | null;
+      prev_crit_oggi?: string | null;
+      oss_crit_oggi?: string | null;
+      err_crit_oggi?: string | null;
+      prev_crit_domani?: string | null;
+      oss_crit_domani?: string | null;
+      err_crit_domani?: string | null;
+      id_w23verifica: number;
+    };
     W23Zone: {
       id_w23_zone: number;
       zona_allerta: string;
       bacino: string;
       provincia: string;
       nome_zona?: string | null;
+    };
+    W23verificaCriticita: {
+      id_w23_criticita: string;
+      descrizione?: string | null;
+      colore_html: string;
     };
     W24: {
       id_w24: number;
@@ -4411,7 +4934,7 @@ export interface components {
     };
     W24SerializerFull: {
       id_w24: number;
-      w24data_set: readonly (components["schemas"]["W24Data"])[];
+      w24data_set: readonly components["schemas"]["W24Data"][];
       numero_bollettino: string;
       /** Format: date */
       data_emissione: string;
@@ -4518,6 +5041,7 @@ export interface components {
       data_osservazione?: string | null;
       data_simulazione?: string | null;
       note?: string | null;
+      id_w29_parent?: number | null;
     };
     W29Data: {
       id_w29_data: number;
@@ -4578,7 +5102,7 @@ export interface components {
     };
     W30SerializerFull: {
       id_w30: number;
-      w30data_set: readonly (components["schemas"]["W30Data"])[];
+      w30data_set: readonly components["schemas"]["W30Data"][];
       /** Format: int64 */
       seq_num?: number | null;
       /** Format: date-time */
@@ -4667,6 +5191,7 @@ export interface components {
       data_osservazione?: string | null;
       data_simulazione?: string | null;
       note?: string | null;
+      id_w32_parent?: number | null;
     };
     W32Data: {
       id_w32_data: number;
@@ -4776,11 +5301,19 @@ export interface components {
       username: string;
       /** Format: int64 */
       id_w36_parent?: number | null;
+      /** Format: byte */
+      chart_max: string | null;
+      /** Format: byte */
+      chart_min: string | null;
+      internal_note: string;
+      osservati: string;
+      debug: string;
     };
     W36Data: {
       id_w36_data: number;
       /** Format: double */
       numeric_value?: number | null;
+      locked?: boolean;
       id_w36: number;
       id_venue: number;
       id_time_layouts: number;
@@ -4792,6 +5325,27 @@ export interface components {
       parametro_epid: string;
       /** Format: double */
       stima?: number | null;
+    };
+    W36SerializerFull: {
+      id_w36: number;
+      w36data_set: readonly components["schemas"]["W36Data"][];
+      seq_num?: number | null;
+      /** Format: date */
+      data_emissione: string;
+      status: string;
+      note: string;
+      /** Format: date-time */
+      last_update: string;
+      username: string;
+      /** Format: int64 */
+      id_w36_parent?: number | null;
+      /** Format: byte */
+      chart_max: string | null;
+      /** Format: byte */
+      chart_min: string | null;
+      internal_note: string;
+      osservati: string;
+      debug: string;
     };
     W37: {
       id_w37: number;
@@ -4826,6 +5380,39 @@ export interface components {
       temporali?: number | null;
       id_w37: number;
     };
+    W38: {
+      id_w38: number;
+      /** Format: date */
+      data_emissione: string;
+      /** Format: date */
+      data_validita: string;
+      numero_bollettino: string;
+      situazione_evoluzione?: string | null;
+      status: string;
+      /** Format: date-time */
+      last_update: string;
+      username: string;
+      note?: string | null;
+      id_w38_parent?: number | null;
+    };
+    W38Data: {
+      id_w38_data: number;
+      id_venue: string;
+      /** Format: double */
+      numeric_value?: number | null;
+      id_w38: number;
+      id_time_layouts: number;
+      id_parametro: string;
+      id_aggregazione: number;
+    };
+    W38DatiIvrea: {
+      id_w38: number;
+      id_venue?: number | null;
+      /** Format: date */
+      data_emissione: string;
+      numeric_value?: number | null;
+      id_time_layouts: number;
+    };
   };
   responses: never;
   parameters: never;
@@ -4833,6 +5420,8 @@ export interface components {
   headers: never;
   pathItems: never;
 }
+
+export type $defs = Record<string, never>;
 
 export type external = Record<string, never>;
 
@@ -4980,7 +5569,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W05 bulletins to be viewed or edited */
@@ -5182,7 +5773,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["Classes"])[];
+          "application/json": components["schemas"]["Classes"][];
         };
       };
     };
@@ -5253,7 +5844,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows Classes to be viewed */
@@ -5299,7 +5892,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W05Data"])[];
+          "application/json": components["schemas"]["W05Data"][];
         };
       };
     };
@@ -5370,7 +5963,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W05 bulletin Data to be viewed or edited */
@@ -5401,7 +5996,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W05Classes"])[];
+          "application/json": components["schemas"]["W05Classes"][];
         };
       };
     };
@@ -5472,7 +6067,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W05 bulletin Classes to be viewed or edited */
@@ -5503,7 +6100,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["SkyCondition"])[];
+          "application/json": components["schemas"]["SkyCondition"][];
         };
       };
     };
@@ -5574,7 +6171,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W16 bulletins to be viewed or edited */
@@ -5605,7 +6204,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["Venue"])[];
+          "application/json": components["schemas"]["Venue"][];
         };
       };
     };
@@ -5676,7 +6275,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that shows city names */
@@ -5784,7 +6385,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W06 bulletins to be viewed or edited */
@@ -5874,7 +6477,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W06Data"])[];
+          "application/json": components["schemas"]["W06Data"][];
         };
       };
     };
@@ -5945,7 +6548,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows w06 bulletin Data to be viewed or edited */
@@ -6053,7 +6658,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W07 bulletins to be viewed or edited */
@@ -6143,7 +6750,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W07Data"])[];
+          "application/json": components["schemas"]["W07Data"][];
         };
       };
     };
@@ -6214,7 +6821,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows w07 bulletin Data to be viewed or edited */
@@ -6322,7 +6931,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W12 bulletins to be viewed or edited */
@@ -6412,7 +7023,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W12Data"])[];
+          "application/json": components["schemas"]["W12Data"][];
         };
       };
     };
@@ -6483,7 +7094,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W12 bulletin Data to be viewed or edited */
@@ -6591,7 +7204,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W15 bulletins to be viewed or edited */
@@ -6681,7 +7296,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W15Data"])[];
+          "application/json": components["schemas"]["W15Data"][];
         };
       };
     };
@@ -6752,7 +7367,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W15 bulletin Data to be viewed or edited */
@@ -6860,7 +7477,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W16 bulletins to be viewed or edited */
@@ -6949,7 +7568,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W16Conf"])[];
+          "application/json": components["schemas"]["W16Conf"][];
         };
       };
     };
@@ -7020,7 +7639,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W16Conf records to be viewed */
@@ -7051,7 +7672,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W16Data"])[];
+          "application/json": components["schemas"]["W16Data"][];
         };
       };
     };
@@ -7122,7 +7743,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W16 bulletin Data to be viewed or updated */
@@ -7170,7 +7793,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["OzonoLivelli"])[];
+          "application/json": components["schemas"]["OzonoLivelli"][];
         };
       };
     };
@@ -7241,7 +7864,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows OzonoLivelli records to be viewed */
@@ -7349,7 +7974,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W17 bulletins to be viewed or edited */
@@ -7528,7 +8155,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   w17_bulletins_full_partial_update: {
@@ -7558,7 +8187,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W17Classes"])[];
+          "application/json": components["schemas"]["W17Classes"][];
         };
       };
     };
@@ -7629,7 +8258,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W17 classes to be viewed */
@@ -7660,7 +8291,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W17Data"])[];
+          "application/json": components["schemas"]["W17Data"][];
         };
       };
     };
@@ -7731,7 +8362,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W17 bulletin Data to be viewed or edited */
@@ -7762,7 +8395,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["StazioneMisura"])[];
+          "application/json": components["schemas"]["StazioneMisura"][];
         };
       };
     };
@@ -7833,7 +8466,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows stations to be viewed */
@@ -7864,7 +8499,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["Trend"])[];
+          "application/json": components["schemas"]["Trend"][];
         };
       };
     };
@@ -7935,7 +8570,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows trends to be viewed */
@@ -8043,7 +8680,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W31 bulletins to be viewed or edited */
@@ -8149,7 +8788,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W17verificaData"])[];
+          "application/json": components["schemas"]["W17verificaData"][];
         };
       };
     };
@@ -8220,7 +8859,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W17verifica bulletin Data to be viewed or edited */
@@ -8268,7 +8909,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W17verificaMassimali"])[];
+          "application/json": components["schemas"]["W17verificaMassimali"][];
         };
       };
     };
@@ -8339,7 +8980,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W17verificaMassimali bulletin Data to be viewed or edited */
@@ -8447,7 +9090,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W20 bulletins to be viewed or edited */
@@ -8521,7 +9166,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W20Data"])[];
+          "application/json": components["schemas"]["W20Data"][];
         };
       };
     };
@@ -8592,7 +9237,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W20 bulletin Data to be viewed or edited */
@@ -8623,7 +9270,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W20Pericolo"])[];
+          "application/json": components["schemas"]["W20Pericolo"][];
         };
       };
     };
@@ -8694,7 +9341,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W20 bulletin Pericolo to be viewed or edited */
@@ -8725,7 +9374,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W20Zone"])[];
+          "application/json": components["schemas"]["W20Zone"][];
         };
       };
     };
@@ -8796,7 +9445,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W20 bulletin Zone to be viewed or edited */
@@ -8904,7 +9555,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W21 bulletins to be viewed or edited */
@@ -8994,7 +9647,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W21Data"])[];
+          "application/json": components["schemas"]["W21Data"][];
         };
       };
     };
@@ -9065,7 +9718,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows w21 bulletin Data to be viewed or edited */
@@ -9173,7 +9828,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W22 bulletins to be viewed or edited */
@@ -9279,7 +9936,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W22Criticita"])[];
+          "application/json": components["schemas"]["W22Criticita"][];
         };
       };
     };
@@ -9350,7 +10007,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W22 bulletin Criticità to be viewed */
@@ -9381,7 +10040,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W22Data"])[];
+          "application/json": components["schemas"]["W22Data"][];
         };
       };
     };
@@ -9452,7 +10111,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W22 bulletin Data to be viewed or edited */
@@ -9483,7 +10144,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W22Tendenza"])[];
+          "application/json": components["schemas"]["W22Tendenza"][];
         };
       };
     };
@@ -9554,7 +10215,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W22 bulletin Tendenza to be viewed */
@@ -9585,7 +10248,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W22Zone"])[];
+          "application/json": components["schemas"]["W22Zone"][];
         };
       };
     };
@@ -9656,7 +10319,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W22 bulletin Zone to be viewed or edited */
@@ -9764,7 +10429,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W22 bulletins to be viewed or edited */
@@ -9838,12 +10505,116 @@ export interface operations {
       };
     };
   };
+  /** @description API endpoint that allows W22 bulletin Criticità to be viewed */
+  w22verifica_criticita_list: {
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["W22verificaCriticita"][];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W22 bulletin Criticità to be viewed */
+  w22verifica_criticita_create: {
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["W22verificaCriticita"];
+        "application/x-www-form-urlencoded": components["schemas"]["W22verificaCriticita"];
+        "multipart/form-data": components["schemas"]["W22verificaCriticita"];
+      };
+    };
+    responses: {
+      201: {
+        content: {
+          "application/json": components["schemas"]["W22verificaCriticita"];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W22 bulletin Criticità to be viewed */
+  w22verifica_criticita_retrieve: {
+    parameters: {
+      path: {
+        /** @description A unique value identifying this w22verifica criticita. */
+        id_w22_criticita: string;
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["W22verificaCriticita"];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W22 bulletin Criticità to be viewed */
+  w22verifica_criticita_update: {
+    parameters: {
+      path: {
+        /** @description A unique value identifying this w22verifica criticita. */
+        id_w22_criticita: string;
+      };
+    };
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["W22verificaCriticita"];
+        "application/x-www-form-urlencoded": components["schemas"]["W22verificaCriticita"];
+        "multipart/form-data": components["schemas"]["W22verificaCriticita"];
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["W22verificaCriticita"];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W22 bulletin Criticità to be viewed */
+  w22verifica_criticita_destroy: {
+    parameters: {
+      path: {
+        /** @description A unique value identifying this w22verifica criticita. */
+        id_w22_criticita: string;
+      };
+    };
+    responses: {
+      /** @description No response body */
+      204: {
+        content: never;
+      };
+    };
+  };
+  /** @description API endpoint that allows W22 bulletin Criticità to be viewed */
+  w22verifica_criticita_partial_update: {
+    parameters: {
+      path: {
+        /** @description A unique value identifying this w22verifica criticita. */
+        id_w22_criticita: string;
+      };
+    };
+    requestBody?: {
+      content: {
+        "application/json": components["schemas"]["PatchedW22verificaCriticita"];
+        "application/x-www-form-urlencoded": components["schemas"]["PatchedW22verificaCriticita"];
+        "multipart/form-data": components["schemas"]["PatchedW22verificaCriticita"];
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["W22verificaCriticita"];
+        };
+      };
+    };
+  };
   /** @description API endpoint that allows W22 bulletin Data to be viewed or edited */
   w22verifica_data_list: {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W22VerificaData"])[];
+          "application/json": components["schemas"]["W22VerificaData"][];
         };
       };
     };
@@ -9914,7 +10685,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W22 bulletin Data to be viewed or edited */
@@ -9945,7 +10718,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W22Giudizio"])[];
+          "application/json": components["schemas"]["W22Giudizio"][];
         };
       };
     };
@@ -10016,7 +10789,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W22 bulletin Tendenza to be viewed */
@@ -10047,7 +10822,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W22Severita"])[];
+          "application/json": components["schemas"]["W22Severita"][];
         };
       };
     };
@@ -10118,7 +10893,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W22 bulletin Criticità to be viewed */
@@ -10149,7 +10926,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W22Zone"])[];
+          "application/json": components["schemas"]["W22Zone"][];
         };
       };
     };
@@ -10220,7 +10997,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W22 bulletin Zone to be viewed or edited */
@@ -10328,7 +11107,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W23 bulletins to be viewed or edited */
@@ -10449,7 +11230,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W23Data"])[];
+          "application/json": components["schemas"]["W23Data"][];
         };
       };
     };
@@ -10520,7 +11301,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W23 bulletin Data to be viewed or edited */
@@ -10551,7 +11334,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W23Effettiterritorio"])[];
+          "application/json": components["schemas"]["W23Effettiterritorio"][];
         };
       };
     };
@@ -10622,7 +11405,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W23 bulletin Effetti sul territorio to be viewed */
@@ -10653,7 +11438,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W23Pericolo"])[];
+          "application/json": components["schemas"]["W23Pericolo"][];
         };
       };
     };
@@ -10724,7 +11509,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W23 bulletin Pericolo to be viewed */
@@ -10760,7 +11547,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W23Pluvossh6"])[];
+          "application/json": components["schemas"]["W23Pluvossh6"][];
         };
       };
     };
@@ -10827,7 +11614,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   w23_pluvossh6_partial_update: {
@@ -10856,7 +11645,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["SoglieNivoAreaPrev"])[];
+          "application/json": components["schemas"]["SoglieNivoAreaPrev"][];
         };
       };
     };
@@ -10923,7 +11712,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   w23_soglie_nivo_area_prev_partial_update: {
@@ -10952,7 +11743,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["SogliePluvAreaPrevMassimi"])[];
+          "application/json": components["schemas"]["SogliePluvAreaPrevMassimi"][];
         };
       };
     };
@@ -11019,7 +11810,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   w23_soglie_pluv_area_prev_massimi_partial_update: {
@@ -11048,7 +11841,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["SogliePluvAreaPrevMedie"])[];
+          "application/json": components["schemas"]["SogliePluvAreaPrevMedie"][];
         };
       };
     };
@@ -11115,7 +11908,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   w23_soglie_pluv_area_prev_medie_partial_update: {
@@ -11144,7 +11939,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["TimeLayouts"])[];
+          "application/json": components["schemas"]["TimeLayouts"][];
         };
       };
     };
@@ -11211,7 +12006,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   w23_time_layouts_partial_update: {
@@ -11241,7 +12038,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W23Zone"])[];
+          "application/json": components["schemas"]["W23Zone"][];
         };
       };
     };
@@ -11312,11 +12109,691 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W23 bulletin Zone to be viewed */
   w23_zone_partial_update: {
+    parameters: {
+      path: {
+        /** @description A unique value identifying this w23 zone. */
+        id_w23_zone: number;
+      };
+    };
+    requestBody?: {
+      content: {
+        "application/json": components["schemas"]["PatchedW23Zone"];
+        "application/x-www-form-urlencoded": components["schemas"]["PatchedW23Zone"];
+        "multipart/form-data": components["schemas"]["PatchedW23Zone"];
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["W23Zone"];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W23 bulletins to be viewed or edited */
+  w23verifica_bulletins_list: {
+    parameters: {
+      query?: {
+        /** @description A page number within the paginated result set. */
+        page?: number;
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["PaginatedW23VerificaList"];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W23 bulletins to be viewed or edited */
+  w23verifica_bulletins_create: {
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["W23Verifica"];
+        "application/x-www-form-urlencoded": components["schemas"]["W23Verifica"];
+        "multipart/form-data": components["schemas"]["W23Verifica"];
+      };
+    };
+    responses: {
+      201: {
+        content: {
+          "application/json": components["schemas"]["W23Verifica"];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W23 bulletins to be viewed or edited */
+  w23verifica_bulletins_retrieve: {
+    parameters: {
+      path: {
+        /** @description A unique integer value identifying this w23 verifica. */
+        id_w23verifica: number;
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["W23Verifica"];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W23 bulletins to be viewed or edited */
+  w23verifica_bulletins_update: {
+    parameters: {
+      path: {
+        /** @description A unique integer value identifying this w23 verifica. */
+        id_w23verifica: number;
+      };
+    };
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["W23Verifica"];
+        "application/x-www-form-urlencoded": components["schemas"]["W23Verifica"];
+        "multipart/form-data": components["schemas"]["W23Verifica"];
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["W23Verifica"];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W23 bulletins to be viewed or edited */
+  w23verifica_bulletins_destroy: {
+    parameters: {
+      path: {
+        /** @description A unique integer value identifying this w23 verifica. */
+        id_w23verifica: number;
+      };
+    };
+    responses: {
+      /** @description No response body */
+      204: {
+        content: never;
+      };
+    };
+  };
+  /** @description API endpoint that allows W23 bulletins to be viewed or edited */
+  w23verifica_bulletins_partial_update: {
+    parameters: {
+      path: {
+        /** @description A unique integer value identifying this w23 verifica. */
+        id_w23verifica: number;
+      };
+    };
+    requestBody?: {
+      content: {
+        "application/json": components["schemas"]["PatchedW23Verifica"];
+        "application/x-www-form-urlencoded": components["schemas"]["PatchedW23Verifica"];
+        "multipart/form-data": components["schemas"]["PatchedW23Verifica"];
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["W23Verifica"];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W23 bulletins to be viewed or edited */
+  w23verifica_bulletins_send_retrieve: {
+    parameters: {
+      path: {
+        /** @description A unique integer value identifying this w23 verifica. */
+        id_w23verifica: number;
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["W23Verifica"];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W23 bulletins to be viewed or edited */
+  w23verifica_bulletins_bulk_update_create: {
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["W23Verifica"];
+        "application/x-www-form-urlencoded": components["schemas"]["W23Verifica"];
+        "multipart/form-data": components["schemas"]["W23Verifica"];
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["W23Verifica"];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W23 bulletins to be viewed or edited */
+  w23verifica_bulletins_new_retrieve: {
+    parameters: {
+      path: {
+        num_bollettino: string;
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["W23Verifica"];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W23 bulletin Criticità to be viewed */
+  w23verifica_criticita_list: {
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["W23verificaCriticita"][];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W23 bulletin Criticità to be viewed */
+  w23verifica_criticita_create: {
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["W23verificaCriticita"];
+        "application/x-www-form-urlencoded": components["schemas"]["W23verificaCriticita"];
+        "multipart/form-data": components["schemas"]["W23verificaCriticita"];
+      };
+    };
+    responses: {
+      201: {
+        content: {
+          "application/json": components["schemas"]["W23verificaCriticita"];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W23 bulletin Criticità to be viewed */
+  w23verifica_criticita_retrieve: {
+    parameters: {
+      path: {
+        /** @description A unique value identifying this w23verifica criticita. */
+        id_w23_criticita: string;
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["W23verificaCriticita"];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W23 bulletin Criticità to be viewed */
+  w23verifica_criticita_update: {
+    parameters: {
+      path: {
+        /** @description A unique value identifying this w23verifica criticita. */
+        id_w23_criticita: string;
+      };
+    };
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["W23verificaCriticita"];
+        "application/x-www-form-urlencoded": components["schemas"]["W23verificaCriticita"];
+        "multipart/form-data": components["schemas"]["W23verificaCriticita"];
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["W23verificaCriticita"];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W23 bulletin Criticità to be viewed */
+  w23verifica_criticita_destroy: {
+    parameters: {
+      path: {
+        /** @description A unique value identifying this w23verifica criticita. */
+        id_w23_criticita: string;
+      };
+    };
+    responses: {
+      /** @description No response body */
+      204: {
+        content: never;
+      };
+    };
+  };
+  /** @description API endpoint that allows W23 bulletin Criticità to be viewed */
+  w23verifica_criticita_partial_update: {
+    parameters: {
+      path: {
+        /** @description A unique value identifying this w23verifica criticita. */
+        id_w23_criticita: string;
+      };
+    };
+    requestBody?: {
+      content: {
+        "application/json": components["schemas"]["PatchedW23verificaCriticita"];
+        "application/x-www-form-urlencoded": components["schemas"]["PatchedW23verificaCriticita"];
+        "multipart/form-data": components["schemas"]["PatchedW23verificaCriticita"];
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["W23verificaCriticita"];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W23 bulletin Data to be viewed or edited */
+  w23verifica_data_list: {
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["W23VerificaData"][];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W23 bulletin Data to be viewed or edited */
+  w23verifica_data_create: {
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["W23VerificaData"];
+        "application/x-www-form-urlencoded": components["schemas"]["W23VerificaData"];
+        "multipart/form-data": components["schemas"]["W23VerificaData"];
+      };
+    };
+    responses: {
+      201: {
+        content: {
+          "application/json": components["schemas"]["W23VerificaData"];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W23 bulletin Data to be viewed or edited */
+  w23verifica_data_retrieve: {
+    parameters: {
+      path: {
+        /** @description A unique integer value identifying this w23 verifica data. */
+        id_w23verifica_data: number;
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["W23VerificaData"];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W23 bulletin Data to be viewed or edited */
+  w23verifica_data_update: {
+    parameters: {
+      path: {
+        /** @description A unique integer value identifying this w23 verifica data. */
+        id_w23verifica_data: number;
+      };
+    };
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["W23VerificaData"];
+        "application/x-www-form-urlencoded": components["schemas"]["W23VerificaData"];
+        "multipart/form-data": components["schemas"]["W23VerificaData"];
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["W23VerificaData"];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W23 bulletin Data to be viewed or edited */
+  w23verifica_data_destroy: {
+    parameters: {
+      path: {
+        /** @description A unique integer value identifying this w23 verifica data. */
+        id_w23verifica_data: number;
+      };
+    };
+    responses: {
+      /** @description No response body */
+      204: {
+        content: never;
+      };
+    };
+  };
+  /** @description API endpoint that allows W23 bulletin Data to be viewed or edited */
+  w23verifica_data_partial_update: {
+    parameters: {
+      path: {
+        /** @description A unique integer value identifying this w23 verifica data. */
+        id_w23verifica_data: number;
+      };
+    };
+    requestBody?: {
+      content: {
+        "application/json": components["schemas"]["PatchedW23VerificaData"];
+        "application/x-www-form-urlencoded": components["schemas"]["PatchedW23VerificaData"];
+        "multipart/form-data": components["schemas"]["PatchedW23VerificaData"];
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["W23VerificaData"];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W23 bulletin Tendenza to be viewed */
+  w23verifica_giudizio_list: {
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["W23Giudizio"][];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W23 bulletin Tendenza to be viewed */
+  w23verifica_giudizio_create: {
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["W23Giudizio"];
+        "application/x-www-form-urlencoded": components["schemas"]["W23Giudizio"];
+        "multipart/form-data": components["schemas"]["W23Giudizio"];
+      };
+    };
+    responses: {
+      201: {
+        content: {
+          "application/json": components["schemas"]["W23Giudizio"];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W23 bulletin Tendenza to be viewed */
+  w23verifica_giudizio_retrieve: {
+    parameters: {
+      path: {
+        /** @description A unique value identifying this w23 giudizio. */
+        id_w23giudizio: number;
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["W23Giudizio"];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W23 bulletin Tendenza to be viewed */
+  w23verifica_giudizio_update: {
+    parameters: {
+      path: {
+        /** @description A unique value identifying this w23 giudizio. */
+        id_w23giudizio: number;
+      };
+    };
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["W23Giudizio"];
+        "application/x-www-form-urlencoded": components["schemas"]["W23Giudizio"];
+        "multipart/form-data": components["schemas"]["W23Giudizio"];
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["W23Giudizio"];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W23 bulletin Tendenza to be viewed */
+  w23verifica_giudizio_destroy: {
+    parameters: {
+      path: {
+        /** @description A unique value identifying this w23 giudizio. */
+        id_w23giudizio: number;
+      };
+    };
+    responses: {
+      /** @description No response body */
+      204: {
+        content: never;
+      };
+    };
+  };
+  /** @description API endpoint that allows W23 bulletin Tendenza to be viewed */
+  w23verifica_giudizio_partial_update: {
+    parameters: {
+      path: {
+        /** @description A unique value identifying this w23 giudizio. */
+        id_w23giudizio: number;
+      };
+    };
+    requestBody?: {
+      content: {
+        "application/json": components["schemas"]["PatchedW23Giudizio"];
+        "application/x-www-form-urlencoded": components["schemas"]["PatchedW23Giudizio"];
+        "multipart/form-data": components["schemas"]["PatchedW23Giudizio"];
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["W23Giudizio"];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W23 bulletin Criticità to be viewed */
+  w23verifica_severita_list: {
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["W23Severita"][];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W23 bulletin Criticità to be viewed */
+  w23verifica_severita_create: {
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["W23Severita"];
+        "application/x-www-form-urlencoded": components["schemas"]["W23Severita"];
+        "multipart/form-data": components["schemas"]["W23Severita"];
+      };
+    };
+    responses: {
+      201: {
+        content: {
+          "application/json": components["schemas"]["W23Severita"];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W23 bulletin Criticità to be viewed */
+  w23verifica_severita_retrieve: {
+    parameters: {
+      path: {
+        /** @description A unique value identifying this w23 severita. */
+        id_w23severita: number;
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["W23Severita"];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W23 bulletin Criticità to be viewed */
+  w23verifica_severita_update: {
+    parameters: {
+      path: {
+        /** @description A unique value identifying this w23 severita. */
+        id_w23severita: number;
+      };
+    };
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["W23Severita"];
+        "application/x-www-form-urlencoded": components["schemas"]["W23Severita"];
+        "multipart/form-data": components["schemas"]["W23Severita"];
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["W23Severita"];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W23 bulletin Criticità to be viewed */
+  w23verifica_severita_destroy: {
+    parameters: {
+      path: {
+        /** @description A unique value identifying this w23 severita. */
+        id_w23severita: number;
+      };
+    };
+    responses: {
+      /** @description No response body */
+      204: {
+        content: never;
+      };
+    };
+  };
+  /** @description API endpoint that allows W23 bulletin Criticità to be viewed */
+  w23verifica_severita_partial_update: {
+    parameters: {
+      path: {
+        /** @description A unique value identifying this w23 severita. */
+        id_w23severita: number;
+      };
+    };
+    requestBody?: {
+      content: {
+        "application/json": components["schemas"]["PatchedW23Severita"];
+        "application/x-www-form-urlencoded": components["schemas"]["PatchedW23Severita"];
+        "multipart/form-data": components["schemas"]["PatchedW23Severita"];
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["W23Severita"];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W23 bulletin Zone to be viewed or edited */
+  w23verifica_zone_list: {
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["W23Zone"][];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W23 bulletin Zone to be viewed or edited */
+  w23verifica_zone_create: {
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["W23Zone"];
+        "application/x-www-form-urlencoded": components["schemas"]["W23Zone"];
+        "multipart/form-data": components["schemas"]["W23Zone"];
+      };
+    };
+    responses: {
+      201: {
+        content: {
+          "application/json": components["schemas"]["W23Zone"];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W23 bulletin Zone to be viewed or edited */
+  w23verifica_zone_retrieve: {
+    parameters: {
+      path: {
+        /** @description A unique value identifying this w23 zone. */
+        id_w23_zone: number;
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["W23Zone"];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W23 bulletin Zone to be viewed or edited */
+  w23verifica_zone_update: {
+    parameters: {
+      path: {
+        /** @description A unique value identifying this w23 zone. */
+        id_w23_zone: number;
+      };
+    };
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["W23Zone"];
+        "application/x-www-form-urlencoded": components["schemas"]["W23Zone"];
+        "multipart/form-data": components["schemas"]["W23Zone"];
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["W23Zone"];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W23 bulletin Zone to be viewed or edited */
+  w23verifica_zone_destroy: {
+    parameters: {
+      path: {
+        /** @description A unique value identifying this w23 zone. */
+        id_w23_zone: number;
+      };
+    };
+    responses: {
+      /** @description No response body */
+      204: {
+        content: never;
+      };
+    };
+  };
+  /** @description API endpoint that allows W23 bulletin Zone to be viewed or edited */
+  w23verifica_zone_partial_update: {
     parameters: {
       path: {
         /** @description A unique value identifying this w23 zone. */
@@ -11420,7 +12897,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W24 bulletins to be viewed or edited */
@@ -11525,7 +13004,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W24Data"])[];
+          "application/json": components["schemas"]["W24Data"][];
         };
       };
     };
@@ -11596,7 +13075,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W24 bulletin Data to be viewed or edited */
@@ -11631,7 +13112,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["ForecastZone"])[];
+          "application/json": components["schemas"]["ForecastZone"][];
         };
       };
     };
@@ -11698,7 +13179,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   w24_fz_partial_update: {
@@ -11728,7 +13211,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W24Soglie"])[];
+          "application/json": components["schemas"]["W24Soglie"][];
         };
       };
     };
@@ -11799,7 +13282,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W24 bulletin Data to be viewed or edited */
@@ -11837,7 +13322,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["BisBollettinoWebolimpia"])[];
+          "application/json": components["schemas"]["BisBollettinoWebolimpia"][];
         };
       };
     };
@@ -11908,7 +13393,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W26 bulletins to be viewed or edited */
@@ -12019,7 +13506,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W26 bulletins to be viewed or edited */
@@ -12114,7 +13603,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W26Data"])[];
+          "application/json": components["schemas"]["W26Data"][];
         };
       };
     };
@@ -12185,7 +13674,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W26 bulletin Data to be viewed or edited */
@@ -12216,7 +13707,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W26Zone"])[];
+          "application/json": components["schemas"]["W26Zone"][];
         };
       };
     };
@@ -12287,7 +13778,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W26 bulletin Zone to be viewed or edited */
@@ -12395,7 +13888,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W28 bulletins to be viewed or edited */
@@ -12485,7 +13980,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W28Data"])[];
+          "application/json": components["schemas"]["W28Data"][];
         };
       };
     };
@@ -12556,7 +14051,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows w28 bulletin Data to be viewed or edited */
@@ -12664,7 +14161,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W29 bulletins to be viewed or edited */
@@ -12680,6 +14179,22 @@ export interface operations {
         "application/json": components["schemas"]["PatchedW29"];
         "application/x-www-form-urlencoded": components["schemas"]["PatchedW29"];
         "multipart/form-data": components["schemas"]["PatchedW29"];
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["W29"];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W29 bulletins to be viewed or edited */
+  w29_bulletins_reopen_retrieve: {
+    parameters: {
+      path: {
+        /** @description A unique integer value identifying this w29. */
+        id_w29: number;
       };
     };
     responses: {
@@ -12738,7 +14253,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W29Data"])[];
+          "application/json": components["schemas"]["W29Data"][];
         };
       };
     };
@@ -12809,7 +14324,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W29 bulletin Data to be viewed or edited */
@@ -12840,7 +14357,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W29Pericolo"])[];
+          "application/json": components["schemas"]["W29Pericolo"][];
         };
       };
     };
@@ -12911,7 +14428,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W29 bulletin Pericolo to be viewed or edited */
@@ -12942,7 +14461,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W29Probabilita"])[];
+          "application/json": components["schemas"]["W29Probabilita"][];
         };
       };
     };
@@ -13013,7 +14532,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W29 bulletin Probabilita to be viewed or edited */
@@ -13044,7 +14565,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W29Zone"])[];
+          "application/json": components["schemas"]["W29Zone"][];
         };
       };
     };
@@ -13115,7 +14636,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W29 bulletin Zone to be viewed or edited */
@@ -13223,7 +14746,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W30 bulletins to be viewed or edited */
@@ -13316,7 +14841,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W30CurrentDataView"])[];
+          "application/json": components["schemas"]["W30CurrentDataView"][];
         };
       };
     };
@@ -13326,7 +14851,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W30Data"])[];
+          "application/json": components["schemas"]["W30Data"][];
         };
       };
     };
@@ -13397,7 +14922,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W30 bulletin Data to be viewed or edited */
@@ -13522,7 +15049,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W31 bulletins to be viewed or edited */
@@ -13643,7 +15172,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W31DataMacroareeLivelli"])[];
+          "application/json": components["schemas"]["W31DataMacroareeLivelli"][];
         };
       };
     };
@@ -13714,7 +15243,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W31 bulletin Data to be viewed or updated */
@@ -13745,7 +15276,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W31Livelli"])[];
+          "application/json": components["schemas"]["W31Livelli"][];
         };
       };
     };
@@ -13816,7 +15347,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W31 levels to be viewed */
@@ -13924,7 +15457,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W32 bulletins to be viewed or edited */
@@ -13940,6 +15475,22 @@ export interface operations {
         "application/json": components["schemas"]["PatchedW32"];
         "application/x-www-form-urlencoded": components["schemas"]["PatchedW32"];
         "multipart/form-data": components["schemas"]["PatchedW32"];
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["W32"];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W32 bulletins to be viewed or edited */
+  w32_bulletins_reopen_retrieve: {
+    parameters: {
+      path: {
+        /** @description A unique integer value identifying this w32. */
+        id_w32: number;
       };
     };
     responses: {
@@ -13998,7 +15549,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W32Data"])[];
+          "application/json": components["schemas"]["W32Data"][];
         };
       };
     };
@@ -14069,7 +15620,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W32 bulletin Data to be viewed or edited */
@@ -14100,7 +15653,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W32MbaciniData"])[];
+          "application/json": components["schemas"]["W32MbaciniData"][];
         };
       };
     };
@@ -14171,7 +15724,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W32 bulletin MbaciniData to be viewed or edited */
@@ -14202,7 +15757,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W32Mbacini"])[];
+          "application/json": components["schemas"]["W32Mbacini"][];
         };
       };
     };
@@ -14273,7 +15828,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W32 bulletin Probabilita to be viewed or edited */
@@ -14304,7 +15861,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W32Pericolo"])[];
+          "application/json": components["schemas"]["W32Pericolo"][];
         };
       };
     };
@@ -14375,7 +15932,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W32 bulletin Pericolo to be viewed or edited */
@@ -14406,7 +15965,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W32Pericolombacini"])[];
+          "application/json": components["schemas"]["W32Pericolombacini"][];
         };
       };
     };
@@ -14477,7 +16036,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W32 bulletin Pericolombacini to be viewed or edited */
@@ -14508,7 +16069,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W32Zone"])[];
+          "application/json": components["schemas"]["W32Zone"][];
         };
       };
     };
@@ -14579,7 +16140,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W32 bulletin Zone to be viewed or edited */
@@ -14687,7 +16250,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W33 bulletins to be viewed or edited */
@@ -14777,7 +16342,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W33Data"])[];
+          "application/json": components["schemas"]["W33Data"][];
         };
       };
     };
@@ -14848,7 +16413,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W33 bulletin Data to be viewed or edited */
@@ -14956,7 +16523,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W34 bulletins to be viewed or edited */
@@ -15046,7 +16615,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W34Data"])[];
+          "application/json": components["schemas"]["W34Data"][];
         };
       };
     };
@@ -15117,7 +16686,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W34 bulletin Data to be viewed or edited */
@@ -15148,7 +16719,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["AreeMeteo"])[];
+          "application/json": components["schemas"]["AreeMeteo"][];
         };
       };
     };
@@ -15219,7 +16790,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that shows city names */
@@ -15327,7 +16900,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W35 bulletins to be viewed or edited */
@@ -15417,7 +16992,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W35Data"])[];
+          "application/json": components["schemas"]["W35Data"][];
         };
       };
     };
@@ -15488,7 +17063,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W35 bulletin Data to be viewed or edited */
@@ -15518,7 +17095,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["ForecastComuni"])[];
+          "application/json": components["schemas"]["ForecastComuni"][];
         };
       };
     };
@@ -15585,7 +17162,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   w35_forecast_comuni_partial_update: {
@@ -15610,107 +17189,11 @@ export interface operations {
       };
     };
   };
-  w35_last_models_list: {
-    responses: {
-      200: {
-        content: {
-          "application/json": (components["schemas"]["ForecastStations"])[];
-        };
-      };
-    };
-  };
-  w35_last_models_create: {
-    requestBody?: {
-      content: {
-        "application/json": components["schemas"]["ForecastStations"];
-        "application/x-www-form-urlencoded": components["schemas"]["ForecastStations"];
-        "multipart/form-data": components["schemas"]["ForecastStations"];
-      };
-    };
-    responses: {
-      201: {
-        content: {
-          "application/json": components["schemas"]["ForecastStations"];
-        };
-      };
-    };
-  };
-  w35_last_models_retrieve: {
-    parameters: {
-      path: {
-        /** @description A unique integer value identifying this forecast stations. */
-        id_forecast_station: number;
-      };
-    };
-    responses: {
-      200: {
-        content: {
-          "application/json": components["schemas"]["ForecastStations"];
-        };
-      };
-    };
-  };
-  w35_last_models_update: {
-    parameters: {
-      path: {
-        /** @description A unique integer value identifying this forecast stations. */
-        id_forecast_station: number;
-      };
-    };
-    requestBody?: {
-      content: {
-        "application/json": components["schemas"]["ForecastStations"];
-        "application/x-www-form-urlencoded": components["schemas"]["ForecastStations"];
-        "multipart/form-data": components["schemas"]["ForecastStations"];
-      };
-    };
-    responses: {
-      200: {
-        content: {
-          "application/json": components["schemas"]["ForecastStations"];
-        };
-      };
-    };
-  };
-  w35_last_models_destroy: {
-    parameters: {
-      path: {
-        /** @description A unique integer value identifying this forecast stations. */
-        id_forecast_station: number;
-      };
-    };
-    responses: {
-      /** @description No response body */
-      204: never;
-    };
-  };
-  w35_last_models_partial_update: {
-    parameters: {
-      path: {
-        /** @description A unique integer value identifying this forecast stations. */
-        id_forecast_station: number;
-      };
-    };
-    requestBody?: {
-      content: {
-        "application/json": components["schemas"]["PatchedForecastStations"];
-        "application/x-www-form-urlencoded": components["schemas"]["PatchedForecastStations"];
-        "multipart/form-data": components["schemas"]["PatchedForecastStations"];
-      };
-    };
-    responses: {
-      200: {
-        content: {
-          "application/json": components["schemas"]["ForecastStations"];
-        };
-      };
-    };
-  };
   w35_tasks_list: {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["Tasks"])[];
+          "application/json": components["schemas"]["Tasks"][];
         };
       };
     };
@@ -15777,7 +17260,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   w35_tasks_partial_update: {
@@ -15884,7 +17369,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W36 bulletins to be viewed or edited */
@@ -15943,6 +17430,22 @@ export interface operations {
     };
   };
   /** @description API endpoint that allows W36 bulletins to be viewed or edited */
+  w36_bulletins_send_auto_retrieve: {
+    parameters: {
+      path: {
+        /** @description A unique integer value identifying this w36. */
+        id_w36: number;
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["W36"];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W36 bulletins to be viewed or edited */
   w36_bulletins_bulk_update_create: {
     requestBody: {
       content: {
@@ -15970,11 +17473,26 @@ export interface operations {
     };
   };
   /** @description API endpoint that allows W36 bulletin Data to be viewed or edited */
+  w36_current_retrieve: {
+    parameters: {
+      path: {
+        emissione: string;
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["W36SerializerFull"];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W36 bulletin Data to be viewed or edited */
   w36_data_list: {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W36Data"])[];
+          "application/json": components["schemas"]["W36Data"][];
         };
       };
     };
@@ -16045,7 +17563,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W36 bulletin Data to be viewed or edited */
@@ -16076,7 +17596,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W36ParametriEquazione"])[];
+          "application/json": components["schemas"]["W36ParametriEquazione"][];
         };
       };
     };
@@ -16147,7 +17667,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W36 parametri equazione to be viewed */
@@ -16255,7 +17777,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W37 bulletins to be viewed or edited */
@@ -16271,6 +17795,22 @@ export interface operations {
         "application/json": components["schemas"]["PatchedW37"];
         "application/x-www-form-urlencoded": components["schemas"]["PatchedW37"];
         "multipart/form-data": components["schemas"]["PatchedW37"];
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["W37"];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W37 bulletins to be viewed or edited */
+  w37_bulletins_reload_data_retrieve: {
+    parameters: {
+      path: {
+        /** @description A unique integer value identifying this w37. */
+        id_w37: number;
       };
     };
     responses: {
@@ -16345,7 +17885,7 @@ export interface operations {
     responses: {
       200: {
         content: {
-          "application/json": (components["schemas"]["W37Data"])[];
+          "application/json": components["schemas"]["W37Data"][];
         };
       };
     };
@@ -16416,7 +17956,9 @@ export interface operations {
     };
     responses: {
       /** @description No response body */
-      204: never;
+      204: {
+        content: never;
+      };
     };
   };
   /** @description API endpoint that allows W37 bulletin Data to be viewed or edited */
@@ -16438,6 +17980,782 @@ export interface operations {
       200: {
         content: {
           "application/json": components["schemas"]["W37Data"];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W38 bulletins to be viewed or edited */
+  w38_bulletins_list: {
+    parameters: {
+      query?: {
+        /** @description A page number within the paginated result set. */
+        page?: number;
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["PaginatedW38List"];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W38 bulletins to be viewed or edited */
+  w38_bulletins_create: {
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["W38"];
+        "application/x-www-form-urlencoded": components["schemas"]["W38"];
+        "multipart/form-data": components["schemas"]["W38"];
+      };
+    };
+    responses: {
+      201: {
+        content: {
+          "application/json": components["schemas"]["W38"];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W38 bulletins to be viewed or edited */
+  w38_bulletins_retrieve: {
+    parameters: {
+      path: {
+        /** @description A unique integer value identifying this w38. */
+        id_w38: number;
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["W38"];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W38 bulletins to be viewed or edited */
+  w38_bulletins_update: {
+    parameters: {
+      path: {
+        /** @description A unique integer value identifying this w38. */
+        id_w38: number;
+      };
+    };
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["W38"];
+        "application/x-www-form-urlencoded": components["schemas"]["W38"];
+        "multipart/form-data": components["schemas"]["W38"];
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["W38"];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W38 bulletins to be viewed or edited */
+  w38_bulletins_destroy: {
+    parameters: {
+      path: {
+        /** @description A unique integer value identifying this w38. */
+        id_w38: number;
+      };
+    };
+    responses: {
+      /** @description No response body */
+      204: {
+        content: never;
+      };
+    };
+  };
+  /** @description API endpoint that allows W38 bulletins to be viewed or edited */
+  w38_bulletins_partial_update: {
+    parameters: {
+      path: {
+        /** @description A unique integer value identifying this w38. */
+        id_w38: number;
+      };
+    };
+    requestBody?: {
+      content: {
+        "application/json": components["schemas"]["PatchedW38"];
+        "application/x-www-form-urlencoded": components["schemas"]["PatchedW38"];
+        "multipart/form-data": components["schemas"]["PatchedW38"];
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["W38"];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W38 bulletins to be viewed or edited */
+  w38_bulletins_reopen_retrieve: {
+    parameters: {
+      path: {
+        /** @description A unique integer value identifying this w38. */
+        id_w38: number;
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["W38"];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W38 bulletins to be viewed or edited */
+  w38_bulletins_send_retrieve: {
+    parameters: {
+      path: {
+        /** @description A unique integer value identifying this w38. */
+        id_w38: number;
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["W38"];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W38 bulletins to be viewed or edited */
+  w38_bulletins_bulk_update_create: {
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["W38"];
+        "application/x-www-form-urlencoded": components["schemas"]["W38"];
+        "multipart/form-data": components["schemas"]["W38"];
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["W38"];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W38 bulletins to be viewed or edited */
+  w38_bulletins_new_retrieve: {
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["W38"];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W38 bulletin Data to be viewed or edited */
+  w38_data_list: {
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["W38Data"][];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W38 bulletin Data to be viewed or edited */
+  w38_data_create: {
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["W38Data"];
+        "application/x-www-form-urlencoded": components["schemas"]["W38Data"];
+        "multipart/form-data": components["schemas"]["W38Data"];
+      };
+    };
+    responses: {
+      201: {
+        content: {
+          "application/json": components["schemas"]["W38Data"];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W38 bulletin Data to be viewed or edited */
+  w38_data_retrieve: {
+    parameters: {
+      path: {
+        /** @description A unique integer value identifying this w38 data. */
+        id_w38_data: number;
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["W38Data"];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W38 bulletin Data to be viewed or edited */
+  w38_data_update: {
+    parameters: {
+      path: {
+        /** @description A unique integer value identifying this w38 data. */
+        id_w38_data: number;
+      };
+    };
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["W38Data"];
+        "application/x-www-form-urlencoded": components["schemas"]["W38Data"];
+        "multipart/form-data": components["schemas"]["W38Data"];
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["W38Data"];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W38 bulletin Data to be viewed or edited */
+  w38_data_destroy: {
+    parameters: {
+      path: {
+        /** @description A unique integer value identifying this w38 data. */
+        id_w38_data: number;
+      };
+    };
+    responses: {
+      /** @description No response body */
+      204: {
+        content: never;
+      };
+    };
+  };
+  /** @description API endpoint that allows W38 bulletin Data to be viewed or edited */
+  w38_data_partial_update: {
+    parameters: {
+      path: {
+        /** @description A unique integer value identifying this w38 data. */
+        id_w38_data: number;
+      };
+    };
+    requestBody?: {
+      content: {
+        "application/json": components["schemas"]["PatchedW38Data"];
+        "application/x-www-form-urlencoded": components["schemas"]["PatchedW38Data"];
+        "multipart/form-data": components["schemas"]["PatchedW38Data"];
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["W38Data"];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W38 DatiI vrea to be viewed */
+  w38_dataIvrea_list: {
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["W38DatiIvrea"][];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W38 DatiI vrea to be viewed */
+  w38_dataIvrea_create: {
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["W38DatiIvrea"];
+        "application/x-www-form-urlencoded": components["schemas"]["W38DatiIvrea"];
+        "multipart/form-data": components["schemas"]["W38DatiIvrea"];
+      };
+    };
+    responses: {
+      201: {
+        content: {
+          "application/json": components["schemas"]["W38DatiIvrea"];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W38 DatiI vrea to be viewed */
+  w38_dataIvrea_retrieve: {
+    parameters: {
+      path: {
+        /** @description A unique integer value identifying this w38 dati ivrea. */
+        id_w38: number;
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["W38DatiIvrea"];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W38 DatiI vrea to be viewed */
+  w38_dataIvrea_update: {
+    parameters: {
+      path: {
+        /** @description A unique integer value identifying this w38 dati ivrea. */
+        id_w38: number;
+      };
+    };
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["W38DatiIvrea"];
+        "application/x-www-form-urlencoded": components["schemas"]["W38DatiIvrea"];
+        "multipart/form-data": components["schemas"]["W38DatiIvrea"];
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["W38DatiIvrea"];
+        };
+      };
+    };
+  };
+  /** @description API endpoint that allows W38 DatiI vrea to be viewed */
+  w38_dataIvrea_destroy: {
+    parameters: {
+      path: {
+        /** @description A unique integer value identifying this w38 dati ivrea. */
+        id_w38: number;
+      };
+    };
+    responses: {
+      /** @description No response body */
+      204: {
+        content: never;
+      };
+    };
+  };
+  /** @description API endpoint that allows W38 DatiI vrea to be viewed */
+  w38_dataIvrea_partial_update: {
+    parameters: {
+      path: {
+        /** @description A unique integer value identifying this w38 dati ivrea. */
+        id_w38: number;
+      };
+    };
+    requestBody?: {
+      content: {
+        "application/json": components["schemas"]["PatchedW38DatiIvrea"];
+        "application/x-www-form-urlencoded": components["schemas"]["PatchedW38DatiIvrea"];
+        "multipart/form-data": components["schemas"]["PatchedW38DatiIvrea"];
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["W38DatiIvrea"];
+        };
+      };
+    };
+  };
+  w99_forecast_values_list: {
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["ForecastValues"][];
+        };
+      };
+    };
+  };
+  w99_forecast_values_create: {
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["ForecastValues"];
+        "application/x-www-form-urlencoded": components["schemas"]["ForecastValues"];
+        "multipart/form-data": components["schemas"]["ForecastValues"];
+      };
+    };
+    responses: {
+      201: {
+        content: {
+          "application/json": components["schemas"]["ForecastValues"];
+        };
+      };
+    };
+  };
+  w99_forecast_values_retrieve: {
+    parameters: {
+      path: {
+        /** @description A unique integer value identifying this forecast values. */
+        id_forecast_value: number;
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["ForecastValues"];
+        };
+      };
+    };
+  };
+  w99_forecast_values_update: {
+    parameters: {
+      path: {
+        /** @description A unique integer value identifying this forecast values. */
+        id_forecast_value: number;
+      };
+    };
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["ForecastValues"];
+        "application/x-www-form-urlencoded": components["schemas"]["ForecastValues"];
+        "multipart/form-data": components["schemas"]["ForecastValues"];
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["ForecastValues"];
+        };
+      };
+    };
+  };
+  w99_forecast_values_destroy: {
+    parameters: {
+      path: {
+        /** @description A unique integer value identifying this forecast values. */
+        id_forecast_value: number;
+      };
+    };
+    responses: {
+      /** @description No response body */
+      204: {
+        content: never;
+      };
+    };
+  };
+  w99_forecast_values_partial_update: {
+    parameters: {
+      path: {
+        /** @description A unique integer value identifying this forecast values. */
+        id_forecast_value: number;
+      };
+    };
+    requestBody?: {
+      content: {
+        "application/json": components["schemas"]["PatchedForecastValues"];
+        "application/x-www-form-urlencoded": components["schemas"]["PatchedForecastValues"];
+        "multipart/form-data": components["schemas"]["PatchedForecastValues"];
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["ForecastValues"];
+        };
+      };
+    };
+  };
+  w99_last_models_list: {
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["ForecastStations"][];
+        };
+      };
+    };
+  };
+  w99_last_models_create: {
+    requestBody?: {
+      content: {
+        "application/json": components["schemas"]["ForecastStations"];
+        "application/x-www-form-urlencoded": components["schemas"]["ForecastStations"];
+        "multipart/form-data": components["schemas"]["ForecastStations"];
+      };
+    };
+    responses: {
+      201: {
+        content: {
+          "application/json": components["schemas"]["ForecastStations"];
+        };
+      };
+    };
+  };
+  w99_last_models_retrieve: {
+    parameters: {
+      path: {
+        /** @description A unique integer value identifying this forecast stations. */
+        id_forecast_station: number;
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["ForecastStations"];
+        };
+      };
+    };
+  };
+  w99_last_models_update: {
+    parameters: {
+      path: {
+        /** @description A unique integer value identifying this forecast stations. */
+        id_forecast_station: number;
+      };
+    };
+    requestBody?: {
+      content: {
+        "application/json": components["schemas"]["ForecastStations"];
+        "application/x-www-form-urlencoded": components["schemas"]["ForecastStations"];
+        "multipart/form-data": components["schemas"]["ForecastStations"];
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["ForecastStations"];
+        };
+      };
+    };
+  };
+  w99_last_models_destroy: {
+    parameters: {
+      path: {
+        /** @description A unique integer value identifying this forecast stations. */
+        id_forecast_station: number;
+      };
+    };
+    responses: {
+      /** @description No response body */
+      204: {
+        content: never;
+      };
+    };
+  };
+  w99_last_models_partial_update: {
+    parameters: {
+      path: {
+        /** @description A unique integer value identifying this forecast stations. */
+        id_forecast_station: number;
+      };
+    };
+    requestBody?: {
+      content: {
+        "application/json": components["schemas"]["PatchedForecastStations"];
+        "application/x-www-form-urlencoded": components["schemas"]["PatchedForecastStations"];
+        "multipart/form-data": components["schemas"]["PatchedForecastStations"];
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["ForecastStations"];
+        };
+      };
+    };
+  };
+  w99_meteo_real_time_list: {
+    parameters: {
+      query?: {
+        codice_istat_comune?: string;
+        id_parametro?: string;
+        progr_punto_com?: number;
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["MeteoRealTime"][];
+        };
+      };
+    };
+  };
+  w99_meteo_real_time_create: {
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["MeteoRealTime"];
+        "application/x-www-form-urlencoded": components["schemas"]["MeteoRealTime"];
+        "multipart/form-data": components["schemas"]["MeteoRealTime"];
+      };
+    };
+    responses: {
+      201: {
+        content: {
+          "application/json": components["schemas"]["MeteoRealTime"];
+        };
+      };
+    };
+  };
+  w99_meteo_real_time_retrieve: {
+    parameters: {
+      path: {
+        /** @description A unique value identifying this meteo real time. */
+        codice_istat_comune: string;
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["MeteoRealTime"];
+        };
+      };
+    };
+  };
+  w99_meteo_real_time_update: {
+    parameters: {
+      path: {
+        /** @description A unique value identifying this meteo real time. */
+        codice_istat_comune: string;
+      };
+    };
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["MeteoRealTime"];
+        "application/x-www-form-urlencoded": components["schemas"]["MeteoRealTime"];
+        "multipart/form-data": components["schemas"]["MeteoRealTime"];
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["MeteoRealTime"];
+        };
+      };
+    };
+  };
+  w99_meteo_real_time_destroy: {
+    parameters: {
+      path: {
+        /** @description A unique value identifying this meteo real time. */
+        codice_istat_comune: string;
+      };
+    };
+    responses: {
+      /** @description No response body */
+      204: {
+        content: never;
+      };
+    };
+  };
+  w99_meteo_real_time_partial_update: {
+    parameters: {
+      path: {
+        /** @description A unique value identifying this meteo real time. */
+        codice_istat_comune: string;
+      };
+    };
+    requestBody?: {
+      content: {
+        "application/json": components["schemas"]["PatchedMeteoRealTime"];
+        "application/x-www-form-urlencoded": components["schemas"]["PatchedMeteoRealTime"];
+        "multipart/form-data": components["schemas"]["PatchedMeteoRealTime"];
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["MeteoRealTime"];
+        };
+      };
+    };
+  };
+  w99_stazione_misura_list: {
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["StazioneMisura"][];
+        };
+      };
+    };
+  };
+  w99_stazione_misura_create: {
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["StazioneMisura"];
+        "application/x-www-form-urlencoded": components["schemas"]["StazioneMisura"];
+        "multipart/form-data": components["schemas"]["StazioneMisura"];
+      };
+    };
+    responses: {
+      201: {
+        content: {
+          "application/json": components["schemas"]["StazioneMisura"];
+        };
+      };
+    };
+  };
+  w99_stazione_misura_retrieve: {
+    parameters: {
+      path: {
+        /** @description A unique value identifying this sensore stazione misura. */
+        codice_istat_comune: string;
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["StazioneMisura"];
+        };
+      };
+    };
+  };
+  w99_stazione_misura_update: {
+    parameters: {
+      path: {
+        /** @description A unique value identifying this sensore stazione misura. */
+        codice_istat_comune: string;
+      };
+    };
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["StazioneMisura"];
+        "application/x-www-form-urlencoded": components["schemas"]["StazioneMisura"];
+        "multipart/form-data": components["schemas"]["StazioneMisura"];
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["StazioneMisura"];
+        };
+      };
+    };
+  };
+  w99_stazione_misura_destroy: {
+    parameters: {
+      path: {
+        /** @description A unique value identifying this sensore stazione misura. */
+        codice_istat_comune: string;
+      };
+    };
+    responses: {
+      /** @description No response body */
+      204: {
+        content: never;
+      };
+    };
+  };
+  w99_stazione_misura_partial_update: {
+    parameters: {
+      path: {
+        /** @description A unique value identifying this sensore stazione misura. */
+        codice_istat_comune: string;
+      };
+    };
+    requestBody?: {
+      content: {
+        "application/json": components["schemas"]["PatchedStazioneMisura"];
+        "application/x-www-form-urlencoded": components["schemas"]["PatchedStazioneMisura"];
+        "multipart/form-data": components["schemas"]["PatchedStazioneMisura"];
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["StazioneMisura"];
         };
       };
     };

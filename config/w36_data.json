@@ -6919,5 +6919,869 @@
     "id_time_layouts": 32,
     "id_parametro": "COD_COLORE_ORIG",
     "id_aggregazione": 0
+  },
+  {
+    "id_w36_data": 754,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 1,
+    "id_time_layouts": 48,
+    "id_parametro": "WDA",
+    "id_aggregazione": 940
+  },
+  {
+    "id_w36_data": 755,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 1,
+    "id_time_layouts": 66,
+    "id_parametro": "WDA",
+    "id_aggregazione": 940
+  },
+  {
+    "id_w36_data": 756,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 1,
+    "id_time_layouts": 83,
+    "id_parametro": "WDA",
+    "id_aggregazione": 940
+  },
+  {
+    "id_w36_data": 725,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 9,
+    "id_time_layouts": 48,
+    "id_parametro": "WDA",
+    "id_aggregazione": 940
+  },
+  {
+    "id_w36_data": 726,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 9,
+    "id_time_layouts": 66,
+    "id_parametro": "WDA",
+    "id_aggregazione": 940
+  },
+  {
+    "id_w36_data": 727,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 9,
+    "id_time_layouts": 83,
+    "id_parametro": "WDA",
+    "id_aggregazione": 940
+  },
+  {
+    "id_w36_data": 728,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 11,
+    "id_time_layouts": 48,
+    "id_parametro": "WDA",
+    "id_aggregazione": 940
+  },
+  {
+    "id_w36_data": 729,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 11,
+    "id_time_layouts": 66,
+    "id_parametro": "WDA",
+    "id_aggregazione": 940
+  },
+  {
+    "id_w36_data": 730,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 11,
+    "id_time_layouts": 83,
+    "id_parametro": "WDA",
+    "id_aggregazione": 940
+  },
+  {
+    "id_w36_data": 731,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 28,
+    "id_time_layouts": 48,
+    "id_parametro": "WDA",
+    "id_aggregazione": 940
+  },
+  {
+    "id_w36_data": 732,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 28,
+    "id_time_layouts": 66,
+    "id_parametro": "WDA",
+    "id_aggregazione": 940
+  },
+  {
+    "id_w36_data": 733,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 28,
+    "id_time_layouts": 83,
+    "id_parametro": "WDA",
+    "id_aggregazione": 940
+  },
+  {
+    "id_w36_data": 734,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 33,
+    "id_time_layouts": 48,
+    "id_parametro": "WDA",
+    "id_aggregazione": 940
+  },
+  {
+    "id_w36_data": 735,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 33,
+    "id_time_layouts": 66,
+    "id_parametro": "WDA",
+    "id_aggregazione": 940
+  },
+  {
+    "id_w36_data": 736,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 33,
+    "id_time_layouts": 83,
+    "id_parametro": "WDA",
+    "id_aggregazione": 940
+  },
+  {
+    "id_w36_data": 737,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 59,
+    "id_time_layouts": 48,
+    "id_parametro": "WDA",
+    "id_aggregazione": 940
+  },
+  {
+    "id_w36_data": 738,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 59,
+    "id_time_layouts": 66,
+    "id_parametro": "WDA",
+    "id_aggregazione": 940
+  },
+  {
+    "id_w36_data": 739,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 59,
+    "id_time_layouts": 83,
+    "id_parametro": "WDA",
+    "id_aggregazione": 940
+  },
+  {
+    "id_w36_data": 740,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 63,
+    "id_time_layouts": 48,
+    "id_parametro": "WDA",
+    "id_aggregazione": 940
+  },
+  {
+    "id_w36_data": 741,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 63,
+    "id_time_layouts": 66,
+    "id_parametro": "WDA",
+    "id_aggregazione": 940
+  },
+  {
+    "id_w36_data": 742,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 63,
+    "id_time_layouts": 83,
+    "id_parametro": "WDA",
+    "id_aggregazione": 940
+  },
+  {
+    "id_w36_data": 743,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 64,
+    "id_time_layouts": 48,
+    "id_parametro": "WDA",
+    "id_aggregazione": 940
+  },
+  {
+    "id_w36_data": 744,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 64,
+    "id_time_layouts": 66,
+    "id_parametro": "WDA",
+    "id_aggregazione": 940
+  },
+  {
+    "id_w36_data": 745,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 64,
+    "id_time_layouts": 83,
+    "id_parametro": "WDA",
+    "id_aggregazione": 940
+  },
+  {
+    "id_w36_data": 746,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 1,
+    "id_time_layouts": 32,
+    "id_parametro": "WDA",
+    "id_aggregazione": 940
+  },
+  {
+    "id_w36_data": 747,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 9,
+    "id_time_layouts": 32,
+    "id_parametro": "WDA",
+    "id_aggregazione": 940
+  },
+  {
+    "id_w36_data": 748,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 11,
+    "id_time_layouts": 32,
+    "id_parametro": "WDA",
+    "id_aggregazione": 940
+  },
+  {
+    "id_w36_data": 749,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 28,
+    "id_time_layouts": 32,
+    "id_parametro": "WDA",
+    "id_aggregazione": 940
+  },
+  {
+    "id_w36_data": 750,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 33,
+    "id_time_layouts": 32,
+    "id_parametro": "WDA",
+    "id_aggregazione": 940
+  },
+  {
+    "id_w36_data": 751,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 59,
+    "id_time_layouts": 32,
+    "id_parametro": "WDA",
+    "id_aggregazione": 940
+  },
+  {
+    "id_w36_data": 752,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 63,
+    "id_time_layouts": 32,
+    "id_parametro": "WDA",
+    "id_aggregazione": 940
+  },
+  {
+    "id_w36_data": 753,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 64,
+    "id_time_layouts": 32,
+    "id_parametro": "WDA",
+    "id_aggregazione": 940
+  },
+  {
+    "id_w36_data": 754,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 1,
+    "id_time_layouts": 48,
+    "id_parametro": "WDA",
+    "id_aggregazione": 941
+  },
+  {
+    "id_w36_data": 755,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 1,
+    "id_time_layouts": 66,
+    "id_parametro": "WDA",
+    "id_aggregazione": 941
+  },
+  {
+    "id_w36_data": 756,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 1,
+    "id_time_layouts": 83,
+    "id_parametro": "WDA",
+    "id_aggregazione": 941
+  },
+  {
+    "id_w36_data": 725,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 9,
+    "id_time_layouts": 48,
+    "id_parametro": "WDA",
+    "id_aggregazione": 941
+  },
+  {
+    "id_w36_data": 726,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 9,
+    "id_time_layouts": 66,
+    "id_parametro": "WDA",
+    "id_aggregazione": 941
+  },
+  {
+    "id_w36_data": 727,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 9,
+    "id_time_layouts": 83,
+    "id_parametro": "WDA",
+    "id_aggregazione": 941
+  },
+  {
+    "id_w36_data": 728,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 11,
+    "id_time_layouts": 48,
+    "id_parametro": "WDA",
+    "id_aggregazione": 941
+  },
+  {
+    "id_w36_data": 729,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 11,
+    "id_time_layouts": 66,
+    "id_parametro": "WDA",
+    "id_aggregazione": 941
+  },
+  {
+    "id_w36_data": 730,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 11,
+    "id_time_layouts": 83,
+    "id_parametro": "WDA",
+    "id_aggregazione": 941
+  },
+  {
+    "id_w36_data": 731,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 28,
+    "id_time_layouts": 48,
+    "id_parametro": "WDA",
+    "id_aggregazione": 941
+  },
+  {
+    "id_w36_data": 732,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 28,
+    "id_time_layouts": 66,
+    "id_parametro": "WDA",
+    "id_aggregazione": 941
+  },
+  {
+    "id_w36_data": 733,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 28,
+    "id_time_layouts": 83,
+    "id_parametro": "WDA",
+    "id_aggregazione": 941
+  },
+  {
+    "id_w36_data": 734,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 33,
+    "id_time_layouts": 48,
+    "id_parametro": "WDA",
+    "id_aggregazione": 941
+  },
+  {
+    "id_w36_data": 735,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 33,
+    "id_time_layouts": 66,
+    "id_parametro": "WDA",
+    "id_aggregazione": 941
+  },
+  {
+    "id_w36_data": 736,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 33,
+    "id_time_layouts": 83,
+    "id_parametro": "WDA",
+    "id_aggregazione": 941
+  },
+  {
+    "id_w36_data": 737,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 59,
+    "id_time_layouts": 48,
+    "id_parametro": "WDA",
+    "id_aggregazione": 941
+  },
+  {
+    "id_w36_data": 738,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 59,
+    "id_time_layouts": 66,
+    "id_parametro": "WDA",
+    "id_aggregazione": 941
+  },
+  {
+    "id_w36_data": 739,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 59,
+    "id_time_layouts": 83,
+    "id_parametro": "WDA",
+    "id_aggregazione": 941
+  },
+  {
+    "id_w36_data": 740,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 63,
+    "id_time_layouts": 48,
+    "id_parametro": "WDA",
+    "id_aggregazione": 941
+  },
+  {
+    "id_w36_data": 741,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 63,
+    "id_time_layouts": 66,
+    "id_parametro": "WDA",
+    "id_aggregazione": 941
+  },
+  {
+    "id_w36_data": 742,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 63,
+    "id_time_layouts": 83,
+    "id_parametro": "WDA",
+    "id_aggregazione": 941
+  },
+  {
+    "id_w36_data": 743,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 64,
+    "id_time_layouts": 48,
+    "id_parametro": "WDA",
+    "id_aggregazione": 941
+  },
+  {
+    "id_w36_data": 744,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 64,
+    "id_time_layouts": 66,
+    "id_parametro": "WDA",
+    "id_aggregazione": 941
+  },
+  {
+    "id_w36_data": 745,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 64,
+    "id_time_layouts": 83,
+    "id_parametro": "WDA",
+    "id_aggregazione": 941
+  },
+  {
+    "id_w36_data": 746,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 1,
+    "id_time_layouts": 32,
+    "id_parametro": "WDA",
+    "id_aggregazione": 941
+  },
+  {
+    "id_w36_data": 747,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 9,
+    "id_time_layouts": 32,
+    "id_parametro": "WDA",
+    "id_aggregazione": 941
+  },
+  {
+    "id_w36_data": 748,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 11,
+    "id_time_layouts": 32,
+    "id_parametro": "WDA",
+    "id_aggregazione": 941
+  },
+  {
+    "id_w36_data": 749,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 28,
+    "id_time_layouts": 32,
+    "id_parametro": "WDA",
+    "id_aggregazione": 941
+  },
+  {
+    "id_w36_data": 750,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 33,
+    "id_time_layouts": 32,
+    "id_parametro": "WDA",
+    "id_aggregazione": 941
+  },
+  {
+    "id_w36_data": 751,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 59,
+    "id_time_layouts": 32,
+    "id_parametro": "WDA",
+    "id_aggregazione": 941
+  },
+  {
+    "id_w36_data": 752,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 63,
+    "id_time_layouts": 32,
+    "id_parametro": "WDA",
+    "id_aggregazione": 941
+  },
+  {
+    "id_w36_data": 753,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 64,
+    "id_time_layouts": 32,
+    "id_parametro": "WDA",
+    "id_aggregazione": 941
+  },
+  {
+    "id_w36_data": 754,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 1,
+    "id_time_layouts": 48,
+    "id_parametro": "WDA",
+    "id_aggregazione": 942
+  },
+  {
+    "id_w36_data": 755,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 1,
+    "id_time_layouts": 66,
+    "id_parametro": "WDA",
+    "id_aggregazione": 942
+  },
+  {
+    "id_w36_data": 756,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 1,
+    "id_time_layouts": 83,
+    "id_parametro": "WDA",
+    "id_aggregazione": 942
+  },
+  {
+    "id_w36_data": 725,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 9,
+    "id_time_layouts": 48,
+    "id_parametro": "WDA",
+    "id_aggregazione": 942
+  },
+  {
+    "id_w36_data": 726,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 9,
+    "id_time_layouts": 66,
+    "id_parametro": "WDA",
+    "id_aggregazione": 942
+  },
+  {
+    "id_w36_data": 727,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 9,
+    "id_time_layouts": 83,
+    "id_parametro": "WDA",
+    "id_aggregazione": 942
+  },
+  {
+    "id_w36_data": 728,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 11,
+    "id_time_layouts": 48,
+    "id_parametro": "WDA",
+    "id_aggregazione": 942
+  },
+  {
+    "id_w36_data": 729,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 11,
+    "id_time_layouts": 66,
+    "id_parametro": "WDA",
+    "id_aggregazione": 942
+  },
+  {
+    "id_w36_data": 730,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 11,
+    "id_time_layouts": 83,
+    "id_parametro": "WDA",
+    "id_aggregazione": 942
+  },
+  {
+    "id_w36_data": 731,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 28,
+    "id_time_layouts": 48,
+    "id_parametro": "WDA",
+    "id_aggregazione": 942
+  },
+  {
+    "id_w36_data": 732,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 28,
+    "id_time_layouts": 66,
+    "id_parametro": "WDA",
+    "id_aggregazione": 942
+  },
+  {
+    "id_w36_data": 733,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 28,
+    "id_time_layouts": 83,
+    "id_parametro": "WDA",
+    "id_aggregazione": 942
+  },
+  {
+    "id_w36_data": 734,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 33,
+    "id_time_layouts": 48,
+    "id_parametro": "WDA",
+    "id_aggregazione": 942
+  },
+  {
+    "id_w36_data": 735,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 33,
+    "id_time_layouts": 66,
+    "id_parametro": "WDA",
+    "id_aggregazione": 942
+  },
+  {
+    "id_w36_data": 736,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 33,
+    "id_time_layouts": 83,
+    "id_parametro": "WDA",
+    "id_aggregazione": 942
+  },
+  {
+    "id_w36_data": 737,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 59,
+    "id_time_layouts": 48,
+    "id_parametro": "WDA",
+    "id_aggregazione": 942
+  },
+  {
+    "id_w36_data": 738,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 59,
+    "id_time_layouts": 66,
+    "id_parametro": "WDA",
+    "id_aggregazione": 942
+  },
+  {
+    "id_w36_data": 739,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 59,
+    "id_time_layouts": 83,
+    "id_parametro": "WDA",
+    "id_aggregazione": 942
+  },
+  {
+    "id_w36_data": 740,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 63,
+    "id_time_layouts": 48,
+    "id_parametro": "WDA",
+    "id_aggregazione": 942
+  },
+  {
+    "id_w36_data": 741,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 63,
+    "id_time_layouts": 66,
+    "id_parametro": "WDA",
+    "id_aggregazione": 942
+  },
+  {
+    "id_w36_data": 742,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 63,
+    "id_time_layouts": 83,
+    "id_parametro": "WDA",
+    "id_aggregazione": 942
+  },
+  {
+    "id_w36_data": 743,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 64,
+    "id_time_layouts": 48,
+    "id_parametro": "WDA",
+    "id_aggregazione": 942
+  },
+  {
+    "id_w36_data": 744,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 64,
+    "id_time_layouts": 66,
+    "id_parametro": "WDA",
+    "id_aggregazione": 942
+  },
+  {
+    "id_w36_data": 745,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 64,
+    "id_time_layouts": 83,
+    "id_parametro": "WDA",
+    "id_aggregazione": 942
+  },
+  {
+    "id_w36_data": 746,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 1,
+    "id_time_layouts": 32,
+    "id_parametro": "WDA",
+    "id_aggregazione": 942
+  },
+  {
+    "id_w36_data": 747,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 9,
+    "id_time_layouts": 32,
+    "id_parametro": "WDA",
+    "id_aggregazione": 942
+  },
+  {
+    "id_w36_data": 748,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 11,
+    "id_time_layouts": 32,
+    "id_parametro": "WDA",
+    "id_aggregazione": 942
+  },
+  {
+    "id_w36_data": 749,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 28,
+    "id_time_layouts": 32,
+    "id_parametro": "WDA",
+    "id_aggregazione": 942
+  },
+  {
+    "id_w36_data": 750,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 33,
+    "id_time_layouts": 32,
+    "id_parametro": "WDA",
+    "id_aggregazione": 942
+  },
+  {
+    "id_w36_data": 751,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 59,
+    "id_time_layouts": 32,
+    "id_parametro": "WDA",
+    "id_aggregazione": 942
+  },
+  {
+    "id_w36_data": 752,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 63,
+    "id_time_layouts": 32,
+    "id_parametro": "WDA",
+    "id_aggregazione": 942
+  },
+  {
+    "id_w36_data": 753,
+    "numeric_value": 0.0,
+    "id_w36": 1,
+    "id_venue": 64,
+    "id_time_layouts": 32,
+    "id_parametro": "WDA",
+    "id_aggregazione": 942
   }
 ]

@@ -57,18 +57,21 @@ class W34View(viewsets.ModelViewSet):
     def list(self, request, *args, **kwargs):
         month = self.request.query_params.get("month", "all")
         year = self.request.query_params.get("year", "all")
+        order = self.request.query_params.get("order", "-last_update")
+
         if month != "all":
             queryset = (
                 self.get_queryset()
                 .filter(data_emissione__year=year)
                 .filter(data_emissione__month=month)
+                .order_by(order)
             )
         elif year != "all":
             queryset = self.filter_queryset(
-                self.get_queryset().filter(data_emissione__year=year)
+                self.get_queryset().filter(data_emissione__year=year).order_by(order)
             )
         else:
-            queryset = self.filter_queryset(self.get_queryset())
+            queryset = self.filter_queryset(self.get_queryset().order_by(order))
 
         page = self.paginate_queryset(queryset)
         if page is not None:
@@ -852,6 +855,10 @@ class CorriereHTMLView(TemplateView):
 
 class CorrierePDFView(CorriereHTMLView):
     def get(self, request, *args, **kwargs):
+        os.environ.pop("http_proxy", None)
+        os.environ.pop("https_proxy", None)
+        os.environ.pop("HTTP_PROXY", None)
+        os.environ.pop("HTTPS_PROXY", None)
         response = PDFTemplateResponse(
             request=request,
             template=self.template_name,
@@ -871,7 +878,12 @@ class CorrierePngView(DetailView):
     http_method_names = ["get"]
 
     def get(self, request, *args, **kwargs):
-        r = requests.get("http://django:8000/w34/pdf/%d" % kwargs["pk"])
+        os.environ.pop("http_proxy", None)
+        os.environ.pop("https_proxy", None)
+        os.environ.pop("HTTP_PROXY", None)
+        os.environ.pop("HTTPS_PROXY", None)
+        django_url = os.getenv("DJANGO_URL", "http://django:8000")
+        r = requests.get(django_url + "/w34/pdf/%d" % kwargs["pk"])
 
         with tempfile.NamedTemporaryFile(suffix=".pdf") as f:
             f.write(r.content)

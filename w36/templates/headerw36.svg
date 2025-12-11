@@ -1,3 +1,4 @@
+{% load static %}
 {% load date_extras_w36 %}
 <g id="INTESTAZIONE">
 	<g id="logo-arpa">
@@ -260,7 +261,7 @@
 	<text transform="matrix(1 0 0 1 159.5547 66.3691)" style="fill:#009857; font-family:'TitilliumWeb'; font-size:20;">Previsione Ondate di Calore</text>
 	<text transform="matrix(1 0 0 1 184.0547 88.3691)" style="fill:#009857; font-family:'TitilliumWeb'; font-size:20;">{{ title }}</text>
    <image
-      xlink:href="http://localhost:8000/static/images/{{ logo }}.svg"
+      xlink:href="{% static 'images/' %}{{ logo }}.svg"
       x="470"
       y="5"
       id="imageLogos"
@@ -288,7 +289,7 @@
 	<text transform="matrix(1 0 0 1 500.1623 119.6876)" style="fill:#2F55AC; font-family:'TitilliumWeb'; font-size:8.0679;">Regione Piemonte</text>
 	<text transform="matrix(1 0 0 1 53.1623 119.6876)" style="fill:#2F55AC; font-family:'TitilliumWeb'; font-size:8.0679;">{{ seqNum }}/{{ startValidTime | year }}</text>
 	<text transform="matrix(1 0 0 1 133.1623 119.6876)" style="fill:#2F55AC; font-family:'TitilliumWeb'; font-size:8.0679;">{{ startValidTime | my_date_dmY }}</text>
-	<text transform="matrix(1 0 0 1 253.1623 119.6876)" style="fill:#2F55AC; font-family:'TitilliumWeb'; font-size:8.0679;">{{ startValidTime | date_tomorrow}} ore 12:00</text>
+	<text transform="matrix(1 0 0 1 253.1623 119.6876)" style="fill:#2F55AC; font-family:'TitilliumWeb'; font-size:8.0679;">{{ startValidTime | date_tomorrow}} ore 13:00</text>
 	<polygon id="SX2_1_" style="fill-rule:evenodd;clip-rule:evenodd;fill:#2E9D53;" points="191.975,96.278 191.975,110.218 
 		191.975,124.158 192.834,124.158 192.834,110.218 243.5,110.218 243.5,96.278 192.834,96.278 	"/>
 	<text transform="matrix(1 0 0 1 198.2645 105.407)" style="fill:#FFFFFF; font-family:'TitilliumWeb'; font-size:8;">VALIDITA&#x2019;</text>

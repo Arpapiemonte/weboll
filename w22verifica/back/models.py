@@ -94,6 +94,16 @@ class W22Giudizio(models.Model):
         db_table = "w22giudizio"
 
 
+class W22verificaCriticita(models.Model):
+    id_w22_criticita = models.CharField(primary_key=True, max_length=2)
+    descrizione = models.TextField(blank=True, null=True)
+    colore_html = models.CharField(max_length=30)
+
+    class Meta:
+        managed = False
+        db_table = "w22verifica_criticita"
+
+
 class W22Severita(models.Model):
     id_w22severita = models.BigIntegerField(primary_key=True)
     sigla = models.CharField(max_length=3)

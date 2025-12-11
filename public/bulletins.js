@@ -1,4 +1,4 @@
-// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2025 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
@@ -83,6 +83,13 @@ window.bulletins_list = [
     menu: 'Idro',
   },
   {
+    bollettino: 'bollettino_allerta_verifica',
+    id: 'w23verifica',
+    name: 'Allerta Verifica',
+    readyForProduction: true,
+    menu: 'Allerta',
+  },
+  {
     bollettino: 'bollettino_verifica_meteo',
     id: 'w17verifica',
     name: 'Verifica Meteo',
@@ -116,6 +123,13 @@ window.bulletins_list = [
     name: 'Aggiornamento Allerta',
     readyForProduction: true,
     menu: 'Allerta',
+  },
+   {
+    bollettino: 'bollettino_UVI',
+    id: 'w38',
+    name: 'UVI',
+    readyForProduction: true,
+    menu: 'Meteo',
   },
   {
     bollettino: 'A7-A26',

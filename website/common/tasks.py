@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
+# Copyright (C) 2025 Arpa Piemonte - Dipartimento Naturali e Ambientali
 # This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 # weboll is licensed under the AGPL-3.0-or-later License.
 # License text available at https://www.gnu.org/licenses/agpl.txt
@@ -8,7 +8,7 @@
 import datetime
 import logging
 import tempfile
-from os import getenv
+from os import environ, getenv
 from subprocess import call
 
 import requests
@@ -51,8 +51,13 @@ def send_with_celery(prodotto, id, auto=False):
         destinations = Destinazioni.objects.filter(prodotto=prodotto).filter(
             enabled=True
         )
+    environ.pop("http_proxy", None)
+    environ.pop("https_proxy", None)
+    environ.pop("HTTP_PROXY", None)
+    environ.pop("HTTPS_PROXY", None)
+    django_url = getenv("DJANGO_URL", "http://django:8000")
     for d in destinations:
-        url = "http://django:8000" + d.endpoint.replace("{{id}}", str(id))
+        url = django_url + d.endpoint.replace("{{id}}", str(id))
         destinazione = (
             d.destinazione.replace("{{id}}", str(id))
             .replace("{{year}}", str(my_date.year))
@@ -88,6 +93,10 @@ def send_with_celery(prodotto, id, auto=False):
 @celery_app.task
 def send_bulletin_to_file(url, destinazione):
     print("========== send_bulletin_to_file")
+    environ.pop("http_proxy", None)
+    environ.pop("https_proxy", None)
+    environ.pop("HTTP_PROXY", None)
+    environ.pop("HTTPS_PROXY", None)
     try:
         with requests.get(url) as r:
             r.raise_for_status()
@@ -110,6 +119,10 @@ def send_bulletin_with_scp(url, destinazione, segreto):
     # username@host:/path/to#HostKeyAlgorithms=+ssh-dss
     # username@host:/path/to
     print("========== send_bulletin_with_scp")
+    environ.pop("http_proxy", None)
+    environ.pop("https_proxy", None)
+    environ.pop("HTTP_PROXY", None)
+    environ.pop("HTTPS_PROXY", None)
     ssh_options = ""
     ssh_command = destinazione
     if destinazione.__contains__("#"):
@@ -149,6 +162,10 @@ def send_bulletin_with_scp(url, destinazione, segreto):
 @celery_app.task
 def send_bulletin_with_ftp(url, destinazione, segreto):
     print("========== send_bulletin_with_ftp")
+    environ.pop("http_proxy", None)
+    environ.pop("https_proxy", None)
+    environ.pop("HTTP_PROXY", None)
+    environ.pop("HTTPS_PROXY", None)
     # destinazione = ftp://user@servername.example.com:9999/path/to/qqq.pdf
     protocol = destinazione.split("/")[0]  # ftp:
     remote_filename = destinazione.split("/")[-1]  # qqq.pdf
@@ -183,6 +200,10 @@ def send_bulletin_with_ftp(url, destinazione, segreto):
 @celery_app.task
 def send_bulletin_with_mail(url, destinazione):
     print("========== send_bulletin_with_mail ")
+    environ.pop("http_proxy", None)
+    environ.pop("https_proxy", None)
+    environ.pop("HTTP_PROXY", None)
+    environ.pop("HTTPS_PROXY", None)
     my_date = datetime.datetime.today()
     # destinazione = mail://user@example.com/file_attach_name/subject/body
     email = destinazione.split("/")[2]
@@ -230,9 +251,12 @@ def send_bulletin_with_mail(url, destinazione):
             # allega anche il bollettino meteo
             last_w05 = W05.W05.objects.filter(status="1").latest("pk")
             start_valid_time = last_w05.start_valid_time.strftime("%d%m%Y")
-            with requests.get(
-                "http://django:8000/w05/pdf/" + str(last_w05.id_w05)
-            ) as r:
+            environ.pop("http_proxy", None)
+            environ.pop("https_proxy", None)
+            environ.pop("HTTP_PROXY", None)
+            environ.pop("HTTPS_PROXY", None)
+            django_url = getenv("DJANGO_URL", "http://django:8000")
+            with requests.get(django_url + "/w05/pdf/" + str(last_w05.id_w05)) as r:
                 r.raise_for_status()
                 email.attach("bollettinoMeteo_" + start_valid_time + ".pdf", r.content)
         email.send()
@@ -264,7 +288,12 @@ def auto_create_and_send():
     to_send = 0
     time_now = datetime.datetime.now()
     log.info("create and send at {time_now}".format(time_now=time_now.time()))
-    login_url = "http://django:8000/token/"
+    environ.pop("http_proxy", None)
+    environ.pop("https_proxy", None)
+    environ.pop("HTTP_PROXY", None)
+    environ.pop("HTTPS_PROXY", None)
+    django_url = getenv("DJANGO_URL", "http://django:8000")
+    login_url = django_url + "/token/"
     password = getenv("AUTO_PASSWORD", default="auto")
     with requests.post(login_url, json={"username": "auto", "password": password}) as r:
         r.raise_for_status()
@@ -286,11 +315,11 @@ def auto_create_and_send():
             log.info(
                 "-- automatic create and send for {bulletin}".format(bulletin=bulletin)
             )
-            url_new = "http://django:8000/%s/bulletins/new/" % bulletin.tabella
+            url_new = django_url + "/%s/bulletins/new/" % bulletin.tabella
             with requests.get(url_new, headers=headers) as r:
                 r.raise_for_status()
                 id = r.json()["id_%s" % bulletin.tabella]
-            url_send = "http://django:8000/%s/bulletins/%s/send/" % (
+            url_send = django_url + "/%s/bulletins/%s/send/" % (
                 bulletin.tabella,
                 id,
             )
@@ -306,7 +335,12 @@ def auto_send_last_one():
     to_send = 0
     time_now = datetime.datetime.now().time()
     log.info("send last one at {time_now}".format(time_now=time_now))
-    login_url = "http://django:8000/token/"
+    environ.pop("http_proxy", None)
+    environ.pop("https_proxy", None)
+    environ.pop("HTTP_PROXY", None)
+    environ.pop("HTTPS_PROXY", None)
+    django_url = getenv("DJANGO_URL", "http://django:8000")
+    login_url = django_url + "/token/"
     password = getenv("AUTO_PASSWORD", default="auto")
     with requests.post(login_url, json={"username": "auto", "password": password}) as r:
         r.raise_for_status()
@@ -327,7 +361,7 @@ def auto_send_last_one():
                 bulletin=destinazione.prodotto
             )
         )
-        url_send = "http://django:8000/%s/bulletins/%s/send_auto/" % (
+        url_send = django_url + "/%s/bulletins/%s/send_auto/" % (
             table,
             id,
         )

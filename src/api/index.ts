@@ -1,4 +1,4 @@
-// Copyright (C) 2024 Arpa Piemonte - Dipartimento Naturali e Ambientali
+// Copyright (C) 2025 Arpa Piemonte - Dipartimento Naturali e Ambientali
 // This file is part of weboll (the bulletin back-office for ARPA Piemonte).
 // weboll is licensed under the AGPL-3.0-or-later License.
 // License text available at https://www.gnu.org/licenses/agpl.txt
@@ -62,11 +62,11 @@ export default {
     })
     return response
   },
-  async fetchBulletinsFilter(endpoint: string, options: {page: number, year: number, month: number}) {
+  async fetchBulletinsFilter(endpoint: string, options: {page: number, year: number, month: number, order: number}) {
     const response = await fetch(
       `/api/${endpoint}/?page=${options.page + 1}&year=${options.year}&month=${
         options.month
-      }`,
+      }&order=${options.order}`,
       {
         headers: {
           'accept': 'application/json'
@@ -79,19 +79,45 @@ export default {
     const rawDate = new Date(rawString)
     rawDate.setDate(rawDate.getDate() + days)
     const dateDay = rawDate.getDate()
+    const dateDayStr = String(dateDay).padStart(2, "0"); 
     const dateMonth = rawDate.getMonth() + 1
+    const dateMonthStr = String(dateMonth).padStart(2, "0");
     const dateYear = rawDate.getFullYear()
+
     if (time) {
       const dateHour = rawDate.getHours()
+      const dateHourStr = String(dateHour).padStart(2, "0");
       let dateMinutes
       if (rawDate.getMinutes() < 10){
         dateMinutes = "0" + rawDate.getMinutes()
       } else {
         dateMinutes = "" + rawDate.getMinutes()
       }
-      return dateDay + "/" + dateMonth + "/" + dateYear + " ore " + dateHour + ":" + dateMinutes
+      return dateDayStr + "/" + dateMonthStr + "/" + dateYear + " ore " + dateHourStr + ":" + dateMinutes
     } else {
-      return dateDay + "/" + dateMonth + "/" + dateYear
+      return dateDayStr + "/" + dateMonthStr + "/" + dateYear
+    }
+  },
+  getDateFormatted_eng(rawString: string, time = true, days = 0) {
+    const rawDate = new Date(rawString)
+    rawDate.setDate(rawDate.getDate() + days)
+    const dateDay = rawDate.getDate()
+    const dateDayStr = String(dateDay).padStart(2, "0"); 
+    const dateMonth = rawDate.getMonth() + 1
+    const dateMonthStr = String(dateMonth).padStart(2, "0");
+    const dateYear = rawDate.getFullYear()
+    if (time) {
+      const dateHour = rawDate.getHours()
+      const dateHourStr = String(dateHour).padStart(2, "0");
+      let dateMinutes
+      if (rawDate.getMinutes() < 10){
+        dateMinutes = "0" + rawDate.getMinutes()
+      } else {
+        dateMinutes = "" + rawDate.getMinutes()
+      }
+      return dateYear + "-" + dateMonthStr + "-" + dateDayStr + " ore " + dateHourStr + ":" + dateMinutes
+    } else {
+      return dateYear + "-" + dateMonthStr + "-" + dateDayStr
     }
   }
 }

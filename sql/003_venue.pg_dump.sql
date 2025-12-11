@@ -163,6 +163,12 @@ COPY public.venue (id_venue, description, altitude, last_update, username) FROM 
 187	A33 Tratta1 Cuneo-Carru	\N	2016-12-07 10:02:24.0	weboll
 188	A33 Tratta2 Marene-Cherasco	\N	2016-12-07 10:02:47.0	weboll
 189	A33 Tratta3 Alba-Asti	\N	2016-12-07 10:03:44.0	weboll
+190	Alpi Pennine	\N	2016-12-07 10:03:44.0	weboll
+191	Lago d'Orta	\N	2016-12-07 10:03:44.0	weboll
+192	Laghi di avigliana	\N	2016-12-07 10:03:44.0	weboll
+193	Pianura	400.00	2010-09-06 14:15:00	weboll
+194	Bassa Montagna	1500.00	2010-09-06 14:15:00	weboll
+195	Alta Montagna	2000.00	2010-09-06 14:15:00	weboll
 \.
 
 
